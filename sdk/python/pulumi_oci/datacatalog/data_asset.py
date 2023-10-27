@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DataAssetArgs', 'DataAsset']
@@ -30,44 +30,13 @@ class DataAssetArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) Detailed description of the data asset.
         """
-        DataAssetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            catalog_id=catalog_id,
-            display_name=display_name,
-            type_key=type_key,
-            description=description,
-            properties=properties,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             catalog_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             type_key: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if catalog_id is None and 'catalogId' in kwargs:
-            catalog_id = kwargs['catalogId']
-        if catalog_id is None:
-            raise TypeError("Missing 'catalog_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if type_key is None and 'typeKey' in kwargs:
-            type_key = kwargs['typeKey']
-        if type_key is None:
-            raise TypeError("Missing 'type_key' argument")
-
-        _setter("catalog_id", catalog_id)
-        _setter("display_name", display_name)
-        _setter("type_key", type_key)
+        pulumi.set(__self__, "catalog_id", catalog_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "type_key", type_key)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if properties is not None:
-            _setter("properties", properties)
+            pulumi.set(__self__, "properties", properties)
 
     @property
     @pulumi.getter(name="catalogId")
@@ -170,95 +139,36 @@ class _DataAssetState:
         :param pulumi.Input[str] updated_by_id: OCID of the user who last modified the data asset.
         :param pulumi.Input[str] uri: URI to the data asset instance in the API.
         """
-        _DataAssetState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            catalog_id=catalog_id,
-            created_by_id=created_by_id,
-            description=description,
-            display_name=display_name,
-            external_key=external_key,
-            key=key,
-            lifecycle_details=lifecycle_details,
-            properties=properties,
-            state=state,
-            time_created=time_created,
-            time_harvested=time_harvested,
-            time_updated=time_updated,
-            type_key=type_key,
-            updated_by_id=updated_by_id,
-            uri=uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             catalog_id: Optional[pulumi.Input[str]] = None,
-             created_by_id: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             external_key: Optional[pulumi.Input[str]] = None,
-             key: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_harvested: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             type_key: Optional[pulumi.Input[str]] = None,
-             updated_by_id: Optional[pulumi.Input[str]] = None,
-             uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if catalog_id is None and 'catalogId' in kwargs:
-            catalog_id = kwargs['catalogId']
-        if created_by_id is None and 'createdById' in kwargs:
-            created_by_id = kwargs['createdById']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if external_key is None and 'externalKey' in kwargs:
-            external_key = kwargs['externalKey']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_harvested is None and 'timeHarvested' in kwargs:
-            time_harvested = kwargs['timeHarvested']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if type_key is None and 'typeKey' in kwargs:
-            type_key = kwargs['typeKey']
-        if updated_by_id is None and 'updatedById' in kwargs:
-            updated_by_id = kwargs['updatedById']
-
         if catalog_id is not None:
-            _setter("catalog_id", catalog_id)
+            pulumi.set(__self__, "catalog_id", catalog_id)
         if created_by_id is not None:
-            _setter("created_by_id", created_by_id)
+            pulumi.set(__self__, "created_by_id", created_by_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if external_key is not None:
-            _setter("external_key", external_key)
+            pulumi.set(__self__, "external_key", external_key)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if properties is not None:
-            _setter("properties", properties)
+            pulumi.set(__self__, "properties", properties)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_harvested is not None:
-            _setter("time_harvested", time_harvested)
+            pulumi.set(__self__, "time_harvested", time_harvested)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type_key is not None:
-            _setter("type_key", type_key)
+            pulumi.set(__self__, "type_key", type_key)
         if updated_by_id is not None:
-            _setter("updated_by_id", updated_by_id)
+            pulumi.set(__self__, "updated_by_id", updated_by_id)
         if uri is not None:
-            _setter("uri", uri)
+            pulumi.set(__self__, "uri", uri)
 
     @property
     @pulumi.getter(name="catalogId")
@@ -534,10 +444,6 @@ class DataAsset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DataAssetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

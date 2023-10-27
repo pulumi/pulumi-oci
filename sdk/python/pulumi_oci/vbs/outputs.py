@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -25,29 +25,10 @@ class GetInstVbsInstancesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetInstVbsInstancesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -72,20 +53,7 @@ class GetInstVbsInstancesFilterResult(dict):
 class GetInstVbsInstancesVbsInstanceSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult']):
-        GetInstVbsInstancesVbsInstanceSummaryCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -127,114 +95,21 @@ class GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult(dict):
         :param str time_updated: The time the VbsInstance was updated. An RFC3339 formatted datetime string
         :param str vbs_access_url: Public web URL for accessing the VBS service instance
         """
-        GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            idcs_access_token=idcs_access_token,
-            is_resource_usage_agreement_granted=is_resource_usage_agreement_granted,
-            lifecyle_details=lifecyle_details,
-            name=name,
-            resource_compartment_id=resource_compartment_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            vbs_access_url=vbs_access_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             idcs_access_token: Optional[str] = None,
-             is_resource_usage_agreement_granted: Optional[bool] = None,
-             lifecyle_details: Optional[str] = None,
-             name: Optional[str] = None,
-             resource_compartment_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             vbs_access_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if idcs_access_token is None:
-            raise TypeError("Missing 'idcs_access_token' argument")
-        if is_resource_usage_agreement_granted is None and 'isResourceUsageAgreementGranted' in kwargs:
-            is_resource_usage_agreement_granted = kwargs['isResourceUsageAgreementGranted']
-        if is_resource_usage_agreement_granted is None:
-            raise TypeError("Missing 'is_resource_usage_agreement_granted' argument")
-        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
-            lifecyle_details = kwargs['lifecyleDetails']
-        if lifecyle_details is None:
-            raise TypeError("Missing 'lifecyle_details' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if resource_compartment_id is None and 'resourceCompartmentId' in kwargs:
-            resource_compartment_id = kwargs['resourceCompartmentId']
-        if resource_compartment_id is None:
-            raise TypeError("Missing 'resource_compartment_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if vbs_access_url is None and 'vbsAccessUrl' in kwargs:
-            vbs_access_url = kwargs['vbsAccessUrl']
-        if vbs_access_url is None:
-            raise TypeError("Missing 'vbs_access_url' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("idcs_access_token", idcs_access_token)
-        _setter("is_resource_usage_agreement_granted", is_resource_usage_agreement_granted)
-        _setter("lifecyle_details", lifecyle_details)
-        _setter("name", name)
-        _setter("resource_compartment_id", resource_compartment_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("vbs_access_url", vbs_access_url)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "is_resource_usage_agreement_granted", is_resource_usage_agreement_granted)
+        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vbs_access_url", vbs_access_url)
 
     @property
     @pulumi.getter(name="compartmentId")

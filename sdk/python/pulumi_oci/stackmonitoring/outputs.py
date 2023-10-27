@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -100,49 +100,14 @@ class DiscoveryJobDiscoveryDetails(dict):
         :param 'DiscoveryJobDiscoveryDetailsCredentialsArgs' credentials: List of DiscoveryJob Credential Details.
         :param 'DiscoveryJobDiscoveryDetailsTagsArgs' tags: Property Details
         """
-        DiscoveryJobDiscoveryDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_id=agent_id,
-            properties=properties,
-            resource_name=resource_name,
-            resource_type=resource_type,
-            credentials=credentials,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_id: Optional[str] = None,
-             properties: Optional['outputs.DiscoveryJobDiscoveryDetailsProperties'] = None,
-             resource_name: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             credentials: Optional['outputs.DiscoveryJobDiscoveryDetailsCredentials'] = None,
-             tags: Optional['outputs.DiscoveryJobDiscoveryDetailsTags'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if agent_id is None:
-            raise TypeError("Missing 'agent_id' argument")
-        if properties is None:
-            raise TypeError("Missing 'properties' argument")
-        if resource_name is None and 'resourceName' in kwargs:
-            resource_name = kwargs['resourceName']
-        if resource_name is None:
-            raise TypeError("Missing 'resource_name' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-
-        _setter("agent_id", agent_id)
-        _setter("properties", properties)
-        _setter("resource_name", resource_name)
-        _setter("resource_type", resource_type)
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "resource_type", resource_type)
         if credentials is not None:
-            _setter("credentials", credentials)
+            pulumi.set(__self__, "credentials", credentials)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter(name="agentId")
@@ -200,20 +165,7 @@ class DiscoveryJobDiscoveryDetailsCredentials(dict):
         """
         :param Sequence['DiscoveryJobDiscoveryDetailsCredentialsItemArgs'] items: List of DiscoveryJob credentials.
         """
-        DiscoveryJobDiscoveryDetailsCredentials._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.DiscoveryJobDiscoveryDetailsCredentialsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -254,34 +206,9 @@ class DiscoveryJobDiscoveryDetailsCredentialsItem(dict):
         :param str credential_type: Name of Credential Type
         :param 'DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs' properties: Property Details
         """
-        DiscoveryJobDiscoveryDetailsCredentialsItem._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_name=credential_name,
-            credential_type=credential_type,
-            properties=properties,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_name: Optional[str] = None,
-             credential_type: Optional[str] = None,
-             properties: Optional['outputs.DiscoveryJobDiscoveryDetailsCredentialsItemProperties'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_name is None and 'credentialName' in kwargs:
-            credential_name = kwargs['credentialName']
-        if credential_name is None:
-            raise TypeError("Missing 'credential_name' argument")
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if credential_type is None:
-            raise TypeError("Missing 'credential_type' argument")
-        if properties is None:
-            raise TypeError("Missing 'properties' argument")
-
-        _setter("credential_name", credential_name)
-        _setter("credential_type", credential_type)
-        _setter("properties", properties)
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "properties", properties)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -332,21 +259,8 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemProperties(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        DiscoveryJobDiscoveryDetailsCredentialsItemProperties._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            properties_map=properties_map,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if properties_map is None and 'propertiesMap' in kwargs:
-            properties_map = kwargs['propertiesMap']
-
         if properties_map is not None:
-            _setter("properties_map", properties_map)
+            pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -381,21 +295,8 @@ class DiscoveryJobDiscoveryDetailsProperties(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        DiscoveryJobDiscoveryDetailsProperties._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            properties_map=properties_map,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if properties_map is None and 'propertiesMap' in kwargs:
-            properties_map = kwargs['propertiesMap']
-
         if properties_map is not None:
-            _setter("properties_map", properties_map)
+            pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -430,21 +331,8 @@ class DiscoveryJobDiscoveryDetailsTags(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        DiscoveryJobDiscoveryDetailsTags._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            properties_map=properties_map,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if properties_map is None and 'propertiesMap' in kwargs:
-            properties_map = kwargs['propertiesMap']
-
         if properties_map is not None:
-            _setter("properties_map", properties_map)
+            pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -466,30 +354,9 @@ class MonitoredResourceAdditionalAlias(dict):
         :param str name: (Updatable) Property Name.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        MonitoredResourceAdditionalAlias._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential=credential,
-            name=name,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential: Optional['outputs.MonitoredResourceAdditionalAliasCredential'] = None,
-             name: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential is None:
-            raise TypeError("Missing 'credential' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("credential", credential)
-        _setter("name", name)
-        _setter("source", source)
+        pulumi.set(__self__, "credential", credential)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -527,30 +394,9 @@ class MonitoredResourceAdditionalAliasCredential(dict):
         :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        MonitoredResourceAdditionalAliasCredential._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            service=service,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             service: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if service is None:
-            raise TypeError("Missing 'service' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("name", name)
-        _setter("service", service)
-        _setter("source", source)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -622,47 +468,20 @@ class MonitoredResourceAdditionalCredential(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        MonitoredResourceAdditionalCredential._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_type=credential_type,
-            description=description,
-            key_id=key_id,
-            name=name,
-            properties=properties,
-            source=source,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_type: Optional[str] = None,
-             description: Optional[str] = None,
-             key_id: Optional[str] = None,
-             name: Optional[str] = None,
-             properties: Optional[Sequence['outputs.MonitoredResourceAdditionalCredentialProperty']] = None,
-             source: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-
         if credential_type is not None:
-            _setter("credential_type", credential_type)
+            pulumi.set(__self__, "credential_type", credential_type)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if key_id is not None:
-            _setter("key_id", key_id)
+            pulumi.set(__self__, "key_id", key_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if properties is not None:
-            _setter("properties", properties)
+            pulumi.set(__self__, "properties", properties)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -737,23 +556,10 @@ class MonitoredResourceAdditionalCredentialProperty(dict):
         :param str name: (Updatable) Property Name.
         :param str value: (Updatable) Property Value.
         """
-        MonitoredResourceAdditionalCredentialProperty._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -783,30 +589,9 @@ class MonitoredResourceAliases(dict):
         :param str name: (Updatable) Property Name.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        MonitoredResourceAliases._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential=credential,
-            name=name,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential: Optional['outputs.MonitoredResourceAliasesCredential'] = None,
-             name: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential is None:
-            raise TypeError("Missing 'credential' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("credential", credential)
-        _setter("name", name)
-        _setter("source", source)
+        pulumi.set(__self__, "credential", credential)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -844,30 +629,9 @@ class MonitoredResourceAliasesCredential(dict):
         :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        MonitoredResourceAliasesCredential._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            service=service,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             service: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if service is None:
-            raise TypeError("Missing 'service' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("name", name)
-        _setter("service", service)
-        _setter("source", source)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -939,47 +703,20 @@ class MonitoredResourceCredentials(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        MonitoredResourceCredentials._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_type=credential_type,
-            description=description,
-            key_id=key_id,
-            name=name,
-            properties=properties,
-            source=source,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_type: Optional[str] = None,
-             description: Optional[str] = None,
-             key_id: Optional[str] = None,
-             name: Optional[str] = None,
-             properties: Optional[Sequence['outputs.MonitoredResourceCredentialsProperty']] = None,
-             source: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-
         if credential_type is not None:
-            _setter("credential_type", credential_type)
+            pulumi.set(__self__, "credential_type", credential_type)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if key_id is not None:
-            _setter("key_id", key_id)
+            pulumi.set(__self__, "key_id", key_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if properties is not None:
-            _setter("properties", properties)
+            pulumi.set(__self__, "properties", properties)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -1054,23 +791,10 @@ class MonitoredResourceCredentialsProperty(dict):
         :param str name: (Updatable) Property Name.
         :param str value: (Updatable) Property Value.
         """
-        MonitoredResourceCredentialsProperty._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -1133,56 +857,17 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
         :param str db_unique_name: (Updatable) UniqueName used for database connection requests.
         :param str ssl_secret_id: (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
-        MonitoredResourceDatabaseConnectionDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            protocol=protocol,
-            service_name=service_name,
-            connector_id=connector_id,
-            db_id=db_id,
-            db_unique_name=db_unique_name,
-            ssl_secret_id=ssl_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             service_name: Optional[str] = None,
-             connector_id: Optional[str] = None,
-             db_id: Optional[str] = None,
-             db_unique_name: Optional[str] = None,
-             ssl_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-        if service_name is None:
-            raise TypeError("Missing 'service_name' argument")
-        if connector_id is None and 'connectorId' in kwargs:
-            connector_id = kwargs['connectorId']
-        if db_id is None and 'dbId' in kwargs:
-            db_id = kwargs['dbId']
-        if db_unique_name is None and 'dbUniqueName' in kwargs:
-            db_unique_name = kwargs['dbUniqueName']
-        if ssl_secret_id is None and 'sslSecretId' in kwargs:
-            ssl_secret_id = kwargs['sslSecretId']
-
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("service_name", service_name)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service_name", service_name)
         if connector_id is not None:
-            _setter("connector_id", connector_id)
+            pulumi.set(__self__, "connector_id", connector_id)
         if db_id is not None:
-            _setter("db_id", db_id)
+            pulumi.set(__self__, "db_id", db_id)
         if db_unique_name is not None:
-            _setter("db_unique_name", db_unique_name)
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
         if ssl_secret_id is not None:
-            _setter("ssl_secret_id", ssl_secret_id)
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter
@@ -1250,23 +935,10 @@ class MonitoredResourceProperty(dict):
         :param str name: (Updatable) Property Name.
         :param str value: (Updatable) Property Value.
         """
-        MonitoredResourceProperty._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -1313,29 +985,12 @@ class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail(dict
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
-        MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1390,29 +1045,12 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail(dict):
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
-        MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1505,85 +1143,30 @@ class MonitoredResourcesListMemberItem(dict):
         :param str state: The current state of the Resource.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
-        MonitoredResourcesListMemberItem._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            external_id=external_id,
-            freeform_tags=freeform_tags,
-            host_name=host_name,
-            parent_id=parent_id,
-            resource_display_name=resource_display_name,
-            resource_id=resource_id,
-            resource_name=resource_name,
-            resource_type=resource_type,
-            state=state,
-            system_tags=system_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             external_id: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             host_name: Optional[str] = None,
-             parent_id: Optional[str] = None,
-             resource_display_name: Optional[str] = None,
-             resource_id: Optional[str] = None,
-             resource_name: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if external_id is None and 'externalId' in kwargs:
-            external_id = kwargs['externalId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if host_name is None and 'hostName' in kwargs:
-            host_name = kwargs['hostName']
-        if parent_id is None and 'parentId' in kwargs:
-            parent_id = kwargs['parentId']
-        if resource_display_name is None and 'resourceDisplayName' in kwargs:
-            resource_display_name = kwargs['resourceDisplayName']
-        if resource_id is None and 'resourceId' in kwargs:
-            resource_id = kwargs['resourceId']
-        if resource_name is None and 'resourceName' in kwargs:
-            resource_name = kwargs['resourceName']
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if external_id is not None:
-            _setter("external_id", external_id)
+            pulumi.set(__self__, "external_id", external_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name is not None:
-            _setter("host_name", host_name)
+            pulumi.set(__self__, "host_name", host_name)
         if parent_id is not None:
-            _setter("parent_id", parent_id)
+            pulumi.set(__self__, "parent_id", parent_id)
         if resource_display_name is not None:
-            _setter("resource_display_name", resource_display_name)
+            pulumi.set(__self__, "resource_display_name", resource_display_name)
         if resource_id is not None:
-            _setter("resource_id", resource_id)
+            pulumi.set(__self__, "resource_id", resource_id)
         if resource_name is not None:
-            _setter("resource_name", resource_name)
+            pulumi.set(__self__, "resource_name", resource_name)
         if resource_type is not None:
-            _setter("resource_type", resource_type)
+            pulumi.set(__self__, "resource_type", resource_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1726,51 +1309,18 @@ class MonitoredResourcesSearchAssociationItem(dict):
         :param str source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str time_created: The association creation time. An RFC3339 formatted datetime string.
         """
-        MonitoredResourcesSearchAssociationItem._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            association_type=association_type,
-            destination_resource_details=destination_resource_details,
-            destination_resource_id=destination_resource_id,
-            source_resource_details=source_resource_details,
-            source_resource_id=source_resource_id,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             association_type: Optional[str] = None,
-             destination_resource_details: Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemDestinationResourceDetail']] = None,
-             destination_resource_id: Optional[str] = None,
-             source_resource_details: Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemSourceResourceDetail']] = None,
-             source_resource_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if association_type is None and 'associationType' in kwargs:
-            association_type = kwargs['associationType']
-        if destination_resource_details is None and 'destinationResourceDetails' in kwargs:
-            destination_resource_details = kwargs['destinationResourceDetails']
-        if destination_resource_id is None and 'destinationResourceId' in kwargs:
-            destination_resource_id = kwargs['destinationResourceId']
-        if source_resource_details is None and 'sourceResourceDetails' in kwargs:
-            source_resource_details = kwargs['sourceResourceDetails']
-        if source_resource_id is None and 'sourceResourceId' in kwargs:
-            source_resource_id = kwargs['sourceResourceId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if association_type is not None:
-            _setter("association_type", association_type)
+            pulumi.set(__self__, "association_type", association_type)
         if destination_resource_details is not None:
-            _setter("destination_resource_details", destination_resource_details)
+            pulumi.set(__self__, "destination_resource_details", destination_resource_details)
         if destination_resource_id is not None:
-            _setter("destination_resource_id", destination_resource_id)
+            pulumi.set(__self__, "destination_resource_id", destination_resource_id)
         if source_resource_details is not None:
-            _setter("source_resource_details", source_resource_details)
+            pulumi.set(__self__, "source_resource_details", source_resource_details)
         if source_resource_id is not None:
-            _setter("source_resource_id", source_resource_id)
+            pulumi.set(__self__, "source_resource_id", source_resource_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="associationType")
@@ -1849,29 +1399,12 @@ class MonitoredResourcesSearchAssociationItemDestinationResourceDetail(dict):
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
-        MonitoredResourcesSearchAssociationItemDestinationResourceDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1926,29 +1459,12 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetail(dict):
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
-        MonitoredResourcesSearchAssociationItemSourceResourceDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2045,89 +1561,34 @@ class MonitoredResourcesSearchItem(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        MonitoredResourcesSearchItem._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            defined_tags=defined_tags,
-            display_name=display_name,
-            external_id=external_id,
-            freeform_tags=freeform_tags,
-            host_name=host_name,
-            id=id,
-            management_agent_id=management_agent_id,
-            name=name,
-            properties=properties,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             external_id: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             host_name: Optional[str] = None,
-             id: Optional[str] = None,
-             management_agent_id: Optional[str] = None,
-             name: Optional[str] = None,
-             properties: Optional[Sequence['outputs.MonitoredResourcesSearchItemProperty']] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if external_id is None and 'externalId' in kwargs:
-            external_id = kwargs['externalId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if host_name is None and 'hostName' in kwargs:
-            host_name = kwargs['hostName']
-        if management_agent_id is None and 'managementAgentId' in kwargs:
-            management_agent_id = kwargs['managementAgentId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if external_id is not None:
-            _setter("external_id", external_id)
+            pulumi.set(__self__, "external_id", external_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name is not None:
-            _setter("host_name", host_name)
+            pulumi.set(__self__, "host_name", host_name)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if management_agent_id is not None:
-            _setter("management_agent_id", management_agent_id)
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if properties is not None:
-            _setter("properties", properties)
+            pulumi.set(__self__, "properties", properties)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -2255,23 +1716,10 @@ class MonitoredResourcesSearchItemProperty(dict):
         :param str name: A filter to return resources that match exact resource name.
         :param str value: Property Value.
         """
-        MonitoredResourcesSearchItemProperty._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -2294,20 +1742,7 @@ class MonitoredResourcesSearchItemProperty(dict):
 class GetConfigsConfigCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConfigsConfigCollectionItemResult']):
-        GetConfigsConfigCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetConfigsConfigCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -2344,95 +1779,18 @@ class GetConfigsConfigCollectionItemResult(dict):
         :param str time_created: The time the configuration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the Config was updated.
         """
-        GetConfigsConfigCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            config_type=config_type,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_enabled=is_enabled,
-            resource_type=resource_type,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             config_type: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_enabled: Optional[bool] = None,
-             resource_type: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if config_type is None and 'configType' in kwargs:
-            config_type = kwargs['configType']
-        if config_type is None:
-            raise TypeError("Missing 'config_type' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("config_type", config_type)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_enabled", is_enabled)
-        _setter("resource_type", resource_type)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2537,29 +1895,10 @@ class GetConfigsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetConfigsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2594,51 +1933,12 @@ class GetDiscoveryJobDiscoveryDetailResult(dict):
         :param str resource_type: Resource Type.
         :param Sequence['GetDiscoveryJobDiscoveryDetailTagArgs'] tags: Property Details
         """
-        GetDiscoveryJobDiscoveryDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_id=agent_id,
-            credentials=credentials,
-            properties=properties,
-            resource_name=resource_name,
-            resource_type=resource_type,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_id: Optional[str] = None,
-             credentials: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialResult']] = None,
-             properties: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailPropertyResult']] = None,
-             resource_name: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             tags: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailTagResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if agent_id is None:
-            raise TypeError("Missing 'agent_id' argument")
-        if credentials is None:
-            raise TypeError("Missing 'credentials' argument")
-        if properties is None:
-            raise TypeError("Missing 'properties' argument")
-        if resource_name is None and 'resourceName' in kwargs:
-            resource_name = kwargs['resourceName']
-        if resource_name is None:
-            raise TypeError("Missing 'resource_name' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if tags is None:
-            raise TypeError("Missing 'tags' argument")
-
-        _setter("agent_id", agent_id)
-        _setter("credentials", credentials)
-        _setter("properties", properties)
-        _setter("resource_name", resource_name)
-        _setter("resource_type", resource_type)
-        _setter("tags", tags)
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter(name="agentId")
@@ -2696,20 +1996,7 @@ class GetDiscoveryJobDiscoveryDetailCredentialResult(dict):
         """
         :param Sequence['GetDiscoveryJobDiscoveryDetailCredentialItemArgs'] items: List of DiscoveryJob credentials.
         """
-        GetDiscoveryJobDiscoveryDetailCredentialResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -2731,34 +2018,9 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemResult(dict):
         :param str credential_type: Name of Credential Type
         :param Sequence['GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs'] properties: Property Details
         """
-        GetDiscoveryJobDiscoveryDetailCredentialItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_name=credential_name,
-            credential_type=credential_type,
-            properties=properties,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_name: Optional[str] = None,
-             credential_type: Optional[str] = None,
-             properties: Optional[Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_name is None and 'credentialName' in kwargs:
-            credential_name = kwargs['credentialName']
-        if credential_name is None:
-            raise TypeError("Missing 'credential_name' argument")
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if credential_type is None:
-            raise TypeError("Missing 'credential_type' argument")
-        if properties is None:
-            raise TypeError("Missing 'properties' argument")
-
-        _setter("credential_name", credential_name)
-        _setter("credential_type", credential_type)
-        _setter("properties", properties)
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "properties", properties)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -2792,22 +2054,7 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            properties_map=properties_map,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if properties_map is None and 'propertiesMap' in kwargs:
-            properties_map = kwargs['propertiesMap']
-        if properties_map is None:
-            raise TypeError("Missing 'properties_map' argument")
-
-        _setter("properties_map", properties_map)
+        pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -2825,22 +2072,7 @@ class GetDiscoveryJobDiscoveryDetailPropertyResult(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        GetDiscoveryJobDiscoveryDetailPropertyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            properties_map=properties_map,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if properties_map is None and 'propertiesMap' in kwargs:
-            properties_map = kwargs['propertiesMap']
-        if properties_map is None:
-            raise TypeError("Missing 'properties_map' argument")
-
-        _setter("properties_map", properties_map)
+        pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -2858,22 +2090,7 @@ class GetDiscoveryJobDiscoveryDetailTagResult(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        GetDiscoveryJobDiscoveryDetailTagResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            properties_map=properties_map,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if properties_map is None and 'propertiesMap' in kwargs:
-            properties_map = kwargs['propertiesMap']
-        if properties_map is None:
-            raise TypeError("Missing 'properties_map' argument")
-
-        _setter("properties_map", properties_map)
+        pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -2891,20 +2108,7 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionResult(dict):
         """
         :param Sequence['GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs'] items: List of logs
         """
-        GetDiscoveryJobLogsDiscoveryJobLogCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -2928,41 +2132,10 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult(dict):
         :param str log_type: The log type like INFO, WARNING, ERROR, SUCCESS
         :param str time_created: Time the Job log was created
         """
-        GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            log_message=log_message,
-            log_type=log_type,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             log_message: Optional[str] = None,
-             log_type: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if log_message is None and 'logMessage' in kwargs:
-            log_message = kwargs['logMessage']
-        if log_message is None:
-            raise TypeError("Missing 'log_message' argument")
-        if log_type is None and 'logType' in kwargs:
-            log_type = kwargs['logType']
-        if log_type is None:
-            raise TypeError("Missing 'log_type' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("id", id)
-        _setter("log_message", log_message)
-        _setter("log_type", log_type)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "log_message", log_message)
+        pulumi.set(__self__, "log_type", log_type)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
@@ -3003,29 +2176,10 @@ class GetDiscoveryJobLogsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDiscoveryJobLogsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3050,20 +2204,7 @@ class GetDiscoveryJobsDiscoveryJobCollectionResult(dict):
         """
         :param Sequence['GetDiscoveryJobsDiscoveryJobCollectionItemArgs'] items: List of DiscoveryJob credentials.
         """
-        GetDiscoveryJobsDiscoveryJobCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDiscoveryJobsDiscoveryJobCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -3107,107 +2248,20 @@ class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
         :param str time_updated: The time the discovery Job was updated.
         :param str user_id: The OCID of user in which the job is submitted
         """
-        GetDiscoveryJobsDiscoveryJobCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            discovery_type=discovery_type,
-            freeform_tags=freeform_tags,
-            id=id,
-            resource_name=resource_name,
-            resource_type=resource_type,
-            state=state,
-            status=status,
-            status_message=status_message,
-            system_tags=system_tags,
-            tenant_id=tenant_id,
-            time_updated=time_updated,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             discovery_type: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             resource_name: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             status_message: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             tenant_id: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if discovery_type is None and 'discoveryType' in kwargs:
-            discovery_type = kwargs['discoveryType']
-        if discovery_type is None:
-            raise TypeError("Missing 'discovery_type' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if resource_name is None and 'resourceName' in kwargs:
-            resource_name = kwargs['resourceName']
-        if resource_name is None:
-            raise TypeError("Missing 'resource_name' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if status_message is None and 'statusMessage' in kwargs:
-            status_message = kwargs['statusMessage']
-        if status_message is None:
-            raise TypeError("Missing 'status_message' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if tenant_id is None and 'tenantId' in kwargs:
-            tenant_id = kwargs['tenantId']
-        if tenant_id is None:
-            raise TypeError("Missing 'tenant_id' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-        if user_id is None:
-            raise TypeError("Missing 'user_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("discovery_type", discovery_type)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("resource_name", resource_name)
-        _setter("resource_type", resource_type)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("status_message", status_message)
-        _setter("system_tags", system_tags)
-        _setter("tenant_id", tenant_id)
-        _setter("time_updated", time_updated)
-        _setter("user_id", user_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "discovery_type", discovery_type)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "status_message", status_message)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3331,29 +2385,10 @@ class GetDiscoveryJobsFilterResult(dict):
         """
         :param str name: A filter to return only discovery jobs that match the entire resource name given.
         """
-        GetDiscoveryJobsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3385,30 +2420,9 @@ class GetMonitoredResourceAdditionalAliasResult(dict):
         :param str name: Property Name.
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        GetMonitoredResourceAdditionalAliasResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credentials=credentials,
-            name=name,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credentials: Optional[Sequence['outputs.GetMonitoredResourceAdditionalAliasCredentialResult']] = None,
-             name: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credentials is None:
-            raise TypeError("Missing 'credentials' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("credentials", credentials)
-        _setter("name", name)
-        _setter("source", source)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -3446,30 +2460,9 @@ class GetMonitoredResourceAdditionalAliasCredentialResult(dict):
         :param str service: The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        GetMonitoredResourceAdditionalAliasCredentialResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            service=service,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             service: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if service is None:
-            raise TypeError("Missing 'service' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("name", name)
-        _setter("service", service)
-        _setter("source", source)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -3518,54 +2511,13 @@ class GetMonitoredResourceAdditionalCredentialResult(dict):
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         :param str type: Monitored Resource Type.
         """
-        GetMonitoredResourceAdditionalCredentialResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_type=credential_type,
-            description=description,
-            key_id=key_id,
-            name=name,
-            properties=properties,
-            source=source,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_type: Optional[str] = None,
-             description: Optional[str] = None,
-             key_id: Optional[str] = None,
-             name: Optional[str] = None,
-             properties: Optional[Sequence['outputs.GetMonitoredResourceAdditionalCredentialPropertyResult']] = None,
-             source: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if credential_type is None:
-            raise TypeError("Missing 'credential_type' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_id is None:
-            raise TypeError("Missing 'key_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if properties is None:
-            raise TypeError("Missing 'properties' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("credential_type", credential_type)
-        _setter("description", description)
-        _setter("key_id", key_id)
-        _setter("name", name)
-        _setter("properties", properties)
-        _setter("source", source)
-        _setter("type", type)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -3636,25 +2588,8 @@ class GetMonitoredResourceAdditionalCredentialPropertyResult(dict):
         :param str name: Property Name.
         :param str value: Property Value.
         """
-        GetMonitoredResourceAdditionalCredentialPropertyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3684,30 +2619,9 @@ class GetMonitoredResourceAliasResult(dict):
         :param str name: Property Name.
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        GetMonitoredResourceAliasResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credentials=credentials,
-            name=name,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credentials: Optional[Sequence['outputs.GetMonitoredResourceAliasCredentialResult']] = None,
-             name: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credentials is None:
-            raise TypeError("Missing 'credentials' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("credentials", credentials)
-        _setter("name", name)
-        _setter("source", source)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -3745,30 +2659,9 @@ class GetMonitoredResourceAliasCredentialResult(dict):
         :param str service: The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        GetMonitoredResourceAliasCredentialResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            service=service,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             service: Optional[str] = None,
-             source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if service is None:
-            raise TypeError("Missing 'service' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("name", name)
-        _setter("service", service)
-        _setter("source", source)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -3817,54 +2710,13 @@ class GetMonitoredResourceCredentialResult(dict):
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         :param str type: Monitored Resource Type.
         """
-        GetMonitoredResourceCredentialResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_type=credential_type,
-            description=description,
-            key_id=key_id,
-            name=name,
-            properties=properties,
-            source=source,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_type: Optional[str] = None,
-             description: Optional[str] = None,
-             key_id: Optional[str] = None,
-             name: Optional[str] = None,
-             properties: Optional[Sequence['outputs.GetMonitoredResourceCredentialPropertyResult']] = None,
-             source: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if credential_type is None:
-            raise TypeError("Missing 'credential_type' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_id is None:
-            raise TypeError("Missing 'key_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if properties is None:
-            raise TypeError("Missing 'properties' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("credential_type", credential_type)
-        _setter("description", description)
-        _setter("key_id", key_id)
-        _setter("name", name)
-        _setter("properties", properties)
-        _setter("source", source)
-        _setter("type", type)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -3935,25 +2787,8 @@ class GetMonitoredResourceCredentialPropertyResult(dict):
         :param str name: Property Name.
         :param str value: Property Value.
         """
-        GetMonitoredResourceCredentialPropertyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3991,60 +2826,13 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
         :param str service_name: Service name used for connection requests.
         :param str ssl_secret_id: SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
-        GetMonitoredResourceDatabaseConnectionDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connector_id=connector_id,
-            db_id=db_id,
-            db_unique_name=db_unique_name,
-            port=port,
-            protocol=protocol,
-            service_name=service_name,
-            ssl_secret_id=ssl_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connector_id: Optional[str] = None,
-             db_id: Optional[str] = None,
-             db_unique_name: Optional[str] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             service_name: Optional[str] = None,
-             ssl_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connector_id is None and 'connectorId' in kwargs:
-            connector_id = kwargs['connectorId']
-        if connector_id is None:
-            raise TypeError("Missing 'connector_id' argument")
-        if db_id is None and 'dbId' in kwargs:
-            db_id = kwargs['dbId']
-        if db_id is None:
-            raise TypeError("Missing 'db_id' argument")
-        if db_unique_name is None and 'dbUniqueName' in kwargs:
-            db_unique_name = kwargs['dbUniqueName']
-        if db_unique_name is None:
-            raise TypeError("Missing 'db_unique_name' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-        if service_name is None:
-            raise TypeError("Missing 'service_name' argument")
-        if ssl_secret_id is None and 'sslSecretId' in kwargs:
-            ssl_secret_id = kwargs['sslSecretId']
-        if ssl_secret_id is None:
-            raise TypeError("Missing 'ssl_secret_id' argument")
-
-        _setter("connector_id", connector_id)
-        _setter("db_id", db_id)
-        _setter("db_unique_name", db_unique_name)
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("service_name", service_name)
-        _setter("ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "connector_id", connector_id)
+        pulumi.set(__self__, "db_id", db_id)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter(name="connectorId")
@@ -4112,25 +2900,8 @@ class GetMonitoredResourcePropertyResult(dict):
         :param str name: Property Name.
         :param str value: Property Value.
         """
-        GetMonitoredResourcePropertyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter

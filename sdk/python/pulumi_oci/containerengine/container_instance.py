@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -57,107 +57,32 @@ class ContainerInstanceArgs:
                
                You can attach up to 32 volumes to single container instance.
         """
-        ContainerInstanceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            containers=containers,
-            shape=shape,
-            shape_config=shape_config,
-            vnics=vnics,
-            container_restart_policy=container_restart_policy,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dns_config=dns_config,
-            fault_domain=fault_domain,
-            freeform_tags=freeform_tags,
-            graceful_shutdown_timeout_in_seconds=graceful_shutdown_timeout_in_seconds,
-            image_pull_secrets=image_pull_secrets,
-            state=state,
-            volumes=volumes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             containers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             shape_config: Optional[pulumi.Input['ContainerInstanceShapeConfigArgs']] = None,
-             vnics: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]] = None,
-             container_restart_policy: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dns_config: Optional[pulumi.Input['ContainerInstanceDnsConfigArgs']] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
-             image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if containers is None:
-            raise TypeError("Missing 'containers' argument")
-        if shape is None:
-            raise TypeError("Missing 'shape' argument")
-        if shape_config is None and 'shapeConfig' in kwargs:
-            shape_config = kwargs['shapeConfig']
-        if shape_config is None:
-            raise TypeError("Missing 'shape_config' argument")
-        if vnics is None:
-            raise TypeError("Missing 'vnics' argument")
-        if container_restart_policy is None and 'containerRestartPolicy' in kwargs:
-            container_restart_policy = kwargs['containerRestartPolicy']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dns_config is None and 'dnsConfig' in kwargs:
-            dns_config = kwargs['dnsConfig']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if graceful_shutdown_timeout_in_seconds is None and 'gracefulShutdownTimeoutInSeconds' in kwargs:
-            graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
-        if image_pull_secrets is None and 'imagePullSecrets' in kwargs:
-            image_pull_secrets = kwargs['imagePullSecrets']
-
-        _setter("availability_domain", availability_domain)
-        _setter("compartment_id", compartment_id)
-        _setter("containers", containers)
-        _setter("shape", shape)
-        _setter("shape_config", shape_config)
-        _setter("vnics", vnics)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "containers", containers)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_config", shape_config)
+        pulumi.set(__self__, "vnics", vnics)
         if container_restart_policy is not None:
-            _setter("container_restart_policy", container_restart_policy)
+            pulumi.set(__self__, "container_restart_policy", container_restart_policy)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dns_config is not None:
-            _setter("dns_config", dns_config)
+            pulumi.set(__self__, "dns_config", dns_config)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if graceful_shutdown_timeout_in_seconds is not None:
-            _setter("graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
+            pulumi.set(__self__, "graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
         if image_pull_secrets is not None:
-            _setter("image_pull_secrets", image_pull_secrets)
+            pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if volumes is not None:
-            _setter("volumes", volumes)
+            pulumi.set(__self__, "volumes", volumes)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -414,137 +339,50 @@ class _ContainerInstanceState:
                
                You can attach up to 32 volumes to single container instance.
         """
-        _ContainerInstanceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            container_count=container_count,
-            container_restart_policy=container_restart_policy,
-            containers=containers,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dns_config=dns_config,
-            fault_domain=fault_domain,
-            freeform_tags=freeform_tags,
-            graceful_shutdown_timeout_in_seconds=graceful_shutdown_timeout_in_seconds,
-            image_pull_secrets=image_pull_secrets,
-            lifecycle_details=lifecycle_details,
-            shape=shape,
-            shape_config=shape_config,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            vnics=vnics,
-            volume_count=volume_count,
-            volumes=volumes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             container_count: Optional[pulumi.Input[int]] = None,
-             container_restart_policy: Optional[pulumi.Input[str]] = None,
-             containers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dns_config: Optional[pulumi.Input['ContainerInstanceDnsConfigArgs']] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
-             image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             shape_config: Optional[pulumi.Input['ContainerInstanceShapeConfigArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             vnics: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]] = None,
-             volume_count: Optional[pulumi.Input[int]] = None,
-             volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if container_count is None and 'containerCount' in kwargs:
-            container_count = kwargs['containerCount']
-        if container_restart_policy is None and 'containerRestartPolicy' in kwargs:
-            container_restart_policy = kwargs['containerRestartPolicy']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dns_config is None and 'dnsConfig' in kwargs:
-            dns_config = kwargs['dnsConfig']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if graceful_shutdown_timeout_in_seconds is None and 'gracefulShutdownTimeoutInSeconds' in kwargs:
-            graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
-        if image_pull_secrets is None and 'imagePullSecrets' in kwargs:
-            image_pull_secrets = kwargs['imagePullSecrets']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if shape_config is None and 'shapeConfig' in kwargs:
-            shape_config = kwargs['shapeConfig']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if volume_count is None and 'volumeCount' in kwargs:
-            volume_count = kwargs['volumeCount']
-
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if container_count is not None:
-            _setter("container_count", container_count)
+            pulumi.set(__self__, "container_count", container_count)
         if container_restart_policy is not None:
-            _setter("container_restart_policy", container_restart_policy)
+            pulumi.set(__self__, "container_restart_policy", container_restart_policy)
         if containers is not None:
-            _setter("containers", containers)
+            pulumi.set(__self__, "containers", containers)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dns_config is not None:
-            _setter("dns_config", dns_config)
+            pulumi.set(__self__, "dns_config", dns_config)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if graceful_shutdown_timeout_in_seconds is not None:
-            _setter("graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
+            pulumi.set(__self__, "graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
         if image_pull_secrets is not None:
-            _setter("image_pull_secrets", image_pull_secrets)
+            pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if shape is not None:
-            _setter("shape", shape)
+            pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
-            _setter("shape_config", shape_config)
+            pulumi.set(__self__, "shape_config", shape_config)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if vnics is not None:
-            _setter("vnics", vnics)
+            pulumi.set(__self__, "vnics", vnics)
         if volume_count is not None:
-            _setter("volume_count", volume_count)
+            pulumi.set(__self__, "volume_count", volume_count)
         if volumes is not None:
-            _setter("volumes", volumes)
+            pulumi.set(__self__, "volumes", volumes)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1116,10 +954,6 @@ class ContainerInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ContainerInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1162,7 +996,6 @@ class ContainerInstance(pulumi.CustomResource):
             __props__.__dict__["containers"] = containers
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
-            dns_config = _utilities.configure(dns_config, ContainerInstanceDnsConfigArgs, True)
             __props__.__dict__["dns_config"] = dns_config
             __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["freeform_tags"] = freeform_tags
@@ -1171,7 +1004,6 @@ class ContainerInstance(pulumi.CustomResource):
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
-            shape_config = _utilities.configure(shape_config, ContainerInstanceShapeConfigArgs, True)
             if shape_config is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_config'")
             __props__.__dict__["shape_config"] = shape_config

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -36,56 +36,19 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
         :param pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs'] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
         :param pulumi.Input[str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
-        NetworkFirewallPolicyDecryptionRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            condition=condition,
-            network_firewall_policy_id=network_firewall_policy_id,
-            decryption_profile=decryption_profile,
-            name=name,
-            position=position,
-            priority_order=priority_order,
-            secret=secret,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input[str]] = None,
-             condition: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs']] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             decryption_profile: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             position: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']] = None,
-             priority_order: Optional[pulumi.Input[str]] = None,
-             secret: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_firewall_policy_id is None:
-            raise TypeError("Missing 'network_firewall_policy_id' argument")
-        if decryption_profile is None and 'decryptionProfile' in kwargs:
-            decryption_profile = kwargs['decryptionProfile']
-        if priority_order is None and 'priorityOrder' in kwargs:
-            priority_order = kwargs['priorityOrder']
-
-        _setter("action", action)
-        _setter("condition", condition)
-        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if decryption_profile is not None:
-            _setter("decryption_profile", decryption_profile)
+            pulumi.set(__self__, "decryption_profile", decryption_profile)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if position is not None:
-            _setter("position", position)
+            pulumi.set(__self__, "position", position)
         if priority_order is not None:
-            _setter("priority_order", priority_order)
+            pulumi.set(__self__, "priority_order", priority_order)
         if secret is not None:
-            _setter("secret", secret)
+            pulumi.set(__self__, "secret", secret)
 
     @property
     @pulumi.getter
@@ -208,59 +171,24 @@ class _NetworkFirewallPolicyDecryptionRuleState:
         :param pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs'] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
         :param pulumi.Input[str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
-        _NetworkFirewallPolicyDecryptionRuleState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            condition=condition,
-            decryption_profile=decryption_profile,
-            name=name,
-            network_firewall_policy_id=network_firewall_policy_id,
-            parent_resource_id=parent_resource_id,
-            position=position,
-            priority_order=priority_order,
-            secret=secret,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input[str]] = None,
-             condition: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs']] = None,
-             decryption_profile: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             parent_resource_id: Optional[pulumi.Input[str]] = None,
-             position: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']] = None,
-             priority_order: Optional[pulumi.Input[str]] = None,
-             secret: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if decryption_profile is None and 'decryptionProfile' in kwargs:
-            decryption_profile = kwargs['decryptionProfile']
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if parent_resource_id is None and 'parentResourceId' in kwargs:
-            parent_resource_id = kwargs['parentResourceId']
-        if priority_order is None and 'priorityOrder' in kwargs:
-            priority_order = kwargs['priorityOrder']
-
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if decryption_profile is not None:
-            _setter("decryption_profile", decryption_profile)
+            pulumi.set(__self__, "decryption_profile", decryption_profile)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
-            _setter("network_firewall_policy_id", network_firewall_policy_id)
+            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            _setter("parent_resource_id", parent_resource_id)
+            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         if position is not None:
-            _setter("position", position)
+            pulumi.set(__self__, "position", position)
         if priority_order is not None:
-            _setter("priority_order", priority_order)
+            pulumi.set(__self__, "priority_order", priority_order)
         if secret is not None:
-            _setter("secret", secret)
+            pulumi.set(__self__, "secret", secret)
 
     @property
     @pulumi.getter
@@ -438,10 +366,6 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkFirewallPolicyDecryptionRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -467,7 +391,6 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
             if action is None and not opts.urn:
                 raise TypeError("Missing required property 'action'")
             __props__.__dict__["action"] = action
-            condition = _utilities.configure(condition, NetworkFirewallPolicyDecryptionRuleConditionArgs, True)
             if condition is None and not opts.urn:
                 raise TypeError("Missing required property 'condition'")
             __props__.__dict__["condition"] = condition
@@ -476,7 +399,6 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
             if network_firewall_policy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
             __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
-            position = _utilities.configure(position, NetworkFirewallPolicyDecryptionRulePositionArgs, True)
             __props__.__dict__["position"] = position
             __props__.__dict__["priority_order"] = priority_order
             __props__.__dict__["secret"] = secret

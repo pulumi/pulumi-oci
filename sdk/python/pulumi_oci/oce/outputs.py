@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -23,29 +23,10 @@ class GetOceInstancesFilterResult(dict):
         """
         :param str name: OceInstance Name
         """
-        GetOceInstancesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -124,192 +105,33 @@ class GetOceInstancesOceInstanceResult(dict):
         :param str upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param str waf_primary_domain: Web Application Firewall(WAF) primary domain
         """
-        GetOceInstancesOceInstanceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            add_on_features=add_on_features,
-            admin_email=admin_email,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            dr_region=dr_region,
-            freeform_tags=freeform_tags,
-            guid=guid,
-            id=id,
-            idcs_access_token=idcs_access_token,
-            idcs_tenancy=idcs_tenancy,
-            instance_access_type=instance_access_type,
-            instance_license_type=instance_license_type,
-            instance_usage_type=instance_usage_type,
-            lifecycle_details=lifecycle_details,
-            name=name,
-            object_storage_namespace=object_storage_namespace,
-            service=service,
-            state=state,
-            state_message=state_message,
-            system_tags=system_tags,
-            tenancy_id=tenancy_id,
-            tenancy_name=tenancy_name,
-            time_created=time_created,
-            time_updated=time_updated,
-            upgrade_schedule=upgrade_schedule,
-            waf_primary_domain=waf_primary_domain,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             add_on_features: Optional[Sequence[str]] = None,
-             admin_email: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             dr_region: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             guid: Optional[str] = None,
-             id: Optional[str] = None,
-             idcs_access_token: Optional[str] = None,
-             idcs_tenancy: Optional[str] = None,
-             instance_access_type: Optional[str] = None,
-             instance_license_type: Optional[str] = None,
-             instance_usage_type: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             name: Optional[str] = None,
-             object_storage_namespace: Optional[str] = None,
-             service: Optional[Mapping[str, Any]] = None,
-             state: Optional[str] = None,
-             state_message: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             tenancy_id: Optional[str] = None,
-             tenancy_name: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             upgrade_schedule: Optional[str] = None,
-             waf_primary_domain: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if add_on_features is None and 'addOnFeatures' in kwargs:
-            add_on_features = kwargs['addOnFeatures']
-        if add_on_features is None:
-            raise TypeError("Missing 'add_on_features' argument")
-        if admin_email is None and 'adminEmail' in kwargs:
-            admin_email = kwargs['adminEmail']
-        if admin_email is None:
-            raise TypeError("Missing 'admin_email' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if dr_region is None and 'drRegion' in kwargs:
-            dr_region = kwargs['drRegion']
-        if dr_region is None:
-            raise TypeError("Missing 'dr_region' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if guid is None:
-            raise TypeError("Missing 'guid' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if idcs_access_token is None:
-            raise TypeError("Missing 'idcs_access_token' argument")
-        if idcs_tenancy is None and 'idcsTenancy' in kwargs:
-            idcs_tenancy = kwargs['idcsTenancy']
-        if idcs_tenancy is None:
-            raise TypeError("Missing 'idcs_tenancy' argument")
-        if instance_access_type is None and 'instanceAccessType' in kwargs:
-            instance_access_type = kwargs['instanceAccessType']
-        if instance_access_type is None:
-            raise TypeError("Missing 'instance_access_type' argument")
-        if instance_license_type is None and 'instanceLicenseType' in kwargs:
-            instance_license_type = kwargs['instanceLicenseType']
-        if instance_license_type is None:
-            raise TypeError("Missing 'instance_license_type' argument")
-        if instance_usage_type is None and 'instanceUsageType' in kwargs:
-            instance_usage_type = kwargs['instanceUsageType']
-        if instance_usage_type is None:
-            raise TypeError("Missing 'instance_usage_type' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
-            object_storage_namespace = kwargs['objectStorageNamespace']
-        if object_storage_namespace is None:
-            raise TypeError("Missing 'object_storage_namespace' argument")
-        if service is None:
-            raise TypeError("Missing 'service' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if state_message is None and 'stateMessage' in kwargs:
-            state_message = kwargs['stateMessage']
-        if state_message is None:
-            raise TypeError("Missing 'state_message' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if tenancy_id is None and 'tenancyId' in kwargs:
-            tenancy_id = kwargs['tenancyId']
-        if tenancy_id is None:
-            raise TypeError("Missing 'tenancy_id' argument")
-        if tenancy_name is None and 'tenancyName' in kwargs:
-            tenancy_name = kwargs['tenancyName']
-        if tenancy_name is None:
-            raise TypeError("Missing 'tenancy_name' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if upgrade_schedule is None and 'upgradeSchedule' in kwargs:
-            upgrade_schedule = kwargs['upgradeSchedule']
-        if upgrade_schedule is None:
-            raise TypeError("Missing 'upgrade_schedule' argument")
-        if waf_primary_domain is None and 'wafPrimaryDomain' in kwargs:
-            waf_primary_domain = kwargs['wafPrimaryDomain']
-        if waf_primary_domain is None:
-            raise TypeError("Missing 'waf_primary_domain' argument")
-
-        _setter("add_on_features", add_on_features)
-        _setter("admin_email", admin_email)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("dr_region", dr_region)
-        _setter("freeform_tags", freeform_tags)
-        _setter("guid", guid)
-        _setter("id", id)
-        _setter("idcs_access_token", idcs_access_token)
-        _setter("idcs_tenancy", idcs_tenancy)
-        _setter("instance_access_type", instance_access_type)
-        _setter("instance_license_type", instance_license_type)
-        _setter("instance_usage_type", instance_usage_type)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("name", name)
-        _setter("object_storage_namespace", object_storage_namespace)
-        _setter("service", service)
-        _setter("state", state)
-        _setter("state_message", state_message)
-        _setter("system_tags", system_tags)
-        _setter("tenancy_id", tenancy_id)
-        _setter("tenancy_name", tenancy_name)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("upgrade_schedule", upgrade_schedule)
-        _setter("waf_primary_domain", waf_primary_domain)
+        pulumi.set(__self__, "add_on_features", add_on_features)
+        pulumi.set(__self__, "admin_email", admin_email)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "dr_region", dr_region)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "guid", guid)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "idcs_tenancy", idcs_tenancy)
+        pulumi.set(__self__, "instance_access_type", instance_access_type)
+        pulumi.set(__self__, "instance_license_type", instance_license_type)
+        pulumi.set(__self__, "instance_usage_type", instance_usage_type)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
+        pulumi.set(__self__, "service", service)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_message", state_message)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "tenancy_name", tenancy_name)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "upgrade_schedule", upgrade_schedule)
+        pulumi.set(__self__, "waf_primary_domain", waf_primary_domain)
 
     @property
     @pulumi.getter(name="addOnFeatures")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -32,28 +32,9 @@ class DatasetDatasetFormatDetailsArgs:
         :param pulumi.Input[str] format_type: It defines the format type of text files.
         :param pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs'] text_file_type_metadata: Metadata for files with text content.
         """
-        DatasetDatasetFormatDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            format_type=format_type,
-            text_file_type_metadata=text_file_type_metadata,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             format_type: Optional[pulumi.Input[str]] = None,
-             text_file_type_metadata: Optional[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if format_type is None and 'formatType' in kwargs:
-            format_type = kwargs['formatType']
-        if format_type is None:
-            raise TypeError("Missing 'format_type' argument")
-        if text_file_type_metadata is None and 'textFileTypeMetadata' in kwargs:
-            text_file_type_metadata = kwargs['textFileTypeMetadata']
-
-        _setter("format_type", format_type)
+        pulumi.set(__self__, "format_type", format_type)
         if text_file_type_metadata is not None:
-            _setter("text_file_type_metadata", text_file_type_metadata)
+            pulumi.set(__self__, "text_file_type_metadata", text_file_type_metadata)
 
     @property
     @pulumi.getter(name="formatType")
@@ -97,53 +78,16 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadataArgs:
         :param pulumi.Input[str] escape_character: An escape character.
         :param pulumi.Input[str] line_delimiter: A line delimiter.
         """
-        DatasetDatasetFormatDetailsTextFileTypeMetadataArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_index=column_index,
-            format_type=format_type,
-            column_delimiter=column_delimiter,
-            column_name=column_name,
-            escape_character=escape_character,
-            line_delimiter=line_delimiter,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_index: Optional[pulumi.Input[int]] = None,
-             format_type: Optional[pulumi.Input[str]] = None,
-             column_delimiter: Optional[pulumi.Input[str]] = None,
-             column_name: Optional[pulumi.Input[str]] = None,
-             escape_character: Optional[pulumi.Input[str]] = None,
-             line_delimiter: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_index is None and 'columnIndex' in kwargs:
-            column_index = kwargs['columnIndex']
-        if column_index is None:
-            raise TypeError("Missing 'column_index' argument")
-        if format_type is None and 'formatType' in kwargs:
-            format_type = kwargs['formatType']
-        if format_type is None:
-            raise TypeError("Missing 'format_type' argument")
-        if column_delimiter is None and 'columnDelimiter' in kwargs:
-            column_delimiter = kwargs['columnDelimiter']
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if escape_character is None and 'escapeCharacter' in kwargs:
-            escape_character = kwargs['escapeCharacter']
-        if line_delimiter is None and 'lineDelimiter' in kwargs:
-            line_delimiter = kwargs['lineDelimiter']
-
-        _setter("column_index", column_index)
-        _setter("format_type", format_type)
+        pulumi.set(__self__, "column_index", column_index)
+        pulumi.set(__self__, "format_type", format_type)
         if column_delimiter is not None:
-            _setter("column_delimiter", column_delimiter)
+            pulumi.set(__self__, "column_delimiter", column_delimiter)
         if column_name is not None:
-            _setter("column_name", column_name)
+            pulumi.set(__self__, "column_name", column_name)
         if escape_character is not None:
-            _setter("escape_character", escape_character)
+            pulumi.set(__self__, "escape_character", escape_character)
         if line_delimiter is not None:
-            _setter("line_delimiter", line_delimiter)
+            pulumi.set(__self__, "line_delimiter", line_delimiter)
 
     @property
     @pulumi.getter(name="columnIndex")
@@ -231,36 +175,11 @@ class DatasetDatasetSourceDetailsArgs:
         :param pulumi.Input[str] source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         :param pulumi.Input[str] prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
-        DatasetDatasetSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            namespace=namespace,
-            source_type=source_type,
-            prefix=prefix,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             source_type: Optional[pulumi.Input[str]] = None,
-             prefix: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_type is None:
-            raise TypeError("Missing 'source_type' argument")
-
-        _setter("bucket", bucket)
-        _setter("namespace", namespace)
-        _setter("source_type", source_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "source_type", source_type)
         if prefix is not None:
-            _setter("prefix", prefix)
+            pulumi.set(__self__, "prefix", prefix)
 
     @property
     @pulumi.getter
@@ -320,29 +239,8 @@ class DatasetInitialImportDatasetConfigurationArgs:
         :param pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgs'] import_format: File format details used for importing dataset
         :param pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs'] import_metadata_path: Object storage path for the metadata file
         """
-        DatasetInitialImportDatasetConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            import_format=import_format,
-            import_metadata_path=import_metadata_path,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             import_format: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgs']] = None,
-             import_metadata_path: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if import_format is None and 'importFormat' in kwargs:
-            import_format = kwargs['importFormat']
-        if import_format is None:
-            raise TypeError("Missing 'import_format' argument")
-        if import_metadata_path is None and 'importMetadataPath' in kwargs:
-            import_metadata_path = kwargs['importMetadataPath']
-        if import_metadata_path is None:
-            raise TypeError("Missing 'import_metadata_path' argument")
-
-        _setter("import_format", import_format)
-        _setter("import_metadata_path", import_metadata_path)
+        pulumi.set(__self__, "import_format", import_format)
+        pulumi.set(__self__, "import_metadata_path", import_metadata_path)
 
     @property
     @pulumi.getter(name="importFormat")
@@ -378,24 +276,9 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgs:
         :param pulumi.Input[str] name: An unique name for a label within its dataset.
         :param pulumi.Input[str] version: Version of import format
         """
-        DatasetInitialImportDatasetConfigurationImportFormatArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
@@ -435,37 +318,10 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPathArgs:
         :param pulumi.Input[str] path: Path for the metadata file.
         :param pulumi.Input[str] source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
-        DatasetInitialImportDatasetConfigurationImportMetadataPathArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            namespace=namespace,
-            path=path,
-            source_type=source_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             path: Optional[pulumi.Input[str]] = None,
-             source_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_type is None:
-            raise TypeError("Missing 'source_type' argument")
-
-        _setter("bucket", bucket)
-        _setter("namespace", namespace)
-        _setter("path", path)
-        _setter("source_type", source_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "source_type", source_type)
 
     @property
     @pulumi.getter
@@ -520,13 +376,6 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPathArgs:
 class DatasetInitialRecordGenerationConfigurationArgs:
     def __init__(__self__):
         pass
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        pass
-
 
 
 @pulumi.input_type
@@ -536,20 +385,7 @@ class DatasetLabelSetArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['DatasetLabelSetItemArgs']]] items: An ordered collection of labels that are unique by name.
         """
-        DatasetLabelSetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[pulumi.Input[Sequence[pulumi.Input['DatasetLabelSetItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -571,20 +407,7 @@ class DatasetLabelSetItemArgs:
         """
         :param pulumi.Input[str] name: An unique name for a label within its dataset.
         """
-        DatasetLabelSetItemArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -608,29 +431,10 @@ class GetAnnotationFormatsFilterArgs:
         """
         :param str name: A unique name for the target AnnotationFormat for the Dataset.
         """
-        GetAnnotationFormatsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -672,29 +476,10 @@ class GetDatasetsFilterArgs:
         """
         :param str name: An unique name for a label within its dataset.
         """
-        GetDatasetsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

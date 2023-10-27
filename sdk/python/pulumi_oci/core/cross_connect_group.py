@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,52 +31,17 @@ class CrossConnectGroupArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         """
-        CrossConnectGroupArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            customer_reference_name=customer_reference_name,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            macsec_properties=macsec_properties,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             customer_reference_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             macsec_properties: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if customer_reference_name is None and 'customerReferenceName' in kwargs:
-            customer_reference_name = kwargs['customerReferenceName']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if macsec_properties is None and 'macsecProperties' in kwargs:
-            macsec_properties = kwargs['macsecProperties']
-
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if customer_reference_name is not None:
-            _setter("customer_reference_name", customer_reference_name)
+            pulumi.set(__self__, "customer_reference_name", customer_reference_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if macsec_properties is not None:
-            _setter("macsec_properties", macsec_properties)
+            pulumi.set(__self__, "macsec_properties", macsec_properties)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -181,73 +146,26 @@ class _CrossConnectGroupState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
-        _CrossConnectGroupState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            customer_reference_name=customer_reference_name,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            macsec_properties=macsec_properties,
-            oci_logical_device_name=oci_logical_device_name,
-            oci_physical_device_name=oci_physical_device_name,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             customer_reference_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             macsec_properties: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']] = None,
-             oci_logical_device_name: Optional[pulumi.Input[str]] = None,
-             oci_physical_device_name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if customer_reference_name is None and 'customerReferenceName' in kwargs:
-            customer_reference_name = kwargs['customerReferenceName']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if macsec_properties is None and 'macsecProperties' in kwargs:
-            macsec_properties = kwargs['macsecProperties']
-        if oci_logical_device_name is None and 'ociLogicalDeviceName' in kwargs:
-            oci_logical_device_name = kwargs['ociLogicalDeviceName']
-        if oci_physical_device_name is None and 'ociPhysicalDeviceName' in kwargs:
-            oci_physical_device_name = kwargs['ociPhysicalDeviceName']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if customer_reference_name is not None:
-            _setter("customer_reference_name", customer_reference_name)
+            pulumi.set(__self__, "customer_reference_name", customer_reference_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if macsec_properties is not None:
-            _setter("macsec_properties", macsec_properties)
+            pulumi.set(__self__, "macsec_properties", macsec_properties)
         if oci_logical_device_name is not None:
-            _setter("oci_logical_device_name", oci_logical_device_name)
+            pulumi.set(__self__, "oci_logical_device_name", oci_logical_device_name)
         if oci_physical_device_name is not None:
-            _setter("oci_physical_device_name", oci_physical_device_name)
+            pulumi.set(__self__, "oci_physical_device_name", oci_physical_device_name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -519,10 +437,6 @@ class CrossConnectGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            CrossConnectGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -550,7 +464,6 @@ class CrossConnectGroup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            macsec_properties = _utilities.configure(macsec_properties, CrossConnectGroupMacsecPropertiesArgs, True)
             __props__.__dict__["macsec_properties"] = macsec_properties
             __props__.__dict__["oci_logical_device_name"] = None
             __props__.__dict__["oci_physical_device_name"] = None

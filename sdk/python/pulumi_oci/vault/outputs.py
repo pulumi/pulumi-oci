@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -51,35 +51,12 @@ class SecretSecretContent(dict):
         :param str name: (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param str stage: (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
         """
-        SecretSecretContent._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            content_type=content_type,
-            name=name,
-            stage=stage,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             content_type: Optional[str] = None,
-             name: Optional[str] = None,
-             stage: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if content_type is None and 'contentType' in kwargs:
-            content_type = kwargs['contentType']
-        if content_type is None:
-            raise TypeError("Missing 'content_type' argument")
-
-        _setter("content", content)
-        _setter("content_type", content_type)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_type", content_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if stage is not None:
-            _setter("stage", stage)
+            pulumi.set(__self__, "stage", stage)
 
     @property
     @pulumi.getter
@@ -154,46 +131,15 @@ class SecretSecretRule(dict):
         :param str secret_version_expiry_interval: (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         :param str time_of_absolute_expiry: (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
-        SecretSecretRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            rule_type=rule_type,
-            is_enforced_on_deleted_secret_versions=is_enforced_on_deleted_secret_versions,
-            is_secret_content_retrieval_blocked_on_expiry=is_secret_content_retrieval_blocked_on_expiry,
-            secret_version_expiry_interval=secret_version_expiry_interval,
-            time_of_absolute_expiry=time_of_absolute_expiry,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             rule_type: Optional[str] = None,
-             is_enforced_on_deleted_secret_versions: Optional[bool] = None,
-             is_secret_content_retrieval_blocked_on_expiry: Optional[bool] = None,
-             secret_version_expiry_interval: Optional[str] = None,
-             time_of_absolute_expiry: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if rule_type is None and 'ruleType' in kwargs:
-            rule_type = kwargs['ruleType']
-        if rule_type is None:
-            raise TypeError("Missing 'rule_type' argument")
-        if is_enforced_on_deleted_secret_versions is None and 'isEnforcedOnDeletedSecretVersions' in kwargs:
-            is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
-        if is_secret_content_retrieval_blocked_on_expiry is None and 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
-            is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
-        if secret_version_expiry_interval is None and 'secretVersionExpiryInterval' in kwargs:
-            secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
-        if time_of_absolute_expiry is None and 'timeOfAbsoluteExpiry' in kwargs:
-            time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
-
-        _setter("rule_type", rule_type)
+        pulumi.set(__self__, "rule_type", rule_type)
         if is_enforced_on_deleted_secret_versions is not None:
-            _setter("is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
+            pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
         if is_secret_content_retrieval_blocked_on_expiry is not None:
-            _setter("is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
+            pulumi.set(__self__, "is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
         if secret_version_expiry_interval is not None:
-            _setter("secret_version_expiry_interval", secret_version_expiry_interval)
+            pulumi.set(__self__, "secret_version_expiry_interval", secret_version_expiry_interval)
         if time_of_absolute_expiry is not None:
-            _setter("time_of_absolute_expiry", time_of_absolute_expiry)
+            pulumi.set(__self__, "time_of_absolute_expiry", time_of_absolute_expiry)
 
     @property
     @pulumi.getter(name="ruleType")
@@ -243,37 +189,10 @@ class GetSecretSecretContentResult(dict):
                  content_type: str,
                  name: str,
                  stage: str):
-        GetSecretSecretContentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            content_type=content_type,
-            name=name,
-            stage=stage,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             content_type: Optional[str] = None,
-             name: Optional[str] = None,
-             stage: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if content_type is None and 'contentType' in kwargs:
-            content_type = kwargs['contentType']
-        if content_type is None:
-            raise TypeError("Missing 'content_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if stage is None:
-            raise TypeError("Missing 'stage' argument")
-
-        _setter("content", content)
-        _setter("content_type", content_type)
-        _setter("name", name)
-        _setter("stage", stage)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "stage", stage)
 
     @property
     @pulumi.getter
@@ -311,50 +230,11 @@ class GetSecretSecretRuleResult(dict):
         :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         :param str time_of_absolute_expiry: An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
-        GetSecretSecretRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enforced_on_deleted_secret_versions=is_enforced_on_deleted_secret_versions,
-            is_secret_content_retrieval_blocked_on_expiry=is_secret_content_retrieval_blocked_on_expiry,
-            rule_type=rule_type,
-            secret_version_expiry_interval=secret_version_expiry_interval,
-            time_of_absolute_expiry=time_of_absolute_expiry,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enforced_on_deleted_secret_versions: Optional[bool] = None,
-             is_secret_content_retrieval_blocked_on_expiry: Optional[bool] = None,
-             rule_type: Optional[str] = None,
-             secret_version_expiry_interval: Optional[str] = None,
-             time_of_absolute_expiry: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enforced_on_deleted_secret_versions is None and 'isEnforcedOnDeletedSecretVersions' in kwargs:
-            is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
-        if is_enforced_on_deleted_secret_versions is None:
-            raise TypeError("Missing 'is_enforced_on_deleted_secret_versions' argument")
-        if is_secret_content_retrieval_blocked_on_expiry is None and 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
-            is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
-        if is_secret_content_retrieval_blocked_on_expiry is None:
-            raise TypeError("Missing 'is_secret_content_retrieval_blocked_on_expiry' argument")
-        if rule_type is None and 'ruleType' in kwargs:
-            rule_type = kwargs['ruleType']
-        if rule_type is None:
-            raise TypeError("Missing 'rule_type' argument")
-        if secret_version_expiry_interval is None and 'secretVersionExpiryInterval' in kwargs:
-            secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
-        if secret_version_expiry_interval is None:
-            raise TypeError("Missing 'secret_version_expiry_interval' argument")
-        if time_of_absolute_expiry is None and 'timeOfAbsoluteExpiry' in kwargs:
-            time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
-        if time_of_absolute_expiry is None:
-            raise TypeError("Missing 'time_of_absolute_expiry' argument")
-
-        _setter("is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
-        _setter("is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
-        _setter("rule_type", rule_type)
-        _setter("secret_version_expiry_interval", secret_version_expiry_interval)
-        _setter("time_of_absolute_expiry", time_of_absolute_expiry)
+        pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
+        pulumi.set(__self__, "is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "secret_version_expiry_interval", secret_version_expiry_interval)
+        pulumi.set(__self__, "time_of_absolute_expiry", time_of_absolute_expiry)
 
     @property
     @pulumi.getter(name="isEnforcedOnDeletedSecretVersions")
@@ -406,29 +286,10 @@ class GetSecretsFilterResult(dict):
         """
         :param str name: The secret name.
         """
-        GetSecretsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -487,126 +348,23 @@ class GetSecretsSecretResult(dict):
         :param str time_of_deletion: An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str vault_id: The OCID of the vault.
         """
-        GetSecretsSecretResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            current_version_number=current_version_number,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            id=id,
-            key_id=key_id,
-            lifecycle_details=lifecycle_details,
-            metadata=metadata,
-            secret_contents=secret_contents,
-            secret_name=secret_name,
-            secret_rules=secret_rules,
-            state=state,
-            time_created=time_created,
-            time_of_current_version_expiry=time_of_current_version_expiry,
-            time_of_deletion=time_of_deletion,
-            vault_id=vault_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             current_version_number: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             key_id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             metadata: Optional[Mapping[str, Any]] = None,
-             secret_contents: Optional[Sequence['outputs.GetSecretsSecretSecretContentResult']] = None,
-             secret_name: Optional[str] = None,
-             secret_rules: Optional[Sequence['outputs.GetSecretsSecretSecretRuleResult']] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_of_current_version_expiry: Optional[str] = None,
-             time_of_deletion: Optional[str] = None,
-             vault_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if current_version_number is None and 'currentVersionNumber' in kwargs:
-            current_version_number = kwargs['currentVersionNumber']
-        if current_version_number is None:
-            raise TypeError("Missing 'current_version_number' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_id is None:
-            raise TypeError("Missing 'key_id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if metadata is None:
-            raise TypeError("Missing 'metadata' argument")
-        if secret_contents is None and 'secretContents' in kwargs:
-            secret_contents = kwargs['secretContents']
-        if secret_contents is None:
-            raise TypeError("Missing 'secret_contents' argument")
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-        if secret_name is None:
-            raise TypeError("Missing 'secret_name' argument")
-        if secret_rules is None and 'secretRules' in kwargs:
-            secret_rules = kwargs['secretRules']
-        if secret_rules is None:
-            raise TypeError("Missing 'secret_rules' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_of_current_version_expiry is None and 'timeOfCurrentVersionExpiry' in kwargs:
-            time_of_current_version_expiry = kwargs['timeOfCurrentVersionExpiry']
-        if time_of_current_version_expiry is None:
-            raise TypeError("Missing 'time_of_current_version_expiry' argument")
-        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
-            time_of_deletion = kwargs['timeOfDeletion']
-        if time_of_deletion is None:
-            raise TypeError("Missing 'time_of_deletion' argument")
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-        if vault_id is None:
-            raise TypeError("Missing 'vault_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("current_version_number", current_version_number)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("key_id", key_id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("metadata", metadata)
-        _setter("secret_contents", secret_contents)
-        _setter("secret_name", secret_name)
-        _setter("secret_rules", secret_rules)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_of_current_version_expiry", time_of_current_version_expiry)
-        _setter("time_of_deletion", time_of_deletion)
-        _setter("vault_id", vault_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_version_number", current_version_number)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "secret_contents", secret_contents)
+        pulumi.set(__self__, "secret_name", secret_name)
+        pulumi.set(__self__, "secret_rules", secret_rules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_current_version_expiry", time_of_current_version_expiry)
+        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -752,37 +510,10 @@ class GetSecretsSecretSecretContentResult(dict):
         """
         :param str name: The secret name.
         """
-        GetSecretsSecretSecretContentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            content_type=content_type,
-            name=name,
-            stage=stage,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             content_type: Optional[str] = None,
-             name: Optional[str] = None,
-             stage: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if content_type is None and 'contentType' in kwargs:
-            content_type = kwargs['contentType']
-        if content_type is None:
-            raise TypeError("Missing 'content_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if stage is None:
-            raise TypeError("Missing 'stage' argument")
-
-        _setter("content", content)
-        _setter("content_type", content_type)
-        _setter("name", name)
-        _setter("stage", stage)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "stage", stage)
 
     @property
     @pulumi.getter
@@ -823,50 +554,11 @@ class GetSecretsSecretSecretRuleResult(dict):
         :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
         :param str time_of_absolute_expiry: An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
-        GetSecretsSecretSecretRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enforced_on_deleted_secret_versions=is_enforced_on_deleted_secret_versions,
-            is_secret_content_retrieval_blocked_on_expiry=is_secret_content_retrieval_blocked_on_expiry,
-            rule_type=rule_type,
-            secret_version_expiry_interval=secret_version_expiry_interval,
-            time_of_absolute_expiry=time_of_absolute_expiry,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enforced_on_deleted_secret_versions: Optional[bool] = None,
-             is_secret_content_retrieval_blocked_on_expiry: Optional[bool] = None,
-             rule_type: Optional[str] = None,
-             secret_version_expiry_interval: Optional[str] = None,
-             time_of_absolute_expiry: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enforced_on_deleted_secret_versions is None and 'isEnforcedOnDeletedSecretVersions' in kwargs:
-            is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
-        if is_enforced_on_deleted_secret_versions is None:
-            raise TypeError("Missing 'is_enforced_on_deleted_secret_versions' argument")
-        if is_secret_content_retrieval_blocked_on_expiry is None and 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
-            is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
-        if is_secret_content_retrieval_blocked_on_expiry is None:
-            raise TypeError("Missing 'is_secret_content_retrieval_blocked_on_expiry' argument")
-        if rule_type is None and 'ruleType' in kwargs:
-            rule_type = kwargs['ruleType']
-        if rule_type is None:
-            raise TypeError("Missing 'rule_type' argument")
-        if secret_version_expiry_interval is None and 'secretVersionExpiryInterval' in kwargs:
-            secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
-        if secret_version_expiry_interval is None:
-            raise TypeError("Missing 'secret_version_expiry_interval' argument")
-        if time_of_absolute_expiry is None and 'timeOfAbsoluteExpiry' in kwargs:
-            time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
-        if time_of_absolute_expiry is None:
-            raise TypeError("Missing 'time_of_absolute_expiry' argument")
-
-        _setter("is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
-        _setter("is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
-        _setter("rule_type", rule_type)
-        _setter("secret_version_expiry_interval", secret_version_expiry_interval)
-        _setter("time_of_absolute_expiry", time_of_absolute_expiry)
+        pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
+        pulumi.set(__self__, "is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "secret_version_expiry_interval", secret_version_expiry_interval)
+        pulumi.set(__self__, "time_of_absolute_expiry", time_of_absolute_expiry)
 
     @property
     @pulumi.getter(name="isEnforcedOnDeletedSecretVersions")

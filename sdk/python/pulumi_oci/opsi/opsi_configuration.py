@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,86 +47,29 @@ class OpsiConfigurationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        OpsiConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            opsi_config_type=opsi_config_type,
-            compartment_id=compartment_id,
-            config_item_custom_statuses=config_item_custom_statuses,
-            config_item_fields=config_item_fields,
-            config_items=config_items,
-            config_items_applicable_contexts=config_items_applicable_contexts,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            opsi_config_fields=opsi_config_fields,
-            system_tags=system_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             opsi_config_type: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             config_item_custom_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             config_item_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             config_items: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemArgs']]]] = None,
-             config_items_applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opsi_config_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if opsi_config_type is None and 'opsiConfigType' in kwargs:
-            opsi_config_type = kwargs['opsiConfigType']
-        if opsi_config_type is None:
-            raise TypeError("Missing 'opsi_config_type' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if config_item_custom_statuses is None and 'configItemCustomStatuses' in kwargs:
-            config_item_custom_statuses = kwargs['configItemCustomStatuses']
-        if config_item_fields is None and 'configItemFields' in kwargs:
-            config_item_fields = kwargs['configItemFields']
-        if config_items is None and 'configItems' in kwargs:
-            config_items = kwargs['configItems']
-        if config_items_applicable_contexts is None and 'configItemsApplicableContexts' in kwargs:
-            config_items_applicable_contexts = kwargs['configItemsApplicableContexts']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if opsi_config_fields is None and 'opsiConfigFields' in kwargs:
-            opsi_config_fields = kwargs['opsiConfigFields']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-
-        _setter("opsi_config_type", opsi_config_type)
+        pulumi.set(__self__, "opsi_config_type", opsi_config_type)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if config_item_custom_statuses is not None:
-            _setter("config_item_custom_statuses", config_item_custom_statuses)
+            pulumi.set(__self__, "config_item_custom_statuses", config_item_custom_statuses)
         if config_item_fields is not None:
-            _setter("config_item_fields", config_item_fields)
+            pulumi.set(__self__, "config_item_fields", config_item_fields)
         if config_items is not None:
-            _setter("config_items", config_items)
+            pulumi.set(__self__, "config_items", config_items)
         if config_items_applicable_contexts is not None:
-            _setter("config_items_applicable_contexts", config_items_applicable_contexts)
+            pulumi.set(__self__, "config_items_applicable_contexts", config_items_applicable_contexts)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if opsi_config_fields is not None:
-            _setter("opsi_config_fields", opsi_config_fields)
+            pulumi.set(__self__, "opsi_config_fields", opsi_config_fields)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @property
     @pulumi.getter(name="opsiConfigType")
@@ -319,107 +262,38 @@ class _OpsiConfigurationState:
         :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
-        _OpsiConfigurationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            config_item_custom_statuses=config_item_custom_statuses,
-            config_item_fields=config_item_fields,
-            config_items=config_items,
-            config_items_applicable_contexts=config_items_applicable_contexts,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            opsi_config_fields=opsi_config_fields,
-            opsi_config_type=opsi_config_type,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             config_item_custom_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             config_item_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             config_items: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemArgs']]]] = None,
-             config_items_applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             opsi_config_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opsi_config_type: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if config_item_custom_statuses is None and 'configItemCustomStatuses' in kwargs:
-            config_item_custom_statuses = kwargs['configItemCustomStatuses']
-        if config_item_fields is None and 'configItemFields' in kwargs:
-            config_item_fields = kwargs['configItemFields']
-        if config_items is None and 'configItems' in kwargs:
-            config_items = kwargs['configItems']
-        if config_items_applicable_contexts is None and 'configItemsApplicableContexts' in kwargs:
-            config_items_applicable_contexts = kwargs['configItemsApplicableContexts']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if opsi_config_fields is None and 'opsiConfigFields' in kwargs:
-            opsi_config_fields = kwargs['opsiConfigFields']
-        if opsi_config_type is None and 'opsiConfigType' in kwargs:
-            opsi_config_type = kwargs['opsiConfigType']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if config_item_custom_statuses is not None:
-            _setter("config_item_custom_statuses", config_item_custom_statuses)
+            pulumi.set(__self__, "config_item_custom_statuses", config_item_custom_statuses)
         if config_item_fields is not None:
-            _setter("config_item_fields", config_item_fields)
+            pulumi.set(__self__, "config_item_fields", config_item_fields)
         if config_items is not None:
-            _setter("config_items", config_items)
+            pulumi.set(__self__, "config_items", config_items)
         if config_items_applicable_contexts is not None:
-            _setter("config_items_applicable_contexts", config_items_applicable_contexts)
+            pulumi.set(__self__, "config_items_applicable_contexts", config_items_applicable_contexts)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if opsi_config_fields is not None:
-            _setter("opsi_config_fields", opsi_config_fields)
+            pulumi.set(__self__, "opsi_config_fields", opsi_config_fields)
         if opsi_config_type is not None:
-            _setter("opsi_config_type", opsi_config_type)
+            pulumi.set(__self__, "opsi_config_type", opsi_config_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -755,10 +629,6 @@ class OpsiConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            OpsiConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

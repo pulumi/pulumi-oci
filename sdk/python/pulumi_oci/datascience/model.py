@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -50,99 +50,30 @@ class ModelArgs:
         :param pulumi.Input[str] output_schema: Output schema file content in String format
         :param pulumi.Input[str] state: The state of the model.
         """
-        ModelArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            artifact_content_length=artifact_content_length,
-            compartment_id=compartment_id,
-            model_artifact=model_artifact,
-            project_id=project_id,
-            artifact_content_disposition=artifact_content_disposition,
-            custom_metadata_lists=custom_metadata_lists,
-            defined_metadata_lists=defined_metadata_lists,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            input_schema=input_schema,
-            output_schema=output_schema,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             artifact_content_length: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             model_artifact: Optional[pulumi.Input[str]] = None,
-             project_id: Optional[pulumi.Input[str]] = None,
-             artifact_content_disposition: Optional[pulumi.Input[str]] = None,
-             custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
-             defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             input_schema: Optional[pulumi.Input[str]] = None,
-             output_schema: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if artifact_content_length is None and 'artifactContentLength' in kwargs:
-            artifact_content_length = kwargs['artifactContentLength']
-        if artifact_content_length is None:
-            raise TypeError("Missing 'artifact_content_length' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if model_artifact is None and 'modelArtifact' in kwargs:
-            model_artifact = kwargs['modelArtifact']
-        if model_artifact is None:
-            raise TypeError("Missing 'model_artifact' argument")
-        if project_id is None and 'projectId' in kwargs:
-            project_id = kwargs['projectId']
-        if project_id is None:
-            raise TypeError("Missing 'project_id' argument")
-        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
-            artifact_content_disposition = kwargs['artifactContentDisposition']
-        if custom_metadata_lists is None and 'customMetadataLists' in kwargs:
-            custom_metadata_lists = kwargs['customMetadataLists']
-        if defined_metadata_lists is None and 'definedMetadataLists' in kwargs:
-            defined_metadata_lists = kwargs['definedMetadataLists']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if input_schema is None and 'inputSchema' in kwargs:
-            input_schema = kwargs['inputSchema']
-        if output_schema is None and 'outputSchema' in kwargs:
-            output_schema = kwargs['outputSchema']
-
-        _setter("artifact_content_length", artifact_content_length)
-        _setter("compartment_id", compartment_id)
-        _setter("model_artifact", model_artifact)
-        _setter("project_id", project_id)
+        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "model_artifact", model_artifact)
+        pulumi.set(__self__, "project_id", project_id)
         if artifact_content_disposition is not None:
-            _setter("artifact_content_disposition", artifact_content_disposition)
+            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
         if custom_metadata_lists is not None:
-            _setter("custom_metadata_lists", custom_metadata_lists)
+            pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
         if defined_metadata_lists is not None:
-            _setter("defined_metadata_lists", defined_metadata_lists)
+            pulumi.set(__self__, "defined_metadata_lists", defined_metadata_lists)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if input_schema is not None:
-            _setter("input_schema", input_schema)
+            pulumi.set(__self__, "input_schema", input_schema)
         if output_schema is not None:
-            _setter("output_schema", output_schema)
+            pulumi.set(__self__, "output_schema", output_schema)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="artifactContentLength")
@@ -360,125 +291,44 @@ class _ModelState:
         :param pulumi.Input[str] state: The state of the model.
         :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        _ModelState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            artifact_content_disposition=artifact_content_disposition,
-            artifact_content_length=artifact_content_length,
-            artifact_content_md5=artifact_content_md5,
-            artifact_last_modified=artifact_last_modified,
-            compartment_id=compartment_id,
-            created_by=created_by,
-            custom_metadata_lists=custom_metadata_lists,
-            defined_metadata_lists=defined_metadata_lists,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            empty_model=empty_model,
-            freeform_tags=freeform_tags,
-            input_schema=input_schema,
-            model_artifact=model_artifact,
-            output_schema=output_schema,
-            project_id=project_id,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             artifact_content_disposition: Optional[pulumi.Input[str]] = None,
-             artifact_content_length: Optional[pulumi.Input[str]] = None,
-             artifact_content_md5: Optional[pulumi.Input[str]] = None,
-             artifact_last_modified: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             created_by: Optional[pulumi.Input[str]] = None,
-             custom_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]]] = None,
-             defined_metadata_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDefinedMetadataListArgs']]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             empty_model: Optional[pulumi.Input[bool]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             input_schema: Optional[pulumi.Input[str]] = None,
-             model_artifact: Optional[pulumi.Input[str]] = None,
-             output_schema: Optional[pulumi.Input[str]] = None,
-             project_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
-            artifact_content_disposition = kwargs['artifactContentDisposition']
-        if artifact_content_length is None and 'artifactContentLength' in kwargs:
-            artifact_content_length = kwargs['artifactContentLength']
-        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
-            artifact_content_md5 = kwargs['artifactContentMd5']
-        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
-            artifact_last_modified = kwargs['artifactLastModified']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if custom_metadata_lists is None and 'customMetadataLists' in kwargs:
-            custom_metadata_lists = kwargs['customMetadataLists']
-        if defined_metadata_lists is None and 'definedMetadataLists' in kwargs:
-            defined_metadata_lists = kwargs['definedMetadataLists']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if empty_model is None and 'emptyModel' in kwargs:
-            empty_model = kwargs['emptyModel']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if input_schema is None and 'inputSchema' in kwargs:
-            input_schema = kwargs['inputSchema']
-        if model_artifact is None and 'modelArtifact' in kwargs:
-            model_artifact = kwargs['modelArtifact']
-        if output_schema is None and 'outputSchema' in kwargs:
-            output_schema = kwargs['outputSchema']
-        if project_id is None and 'projectId' in kwargs:
-            project_id = kwargs['projectId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if artifact_content_disposition is not None:
-            _setter("artifact_content_disposition", artifact_content_disposition)
+            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
         if artifact_content_length is not None:
-            _setter("artifact_content_length", artifact_content_length)
+            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
         if artifact_content_md5 is not None:
-            _setter("artifact_content_md5", artifact_content_md5)
+            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
         if artifact_last_modified is not None:
-            _setter("artifact_last_modified", artifact_last_modified)
+            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if created_by is not None:
-            _setter("created_by", created_by)
+            pulumi.set(__self__, "created_by", created_by)
         if custom_metadata_lists is not None:
-            _setter("custom_metadata_lists", custom_metadata_lists)
+            pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
         if defined_metadata_lists is not None:
-            _setter("defined_metadata_lists", defined_metadata_lists)
+            pulumi.set(__self__, "defined_metadata_lists", defined_metadata_lists)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if empty_model is not None:
-            _setter("empty_model", empty_model)
+            pulumi.set(__self__, "empty_model", empty_model)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if input_schema is not None:
-            _setter("input_schema", input_schema)
+            pulumi.set(__self__, "input_schema", input_schema)
         if model_artifact is not None:
-            _setter("model_artifact", model_artifact)
+            pulumi.set(__self__, "model_artifact", model_artifact)
         if output_schema is not None:
-            _setter("output_schema", output_schema)
+            pulumi.set(__self__, "output_schema", output_schema)
         if project_id is not None:
-            _setter("project_id", project_id)
+            pulumi.set(__self__, "project_id", project_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -851,10 +701,6 @@ class Model(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ModelArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

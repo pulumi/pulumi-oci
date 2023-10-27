@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -47,22 +47,7 @@ class SessionKeyDetails(dict):
         """
         :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
         """
-        SessionKeyDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            public_key_content=public_key_content,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             public_key_content: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if public_key_content is None and 'publicKeyContent' in kwargs:
-            public_key_content = kwargs['publicKeyContent']
-        if public_key_content is None:
-            raise TypeError("Missing 'public_key_content' argument")
-
-        _setter("public_key_content", public_key_content)
+        pulumi.set(__self__, "public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
@@ -125,58 +110,19 @@ class SessionTargetResourceDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        SessionTargetResourceDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            session_type=session_type,
-            target_resource_display_name=target_resource_display_name,
-            target_resource_fqdn=target_resource_fqdn,
-            target_resource_id=target_resource_id,
-            target_resource_operating_system_user_name=target_resource_operating_system_user_name,
-            target_resource_port=target_resource_port,
-            target_resource_private_ip_address=target_resource_private_ip_address,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             session_type: Optional[str] = None,
-             target_resource_display_name: Optional[str] = None,
-             target_resource_fqdn: Optional[str] = None,
-             target_resource_id: Optional[str] = None,
-             target_resource_operating_system_user_name: Optional[str] = None,
-             target_resource_port: Optional[int] = None,
-             target_resource_private_ip_address: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if session_type is None and 'sessionType' in kwargs:
-            session_type = kwargs['sessionType']
-        if session_type is None:
-            raise TypeError("Missing 'session_type' argument")
-        if target_resource_display_name is None and 'targetResourceDisplayName' in kwargs:
-            target_resource_display_name = kwargs['targetResourceDisplayName']
-        if target_resource_fqdn is None and 'targetResourceFqdn' in kwargs:
-            target_resource_fqdn = kwargs['targetResourceFqdn']
-        if target_resource_id is None and 'targetResourceId' in kwargs:
-            target_resource_id = kwargs['targetResourceId']
-        if target_resource_operating_system_user_name is None and 'targetResourceOperatingSystemUserName' in kwargs:
-            target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
-        if target_resource_port is None and 'targetResourcePort' in kwargs:
-            target_resource_port = kwargs['targetResourcePort']
-        if target_resource_private_ip_address is None and 'targetResourcePrivateIpAddress' in kwargs:
-            target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
-
-        _setter("session_type", session_type)
+        pulumi.set(__self__, "session_type", session_type)
         if target_resource_display_name is not None:
-            _setter("target_resource_display_name", target_resource_display_name)
+            pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
         if target_resource_fqdn is not None:
-            _setter("target_resource_fqdn", target_resource_fqdn)
+            pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
         if target_resource_id is not None:
-            _setter("target_resource_id", target_resource_id)
+            pulumi.set(__self__, "target_resource_id", target_resource_id)
         if target_resource_operating_system_user_name is not None:
-            _setter("target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+            pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
         if target_resource_port is not None:
-            _setter("target_resource_port", target_resource_port)
+            pulumi.set(__self__, "target_resource_port", target_resource_port)
         if target_resource_private_ip_address is not None:
-            _setter("target_resource_private_ip_address", target_resource_private_ip_address)
+            pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")
@@ -284,149 +230,26 @@ class GetBastionsBastionResult(dict):
         :param str time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param str time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
-        GetBastionsBastionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bastion_type=bastion_type,
-            client_cidr_block_allow_lists=client_cidr_block_allow_lists,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            dns_proxy_status=dns_proxy_status,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            max_session_ttl_in_seconds=max_session_ttl_in_seconds,
-            max_sessions_allowed=max_sessions_allowed,
-            name=name,
-            phone_book_entry=phone_book_entry,
-            private_endpoint_ip_address=private_endpoint_ip_address,
-            state=state,
-            static_jump_host_ip_addresses=static_jump_host_ip_addresses,
-            system_tags=system_tags,
-            target_subnet_id=target_subnet_id,
-            target_vcn_id=target_vcn_id,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bastion_type: Optional[str] = None,
-             client_cidr_block_allow_lists: Optional[Sequence[str]] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             dns_proxy_status: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             max_session_ttl_in_seconds: Optional[int] = None,
-             max_sessions_allowed: Optional[int] = None,
-             name: Optional[str] = None,
-             phone_book_entry: Optional[str] = None,
-             private_endpoint_ip_address: Optional[str] = None,
-             state: Optional[str] = None,
-             static_jump_host_ip_addresses: Optional[Sequence[str]] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_subnet_id: Optional[str] = None,
-             target_vcn_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bastion_type is None and 'bastionType' in kwargs:
-            bastion_type = kwargs['bastionType']
-        if bastion_type is None:
-            raise TypeError("Missing 'bastion_type' argument")
-        if client_cidr_block_allow_lists is None and 'clientCidrBlockAllowLists' in kwargs:
-            client_cidr_block_allow_lists = kwargs['clientCidrBlockAllowLists']
-        if client_cidr_block_allow_lists is None:
-            raise TypeError("Missing 'client_cidr_block_allow_lists' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if dns_proxy_status is None and 'dnsProxyStatus' in kwargs:
-            dns_proxy_status = kwargs['dnsProxyStatus']
-        if dns_proxy_status is None:
-            raise TypeError("Missing 'dns_proxy_status' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if max_session_ttl_in_seconds is None and 'maxSessionTtlInSeconds' in kwargs:
-            max_session_ttl_in_seconds = kwargs['maxSessionTtlInSeconds']
-        if max_session_ttl_in_seconds is None:
-            raise TypeError("Missing 'max_session_ttl_in_seconds' argument")
-        if max_sessions_allowed is None and 'maxSessionsAllowed' in kwargs:
-            max_sessions_allowed = kwargs['maxSessionsAllowed']
-        if max_sessions_allowed is None:
-            raise TypeError("Missing 'max_sessions_allowed' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if phone_book_entry is None and 'phoneBookEntry' in kwargs:
-            phone_book_entry = kwargs['phoneBookEntry']
-        if phone_book_entry is None:
-            raise TypeError("Missing 'phone_book_entry' argument")
-        if private_endpoint_ip_address is None and 'privateEndpointIpAddress' in kwargs:
-            private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
-        if private_endpoint_ip_address is None:
-            raise TypeError("Missing 'private_endpoint_ip_address' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if static_jump_host_ip_addresses is None and 'staticJumpHostIpAddresses' in kwargs:
-            static_jump_host_ip_addresses = kwargs['staticJumpHostIpAddresses']
-        if static_jump_host_ip_addresses is None:
-            raise TypeError("Missing 'static_jump_host_ip_addresses' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_subnet_id is None and 'targetSubnetId' in kwargs:
-            target_subnet_id = kwargs['targetSubnetId']
-        if target_subnet_id is None:
-            raise TypeError("Missing 'target_subnet_id' argument")
-        if target_vcn_id is None and 'targetVcnId' in kwargs:
-            target_vcn_id = kwargs['targetVcnId']
-        if target_vcn_id is None:
-            raise TypeError("Missing 'target_vcn_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("bastion_type", bastion_type)
-        _setter("client_cidr_block_allow_lists", client_cidr_block_allow_lists)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("dns_proxy_status", dns_proxy_status)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("max_session_ttl_in_seconds", max_session_ttl_in_seconds)
-        _setter("max_sessions_allowed", max_sessions_allowed)
-        _setter("name", name)
-        _setter("phone_book_entry", phone_book_entry)
-        _setter("private_endpoint_ip_address", private_endpoint_ip_address)
-        _setter("state", state)
-        _setter("static_jump_host_ip_addresses", static_jump_host_ip_addresses)
-        _setter("system_tags", system_tags)
-        _setter("target_subnet_id", target_subnet_id)
-        _setter("target_vcn_id", target_vcn_id)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "bastion_type", bastion_type)
+        pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "max_session_ttl_in_seconds", max_session_ttl_in_seconds)
+        pulumi.set(__self__, "max_sessions_allowed", max_sessions_allowed)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "phone_book_entry", phone_book_entry)
+        pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_subnet_id", target_subnet_id)
+        pulumi.set(__self__, "target_vcn_id", target_vcn_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionType")
@@ -598,29 +421,10 @@ class GetBastionsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetBastionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -648,22 +452,7 @@ class GetSessionKeyDetailResult(dict):
         """
         :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
         """
-        GetSessionKeyDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            public_key_content=public_key_content,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             public_key_content: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if public_key_content is None and 'publicKeyContent' in kwargs:
-            public_key_content = kwargs['publicKeyContent']
-        if public_key_content is None:
-            raise TypeError("Missing 'public_key_content' argument")
-
-        _setter("public_key_content", public_key_content)
+        pulumi.set(__self__, "public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
@@ -693,64 +482,13 @@ class GetSessionTargetResourceDetailResult(dict):
         :param int target_resource_port: The port number to connect to on the target resource.
         :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
         """
-        GetSessionTargetResourceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            session_type=session_type,
-            target_resource_display_name=target_resource_display_name,
-            target_resource_fqdn=target_resource_fqdn,
-            target_resource_id=target_resource_id,
-            target_resource_operating_system_user_name=target_resource_operating_system_user_name,
-            target_resource_port=target_resource_port,
-            target_resource_private_ip_address=target_resource_private_ip_address,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             session_type: Optional[str] = None,
-             target_resource_display_name: Optional[str] = None,
-             target_resource_fqdn: Optional[str] = None,
-             target_resource_id: Optional[str] = None,
-             target_resource_operating_system_user_name: Optional[str] = None,
-             target_resource_port: Optional[int] = None,
-             target_resource_private_ip_address: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if session_type is None and 'sessionType' in kwargs:
-            session_type = kwargs['sessionType']
-        if session_type is None:
-            raise TypeError("Missing 'session_type' argument")
-        if target_resource_display_name is None and 'targetResourceDisplayName' in kwargs:
-            target_resource_display_name = kwargs['targetResourceDisplayName']
-        if target_resource_display_name is None:
-            raise TypeError("Missing 'target_resource_display_name' argument")
-        if target_resource_fqdn is None and 'targetResourceFqdn' in kwargs:
-            target_resource_fqdn = kwargs['targetResourceFqdn']
-        if target_resource_fqdn is None:
-            raise TypeError("Missing 'target_resource_fqdn' argument")
-        if target_resource_id is None and 'targetResourceId' in kwargs:
-            target_resource_id = kwargs['targetResourceId']
-        if target_resource_id is None:
-            raise TypeError("Missing 'target_resource_id' argument")
-        if target_resource_operating_system_user_name is None and 'targetResourceOperatingSystemUserName' in kwargs:
-            target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
-        if target_resource_operating_system_user_name is None:
-            raise TypeError("Missing 'target_resource_operating_system_user_name' argument")
-        if target_resource_port is None and 'targetResourcePort' in kwargs:
-            target_resource_port = kwargs['targetResourcePort']
-        if target_resource_port is None:
-            raise TypeError("Missing 'target_resource_port' argument")
-        if target_resource_private_ip_address is None and 'targetResourcePrivateIpAddress' in kwargs:
-            target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
-        if target_resource_private_ip_address is None:
-            raise TypeError("Missing 'target_resource_private_ip_address' argument")
-
-        _setter("session_type", session_type)
-        _setter("target_resource_display_name", target_resource_display_name)
-        _setter("target_resource_fqdn", target_resource_fqdn)
-        _setter("target_resource_id", target_resource_id)
-        _setter("target_resource_operating_system_user_name", target_resource_operating_system_user_name)
-        _setter("target_resource_port", target_resource_port)
-        _setter("target_resource_private_ip_address", target_resource_private_ip_address)
+        pulumi.set(__self__, "session_type", session_type)
+        pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
+        pulumi.set(__self__, "target_resource_id", target_resource_id)
+        pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+        pulumi.set(__self__, "target_resource_port", target_resource_port)
+        pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")
@@ -815,29 +553,10 @@ class GetSessionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSessionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -890,116 +609,21 @@ class GetSessionsSessionResult(dict):
         :param str time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param str time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
-        GetSessionsSessionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bastion_id=bastion_id,
-            bastion_name=bastion_name,
-            bastion_public_host_key_info=bastion_public_host_key_info,
-            bastion_user_name=bastion_user_name,
-            display_name=display_name,
-            id=id,
-            key_details=key_details,
-            key_type=key_type,
-            lifecycle_details=lifecycle_details,
-            session_ttl_in_seconds=session_ttl_in_seconds,
-            ssh_metadata=ssh_metadata,
-            state=state,
-            target_resource_details=target_resource_details,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bastion_id: Optional[str] = None,
-             bastion_name: Optional[str] = None,
-             bastion_public_host_key_info: Optional[str] = None,
-             bastion_user_name: Optional[str] = None,
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             key_details: Optional[Sequence['outputs.GetSessionsSessionKeyDetailResult']] = None,
-             key_type: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             session_ttl_in_seconds: Optional[int] = None,
-             ssh_metadata: Optional[Mapping[str, Any]] = None,
-             state: Optional[str] = None,
-             target_resource_details: Optional[Sequence['outputs.GetSessionsSessionTargetResourceDetailResult']] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bastion_id is None and 'bastionId' in kwargs:
-            bastion_id = kwargs['bastionId']
-        if bastion_id is None:
-            raise TypeError("Missing 'bastion_id' argument")
-        if bastion_name is None and 'bastionName' in kwargs:
-            bastion_name = kwargs['bastionName']
-        if bastion_name is None:
-            raise TypeError("Missing 'bastion_name' argument")
-        if bastion_public_host_key_info is None and 'bastionPublicHostKeyInfo' in kwargs:
-            bastion_public_host_key_info = kwargs['bastionPublicHostKeyInfo']
-        if bastion_public_host_key_info is None:
-            raise TypeError("Missing 'bastion_public_host_key_info' argument")
-        if bastion_user_name is None and 'bastionUserName' in kwargs:
-            bastion_user_name = kwargs['bastionUserName']
-        if bastion_user_name is None:
-            raise TypeError("Missing 'bastion_user_name' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if key_details is None and 'keyDetails' in kwargs:
-            key_details = kwargs['keyDetails']
-        if key_details is None:
-            raise TypeError("Missing 'key_details' argument")
-        if key_type is None and 'keyType' in kwargs:
-            key_type = kwargs['keyType']
-        if key_type is None:
-            raise TypeError("Missing 'key_type' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if session_ttl_in_seconds is None and 'sessionTtlInSeconds' in kwargs:
-            session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
-        if session_ttl_in_seconds is None:
-            raise TypeError("Missing 'session_ttl_in_seconds' argument")
-        if ssh_metadata is None and 'sshMetadata' in kwargs:
-            ssh_metadata = kwargs['sshMetadata']
-        if ssh_metadata is None:
-            raise TypeError("Missing 'ssh_metadata' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if target_resource_details is None and 'targetResourceDetails' in kwargs:
-            target_resource_details = kwargs['targetResourceDetails']
-        if target_resource_details is None:
-            raise TypeError("Missing 'target_resource_details' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("bastion_id", bastion_id)
-        _setter("bastion_name", bastion_name)
-        _setter("bastion_public_host_key_info", bastion_public_host_key_info)
-        _setter("bastion_user_name", bastion_user_name)
-        _setter("display_name", display_name)
-        _setter("id", id)
-        _setter("key_details", key_details)
-        _setter("key_type", key_type)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("session_ttl_in_seconds", session_ttl_in_seconds)
-        _setter("ssh_metadata", ssh_metadata)
-        _setter("state", state)
-        _setter("target_resource_details", target_resource_details)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "bastion_id", bastion_id)
+        pulumi.set(__self__, "bastion_name", bastion_name)
+        pulumi.set(__self__, "bastion_public_host_key_info", bastion_public_host_key_info)
+        pulumi.set(__self__, "bastion_user_name", bastion_user_name)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "key_details", key_details)
+        pulumi.set(__self__, "key_type", key_type)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "session_ttl_in_seconds", session_ttl_in_seconds)
+        pulumi.set(__self__, "ssh_metadata", ssh_metadata)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_resource_details", target_resource_details)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionId")
@@ -1129,22 +753,7 @@ class GetSessionsSessionKeyDetailResult(dict):
         """
         :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
         """
-        GetSessionsSessionKeyDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            public_key_content=public_key_content,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             public_key_content: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if public_key_content is None and 'publicKeyContent' in kwargs:
-            public_key_content = kwargs['publicKeyContent']
-        if public_key_content is None:
-            raise TypeError("Missing 'public_key_content' argument")
-
-        _setter("public_key_content", public_key_content)
+        pulumi.set(__self__, "public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
@@ -1174,64 +783,13 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
         :param int target_resource_port: The port number to connect to on the target resource.
         :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
         """
-        GetSessionsSessionTargetResourceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            session_type=session_type,
-            target_resource_display_name=target_resource_display_name,
-            target_resource_fqdn=target_resource_fqdn,
-            target_resource_id=target_resource_id,
-            target_resource_operating_system_user_name=target_resource_operating_system_user_name,
-            target_resource_port=target_resource_port,
-            target_resource_private_ip_address=target_resource_private_ip_address,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             session_type: Optional[str] = None,
-             target_resource_display_name: Optional[str] = None,
-             target_resource_fqdn: Optional[str] = None,
-             target_resource_id: Optional[str] = None,
-             target_resource_operating_system_user_name: Optional[str] = None,
-             target_resource_port: Optional[int] = None,
-             target_resource_private_ip_address: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if session_type is None and 'sessionType' in kwargs:
-            session_type = kwargs['sessionType']
-        if session_type is None:
-            raise TypeError("Missing 'session_type' argument")
-        if target_resource_display_name is None and 'targetResourceDisplayName' in kwargs:
-            target_resource_display_name = kwargs['targetResourceDisplayName']
-        if target_resource_display_name is None:
-            raise TypeError("Missing 'target_resource_display_name' argument")
-        if target_resource_fqdn is None and 'targetResourceFqdn' in kwargs:
-            target_resource_fqdn = kwargs['targetResourceFqdn']
-        if target_resource_fqdn is None:
-            raise TypeError("Missing 'target_resource_fqdn' argument")
-        if target_resource_id is None and 'targetResourceId' in kwargs:
-            target_resource_id = kwargs['targetResourceId']
-        if target_resource_id is None:
-            raise TypeError("Missing 'target_resource_id' argument")
-        if target_resource_operating_system_user_name is None and 'targetResourceOperatingSystemUserName' in kwargs:
-            target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
-        if target_resource_operating_system_user_name is None:
-            raise TypeError("Missing 'target_resource_operating_system_user_name' argument")
-        if target_resource_port is None and 'targetResourcePort' in kwargs:
-            target_resource_port = kwargs['targetResourcePort']
-        if target_resource_port is None:
-            raise TypeError("Missing 'target_resource_port' argument")
-        if target_resource_private_ip_address is None and 'targetResourcePrivateIpAddress' in kwargs:
-            target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
-        if target_resource_private_ip_address is None:
-            raise TypeError("Missing 'target_resource_private_ip_address' argument")
-
-        _setter("session_type", session_type)
-        _setter("target_resource_display_name", target_resource_display_name)
-        _setter("target_resource_fqdn", target_resource_fqdn)
-        _setter("target_resource_id", target_resource_id)
-        _setter("target_resource_operating_system_user_name", target_resource_operating_system_user_name)
-        _setter("target_resource_port", target_resource_port)
-        _setter("target_resource_private_ip_address", target_resource_private_ip_address)
+        pulumi.set(__self__, "session_type", session_type)
+        pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
+        pulumi.set(__self__, "target_resource_id", target_resource_id)
+        pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+        pulumi.set(__self__, "target_resource_port", target_resource_port)
+        pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")

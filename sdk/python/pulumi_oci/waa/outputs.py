@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -62,21 +62,8 @@ class AppAccelerationPolicyResponseCachingPolicy(dict):
                
                If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
         """
-        AppAccelerationPolicyResponseCachingPolicy._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_response_header_based_caching_enabled=is_response_header_based_caching_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_response_header_based_caching_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
-            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
-
         if is_response_header_based_caching_enabled is not None:
-            _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+            pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
@@ -121,21 +108,8 @@ class AppAccelerationPolicyResponseCompressionPolicy(dict):
         """
         :param 'AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs' gzip_compression: (Updatable) An object that specifies the gzip compression policy.
         """
-        AppAccelerationPolicyResponseCompressionPolicy._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            gzip_compression=gzip_compression,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             gzip_compression: Optional['outputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompression'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if gzip_compression is None and 'gzipCompression' in kwargs:
-            gzip_compression = kwargs['gzipCompression']
-
         if gzip_compression is not None:
-            _setter("gzip_compression", gzip_compression)
+            pulumi.set(__self__, "gzip_compression", gzip_compression)
 
     @property
     @pulumi.getter(name="gzipCompression")
@@ -172,21 +146,8 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompression(dict):
                
                When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
         """
-        AppAccelerationPolicyResponseCompressionPolicyGzipCompression._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -205,29 +166,10 @@ class GetAppAccelerationPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAppAccelerationPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -249,20 +191,7 @@ class GetAppAccelerationPoliciesFilterResult(dict):
 class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']):
-        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -299,95 +228,18 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult(dic
         :param str time_created: The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
         """
-        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            response_caching_policies=response_caching_policies,
-            response_compression_policies=response_compression_policies,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             response_caching_policies: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult']] = None,
-             response_compression_policies: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult']] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if response_caching_policies is None and 'responseCachingPolicies' in kwargs:
-            response_caching_policies = kwargs['responseCachingPolicies']
-        if response_caching_policies is None:
-            raise TypeError("Missing 'response_caching_policies' argument")
-        if response_compression_policies is None and 'responseCompressionPolicies' in kwargs:
-            response_compression_policies = kwargs['responseCompressionPolicies']
-        if response_compression_policies is None:
-            raise TypeError("Missing 'response_compression_policies' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("response_caching_policies", response_caching_policies)
-        _setter("response_compression_policies", response_compression_policies)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "response_caching_policies", response_caching_policies)
+        pulumi.set(__self__, "response_compression_policies", response_compression_policies)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -493,22 +345,7 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCa
         """
         :param bool is_response_header_based_caching_enabled: When false, responses will not be cached by the backend based on response headers.
         """
-        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_response_header_based_caching_enabled=is_response_header_based_caching_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_response_header_based_caching_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
-            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
-        if is_response_header_based_caching_enabled is None:
-            raise TypeError("Missing 'is_response_header_based_caching_enabled' argument")
-
-        _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+        pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
@@ -526,22 +363,7 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
         """
         :param Sequence['GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs'] gzip_compressions: An object that specifies the gzip compression policy.
         """
-        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            gzip_compressions=gzip_compressions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             gzip_compressions: Optional[Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if gzip_compressions is None and 'gzipCompressions' in kwargs:
-            gzip_compressions = kwargs['gzipCompressions']
-        if gzip_compressions is None:
-            raise TypeError("Missing 'gzip_compressions' argument")
-
-        _setter("gzip_compressions", gzip_compressions)
+        pulumi.set(__self__, "gzip_compressions", gzip_compressions)
 
     @property
     @pulumi.getter(name="gzipCompressions")
@@ -559,22 +381,7 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
         """
         :param bool is_enabled: When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
         """
-        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -592,22 +399,7 @@ class GetAppAccelerationPolicyResponseCachingPolicyResult(dict):
         """
         :param bool is_response_header_based_caching_enabled: When false, responses will not be cached by the backend based on response headers.
         """
-        GetAppAccelerationPolicyResponseCachingPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_response_header_based_caching_enabled=is_response_header_based_caching_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_response_header_based_caching_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
-            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
-        if is_response_header_based_caching_enabled is None:
-            raise TypeError("Missing 'is_response_header_based_caching_enabled' argument")
-
-        _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+        pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
@@ -625,22 +417,7 @@ class GetAppAccelerationPolicyResponseCompressionPolicyResult(dict):
         """
         :param Sequence['GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs'] gzip_compressions: An object that specifies the gzip compression policy.
         """
-        GetAppAccelerationPolicyResponseCompressionPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            gzip_compressions=gzip_compressions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             gzip_compressions: Optional[Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if gzip_compressions is None and 'gzipCompressions' in kwargs:
-            gzip_compressions = kwargs['gzipCompressions']
-        if gzip_compressions is None:
-            raise TypeError("Missing 'gzip_compressions' argument")
-
-        _setter("gzip_compressions", gzip_compressions)
+        pulumi.set(__self__, "gzip_compressions", gzip_compressions)
 
     @property
     @pulumi.getter(name="gzipCompressions")
@@ -658,22 +435,7 @@ class GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult(dic
         """
         :param bool is_enabled: When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
         """
-        GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -690,29 +452,10 @@ class GetAppAccelerationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAppAccelerationsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -734,20 +477,7 @@ class GetAppAccelerationsFilterResult(dict):
 class GetAppAccelerationsWebAppAccelerationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']):
-        GetAppAccelerationsWebAppAccelerationCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -786,102 +516,19 @@ class GetAppAccelerationsWebAppAccelerationCollectionItemResult(dict):
         :param str time_updated: The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
         :param str web_app_acceleration_policy_id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
         """
-        GetAppAccelerationsWebAppAccelerationCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_type=backend_type,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            load_balancer_id=load_balancer_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            web_app_acceleration_policy_id=web_app_acceleration_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_type: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             load_balancer_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             web_app_acceleration_policy_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_type is None and 'backendType' in kwargs:
-            backend_type = kwargs['backendType']
-        if backend_type is None:
-            raise TypeError("Missing 'backend_type' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if web_app_acceleration_policy_id is None and 'webAppAccelerationPolicyId' in kwargs:
-            web_app_acceleration_policy_id = kwargs['webAppAccelerationPolicyId']
-        if web_app_acceleration_policy_id is None:
-            raise TypeError("Missing 'web_app_acceleration_policy_id' argument")
-
-        _setter("backend_type", backend_type)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("web_app_acceleration_policy_id", web_app_acceleration_policy_id)
+        pulumi.set(__self__, "backend_type", backend_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "web_app_acceleration_policy_id", web_app_acceleration_policy_id)
 
     @property
     @pulumi.getter(name="backendType")

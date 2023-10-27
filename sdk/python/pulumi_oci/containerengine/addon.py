@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,44 +33,13 @@ class AddonArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AddonArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            addon_name=addon_name,
-            cluster_id=cluster_id,
-            remove_addon_resources_on_delete=remove_addon_resources_on_delete,
-            configurations=configurations,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             addon_name: Optional[pulumi.Input[str]] = None,
-             cluster_id: Optional[pulumi.Input[str]] = None,
-             remove_addon_resources_on_delete: Optional[pulumi.Input[bool]] = None,
-             configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if addon_name is None and 'addonName' in kwargs:
-            addon_name = kwargs['addonName']
-        if addon_name is None:
-            raise TypeError("Missing 'addon_name' argument")
-        if cluster_id is None and 'clusterId' in kwargs:
-            cluster_id = kwargs['clusterId']
-        if cluster_id is None:
-            raise TypeError("Missing 'cluster_id' argument")
-        if remove_addon_resources_on_delete is None and 'removeAddonResourcesOnDelete' in kwargs:
-            remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
-        if remove_addon_resources_on_delete is None:
-            raise TypeError("Missing 'remove_addon_resources_on_delete' argument")
-
-        _setter("addon_name", addon_name)
-        _setter("cluster_id", cluster_id)
-        _setter("remove_addon_resources_on_delete", remove_addon_resources_on_delete)
+        pulumi.set(__self__, "addon_name", addon_name)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "remove_addon_resources_on_delete", remove_addon_resources_on_delete)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="addonName")
@@ -165,63 +134,24 @@ class _AddonState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _AddonState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            addon_errors=addon_errors,
-            addon_name=addon_name,
-            cluster_id=cluster_id,
-            configurations=configurations,
-            current_installed_version=current_installed_version,
-            remove_addon_resources_on_delete=remove_addon_resources_on_delete,
-            state=state,
-            time_created=time_created,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             addon_errors: Optional[pulumi.Input[Sequence[pulumi.Input['AddonAddonErrorArgs']]]] = None,
-             addon_name: Optional[pulumi.Input[str]] = None,
-             cluster_id: Optional[pulumi.Input[str]] = None,
-             configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
-             current_installed_version: Optional[pulumi.Input[str]] = None,
-             remove_addon_resources_on_delete: Optional[pulumi.Input[bool]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if addon_errors is None and 'addonErrors' in kwargs:
-            addon_errors = kwargs['addonErrors']
-        if addon_name is None and 'addonName' in kwargs:
-            addon_name = kwargs['addonName']
-        if cluster_id is None and 'clusterId' in kwargs:
-            cluster_id = kwargs['clusterId']
-        if current_installed_version is None and 'currentInstalledVersion' in kwargs:
-            current_installed_version = kwargs['currentInstalledVersion']
-        if remove_addon_resources_on_delete is None and 'removeAddonResourcesOnDelete' in kwargs:
-            remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if addon_errors is not None:
-            _setter("addon_errors", addon_errors)
+            pulumi.set(__self__, "addon_errors", addon_errors)
         if addon_name is not None:
-            _setter("addon_name", addon_name)
+            pulumi.set(__self__, "addon_name", addon_name)
         if cluster_id is not None:
-            _setter("cluster_id", cluster_id)
+            pulumi.set(__self__, "cluster_id", cluster_id)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if current_installed_version is not None:
-            _setter("current_installed_version", current_installed_version)
+            pulumi.set(__self__, "current_installed_version", current_installed_version)
         if remove_addon_resources_on_delete is not None:
-            _setter("remove_addon_resources_on_delete", remove_addon_resources_on_delete)
+            pulumi.set(__self__, "remove_addon_resources_on_delete", remove_addon_resources_on_delete)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="addonErrors")
@@ -401,10 +331,6 @@ class Addon(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AddonArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

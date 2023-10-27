@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -34,21 +34,8 @@ class AppAccelerationPolicyResponseCachingPolicyArgs:
                
                If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
         """
-        AppAccelerationPolicyResponseCachingPolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_response_header_based_caching_enabled=is_response_header_based_caching_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_response_header_based_caching_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_response_header_based_caching_enabled is None and 'isResponseHeaderBasedCachingEnabled' in kwargs:
-            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
-
         if is_response_header_based_caching_enabled is not None:
-            _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+            pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
@@ -80,21 +67,8 @@ class AppAccelerationPolicyResponseCompressionPolicyArgs:
         """
         :param pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs'] gzip_compression: (Updatable) An object that specifies the gzip compression policy.
         """
-        AppAccelerationPolicyResponseCompressionPolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            gzip_compression=gzip_compression,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             gzip_compression: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if gzip_compression is None and 'gzipCompression' in kwargs:
-            gzip_compression = kwargs['gzipCompression']
-
         if gzip_compression is not None:
-            _setter("gzip_compression", gzip_compression)
+            pulumi.set(__self__, "gzip_compression", gzip_compression)
 
     @property
     @pulumi.getter(name="gzipCompression")
@@ -118,21 +92,8 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
                
                When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
         """
-        AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -155,29 +116,10 @@ class GetAppAccelerationPoliciesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAppAccelerationPoliciesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -213,29 +155,10 @@ class GetAppAccelerationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAppAccelerationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

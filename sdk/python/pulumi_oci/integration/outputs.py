@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -65,36 +65,13 @@ class IntegrationInstanceAlternateCustomEndpoint(dict):
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
-        IntegrationInstanceAlternateCustomEndpoint._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostname=hostname,
-            alias=alias,
-            certificate_secret_id=certificate_secret_id,
-            certificate_secret_version=certificate_secret_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostname: Optional[str] = None,
-             alias: Optional[str] = None,
-             certificate_secret_id: Optional[str] = None,
-             certificate_secret_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
-            certificate_secret_id = kwargs['certificateSecretId']
-        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
-            certificate_secret_version = kwargs['certificateSecretVersion']
-
-        _setter("hostname", hostname)
+        pulumi.set(__self__, "hostname", hostname)
         if alias is not None:
-            _setter("alias", alias)
+            pulumi.set(__self__, "alias", alias)
         if certificate_secret_id is not None:
-            _setter("certificate_secret_id", certificate_secret_id)
+            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
-            _setter("certificate_secret_version", certificate_secret_version)
+            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
 
     @property
     @pulumi.getter
@@ -170,45 +147,16 @@ class IntegrationInstanceAttachment(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        IntegrationInstanceAttachment._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_implicit=is_implicit,
-            target_id=target_id,
-            target_instance_url=target_instance_url,
-            target_role=target_role,
-            target_service_type=target_service_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_implicit: Optional[bool] = None,
-             target_id: Optional[str] = None,
-             target_instance_url: Optional[str] = None,
-             target_role: Optional[str] = None,
-             target_service_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_implicit is None and 'isImplicit' in kwargs:
-            is_implicit = kwargs['isImplicit']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
-            target_instance_url = kwargs['targetInstanceUrl']
-        if target_role is None and 'targetRole' in kwargs:
-            target_role = kwargs['targetRole']
-        if target_service_type is None and 'targetServiceType' in kwargs:
-            target_service_type = kwargs['targetServiceType']
-
         if is_implicit is not None:
-            _setter("is_implicit", is_implicit)
+            pulumi.set(__self__, "is_implicit", is_implicit)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if target_instance_url is not None:
-            _setter("target_instance_url", target_instance_url)
+            pulumi.set(__self__, "target_instance_url", target_instance_url)
         if target_role is not None:
-            _setter("target_role", target_role)
+            pulumi.set(__self__, "target_role", target_role)
         if target_service_type is not None:
-            _setter("target_service_type", target_service_type)
+            pulumi.set(__self__, "target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -284,36 +232,13 @@ class IntegrationInstanceCustomEndpoint(dict):
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
-        IntegrationInstanceCustomEndpoint._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostname=hostname,
-            alias=alias,
-            certificate_secret_id=certificate_secret_id,
-            certificate_secret_version=certificate_secret_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostname: Optional[str] = None,
-             alias: Optional[str] = None,
-             certificate_secret_id: Optional[str] = None,
-             certificate_secret_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
-            certificate_secret_id = kwargs['certificateSecretId']
-        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
-            certificate_secret_version = kwargs['certificateSecretVersion']
-
-        _setter("hostname", hostname)
+        pulumi.set(__self__, "hostname", hostname)
         if alias is not None:
-            _setter("alias", alias)
+            pulumi.set(__self__, "alias", alias)
         if certificate_secret_id is not None:
-            _setter("certificate_secret_id", certificate_secret_id)
+            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
-            _setter("certificate_secret_version", certificate_secret_version)
+            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
 
     @property
     @pulumi.getter
@@ -388,45 +313,16 @@ class IntegrationInstanceIdcsInfo(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
         """
-        IntegrationInstanceIdcsInfo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idcs_app_display_name=idcs_app_display_name,
-            idcs_app_id=idcs_app_id,
-            idcs_app_location_url=idcs_app_location_url,
-            idcs_app_name=idcs_app_name,
-            instance_primary_audience_url=instance_primary_audience_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idcs_app_display_name: Optional[str] = None,
-             idcs_app_id: Optional[str] = None,
-             idcs_app_location_url: Optional[str] = None,
-             idcs_app_name: Optional[str] = None,
-             instance_primary_audience_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idcs_app_display_name is None and 'idcsAppDisplayName' in kwargs:
-            idcs_app_display_name = kwargs['idcsAppDisplayName']
-        if idcs_app_id is None and 'idcsAppId' in kwargs:
-            idcs_app_id = kwargs['idcsAppId']
-        if idcs_app_location_url is None and 'idcsAppLocationUrl' in kwargs:
-            idcs_app_location_url = kwargs['idcsAppLocationUrl']
-        if idcs_app_name is None and 'idcsAppName' in kwargs:
-            idcs_app_name = kwargs['idcsAppName']
-        if instance_primary_audience_url is None and 'instancePrimaryAudienceUrl' in kwargs:
-            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
-
         if idcs_app_display_name is not None:
-            _setter("idcs_app_display_name", idcs_app_display_name)
+            pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
         if idcs_app_id is not None:
-            _setter("idcs_app_id", idcs_app_id)
+            pulumi.set(__self__, "idcs_app_id", idcs_app_id)
         if idcs_app_location_url is not None:
-            _setter("idcs_app_location_url", idcs_app_location_url)
+            pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
         if idcs_app_name is not None:
-            _setter("idcs_app_name", idcs_app_name)
+            pulumi.set(__self__, "idcs_app_name", idcs_app_name)
         if instance_primary_audience_url is not None:
-            _setter("instance_primary_audience_url", instance_primary_audience_url)
+            pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -505,40 +401,13 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
         :param Sequence['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         """
-        IntegrationInstanceNetworkEndpointDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_endpoint_type=network_endpoint_type,
-            allowlisted_http_ips=allowlisted_http_ips,
-            allowlisted_http_vcns=allowlisted_http_vcns,
-            is_integration_vcn_allowlisted=is_integration_vcn_allowlisted,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_endpoint_type: Optional[str] = None,
-             allowlisted_http_ips: Optional[Sequence[str]] = None,
-             allowlisted_http_vcns: Optional[Sequence['outputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn']] = None,
-             is_integration_vcn_allowlisted: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_endpoint_type is None and 'networkEndpointType' in kwargs:
-            network_endpoint_type = kwargs['networkEndpointType']
-        if network_endpoint_type is None:
-            raise TypeError("Missing 'network_endpoint_type' argument")
-        if allowlisted_http_ips is None and 'allowlistedHttpIps' in kwargs:
-            allowlisted_http_ips = kwargs['allowlistedHttpIps']
-        if allowlisted_http_vcns is None and 'allowlistedHttpVcns' in kwargs:
-            allowlisted_http_vcns = kwargs['allowlistedHttpVcns']
-        if is_integration_vcn_allowlisted is None and 'isIntegrationVcnAllowlisted' in kwargs:
-            is_integration_vcn_allowlisted = kwargs['isIntegrationVcnAllowlisted']
-
-        _setter("network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
-            _setter("allowlisted_http_ips", allowlisted_http_ips)
+            pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         if allowlisted_http_vcns is not None:
-            _setter("allowlisted_http_vcns", allowlisted_http_vcns)
+            pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
         if is_integration_vcn_allowlisted is not None:
-            _setter("is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+            pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -599,26 +468,9 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn(dict):
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         """
-        IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            allowlisted_ips=allowlisted_ips,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             allowlisted_ips: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if allowlisted_ips is None and 'allowlistedIps' in kwargs:
-            allowlisted_ips = kwargs['allowlistedIps']
-
-        _setter("id", id)
+        pulumi.set(__self__, "id", id)
         if allowlisted_ips is not None:
-            _setter("allowlisted_ips", allowlisted_ips)
+            pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
 
     @property
     @pulumi.getter
@@ -650,39 +502,10 @@ class GetIntegrationInstanceAlternateCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        GetIntegrationInstanceAlternateCustomEndpointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alias=alias,
-            certificate_secret_id=certificate_secret_id,
-            certificate_secret_version=certificate_secret_version,
-            hostname=hostname,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alias: Optional[str] = None,
-             certificate_secret_id: Optional[str] = None,
-             certificate_secret_version: Optional[int] = None,
-             hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alias is None:
-            raise TypeError("Missing 'alias' argument")
-        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
-            certificate_secret_id = kwargs['certificateSecretId']
-        if certificate_secret_id is None:
-            raise TypeError("Missing 'certificate_secret_id' argument")
-        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
-            certificate_secret_version = kwargs['certificateSecretVersion']
-        if certificate_secret_version is None:
-            raise TypeError("Missing 'certificate_secret_version' argument")
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-
-        _setter("alias", alias)
-        _setter("certificate_secret_id", certificate_secret_id)
-        _setter("certificate_secret_version", certificate_secret_version)
-        _setter("hostname", hostname)
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
@@ -733,50 +556,11 @@ class GetIntegrationInstanceAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        GetIntegrationInstanceAttachmentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_implicit=is_implicit,
-            target_id=target_id,
-            target_instance_url=target_instance_url,
-            target_role=target_role,
-            target_service_type=target_service_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_implicit: Optional[bool] = None,
-             target_id: Optional[str] = None,
-             target_instance_url: Optional[str] = None,
-             target_role: Optional[str] = None,
-             target_service_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_implicit is None and 'isImplicit' in kwargs:
-            is_implicit = kwargs['isImplicit']
-        if is_implicit is None:
-            raise TypeError("Missing 'is_implicit' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
-            target_instance_url = kwargs['targetInstanceUrl']
-        if target_instance_url is None:
-            raise TypeError("Missing 'target_instance_url' argument")
-        if target_role is None and 'targetRole' in kwargs:
-            target_role = kwargs['targetRole']
-        if target_role is None:
-            raise TypeError("Missing 'target_role' argument")
-        if target_service_type is None and 'targetServiceType' in kwargs:
-            target_service_type = kwargs['targetServiceType']
-        if target_service_type is None:
-            raise TypeError("Missing 'target_service_type' argument")
-
-        _setter("is_implicit", is_implicit)
-        _setter("target_id", target_id)
-        _setter("target_instance_url", target_instance_url)
-        _setter("target_role", target_role)
-        _setter("target_service_type", target_service_type)
+        pulumi.set(__self__, "is_implicit", is_implicit)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_instance_url", target_instance_url)
+        pulumi.set(__self__, "target_role", target_role)
+        pulumi.set(__self__, "target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -833,39 +617,10 @@ class GetIntegrationInstanceCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        GetIntegrationInstanceCustomEndpointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alias=alias,
-            certificate_secret_id=certificate_secret_id,
-            certificate_secret_version=certificate_secret_version,
-            hostname=hostname,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alias: Optional[str] = None,
-             certificate_secret_id: Optional[str] = None,
-             certificate_secret_version: Optional[int] = None,
-             hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alias is None:
-            raise TypeError("Missing 'alias' argument")
-        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
-            certificate_secret_id = kwargs['certificateSecretId']
-        if certificate_secret_id is None:
-            raise TypeError("Missing 'certificate_secret_id' argument")
-        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
-            certificate_secret_version = kwargs['certificateSecretVersion']
-        if certificate_secret_version is None:
-            raise TypeError("Missing 'certificate_secret_version' argument")
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-
-        _setter("alias", alias)
-        _setter("certificate_secret_id", certificate_secret_id)
-        _setter("certificate_secret_version", certificate_secret_version)
-        _setter("hostname", hostname)
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
@@ -915,50 +670,11 @@ class GetIntegrationInstanceIdcsInfoResult(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
         """
-        GetIntegrationInstanceIdcsInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idcs_app_display_name=idcs_app_display_name,
-            idcs_app_id=idcs_app_id,
-            idcs_app_location_url=idcs_app_location_url,
-            idcs_app_name=idcs_app_name,
-            instance_primary_audience_url=instance_primary_audience_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idcs_app_display_name: Optional[str] = None,
-             idcs_app_id: Optional[str] = None,
-             idcs_app_location_url: Optional[str] = None,
-             idcs_app_name: Optional[str] = None,
-             instance_primary_audience_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idcs_app_display_name is None and 'idcsAppDisplayName' in kwargs:
-            idcs_app_display_name = kwargs['idcsAppDisplayName']
-        if idcs_app_display_name is None:
-            raise TypeError("Missing 'idcs_app_display_name' argument")
-        if idcs_app_id is None and 'idcsAppId' in kwargs:
-            idcs_app_id = kwargs['idcsAppId']
-        if idcs_app_id is None:
-            raise TypeError("Missing 'idcs_app_id' argument")
-        if idcs_app_location_url is None and 'idcsAppLocationUrl' in kwargs:
-            idcs_app_location_url = kwargs['idcsAppLocationUrl']
-        if idcs_app_location_url is None:
-            raise TypeError("Missing 'idcs_app_location_url' argument")
-        if idcs_app_name is None and 'idcsAppName' in kwargs:
-            idcs_app_name = kwargs['idcsAppName']
-        if idcs_app_name is None:
-            raise TypeError("Missing 'idcs_app_name' argument")
-        if instance_primary_audience_url is None and 'instancePrimaryAudienceUrl' in kwargs:
-            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
-        if instance_primary_audience_url is None:
-            raise TypeError("Missing 'instance_primary_audience_url' argument")
-
-        _setter("idcs_app_display_name", idcs_app_display_name)
-        _setter("idcs_app_id", idcs_app_id)
-        _setter("idcs_app_location_url", idcs_app_location_url)
-        _setter("idcs_app_name", idcs_app_name)
-        _setter("instance_primary_audience_url", instance_primary_audience_url)
+        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
+        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
+        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
+        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
+        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -1014,43 +730,10 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         :param str network_endpoint_type: The type of network endpoint.
         """
-        GetIntegrationInstanceNetworkEndpointDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            allowlisted_http_ips=allowlisted_http_ips,
-            allowlisted_http_vcns=allowlisted_http_vcns,
-            is_integration_vcn_allowlisted=is_integration_vcn_allowlisted,
-            network_endpoint_type=network_endpoint_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             allowlisted_http_ips: Optional[Sequence[str]] = None,
-             allowlisted_http_vcns: Optional[Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult']] = None,
-             is_integration_vcn_allowlisted: Optional[bool] = None,
-             network_endpoint_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if allowlisted_http_ips is None and 'allowlistedHttpIps' in kwargs:
-            allowlisted_http_ips = kwargs['allowlistedHttpIps']
-        if allowlisted_http_ips is None:
-            raise TypeError("Missing 'allowlisted_http_ips' argument")
-        if allowlisted_http_vcns is None and 'allowlistedHttpVcns' in kwargs:
-            allowlisted_http_vcns = kwargs['allowlistedHttpVcns']
-        if allowlisted_http_vcns is None:
-            raise TypeError("Missing 'allowlisted_http_vcns' argument")
-        if is_integration_vcn_allowlisted is None and 'isIntegrationVcnAllowlisted' in kwargs:
-            is_integration_vcn_allowlisted = kwargs['isIntegrationVcnAllowlisted']
-        if is_integration_vcn_allowlisted is None:
-            raise TypeError("Missing 'is_integration_vcn_allowlisted' argument")
-        if network_endpoint_type is None and 'networkEndpointType' in kwargs:
-            network_endpoint_type = kwargs['networkEndpointType']
-        if network_endpoint_type is None:
-            raise TypeError("Missing 'network_endpoint_type' argument")
-
-        _setter("allowlisted_http_ips", allowlisted_http_ips)
-        _setter("allowlisted_http_vcns", allowlisted_http_vcns)
-        _setter("is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
-        _setter("network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+        pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
 
     @property
     @pulumi.getter(name="allowlistedHttpIps")
@@ -1094,27 +777,8 @@ class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult(dict):
         :param Sequence[str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param str id: The Virtual Cloud Network OCID.
         """
-        GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            allowlisted_ips=allowlisted_ips,
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             allowlisted_ips: Optional[Sequence[str]] = None,
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if allowlisted_ips is None and 'allowlistedIps' in kwargs:
-            allowlisted_ips = kwargs['allowlistedIps']
-        if allowlisted_ips is None:
-            raise TypeError("Missing 'allowlisted_ips' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("allowlisted_ips", allowlisted_ips)
-        _setter("id", id)
+        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="allowlistedIps")
@@ -1139,29 +803,10 @@ class GetIntegrationInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetIntegrationInstancesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1231,182 +876,31 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param str time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         """
-        GetIntegrationInstancesIntegrationInstanceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alternate_custom_endpoints=alternate_custom_endpoints,
-            attachments=attachments,
-            compartment_id=compartment_id,
-            consumption_model=consumption_model,
-            custom_endpoints=custom_endpoints,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            domain_id=domain_id,
-            enable_process_automation_trigger=enable_process_automation_trigger,
-            freeform_tags=freeform_tags,
-            id=id,
-            idcs_at=idcs_at,
-            idcs_infos=idcs_infos,
-            instance_url=instance_url,
-            integration_instance_type=integration_instance_type,
-            is_byol=is_byol,
-            is_file_server_enabled=is_file_server_enabled,
-            is_visual_builder_enabled=is_visual_builder_enabled,
-            message_packs=message_packs,
-            network_endpoint_details=network_endpoint_details,
-            shape=shape,
-            state=state,
-            state_message=state_message,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alternate_custom_endpoints: Optional[Sequence['outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult']] = None,
-             attachments: Optional[Sequence['outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult']] = None,
-             compartment_id: Optional[str] = None,
-             consumption_model: Optional[str] = None,
-             custom_endpoints: Optional[Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult']] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             domain_id: Optional[str] = None,
-             enable_process_automation_trigger: Optional[int] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             idcs_at: Optional[str] = None,
-             idcs_infos: Optional[Sequence['outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfoResult']] = None,
-             instance_url: Optional[str] = None,
-             integration_instance_type: Optional[str] = None,
-             is_byol: Optional[bool] = None,
-             is_file_server_enabled: Optional[bool] = None,
-             is_visual_builder_enabled: Optional[bool] = None,
-             message_packs: Optional[int] = None,
-             network_endpoint_details: Optional[Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult']] = None,
-             shape: Optional[str] = None,
-             state: Optional[str] = None,
-             state_message: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alternate_custom_endpoints is None and 'alternateCustomEndpoints' in kwargs:
-            alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
-        if alternate_custom_endpoints is None:
-            raise TypeError("Missing 'alternate_custom_endpoints' argument")
-        if attachments is None:
-            raise TypeError("Missing 'attachments' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if consumption_model is None and 'consumptionModel' in kwargs:
-            consumption_model = kwargs['consumptionModel']
-        if consumption_model is None:
-            raise TypeError("Missing 'consumption_model' argument")
-        if custom_endpoints is None and 'customEndpoints' in kwargs:
-            custom_endpoints = kwargs['customEndpoints']
-        if custom_endpoints is None:
-            raise TypeError("Missing 'custom_endpoints' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if domain_id is None and 'domainId' in kwargs:
-            domain_id = kwargs['domainId']
-        if domain_id is None:
-            raise TypeError("Missing 'domain_id' argument")
-        if enable_process_automation_trigger is None and 'enableProcessAutomationTrigger' in kwargs:
-            enable_process_automation_trigger = kwargs['enableProcessAutomationTrigger']
-        if enable_process_automation_trigger is None:
-            raise TypeError("Missing 'enable_process_automation_trigger' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if idcs_at is None and 'idcsAt' in kwargs:
-            idcs_at = kwargs['idcsAt']
-        if idcs_at is None:
-            raise TypeError("Missing 'idcs_at' argument")
-        if idcs_infos is None and 'idcsInfos' in kwargs:
-            idcs_infos = kwargs['idcsInfos']
-        if idcs_infos is None:
-            raise TypeError("Missing 'idcs_infos' argument")
-        if instance_url is None and 'instanceUrl' in kwargs:
-            instance_url = kwargs['instanceUrl']
-        if instance_url is None:
-            raise TypeError("Missing 'instance_url' argument")
-        if integration_instance_type is None and 'integrationInstanceType' in kwargs:
-            integration_instance_type = kwargs['integrationInstanceType']
-        if integration_instance_type is None:
-            raise TypeError("Missing 'integration_instance_type' argument")
-        if is_byol is None and 'isByol' in kwargs:
-            is_byol = kwargs['isByol']
-        if is_byol is None:
-            raise TypeError("Missing 'is_byol' argument")
-        if is_file_server_enabled is None and 'isFileServerEnabled' in kwargs:
-            is_file_server_enabled = kwargs['isFileServerEnabled']
-        if is_file_server_enabled is None:
-            raise TypeError("Missing 'is_file_server_enabled' argument")
-        if is_visual_builder_enabled is None and 'isVisualBuilderEnabled' in kwargs:
-            is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
-        if is_visual_builder_enabled is None:
-            raise TypeError("Missing 'is_visual_builder_enabled' argument")
-        if message_packs is None and 'messagePacks' in kwargs:
-            message_packs = kwargs['messagePacks']
-        if message_packs is None:
-            raise TypeError("Missing 'message_packs' argument")
-        if network_endpoint_details is None and 'networkEndpointDetails' in kwargs:
-            network_endpoint_details = kwargs['networkEndpointDetails']
-        if network_endpoint_details is None:
-            raise TypeError("Missing 'network_endpoint_details' argument")
-        if shape is None:
-            raise TypeError("Missing 'shape' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if state_message is None and 'stateMessage' in kwargs:
-            state_message = kwargs['stateMessage']
-        if state_message is None:
-            raise TypeError("Missing 'state_message' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("alternate_custom_endpoints", alternate_custom_endpoints)
-        _setter("attachments", attachments)
-        _setter("compartment_id", compartment_id)
-        _setter("consumption_model", consumption_model)
-        _setter("custom_endpoints", custom_endpoints)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("domain_id", domain_id)
-        _setter("enable_process_automation_trigger", enable_process_automation_trigger)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("idcs_at", idcs_at)
-        _setter("idcs_infos", idcs_infos)
-        _setter("instance_url", instance_url)
-        _setter("integration_instance_type", integration_instance_type)
-        _setter("is_byol", is_byol)
-        _setter("is_file_server_enabled", is_file_server_enabled)
-        _setter("is_visual_builder_enabled", is_visual_builder_enabled)
-        _setter("message_packs", message_packs)
-        _setter("network_endpoint_details", network_endpoint_details)
-        _setter("shape", shape)
-        _setter("state", state)
-        _setter("state_message", state_message)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        pulumi.set(__self__, "attachments", attachments)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "consumption_model", consumption_model)
+        pulumi.set(__self__, "custom_endpoints", custom_endpoints)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "domain_id", domain_id)
+        pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_at", idcs_at)
+        pulumi.set(__self__, "idcs_infos", idcs_infos)
+        pulumi.set(__self__, "instance_url", instance_url)
+        pulumi.set(__self__, "integration_instance_type", integration_instance_type)
+        pulumi.set(__self__, "is_byol", is_byol)
+        pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
+        pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        pulumi.set(__self__, "message_packs", message_packs)
+        pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_message", state_message)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
@@ -1613,39 +1107,10 @@ class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult(di
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alias=alias,
-            certificate_secret_id=certificate_secret_id,
-            certificate_secret_version=certificate_secret_version,
-            hostname=hostname,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alias: Optional[str] = None,
-             certificate_secret_id: Optional[str] = None,
-             certificate_secret_version: Optional[int] = None,
-             hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alias is None:
-            raise TypeError("Missing 'alias' argument")
-        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
-            certificate_secret_id = kwargs['certificateSecretId']
-        if certificate_secret_id is None:
-            raise TypeError("Missing 'certificate_secret_id' argument")
-        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
-            certificate_secret_version = kwargs['certificateSecretVersion']
-        if certificate_secret_version is None:
-            raise TypeError("Missing 'certificate_secret_version' argument")
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-
-        _setter("alias", alias)
-        _setter("certificate_secret_id", certificate_secret_id)
-        _setter("certificate_secret_version", certificate_secret_version)
-        _setter("hostname", hostname)
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1696,50 +1161,11 @@ class GetIntegrationInstancesIntegrationInstanceAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        GetIntegrationInstancesIntegrationInstanceAttachmentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_implicit=is_implicit,
-            target_id=target_id,
-            target_instance_url=target_instance_url,
-            target_role=target_role,
-            target_service_type=target_service_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_implicit: Optional[bool] = None,
-             target_id: Optional[str] = None,
-             target_instance_url: Optional[str] = None,
-             target_role: Optional[str] = None,
-             target_service_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_implicit is None and 'isImplicit' in kwargs:
-            is_implicit = kwargs['isImplicit']
-        if is_implicit is None:
-            raise TypeError("Missing 'is_implicit' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
-            target_instance_url = kwargs['targetInstanceUrl']
-        if target_instance_url is None:
-            raise TypeError("Missing 'target_instance_url' argument")
-        if target_role is None and 'targetRole' in kwargs:
-            target_role = kwargs['targetRole']
-        if target_role is None:
-            raise TypeError("Missing 'target_role' argument")
-        if target_service_type is None and 'targetServiceType' in kwargs:
-            target_service_type = kwargs['targetServiceType']
-        if target_service_type is None:
-            raise TypeError("Missing 'target_service_type' argument")
-
-        _setter("is_implicit", is_implicit)
-        _setter("target_id", target_id)
-        _setter("target_instance_url", target_instance_url)
-        _setter("target_role", target_role)
-        _setter("target_service_type", target_service_type)
+        pulumi.set(__self__, "is_implicit", is_implicit)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_instance_url", target_instance_url)
+        pulumi.set(__self__, "target_role", target_role)
+        pulumi.set(__self__, "target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -1796,39 +1222,10 @@ class GetIntegrationInstancesIntegrationInstanceCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        GetIntegrationInstancesIntegrationInstanceCustomEndpointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alias=alias,
-            certificate_secret_id=certificate_secret_id,
-            certificate_secret_version=certificate_secret_version,
-            hostname=hostname,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alias: Optional[str] = None,
-             certificate_secret_id: Optional[str] = None,
-             certificate_secret_version: Optional[int] = None,
-             hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alias is None:
-            raise TypeError("Missing 'alias' argument")
-        if certificate_secret_id is None and 'certificateSecretId' in kwargs:
-            certificate_secret_id = kwargs['certificateSecretId']
-        if certificate_secret_id is None:
-            raise TypeError("Missing 'certificate_secret_id' argument")
-        if certificate_secret_version is None and 'certificateSecretVersion' in kwargs:
-            certificate_secret_version = kwargs['certificateSecretVersion']
-        if certificate_secret_version is None:
-            raise TypeError("Missing 'certificate_secret_version' argument")
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-
-        _setter("alias", alias)
-        _setter("certificate_secret_id", certificate_secret_id)
-        _setter("certificate_secret_version", certificate_secret_version)
-        _setter("hostname", hostname)
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1878,50 +1275,11 @@ class GetIntegrationInstancesIntegrationInstanceIdcsInfoResult(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
         """
-        GetIntegrationInstancesIntegrationInstanceIdcsInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idcs_app_display_name=idcs_app_display_name,
-            idcs_app_id=idcs_app_id,
-            idcs_app_location_url=idcs_app_location_url,
-            idcs_app_name=idcs_app_name,
-            instance_primary_audience_url=instance_primary_audience_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idcs_app_display_name: Optional[str] = None,
-             idcs_app_id: Optional[str] = None,
-             idcs_app_location_url: Optional[str] = None,
-             idcs_app_name: Optional[str] = None,
-             instance_primary_audience_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idcs_app_display_name is None and 'idcsAppDisplayName' in kwargs:
-            idcs_app_display_name = kwargs['idcsAppDisplayName']
-        if idcs_app_display_name is None:
-            raise TypeError("Missing 'idcs_app_display_name' argument")
-        if idcs_app_id is None and 'idcsAppId' in kwargs:
-            idcs_app_id = kwargs['idcsAppId']
-        if idcs_app_id is None:
-            raise TypeError("Missing 'idcs_app_id' argument")
-        if idcs_app_location_url is None and 'idcsAppLocationUrl' in kwargs:
-            idcs_app_location_url = kwargs['idcsAppLocationUrl']
-        if idcs_app_location_url is None:
-            raise TypeError("Missing 'idcs_app_location_url' argument")
-        if idcs_app_name is None and 'idcsAppName' in kwargs:
-            idcs_app_name = kwargs['idcsAppName']
-        if idcs_app_name is None:
-            raise TypeError("Missing 'idcs_app_name' argument")
-        if instance_primary_audience_url is None and 'instancePrimaryAudienceUrl' in kwargs:
-            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
-        if instance_primary_audience_url is None:
-            raise TypeError("Missing 'instance_primary_audience_url' argument")
-
-        _setter("idcs_app_display_name", idcs_app_display_name)
-        _setter("idcs_app_id", idcs_app_id)
-        _setter("idcs_app_location_url", idcs_app_location_url)
-        _setter("idcs_app_name", idcs_app_name)
-        _setter("instance_primary_audience_url", instance_primary_audience_url)
+        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
+        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
+        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
+        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
+        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -1977,43 +1335,10 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         :param str network_endpoint_type: The type of network endpoint.
         """
-        GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            allowlisted_http_ips=allowlisted_http_ips,
-            allowlisted_http_vcns=allowlisted_http_vcns,
-            is_integration_vcn_allowlisted=is_integration_vcn_allowlisted,
-            network_endpoint_type=network_endpoint_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             allowlisted_http_ips: Optional[Sequence[str]] = None,
-             allowlisted_http_vcns: Optional[Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult']] = None,
-             is_integration_vcn_allowlisted: Optional[bool] = None,
-             network_endpoint_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if allowlisted_http_ips is None and 'allowlistedHttpIps' in kwargs:
-            allowlisted_http_ips = kwargs['allowlistedHttpIps']
-        if allowlisted_http_ips is None:
-            raise TypeError("Missing 'allowlisted_http_ips' argument")
-        if allowlisted_http_vcns is None and 'allowlistedHttpVcns' in kwargs:
-            allowlisted_http_vcns = kwargs['allowlistedHttpVcns']
-        if allowlisted_http_vcns is None:
-            raise TypeError("Missing 'allowlisted_http_vcns' argument")
-        if is_integration_vcn_allowlisted is None and 'isIntegrationVcnAllowlisted' in kwargs:
-            is_integration_vcn_allowlisted = kwargs['isIntegrationVcnAllowlisted']
-        if is_integration_vcn_allowlisted is None:
-            raise TypeError("Missing 'is_integration_vcn_allowlisted' argument")
-        if network_endpoint_type is None and 'networkEndpointType' in kwargs:
-            network_endpoint_type = kwargs['networkEndpointType']
-        if network_endpoint_type is None:
-            raise TypeError("Missing 'network_endpoint_type' argument")
-
-        _setter("allowlisted_http_ips", allowlisted_http_ips)
-        _setter("allowlisted_http_vcns", allowlisted_http_vcns)
-        _setter("is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
-        _setter("network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+        pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
 
     @property
     @pulumi.getter(name="allowlistedHttpIps")
@@ -2057,27 +1382,8 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlisted
         :param Sequence[str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param str id: The Virtual Cloud Network OCID.
         """
-        GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            allowlisted_ips=allowlisted_ips,
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             allowlisted_ips: Optional[Sequence[str]] = None,
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if allowlisted_ips is None and 'allowlistedIps' in kwargs:
-            allowlisted_ips = kwargs['allowlistedIps']
-        if allowlisted_ips is None:
-            raise TypeError("Missing 'allowlisted_ips' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("allowlisted_ips", allowlisted_ips)
-        _setter("id", id)
+        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="allowlistedIps")

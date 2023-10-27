@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['EmWarehouseArgs', 'EmWarehouse']
@@ -33,54 +33,15 @@ class EmWarehouseArgs:
         :param pulumi.Input[str] display_name: EmWarehouse Identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
-        EmWarehouseArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            em_bridge_id=em_bridge_id,
-            operations_insights_warehouse_id=operations_insights_warehouse_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             em_bridge_id: Optional[pulumi.Input[str]] = None,
-             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if em_bridge_id is None and 'emBridgeId' in kwargs:
-            em_bridge_id = kwargs['emBridgeId']
-        if em_bridge_id is None:
-            raise TypeError("Missing 'em_bridge_id' argument")
-        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
-            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
-        if operations_insights_warehouse_id is None:
-            raise TypeError("Missing 'operations_insights_warehouse_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
-        _setter("em_bridge_id", em_bridge_id)
-        _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "em_bridge_id", em_bridge_id)
+        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -199,103 +160,36 @@ class _EmWarehouseState:
         :param pulumi.Input[str] time_created: The time the the EmWarehouse was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the EmWarehouse was updated. An RFC3339 formatted datetime string
         """
-        _EmWarehouseState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            em_bridge_id=em_bridge_id,
-            em_warehouse_type=em_warehouse_type,
-            freeform_tags=freeform_tags,
-            latest_etl_run_message=latest_etl_run_message,
-            latest_etl_run_status=latest_etl_run_status,
-            latest_etl_run_time=latest_etl_run_time,
-            lifecycle_details=lifecycle_details,
-            operations_insights_warehouse_id=operations_insights_warehouse_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             em_bridge_id: Optional[pulumi.Input[str]] = None,
-             em_warehouse_type: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             latest_etl_run_message: Optional[pulumi.Input[str]] = None,
-             latest_etl_run_status: Optional[pulumi.Input[str]] = None,
-             latest_etl_run_time: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if em_bridge_id is None and 'emBridgeId' in kwargs:
-            em_bridge_id = kwargs['emBridgeId']
-        if em_warehouse_type is None and 'emWarehouseType' in kwargs:
-            em_warehouse_type = kwargs['emWarehouseType']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if latest_etl_run_message is None and 'latestEtlRunMessage' in kwargs:
-            latest_etl_run_message = kwargs['latestEtlRunMessage']
-        if latest_etl_run_status is None and 'latestEtlRunStatus' in kwargs:
-            latest_etl_run_status = kwargs['latestEtlRunStatus']
-        if latest_etl_run_time is None and 'latestEtlRunTime' in kwargs:
-            latest_etl_run_time = kwargs['latestEtlRunTime']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
-            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if em_bridge_id is not None:
-            _setter("em_bridge_id", em_bridge_id)
+            pulumi.set(__self__, "em_bridge_id", em_bridge_id)
         if em_warehouse_type is not None:
-            _setter("em_warehouse_type", em_warehouse_type)
+            pulumi.set(__self__, "em_warehouse_type", em_warehouse_type)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if latest_etl_run_message is not None:
-            _setter("latest_etl_run_message", latest_etl_run_message)
+            pulumi.set(__self__, "latest_etl_run_message", latest_etl_run_message)
         if latest_etl_run_status is not None:
-            _setter("latest_etl_run_status", latest_etl_run_status)
+            pulumi.set(__self__, "latest_etl_run_status", latest_etl_run_status)
         if latest_etl_run_time is not None:
-            _setter("latest_etl_run_time", latest_etl_run_time)
+            pulumi.set(__self__, "latest_etl_run_time", latest_etl_run_time)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if operations_insights_warehouse_id is not None:
-            _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
+            pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -587,10 +481,6 @@ class EmWarehouse(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            EmWarehouseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

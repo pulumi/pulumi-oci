@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -189,153 +189,58 @@ class AddressActionVerificationAddress(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AddressActionVerificationAddress._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contributor_class: Optional[str] = None,
-             country: Optional[str] = None,
-             county: Optional[str] = None,
-             department_name: Optional[str] = None,
-             email_address: Optional[str] = None,
-             first_name: Optional[str] = None,
-             internal_number: Optional[str] = None,
-             job_title: Optional[str] = None,
-             last_name: Optional[str] = None,
-             line1: Optional[str] = None,
-             line2: Optional[str] = None,
-             line3: Optional[str] = None,
-             line4: Optional[str] = None,
-             middle_name: Optional[str] = None,
-             municipal_inscription: Optional[str] = None,
-             phone_country_code: Optional[str] = None,
-             phone_number: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             state_inscription: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-
         if address_key is not None:
-            _setter("address_key", address_key)
+            pulumi.set(__self__, "address_key", address_key)
         if city is not None:
-            _setter("city", city)
+            pulumi.set(__self__, "city", city)
         if company_name is not None:
-            _setter("company_name", company_name)
+            pulumi.set(__self__, "company_name", company_name)
         if contributor_class is not None:
-            _setter("contributor_class", contributor_class)
+            pulumi.set(__self__, "contributor_class", contributor_class)
         if country is not None:
-            _setter("country", country)
+            pulumi.set(__self__, "country", country)
         if county is not None:
-            _setter("county", county)
+            pulumi.set(__self__, "county", county)
         if department_name is not None:
-            _setter("department_name", department_name)
+            pulumi.set(__self__, "department_name", department_name)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if first_name is not None:
-            _setter("first_name", first_name)
+            pulumi.set(__self__, "first_name", first_name)
         if internal_number is not None:
-            _setter("internal_number", internal_number)
+            pulumi.set(__self__, "internal_number", internal_number)
         if job_title is not None:
-            _setter("job_title", job_title)
+            pulumi.set(__self__, "job_title", job_title)
         if last_name is not None:
-            _setter("last_name", last_name)
+            pulumi.set(__self__, "last_name", last_name)
         if line1 is not None:
-            _setter("line1", line1)
+            pulumi.set(__self__, "line1", line1)
         if line2 is not None:
-            _setter("line2", line2)
+            pulumi.set(__self__, "line2", line2)
         if line3 is not None:
-            _setter("line3", line3)
+            pulumi.set(__self__, "line3", line3)
         if line4 is not None:
-            _setter("line4", line4)
+            pulumi.set(__self__, "line4", line4)
         if middle_name is not None:
-            _setter("middle_name", middle_name)
+            pulumi.set(__self__, "middle_name", middle_name)
         if municipal_inscription is not None:
-            _setter("municipal_inscription", municipal_inscription)
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            _setter("phone_country_code", phone_country_code)
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
         if phone_number is not None:
-            _setter("phone_number", phone_number)
+            pulumi.set(__self__, "phone_number", phone_number)
         if postal_code is not None:
-            _setter("postal_code", postal_code)
+            pulumi.set(__self__, "postal_code", postal_code)
         if province is not None:
-            _setter("province", province)
+            pulumi.set(__self__, "province", province)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_inscription is not None:
-            _setter("state_inscription", state_inscription)
+            pulumi.set(__self__, "state_inscription", state_inscription)
         if street_name is not None:
-            _setter("street_name", street_name)
+            pulumi.set(__self__, "street_name", street_name)
         if street_number is not None:
-            _setter("street_number", street_number)
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -656,153 +561,58 @@ class SubscriptionBillingAddress(dict):
         :param str street_name: (Updatable) Street name of the address.
         :param str street_number: (Updatable) Street number of the address.
         """
-        SubscriptionBillingAddress._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contributor_class: Optional[str] = None,
-             country: Optional[str] = None,
-             county: Optional[str] = None,
-             department_name: Optional[str] = None,
-             email_address: Optional[str] = None,
-             first_name: Optional[str] = None,
-             internal_number: Optional[str] = None,
-             job_title: Optional[str] = None,
-             last_name: Optional[str] = None,
-             line1: Optional[str] = None,
-             line2: Optional[str] = None,
-             line3: Optional[str] = None,
-             line4: Optional[str] = None,
-             middle_name: Optional[str] = None,
-             municipal_inscription: Optional[str] = None,
-             phone_country_code: Optional[str] = None,
-             phone_number: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             state_inscription: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-
         if address_key is not None:
-            _setter("address_key", address_key)
+            pulumi.set(__self__, "address_key", address_key)
         if city is not None:
-            _setter("city", city)
+            pulumi.set(__self__, "city", city)
         if company_name is not None:
-            _setter("company_name", company_name)
+            pulumi.set(__self__, "company_name", company_name)
         if contributor_class is not None:
-            _setter("contributor_class", contributor_class)
+            pulumi.set(__self__, "contributor_class", contributor_class)
         if country is not None:
-            _setter("country", country)
+            pulumi.set(__self__, "country", country)
         if county is not None:
-            _setter("county", county)
+            pulumi.set(__self__, "county", county)
         if department_name is not None:
-            _setter("department_name", department_name)
+            pulumi.set(__self__, "department_name", department_name)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if first_name is not None:
-            _setter("first_name", first_name)
+            pulumi.set(__self__, "first_name", first_name)
         if internal_number is not None:
-            _setter("internal_number", internal_number)
+            pulumi.set(__self__, "internal_number", internal_number)
         if job_title is not None:
-            _setter("job_title", job_title)
+            pulumi.set(__self__, "job_title", job_title)
         if last_name is not None:
-            _setter("last_name", last_name)
+            pulumi.set(__self__, "last_name", last_name)
         if line1 is not None:
-            _setter("line1", line1)
+            pulumi.set(__self__, "line1", line1)
         if line2 is not None:
-            _setter("line2", line2)
+            pulumi.set(__self__, "line2", line2)
         if line3 is not None:
-            _setter("line3", line3)
+            pulumi.set(__self__, "line3", line3)
         if line4 is not None:
-            _setter("line4", line4)
+            pulumi.set(__self__, "line4", line4)
         if middle_name is not None:
-            _setter("middle_name", middle_name)
+            pulumi.set(__self__, "middle_name", middle_name)
         if municipal_inscription is not None:
-            _setter("municipal_inscription", municipal_inscription)
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            _setter("phone_country_code", phone_country_code)
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
         if phone_number is not None:
-            _setter("phone_number", phone_number)
+            pulumi.set(__self__, "phone_number", phone_number)
         if postal_code is not None:
-            _setter("postal_code", postal_code)
+            pulumi.set(__self__, "postal_code", postal_code)
         if province is not None:
-            _setter("province", province)
+            pulumi.set(__self__, "province", province)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_inscription is not None:
-            _setter("state_inscription", state_inscription)
+            pulumi.set(__self__, "state_inscription", state_inscription)
         if street_name is not None:
-            _setter("street_name", street_name)
+            pulumi.set(__self__, "street_name", street_name)
         if street_number is not None:
-            _setter("street_number", street_number)
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -1037,21 +847,8 @@ class SubscriptionPaymentGateway(dict):
         """
         :param Sequence['SubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: (Updatable) Merchant details.
         """
-        SubscriptionPaymentGateway._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            merchant_defined_datas=merchant_defined_datas,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             merchant_defined_datas: Optional[Sequence['outputs.SubscriptionPaymentGatewayMerchantDefinedData']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if merchant_defined_datas is None and 'merchantDefinedDatas' in kwargs:
-            merchant_defined_datas = kwargs['merchantDefinedDatas']
-
         if merchant_defined_datas is not None:
-            _setter("merchant_defined_datas", merchant_defined_datas)
+            pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -1090,27 +887,10 @@ class SubscriptionPaymentGatewayMerchantDefinedData(dict):
         :param str cloud_account_name: (Updatable) Cloud account name.
         :param str promo_type: (Updatable) Promotion type code.
         """
-        SubscriptionPaymentGatewayMerchantDefinedData._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cloud_account_name=cloud_account_name,
-            promo_type=promo_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cloud_account_name: Optional[str] = None,
-             promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cloud_account_name is None and 'cloudAccountName' in kwargs:
-            cloud_account_name = kwargs['cloudAccountName']
-        if promo_type is None and 'promoType' in kwargs:
-            promo_type = kwargs['promoType']
-
         if cloud_account_name is not None:
-            _setter("cloud_account_name", cloud_account_name)
+            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
         if promo_type is not None:
-            _setter("promo_type", promo_type)
+            pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -1193,81 +973,28 @@ class SubscriptionPaymentOption(dict):
         :param str wallet_instrument_id: (Updatable) Wallet instrument internal id.
         :param str wallet_transaction_id: (Updatable) Wallet transaction id.
         """
-        SubscriptionPaymentOption._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credit_card_type=credit_card_type,
-            email_address=email_address,
-            ext_billing_agreement_id=ext_billing_agreement_id,
-            first_name=first_name,
-            last_digits=last_digits,
-            last_name=last_name,
-            name_on_card=name_on_card,
-            payment_method=payment_method,
-            time_expiration=time_expiration,
-            wallet_instrument_id=wallet_instrument_id,
-            wallet_transaction_id=wallet_transaction_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credit_card_type: Optional[str] = None,
-             email_address: Optional[str] = None,
-             ext_billing_agreement_id: Optional[str] = None,
-             first_name: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             last_name: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             payment_method: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             wallet_instrument_id: Optional[str] = None,
-             wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if ext_billing_agreement_id is None and 'extBillingAgreementId' in kwargs:
-            ext_billing_agreement_id = kwargs['extBillingAgreementId']
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if wallet_instrument_id is None and 'walletInstrumentId' in kwargs:
-            wallet_instrument_id = kwargs['walletInstrumentId']
-        if wallet_transaction_id is None and 'walletTransactionId' in kwargs:
-            wallet_transaction_id = kwargs['walletTransactionId']
-
         if credit_card_type is not None:
-            _setter("credit_card_type", credit_card_type)
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if ext_billing_agreement_id is not None:
-            _setter("ext_billing_agreement_id", ext_billing_agreement_id)
+            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
         if first_name is not None:
-            _setter("first_name", first_name)
+            pulumi.set(__self__, "first_name", first_name)
         if last_digits is not None:
-            _setter("last_digits", last_digits)
+            pulumi.set(__self__, "last_digits", last_digits)
         if last_name is not None:
-            _setter("last_name", last_name)
+            pulumi.set(__self__, "last_name", last_name)
         if name_on_card is not None:
-            _setter("name_on_card", name_on_card)
+            pulumi.set(__self__, "name_on_card", name_on_card)
         if payment_method is not None:
-            _setter("payment_method", payment_method)
+            pulumi.set(__self__, "payment_method", payment_method)
         if time_expiration is not None:
-            _setter("time_expiration", time_expiration)
+            pulumi.set(__self__, "time_expiration", time_expiration)
         if wallet_instrument_id is not None:
-            _setter("wallet_instrument_id", wallet_instrument_id)
+            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
         if wallet_transaction_id is not None:
-            _setter("wallet_transaction_id", wallet_transaction_id)
+            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -1460,140 +1187,47 @@ class SubscriptionSubscription(dict):
         :param str upgrade_state: (Updatable) Status of the upgrade.
         :param str upgrade_state_details: (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        SubscriptionSubscription._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subscription_plan_number=subscription_plan_number,
-            account_type=account_type,
-            bill_to_cust_account_id=bill_to_cust_account_id,
-            billing_addresses=billing_addresses,
-            currency_code=currency_code,
-            gsi_org_code=gsi_org_code,
-            id=id,
-            is_intent_to_pay=is_intent_to_pay,
-            language_code=language_code,
-            organization_id=organization_id,
-            payment_gateway=payment_gateway,
-            payment_options=payment_options,
-            plan_type=plan_type,
-            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
-            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
-            tax_info=tax_info,
-            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
-            time_plan_upgrade=time_plan_upgrade,
-            time_start=time_start,
-            upgrade_state=upgrade_state,
-            upgrade_state_details=upgrade_state_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subscription_plan_number: Optional[str] = None,
-             account_type: Optional[str] = None,
-             bill_to_cust_account_id: Optional[str] = None,
-             billing_addresses: Optional[Sequence['outputs.SubscriptionSubscriptionBillingAddress']] = None,
-             currency_code: Optional[str] = None,
-             gsi_org_code: Optional[str] = None,
-             id: Optional[str] = None,
-             is_intent_to_pay: Optional[bool] = None,
-             language_code: Optional[str] = None,
-             organization_id: Optional[str] = None,
-             payment_gateway: Optional['outputs.SubscriptionSubscriptionPaymentGateway'] = None,
-             payment_options: Optional[Sequence['outputs.SubscriptionSubscriptionPaymentOption']] = None,
-             plan_type: Optional[str] = None,
-             ship_to_cust_acct_role_id: Optional[str] = None,
-             ship_to_cust_acct_site_id: Optional[str] = None,
-             tax_info: Optional['outputs.SubscriptionSubscriptionTaxInfo'] = None,
-             time_personal_to_corporate_conv: Optional[str] = None,
-             time_plan_upgrade: Optional[str] = None,
-             time_start: Optional[str] = None,
-             upgrade_state: Optional[str] = None,
-             upgrade_state_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subscription_plan_number is None and 'subscriptionPlanNumber' in kwargs:
-            subscription_plan_number = kwargs['subscriptionPlanNumber']
-        if subscription_plan_number is None:
-            raise TypeError("Missing 'subscription_plan_number' argument")
-        if account_type is None and 'accountType' in kwargs:
-            account_type = kwargs['accountType']
-        if bill_to_cust_account_id is None and 'billToCustAccountId' in kwargs:
-            bill_to_cust_account_id = kwargs['billToCustAccountId']
-        if billing_addresses is None and 'billingAddresses' in kwargs:
-            billing_addresses = kwargs['billingAddresses']
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if gsi_org_code is None and 'gsiOrgCode' in kwargs:
-            gsi_org_code = kwargs['gsiOrgCode']
-        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
-            is_intent_to_pay = kwargs['isIntentToPay']
-        if language_code is None and 'languageCode' in kwargs:
-            language_code = kwargs['languageCode']
-        if organization_id is None and 'organizationId' in kwargs:
-            organization_id = kwargs['organizationId']
-        if payment_gateway is None and 'paymentGateway' in kwargs:
-            payment_gateway = kwargs['paymentGateway']
-        if payment_options is None and 'paymentOptions' in kwargs:
-            payment_options = kwargs['paymentOptions']
-        if plan_type is None and 'planType' in kwargs:
-            plan_type = kwargs['planType']
-        if ship_to_cust_acct_role_id is None and 'shipToCustAcctRoleId' in kwargs:
-            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
-        if ship_to_cust_acct_site_id is None and 'shipToCustAcctSiteId' in kwargs:
-            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
-        if tax_info is None and 'taxInfo' in kwargs:
-            tax_info = kwargs['taxInfo']
-        if time_personal_to_corporate_conv is None and 'timePersonalToCorporateConv' in kwargs:
-            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
-        if time_plan_upgrade is None and 'timePlanUpgrade' in kwargs:
-            time_plan_upgrade = kwargs['timePlanUpgrade']
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if upgrade_state is None and 'upgradeState' in kwargs:
-            upgrade_state = kwargs['upgradeState']
-        if upgrade_state_details is None and 'upgradeStateDetails' in kwargs:
-            upgrade_state_details = kwargs['upgradeStateDetails']
-
-        _setter("subscription_plan_number", subscription_plan_number)
+        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
         if account_type is not None:
-            _setter("account_type", account_type)
+            pulumi.set(__self__, "account_type", account_type)
         if bill_to_cust_account_id is not None:
-            _setter("bill_to_cust_account_id", bill_to_cust_account_id)
+            pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
         if billing_addresses is not None:
-            _setter("billing_addresses", billing_addresses)
+            pulumi.set(__self__, "billing_addresses", billing_addresses)
         if currency_code is not None:
-            _setter("currency_code", currency_code)
+            pulumi.set(__self__, "currency_code", currency_code)
         if gsi_org_code is not None:
-            _setter("gsi_org_code", gsi_org_code)
+            pulumi.set(__self__, "gsi_org_code", gsi_org_code)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if is_intent_to_pay is not None:
-            _setter("is_intent_to_pay", is_intent_to_pay)
+            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         if language_code is not None:
-            _setter("language_code", language_code)
+            pulumi.set(__self__, "language_code", language_code)
         if organization_id is not None:
-            _setter("organization_id", organization_id)
+            pulumi.set(__self__, "organization_id", organization_id)
         if payment_gateway is not None:
-            _setter("payment_gateway", payment_gateway)
+            pulumi.set(__self__, "payment_gateway", payment_gateway)
         if payment_options is not None:
-            _setter("payment_options", payment_options)
+            pulumi.set(__self__, "payment_options", payment_options)
         if plan_type is not None:
-            _setter("plan_type", plan_type)
+            pulumi.set(__self__, "plan_type", plan_type)
         if ship_to_cust_acct_role_id is not None:
-            _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+            pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
         if ship_to_cust_acct_site_id is not None:
-            _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+            pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
         if tax_info is not None:
-            _setter("tax_info", tax_info)
+            pulumi.set(__self__, "tax_info", tax_info)
         if time_personal_to_corporate_conv is not None:
-            _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
         if time_plan_upgrade is not None:
-            _setter("time_plan_upgrade", time_plan_upgrade)
+            pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
         if time_start is not None:
-            _setter("time_start", time_start)
+            pulumi.set(__self__, "time_start", time_start)
         if upgrade_state is not None:
-            _setter("upgrade_state", upgrade_state)
+            pulumi.set(__self__, "upgrade_state", upgrade_state)
         if upgrade_state_details is not None:
-            _setter("upgrade_state_details", upgrade_state_details)
+            pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
@@ -1870,153 +1504,58 @@ class SubscriptionSubscriptionBillingAddress(dict):
         :param str street_name: (Updatable) Street name of the address.
         :param str street_number: (Updatable) Street number of the address.
         """
-        SubscriptionSubscriptionBillingAddress._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contributor_class: Optional[str] = None,
-             country: Optional[str] = None,
-             county: Optional[str] = None,
-             department_name: Optional[str] = None,
-             email_address: Optional[str] = None,
-             first_name: Optional[str] = None,
-             internal_number: Optional[str] = None,
-             job_title: Optional[str] = None,
-             last_name: Optional[str] = None,
-             line1: Optional[str] = None,
-             line2: Optional[str] = None,
-             line3: Optional[str] = None,
-             line4: Optional[str] = None,
-             middle_name: Optional[str] = None,
-             municipal_inscription: Optional[str] = None,
-             phone_country_code: Optional[str] = None,
-             phone_number: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             state_inscription: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-
         if address_key is not None:
-            _setter("address_key", address_key)
+            pulumi.set(__self__, "address_key", address_key)
         if city is not None:
-            _setter("city", city)
+            pulumi.set(__self__, "city", city)
         if company_name is not None:
-            _setter("company_name", company_name)
+            pulumi.set(__self__, "company_name", company_name)
         if contributor_class is not None:
-            _setter("contributor_class", contributor_class)
+            pulumi.set(__self__, "contributor_class", contributor_class)
         if country is not None:
-            _setter("country", country)
+            pulumi.set(__self__, "country", country)
         if county is not None:
-            _setter("county", county)
+            pulumi.set(__self__, "county", county)
         if department_name is not None:
-            _setter("department_name", department_name)
+            pulumi.set(__self__, "department_name", department_name)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if first_name is not None:
-            _setter("first_name", first_name)
+            pulumi.set(__self__, "first_name", first_name)
         if internal_number is not None:
-            _setter("internal_number", internal_number)
+            pulumi.set(__self__, "internal_number", internal_number)
         if job_title is not None:
-            _setter("job_title", job_title)
+            pulumi.set(__self__, "job_title", job_title)
         if last_name is not None:
-            _setter("last_name", last_name)
+            pulumi.set(__self__, "last_name", last_name)
         if line1 is not None:
-            _setter("line1", line1)
+            pulumi.set(__self__, "line1", line1)
         if line2 is not None:
-            _setter("line2", line2)
+            pulumi.set(__self__, "line2", line2)
         if line3 is not None:
-            _setter("line3", line3)
+            pulumi.set(__self__, "line3", line3)
         if line4 is not None:
-            _setter("line4", line4)
+            pulumi.set(__self__, "line4", line4)
         if middle_name is not None:
-            _setter("middle_name", middle_name)
+            pulumi.set(__self__, "middle_name", middle_name)
         if municipal_inscription is not None:
-            _setter("municipal_inscription", municipal_inscription)
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            _setter("phone_country_code", phone_country_code)
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
         if phone_number is not None:
-            _setter("phone_number", phone_number)
+            pulumi.set(__self__, "phone_number", phone_number)
         if postal_code is not None:
-            _setter("postal_code", postal_code)
+            pulumi.set(__self__, "postal_code", postal_code)
         if province is not None:
-            _setter("province", province)
+            pulumi.set(__self__, "province", province)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_inscription is not None:
-            _setter("state_inscription", state_inscription)
+            pulumi.set(__self__, "state_inscription", state_inscription)
         if street_name is not None:
-            _setter("street_name", street_name)
+            pulumi.set(__self__, "street_name", street_name)
         if street_number is not None:
-            _setter("street_number", street_number)
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -2251,21 +1790,8 @@ class SubscriptionSubscriptionPaymentGateway(dict):
         """
         :param 'SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs' merchant_defined_data: (Updatable) Merchant details.
         """
-        SubscriptionSubscriptionPaymentGateway._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            merchant_defined_data=merchant_defined_data,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             merchant_defined_data: Optional['outputs.SubscriptionSubscriptionPaymentGatewayMerchantDefinedData'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if merchant_defined_data is None and 'merchantDefinedData' in kwargs:
-            merchant_defined_data = kwargs['merchantDefinedData']
-
         if merchant_defined_data is not None:
-            _setter("merchant_defined_data", merchant_defined_data)
+            pulumi.set(__self__, "merchant_defined_data", merchant_defined_data)
 
     @property
     @pulumi.getter(name="merchantDefinedData")
@@ -2304,27 +1830,10 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedData(dict):
         :param str cloud_account_name: (Updatable) Cloud account name.
         :param str promo_type: (Updatable) Promotion type code.
         """
-        SubscriptionSubscriptionPaymentGatewayMerchantDefinedData._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cloud_account_name=cloud_account_name,
-            promo_type=promo_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cloud_account_name: Optional[str] = None,
-             promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cloud_account_name is None and 'cloudAccountName' in kwargs:
-            cloud_account_name = kwargs['cloudAccountName']
-        if promo_type is None and 'promoType' in kwargs:
-            promo_type = kwargs['promoType']
-
         if cloud_account_name is not None:
-            _setter("cloud_account_name", cloud_account_name)
+            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
         if promo_type is not None:
-            _setter("promo_type", promo_type)
+            pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -2407,82 +1916,27 @@ class SubscriptionSubscriptionPaymentOption(dict):
         :param str wallet_instrument_id: (Updatable) Wallet instrument internal id.
         :param str wallet_transaction_id: (Updatable) Wallet transaction id.
         """
-        SubscriptionSubscriptionPaymentOption._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            payment_method=payment_method,
-            credit_card_type=credit_card_type,
-            email_address=email_address,
-            ext_billing_agreement_id=ext_billing_agreement_id,
-            first_name=first_name,
-            last_digits=last_digits,
-            last_name=last_name,
-            name_on_card=name_on_card,
-            time_expiration=time_expiration,
-            wallet_instrument_id=wallet_instrument_id,
-            wallet_transaction_id=wallet_transaction_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             payment_method: Optional[str] = None,
-             credit_card_type: Optional[str] = None,
-             email_address: Optional[str] = None,
-             ext_billing_agreement_id: Optional[str] = None,
-             first_name: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             last_name: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             wallet_instrument_id: Optional[str] = None,
-             wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if payment_method is None:
-            raise TypeError("Missing 'payment_method' argument")
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if ext_billing_agreement_id is None and 'extBillingAgreementId' in kwargs:
-            ext_billing_agreement_id = kwargs['extBillingAgreementId']
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if wallet_instrument_id is None and 'walletInstrumentId' in kwargs:
-            wallet_instrument_id = kwargs['walletInstrumentId']
-        if wallet_transaction_id is None and 'walletTransactionId' in kwargs:
-            wallet_transaction_id = kwargs['walletTransactionId']
-
-        _setter("payment_method", payment_method)
+        pulumi.set(__self__, "payment_method", payment_method)
         if credit_card_type is not None:
-            _setter("credit_card_type", credit_card_type)
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if ext_billing_agreement_id is not None:
-            _setter("ext_billing_agreement_id", ext_billing_agreement_id)
+            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
         if first_name is not None:
-            _setter("first_name", first_name)
+            pulumi.set(__self__, "first_name", first_name)
         if last_digits is not None:
-            _setter("last_digits", last_digits)
+            pulumi.set(__self__, "last_digits", last_digits)
         if last_name is not None:
-            _setter("last_name", last_name)
+            pulumi.set(__self__, "last_name", last_name)
         if name_on_card is not None:
-            _setter("name_on_card", name_on_card)
+            pulumi.set(__self__, "name_on_card", name_on_card)
         if time_expiration is not None:
-            _setter("time_expiration", time_expiration)
+            pulumi.set(__self__, "time_expiration", time_expiration)
         if wallet_instrument_id is not None:
-            _setter("wallet_instrument_id", wallet_instrument_id)
+            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
         if wallet_transaction_id is not None:
-            _setter("wallet_transaction_id", wallet_transaction_id)
+            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="paymentMethod")
@@ -2613,45 +2067,16 @@ class SubscriptionSubscriptionTaxInfo(dict):
         :param str tax_payer_id: (Updatable) Tay payer identifier.
         :param str tax_reg_number: (Updatable) Tax registration number.
         """
-        SubscriptionSubscriptionTaxInfo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            no_tax_reason_code=no_tax_reason_code,
-            no_tax_reason_code_details=no_tax_reason_code_details,
-            tax_cnpj=tax_cnpj,
-            tax_payer_id=tax_payer_id,
-            tax_reg_number=tax_reg_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             no_tax_reason_code: Optional[str] = None,
-             no_tax_reason_code_details: Optional[str] = None,
-             tax_cnpj: Optional[str] = None,
-             tax_payer_id: Optional[str] = None,
-             tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if no_tax_reason_code is None and 'noTaxReasonCode' in kwargs:
-            no_tax_reason_code = kwargs['noTaxReasonCode']
-        if no_tax_reason_code_details is None and 'noTaxReasonCodeDetails' in kwargs:
-            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
-        if tax_cnpj is None and 'taxCnpj' in kwargs:
-            tax_cnpj = kwargs['taxCnpj']
-        if tax_payer_id is None and 'taxPayerId' in kwargs:
-            tax_payer_id = kwargs['taxPayerId']
-        if tax_reg_number is None and 'taxRegNumber' in kwargs:
-            tax_reg_number = kwargs['taxRegNumber']
-
         if no_tax_reason_code is not None:
-            _setter("no_tax_reason_code", no_tax_reason_code)
+            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
-            _setter("no_tax_reason_code_details", no_tax_reason_code_details)
+            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
         if tax_cnpj is not None:
-            _setter("tax_cnpj", tax_cnpj)
+            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
         if tax_payer_id is not None:
-            _setter("tax_payer_id", tax_payer_id)
+            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
-            _setter("tax_reg_number", tax_reg_number)
+            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -2734,45 +2159,16 @@ class SubscriptionTaxInfo(dict):
         :param str tax_payer_id: (Updatable) Tay payer identifier.
         :param str tax_reg_number: (Updatable) Tax registration number.
         """
-        SubscriptionTaxInfo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            no_tax_reason_code=no_tax_reason_code,
-            no_tax_reason_code_details=no_tax_reason_code_details,
-            tax_cnpj=tax_cnpj,
-            tax_payer_id=tax_payer_id,
-            tax_reg_number=tax_reg_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             no_tax_reason_code: Optional[str] = None,
-             no_tax_reason_code_details: Optional[str] = None,
-             tax_cnpj: Optional[str] = None,
-             tax_payer_id: Optional[str] = None,
-             tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if no_tax_reason_code is None and 'noTaxReasonCode' in kwargs:
-            no_tax_reason_code = kwargs['noTaxReasonCode']
-        if no_tax_reason_code_details is None and 'noTaxReasonCodeDetails' in kwargs:
-            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
-        if tax_cnpj is None and 'taxCnpj' in kwargs:
-            tax_cnpj = kwargs['taxCnpj']
-        if tax_payer_id is None and 'taxPayerId' in kwargs:
-            tax_payer_id = kwargs['taxPayerId']
-        if tax_reg_number is None and 'taxRegNumber' in kwargs:
-            tax_reg_number = kwargs['taxRegNumber']
-
         if no_tax_reason_code is not None:
-            _setter("no_tax_reason_code", no_tax_reason_code)
+            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
-            _setter("no_tax_reason_code_details", no_tax_reason_code_details)
+            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
         if tax_cnpj is not None:
-            _setter("tax_cnpj", tax_cnpj)
+            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
         if tax_payer_id is not None:
-            _setter("tax_payer_id", tax_payer_id)
+            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
-            _setter("tax_reg_number", tax_reg_number)
+            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -2824,27 +2220,8 @@ class GetAddressRuleAddressResult(dict):
         :param Sequence['GetAddressRuleAddressFieldArgs'] fields: Tax type rule fields
         :param str third_party_validation: Third party validation.
         """
-        GetAddressRuleAddressResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            fields=fields,
-            third_party_validation=third_party_validation,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             fields: Optional[Sequence['outputs.GetAddressRuleAddressFieldResult']] = None,
-             third_party_validation: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if fields is None:
-            raise TypeError("Missing 'fields' argument")
-        if third_party_validation is None and 'thirdPartyValidation' in kwargs:
-            third_party_validation = kwargs['thirdPartyValidation']
-        if third_party_validation is None:
-            raise TypeError("Missing 'third_party_validation' argument")
-
-        _setter("fields", fields)
-        _setter("third_party_validation", third_party_validation)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "third_party_validation", third_party_validation)
 
     @property
     @pulumi.getter
@@ -2878,42 +2255,11 @@ class GetAddressRuleAddressFieldResult(dict):
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
         :param str name: The field name
         """
-        GetAddressRuleAddressFieldResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            formats=formats,
-            is_required=is_required,
-            labels=labels,
-            language=language,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             formats: Optional[Sequence['outputs.GetAddressRuleAddressFieldFormatResult']] = None,
-             is_required: Optional[bool] = None,
-             labels: Optional[Sequence['outputs.GetAddressRuleAddressFieldLabelResult']] = None,
-             language: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if formats is None:
-            raise TypeError("Missing 'formats' argument")
-        if is_required is None and 'isRequired' in kwargs:
-            is_required = kwargs['isRequired']
-        if is_required is None:
-            raise TypeError("Missing 'is_required' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if language is None:
-            raise TypeError("Missing 'language' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("formats", formats)
-        _setter("is_required", is_required)
-        _setter("labels", labels)
-        _setter("language", language)
-        _setter("name", name)
+        pulumi.set(__self__, "formats", formats)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "language", language)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -2965,25 +2311,8 @@ class GetAddressRuleAddressFieldFormatResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        GetAddressRuleAddressFieldFormatResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            example=example,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             example: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if example is None:
-            raise TypeError("Missing 'example' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("example", example)
-        _setter("value", value)
+        pulumi.set(__self__, "example", example)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3011,25 +2340,8 @@ class GetAddressRuleAddressFieldLabelResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        GetAddressRuleAddressFieldLabelResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            example=example,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             example: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if example is None:
-            raise TypeError("Missing 'example' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("example", example)
-        _setter("value", value)
+        pulumi.set(__self__, "example", example)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3055,20 +2367,7 @@ class GetAddressRuleContactResult(dict):
         """
         :param Sequence['GetAddressRuleContactFieldArgs'] fields: Tax type rule fields
         """
-        GetAddressRuleContactResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            fields=fields,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             fields: Optional[Sequence['outputs.GetAddressRuleContactFieldResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if fields is None:
-            raise TypeError("Missing 'fields' argument")
-
-        _setter("fields", fields)
+        pulumi.set(__self__, "fields", fields)
 
     @property
     @pulumi.getter
@@ -3094,42 +2393,11 @@ class GetAddressRuleContactFieldResult(dict):
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
         :param str name: The field name
         """
-        GetAddressRuleContactFieldResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            formats=formats,
-            is_required=is_required,
-            labels=labels,
-            language=language,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             formats: Optional[Sequence['outputs.GetAddressRuleContactFieldFormatResult']] = None,
-             is_required: Optional[bool] = None,
-             labels: Optional[Sequence['outputs.GetAddressRuleContactFieldLabelResult']] = None,
-             language: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if formats is None:
-            raise TypeError("Missing 'formats' argument")
-        if is_required is None and 'isRequired' in kwargs:
-            is_required = kwargs['isRequired']
-        if is_required is None:
-            raise TypeError("Missing 'is_required' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if language is None:
-            raise TypeError("Missing 'language' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("formats", formats)
-        _setter("is_required", is_required)
-        _setter("labels", labels)
-        _setter("language", language)
-        _setter("name", name)
+        pulumi.set(__self__, "formats", formats)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "language", language)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -3181,25 +2449,8 @@ class GetAddressRuleContactFieldFormatResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        GetAddressRuleContactFieldFormatResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            example=example,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             example: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if example is None:
-            raise TypeError("Missing 'example' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("example", example)
-        _setter("value", value)
+        pulumi.set(__self__, "example", example)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3227,25 +2478,8 @@ class GetAddressRuleContactFieldLabelResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        GetAddressRuleContactFieldLabelResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            example=example,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             example: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if example is None:
-            raise TypeError("Missing 'example' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("example", example)
-        _setter("value", value)
+        pulumi.set(__self__, "example", example)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3271,20 +2505,7 @@ class GetAddressRuleTaxResult(dict):
         """
         :param Sequence['GetAddressRuleTaxFieldArgs'] fields: Tax type rule fields
         """
-        GetAddressRuleTaxResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            fields=fields,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             fields: Optional[Sequence['outputs.GetAddressRuleTaxFieldResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if fields is None:
-            raise TypeError("Missing 'fields' argument")
-
-        _setter("fields", fields)
+        pulumi.set(__self__, "fields", fields)
 
     @property
     @pulumi.getter
@@ -3310,42 +2531,11 @@ class GetAddressRuleTaxFieldResult(dict):
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
         :param str name: The field name
         """
-        GetAddressRuleTaxFieldResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            formats=formats,
-            is_required=is_required,
-            labels=labels,
-            language=language,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             formats: Optional[Sequence['outputs.GetAddressRuleTaxFieldFormatResult']] = None,
-             is_required: Optional[bool] = None,
-             labels: Optional[Sequence['outputs.GetAddressRuleTaxFieldLabelResult']] = None,
-             language: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if formats is None:
-            raise TypeError("Missing 'formats' argument")
-        if is_required is None and 'isRequired' in kwargs:
-            is_required = kwargs['isRequired']
-        if is_required is None:
-            raise TypeError("Missing 'is_required' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if language is None:
-            raise TypeError("Missing 'language' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("formats", formats)
-        _setter("is_required", is_required)
-        _setter("labels", labels)
-        _setter("language", language)
-        _setter("name", name)
+        pulumi.set(__self__, "formats", formats)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "language", language)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -3397,25 +2587,8 @@ class GetAddressRuleTaxFieldFormatResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        GetAddressRuleTaxFieldFormatResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            example=example,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             example: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if example is None:
-            raise TypeError("Missing 'example' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("example", example)
-        _setter("value", value)
+        pulumi.set(__self__, "example", example)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3443,25 +2616,8 @@ class GetAddressRuleTaxFieldLabelResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        GetAddressRuleTaxFieldLabelResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            example=example,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             example: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if example is None:
-            raise TypeError("Missing 'example' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("example", example)
-        _setter("value", value)
+        pulumi.set(__self__, "example", example)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -3513,103 +2669,20 @@ class GetInvoiceBillToAddressResult(dict):
         :param str street_name: Street name
         :param str street_number: House no
         """
-        GetInvoiceBillToAddressResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_line1=address_line1,
-            address_line2=address_line2,
-            address_line3=address_line3,
-            address_line4=address_line4,
-            city=city,
-            company_name=company_name,
-            contact_name=contact_name,
-            countries=countries,
-            county=county,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_line1: Optional[str] = None,
-             address_line2: Optional[str] = None,
-             address_line3: Optional[str] = None,
-             address_line4: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contact_name: Optional[str] = None,
-             countries: Optional[Sequence['outputs.GetInvoiceBillToAddressCountryResult']] = None,
-             county: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_line1 is None and 'addressLine1' in kwargs:
-            address_line1 = kwargs['addressLine1']
-        if address_line1 is None:
-            raise TypeError("Missing 'address_line1' argument")
-        if address_line2 is None and 'addressLine2' in kwargs:
-            address_line2 = kwargs['addressLine2']
-        if address_line2 is None:
-            raise TypeError("Missing 'address_line2' argument")
-        if address_line3 is None and 'addressLine3' in kwargs:
-            address_line3 = kwargs['addressLine3']
-        if address_line3 is None:
-            raise TypeError("Missing 'address_line3' argument")
-        if address_line4 is None and 'addressLine4' in kwargs:
-            address_line4 = kwargs['addressLine4']
-        if address_line4 is None:
-            raise TypeError("Missing 'address_line4' argument")
-        if city is None:
-            raise TypeError("Missing 'city' argument")
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if company_name is None:
-            raise TypeError("Missing 'company_name' argument")
-        if contact_name is None and 'contactName' in kwargs:
-            contact_name = kwargs['contactName']
-        if contact_name is None:
-            raise TypeError("Missing 'contact_name' argument")
-        if countries is None:
-            raise TypeError("Missing 'countries' argument")
-        if county is None:
-            raise TypeError("Missing 'county' argument")
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if postal_code is None:
-            raise TypeError("Missing 'postal_code' argument")
-        if province is None:
-            raise TypeError("Missing 'province' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_name is None:
-            raise TypeError("Missing 'street_name' argument")
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-        if street_number is None:
-            raise TypeError("Missing 'street_number' argument")
-
-        _setter("address_line1", address_line1)
-        _setter("address_line2", address_line2)
-        _setter("address_line3", address_line3)
-        _setter("address_line4", address_line4)
-        _setter("city", city)
-        _setter("company_name", company_name)
-        _setter("contact_name", contact_name)
-        _setter("countries", countries)
-        _setter("county", county)
-        _setter("postal_code", postal_code)
-        _setter("province", province)
-        _setter("state", state)
-        _setter("street_name", street_name)
-        _setter("street_number", street_number)
+        pulumi.set(__self__, "address_line1", address_line1)
+        pulumi.set(__self__, "address_line2", address_line2)
+        pulumi.set(__self__, "address_line3", address_line3)
+        pulumi.set(__self__, "address_line4", address_line4)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "company_name", company_name)
+        pulumi.set(__self__, "contact_name", contact_name)
+        pulumi.set(__self__, "countries", countries)
+        pulumi.set(__self__, "county", county)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "province", province)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "street_name", street_name)
+        pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressLine1")
@@ -3739,50 +2812,11 @@ class GetInvoiceBillToAddressCountryResult(dict):
         :param str country_name: Name of the country
         :param float language_id: Language identifier
         """
-        GetInvoiceBillToAddressCountryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ascii3country_code=ascii3country_code,
-            country_code=country_code,
-            country_id=country_id,
-            country_name=country_name,
-            language_id=language_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ascii3country_code: Optional[str] = None,
-             country_code: Optional[str] = None,
-             country_id: Optional[float] = None,
-             country_name: Optional[str] = None,
-             language_id: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ascii3country_code is None and 'ascii3countryCode' in kwargs:
-            ascii3country_code = kwargs['ascii3countryCode']
-        if ascii3country_code is None:
-            raise TypeError("Missing 'ascii3country_code' argument")
-        if country_code is None and 'countryCode' in kwargs:
-            country_code = kwargs['countryCode']
-        if country_code is None:
-            raise TypeError("Missing 'country_code' argument")
-        if country_id is None and 'countryId' in kwargs:
-            country_id = kwargs['countryId']
-        if country_id is None:
-            raise TypeError("Missing 'country_id' argument")
-        if country_name is None and 'countryName' in kwargs:
-            country_name = kwargs['countryName']
-        if country_name is None:
-            raise TypeError("Missing 'country_name' argument")
-        if language_id is None and 'languageId' in kwargs:
-            language_id = kwargs['languageId']
-        if language_id is None:
-            raise TypeError("Missing 'language_id' argument")
-
-        _setter("ascii3country_code", ascii3country_code)
-        _setter("country_code", country_code)
-        _setter("country_id", country_id)
-        _setter("country_name", country_name)
-        _setter("language_id", language_id)
+        pulumi.set(__self__, "ascii3country_code", ascii3country_code)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "country_id", country_id)
+        pulumi.set(__self__, "country_name", country_name)
+        pulumi.set(__self__, "language_id", language_id)
 
     @property
     @pulumi.getter(name="ascii3countryCode")
@@ -3840,48 +2874,11 @@ class GetInvoiceCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        GetInvoiceCurrencyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            currency_code=currency_code,
-            currency_symbol=currency_symbol,
-            name=name,
-            round_decimal_point=round_decimal_point,
-            usd_conversion=usd_conversion,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             currency_code: Optional[str] = None,
-             currency_symbol: Optional[str] = None,
-             name: Optional[str] = None,
-             round_decimal_point: Optional[float] = None,
-             usd_conversion: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if currency_symbol is None and 'currencySymbol' in kwargs:
-            currency_symbol = kwargs['currencySymbol']
-        if currency_symbol is None:
-            raise TypeError("Missing 'currency_symbol' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if round_decimal_point is None and 'roundDecimalPoint' in kwargs:
-            round_decimal_point = kwargs['roundDecimalPoint']
-        if round_decimal_point is None:
-            raise TypeError("Missing 'round_decimal_point' argument")
-        if usd_conversion is None and 'usdConversion' in kwargs:
-            usd_conversion = kwargs['usdConversion']
-        if usd_conversion is None:
-            raise TypeError("Missing 'usd_conversion' argument")
-
-        _setter("currency_code", currency_code)
-        _setter("currency_symbol", currency_symbol)
-        _setter("name", name)
-        _setter("round_decimal_point", round_decimal_point)
-        _setter("usd_conversion", usd_conversion)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "currency_symbol", currency_symbol)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -3957,113 +2954,20 @@ class GetInvoiceLastPaymentDetailResult(dict):
         :param str time_expiration: Expired date of the credit card
         :param str time_paid_on: Paid the invoice on this day
         """
-        GetInvoiceLastPaymentDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_number=account_number,
-            amount_paid=amount_paid,
-            card_type=card_type,
-            credit_card_type=credit_card_type,
-            echeck_routing=echeck_routing,
-            last_digits=last_digits,
-            name_on_card=name_on_card,
-            paid_by=paid_by,
-            payment_method=payment_method,
-            paypal_id=paypal_id,
-            paypal_reference=paypal_reference,
-            routing_number=routing_number,
-            time_expiration=time_expiration,
-            time_paid_on=time_paid_on,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_number: Optional[str] = None,
-             amount_paid: Optional[float] = None,
-             card_type: Optional[str] = None,
-             credit_card_type: Optional[str] = None,
-             echeck_routing: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             paid_by: Optional[str] = None,
-             payment_method: Optional[str] = None,
-             paypal_id: Optional[str] = None,
-             paypal_reference: Optional[str] = None,
-             routing_number: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             time_paid_on: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_number is None and 'accountNumber' in kwargs:
-            account_number = kwargs['accountNumber']
-        if account_number is None:
-            raise TypeError("Missing 'account_number' argument")
-        if amount_paid is None and 'amountPaid' in kwargs:
-            amount_paid = kwargs['amountPaid']
-        if amount_paid is None:
-            raise TypeError("Missing 'amount_paid' argument")
-        if card_type is None and 'cardType' in kwargs:
-            card_type = kwargs['cardType']
-        if card_type is None:
-            raise TypeError("Missing 'card_type' argument")
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if credit_card_type is None:
-            raise TypeError("Missing 'credit_card_type' argument")
-        if echeck_routing is None and 'echeckRouting' in kwargs:
-            echeck_routing = kwargs['echeckRouting']
-        if echeck_routing is None:
-            raise TypeError("Missing 'echeck_routing' argument")
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_digits is None:
-            raise TypeError("Missing 'last_digits' argument")
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if name_on_card is None:
-            raise TypeError("Missing 'name_on_card' argument")
-        if paid_by is None and 'paidBy' in kwargs:
-            paid_by = kwargs['paidBy']
-        if paid_by is None:
-            raise TypeError("Missing 'paid_by' argument")
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if payment_method is None:
-            raise TypeError("Missing 'payment_method' argument")
-        if paypal_id is None and 'paypalId' in kwargs:
-            paypal_id = kwargs['paypalId']
-        if paypal_id is None:
-            raise TypeError("Missing 'paypal_id' argument")
-        if paypal_reference is None and 'paypalReference' in kwargs:
-            paypal_reference = kwargs['paypalReference']
-        if paypal_reference is None:
-            raise TypeError("Missing 'paypal_reference' argument")
-        if routing_number is None and 'routingNumber' in kwargs:
-            routing_number = kwargs['routingNumber']
-        if routing_number is None:
-            raise TypeError("Missing 'routing_number' argument")
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if time_expiration is None:
-            raise TypeError("Missing 'time_expiration' argument")
-        if time_paid_on is None and 'timePaidOn' in kwargs:
-            time_paid_on = kwargs['timePaidOn']
-        if time_paid_on is None:
-            raise TypeError("Missing 'time_paid_on' argument")
-
-        _setter("account_number", account_number)
-        _setter("amount_paid", amount_paid)
-        _setter("card_type", card_type)
-        _setter("credit_card_type", credit_card_type)
-        _setter("echeck_routing", echeck_routing)
-        _setter("last_digits", last_digits)
-        _setter("name_on_card", name_on_card)
-        _setter("paid_by", paid_by)
-        _setter("payment_method", payment_method)
-        _setter("paypal_id", paypal_id)
-        _setter("paypal_reference", paypal_reference)
-        _setter("routing_number", routing_number)
-        _setter("time_expiration", time_expiration)
-        _setter("time_paid_on", time_paid_on)
+        pulumi.set(__self__, "account_number", account_number)
+        pulumi.set(__self__, "amount_paid", amount_paid)
+        pulumi.set(__self__, "card_type", card_type)
+        pulumi.set(__self__, "credit_card_type", credit_card_type)
+        pulumi.set(__self__, "echeck_routing", echeck_routing)
+        pulumi.set(__self__, "last_digits", last_digits)
+        pulumi.set(__self__, "name_on_card", name_on_card)
+        pulumi.set(__self__, "paid_by", paid_by)
+        pulumi.set(__self__, "payment_method", payment_method)
+        pulumi.set(__self__, "paypal_id", paypal_id)
+        pulumi.set(__self__, "paypal_reference", paypal_reference)
+        pulumi.set(__self__, "routing_number", routing_number)
+        pulumi.set(__self__, "time_expiration", time_expiration)
+        pulumi.set(__self__, "time_paid_on", time_paid_on)
 
     @property
     @pulumi.getter(name="accountNumber")
@@ -4187,29 +3091,10 @@ class GetInvoicesFilterResult(dict):
         """
         :param str name: Name of the currency
         """
-        GetInvoicesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4234,20 +3119,7 @@ class GetInvoicesFilterResult(dict):
 class GetInvoicesInvoiceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetInvoicesInvoiceCollectionItemResult']):
-        GetInvoicesInvoiceCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -4315,221 +3187,36 @@ class GetInvoicesInvoiceCollectionItemResult(dict):
         :param str time_invoice: Date of invoice
         :param str time_invoice_due: Due date of invoice
         """
-        GetInvoicesInvoiceCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bill_to_addresses=bill_to_addresses,
-            currencies=currencies,
-            internal_invoice_id=internal_invoice_id,
-            invoice_amount=invoice_amount,
-            invoice_amount_adjusted=invoice_amount_adjusted,
-            invoice_amount_applied=invoice_amount_applied,
-            invoice_amount_credited=invoice_amount_credited,
-            invoice_amount_due=invoice_amount_due,
-            invoice_amount_in_dispute=invoice_amount_in_dispute,
-            invoice_id=invoice_id,
-            invoice_number=invoice_number,
-            invoice_po_number=invoice_po_number,
-            invoice_ref_number=invoice_ref_number,
-            invoice_status=invoice_status,
-            invoice_type=invoice_type,
-            is_credit_card_payable=is_credit_card_payable,
-            is_display_download_pdf=is_display_download_pdf,
-            is_display_view_pdf=is_display_view_pdf,
-            is_paid=is_paid,
-            is_payable=is_payable,
-            is_payment_failed=is_payment_failed,
-            is_pdf_email_available=is_pdf_email_available,
-            last_payment_details=last_payment_details,
-            party_name=party_name,
-            payment_terms=payment_terms,
-            preferred_email=preferred_email,
-            subscription_ids=subscription_ids,
-            tax=tax,
-            time_invoice=time_invoice,
-            time_invoice_due=time_invoice_due,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bill_to_addresses: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressResult']] = None,
-             currencies: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemCurrencyResult']] = None,
-             internal_invoice_id: Optional[str] = None,
-             invoice_amount: Optional[float] = None,
-             invoice_amount_adjusted: Optional[float] = None,
-             invoice_amount_applied: Optional[float] = None,
-             invoice_amount_credited: Optional[float] = None,
-             invoice_amount_due: Optional[float] = None,
-             invoice_amount_in_dispute: Optional[float] = None,
-             invoice_id: Optional[str] = None,
-             invoice_number: Optional[str] = None,
-             invoice_po_number: Optional[str] = None,
-             invoice_ref_number: Optional[str] = None,
-             invoice_status: Optional[str] = None,
-             invoice_type: Optional[str] = None,
-             is_credit_card_payable: Optional[bool] = None,
-             is_display_download_pdf: Optional[bool] = None,
-             is_display_view_pdf: Optional[bool] = None,
-             is_paid: Optional[bool] = None,
-             is_payable: Optional[bool] = None,
-             is_payment_failed: Optional[bool] = None,
-             is_pdf_email_available: Optional[bool] = None,
-             last_payment_details: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult']] = None,
-             party_name: Optional[str] = None,
-             payment_terms: Optional[str] = None,
-             preferred_email: Optional[str] = None,
-             subscription_ids: Optional[Sequence[str]] = None,
-             tax: Optional[float] = None,
-             time_invoice: Optional[str] = None,
-             time_invoice_due: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bill_to_addresses is None and 'billToAddresses' in kwargs:
-            bill_to_addresses = kwargs['billToAddresses']
-        if bill_to_addresses is None:
-            raise TypeError("Missing 'bill_to_addresses' argument")
-        if currencies is None:
-            raise TypeError("Missing 'currencies' argument")
-        if internal_invoice_id is None and 'internalInvoiceId' in kwargs:
-            internal_invoice_id = kwargs['internalInvoiceId']
-        if internal_invoice_id is None:
-            raise TypeError("Missing 'internal_invoice_id' argument")
-        if invoice_amount is None and 'invoiceAmount' in kwargs:
-            invoice_amount = kwargs['invoiceAmount']
-        if invoice_amount is None:
-            raise TypeError("Missing 'invoice_amount' argument")
-        if invoice_amount_adjusted is None and 'invoiceAmountAdjusted' in kwargs:
-            invoice_amount_adjusted = kwargs['invoiceAmountAdjusted']
-        if invoice_amount_adjusted is None:
-            raise TypeError("Missing 'invoice_amount_adjusted' argument")
-        if invoice_amount_applied is None and 'invoiceAmountApplied' in kwargs:
-            invoice_amount_applied = kwargs['invoiceAmountApplied']
-        if invoice_amount_applied is None:
-            raise TypeError("Missing 'invoice_amount_applied' argument")
-        if invoice_amount_credited is None and 'invoiceAmountCredited' in kwargs:
-            invoice_amount_credited = kwargs['invoiceAmountCredited']
-        if invoice_amount_credited is None:
-            raise TypeError("Missing 'invoice_amount_credited' argument")
-        if invoice_amount_due is None and 'invoiceAmountDue' in kwargs:
-            invoice_amount_due = kwargs['invoiceAmountDue']
-        if invoice_amount_due is None:
-            raise TypeError("Missing 'invoice_amount_due' argument")
-        if invoice_amount_in_dispute is None and 'invoiceAmountInDispute' in kwargs:
-            invoice_amount_in_dispute = kwargs['invoiceAmountInDispute']
-        if invoice_amount_in_dispute is None:
-            raise TypeError("Missing 'invoice_amount_in_dispute' argument")
-        if invoice_id is None and 'invoiceId' in kwargs:
-            invoice_id = kwargs['invoiceId']
-        if invoice_id is None:
-            raise TypeError("Missing 'invoice_id' argument")
-        if invoice_number is None and 'invoiceNumber' in kwargs:
-            invoice_number = kwargs['invoiceNumber']
-        if invoice_number is None:
-            raise TypeError("Missing 'invoice_number' argument")
-        if invoice_po_number is None and 'invoicePoNumber' in kwargs:
-            invoice_po_number = kwargs['invoicePoNumber']
-        if invoice_po_number is None:
-            raise TypeError("Missing 'invoice_po_number' argument")
-        if invoice_ref_number is None and 'invoiceRefNumber' in kwargs:
-            invoice_ref_number = kwargs['invoiceRefNumber']
-        if invoice_ref_number is None:
-            raise TypeError("Missing 'invoice_ref_number' argument")
-        if invoice_status is None and 'invoiceStatus' in kwargs:
-            invoice_status = kwargs['invoiceStatus']
-        if invoice_status is None:
-            raise TypeError("Missing 'invoice_status' argument")
-        if invoice_type is None and 'invoiceType' in kwargs:
-            invoice_type = kwargs['invoiceType']
-        if invoice_type is None:
-            raise TypeError("Missing 'invoice_type' argument")
-        if is_credit_card_payable is None and 'isCreditCardPayable' in kwargs:
-            is_credit_card_payable = kwargs['isCreditCardPayable']
-        if is_credit_card_payable is None:
-            raise TypeError("Missing 'is_credit_card_payable' argument")
-        if is_display_download_pdf is None and 'isDisplayDownloadPdf' in kwargs:
-            is_display_download_pdf = kwargs['isDisplayDownloadPdf']
-        if is_display_download_pdf is None:
-            raise TypeError("Missing 'is_display_download_pdf' argument")
-        if is_display_view_pdf is None and 'isDisplayViewPdf' in kwargs:
-            is_display_view_pdf = kwargs['isDisplayViewPdf']
-        if is_display_view_pdf is None:
-            raise TypeError("Missing 'is_display_view_pdf' argument")
-        if is_paid is None and 'isPaid' in kwargs:
-            is_paid = kwargs['isPaid']
-        if is_paid is None:
-            raise TypeError("Missing 'is_paid' argument")
-        if is_payable is None and 'isPayable' in kwargs:
-            is_payable = kwargs['isPayable']
-        if is_payable is None:
-            raise TypeError("Missing 'is_payable' argument")
-        if is_payment_failed is None and 'isPaymentFailed' in kwargs:
-            is_payment_failed = kwargs['isPaymentFailed']
-        if is_payment_failed is None:
-            raise TypeError("Missing 'is_payment_failed' argument")
-        if is_pdf_email_available is None and 'isPdfEmailAvailable' in kwargs:
-            is_pdf_email_available = kwargs['isPdfEmailAvailable']
-        if is_pdf_email_available is None:
-            raise TypeError("Missing 'is_pdf_email_available' argument")
-        if last_payment_details is None and 'lastPaymentDetails' in kwargs:
-            last_payment_details = kwargs['lastPaymentDetails']
-        if last_payment_details is None:
-            raise TypeError("Missing 'last_payment_details' argument")
-        if party_name is None and 'partyName' in kwargs:
-            party_name = kwargs['partyName']
-        if party_name is None:
-            raise TypeError("Missing 'party_name' argument")
-        if payment_terms is None and 'paymentTerms' in kwargs:
-            payment_terms = kwargs['paymentTerms']
-        if payment_terms is None:
-            raise TypeError("Missing 'payment_terms' argument")
-        if preferred_email is None and 'preferredEmail' in kwargs:
-            preferred_email = kwargs['preferredEmail']
-        if preferred_email is None:
-            raise TypeError("Missing 'preferred_email' argument")
-        if subscription_ids is None and 'subscriptionIds' in kwargs:
-            subscription_ids = kwargs['subscriptionIds']
-        if subscription_ids is None:
-            raise TypeError("Missing 'subscription_ids' argument")
-        if tax is None:
-            raise TypeError("Missing 'tax' argument")
-        if time_invoice is None and 'timeInvoice' in kwargs:
-            time_invoice = kwargs['timeInvoice']
-        if time_invoice is None:
-            raise TypeError("Missing 'time_invoice' argument")
-        if time_invoice_due is None and 'timeInvoiceDue' in kwargs:
-            time_invoice_due = kwargs['timeInvoiceDue']
-        if time_invoice_due is None:
-            raise TypeError("Missing 'time_invoice_due' argument")
-
-        _setter("bill_to_addresses", bill_to_addresses)
-        _setter("currencies", currencies)
-        _setter("internal_invoice_id", internal_invoice_id)
-        _setter("invoice_amount", invoice_amount)
-        _setter("invoice_amount_adjusted", invoice_amount_adjusted)
-        _setter("invoice_amount_applied", invoice_amount_applied)
-        _setter("invoice_amount_credited", invoice_amount_credited)
-        _setter("invoice_amount_due", invoice_amount_due)
-        _setter("invoice_amount_in_dispute", invoice_amount_in_dispute)
-        _setter("invoice_id", invoice_id)
-        _setter("invoice_number", invoice_number)
-        _setter("invoice_po_number", invoice_po_number)
-        _setter("invoice_ref_number", invoice_ref_number)
-        _setter("invoice_status", invoice_status)
-        _setter("invoice_type", invoice_type)
-        _setter("is_credit_card_payable", is_credit_card_payable)
-        _setter("is_display_download_pdf", is_display_download_pdf)
-        _setter("is_display_view_pdf", is_display_view_pdf)
-        _setter("is_paid", is_paid)
-        _setter("is_payable", is_payable)
-        _setter("is_payment_failed", is_payment_failed)
-        _setter("is_pdf_email_available", is_pdf_email_available)
-        _setter("last_payment_details", last_payment_details)
-        _setter("party_name", party_name)
-        _setter("payment_terms", payment_terms)
-        _setter("preferred_email", preferred_email)
-        _setter("subscription_ids", subscription_ids)
-        _setter("tax", tax)
-        _setter("time_invoice", time_invoice)
-        _setter("time_invoice_due", time_invoice_due)
+        pulumi.set(__self__, "bill_to_addresses", bill_to_addresses)
+        pulumi.set(__self__, "currencies", currencies)
+        pulumi.set(__self__, "internal_invoice_id", internal_invoice_id)
+        pulumi.set(__self__, "invoice_amount", invoice_amount)
+        pulumi.set(__self__, "invoice_amount_adjusted", invoice_amount_adjusted)
+        pulumi.set(__self__, "invoice_amount_applied", invoice_amount_applied)
+        pulumi.set(__self__, "invoice_amount_credited", invoice_amount_credited)
+        pulumi.set(__self__, "invoice_amount_due", invoice_amount_due)
+        pulumi.set(__self__, "invoice_amount_in_dispute", invoice_amount_in_dispute)
+        pulumi.set(__self__, "invoice_id", invoice_id)
+        pulumi.set(__self__, "invoice_number", invoice_number)
+        pulumi.set(__self__, "invoice_po_number", invoice_po_number)
+        pulumi.set(__self__, "invoice_ref_number", invoice_ref_number)
+        pulumi.set(__self__, "invoice_status", invoice_status)
+        pulumi.set(__self__, "invoice_type", invoice_type)
+        pulumi.set(__self__, "is_credit_card_payable", is_credit_card_payable)
+        pulumi.set(__self__, "is_display_download_pdf", is_display_download_pdf)
+        pulumi.set(__self__, "is_display_view_pdf", is_display_view_pdf)
+        pulumi.set(__self__, "is_paid", is_paid)
+        pulumi.set(__self__, "is_payable", is_payable)
+        pulumi.set(__self__, "is_payment_failed", is_payment_failed)
+        pulumi.set(__self__, "is_pdf_email_available", is_pdf_email_available)
+        pulumi.set(__self__, "last_payment_details", last_payment_details)
+        pulumi.set(__self__, "party_name", party_name)
+        pulumi.set(__self__, "payment_terms", payment_terms)
+        pulumi.set(__self__, "preferred_email", preferred_email)
+        pulumi.set(__self__, "subscription_ids", subscription_ids)
+        pulumi.set(__self__, "tax", tax)
+        pulumi.set(__self__, "time_invoice", time_invoice)
+        pulumi.set(__self__, "time_invoice_due", time_invoice_due)
 
     @property
     @pulumi.getter(name="billToAddresses")
@@ -4790,103 +3477,20 @@ class GetInvoicesInvoiceCollectionItemBillToAddressResult(dict):
         :param str street_name: Street name
         :param str street_number: House no
         """
-        GetInvoicesInvoiceCollectionItemBillToAddressResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_line1=address_line1,
-            address_line2=address_line2,
-            address_line3=address_line3,
-            address_line4=address_line4,
-            city=city,
-            company_name=company_name,
-            contact_name=contact_name,
-            countries=countries,
-            county=county,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_line1: Optional[str] = None,
-             address_line2: Optional[str] = None,
-             address_line3: Optional[str] = None,
-             address_line4: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contact_name: Optional[str] = None,
-             countries: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressCountryResult']] = None,
-             county: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_line1 is None and 'addressLine1' in kwargs:
-            address_line1 = kwargs['addressLine1']
-        if address_line1 is None:
-            raise TypeError("Missing 'address_line1' argument")
-        if address_line2 is None and 'addressLine2' in kwargs:
-            address_line2 = kwargs['addressLine2']
-        if address_line2 is None:
-            raise TypeError("Missing 'address_line2' argument")
-        if address_line3 is None and 'addressLine3' in kwargs:
-            address_line3 = kwargs['addressLine3']
-        if address_line3 is None:
-            raise TypeError("Missing 'address_line3' argument")
-        if address_line4 is None and 'addressLine4' in kwargs:
-            address_line4 = kwargs['addressLine4']
-        if address_line4 is None:
-            raise TypeError("Missing 'address_line4' argument")
-        if city is None:
-            raise TypeError("Missing 'city' argument")
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if company_name is None:
-            raise TypeError("Missing 'company_name' argument")
-        if contact_name is None and 'contactName' in kwargs:
-            contact_name = kwargs['contactName']
-        if contact_name is None:
-            raise TypeError("Missing 'contact_name' argument")
-        if countries is None:
-            raise TypeError("Missing 'countries' argument")
-        if county is None:
-            raise TypeError("Missing 'county' argument")
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if postal_code is None:
-            raise TypeError("Missing 'postal_code' argument")
-        if province is None:
-            raise TypeError("Missing 'province' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_name is None:
-            raise TypeError("Missing 'street_name' argument")
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-        if street_number is None:
-            raise TypeError("Missing 'street_number' argument")
-
-        _setter("address_line1", address_line1)
-        _setter("address_line2", address_line2)
-        _setter("address_line3", address_line3)
-        _setter("address_line4", address_line4)
-        _setter("city", city)
-        _setter("company_name", company_name)
-        _setter("contact_name", contact_name)
-        _setter("countries", countries)
-        _setter("county", county)
-        _setter("postal_code", postal_code)
-        _setter("province", province)
-        _setter("state", state)
-        _setter("street_name", street_name)
-        _setter("street_number", street_number)
+        pulumi.set(__self__, "address_line1", address_line1)
+        pulumi.set(__self__, "address_line2", address_line2)
+        pulumi.set(__self__, "address_line3", address_line3)
+        pulumi.set(__self__, "address_line4", address_line4)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "company_name", company_name)
+        pulumi.set(__self__, "contact_name", contact_name)
+        pulumi.set(__self__, "countries", countries)
+        pulumi.set(__self__, "county", county)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "province", province)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "street_name", street_name)
+        pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressLine1")
@@ -5016,50 +3620,11 @@ class GetInvoicesInvoiceCollectionItemBillToAddressCountryResult(dict):
         :param str country_name: Name of the country
         :param float language_id: Language identifier
         """
-        GetInvoicesInvoiceCollectionItemBillToAddressCountryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ascii3country_code=ascii3country_code,
-            country_code=country_code,
-            country_id=country_id,
-            country_name=country_name,
-            language_id=language_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ascii3country_code: Optional[str] = None,
-             country_code: Optional[str] = None,
-             country_id: Optional[float] = None,
-             country_name: Optional[str] = None,
-             language_id: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ascii3country_code is None and 'ascii3countryCode' in kwargs:
-            ascii3country_code = kwargs['ascii3countryCode']
-        if ascii3country_code is None:
-            raise TypeError("Missing 'ascii3country_code' argument")
-        if country_code is None and 'countryCode' in kwargs:
-            country_code = kwargs['countryCode']
-        if country_code is None:
-            raise TypeError("Missing 'country_code' argument")
-        if country_id is None and 'countryId' in kwargs:
-            country_id = kwargs['countryId']
-        if country_id is None:
-            raise TypeError("Missing 'country_id' argument")
-        if country_name is None and 'countryName' in kwargs:
-            country_name = kwargs['countryName']
-        if country_name is None:
-            raise TypeError("Missing 'country_name' argument")
-        if language_id is None and 'languageId' in kwargs:
-            language_id = kwargs['languageId']
-        if language_id is None:
-            raise TypeError("Missing 'language_id' argument")
-
-        _setter("ascii3country_code", ascii3country_code)
-        _setter("country_code", country_code)
-        _setter("country_id", country_id)
-        _setter("country_name", country_name)
-        _setter("language_id", language_id)
+        pulumi.set(__self__, "ascii3country_code", ascii3country_code)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "country_id", country_id)
+        pulumi.set(__self__, "country_name", country_name)
+        pulumi.set(__self__, "language_id", language_id)
 
     @property
     @pulumi.getter(name="ascii3countryCode")
@@ -5117,48 +3682,11 @@ class GetInvoicesInvoiceCollectionItemCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        GetInvoicesInvoiceCollectionItemCurrencyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            currency_code=currency_code,
-            currency_symbol=currency_symbol,
-            name=name,
-            round_decimal_point=round_decimal_point,
-            usd_conversion=usd_conversion,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             currency_code: Optional[str] = None,
-             currency_symbol: Optional[str] = None,
-             name: Optional[str] = None,
-             round_decimal_point: Optional[float] = None,
-             usd_conversion: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if currency_symbol is None and 'currencySymbol' in kwargs:
-            currency_symbol = kwargs['currencySymbol']
-        if currency_symbol is None:
-            raise TypeError("Missing 'currency_symbol' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if round_decimal_point is None and 'roundDecimalPoint' in kwargs:
-            round_decimal_point = kwargs['roundDecimalPoint']
-        if round_decimal_point is None:
-            raise TypeError("Missing 'round_decimal_point' argument")
-        if usd_conversion is None and 'usdConversion' in kwargs:
-            usd_conversion = kwargs['usdConversion']
-        if usd_conversion is None:
-            raise TypeError("Missing 'usd_conversion' argument")
-
-        _setter("currency_code", currency_code)
-        _setter("currency_symbol", currency_symbol)
-        _setter("name", name)
-        _setter("round_decimal_point", round_decimal_point)
-        _setter("usd_conversion", usd_conversion)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "currency_symbol", currency_symbol)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -5234,113 +3762,20 @@ class GetInvoicesInvoiceCollectionItemLastPaymentDetailResult(dict):
         :param str time_expiration: Expired date of the credit card
         :param str time_paid_on: Paid the invoice on this day
         """
-        GetInvoicesInvoiceCollectionItemLastPaymentDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_number=account_number,
-            amount_paid=amount_paid,
-            card_type=card_type,
-            credit_card_type=credit_card_type,
-            echeck_routing=echeck_routing,
-            last_digits=last_digits,
-            name_on_card=name_on_card,
-            paid_by=paid_by,
-            payment_method=payment_method,
-            paypal_id=paypal_id,
-            paypal_reference=paypal_reference,
-            routing_number=routing_number,
-            time_expiration=time_expiration,
-            time_paid_on=time_paid_on,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_number: Optional[str] = None,
-             amount_paid: Optional[float] = None,
-             card_type: Optional[str] = None,
-             credit_card_type: Optional[str] = None,
-             echeck_routing: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             paid_by: Optional[str] = None,
-             payment_method: Optional[str] = None,
-             paypal_id: Optional[str] = None,
-             paypal_reference: Optional[str] = None,
-             routing_number: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             time_paid_on: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_number is None and 'accountNumber' in kwargs:
-            account_number = kwargs['accountNumber']
-        if account_number is None:
-            raise TypeError("Missing 'account_number' argument")
-        if amount_paid is None and 'amountPaid' in kwargs:
-            amount_paid = kwargs['amountPaid']
-        if amount_paid is None:
-            raise TypeError("Missing 'amount_paid' argument")
-        if card_type is None and 'cardType' in kwargs:
-            card_type = kwargs['cardType']
-        if card_type is None:
-            raise TypeError("Missing 'card_type' argument")
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if credit_card_type is None:
-            raise TypeError("Missing 'credit_card_type' argument")
-        if echeck_routing is None and 'echeckRouting' in kwargs:
-            echeck_routing = kwargs['echeckRouting']
-        if echeck_routing is None:
-            raise TypeError("Missing 'echeck_routing' argument")
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_digits is None:
-            raise TypeError("Missing 'last_digits' argument")
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if name_on_card is None:
-            raise TypeError("Missing 'name_on_card' argument")
-        if paid_by is None and 'paidBy' in kwargs:
-            paid_by = kwargs['paidBy']
-        if paid_by is None:
-            raise TypeError("Missing 'paid_by' argument")
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if payment_method is None:
-            raise TypeError("Missing 'payment_method' argument")
-        if paypal_id is None and 'paypalId' in kwargs:
-            paypal_id = kwargs['paypalId']
-        if paypal_id is None:
-            raise TypeError("Missing 'paypal_id' argument")
-        if paypal_reference is None and 'paypalReference' in kwargs:
-            paypal_reference = kwargs['paypalReference']
-        if paypal_reference is None:
-            raise TypeError("Missing 'paypal_reference' argument")
-        if routing_number is None and 'routingNumber' in kwargs:
-            routing_number = kwargs['routingNumber']
-        if routing_number is None:
-            raise TypeError("Missing 'routing_number' argument")
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if time_expiration is None:
-            raise TypeError("Missing 'time_expiration' argument")
-        if time_paid_on is None and 'timePaidOn' in kwargs:
-            time_paid_on = kwargs['timePaidOn']
-        if time_paid_on is None:
-            raise TypeError("Missing 'time_paid_on' argument")
-
-        _setter("account_number", account_number)
-        _setter("amount_paid", amount_paid)
-        _setter("card_type", card_type)
-        _setter("credit_card_type", credit_card_type)
-        _setter("echeck_routing", echeck_routing)
-        _setter("last_digits", last_digits)
-        _setter("name_on_card", name_on_card)
-        _setter("paid_by", paid_by)
-        _setter("payment_method", payment_method)
-        _setter("paypal_id", paypal_id)
-        _setter("paypal_reference", paypal_reference)
-        _setter("routing_number", routing_number)
-        _setter("time_expiration", time_expiration)
-        _setter("time_paid_on", time_paid_on)
+        pulumi.set(__self__, "account_number", account_number)
+        pulumi.set(__self__, "amount_paid", amount_paid)
+        pulumi.set(__self__, "card_type", card_type)
+        pulumi.set(__self__, "credit_card_type", credit_card_type)
+        pulumi.set(__self__, "echeck_routing", echeck_routing)
+        pulumi.set(__self__, "last_digits", last_digits)
+        pulumi.set(__self__, "name_on_card", name_on_card)
+        pulumi.set(__self__, "paid_by", paid_by)
+        pulumi.set(__self__, "payment_method", payment_method)
+        pulumi.set(__self__, "paypal_id", paypal_id)
+        pulumi.set(__self__, "paypal_reference", paypal_reference)
+        pulumi.set(__self__, "routing_number", routing_number)
+        pulumi.set(__self__, "time_expiration", time_expiration)
+        pulumi.set(__self__, "time_paid_on", time_paid_on)
 
     @property
     @pulumi.getter(name="accountNumber")
@@ -5478,72 +3913,15 @@ class GetInvoicesInvoiceLineItemResult(dict):
         :param str time_start: Start date
         :param float total_price: Total price of the ordered product (Net unit price x quantity)
         """
-        GetInvoicesInvoiceLineItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            currencies=currencies,
-            net_unit_price=net_unit_price,
-            order_no=order_no,
-            part_number=part_number,
-            product=product,
-            quantity=quantity,
-            time_end=time_end,
-            time_start=time_start,
-            total_price=total_price,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             currencies: Optional[Sequence['outputs.GetInvoicesInvoiceLineItemCurrencyResult']] = None,
-             net_unit_price: Optional[float] = None,
-             order_no: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product: Optional[str] = None,
-             quantity: Optional[float] = None,
-             time_end: Optional[str] = None,
-             time_start: Optional[str] = None,
-             total_price: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if currencies is None:
-            raise TypeError("Missing 'currencies' argument")
-        if net_unit_price is None and 'netUnitPrice' in kwargs:
-            net_unit_price = kwargs['netUnitPrice']
-        if net_unit_price is None:
-            raise TypeError("Missing 'net_unit_price' argument")
-        if order_no is None and 'orderNo' in kwargs:
-            order_no = kwargs['orderNo']
-        if order_no is None:
-            raise TypeError("Missing 'order_no' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product is None:
-            raise TypeError("Missing 'product' argument")
-        if quantity is None:
-            raise TypeError("Missing 'quantity' argument")
-        if time_end is None and 'timeEnd' in kwargs:
-            time_end = kwargs['timeEnd']
-        if time_end is None:
-            raise TypeError("Missing 'time_end' argument")
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if time_start is None:
-            raise TypeError("Missing 'time_start' argument")
-        if total_price is None and 'totalPrice' in kwargs:
-            total_price = kwargs['totalPrice']
-        if total_price is None:
-            raise TypeError("Missing 'total_price' argument")
-
-        _setter("currencies", currencies)
-        _setter("net_unit_price", net_unit_price)
-        _setter("order_no", order_no)
-        _setter("part_number", part_number)
-        _setter("product", product)
-        _setter("quantity", quantity)
-        _setter("time_end", time_end)
-        _setter("time_start", time_start)
-        _setter("total_price", total_price)
+        pulumi.set(__self__, "currencies", currencies)
+        pulumi.set(__self__, "net_unit_price", net_unit_price)
+        pulumi.set(__self__, "order_no", order_no)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product", product)
+        pulumi.set(__self__, "quantity", quantity)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "total_price", total_price)
 
     @property
     @pulumi.getter
@@ -5633,48 +4011,11 @@ class GetInvoicesInvoiceLineItemCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        GetInvoicesInvoiceLineItemCurrencyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            currency_code=currency_code,
-            currency_symbol=currency_symbol,
-            name=name,
-            round_decimal_point=round_decimal_point,
-            usd_conversion=usd_conversion,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             currency_code: Optional[str] = None,
-             currency_symbol: Optional[str] = None,
-             name: Optional[str] = None,
-             round_decimal_point: Optional[float] = None,
-             usd_conversion: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if currency_symbol is None and 'currencySymbol' in kwargs:
-            currency_symbol = kwargs['currencySymbol']
-        if currency_symbol is None:
-            raise TypeError("Missing 'currency_symbol' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if round_decimal_point is None and 'roundDecimalPoint' in kwargs:
-            round_decimal_point = kwargs['roundDecimalPoint']
-        if round_decimal_point is None:
-            raise TypeError("Missing 'round_decimal_point' argument")
-        if usd_conversion is None and 'usdConversion' in kwargs:
-            usd_conversion = kwargs['usdConversion']
-        if usd_conversion is None:
-            raise TypeError("Missing 'usd_conversion' argument")
-
-        _setter("currency_code", currency_code)
-        _setter("currency_symbol", currency_symbol)
-        _setter("name", name)
-        _setter("round_decimal_point", round_decimal_point)
-        _setter("usd_conversion", usd_conversion)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "currency_symbol", currency_symbol)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -5726,29 +4067,10 @@ class GetInvoicesInvoiceLinesFilterResult(dict):
         """
         :param str name: Name of the currency
         """
-        GetInvoicesInvoiceLinesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5776,20 +4098,7 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionResult(dict):
         """
         :param Sequence['GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs'] items: Invoice line list elements
         """
-        GetInvoicesInvoiceLinesInvoiceLineCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5823,72 +4132,15 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult(dict):
         :param str time_start: Start date
         :param float total_price: Total price of the ordered product (Net unit price x quantity)
         """
-        GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            currencies=currencies,
-            net_unit_price=net_unit_price,
-            order_no=order_no,
-            part_number=part_number,
-            product=product,
-            quantity=quantity,
-            time_end=time_end,
-            time_start=time_start,
-            total_price=total_price,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             currencies: Optional[Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult']] = None,
-             net_unit_price: Optional[float] = None,
-             order_no: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product: Optional[str] = None,
-             quantity: Optional[float] = None,
-             time_end: Optional[str] = None,
-             time_start: Optional[str] = None,
-             total_price: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if currencies is None:
-            raise TypeError("Missing 'currencies' argument")
-        if net_unit_price is None and 'netUnitPrice' in kwargs:
-            net_unit_price = kwargs['netUnitPrice']
-        if net_unit_price is None:
-            raise TypeError("Missing 'net_unit_price' argument")
-        if order_no is None and 'orderNo' in kwargs:
-            order_no = kwargs['orderNo']
-        if order_no is None:
-            raise TypeError("Missing 'order_no' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product is None:
-            raise TypeError("Missing 'product' argument")
-        if quantity is None:
-            raise TypeError("Missing 'quantity' argument")
-        if time_end is None and 'timeEnd' in kwargs:
-            time_end = kwargs['timeEnd']
-        if time_end is None:
-            raise TypeError("Missing 'time_end' argument")
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if time_start is None:
-            raise TypeError("Missing 'time_start' argument")
-        if total_price is None and 'totalPrice' in kwargs:
-            total_price = kwargs['totalPrice']
-        if total_price is None:
-            raise TypeError("Missing 'total_price' argument")
-
-        _setter("currencies", currencies)
-        _setter("net_unit_price", net_unit_price)
-        _setter("order_no", order_no)
-        _setter("part_number", part_number)
-        _setter("product", product)
-        _setter("quantity", quantity)
-        _setter("time_end", time_end)
-        _setter("time_start", time_start)
-        _setter("total_price", total_price)
+        pulumi.set(__self__, "currencies", currencies)
+        pulumi.set(__self__, "net_unit_price", net_unit_price)
+        pulumi.set(__self__, "order_no", order_no)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product", product)
+        pulumi.set(__self__, "quantity", quantity)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "total_price", total_price)
 
     @property
     @pulumi.getter
@@ -5978,48 +4230,11 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            currency_code=currency_code,
-            currency_symbol=currency_symbol,
-            name=name,
-            round_decimal_point=round_decimal_point,
-            usd_conversion=usd_conversion,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             currency_code: Optional[str] = None,
-             currency_symbol: Optional[str] = None,
-             name: Optional[str] = None,
-             round_decimal_point: Optional[float] = None,
-             usd_conversion: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if currency_symbol is None and 'currencySymbol' in kwargs:
-            currency_symbol = kwargs['currencySymbol']
-        if currency_symbol is None:
-            raise TypeError("Missing 'currency_symbol' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if round_decimal_point is None and 'roundDecimalPoint' in kwargs:
-            round_decimal_point = kwargs['roundDecimalPoint']
-        if round_decimal_point is None:
-            raise TypeError("Missing 'round_decimal_point' argument")
-        if usd_conversion is None and 'usdConversion' in kwargs:
-            usd_conversion = kwargs['usdConversion']
-        if usd_conversion is None:
-            raise TypeError("Missing 'usd_conversion' argument")
-
-        _setter("currency_code", currency_code)
-        _setter("currency_symbol", currency_symbol)
-        _setter("name", name)
-        _setter("round_decimal_point", round_decimal_point)
-        _setter("usd_conversion", usd_conversion)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "currency_symbol", currency_symbol)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -6119,179 +4334,32 @@ class GetSubscriptionBillingAddressResult(dict):
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        GetSubscriptionBillingAddressResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contributor_class: Optional[str] = None,
-             country: Optional[str] = None,
-             county: Optional[str] = None,
-             department_name: Optional[str] = None,
-             email_address: Optional[str] = None,
-             first_name: Optional[str] = None,
-             internal_number: Optional[str] = None,
-             job_title: Optional[str] = None,
-             last_name: Optional[str] = None,
-             line1: Optional[str] = None,
-             line2: Optional[str] = None,
-             line3: Optional[str] = None,
-             line4: Optional[str] = None,
-             middle_name: Optional[str] = None,
-             municipal_inscription: Optional[str] = None,
-             phone_country_code: Optional[str] = None,
-             phone_number: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             state_inscription: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if address_key is None:
-            raise TypeError("Missing 'address_key' argument")
-        if city is None:
-            raise TypeError("Missing 'city' argument")
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if company_name is None:
-            raise TypeError("Missing 'company_name' argument")
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if contributor_class is None:
-            raise TypeError("Missing 'contributor_class' argument")
-        if country is None:
-            raise TypeError("Missing 'country' argument")
-        if county is None:
-            raise TypeError("Missing 'county' argument")
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if department_name is None:
-            raise TypeError("Missing 'department_name' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if internal_number is None:
-            raise TypeError("Missing 'internal_number' argument")
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if job_title is None:
-            raise TypeError("Missing 'job_title' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if line1 is None:
-            raise TypeError("Missing 'line1' argument")
-        if line2 is None:
-            raise TypeError("Missing 'line2' argument")
-        if line3 is None:
-            raise TypeError("Missing 'line3' argument")
-        if line4 is None:
-            raise TypeError("Missing 'line4' argument")
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if middle_name is None:
-            raise TypeError("Missing 'middle_name' argument")
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if municipal_inscription is None:
-            raise TypeError("Missing 'municipal_inscription' argument")
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_country_code is None:
-            raise TypeError("Missing 'phone_country_code' argument")
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if phone_number is None:
-            raise TypeError("Missing 'phone_number' argument")
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if postal_code is None:
-            raise TypeError("Missing 'postal_code' argument")
-        if province is None:
-            raise TypeError("Missing 'province' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if state_inscription is None:
-            raise TypeError("Missing 'state_inscription' argument")
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_name is None:
-            raise TypeError("Missing 'street_name' argument")
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-        if street_number is None:
-            raise TypeError("Missing 'street_number' argument")
-
-        _setter("address_key", address_key)
-        _setter("city", city)
-        _setter("company_name", company_name)
-        _setter("contributor_class", contributor_class)
-        _setter("country", country)
-        _setter("county", county)
-        _setter("department_name", department_name)
-        _setter("email_address", email_address)
-        _setter("first_name", first_name)
-        _setter("internal_number", internal_number)
-        _setter("job_title", job_title)
-        _setter("last_name", last_name)
-        _setter("line1", line1)
-        _setter("line2", line2)
-        _setter("line3", line3)
-        _setter("line4", line4)
-        _setter("middle_name", middle_name)
-        _setter("municipal_inscription", municipal_inscription)
-        _setter("phone_country_code", phone_country_code)
-        _setter("phone_number", phone_number)
-        _setter("postal_code", postal_code)
-        _setter("province", province)
-        _setter("state", state)
-        _setter("state_inscription", state_inscription)
-        _setter("street_name", street_name)
-        _setter("street_number", street_number)
+        pulumi.set(__self__, "address_key", address_key)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "company_name", company_name)
+        pulumi.set(__self__, "contributor_class", contributor_class)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "county", county)
+        pulumi.set(__self__, "department_name", department_name)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "internal_number", internal_number)
+        pulumi.set(__self__, "job_title", job_title)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "line1", line1)
+        pulumi.set(__self__, "line2", line2)
+        pulumi.set(__self__, "line3", line3)
+        pulumi.set(__self__, "line4", line4)
+        pulumi.set(__self__, "middle_name", middle_name)
+        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        pulumi.set(__self__, "phone_country_code", phone_country_code)
+        pulumi.set(__self__, "phone_number", phone_number)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "province", province)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_inscription", state_inscription)
+        pulumi.set(__self__, "street_name", street_name)
+        pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -6509,22 +4577,7 @@ class GetSubscriptionPaymentGatewayResult(dict):
         """
         :param Sequence['GetSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        GetSubscriptionPaymentGatewayResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            merchant_defined_datas=merchant_defined_datas,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionPaymentGatewayMerchantDefinedDataResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if merchant_defined_datas is None and 'merchantDefinedDatas' in kwargs:
-            merchant_defined_datas = kwargs['merchantDefinedDatas']
-        if merchant_defined_datas is None:
-            raise TypeError("Missing 'merchant_defined_datas' argument")
-
-        _setter("merchant_defined_datas", merchant_defined_datas)
+        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -6544,29 +4597,8 @@ class GetSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        GetSubscriptionPaymentGatewayMerchantDefinedDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cloud_account_name=cloud_account_name,
-            promo_type=promo_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cloud_account_name: Optional[str] = None,
-             promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cloud_account_name is None and 'cloudAccountName' in kwargs:
-            cloud_account_name = kwargs['cloudAccountName']
-        if cloud_account_name is None:
-            raise TypeError("Missing 'cloud_account_name' argument")
-        if promo_type is None and 'promoType' in kwargs:
-            promo_type = kwargs['promoType']
-        if promo_type is None:
-            raise TypeError("Missing 'promo_type' argument")
-
-        _setter("cloud_account_name", cloud_account_name)
-        _setter("promo_type", promo_type)
+        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -6612,92 +4644,17 @@ class GetSubscriptionPaymentOptionResult(dict):
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        GetSubscriptionPaymentOptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credit_card_type=credit_card_type,
-            email_address=email_address,
-            ext_billing_agreement_id=ext_billing_agreement_id,
-            first_name=first_name,
-            last_digits=last_digits,
-            last_name=last_name,
-            name_on_card=name_on_card,
-            payment_method=payment_method,
-            time_expiration=time_expiration,
-            wallet_instrument_id=wallet_instrument_id,
-            wallet_transaction_id=wallet_transaction_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credit_card_type: Optional[str] = None,
-             email_address: Optional[str] = None,
-             ext_billing_agreement_id: Optional[str] = None,
-             first_name: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             last_name: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             payment_method: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             wallet_instrument_id: Optional[str] = None,
-             wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if credit_card_type is None:
-            raise TypeError("Missing 'credit_card_type' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if ext_billing_agreement_id is None and 'extBillingAgreementId' in kwargs:
-            ext_billing_agreement_id = kwargs['extBillingAgreementId']
-        if ext_billing_agreement_id is None:
-            raise TypeError("Missing 'ext_billing_agreement_id' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_digits is None:
-            raise TypeError("Missing 'last_digits' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if name_on_card is None:
-            raise TypeError("Missing 'name_on_card' argument")
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if payment_method is None:
-            raise TypeError("Missing 'payment_method' argument")
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if time_expiration is None:
-            raise TypeError("Missing 'time_expiration' argument")
-        if wallet_instrument_id is None and 'walletInstrumentId' in kwargs:
-            wallet_instrument_id = kwargs['walletInstrumentId']
-        if wallet_instrument_id is None:
-            raise TypeError("Missing 'wallet_instrument_id' argument")
-        if wallet_transaction_id is None and 'walletTransactionId' in kwargs:
-            wallet_transaction_id = kwargs['walletTransactionId']
-        if wallet_transaction_id is None:
-            raise TypeError("Missing 'wallet_transaction_id' argument")
-
-        _setter("credit_card_type", credit_card_type)
-        _setter("email_address", email_address)
-        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
-        _setter("first_name", first_name)
-        _setter("last_digits", last_digits)
-        _setter("last_name", last_name)
-        _setter("name_on_card", name_on_card)
-        _setter("payment_method", payment_method)
-        _setter("time_expiration", time_expiration)
-        _setter("wallet_instrument_id", wallet_instrument_id)
-        _setter("wallet_transaction_id", wallet_transaction_id)
+        pulumi.set(__self__, "credit_card_type", credit_card_type)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_digits", last_digits)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "name_on_card", name_on_card)
+        pulumi.set(__self__, "payment_method", payment_method)
+        pulumi.set(__self__, "time_expiration", time_expiration)
+        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -6835,160 +4792,27 @@ class GetSubscriptionSubscriptionResult(dict):
         :param str upgrade_state: Status of the upgrade.
         :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        GetSubscriptionSubscriptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_type=account_type,
-            bill_to_cust_account_id=bill_to_cust_account_id,
-            billing_addresses=billing_addresses,
-            currency_code=currency_code,
-            gsi_org_code=gsi_org_code,
-            id=id,
-            is_intent_to_pay=is_intent_to_pay,
-            language_code=language_code,
-            organization_id=organization_id,
-            payment_gateways=payment_gateways,
-            payment_options=payment_options,
-            plan_type=plan_type,
-            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
-            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
-            subscription_plan_number=subscription_plan_number,
-            tax_infos=tax_infos,
-            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
-            time_plan_upgrade=time_plan_upgrade,
-            time_start=time_start,
-            upgrade_state=upgrade_state,
-            upgrade_state_details=upgrade_state_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_type: Optional[str] = None,
-             bill_to_cust_account_id: Optional[str] = None,
-             billing_addresses: Optional[Sequence['outputs.GetSubscriptionSubscriptionBillingAddressResult']] = None,
-             currency_code: Optional[str] = None,
-             gsi_org_code: Optional[str] = None,
-             id: Optional[str] = None,
-             is_intent_to_pay: Optional[bool] = None,
-             language_code: Optional[str] = None,
-             organization_id: Optional[str] = None,
-             payment_gateways: Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayResult']] = None,
-             payment_options: Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentOptionResult']] = None,
-             plan_type: Optional[str] = None,
-             ship_to_cust_acct_role_id: Optional[str] = None,
-             ship_to_cust_acct_site_id: Optional[str] = None,
-             subscription_plan_number: Optional[str] = None,
-             tax_infos: Optional[Sequence['outputs.GetSubscriptionSubscriptionTaxInfoResult']] = None,
-             time_personal_to_corporate_conv: Optional[str] = None,
-             time_plan_upgrade: Optional[str] = None,
-             time_start: Optional[str] = None,
-             upgrade_state: Optional[str] = None,
-             upgrade_state_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_type is None and 'accountType' in kwargs:
-            account_type = kwargs['accountType']
-        if account_type is None:
-            raise TypeError("Missing 'account_type' argument")
-        if bill_to_cust_account_id is None and 'billToCustAccountId' in kwargs:
-            bill_to_cust_account_id = kwargs['billToCustAccountId']
-        if bill_to_cust_account_id is None:
-            raise TypeError("Missing 'bill_to_cust_account_id' argument")
-        if billing_addresses is None and 'billingAddresses' in kwargs:
-            billing_addresses = kwargs['billingAddresses']
-        if billing_addresses is None:
-            raise TypeError("Missing 'billing_addresses' argument")
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if gsi_org_code is None and 'gsiOrgCode' in kwargs:
-            gsi_org_code = kwargs['gsiOrgCode']
-        if gsi_org_code is None:
-            raise TypeError("Missing 'gsi_org_code' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
-            is_intent_to_pay = kwargs['isIntentToPay']
-        if is_intent_to_pay is None:
-            raise TypeError("Missing 'is_intent_to_pay' argument")
-        if language_code is None and 'languageCode' in kwargs:
-            language_code = kwargs['languageCode']
-        if language_code is None:
-            raise TypeError("Missing 'language_code' argument")
-        if organization_id is None and 'organizationId' in kwargs:
-            organization_id = kwargs['organizationId']
-        if organization_id is None:
-            raise TypeError("Missing 'organization_id' argument")
-        if payment_gateways is None and 'paymentGateways' in kwargs:
-            payment_gateways = kwargs['paymentGateways']
-        if payment_gateways is None:
-            raise TypeError("Missing 'payment_gateways' argument")
-        if payment_options is None and 'paymentOptions' in kwargs:
-            payment_options = kwargs['paymentOptions']
-        if payment_options is None:
-            raise TypeError("Missing 'payment_options' argument")
-        if plan_type is None and 'planType' in kwargs:
-            plan_type = kwargs['planType']
-        if plan_type is None:
-            raise TypeError("Missing 'plan_type' argument")
-        if ship_to_cust_acct_role_id is None and 'shipToCustAcctRoleId' in kwargs:
-            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
-        if ship_to_cust_acct_role_id is None:
-            raise TypeError("Missing 'ship_to_cust_acct_role_id' argument")
-        if ship_to_cust_acct_site_id is None and 'shipToCustAcctSiteId' in kwargs:
-            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
-        if ship_to_cust_acct_site_id is None:
-            raise TypeError("Missing 'ship_to_cust_acct_site_id' argument")
-        if subscription_plan_number is None and 'subscriptionPlanNumber' in kwargs:
-            subscription_plan_number = kwargs['subscriptionPlanNumber']
-        if subscription_plan_number is None:
-            raise TypeError("Missing 'subscription_plan_number' argument")
-        if tax_infos is None and 'taxInfos' in kwargs:
-            tax_infos = kwargs['taxInfos']
-        if tax_infos is None:
-            raise TypeError("Missing 'tax_infos' argument")
-        if time_personal_to_corporate_conv is None and 'timePersonalToCorporateConv' in kwargs:
-            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
-        if time_personal_to_corporate_conv is None:
-            raise TypeError("Missing 'time_personal_to_corporate_conv' argument")
-        if time_plan_upgrade is None and 'timePlanUpgrade' in kwargs:
-            time_plan_upgrade = kwargs['timePlanUpgrade']
-        if time_plan_upgrade is None:
-            raise TypeError("Missing 'time_plan_upgrade' argument")
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if time_start is None:
-            raise TypeError("Missing 'time_start' argument")
-        if upgrade_state is None and 'upgradeState' in kwargs:
-            upgrade_state = kwargs['upgradeState']
-        if upgrade_state is None:
-            raise TypeError("Missing 'upgrade_state' argument")
-        if upgrade_state_details is None and 'upgradeStateDetails' in kwargs:
-            upgrade_state_details = kwargs['upgradeStateDetails']
-        if upgrade_state_details is None:
-            raise TypeError("Missing 'upgrade_state_details' argument")
-
-        _setter("account_type", account_type)
-        _setter("bill_to_cust_account_id", bill_to_cust_account_id)
-        _setter("billing_addresses", billing_addresses)
-        _setter("currency_code", currency_code)
-        _setter("gsi_org_code", gsi_org_code)
-        _setter("id", id)
-        _setter("is_intent_to_pay", is_intent_to_pay)
-        _setter("language_code", language_code)
-        _setter("organization_id", organization_id)
-        _setter("payment_gateways", payment_gateways)
-        _setter("payment_options", payment_options)
-        _setter("plan_type", plan_type)
-        _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        _setter("subscription_plan_number", subscription_plan_number)
-        _setter("tax_infos", tax_infos)
-        _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        _setter("time_plan_upgrade", time_plan_upgrade)
-        _setter("time_start", time_start)
-        _setter("upgrade_state", upgrade_state)
-        _setter("upgrade_state_details", upgrade_state_details)
+        pulumi.set(__self__, "account_type", account_type)
+        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+        pulumi.set(__self__, "billing_addresses", billing_addresses)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+        pulumi.set(__self__, "language_code", language_code)
+        pulumi.set(__self__, "organization_id", organization_id)
+        pulumi.set(__self__, "payment_gateways", payment_gateways)
+        pulumi.set(__self__, "payment_options", payment_options)
+        pulumi.set(__self__, "plan_type", plan_type)
+        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        pulumi.set(__self__, "tax_infos", tax_infos)
+        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "upgrade_state", upgrade_state)
+        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
@@ -7216,179 +5040,32 @@ class GetSubscriptionSubscriptionBillingAddressResult(dict):
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        GetSubscriptionSubscriptionBillingAddressResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contributor_class: Optional[str] = None,
-             country: Optional[str] = None,
-             county: Optional[str] = None,
-             department_name: Optional[str] = None,
-             email_address: Optional[str] = None,
-             first_name: Optional[str] = None,
-             internal_number: Optional[str] = None,
-             job_title: Optional[str] = None,
-             last_name: Optional[str] = None,
-             line1: Optional[str] = None,
-             line2: Optional[str] = None,
-             line3: Optional[str] = None,
-             line4: Optional[str] = None,
-             middle_name: Optional[str] = None,
-             municipal_inscription: Optional[str] = None,
-             phone_country_code: Optional[str] = None,
-             phone_number: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             state_inscription: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if address_key is None:
-            raise TypeError("Missing 'address_key' argument")
-        if city is None:
-            raise TypeError("Missing 'city' argument")
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if company_name is None:
-            raise TypeError("Missing 'company_name' argument")
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if contributor_class is None:
-            raise TypeError("Missing 'contributor_class' argument")
-        if country is None:
-            raise TypeError("Missing 'country' argument")
-        if county is None:
-            raise TypeError("Missing 'county' argument")
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if department_name is None:
-            raise TypeError("Missing 'department_name' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if internal_number is None:
-            raise TypeError("Missing 'internal_number' argument")
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if job_title is None:
-            raise TypeError("Missing 'job_title' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if line1 is None:
-            raise TypeError("Missing 'line1' argument")
-        if line2 is None:
-            raise TypeError("Missing 'line2' argument")
-        if line3 is None:
-            raise TypeError("Missing 'line3' argument")
-        if line4 is None:
-            raise TypeError("Missing 'line4' argument")
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if middle_name is None:
-            raise TypeError("Missing 'middle_name' argument")
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if municipal_inscription is None:
-            raise TypeError("Missing 'municipal_inscription' argument")
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_country_code is None:
-            raise TypeError("Missing 'phone_country_code' argument")
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if phone_number is None:
-            raise TypeError("Missing 'phone_number' argument")
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if postal_code is None:
-            raise TypeError("Missing 'postal_code' argument")
-        if province is None:
-            raise TypeError("Missing 'province' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if state_inscription is None:
-            raise TypeError("Missing 'state_inscription' argument")
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_name is None:
-            raise TypeError("Missing 'street_name' argument")
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-        if street_number is None:
-            raise TypeError("Missing 'street_number' argument")
-
-        _setter("address_key", address_key)
-        _setter("city", city)
-        _setter("company_name", company_name)
-        _setter("contributor_class", contributor_class)
-        _setter("country", country)
-        _setter("county", county)
-        _setter("department_name", department_name)
-        _setter("email_address", email_address)
-        _setter("first_name", first_name)
-        _setter("internal_number", internal_number)
-        _setter("job_title", job_title)
-        _setter("last_name", last_name)
-        _setter("line1", line1)
-        _setter("line2", line2)
-        _setter("line3", line3)
-        _setter("line4", line4)
-        _setter("middle_name", middle_name)
-        _setter("municipal_inscription", municipal_inscription)
-        _setter("phone_country_code", phone_country_code)
-        _setter("phone_number", phone_number)
-        _setter("postal_code", postal_code)
-        _setter("province", province)
-        _setter("state", state)
-        _setter("state_inscription", state_inscription)
-        _setter("street_name", street_name)
-        _setter("street_number", street_number)
+        pulumi.set(__self__, "address_key", address_key)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "company_name", company_name)
+        pulumi.set(__self__, "contributor_class", contributor_class)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "county", county)
+        pulumi.set(__self__, "department_name", department_name)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "internal_number", internal_number)
+        pulumi.set(__self__, "job_title", job_title)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "line1", line1)
+        pulumi.set(__self__, "line2", line2)
+        pulumi.set(__self__, "line3", line3)
+        pulumi.set(__self__, "line4", line4)
+        pulumi.set(__self__, "middle_name", middle_name)
+        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        pulumi.set(__self__, "phone_country_code", phone_country_code)
+        pulumi.set(__self__, "phone_number", phone_number)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "province", province)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_inscription", state_inscription)
+        pulumi.set(__self__, "street_name", street_name)
+        pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -7606,22 +5283,7 @@ class GetSubscriptionSubscriptionPaymentGatewayResult(dict):
         """
         :param Sequence['GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        GetSubscriptionSubscriptionPaymentGatewayResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            merchant_defined_datas=merchant_defined_datas,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if merchant_defined_datas is None and 'merchantDefinedDatas' in kwargs:
-            merchant_defined_datas = kwargs['merchantDefinedDatas']
-        if merchant_defined_datas is None:
-            raise TypeError("Missing 'merchant_defined_datas' argument")
-
-        _setter("merchant_defined_datas", merchant_defined_datas)
+        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -7641,29 +5303,8 @@ class GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cloud_account_name=cloud_account_name,
-            promo_type=promo_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cloud_account_name: Optional[str] = None,
-             promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cloud_account_name is None and 'cloudAccountName' in kwargs:
-            cloud_account_name = kwargs['cloudAccountName']
-        if cloud_account_name is None:
-            raise TypeError("Missing 'cloud_account_name' argument")
-        if promo_type is None and 'promoType' in kwargs:
-            promo_type = kwargs['promoType']
-        if promo_type is None:
-            raise TypeError("Missing 'promo_type' argument")
-
-        _setter("cloud_account_name", cloud_account_name)
-        _setter("promo_type", promo_type)
+        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -7709,92 +5350,17 @@ class GetSubscriptionSubscriptionPaymentOptionResult(dict):
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        GetSubscriptionSubscriptionPaymentOptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credit_card_type=credit_card_type,
-            email_address=email_address,
-            ext_billing_agreement_id=ext_billing_agreement_id,
-            first_name=first_name,
-            last_digits=last_digits,
-            last_name=last_name,
-            name_on_card=name_on_card,
-            payment_method=payment_method,
-            time_expiration=time_expiration,
-            wallet_instrument_id=wallet_instrument_id,
-            wallet_transaction_id=wallet_transaction_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credit_card_type: Optional[str] = None,
-             email_address: Optional[str] = None,
-             ext_billing_agreement_id: Optional[str] = None,
-             first_name: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             last_name: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             payment_method: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             wallet_instrument_id: Optional[str] = None,
-             wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if credit_card_type is None:
-            raise TypeError("Missing 'credit_card_type' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if ext_billing_agreement_id is None and 'extBillingAgreementId' in kwargs:
-            ext_billing_agreement_id = kwargs['extBillingAgreementId']
-        if ext_billing_agreement_id is None:
-            raise TypeError("Missing 'ext_billing_agreement_id' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_digits is None:
-            raise TypeError("Missing 'last_digits' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if name_on_card is None:
-            raise TypeError("Missing 'name_on_card' argument")
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if payment_method is None:
-            raise TypeError("Missing 'payment_method' argument")
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if time_expiration is None:
-            raise TypeError("Missing 'time_expiration' argument")
-        if wallet_instrument_id is None and 'walletInstrumentId' in kwargs:
-            wallet_instrument_id = kwargs['walletInstrumentId']
-        if wallet_instrument_id is None:
-            raise TypeError("Missing 'wallet_instrument_id' argument")
-        if wallet_transaction_id is None and 'walletTransactionId' in kwargs:
-            wallet_transaction_id = kwargs['walletTransactionId']
-        if wallet_transaction_id is None:
-            raise TypeError("Missing 'wallet_transaction_id' argument")
-
-        _setter("credit_card_type", credit_card_type)
-        _setter("email_address", email_address)
-        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
-        _setter("first_name", first_name)
-        _setter("last_digits", last_digits)
-        _setter("last_name", last_name)
-        _setter("name_on_card", name_on_card)
-        _setter("payment_method", payment_method)
-        _setter("time_expiration", time_expiration)
-        _setter("wallet_instrument_id", wallet_instrument_id)
-        _setter("wallet_transaction_id", wallet_transaction_id)
+        pulumi.set(__self__, "credit_card_type", credit_card_type)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_digits", last_digits)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "name_on_card", name_on_card)
+        pulumi.set(__self__, "payment_method", payment_method)
+        pulumi.set(__self__, "time_expiration", time_expiration)
+        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -7900,50 +5466,11 @@ class GetSubscriptionSubscriptionTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        GetSubscriptionSubscriptionTaxInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            no_tax_reason_code=no_tax_reason_code,
-            no_tax_reason_code_details=no_tax_reason_code_details,
-            tax_cnpj=tax_cnpj,
-            tax_payer_id=tax_payer_id,
-            tax_reg_number=tax_reg_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             no_tax_reason_code: Optional[str] = None,
-             no_tax_reason_code_details: Optional[str] = None,
-             tax_cnpj: Optional[str] = None,
-             tax_payer_id: Optional[str] = None,
-             tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if no_tax_reason_code is None and 'noTaxReasonCode' in kwargs:
-            no_tax_reason_code = kwargs['noTaxReasonCode']
-        if no_tax_reason_code is None:
-            raise TypeError("Missing 'no_tax_reason_code' argument")
-        if no_tax_reason_code_details is None and 'noTaxReasonCodeDetails' in kwargs:
-            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
-        if no_tax_reason_code_details is None:
-            raise TypeError("Missing 'no_tax_reason_code_details' argument")
-        if tax_cnpj is None and 'taxCnpj' in kwargs:
-            tax_cnpj = kwargs['taxCnpj']
-        if tax_cnpj is None:
-            raise TypeError("Missing 'tax_cnpj' argument")
-        if tax_payer_id is None and 'taxPayerId' in kwargs:
-            tax_payer_id = kwargs['taxPayerId']
-        if tax_payer_id is None:
-            raise TypeError("Missing 'tax_payer_id' argument")
-        if tax_reg_number is None and 'taxRegNumber' in kwargs:
-            tax_reg_number = kwargs['taxRegNumber']
-        if tax_reg_number is None:
-            raise TypeError("Missing 'tax_reg_number' argument")
-
-        _setter("no_tax_reason_code", no_tax_reason_code)
-        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
-        _setter("tax_cnpj", tax_cnpj)
-        _setter("tax_payer_id", tax_payer_id)
-        _setter("tax_reg_number", tax_reg_number)
+        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -8001,50 +5528,11 @@ class GetSubscriptionTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        GetSubscriptionTaxInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            no_tax_reason_code=no_tax_reason_code,
-            no_tax_reason_code_details=no_tax_reason_code_details,
-            tax_cnpj=tax_cnpj,
-            tax_payer_id=tax_payer_id,
-            tax_reg_number=tax_reg_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             no_tax_reason_code: Optional[str] = None,
-             no_tax_reason_code_details: Optional[str] = None,
-             tax_cnpj: Optional[str] = None,
-             tax_payer_id: Optional[str] = None,
-             tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if no_tax_reason_code is None and 'noTaxReasonCode' in kwargs:
-            no_tax_reason_code = kwargs['noTaxReasonCode']
-        if no_tax_reason_code is None:
-            raise TypeError("Missing 'no_tax_reason_code' argument")
-        if no_tax_reason_code_details is None and 'noTaxReasonCodeDetails' in kwargs:
-            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
-        if no_tax_reason_code_details is None:
-            raise TypeError("Missing 'no_tax_reason_code_details' argument")
-        if tax_cnpj is None and 'taxCnpj' in kwargs:
-            tax_cnpj = kwargs['taxCnpj']
-        if tax_cnpj is None:
-            raise TypeError("Missing 'tax_cnpj' argument")
-        if tax_payer_id is None and 'taxPayerId' in kwargs:
-            tax_payer_id = kwargs['taxPayerId']
-        if tax_payer_id is None:
-            raise TypeError("Missing 'tax_payer_id' argument")
-        if tax_reg_number is None and 'taxRegNumber' in kwargs:
-            tax_reg_number = kwargs['taxRegNumber']
-        if tax_reg_number is None:
-            raise TypeError("Missing 'tax_reg_number' argument")
-
-        _setter("no_tax_reason_code", no_tax_reason_code)
-        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
-        _setter("tax_cnpj", tax_cnpj)
-        _setter("tax_payer_id", tax_payer_id)
-        _setter("tax_reg_number", tax_reg_number)
+        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -8093,29 +5581,10 @@ class GetSubscriptionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSubscriptionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -8137,20 +5606,7 @@ class GetSubscriptionsFilterResult(dict):
 class GetSubscriptionsSubscriptionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult']):
-        GetSubscriptionsSubscriptionCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -8212,191 +5668,32 @@ class GetSubscriptionsSubscriptionCollectionItemResult(dict):
         :param str upgrade_state: Status of the upgrade.
         :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        GetSubscriptionsSubscriptionCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_type=account_type,
-            bill_to_cust_account_id=bill_to_cust_account_id,
-            billing_addresses=billing_addresses,
-            compartment_id=compartment_id,
-            currency_code=currency_code,
-            email=email,
-            gsi_org_code=gsi_org_code,
-            id=id,
-            is_intent_to_pay=is_intent_to_pay,
-            language_code=language_code,
-            organization_id=organization_id,
-            osp_home_region=osp_home_region,
-            payment_gateways=payment_gateways,
-            payment_options=payment_options,
-            plan_type=plan_type,
-            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
-            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
-            subscription_id=subscription_id,
-            subscription_plan_number=subscription_plan_number,
-            subscriptions=subscriptions,
-            tax_infos=tax_infos,
-            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
-            time_plan_upgrade=time_plan_upgrade,
-            time_start=time_start,
-            upgrade_state=upgrade_state,
-            upgrade_state_details=upgrade_state_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_type: Optional[str] = None,
-             bill_to_cust_account_id: Optional[str] = None,
-             billing_addresses: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemBillingAddressResult']] = None,
-             compartment_id: Optional[str] = None,
-             currency_code: Optional[str] = None,
-             email: Optional[str] = None,
-             gsi_org_code: Optional[str] = None,
-             id: Optional[str] = None,
-             is_intent_to_pay: Optional[bool] = None,
-             language_code: Optional[str] = None,
-             organization_id: Optional[str] = None,
-             osp_home_region: Optional[str] = None,
-             payment_gateways: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult']] = None,
-             payment_options: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult']] = None,
-             plan_type: Optional[str] = None,
-             ship_to_cust_acct_role_id: Optional[str] = None,
-             ship_to_cust_acct_site_id: Optional[str] = None,
-             subscription_id: Optional[str] = None,
-             subscription_plan_number: Optional[str] = None,
-             subscriptions: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionResult']] = None,
-             tax_infos: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemTaxInfoResult']] = None,
-             time_personal_to_corporate_conv: Optional[str] = None,
-             time_plan_upgrade: Optional[str] = None,
-             time_start: Optional[str] = None,
-             upgrade_state: Optional[str] = None,
-             upgrade_state_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_type is None and 'accountType' in kwargs:
-            account_type = kwargs['accountType']
-        if account_type is None:
-            raise TypeError("Missing 'account_type' argument")
-        if bill_to_cust_account_id is None and 'billToCustAccountId' in kwargs:
-            bill_to_cust_account_id = kwargs['billToCustAccountId']
-        if bill_to_cust_account_id is None:
-            raise TypeError("Missing 'bill_to_cust_account_id' argument")
-        if billing_addresses is None and 'billingAddresses' in kwargs:
-            billing_addresses = kwargs['billingAddresses']
-        if billing_addresses is None:
-            raise TypeError("Missing 'billing_addresses' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if email is None:
-            raise TypeError("Missing 'email' argument")
-        if gsi_org_code is None and 'gsiOrgCode' in kwargs:
-            gsi_org_code = kwargs['gsiOrgCode']
-        if gsi_org_code is None:
-            raise TypeError("Missing 'gsi_org_code' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
-            is_intent_to_pay = kwargs['isIntentToPay']
-        if is_intent_to_pay is None:
-            raise TypeError("Missing 'is_intent_to_pay' argument")
-        if language_code is None and 'languageCode' in kwargs:
-            language_code = kwargs['languageCode']
-        if language_code is None:
-            raise TypeError("Missing 'language_code' argument")
-        if organization_id is None and 'organizationId' in kwargs:
-            organization_id = kwargs['organizationId']
-        if organization_id is None:
-            raise TypeError("Missing 'organization_id' argument")
-        if osp_home_region is None and 'ospHomeRegion' in kwargs:
-            osp_home_region = kwargs['ospHomeRegion']
-        if osp_home_region is None:
-            raise TypeError("Missing 'osp_home_region' argument")
-        if payment_gateways is None and 'paymentGateways' in kwargs:
-            payment_gateways = kwargs['paymentGateways']
-        if payment_gateways is None:
-            raise TypeError("Missing 'payment_gateways' argument")
-        if payment_options is None and 'paymentOptions' in kwargs:
-            payment_options = kwargs['paymentOptions']
-        if payment_options is None:
-            raise TypeError("Missing 'payment_options' argument")
-        if plan_type is None and 'planType' in kwargs:
-            plan_type = kwargs['planType']
-        if plan_type is None:
-            raise TypeError("Missing 'plan_type' argument")
-        if ship_to_cust_acct_role_id is None and 'shipToCustAcctRoleId' in kwargs:
-            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
-        if ship_to_cust_acct_role_id is None:
-            raise TypeError("Missing 'ship_to_cust_acct_role_id' argument")
-        if ship_to_cust_acct_site_id is None and 'shipToCustAcctSiteId' in kwargs:
-            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
-        if ship_to_cust_acct_site_id is None:
-            raise TypeError("Missing 'ship_to_cust_acct_site_id' argument")
-        if subscription_id is None and 'subscriptionId' in kwargs:
-            subscription_id = kwargs['subscriptionId']
-        if subscription_id is None:
-            raise TypeError("Missing 'subscription_id' argument")
-        if subscription_plan_number is None and 'subscriptionPlanNumber' in kwargs:
-            subscription_plan_number = kwargs['subscriptionPlanNumber']
-        if subscription_plan_number is None:
-            raise TypeError("Missing 'subscription_plan_number' argument")
-        if subscriptions is None:
-            raise TypeError("Missing 'subscriptions' argument")
-        if tax_infos is None and 'taxInfos' in kwargs:
-            tax_infos = kwargs['taxInfos']
-        if tax_infos is None:
-            raise TypeError("Missing 'tax_infos' argument")
-        if time_personal_to_corporate_conv is None and 'timePersonalToCorporateConv' in kwargs:
-            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
-        if time_personal_to_corporate_conv is None:
-            raise TypeError("Missing 'time_personal_to_corporate_conv' argument")
-        if time_plan_upgrade is None and 'timePlanUpgrade' in kwargs:
-            time_plan_upgrade = kwargs['timePlanUpgrade']
-        if time_plan_upgrade is None:
-            raise TypeError("Missing 'time_plan_upgrade' argument")
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if time_start is None:
-            raise TypeError("Missing 'time_start' argument")
-        if upgrade_state is None and 'upgradeState' in kwargs:
-            upgrade_state = kwargs['upgradeState']
-        if upgrade_state is None:
-            raise TypeError("Missing 'upgrade_state' argument")
-        if upgrade_state_details is None and 'upgradeStateDetails' in kwargs:
-            upgrade_state_details = kwargs['upgradeStateDetails']
-        if upgrade_state_details is None:
-            raise TypeError("Missing 'upgrade_state_details' argument")
-
-        _setter("account_type", account_type)
-        _setter("bill_to_cust_account_id", bill_to_cust_account_id)
-        _setter("billing_addresses", billing_addresses)
-        _setter("compartment_id", compartment_id)
-        _setter("currency_code", currency_code)
-        _setter("email", email)
-        _setter("gsi_org_code", gsi_org_code)
-        _setter("id", id)
-        _setter("is_intent_to_pay", is_intent_to_pay)
-        _setter("language_code", language_code)
-        _setter("organization_id", organization_id)
-        _setter("osp_home_region", osp_home_region)
-        _setter("payment_gateways", payment_gateways)
-        _setter("payment_options", payment_options)
-        _setter("plan_type", plan_type)
-        _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        _setter("subscription_id", subscription_id)
-        _setter("subscription_plan_number", subscription_plan_number)
-        _setter("subscriptions", subscriptions)
-        _setter("tax_infos", tax_infos)
-        _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        _setter("time_plan_upgrade", time_plan_upgrade)
-        _setter("time_start", time_start)
-        _setter("upgrade_state", upgrade_state)
-        _setter("upgrade_state_details", upgrade_state_details)
+        pulumi.set(__self__, "account_type", account_type)
+        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+        pulumi.set(__self__, "billing_addresses", billing_addresses)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+        pulumi.set(__self__, "language_code", language_code)
+        pulumi.set(__self__, "organization_id", organization_id)
+        pulumi.set(__self__, "osp_home_region", osp_home_region)
+        pulumi.set(__self__, "payment_gateways", payment_gateways)
+        pulumi.set(__self__, "payment_options", payment_options)
+        pulumi.set(__self__, "plan_type", plan_type)
+        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        pulumi.set(__self__, "subscriptions", subscriptions)
+        pulumi.set(__self__, "tax_infos", tax_infos)
+        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "upgrade_state", upgrade_state)
+        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
@@ -8655,179 +5952,32 @@ class GetSubscriptionsSubscriptionCollectionItemBillingAddressResult(dict):
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        GetSubscriptionsSubscriptionCollectionItemBillingAddressResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contributor_class: Optional[str] = None,
-             country: Optional[str] = None,
-             county: Optional[str] = None,
-             department_name: Optional[str] = None,
-             email_address: Optional[str] = None,
-             first_name: Optional[str] = None,
-             internal_number: Optional[str] = None,
-             job_title: Optional[str] = None,
-             last_name: Optional[str] = None,
-             line1: Optional[str] = None,
-             line2: Optional[str] = None,
-             line3: Optional[str] = None,
-             line4: Optional[str] = None,
-             middle_name: Optional[str] = None,
-             municipal_inscription: Optional[str] = None,
-             phone_country_code: Optional[str] = None,
-             phone_number: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             state_inscription: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if address_key is None:
-            raise TypeError("Missing 'address_key' argument")
-        if city is None:
-            raise TypeError("Missing 'city' argument")
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if company_name is None:
-            raise TypeError("Missing 'company_name' argument")
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if contributor_class is None:
-            raise TypeError("Missing 'contributor_class' argument")
-        if country is None:
-            raise TypeError("Missing 'country' argument")
-        if county is None:
-            raise TypeError("Missing 'county' argument")
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if department_name is None:
-            raise TypeError("Missing 'department_name' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if internal_number is None:
-            raise TypeError("Missing 'internal_number' argument")
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if job_title is None:
-            raise TypeError("Missing 'job_title' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if line1 is None:
-            raise TypeError("Missing 'line1' argument")
-        if line2 is None:
-            raise TypeError("Missing 'line2' argument")
-        if line3 is None:
-            raise TypeError("Missing 'line3' argument")
-        if line4 is None:
-            raise TypeError("Missing 'line4' argument")
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if middle_name is None:
-            raise TypeError("Missing 'middle_name' argument")
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if municipal_inscription is None:
-            raise TypeError("Missing 'municipal_inscription' argument")
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_country_code is None:
-            raise TypeError("Missing 'phone_country_code' argument")
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if phone_number is None:
-            raise TypeError("Missing 'phone_number' argument")
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if postal_code is None:
-            raise TypeError("Missing 'postal_code' argument")
-        if province is None:
-            raise TypeError("Missing 'province' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if state_inscription is None:
-            raise TypeError("Missing 'state_inscription' argument")
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_name is None:
-            raise TypeError("Missing 'street_name' argument")
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-        if street_number is None:
-            raise TypeError("Missing 'street_number' argument")
-
-        _setter("address_key", address_key)
-        _setter("city", city)
-        _setter("company_name", company_name)
-        _setter("contributor_class", contributor_class)
-        _setter("country", country)
-        _setter("county", county)
-        _setter("department_name", department_name)
-        _setter("email_address", email_address)
-        _setter("first_name", first_name)
-        _setter("internal_number", internal_number)
-        _setter("job_title", job_title)
-        _setter("last_name", last_name)
-        _setter("line1", line1)
-        _setter("line2", line2)
-        _setter("line3", line3)
-        _setter("line4", line4)
-        _setter("middle_name", middle_name)
-        _setter("municipal_inscription", municipal_inscription)
-        _setter("phone_country_code", phone_country_code)
-        _setter("phone_number", phone_number)
-        _setter("postal_code", postal_code)
-        _setter("province", province)
-        _setter("state", state)
-        _setter("state_inscription", state_inscription)
-        _setter("street_name", street_name)
-        _setter("street_number", street_number)
+        pulumi.set(__self__, "address_key", address_key)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "company_name", company_name)
+        pulumi.set(__self__, "contributor_class", contributor_class)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "county", county)
+        pulumi.set(__self__, "department_name", department_name)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "internal_number", internal_number)
+        pulumi.set(__self__, "job_title", job_title)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "line1", line1)
+        pulumi.set(__self__, "line2", line2)
+        pulumi.set(__self__, "line3", line3)
+        pulumi.set(__self__, "line4", line4)
+        pulumi.set(__self__, "middle_name", middle_name)
+        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        pulumi.set(__self__, "phone_country_code", phone_country_code)
+        pulumi.set(__self__, "phone_number", phone_number)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "province", province)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_inscription", state_inscription)
+        pulumi.set(__self__, "street_name", street_name)
+        pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -9045,22 +6195,7 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult(dict):
         """
         :param Sequence['GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            merchant_defined_datas=merchant_defined_datas,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if merchant_defined_datas is None and 'merchantDefinedDatas' in kwargs:
-            merchant_defined_datas = kwargs['merchantDefinedDatas']
-        if merchant_defined_datas is None:
-            raise TypeError("Missing 'merchant_defined_datas' argument")
-
-        _setter("merchant_defined_datas", merchant_defined_datas)
+        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -9080,29 +6215,8 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDat
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cloud_account_name=cloud_account_name,
-            promo_type=promo_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cloud_account_name: Optional[str] = None,
-             promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cloud_account_name is None and 'cloudAccountName' in kwargs:
-            cloud_account_name = kwargs['cloudAccountName']
-        if cloud_account_name is None:
-            raise TypeError("Missing 'cloud_account_name' argument")
-        if promo_type is None and 'promoType' in kwargs:
-            promo_type = kwargs['promoType']
-        if promo_type is None:
-            raise TypeError("Missing 'promo_type' argument")
-
-        _setter("cloud_account_name", cloud_account_name)
-        _setter("promo_type", promo_type)
+        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -9148,92 +6262,17 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult(dict):
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credit_card_type=credit_card_type,
-            email_address=email_address,
-            ext_billing_agreement_id=ext_billing_agreement_id,
-            first_name=first_name,
-            last_digits=last_digits,
-            last_name=last_name,
-            name_on_card=name_on_card,
-            payment_method=payment_method,
-            time_expiration=time_expiration,
-            wallet_instrument_id=wallet_instrument_id,
-            wallet_transaction_id=wallet_transaction_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credit_card_type: Optional[str] = None,
-             email_address: Optional[str] = None,
-             ext_billing_agreement_id: Optional[str] = None,
-             first_name: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             last_name: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             payment_method: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             wallet_instrument_id: Optional[str] = None,
-             wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if credit_card_type is None:
-            raise TypeError("Missing 'credit_card_type' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if ext_billing_agreement_id is None and 'extBillingAgreementId' in kwargs:
-            ext_billing_agreement_id = kwargs['extBillingAgreementId']
-        if ext_billing_agreement_id is None:
-            raise TypeError("Missing 'ext_billing_agreement_id' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_digits is None:
-            raise TypeError("Missing 'last_digits' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if name_on_card is None:
-            raise TypeError("Missing 'name_on_card' argument")
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if payment_method is None:
-            raise TypeError("Missing 'payment_method' argument")
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if time_expiration is None:
-            raise TypeError("Missing 'time_expiration' argument")
-        if wallet_instrument_id is None and 'walletInstrumentId' in kwargs:
-            wallet_instrument_id = kwargs['walletInstrumentId']
-        if wallet_instrument_id is None:
-            raise TypeError("Missing 'wallet_instrument_id' argument")
-        if wallet_transaction_id is None and 'walletTransactionId' in kwargs:
-            wallet_transaction_id = kwargs['walletTransactionId']
-        if wallet_transaction_id is None:
-            raise TypeError("Missing 'wallet_transaction_id' argument")
-
-        _setter("credit_card_type", credit_card_type)
-        _setter("email_address", email_address)
-        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
-        _setter("first_name", first_name)
-        _setter("last_digits", last_digits)
-        _setter("last_name", last_name)
-        _setter("name_on_card", name_on_card)
-        _setter("payment_method", payment_method)
-        _setter("time_expiration", time_expiration)
-        _setter("wallet_instrument_id", wallet_instrument_id)
-        _setter("wallet_transaction_id", wallet_transaction_id)
+        pulumi.set(__self__, "credit_card_type", credit_card_type)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_digits", last_digits)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "name_on_card", name_on_card)
+        pulumi.set(__self__, "payment_method", payment_method)
+        pulumi.set(__self__, "time_expiration", time_expiration)
+        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -9371,160 +6410,27 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
         :param str upgrade_state: Status of the upgrade.
         :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        GetSubscriptionsSubscriptionCollectionItemSubscriptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_type=account_type,
-            bill_to_cust_account_id=bill_to_cust_account_id,
-            billing_addresses=billing_addresses,
-            currency_code=currency_code,
-            gsi_org_code=gsi_org_code,
-            id=id,
-            is_intent_to_pay=is_intent_to_pay,
-            language_code=language_code,
-            organization_id=organization_id,
-            payment_gateways=payment_gateways,
-            payment_options=payment_options,
-            plan_type=plan_type,
-            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
-            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
-            subscription_plan_number=subscription_plan_number,
-            tax_infos=tax_infos,
-            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
-            time_plan_upgrade=time_plan_upgrade,
-            time_start=time_start,
-            upgrade_state=upgrade_state,
-            upgrade_state_details=upgrade_state_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_type: Optional[str] = None,
-             bill_to_cust_account_id: Optional[str] = None,
-             billing_addresses: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult']] = None,
-             currency_code: Optional[str] = None,
-             gsi_org_code: Optional[str] = None,
-             id: Optional[str] = None,
-             is_intent_to_pay: Optional[bool] = None,
-             language_code: Optional[str] = None,
-             organization_id: Optional[str] = None,
-             payment_gateways: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult']] = None,
-             payment_options: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult']] = None,
-             plan_type: Optional[str] = None,
-             ship_to_cust_acct_role_id: Optional[str] = None,
-             ship_to_cust_acct_site_id: Optional[str] = None,
-             subscription_plan_number: Optional[str] = None,
-             tax_infos: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult']] = None,
-             time_personal_to_corporate_conv: Optional[str] = None,
-             time_plan_upgrade: Optional[str] = None,
-             time_start: Optional[str] = None,
-             upgrade_state: Optional[str] = None,
-             upgrade_state_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_type is None and 'accountType' in kwargs:
-            account_type = kwargs['accountType']
-        if account_type is None:
-            raise TypeError("Missing 'account_type' argument")
-        if bill_to_cust_account_id is None and 'billToCustAccountId' in kwargs:
-            bill_to_cust_account_id = kwargs['billToCustAccountId']
-        if bill_to_cust_account_id is None:
-            raise TypeError("Missing 'bill_to_cust_account_id' argument")
-        if billing_addresses is None and 'billingAddresses' in kwargs:
-            billing_addresses = kwargs['billingAddresses']
-        if billing_addresses is None:
-            raise TypeError("Missing 'billing_addresses' argument")
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if gsi_org_code is None and 'gsiOrgCode' in kwargs:
-            gsi_org_code = kwargs['gsiOrgCode']
-        if gsi_org_code is None:
-            raise TypeError("Missing 'gsi_org_code' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
-            is_intent_to_pay = kwargs['isIntentToPay']
-        if is_intent_to_pay is None:
-            raise TypeError("Missing 'is_intent_to_pay' argument")
-        if language_code is None and 'languageCode' in kwargs:
-            language_code = kwargs['languageCode']
-        if language_code is None:
-            raise TypeError("Missing 'language_code' argument")
-        if organization_id is None and 'organizationId' in kwargs:
-            organization_id = kwargs['organizationId']
-        if organization_id is None:
-            raise TypeError("Missing 'organization_id' argument")
-        if payment_gateways is None and 'paymentGateways' in kwargs:
-            payment_gateways = kwargs['paymentGateways']
-        if payment_gateways is None:
-            raise TypeError("Missing 'payment_gateways' argument")
-        if payment_options is None and 'paymentOptions' in kwargs:
-            payment_options = kwargs['paymentOptions']
-        if payment_options is None:
-            raise TypeError("Missing 'payment_options' argument")
-        if plan_type is None and 'planType' in kwargs:
-            plan_type = kwargs['planType']
-        if plan_type is None:
-            raise TypeError("Missing 'plan_type' argument")
-        if ship_to_cust_acct_role_id is None and 'shipToCustAcctRoleId' in kwargs:
-            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
-        if ship_to_cust_acct_role_id is None:
-            raise TypeError("Missing 'ship_to_cust_acct_role_id' argument")
-        if ship_to_cust_acct_site_id is None and 'shipToCustAcctSiteId' in kwargs:
-            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
-        if ship_to_cust_acct_site_id is None:
-            raise TypeError("Missing 'ship_to_cust_acct_site_id' argument")
-        if subscription_plan_number is None and 'subscriptionPlanNumber' in kwargs:
-            subscription_plan_number = kwargs['subscriptionPlanNumber']
-        if subscription_plan_number is None:
-            raise TypeError("Missing 'subscription_plan_number' argument")
-        if tax_infos is None and 'taxInfos' in kwargs:
-            tax_infos = kwargs['taxInfos']
-        if tax_infos is None:
-            raise TypeError("Missing 'tax_infos' argument")
-        if time_personal_to_corporate_conv is None and 'timePersonalToCorporateConv' in kwargs:
-            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
-        if time_personal_to_corporate_conv is None:
-            raise TypeError("Missing 'time_personal_to_corporate_conv' argument")
-        if time_plan_upgrade is None and 'timePlanUpgrade' in kwargs:
-            time_plan_upgrade = kwargs['timePlanUpgrade']
-        if time_plan_upgrade is None:
-            raise TypeError("Missing 'time_plan_upgrade' argument")
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if time_start is None:
-            raise TypeError("Missing 'time_start' argument")
-        if upgrade_state is None and 'upgradeState' in kwargs:
-            upgrade_state = kwargs['upgradeState']
-        if upgrade_state is None:
-            raise TypeError("Missing 'upgrade_state' argument")
-        if upgrade_state_details is None and 'upgradeStateDetails' in kwargs:
-            upgrade_state_details = kwargs['upgradeStateDetails']
-        if upgrade_state_details is None:
-            raise TypeError("Missing 'upgrade_state_details' argument")
-
-        _setter("account_type", account_type)
-        _setter("bill_to_cust_account_id", bill_to_cust_account_id)
-        _setter("billing_addresses", billing_addresses)
-        _setter("currency_code", currency_code)
-        _setter("gsi_org_code", gsi_org_code)
-        _setter("id", id)
-        _setter("is_intent_to_pay", is_intent_to_pay)
-        _setter("language_code", language_code)
-        _setter("organization_id", organization_id)
-        _setter("payment_gateways", payment_gateways)
-        _setter("payment_options", payment_options)
-        _setter("plan_type", plan_type)
-        _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        _setter("subscription_plan_number", subscription_plan_number)
-        _setter("tax_infos", tax_infos)
-        _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        _setter("time_plan_upgrade", time_plan_upgrade)
-        _setter("time_start", time_start)
-        _setter("upgrade_state", upgrade_state)
-        _setter("upgrade_state_details", upgrade_state_details)
+        pulumi.set(__self__, "account_type", account_type)
+        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+        pulumi.set(__self__, "billing_addresses", billing_addresses)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+        pulumi.set(__self__, "language_code", language_code)
+        pulumi.set(__self__, "organization_id", organization_id)
+        pulumi.set(__self__, "payment_gateways", payment_gateways)
+        pulumi.set(__self__, "payment_options", payment_options)
+        pulumi.set(__self__, "plan_type", plan_type)
+        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        pulumi.set(__self__, "tax_infos", tax_infos)
+        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+        pulumi.set(__self__, "time_start", time_start)
+        pulumi.set(__self__, "upgrade_state", upgrade_state)
+        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
@@ -9752,179 +6658,32 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[str] = None,
-             city: Optional[str] = None,
-             company_name: Optional[str] = None,
-             contributor_class: Optional[str] = None,
-             country: Optional[str] = None,
-             county: Optional[str] = None,
-             department_name: Optional[str] = None,
-             email_address: Optional[str] = None,
-             first_name: Optional[str] = None,
-             internal_number: Optional[str] = None,
-             job_title: Optional[str] = None,
-             last_name: Optional[str] = None,
-             line1: Optional[str] = None,
-             line2: Optional[str] = None,
-             line3: Optional[str] = None,
-             line4: Optional[str] = None,
-             middle_name: Optional[str] = None,
-             municipal_inscription: Optional[str] = None,
-             phone_country_code: Optional[str] = None,
-             phone_number: Optional[str] = None,
-             postal_code: Optional[str] = None,
-             province: Optional[str] = None,
-             state: Optional[str] = None,
-             state_inscription: Optional[str] = None,
-             street_name: Optional[str] = None,
-             street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if address_key is None:
-            raise TypeError("Missing 'address_key' argument")
-        if city is None:
-            raise TypeError("Missing 'city' argument")
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if company_name is None:
-            raise TypeError("Missing 'company_name' argument")
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if contributor_class is None:
-            raise TypeError("Missing 'contributor_class' argument")
-        if country is None:
-            raise TypeError("Missing 'country' argument")
-        if county is None:
-            raise TypeError("Missing 'county' argument")
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if department_name is None:
-            raise TypeError("Missing 'department_name' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if internal_number is None:
-            raise TypeError("Missing 'internal_number' argument")
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if job_title is None:
-            raise TypeError("Missing 'job_title' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if line1 is None:
-            raise TypeError("Missing 'line1' argument")
-        if line2 is None:
-            raise TypeError("Missing 'line2' argument")
-        if line3 is None:
-            raise TypeError("Missing 'line3' argument")
-        if line4 is None:
-            raise TypeError("Missing 'line4' argument")
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if middle_name is None:
-            raise TypeError("Missing 'middle_name' argument")
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if municipal_inscription is None:
-            raise TypeError("Missing 'municipal_inscription' argument")
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_country_code is None:
-            raise TypeError("Missing 'phone_country_code' argument")
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if phone_number is None:
-            raise TypeError("Missing 'phone_number' argument")
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if postal_code is None:
-            raise TypeError("Missing 'postal_code' argument")
-        if province is None:
-            raise TypeError("Missing 'province' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if state_inscription is None:
-            raise TypeError("Missing 'state_inscription' argument")
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_name is None:
-            raise TypeError("Missing 'street_name' argument")
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-        if street_number is None:
-            raise TypeError("Missing 'street_number' argument")
-
-        _setter("address_key", address_key)
-        _setter("city", city)
-        _setter("company_name", company_name)
-        _setter("contributor_class", contributor_class)
-        _setter("country", country)
-        _setter("county", county)
-        _setter("department_name", department_name)
-        _setter("email_address", email_address)
-        _setter("first_name", first_name)
-        _setter("internal_number", internal_number)
-        _setter("job_title", job_title)
-        _setter("last_name", last_name)
-        _setter("line1", line1)
-        _setter("line2", line2)
-        _setter("line3", line3)
-        _setter("line4", line4)
-        _setter("middle_name", middle_name)
-        _setter("municipal_inscription", municipal_inscription)
-        _setter("phone_country_code", phone_country_code)
-        _setter("phone_number", phone_number)
-        _setter("postal_code", postal_code)
-        _setter("province", province)
-        _setter("state", state)
-        _setter("state_inscription", state_inscription)
-        _setter("street_name", street_name)
-        _setter("street_number", street_number)
+        pulumi.set(__self__, "address_key", address_key)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "company_name", company_name)
+        pulumi.set(__self__, "contributor_class", contributor_class)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "county", county)
+        pulumi.set(__self__, "department_name", department_name)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "internal_number", internal_number)
+        pulumi.set(__self__, "job_title", job_title)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "line1", line1)
+        pulumi.set(__self__, "line2", line2)
+        pulumi.set(__self__, "line3", line3)
+        pulumi.set(__self__, "line4", line4)
+        pulumi.set(__self__, "middle_name", middle_name)
+        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        pulumi.set(__self__, "phone_country_code", phone_country_code)
+        pulumi.set(__self__, "phone_number", phone_number)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "province", province)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_inscription", state_inscription)
+        pulumi.set(__self__, "street_name", street_name)
+        pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -10142,22 +6901,7 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult
         """
         :param Sequence['GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            merchant_defined_datas=merchant_defined_datas,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if merchant_defined_datas is None and 'merchantDefinedDatas' in kwargs:
-            merchant_defined_datas = kwargs['merchantDefinedDatas']
-        if merchant_defined_datas is None:
-            raise TypeError("Missing 'merchant_defined_datas' argument")
-
-        _setter("merchant_defined_datas", merchant_defined_datas)
+        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -10177,29 +6921,8 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMercha
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cloud_account_name=cloud_account_name,
-            promo_type=promo_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cloud_account_name: Optional[str] = None,
-             promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cloud_account_name is None and 'cloudAccountName' in kwargs:
-            cloud_account_name = kwargs['cloudAccountName']
-        if cloud_account_name is None:
-            raise TypeError("Missing 'cloud_account_name' argument")
-        if promo_type is None and 'promoType' in kwargs:
-            promo_type = kwargs['promoType']
-        if promo_type is None:
-            raise TypeError("Missing 'promo_type' argument")
-
-        _setter("cloud_account_name", cloud_account_name)
-        _setter("promo_type", promo_type)
+        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -10245,92 +6968,17 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult(
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credit_card_type=credit_card_type,
-            email_address=email_address,
-            ext_billing_agreement_id=ext_billing_agreement_id,
-            first_name=first_name,
-            last_digits=last_digits,
-            last_name=last_name,
-            name_on_card=name_on_card,
-            payment_method=payment_method,
-            time_expiration=time_expiration,
-            wallet_instrument_id=wallet_instrument_id,
-            wallet_transaction_id=wallet_transaction_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credit_card_type: Optional[str] = None,
-             email_address: Optional[str] = None,
-             ext_billing_agreement_id: Optional[str] = None,
-             first_name: Optional[str] = None,
-             last_digits: Optional[str] = None,
-             last_name: Optional[str] = None,
-             name_on_card: Optional[str] = None,
-             payment_method: Optional[str] = None,
-             time_expiration: Optional[str] = None,
-             wallet_instrument_id: Optional[str] = None,
-             wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credit_card_type is None and 'creditCardType' in kwargs:
-            credit_card_type = kwargs['creditCardType']
-        if credit_card_type is None:
-            raise TypeError("Missing 'credit_card_type' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if ext_billing_agreement_id is None and 'extBillingAgreementId' in kwargs:
-            ext_billing_agreement_id = kwargs['extBillingAgreementId']
-        if ext_billing_agreement_id is None:
-            raise TypeError("Missing 'ext_billing_agreement_id' argument")
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if first_name is None:
-            raise TypeError("Missing 'first_name' argument")
-        if last_digits is None and 'lastDigits' in kwargs:
-            last_digits = kwargs['lastDigits']
-        if last_digits is None:
-            raise TypeError("Missing 'last_digits' argument")
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if last_name is None:
-            raise TypeError("Missing 'last_name' argument")
-        if name_on_card is None and 'nameOnCard' in kwargs:
-            name_on_card = kwargs['nameOnCard']
-        if name_on_card is None:
-            raise TypeError("Missing 'name_on_card' argument")
-        if payment_method is None and 'paymentMethod' in kwargs:
-            payment_method = kwargs['paymentMethod']
-        if payment_method is None:
-            raise TypeError("Missing 'payment_method' argument")
-        if time_expiration is None and 'timeExpiration' in kwargs:
-            time_expiration = kwargs['timeExpiration']
-        if time_expiration is None:
-            raise TypeError("Missing 'time_expiration' argument")
-        if wallet_instrument_id is None and 'walletInstrumentId' in kwargs:
-            wallet_instrument_id = kwargs['walletInstrumentId']
-        if wallet_instrument_id is None:
-            raise TypeError("Missing 'wallet_instrument_id' argument")
-        if wallet_transaction_id is None and 'walletTransactionId' in kwargs:
-            wallet_transaction_id = kwargs['walletTransactionId']
-        if wallet_transaction_id is None:
-            raise TypeError("Missing 'wallet_transaction_id' argument")
-
-        _setter("credit_card_type", credit_card_type)
-        _setter("email_address", email_address)
-        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
-        _setter("first_name", first_name)
-        _setter("last_digits", last_digits)
-        _setter("last_name", last_name)
-        _setter("name_on_card", name_on_card)
-        _setter("payment_method", payment_method)
-        _setter("time_expiration", time_expiration)
-        _setter("wallet_instrument_id", wallet_instrument_id)
-        _setter("wallet_transaction_id", wallet_transaction_id)
+        pulumi.set(__self__, "credit_card_type", credit_card_type)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_digits", last_digits)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "name_on_card", name_on_card)
+        pulumi.set(__self__, "payment_method", payment_method)
+        pulumi.set(__self__, "time_expiration", time_expiration)
+        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -10436,50 +7084,11 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            no_tax_reason_code=no_tax_reason_code,
-            no_tax_reason_code_details=no_tax_reason_code_details,
-            tax_cnpj=tax_cnpj,
-            tax_payer_id=tax_payer_id,
-            tax_reg_number=tax_reg_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             no_tax_reason_code: Optional[str] = None,
-             no_tax_reason_code_details: Optional[str] = None,
-             tax_cnpj: Optional[str] = None,
-             tax_payer_id: Optional[str] = None,
-             tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if no_tax_reason_code is None and 'noTaxReasonCode' in kwargs:
-            no_tax_reason_code = kwargs['noTaxReasonCode']
-        if no_tax_reason_code is None:
-            raise TypeError("Missing 'no_tax_reason_code' argument")
-        if no_tax_reason_code_details is None and 'noTaxReasonCodeDetails' in kwargs:
-            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
-        if no_tax_reason_code_details is None:
-            raise TypeError("Missing 'no_tax_reason_code_details' argument")
-        if tax_cnpj is None and 'taxCnpj' in kwargs:
-            tax_cnpj = kwargs['taxCnpj']
-        if tax_cnpj is None:
-            raise TypeError("Missing 'tax_cnpj' argument")
-        if tax_payer_id is None and 'taxPayerId' in kwargs:
-            tax_payer_id = kwargs['taxPayerId']
-        if tax_payer_id is None:
-            raise TypeError("Missing 'tax_payer_id' argument")
-        if tax_reg_number is None and 'taxRegNumber' in kwargs:
-            tax_reg_number = kwargs['taxRegNumber']
-        if tax_reg_number is None:
-            raise TypeError("Missing 'tax_reg_number' argument")
-
-        _setter("no_tax_reason_code", no_tax_reason_code)
-        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
-        _setter("tax_cnpj", tax_cnpj)
-        _setter("tax_payer_id", tax_payer_id)
-        _setter("tax_reg_number", tax_reg_number)
+        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -10537,50 +7146,11 @@ class GetSubscriptionsSubscriptionCollectionItemTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        GetSubscriptionsSubscriptionCollectionItemTaxInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            no_tax_reason_code=no_tax_reason_code,
-            no_tax_reason_code_details=no_tax_reason_code_details,
-            tax_cnpj=tax_cnpj,
-            tax_payer_id=tax_payer_id,
-            tax_reg_number=tax_reg_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             no_tax_reason_code: Optional[str] = None,
-             no_tax_reason_code_details: Optional[str] = None,
-             tax_cnpj: Optional[str] = None,
-             tax_payer_id: Optional[str] = None,
-             tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if no_tax_reason_code is None and 'noTaxReasonCode' in kwargs:
-            no_tax_reason_code = kwargs['noTaxReasonCode']
-        if no_tax_reason_code is None:
-            raise TypeError("Missing 'no_tax_reason_code' argument")
-        if no_tax_reason_code_details is None and 'noTaxReasonCodeDetails' in kwargs:
-            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
-        if no_tax_reason_code_details is None:
-            raise TypeError("Missing 'no_tax_reason_code_details' argument")
-        if tax_cnpj is None and 'taxCnpj' in kwargs:
-            tax_cnpj = kwargs['taxCnpj']
-        if tax_cnpj is None:
-            raise TypeError("Missing 'tax_cnpj' argument")
-        if tax_payer_id is None and 'taxPayerId' in kwargs:
-            tax_payer_id = kwargs['taxPayerId']
-        if tax_payer_id is None:
-            raise TypeError("Missing 'tax_payer_id' argument")
-        if tax_reg_number is None and 'taxRegNumber' in kwargs:
-            tax_reg_number = kwargs['taxRegNumber']
-        if tax_reg_number is None:
-            raise TypeError("Missing 'tax_reg_number' argument")
-
-        _setter("no_tax_reason_code", no_tax_reason_code)
-        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
-        _setter("tax_cnpj", tax_cnpj)
-        _setter("tax_payer_id", tax_payer_id)
-        _setter("tax_reg_number", tax_reg_number)
+        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")

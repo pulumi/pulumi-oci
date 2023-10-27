@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,28 +27,9 @@ class ExternalClusterArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ExternalClusterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_cluster_id=external_cluster_id,
-            external_connector_id=external_connector_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_cluster_id: Optional[pulumi.Input[str]] = None,
-             external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_cluster_id is None and 'externalClusterId' in kwargs:
-            external_cluster_id = kwargs['externalClusterId']
-        if external_cluster_id is None:
-            raise TypeError("Missing 'external_cluster_id' argument")
-        if external_connector_id is None and 'externalConnectorId' in kwargs:
-            external_connector_id = kwargs['externalConnectorId']
-
-        _setter("external_cluster_id", external_cluster_id)
+        pulumi.set(__self__, "external_cluster_id", external_cluster_id)
         if external_connector_id is not None:
-            _setter("external_connector_id", external_connector_id)
+            pulumi.set(__self__, "external_connector_id", external_connector_id)
 
     @property
     @pulumi.getter(name="externalClusterId")
@@ -125,119 +106,42 @@ class _ExternalClusterState:
         :param pulumi.Input[str] version: The cluster version.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalClusterVipConfigurationArgs']]] vip_configurations: The list of Virtual IP (VIP) configurations of the external cluster.
         """
-        _ExternalClusterState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_details=additional_details,
-            compartment_id=compartment_id,
-            component_name=component_name,
-            display_name=display_name,
-            external_cluster_id=external_cluster_id,
-            external_connector_id=external_connector_id,
-            external_db_system_id=external_db_system_id,
-            grid_home=grid_home,
-            is_flex_cluster=is_flex_cluster,
-            lifecycle_details=lifecycle_details,
-            network_configurations=network_configurations,
-            ocr_file_location=ocr_file_location,
-            scan_configurations=scan_configurations,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-            version=version,
-            vip_configurations=vip_configurations,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             component_name: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             external_cluster_id: Optional[pulumi.Input[str]] = None,
-             external_connector_id: Optional[pulumi.Input[str]] = None,
-             external_db_system_id: Optional[pulumi.Input[str]] = None,
-             grid_home: Optional[pulumi.Input[str]] = None,
-             is_flex_cluster: Optional[pulumi.Input[bool]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalClusterNetworkConfigurationArgs']]]] = None,
-             ocr_file_location: Optional[pulumi.Input[str]] = None,
-             scan_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalClusterScanConfigurationArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalClusterVipConfigurationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_details is None and 'additionalDetails' in kwargs:
-            additional_details = kwargs['additionalDetails']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if component_name is None and 'componentName' in kwargs:
-            component_name = kwargs['componentName']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if external_cluster_id is None and 'externalClusterId' in kwargs:
-            external_cluster_id = kwargs['externalClusterId']
-        if external_connector_id is None and 'externalConnectorId' in kwargs:
-            external_connector_id = kwargs['externalConnectorId']
-        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
-            external_db_system_id = kwargs['externalDbSystemId']
-        if grid_home is None and 'gridHome' in kwargs:
-            grid_home = kwargs['gridHome']
-        if is_flex_cluster is None and 'isFlexCluster' in kwargs:
-            is_flex_cluster = kwargs['isFlexCluster']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if network_configurations is None and 'networkConfigurations' in kwargs:
-            network_configurations = kwargs['networkConfigurations']
-        if ocr_file_location is None and 'ocrFileLocation' in kwargs:
-            ocr_file_location = kwargs['ocrFileLocation']
-        if scan_configurations is None and 'scanConfigurations' in kwargs:
-            scan_configurations = kwargs['scanConfigurations']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if vip_configurations is None and 'vipConfigurations' in kwargs:
-            vip_configurations = kwargs['vipConfigurations']
-
         if additional_details is not None:
-            _setter("additional_details", additional_details)
+            pulumi.set(__self__, "additional_details", additional_details)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if component_name is not None:
-            _setter("component_name", component_name)
+            pulumi.set(__self__, "component_name", component_name)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if external_cluster_id is not None:
-            _setter("external_cluster_id", external_cluster_id)
+            pulumi.set(__self__, "external_cluster_id", external_cluster_id)
         if external_connector_id is not None:
-            _setter("external_connector_id", external_connector_id)
+            pulumi.set(__self__, "external_connector_id", external_connector_id)
         if external_db_system_id is not None:
-            _setter("external_db_system_id", external_db_system_id)
+            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
         if grid_home is not None:
-            _setter("grid_home", grid_home)
+            pulumi.set(__self__, "grid_home", grid_home)
         if is_flex_cluster is not None:
-            _setter("is_flex_cluster", is_flex_cluster)
+            pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if network_configurations is not None:
-            _setter("network_configurations", network_configurations)
+            pulumi.set(__self__, "network_configurations", network_configurations)
         if ocr_file_location is not None:
-            _setter("ocr_file_location", ocr_file_location)
+            pulumi.set(__self__, "ocr_file_location", ocr_file_location)
         if scan_configurations is not None:
-            _setter("scan_configurations", scan_configurations)
+            pulumi.set(__self__, "scan_configurations", scan_configurations)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
         if vip_configurations is not None:
-            _setter("vip_configurations", vip_configurations)
+            pulumi.set(__self__, "vip_configurations", vip_configurations)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -519,10 +423,6 @@ class ExternalCluster(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalClusterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

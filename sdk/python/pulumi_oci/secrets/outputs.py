@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -24,27 +24,8 @@ class GetSecretbundleSecretBundleContentResult(dict):
         :param str content: The base64-encoded content of the secret.
         :param str content_type: The formatting type of the secret contents.
         """
-        GetSecretbundleSecretBundleContentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            content_type=content_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             content_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if content_type is None and 'contentType' in kwargs:
-            content_type = kwargs['contentType']
-        if content_type is None:
-            raise TypeError("Missing 'content_type' argument")
-
-        _setter("content", content)
-        _setter("content_type", content_type)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_type", content_type)
 
     @property
     @pulumi.getter
@@ -69,29 +50,10 @@ class GetSecretbundleVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecretbundleVersionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -128,62 +90,13 @@ class GetSecretbundleVersionsSecretBundleVersionResult(dict):
         :param str version_name: The version name of the secret bundle, as provided when the secret was created or last rotated.
         :param str version_number: The version number of the secret.
         """
-        GetSecretbundleVersionsSecretBundleVersionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            secret_id=secret_id,
-            stages=stages,
-            time_created=time_created,
-            time_of_deletion=time_of_deletion,
-            time_of_expiry=time_of_expiry,
-            version_name=version_name,
-            version_number=version_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             secret_id: Optional[str] = None,
-             stages: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_of_deletion: Optional[str] = None,
-             time_of_expiry: Optional[str] = None,
-             version_name: Optional[str] = None,
-             version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if secret_id is None and 'secretId' in kwargs:
-            secret_id = kwargs['secretId']
-        if secret_id is None:
-            raise TypeError("Missing 'secret_id' argument")
-        if stages is None:
-            raise TypeError("Missing 'stages' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
-            time_of_deletion = kwargs['timeOfDeletion']
-        if time_of_deletion is None:
-            raise TypeError("Missing 'time_of_deletion' argument")
-        if time_of_expiry is None and 'timeOfExpiry' in kwargs:
-            time_of_expiry = kwargs['timeOfExpiry']
-        if time_of_expiry is None:
-            raise TypeError("Missing 'time_of_expiry' argument")
-        if version_name is None and 'versionName' in kwargs:
-            version_name = kwargs['versionName']
-        if version_name is None:
-            raise TypeError("Missing 'version_name' argument")
-        if version_number is None and 'versionNumber' in kwargs:
-            version_number = kwargs['versionNumber']
-        if version_number is None:
-            raise TypeError("Missing 'version_number' argument")
-
-        _setter("secret_id", secret_id)
-        _setter("stages", stages)
-        _setter("time_created", time_created)
-        _setter("time_of_deletion", time_of_deletion)
-        _setter("time_of_expiry", time_of_expiry)
-        _setter("version_name", version_name)
-        _setter("version_number", version_number)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "stages", stages)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        pulumi.set(__self__, "time_of_expiry", time_of_expiry)
+        pulumi.set(__self__, "version_name", version_name)
+        pulumi.set(__self__, "version_number", version_number)
 
     @property
     @pulumi.getter(name="secretId")

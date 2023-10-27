@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,52 +25,17 @@ class DefaultRouteTableArgs:
         """
         The set of arguments for constructing a DefaultRouteTable resource.
         """
-        DefaultRouteTableArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            manage_default_resource_id=manage_default_resource_id,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            route_rules=route_rules,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             manage_default_resource_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             route_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultRouteTableRouteRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if manage_default_resource_id is None and 'manageDefaultResourceId' in kwargs:
-            manage_default_resource_id = kwargs['manageDefaultResourceId']
-        if manage_default_resource_id is None:
-            raise TypeError("Missing 'manage_default_resource_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if route_rules is None and 'routeRules' in kwargs:
-            route_rules = kwargs['routeRules']
-
-        _setter("manage_default_resource_id", manage_default_resource_id)
+        pulumi.set(__self__, "manage_default_resource_id", manage_default_resource_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if route_rules is not None:
-            _setter("route_rules", route_rules)
+            pulumi.set(__self__, "route_rules", route_rules)
 
     @property
     @pulumi.getter(name="manageDefaultResourceId")
@@ -141,61 +106,22 @@ class _DefaultRouteTableState:
         """
         Input properties used for looking up and filtering DefaultRouteTable resources.
         """
-        _DefaultRouteTableState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            manage_default_resource_id=manage_default_resource_id,
-            route_rules=route_rules,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             manage_default_resource_id: Optional[pulumi.Input[str]] = None,
-             route_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultRouteTableRouteRuleArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if manage_default_resource_id is None and 'manageDefaultResourceId' in kwargs:
-            manage_default_resource_id = kwargs['manageDefaultResourceId']
-        if route_rules is None and 'routeRules' in kwargs:
-            route_rules = kwargs['routeRules']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if manage_default_resource_id is not None:
-            _setter("manage_default_resource_id", manage_default_resource_id)
+            pulumi.set(__self__, "manage_default_resource_id", manage_default_resource_id)
         if route_rules is not None:
-            _setter("route_rules", route_rules)
+            pulumi.set(__self__, "route_rules", route_rules)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -305,10 +231,6 @@ class DefaultRouteTable(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DefaultRouteTableArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

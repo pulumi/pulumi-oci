@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,54 +35,15 @@ class ExternalExadataInfrastructureArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ExternalExadataInfrastructureArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            db_system_ids=db_system_ids,
-            display_name=display_name,
-            discovery_key=discovery_key,
-            license_model=license_model,
-            storage_server_names=storage_server_names,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             db_system_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             discovery_key: Optional[pulumi.Input[str]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if db_system_ids is None and 'dbSystemIds' in kwargs:
-            db_system_ids = kwargs['dbSystemIds']
-        if db_system_ids is None:
-            raise TypeError("Missing 'db_system_ids' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if discovery_key is None and 'discoveryKey' in kwargs:
-            discovery_key = kwargs['discoveryKey']
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-        if storage_server_names is None and 'storageServerNames' in kwargs:
-            storage_server_names = kwargs['storageServerNames']
-
-        _setter("compartment_id", compartment_id)
-        _setter("db_system_ids", db_system_ids)
-        _setter("display_name", display_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_system_ids", db_system_ids)
+        pulumi.set(__self__, "display_name", display_name)
         if discovery_key is not None:
-            _setter("discovery_key", discovery_key)
+            pulumi.set(__self__, "discovery_key", discovery_key)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
         if storage_server_names is not None:
-            _setter("storage_server_names", storage_server_names)
+            pulumi.set(__self__, "storage_server_names", storage_server_names)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -207,117 +168,42 @@ class _ExternalExadataInfrastructureState:
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
         """
-        _ExternalExadataInfrastructureState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_details=additional_details,
-            compartment_id=compartment_id,
-            database_compartments=database_compartments,
-            database_systems=database_systems,
-            db_system_ids=db_system_ids,
-            discovery_key=discovery_key,
-            display_name=display_name,
-            internal_id=internal_id,
-            license_model=license_model,
-            lifecycle_details=lifecycle_details,
-            rack_size=rack_size,
-            state=state,
-            status=status,
-            storage_grids=storage_grids,
-            storage_server_names=storage_server_names,
-            time_created=time_created,
-            time_updated=time_updated,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             database_compartments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             database_systems: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureDatabaseSystemArgs']]]] = None,
-             db_system_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             discovery_key: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             internal_id: Optional[pulumi.Input[str]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             rack_size: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             storage_grids: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureStorageGridArgs']]]] = None,
-             storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_details is None and 'additionalDetails' in kwargs:
-            additional_details = kwargs['additionalDetails']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if database_compartments is None and 'databaseCompartments' in kwargs:
-            database_compartments = kwargs['databaseCompartments']
-        if database_systems is None and 'databaseSystems' in kwargs:
-            database_systems = kwargs['databaseSystems']
-        if db_system_ids is None and 'dbSystemIds' in kwargs:
-            db_system_ids = kwargs['dbSystemIds']
-        if discovery_key is None and 'discoveryKey' in kwargs:
-            discovery_key = kwargs['discoveryKey']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if internal_id is None and 'internalId' in kwargs:
-            internal_id = kwargs['internalId']
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if rack_size is None and 'rackSize' in kwargs:
-            rack_size = kwargs['rackSize']
-        if storage_grids is None and 'storageGrids' in kwargs:
-            storage_grids = kwargs['storageGrids']
-        if storage_server_names is None and 'storageServerNames' in kwargs:
-            storage_server_names = kwargs['storageServerNames']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if additional_details is not None:
-            _setter("additional_details", additional_details)
+            pulumi.set(__self__, "additional_details", additional_details)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if database_compartments is not None:
-            _setter("database_compartments", database_compartments)
+            pulumi.set(__self__, "database_compartments", database_compartments)
         if database_systems is not None:
-            _setter("database_systems", database_systems)
+            pulumi.set(__self__, "database_systems", database_systems)
         if db_system_ids is not None:
-            _setter("db_system_ids", db_system_ids)
+            pulumi.set(__self__, "db_system_ids", db_system_ids)
         if discovery_key is not None:
-            _setter("discovery_key", discovery_key)
+            pulumi.set(__self__, "discovery_key", discovery_key)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if internal_id is not None:
-            _setter("internal_id", internal_id)
+            pulumi.set(__self__, "internal_id", internal_id)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if rack_size is not None:
-            _setter("rack_size", rack_size)
+            pulumi.set(__self__, "rack_size", rack_size)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if storage_grids is not None:
-            _setter("storage_grids", storage_grids)
+            pulumi.set(__self__, "storage_grids", storage_grids)
         if storage_server_names is not None:
-            _setter("storage_server_names", storage_server_names)
+            pulumi.set(__self__, "storage_server_names", storage_server_names)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -647,10 +533,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalExadataInfrastructureArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

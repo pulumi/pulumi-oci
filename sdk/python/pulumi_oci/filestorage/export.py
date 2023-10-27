@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -44,46 +44,13 @@ class ExportArgs:
                The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
         """
-        ExportArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            export_set_id=export_set_id,
-            file_system_id=file_system_id,
-            path=path,
-            export_options=export_options,
-            is_idmap_groups_for_sys_auth=is_idmap_groups_for_sys_auth,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             export_set_id: Optional[pulumi.Input[str]] = None,
-             file_system_id: Optional[pulumi.Input[str]] = None,
-             path: Optional[pulumi.Input[str]] = None,
-             export_options: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
-             is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if export_set_id is None and 'exportSetId' in kwargs:
-            export_set_id = kwargs['exportSetId']
-        if export_set_id is None:
-            raise TypeError("Missing 'export_set_id' argument")
-        if file_system_id is None and 'fileSystemId' in kwargs:
-            file_system_id = kwargs['fileSystemId']
-        if file_system_id is None:
-            raise TypeError("Missing 'file_system_id' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if export_options is None and 'exportOptions' in kwargs:
-            export_options = kwargs['exportOptions']
-        if is_idmap_groups_for_sys_auth is None and 'isIdmapGroupsForSysAuth' in kwargs:
-            is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
-
-        _setter("export_set_id", export_set_id)
-        _setter("file_system_id", file_system_id)
-        _setter("path", path)
+        pulumi.set(__self__, "export_set_id", export_set_id)
+        pulumi.set(__self__, "file_system_id", file_system_id)
+        pulumi.set(__self__, "path", path)
         if export_options is not None:
-            _setter("export_options", export_options)
+            pulumi.set(__self__, "export_options", export_options)
         if is_idmap_groups_for_sys_auth is not None:
-            _setter("is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
+            pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
 
     @property
     @pulumi.getter(name="exportSetId")
@@ -196,53 +163,20 @@ class _ExportState:
         :param pulumi.Input[str] state: The current state of this export.
         :param pulumi.Input[str] time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        _ExportState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            export_options=export_options,
-            export_set_id=export_set_id,
-            file_system_id=file_system_id,
-            is_idmap_groups_for_sys_auth=is_idmap_groups_for_sys_auth,
-            path=path,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             export_options: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
-             export_set_id: Optional[pulumi.Input[str]] = None,
-             file_system_id: Optional[pulumi.Input[str]] = None,
-             is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
-             path: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if export_options is None and 'exportOptions' in kwargs:
-            export_options = kwargs['exportOptions']
-        if export_set_id is None and 'exportSetId' in kwargs:
-            export_set_id = kwargs['exportSetId']
-        if file_system_id is None and 'fileSystemId' in kwargs:
-            file_system_id = kwargs['fileSystemId']
-        if is_idmap_groups_for_sys_auth is None and 'isIdmapGroupsForSysAuth' in kwargs:
-            is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if export_options is not None:
-            _setter("export_options", export_options)
+            pulumi.set(__self__, "export_options", export_options)
         if export_set_id is not None:
-            _setter("export_set_id", export_set_id)
+            pulumi.set(__self__, "export_set_id", export_set_id)
         if file_system_id is not None:
-            _setter("file_system_id", file_system_id)
+            pulumi.set(__self__, "file_system_id", file_system_id)
         if is_idmap_groups_for_sys_auth is not None:
-            _setter("is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
+            pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
         if path is not None:
-            _setter("path", path)
+            pulumi.set(__self__, "path", path)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="exportOptions")
@@ -468,10 +402,6 @@ class Export(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExportArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

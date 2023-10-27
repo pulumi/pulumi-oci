@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -120,27 +120,10 @@ class ConfigAvailabilityConfiguration(dict):
         :param int max_allowed_failures_per_interval: (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
         :param int min_allowed_runs_per_interval: (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
         """
-        ConfigAvailabilityConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max_allowed_failures_per_interval=max_allowed_failures_per_interval,
-            min_allowed_runs_per_interval=min_allowed_runs_per_interval,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max_allowed_failures_per_interval: Optional[int] = None,
-             min_allowed_runs_per_interval: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max_allowed_failures_per_interval is None and 'maxAllowedFailuresPerInterval' in kwargs:
-            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
-        if min_allowed_runs_per_interval is None and 'minAllowedRunsPerInterval' in kwargs:
-            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
-
         if max_allowed_failures_per_interval is not None:
-            _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+            pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         if min_allowed_runs_per_interval is not None:
-            _setter("min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+            pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
     @property
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
@@ -247,117 +230,40 @@ class ConfigConfiguration(dict):
         :param str verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['ConfigConfigurationVerifyTextArgs'] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
-        ConfigConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_certificate_details=client_certificate_details,
-            config_type=config_type,
-            dns_configuration=dns_configuration,
-            is_certificate_validation_enabled=is_certificate_validation_enabled,
-            is_default_snapshot_enabled=is_default_snapshot_enabled,
-            is_failure_retried=is_failure_retried,
-            is_redirection_enabled=is_redirection_enabled,
-            network_configuration=network_configuration,
-            req_authentication_details=req_authentication_details,
-            req_authentication_scheme=req_authentication_scheme,
-            request_headers=request_headers,
-            request_method=request_method,
-            request_post_body=request_post_body,
-            request_query_params=request_query_params,
-            verify_response_codes=verify_response_codes,
-            verify_response_content=verify_response_content,
-            verify_texts=verify_texts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_certificate_details: Optional['outputs.ConfigConfigurationClientCertificateDetails'] = None,
-             config_type: Optional[str] = None,
-             dns_configuration: Optional['outputs.ConfigConfigurationDnsConfiguration'] = None,
-             is_certificate_validation_enabled: Optional[bool] = None,
-             is_default_snapshot_enabled: Optional[bool] = None,
-             is_failure_retried: Optional[bool] = None,
-             is_redirection_enabled: Optional[bool] = None,
-             network_configuration: Optional['outputs.ConfigConfigurationNetworkConfiguration'] = None,
-             req_authentication_details: Optional['outputs.ConfigConfigurationReqAuthenticationDetails'] = None,
-             req_authentication_scheme: Optional[str] = None,
-             request_headers: Optional[Sequence['outputs.ConfigConfigurationRequestHeader']] = None,
-             request_method: Optional[str] = None,
-             request_post_body: Optional[str] = None,
-             request_query_params: Optional[Sequence['outputs.ConfigConfigurationRequestQueryParam']] = None,
-             verify_response_codes: Optional[Sequence[str]] = None,
-             verify_response_content: Optional[str] = None,
-             verify_texts: Optional[Sequence['outputs.ConfigConfigurationVerifyText']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_certificate_details is None and 'clientCertificateDetails' in kwargs:
-            client_certificate_details = kwargs['clientCertificateDetails']
-        if config_type is None and 'configType' in kwargs:
-            config_type = kwargs['configType']
-        if dns_configuration is None and 'dnsConfiguration' in kwargs:
-            dns_configuration = kwargs['dnsConfiguration']
-        if is_certificate_validation_enabled is None and 'isCertificateValidationEnabled' in kwargs:
-            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
-        if is_default_snapshot_enabled is None and 'isDefaultSnapshotEnabled' in kwargs:
-            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
-        if is_failure_retried is None and 'isFailureRetried' in kwargs:
-            is_failure_retried = kwargs['isFailureRetried']
-        if is_redirection_enabled is None and 'isRedirectionEnabled' in kwargs:
-            is_redirection_enabled = kwargs['isRedirectionEnabled']
-        if network_configuration is None and 'networkConfiguration' in kwargs:
-            network_configuration = kwargs['networkConfiguration']
-        if req_authentication_details is None and 'reqAuthenticationDetails' in kwargs:
-            req_authentication_details = kwargs['reqAuthenticationDetails']
-        if req_authentication_scheme is None and 'reqAuthenticationScheme' in kwargs:
-            req_authentication_scheme = kwargs['reqAuthenticationScheme']
-        if request_headers is None and 'requestHeaders' in kwargs:
-            request_headers = kwargs['requestHeaders']
-        if request_method is None and 'requestMethod' in kwargs:
-            request_method = kwargs['requestMethod']
-        if request_post_body is None and 'requestPostBody' in kwargs:
-            request_post_body = kwargs['requestPostBody']
-        if request_query_params is None and 'requestQueryParams' in kwargs:
-            request_query_params = kwargs['requestQueryParams']
-        if verify_response_codes is None and 'verifyResponseCodes' in kwargs:
-            verify_response_codes = kwargs['verifyResponseCodes']
-        if verify_response_content is None and 'verifyResponseContent' in kwargs:
-            verify_response_content = kwargs['verifyResponseContent']
-        if verify_texts is None and 'verifyTexts' in kwargs:
-            verify_texts = kwargs['verifyTexts']
-
         if client_certificate_details is not None:
-            _setter("client_certificate_details", client_certificate_details)
+            pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         if config_type is not None:
-            _setter("config_type", config_type)
+            pulumi.set(__self__, "config_type", config_type)
         if dns_configuration is not None:
-            _setter("dns_configuration", dns_configuration)
+            pulumi.set(__self__, "dns_configuration", dns_configuration)
         if is_certificate_validation_enabled is not None:
-            _setter("is_certificate_validation_enabled", is_certificate_validation_enabled)
+            pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         if is_default_snapshot_enabled is not None:
-            _setter("is_default_snapshot_enabled", is_default_snapshot_enabled)
+            pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         if is_failure_retried is not None:
-            _setter("is_failure_retried", is_failure_retried)
+            pulumi.set(__self__, "is_failure_retried", is_failure_retried)
         if is_redirection_enabled is not None:
-            _setter("is_redirection_enabled", is_redirection_enabled)
+            pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
         if network_configuration is not None:
-            _setter("network_configuration", network_configuration)
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if req_authentication_details is not None:
-            _setter("req_authentication_details", req_authentication_details)
+            pulumi.set(__self__, "req_authentication_details", req_authentication_details)
         if req_authentication_scheme is not None:
-            _setter("req_authentication_scheme", req_authentication_scheme)
+            pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
         if request_headers is not None:
-            _setter("request_headers", request_headers)
+            pulumi.set(__self__, "request_headers", request_headers)
         if request_method is not None:
-            _setter("request_method", request_method)
+            pulumi.set(__self__, "request_method", request_method)
         if request_post_body is not None:
-            _setter("request_post_body", request_post_body)
+            pulumi.set(__self__, "request_post_body", request_post_body)
         if request_query_params is not None:
-            _setter("request_query_params", request_query_params)
+            pulumi.set(__self__, "request_query_params", request_query_params)
         if verify_response_codes is not None:
-            _setter("verify_response_codes", verify_response_codes)
+            pulumi.set(__self__, "verify_response_codes", verify_response_codes)
         if verify_response_content is not None:
-            _setter("verify_response_content", verify_response_content)
+            pulumi.set(__self__, "verify_response_content", verify_response_content)
         if verify_texts is not None:
-            _setter("verify_texts", verify_texts)
+            pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
     @pulumi.getter(name="clientCertificateDetails")
@@ -524,27 +430,10 @@ class ConfigConfigurationClientCertificateDetails(dict):
         :param 'ConfigConfigurationClientCertificateDetailsClientCertificateArgs' client_certificate: (Updatable) Client certificate in PEM format.
         :param 'ConfigConfigurationClientCertificateDetailsPrivateKeyArgs' private_key: (Updatable) The private key associated with the client certificate in PEM format.
         """
-        ConfigConfigurationClientCertificateDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_certificate=client_certificate,
-            private_key=private_key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_certificate: Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate'] = None,
-             private_key: Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_certificate is None and 'clientCertificate' in kwargs:
-            client_certificate = kwargs['clientCertificate']
-        if private_key is None and 'privateKey' in kwargs:
-            private_key = kwargs['privateKey']
-
         if client_certificate is not None:
-            _setter("client_certificate", client_certificate)
+            pulumi.set(__self__, "client_certificate", client_certificate)
         if private_key is not None:
-            _setter("private_key", private_key)
+            pulumi.set(__self__, "private_key", private_key)
 
     @property
     @pulumi.getter(name="clientCertificate")
@@ -589,25 +478,10 @@ class ConfigConfigurationClientCertificateDetailsClientCertificate(dict):
         :param str content: (Updatable) Content of the private key file.
         :param str file_name: (Updatable) Name of the private key file.
         """
-        ConfigConfigurationClientCertificateDetailsClientCertificate._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            file_name=file_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-
         if content is not None:
-            _setter("content", content)
+            pulumi.set(__self__, "content", content)
         if file_name is not None:
-            _setter("file_name", file_name)
+            pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
@@ -652,25 +526,10 @@ class ConfigConfigurationClientCertificateDetailsPrivateKey(dict):
         :param str content: (Updatable) Content of the private key file.
         :param str file_name: (Updatable) Name of the private key file.
         """
-        ConfigConfigurationClientCertificateDetailsPrivateKey._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            file_name=file_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-
         if content is not None:
-            _setter("content", content)
+            pulumi.set(__self__, "content", content)
         if file_name is not None:
-            _setter("file_name", file_name)
+            pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
@@ -717,27 +576,10 @@ class ConfigConfigurationDnsConfiguration(dict):
         :param bool is_override_dns: (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
         :param str override_dns_ip: (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
-        ConfigConfigurationDnsConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_override_dns=is_override_dns,
-            override_dns_ip=override_dns_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_override_dns: Optional[bool] = None,
-             override_dns_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_override_dns is None and 'isOverrideDns' in kwargs:
-            is_override_dns = kwargs['isOverrideDns']
-        if override_dns_ip is None and 'overrideDnsIp' in kwargs:
-            override_dns_ip = kwargs['overrideDnsIp']
-
         if is_override_dns is not None:
-            _setter("is_override_dns", is_override_dns)
+            pulumi.set(__self__, "is_override_dns", is_override_dns)
         if override_dns_ip is not None:
-            _setter("override_dns_ip", override_dns_ip)
+            pulumi.set(__self__, "override_dns_ip", override_dns_ip)
 
     @property
     @pulumi.getter(name="isOverrideDns")
@@ -794,43 +636,16 @@ class ConfigConfigurationNetworkConfiguration(dict):
         :param str protocol: (Updatable) Type of protocol.
         :param int transmission_rate: (Updatable) Number of probe packets sent out simultaneously.
         """
-        ConfigConfigurationNetworkConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            number_of_hops=number_of_hops,
-            probe_mode=probe_mode,
-            probe_per_hop=probe_per_hop,
-            protocol=protocol,
-            transmission_rate=transmission_rate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             number_of_hops: Optional[int] = None,
-             probe_mode: Optional[str] = None,
-             probe_per_hop: Optional[int] = None,
-             protocol: Optional[str] = None,
-             transmission_rate: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if number_of_hops is None and 'numberOfHops' in kwargs:
-            number_of_hops = kwargs['numberOfHops']
-        if probe_mode is None and 'probeMode' in kwargs:
-            probe_mode = kwargs['probeMode']
-        if probe_per_hop is None and 'probePerHop' in kwargs:
-            probe_per_hop = kwargs['probePerHop']
-        if transmission_rate is None and 'transmissionRate' in kwargs:
-            transmission_rate = kwargs['transmissionRate']
-
         if number_of_hops is not None:
-            _setter("number_of_hops", number_of_hops)
+            pulumi.set(__self__, "number_of_hops", number_of_hops)
         if probe_mode is not None:
-            _setter("probe_mode", probe_mode)
+            pulumi.set(__self__, "probe_mode", probe_mode)
         if probe_per_hop is not None:
-            _setter("probe_per_hop", probe_per_hop)
+            pulumi.set(__self__, "probe_per_hop", probe_per_hop)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if transmission_rate is not None:
-            _setter("transmission_rate", transmission_rate)
+            pulumi.set(__self__, "transmission_rate", transmission_rate)
 
     @property
     @pulumi.getter(name="numberOfHops")
@@ -925,63 +740,22 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
         :param str auth_user_password: (Updatable) User password for authentication.
         :param str oauth_scheme: (Updatable) Request HTTP OAuth scheme.
         """
-        ConfigConfigurationReqAuthenticationDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auth_headers=auth_headers,
-            auth_request_method=auth_request_method,
-            auth_request_post_body=auth_request_post_body,
-            auth_token=auth_token,
-            auth_url=auth_url,
-            auth_user_name=auth_user_name,
-            auth_user_password=auth_user_password,
-            oauth_scheme=oauth_scheme,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auth_headers: Optional[Sequence['outputs.ConfigConfigurationReqAuthenticationDetailsAuthHeader']] = None,
-             auth_request_method: Optional[str] = None,
-             auth_request_post_body: Optional[str] = None,
-             auth_token: Optional[str] = None,
-             auth_url: Optional[str] = None,
-             auth_user_name: Optional[str] = None,
-             auth_user_password: Optional[str] = None,
-             oauth_scheme: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auth_headers is None and 'authHeaders' in kwargs:
-            auth_headers = kwargs['authHeaders']
-        if auth_request_method is None and 'authRequestMethod' in kwargs:
-            auth_request_method = kwargs['authRequestMethod']
-        if auth_request_post_body is None and 'authRequestPostBody' in kwargs:
-            auth_request_post_body = kwargs['authRequestPostBody']
-        if auth_token is None and 'authToken' in kwargs:
-            auth_token = kwargs['authToken']
-        if auth_url is None and 'authUrl' in kwargs:
-            auth_url = kwargs['authUrl']
-        if auth_user_name is None and 'authUserName' in kwargs:
-            auth_user_name = kwargs['authUserName']
-        if auth_user_password is None and 'authUserPassword' in kwargs:
-            auth_user_password = kwargs['authUserPassword']
-        if oauth_scheme is None and 'oauthScheme' in kwargs:
-            oauth_scheme = kwargs['oauthScheme']
-
         if auth_headers is not None:
-            _setter("auth_headers", auth_headers)
+            pulumi.set(__self__, "auth_headers", auth_headers)
         if auth_request_method is not None:
-            _setter("auth_request_method", auth_request_method)
+            pulumi.set(__self__, "auth_request_method", auth_request_method)
         if auth_request_post_body is not None:
-            _setter("auth_request_post_body", auth_request_post_body)
+            pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
         if auth_token is not None:
-            _setter("auth_token", auth_token)
+            pulumi.set(__self__, "auth_token", auth_token)
         if auth_url is not None:
-            _setter("auth_url", auth_url)
+            pulumi.set(__self__, "auth_url", auth_url)
         if auth_user_name is not None:
-            _setter("auth_user_name", auth_user_name)
+            pulumi.set(__self__, "auth_user_name", auth_user_name)
         if auth_user_password is not None:
-            _setter("auth_user_password", auth_user_password)
+            pulumi.set(__self__, "auth_user_password", auth_user_password)
         if oauth_scheme is not None:
-            _setter("oauth_scheme", oauth_scheme)
+            pulumi.set(__self__, "oauth_scheme", oauth_scheme)
 
     @property
     @pulumi.getter(name="authHeaders")
@@ -1076,27 +850,10 @@ class ConfigConfigurationReqAuthenticationDetailsAuthHeader(dict):
         :param str header_name: (Updatable) Name of the header.
         :param str header_value: (Updatable) Value of the header.
         """
-        ConfigConfigurationReqAuthenticationDetailsAuthHeader._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            header_name=header_name,
-            header_value=header_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             header_name: Optional[str] = None,
-             header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if header_name is None and 'headerName' in kwargs:
-            header_name = kwargs['headerName']
-        if header_value is None and 'headerValue' in kwargs:
-            header_value = kwargs['headerValue']
-
         if header_name is not None:
-            _setter("header_name", header_name)
+            pulumi.set(__self__, "header_name", header_name)
         if header_value is not None:
-            _setter("header_value", header_value)
+            pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -1143,27 +900,10 @@ class ConfigConfigurationRequestHeader(dict):
         :param str header_name: (Updatable) Name of the header.
         :param str header_value: (Updatable) Value of the header.
         """
-        ConfigConfigurationRequestHeader._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            header_name=header_name,
-            header_value=header_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             header_name: Optional[str] = None,
-             header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if header_name is None and 'headerName' in kwargs:
-            header_name = kwargs['headerName']
-        if header_value is None and 'headerValue' in kwargs:
-            header_value = kwargs['headerValue']
-
         if header_name is not None:
-            _setter("header_name", header_name)
+            pulumi.set(__self__, "header_name", header_name)
         if header_value is not None:
-            _setter("header_value", header_value)
+            pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -1210,27 +950,10 @@ class ConfigConfigurationRequestQueryParam(dict):
         :param str param_name: (Updatable) Name of the parameter.
         :param str param_value: (Updatable) Value of the parameter.
         """
-        ConfigConfigurationRequestQueryParam._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-
         if param_name is not None:
-            _setter("param_name", param_name)
+            pulumi.set(__self__, "param_name", param_name)
         if param_value is not None:
-            _setter("param_value", param_value)
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -1256,19 +979,8 @@ class ConfigConfigurationVerifyText(dict):
         """
         :param str text: (Updatable) Verification text in the response.
         """
-        ConfigConfigurationVerifyText._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            text=text,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if text is not None:
-            _setter("text", text)
+            pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
@@ -1307,27 +1019,10 @@ class ConfigMaintenanceWindowSchedule(dict):
         :param str time_ended: (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_started: (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
-        ConfigMaintenanceWindowSchedule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            time_ended=time_ended,
-            time_started=time_started,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             time_ended: Optional[str] = None,
-             time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if time_ended is None and 'timeEnded' in kwargs:
-            time_ended = kwargs['timeEnded']
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-
         if time_ended is not None:
-            _setter("time_ended", time_ended)
+            pulumi.set(__self__, "time_ended", time_ended)
         if time_started is not None:
-            _setter("time_started", time_started)
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="timeEnded")
@@ -1386,47 +1081,14 @@ class ConfigScriptParameter(dict):
         :param bool is_secret: Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
         :param Sequence['ConfigScriptParameterMonitorScriptParameterArgs'] monitor_script_parameters: Details of the script parameter that can be used to overwrite the parameter present in the script.
         """
-        ConfigScriptParameter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            param_value=param_value,
-            is_overwritten=is_overwritten,
-            is_secret=is_secret,
-            monitor_script_parameters=monitor_script_parameters,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             is_overwritten: Optional[bool] = None,
-             is_secret: Optional[bool] = None,
-             monitor_script_parameters: Optional[Sequence['outputs.ConfigScriptParameterMonitorScriptParameter']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-        if is_overwritten is None and 'isOverwritten' in kwargs:
-            is_overwritten = kwargs['isOverwritten']
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if monitor_script_parameters is None and 'monitorScriptParameters' in kwargs:
-            monitor_script_parameters = kwargs['monitorScriptParameters']
-
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
         if is_overwritten is not None:
-            _setter("is_overwritten", is_overwritten)
+            pulumi.set(__self__, "is_overwritten", is_overwritten)
         if is_secret is not None:
-            _setter("is_secret", is_secret)
+            pulumi.set(__self__, "is_secret", is_secret)
         if monitor_script_parameters is not None:
-            _setter("monitor_script_parameters", monitor_script_parameters)
+            pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
 
     @property
     @pulumi.getter(name="paramName")
@@ -1497,27 +1159,10 @@ class ConfigScriptParameterMonitorScriptParameter(dict):
         :param str param_name: (Updatable) Name of the parameter.
         :param str param_value: (Updatable) Value of the parameter.
         """
-        ConfigScriptParameterMonitorScriptParameter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-
         if param_name is not None:
-            _setter("param_name", param_name)
+            pulumi.set(__self__, "param_name", param_name)
         if param_value is not None:
-            _setter("param_value", param_value)
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -1562,26 +1207,9 @@ class ConfigVantagePoint(dict):
         :param str name: Name of the vantage point.
         :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
         """
-        ConfigVantagePoint._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            display_name=display_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
 
     @property
     @pulumi.getter
@@ -1636,43 +1264,10 @@ class DedicatedVantagePointDvpStackDetails(dict):
         :param str dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param str dvp_version: (Updatable) Version of the dedicated vantage point.
         """
-        DedicatedVantagePointDvpStackDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dvp_stack_id=dvp_stack_id,
-            dvp_stack_type=dvp_stack_type,
-            dvp_stream_id=dvp_stream_id,
-            dvp_version=dvp_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dvp_stack_id: Optional[str] = None,
-             dvp_stack_type: Optional[str] = None,
-             dvp_stream_id: Optional[str] = None,
-             dvp_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dvp_stack_id is None and 'dvpStackId' in kwargs:
-            dvp_stack_id = kwargs['dvpStackId']
-        if dvp_stack_id is None:
-            raise TypeError("Missing 'dvp_stack_id' argument")
-        if dvp_stack_type is None and 'dvpStackType' in kwargs:
-            dvp_stack_type = kwargs['dvpStackType']
-        if dvp_stack_type is None:
-            raise TypeError("Missing 'dvp_stack_type' argument")
-        if dvp_stream_id is None and 'dvpStreamId' in kwargs:
-            dvp_stream_id = kwargs['dvpStreamId']
-        if dvp_stream_id is None:
-            raise TypeError("Missing 'dvp_stream_id' argument")
-        if dvp_version is None and 'dvpVersion' in kwargs:
-            dvp_version = kwargs['dvpVersion']
-        if dvp_version is None:
-            raise TypeError("Missing 'dvp_version' argument")
-
-        _setter("dvp_stack_id", dvp_stack_id)
-        _setter("dvp_stack_type", dvp_stack_type)
-        _setter("dvp_stream_id", dvp_stream_id)
-        _setter("dvp_version", dvp_version)
+        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        pulumi.set(__self__, "dvp_version", dvp_version)
 
     @property
     @pulumi.getter(name="dvpStackId")
@@ -1720,31 +1315,14 @@ class DedicatedVantagePointMonitorStatusCountMap(dict):
         :param int invalid: Number of invalid monitors using the script.
         :param int total: Total number of monitors using the script.
         """
-        DedicatedVantagePointMonitorStatusCountMap._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            enabled=enabled,
-            invalid=invalid,
-            total=total,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[int] = None,
-             enabled: Optional[int] = None,
-             invalid: Optional[int] = None,
-             total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if enabled is not None:
-            _setter("enabled", enabled)
+            pulumi.set(__self__, "enabled", enabled)
         if invalid is not None:
-            _setter("invalid", invalid)
+            pulumi.set(__self__, "invalid", invalid)
         if total is not None:
-            _setter("total", total)
+            pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
@@ -1792,31 +1370,14 @@ class ScriptMonitorStatusCountMap(dict):
         :param int invalid: Number of invalid monitors using the script.
         :param int total: Total number of monitors using the script.
         """
-        ScriptMonitorStatusCountMap._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            enabled=enabled,
-            invalid=invalid,
-            total=total,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[int] = None,
-             enabled: Optional[int] = None,
-             invalid: Optional[int] = None,
-             total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if enabled is not None:
-            _setter("enabled", enabled)
+            pulumi.set(__self__, "enabled", enabled)
         if invalid is not None:
-            _setter("invalid", invalid)
+            pulumi.set(__self__, "invalid", invalid)
         if total is not None:
-            _setter("total", total)
+            pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
@@ -1895,46 +1456,15 @@ class ScriptParameter(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence['ScriptParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
         """
-        ScriptParameter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            is_overwritten=is_overwritten,
-            is_secret=is_secret,
-            param_value=param_value,
-            script_parameters=script_parameters,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             is_overwritten: Optional[bool] = None,
-             is_secret: Optional[bool] = None,
-             param_value: Optional[str] = None,
-             script_parameters: Optional[Sequence['outputs.ScriptParameterScriptParameter']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if is_overwritten is None and 'isOverwritten' in kwargs:
-            is_overwritten = kwargs['isOverwritten']
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if script_parameters is None and 'scriptParameters' in kwargs:
-            script_parameters = kwargs['scriptParameters']
-
-        _setter("param_name", param_name)
+        pulumi.set(__self__, "param_name", param_name)
         if is_overwritten is not None:
-            _setter("is_overwritten", is_overwritten)
+            pulumi.set(__self__, "is_overwritten", is_overwritten)
         if is_secret is not None:
-            _setter("is_secret", is_secret)
+            pulumi.set(__self__, "is_secret", is_secret)
         if param_value is not None:
-            _setter("param_value", param_value)
+            pulumi.set(__self__, "param_value", param_value)
         if script_parameters is not None:
-            _setter("script_parameters", script_parameters)
+            pulumi.set(__self__, "script_parameters", script_parameters)
 
     @property
     @pulumi.getter(name="paramName")
@@ -2017,33 +1547,12 @@ class ScriptParameterScriptParameter(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ScriptParameterScriptParameter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_secret=is_secret,
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_secret: Optional[bool] = None,
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-
         if is_secret is not None:
-            _setter("is_secret", is_secret)
+            pulumi.set(__self__, "is_secret", is_secret)
         if param_name is not None:
-            _setter("param_name", param_name)
+            pulumi.set(__self__, "param_name", param_name)
         if param_value is not None:
-            _setter("param_value", param_value)
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isSecret")
@@ -2087,43 +1596,10 @@ class GetDedicatedVantagePointDvpStackDetailResult(dict):
         :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param str dvp_version: Version of the dedicated vantage point.
         """
-        GetDedicatedVantagePointDvpStackDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dvp_stack_id=dvp_stack_id,
-            dvp_stack_type=dvp_stack_type,
-            dvp_stream_id=dvp_stream_id,
-            dvp_version=dvp_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dvp_stack_id: Optional[str] = None,
-             dvp_stack_type: Optional[str] = None,
-             dvp_stream_id: Optional[str] = None,
-             dvp_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dvp_stack_id is None and 'dvpStackId' in kwargs:
-            dvp_stack_id = kwargs['dvpStackId']
-        if dvp_stack_id is None:
-            raise TypeError("Missing 'dvp_stack_id' argument")
-        if dvp_stack_type is None and 'dvpStackType' in kwargs:
-            dvp_stack_type = kwargs['dvpStackType']
-        if dvp_stack_type is None:
-            raise TypeError("Missing 'dvp_stack_type' argument")
-        if dvp_stream_id is None and 'dvpStreamId' in kwargs:
-            dvp_stream_id = kwargs['dvpStreamId']
-        if dvp_stream_id is None:
-            raise TypeError("Missing 'dvp_stream_id' argument")
-        if dvp_version is None and 'dvpVersion' in kwargs:
-            dvp_version = kwargs['dvpVersion']
-        if dvp_version is None:
-            raise TypeError("Missing 'dvp_version' argument")
-
-        _setter("dvp_stack_id", dvp_stack_id)
-        _setter("dvp_stack_type", dvp_stack_type)
-        _setter("dvp_stream_id", dvp_stream_id)
-        _setter("dvp_version", dvp_version)
+        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        pulumi.set(__self__, "dvp_version", dvp_version)
 
     @property
     @pulumi.getter(name="dvpStackId")
@@ -2171,35 +1647,10 @@ class GetDedicatedVantagePointMonitorStatusCountMapResult(dict):
         :param int invalid: Number of invalid monitors using the script.
         :param int total: Total number of monitors using the script.
         """
-        GetDedicatedVantagePointMonitorStatusCountMapResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            enabled=enabled,
-            invalid=invalid,
-            total=total,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[int] = None,
-             enabled: Optional[int] = None,
-             invalid: Optional[int] = None,
-             total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if disabled is None:
-            raise TypeError("Missing 'disabled' argument")
-        if enabled is None:
-            raise TypeError("Missing 'enabled' argument")
-        if invalid is None:
-            raise TypeError("Missing 'invalid' argument")
-        if total is None:
-            raise TypeError("Missing 'total' argument")
-
-        _setter("disabled", disabled)
-        _setter("enabled", enabled)
-        _setter("invalid", invalid)
-        _setter("total", total)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "invalid", invalid)
+        pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
@@ -2238,20 +1689,7 @@ class GetDedicatedVantagePointMonitorStatusCountMapResult(dict):
 class GetDedicatedVantagePointsDedicatedVantagePointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']):
-        GetDedicatedVantagePointsDedicatedVantagePointCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -2288,91 +1726,18 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
-        GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            apm_domain_id=apm_domain_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dvp_stack_details=dvp_stack_details,
-            freeform_tags=freeform_tags,
-            id=id,
-            monitor_status_count_maps=monitor_status_count_maps,
-            name=name,
-            region=region,
-            status=status,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             apm_domain_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             dvp_stack_details: Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult']] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             monitor_status_count_maps: Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult']] = None,
-             name: Optional[str] = None,
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if apm_domain_id is None and 'apmDomainId' in kwargs:
-            apm_domain_id = kwargs['apmDomainId']
-        if apm_domain_id is None:
-            raise TypeError("Missing 'apm_domain_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if dvp_stack_details is None and 'dvpStackDetails' in kwargs:
-            dvp_stack_details = kwargs['dvpStackDetails']
-        if dvp_stack_details is None:
-            raise TypeError("Missing 'dvp_stack_details' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if monitor_status_count_maps is None and 'monitorStatusCountMaps' in kwargs:
-            monitor_status_count_maps = kwargs['monitorStatusCountMaps']
-        if monitor_status_count_maps is None:
-            raise TypeError("Missing 'monitor_status_count_maps' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("apm_domain_id", apm_domain_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("dvp_stack_details", dvp_stack_details)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("monitor_status_count_maps", monitor_status_count_maps)
-        _setter("name", name)
-        _setter("region", region)
-        _setter("status", status)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dvp_stack_details", dvp_stack_details)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -2484,43 +1849,10 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail
         :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param str dvp_version: Version of the dedicated vantage point.
         """
-        GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dvp_stack_id=dvp_stack_id,
-            dvp_stack_type=dvp_stack_type,
-            dvp_stream_id=dvp_stream_id,
-            dvp_version=dvp_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dvp_stack_id: Optional[str] = None,
-             dvp_stack_type: Optional[str] = None,
-             dvp_stream_id: Optional[str] = None,
-             dvp_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dvp_stack_id is None and 'dvpStackId' in kwargs:
-            dvp_stack_id = kwargs['dvpStackId']
-        if dvp_stack_id is None:
-            raise TypeError("Missing 'dvp_stack_id' argument")
-        if dvp_stack_type is None and 'dvpStackType' in kwargs:
-            dvp_stack_type = kwargs['dvpStackType']
-        if dvp_stack_type is None:
-            raise TypeError("Missing 'dvp_stack_type' argument")
-        if dvp_stream_id is None and 'dvpStreamId' in kwargs:
-            dvp_stream_id = kwargs['dvpStreamId']
-        if dvp_stream_id is None:
-            raise TypeError("Missing 'dvp_stream_id' argument")
-        if dvp_version is None and 'dvpVersion' in kwargs:
-            dvp_version = kwargs['dvpVersion']
-        if dvp_version is None:
-            raise TypeError("Missing 'dvp_version' argument")
-
-        _setter("dvp_stack_id", dvp_stack_id)
-        _setter("dvp_stack_type", dvp_stack_type)
-        _setter("dvp_stream_id", dvp_stream_id)
-        _setter("dvp_version", dvp_version)
+        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        pulumi.set(__self__, "dvp_version", dvp_version)
 
     @property
     @pulumi.getter(name="dvpStackId")
@@ -2568,35 +1900,10 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusC
         :param int invalid: Number of invalid monitors using the script.
         :param int total: Total number of monitors using the script.
         """
-        GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            enabled=enabled,
-            invalid=invalid,
-            total=total,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[int] = None,
-             enabled: Optional[int] = None,
-             invalid: Optional[int] = None,
-             total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if disabled is None:
-            raise TypeError("Missing 'disabled' argument")
-        if enabled is None:
-            raise TypeError("Missing 'enabled' argument")
-        if invalid is None:
-            raise TypeError("Missing 'invalid' argument")
-        if total is None:
-            raise TypeError("Missing 'total' argument")
-
-        _setter("disabled", disabled)
-        _setter("enabled", enabled)
-        _setter("invalid", invalid)
-        _setter("total", total)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "invalid", invalid)
+        pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
@@ -2640,29 +1947,10 @@ class GetDedicatedVantagePointsFilterResult(dict):
         """
         :param str name: A filter to return only the resources that match the entire name.
         """
-        GetDedicatedVantagePointsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2692,29 +1980,8 @@ class GetMonitorAvailabilityConfigurationResult(dict):
         :param int max_allowed_failures_per_interval: Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
         :param int min_allowed_runs_per_interval: Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
         """
-        GetMonitorAvailabilityConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max_allowed_failures_per_interval=max_allowed_failures_per_interval,
-            min_allowed_runs_per_interval=min_allowed_runs_per_interval,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max_allowed_failures_per_interval: Optional[int] = None,
-             min_allowed_runs_per_interval: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max_allowed_failures_per_interval is None and 'maxAllowedFailuresPerInterval' in kwargs:
-            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
-        if max_allowed_failures_per_interval is None:
-            raise TypeError("Missing 'max_allowed_failures_per_interval' argument")
-        if min_allowed_runs_per_interval is None and 'minAllowedRunsPerInterval' in kwargs:
-            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
-        if min_allowed_runs_per_interval is None:
-            raise TypeError("Missing 'min_allowed_runs_per_interval' argument")
-
-        _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
-        _setter("min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+        pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
     @property
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
@@ -2772,134 +2039,23 @@ class GetMonitorConfigurationResult(dict):
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['GetMonitorConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
-        GetMonitorConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_certificate_details=client_certificate_details,
-            config_type=config_type,
-            dns_configurations=dns_configurations,
-            is_certificate_validation_enabled=is_certificate_validation_enabled,
-            is_default_snapshot_enabled=is_default_snapshot_enabled,
-            is_failure_retried=is_failure_retried,
-            is_redirection_enabled=is_redirection_enabled,
-            network_configurations=network_configurations,
-            req_authentication_details=req_authentication_details,
-            req_authentication_scheme=req_authentication_scheme,
-            request_headers=request_headers,
-            request_method=request_method,
-            request_post_body=request_post_body,
-            request_query_params=request_query_params,
-            verify_response_codes=verify_response_codes,
-            verify_response_content=verify_response_content,
-            verify_texts=verify_texts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_certificate_details: Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult']] = None,
-             config_type: Optional[str] = None,
-             dns_configurations: Optional[Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult']] = None,
-             is_certificate_validation_enabled: Optional[bool] = None,
-             is_default_snapshot_enabled: Optional[bool] = None,
-             is_failure_retried: Optional[bool] = None,
-             is_redirection_enabled: Optional[bool] = None,
-             network_configurations: Optional[Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult']] = None,
-             req_authentication_details: Optional[Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailResult']] = None,
-             req_authentication_scheme: Optional[str] = None,
-             request_headers: Optional[Sequence['outputs.GetMonitorConfigurationRequestHeaderResult']] = None,
-             request_method: Optional[str] = None,
-             request_post_body: Optional[str] = None,
-             request_query_params: Optional[Sequence['outputs.GetMonitorConfigurationRequestQueryParamResult']] = None,
-             verify_response_codes: Optional[Sequence[str]] = None,
-             verify_response_content: Optional[str] = None,
-             verify_texts: Optional[Sequence['outputs.GetMonitorConfigurationVerifyTextResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_certificate_details is None and 'clientCertificateDetails' in kwargs:
-            client_certificate_details = kwargs['clientCertificateDetails']
-        if client_certificate_details is None:
-            raise TypeError("Missing 'client_certificate_details' argument")
-        if config_type is None and 'configType' in kwargs:
-            config_type = kwargs['configType']
-        if config_type is None:
-            raise TypeError("Missing 'config_type' argument")
-        if dns_configurations is None and 'dnsConfigurations' in kwargs:
-            dns_configurations = kwargs['dnsConfigurations']
-        if dns_configurations is None:
-            raise TypeError("Missing 'dns_configurations' argument")
-        if is_certificate_validation_enabled is None and 'isCertificateValidationEnabled' in kwargs:
-            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
-        if is_certificate_validation_enabled is None:
-            raise TypeError("Missing 'is_certificate_validation_enabled' argument")
-        if is_default_snapshot_enabled is None and 'isDefaultSnapshotEnabled' in kwargs:
-            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
-        if is_default_snapshot_enabled is None:
-            raise TypeError("Missing 'is_default_snapshot_enabled' argument")
-        if is_failure_retried is None and 'isFailureRetried' in kwargs:
-            is_failure_retried = kwargs['isFailureRetried']
-        if is_failure_retried is None:
-            raise TypeError("Missing 'is_failure_retried' argument")
-        if is_redirection_enabled is None and 'isRedirectionEnabled' in kwargs:
-            is_redirection_enabled = kwargs['isRedirectionEnabled']
-        if is_redirection_enabled is None:
-            raise TypeError("Missing 'is_redirection_enabled' argument")
-        if network_configurations is None and 'networkConfigurations' in kwargs:
-            network_configurations = kwargs['networkConfigurations']
-        if network_configurations is None:
-            raise TypeError("Missing 'network_configurations' argument")
-        if req_authentication_details is None and 'reqAuthenticationDetails' in kwargs:
-            req_authentication_details = kwargs['reqAuthenticationDetails']
-        if req_authentication_details is None:
-            raise TypeError("Missing 'req_authentication_details' argument")
-        if req_authentication_scheme is None and 'reqAuthenticationScheme' in kwargs:
-            req_authentication_scheme = kwargs['reqAuthenticationScheme']
-        if req_authentication_scheme is None:
-            raise TypeError("Missing 'req_authentication_scheme' argument")
-        if request_headers is None and 'requestHeaders' in kwargs:
-            request_headers = kwargs['requestHeaders']
-        if request_headers is None:
-            raise TypeError("Missing 'request_headers' argument")
-        if request_method is None and 'requestMethod' in kwargs:
-            request_method = kwargs['requestMethod']
-        if request_method is None:
-            raise TypeError("Missing 'request_method' argument")
-        if request_post_body is None and 'requestPostBody' in kwargs:
-            request_post_body = kwargs['requestPostBody']
-        if request_post_body is None:
-            raise TypeError("Missing 'request_post_body' argument")
-        if request_query_params is None and 'requestQueryParams' in kwargs:
-            request_query_params = kwargs['requestQueryParams']
-        if request_query_params is None:
-            raise TypeError("Missing 'request_query_params' argument")
-        if verify_response_codes is None and 'verifyResponseCodes' in kwargs:
-            verify_response_codes = kwargs['verifyResponseCodes']
-        if verify_response_codes is None:
-            raise TypeError("Missing 'verify_response_codes' argument")
-        if verify_response_content is None and 'verifyResponseContent' in kwargs:
-            verify_response_content = kwargs['verifyResponseContent']
-        if verify_response_content is None:
-            raise TypeError("Missing 'verify_response_content' argument")
-        if verify_texts is None and 'verifyTexts' in kwargs:
-            verify_texts = kwargs['verifyTexts']
-        if verify_texts is None:
-            raise TypeError("Missing 'verify_texts' argument")
-
-        _setter("client_certificate_details", client_certificate_details)
-        _setter("config_type", config_type)
-        _setter("dns_configurations", dns_configurations)
-        _setter("is_certificate_validation_enabled", is_certificate_validation_enabled)
-        _setter("is_default_snapshot_enabled", is_default_snapshot_enabled)
-        _setter("is_failure_retried", is_failure_retried)
-        _setter("is_redirection_enabled", is_redirection_enabled)
-        _setter("network_configurations", network_configurations)
-        _setter("req_authentication_details", req_authentication_details)
-        _setter("req_authentication_scheme", req_authentication_scheme)
-        _setter("request_headers", request_headers)
-        _setter("request_method", request_method)
-        _setter("request_post_body", request_post_body)
-        _setter("request_query_params", request_query_params)
-        _setter("verify_response_codes", verify_response_codes)
-        _setter("verify_response_content", verify_response_content)
-        _setter("verify_texts", verify_texts)
+        pulumi.set(__self__, "client_certificate_details", client_certificate_details)
+        pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "dns_configurations", dns_configurations)
+        pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
+        pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "req_authentication_details", req_authentication_details)
+        pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
+        pulumi.set(__self__, "request_headers", request_headers)
+        pulumi.set(__self__, "request_method", request_method)
+        pulumi.set(__self__, "request_post_body", request_post_body)
+        pulumi.set(__self__, "request_query_params", request_query_params)
+        pulumi.set(__self__, "verify_response_codes", verify_response_codes)
+        pulumi.set(__self__, "verify_response_content", verify_response_content)
+        pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
     @pulumi.getter(name="clientCertificateDetails")
@@ -3047,29 +2203,8 @@ class GetMonitorConfigurationClientCertificateDetailResult(dict):
         :param Sequence['GetMonitorConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in PEM format.
         :param Sequence['GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in PEM format.
         """
-        GetMonitorConfigurationClientCertificateDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_certificates=client_certificates,
-            private_keys=private_keys,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_certificates: Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult']] = None,
-             private_keys: Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_certificates is None and 'clientCertificates' in kwargs:
-            client_certificates = kwargs['clientCertificates']
-        if client_certificates is None:
-            raise TypeError("Missing 'client_certificates' argument")
-        if private_keys is None and 'privateKeys' in kwargs:
-            private_keys = kwargs['privateKeys']
-        if private_keys is None:
-            raise TypeError("Missing 'private_keys' argument")
-
-        _setter("client_certificates", client_certificates)
-        _setter("private_keys", private_keys)
+        pulumi.set(__self__, "client_certificates", client_certificates)
+        pulumi.set(__self__, "private_keys", private_keys)
 
     @property
     @pulumi.getter(name="clientCertificates")
@@ -3097,27 +2232,8 @@ class GetMonitorConfigurationClientCertificateDetailClientCertificateResult(dict
         :param str content: Content of the private key file.
         :param str file_name: Name of the private key file.
         """
-        GetMonitorConfigurationClientCertificateDetailClientCertificateResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            file_name=file_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-        if file_name is None:
-            raise TypeError("Missing 'file_name' argument")
-
-        _setter("content", content)
-        _setter("file_name", file_name)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
@@ -3145,27 +2261,8 @@ class GetMonitorConfigurationClientCertificateDetailPrivateKeyResult(dict):
         :param str content: Content of the private key file.
         :param str file_name: Name of the private key file.
         """
-        GetMonitorConfigurationClientCertificateDetailPrivateKeyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            file_name=file_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-        if file_name is None:
-            raise TypeError("Missing 'file_name' argument")
-
-        _setter("content", content)
-        _setter("file_name", file_name)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
@@ -3193,29 +2290,8 @@ class GetMonitorConfigurationDnsConfigurationResult(dict):
         :param bool is_override_dns: If isOverrideDns is true, then DNS settings will be overridden.
         :param str override_dns_ip: Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
-        GetMonitorConfigurationDnsConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_override_dns=is_override_dns,
-            override_dns_ip=override_dns_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_override_dns: Optional[bool] = None,
-             override_dns_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_override_dns is None and 'isOverrideDns' in kwargs:
-            is_override_dns = kwargs['isOverrideDns']
-        if is_override_dns is None:
-            raise TypeError("Missing 'is_override_dns' argument")
-        if override_dns_ip is None and 'overrideDnsIp' in kwargs:
-            override_dns_ip = kwargs['overrideDnsIp']
-        if override_dns_ip is None:
-            raise TypeError("Missing 'override_dns_ip' argument")
-
-        _setter("is_override_dns", is_override_dns)
-        _setter("override_dns_ip", override_dns_ip)
+        pulumi.set(__self__, "is_override_dns", is_override_dns)
+        pulumi.set(__self__, "override_dns_ip", override_dns_ip)
 
     @property
     @pulumi.getter(name="isOverrideDns")
@@ -3249,48 +2325,11 @@ class GetMonitorConfigurationNetworkConfigurationResult(dict):
         :param str protocol: Type of protocol.
         :param int transmission_rate: Number of probe packets sent out simultaneously.
         """
-        GetMonitorConfigurationNetworkConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            number_of_hops=number_of_hops,
-            probe_mode=probe_mode,
-            probe_per_hop=probe_per_hop,
-            protocol=protocol,
-            transmission_rate=transmission_rate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             number_of_hops: Optional[int] = None,
-             probe_mode: Optional[str] = None,
-             probe_per_hop: Optional[int] = None,
-             protocol: Optional[str] = None,
-             transmission_rate: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if number_of_hops is None and 'numberOfHops' in kwargs:
-            number_of_hops = kwargs['numberOfHops']
-        if number_of_hops is None:
-            raise TypeError("Missing 'number_of_hops' argument")
-        if probe_mode is None and 'probeMode' in kwargs:
-            probe_mode = kwargs['probeMode']
-        if probe_mode is None:
-            raise TypeError("Missing 'probe_mode' argument")
-        if probe_per_hop is None and 'probePerHop' in kwargs:
-            probe_per_hop = kwargs['probePerHop']
-        if probe_per_hop is None:
-            raise TypeError("Missing 'probe_per_hop' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if transmission_rate is None and 'transmissionRate' in kwargs:
-            transmission_rate = kwargs['transmissionRate']
-        if transmission_rate is None:
-            raise TypeError("Missing 'transmission_rate' argument")
-
-        _setter("number_of_hops", number_of_hops)
-        _setter("probe_mode", probe_mode)
-        _setter("probe_per_hop", probe_per_hop)
-        _setter("protocol", protocol)
-        _setter("transmission_rate", transmission_rate)
+        pulumi.set(__self__, "number_of_hops", number_of_hops)
+        pulumi.set(__self__, "probe_mode", probe_mode)
+        pulumi.set(__self__, "probe_per_hop", probe_per_hop)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "transmission_rate", transmission_rate)
 
     @property
     @pulumi.getter(name="numberOfHops")
@@ -3354,71 +2393,14 @@ class GetMonitorConfigurationReqAuthenticationDetailResult(dict):
         :param str auth_user_password: User password for authentication.
         :param str oauth_scheme: Request HTTP OAuth scheme.
         """
-        GetMonitorConfigurationReqAuthenticationDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auth_headers=auth_headers,
-            auth_request_method=auth_request_method,
-            auth_request_post_body=auth_request_post_body,
-            auth_token=auth_token,
-            auth_url=auth_url,
-            auth_user_name=auth_user_name,
-            auth_user_password=auth_user_password,
-            oauth_scheme=oauth_scheme,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auth_headers: Optional[Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult']] = None,
-             auth_request_method: Optional[str] = None,
-             auth_request_post_body: Optional[str] = None,
-             auth_token: Optional[str] = None,
-             auth_url: Optional[str] = None,
-             auth_user_name: Optional[str] = None,
-             auth_user_password: Optional[str] = None,
-             oauth_scheme: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auth_headers is None and 'authHeaders' in kwargs:
-            auth_headers = kwargs['authHeaders']
-        if auth_headers is None:
-            raise TypeError("Missing 'auth_headers' argument")
-        if auth_request_method is None and 'authRequestMethod' in kwargs:
-            auth_request_method = kwargs['authRequestMethod']
-        if auth_request_method is None:
-            raise TypeError("Missing 'auth_request_method' argument")
-        if auth_request_post_body is None and 'authRequestPostBody' in kwargs:
-            auth_request_post_body = kwargs['authRequestPostBody']
-        if auth_request_post_body is None:
-            raise TypeError("Missing 'auth_request_post_body' argument")
-        if auth_token is None and 'authToken' in kwargs:
-            auth_token = kwargs['authToken']
-        if auth_token is None:
-            raise TypeError("Missing 'auth_token' argument")
-        if auth_url is None and 'authUrl' in kwargs:
-            auth_url = kwargs['authUrl']
-        if auth_url is None:
-            raise TypeError("Missing 'auth_url' argument")
-        if auth_user_name is None and 'authUserName' in kwargs:
-            auth_user_name = kwargs['authUserName']
-        if auth_user_name is None:
-            raise TypeError("Missing 'auth_user_name' argument")
-        if auth_user_password is None and 'authUserPassword' in kwargs:
-            auth_user_password = kwargs['authUserPassword']
-        if auth_user_password is None:
-            raise TypeError("Missing 'auth_user_password' argument")
-        if oauth_scheme is None and 'oauthScheme' in kwargs:
-            oauth_scheme = kwargs['oauthScheme']
-        if oauth_scheme is None:
-            raise TypeError("Missing 'oauth_scheme' argument")
-
-        _setter("auth_headers", auth_headers)
-        _setter("auth_request_method", auth_request_method)
-        _setter("auth_request_post_body", auth_request_post_body)
-        _setter("auth_token", auth_token)
-        _setter("auth_url", auth_url)
-        _setter("auth_user_name", auth_user_name)
-        _setter("auth_user_password", auth_user_password)
-        _setter("oauth_scheme", oauth_scheme)
+        pulumi.set(__self__, "auth_headers", auth_headers)
+        pulumi.set(__self__, "auth_request_method", auth_request_method)
+        pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
+        pulumi.set(__self__, "auth_token", auth_token)
+        pulumi.set(__self__, "auth_url", auth_url)
+        pulumi.set(__self__, "auth_user_name", auth_user_name)
+        pulumi.set(__self__, "auth_user_password", auth_user_password)
+        pulumi.set(__self__, "oauth_scheme", oauth_scheme)
 
     @property
     @pulumi.getter(name="authHeaders")
@@ -3494,29 +2476,8 @@ class GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult(dict):
         :param str header_name: Name of the header.
         :param str header_value: Value of the header.
         """
-        GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            header_name=header_name,
-            header_value=header_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             header_name: Optional[str] = None,
-             header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if header_name is None and 'headerName' in kwargs:
-            header_name = kwargs['headerName']
-        if header_name is None:
-            raise TypeError("Missing 'header_name' argument")
-        if header_value is None and 'headerValue' in kwargs:
-            header_value = kwargs['headerValue']
-        if header_value is None:
-            raise TypeError("Missing 'header_value' argument")
-
-        _setter("header_name", header_name)
-        _setter("header_value", header_value)
+        pulumi.set(__self__, "header_name", header_name)
+        pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -3544,29 +2505,8 @@ class GetMonitorConfigurationRequestHeaderResult(dict):
         :param str header_name: Name of the header.
         :param str header_value: Value of the header.
         """
-        GetMonitorConfigurationRequestHeaderResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            header_name=header_name,
-            header_value=header_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             header_name: Optional[str] = None,
-             header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if header_name is None and 'headerName' in kwargs:
-            header_name = kwargs['headerName']
-        if header_name is None:
-            raise TypeError("Missing 'header_name' argument")
-        if header_value is None and 'headerValue' in kwargs:
-            header_value = kwargs['headerValue']
-        if header_value is None:
-            raise TypeError("Missing 'header_value' argument")
-
-        _setter("header_name", header_name)
-        _setter("header_value", header_value)
+        pulumi.set(__self__, "header_name", header_name)
+        pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -3594,29 +2534,8 @@ class GetMonitorConfigurationRequestQueryParamResult(dict):
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetMonitorConfigurationRequestQueryParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -3642,20 +2561,7 @@ class GetMonitorConfigurationVerifyTextResult(dict):
         """
         :param str text: Verification text in the response.
         """
-        GetMonitorConfigurationVerifyTextResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            text=text,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if text is None:
-            raise TypeError("Missing 'text' argument")
-
-        _setter("text", text)
+        pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
@@ -3675,29 +2581,8 @@ class GetMonitorMaintenanceWindowScheduleResult(dict):
         :param str time_ended: End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_started: Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
-        GetMonitorMaintenanceWindowScheduleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            time_ended=time_ended,
-            time_started=time_started,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             time_ended: Optional[str] = None,
-             time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if time_ended is None and 'timeEnded' in kwargs:
-            time_ended = kwargs['timeEnded']
-        if time_ended is None:
-            raise TypeError("Missing 'time_ended' argument")
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if time_started is None:
-            raise TypeError("Missing 'time_started' argument")
-
-        _setter("time_ended", time_ended)
-        _setter("time_started", time_started)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="timeEnded")
@@ -3731,50 +2616,11 @@ class GetMonitorScriptParameterResult(dict):
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetMonitorScriptParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_overwritten=is_overwritten,
-            is_secret=is_secret,
-            monitor_script_parameters=monitor_script_parameters,
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_overwritten: Optional[bool] = None,
-             is_secret: Optional[bool] = None,
-             monitor_script_parameters: Optional[Sequence['outputs.GetMonitorScriptParameterMonitorScriptParameterResult']] = None,
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_overwritten is None and 'isOverwritten' in kwargs:
-            is_overwritten = kwargs['isOverwritten']
-        if is_overwritten is None:
-            raise TypeError("Missing 'is_overwritten' argument")
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if is_secret is None:
-            raise TypeError("Missing 'is_secret' argument")
-        if monitor_script_parameters is None and 'monitorScriptParameters' in kwargs:
-            monitor_script_parameters = kwargs['monitorScriptParameters']
-        if monitor_script_parameters is None:
-            raise TypeError("Missing 'monitor_script_parameters' argument")
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("is_overwritten", is_overwritten)
-        _setter("is_secret", is_secret)
-        _setter("monitor_script_parameters", monitor_script_parameters)
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "is_overwritten", is_overwritten)
+        pulumi.set(__self__, "is_secret", is_secret)
+        pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isOverwritten")
@@ -3826,29 +2672,8 @@ class GetMonitorScriptParameterMonitorScriptParameterResult(dict):
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetMonitorScriptParameterMonitorScriptParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -3876,27 +2701,8 @@ class GetMonitorVantagePointResult(dict):
         :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param str name: Name of the vantage point.
         """
-        GetMonitorVantagePointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("display_name", display_name)
-        _setter("name", name)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -3924,29 +2730,10 @@ class GetMonitorsFilterResult(dict):
         """
         :param str name: Name of the vantage point.
         """
-        GetMonitorsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3971,20 +2758,7 @@ class GetMonitorsFilterResult(dict):
 class GetMonitorsMonitorCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMonitorsMonitorCollectionItemResult']):
-        GetMonitorsMonitorCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -4045,175 +2819,30 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param int vantage_point_count: Number of vantage points where monitor is running.
         :param Sequence['GetMonitorsMonitorCollectionItemVantagePointArgs'] vantage_points: List of public and dedicated vantage points where the monitor is running.
         """
-        GetMonitorsMonitorCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            apm_domain_id=apm_domain_id,
-            availability_configurations=availability_configurations,
-            batch_interval_in_seconds=batch_interval_in_seconds,
-            configurations=configurations,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_run_now=is_run_now,
-            is_run_once=is_run_once,
-            maintenance_window_schedules=maintenance_window_schedules,
-            monitor_type=monitor_type,
-            repeat_interval_in_seconds=repeat_interval_in_seconds,
-            scheduling_policy=scheduling_policy,
-            script_id=script_id,
-            script_name=script_name,
-            script_parameters=script_parameters,
-            status=status,
-            target=target,
-            time_created=time_created,
-            time_updated=time_updated,
-            timeout_in_seconds=timeout_in_seconds,
-            vantage_point_count=vantage_point_count,
-            vantage_points=vantage_points,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             apm_domain_id: Optional[str] = None,
-             availability_configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult']] = None,
-             batch_interval_in_seconds: Optional[int] = None,
-             configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult']] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_run_now: Optional[bool] = None,
-             is_run_once: Optional[bool] = None,
-             maintenance_window_schedules: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult']] = None,
-             monitor_type: Optional[str] = None,
-             repeat_interval_in_seconds: Optional[int] = None,
-             scheduling_policy: Optional[str] = None,
-             script_id: Optional[str] = None,
-             script_name: Optional[str] = None,
-             script_parameters: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterResult']] = None,
-             status: Optional[str] = None,
-             target: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             timeout_in_seconds: Optional[int] = None,
-             vantage_point_count: Optional[int] = None,
-             vantage_points: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if apm_domain_id is None and 'apmDomainId' in kwargs:
-            apm_domain_id = kwargs['apmDomainId']
-        if apm_domain_id is None:
-            raise TypeError("Missing 'apm_domain_id' argument")
-        if availability_configurations is None and 'availabilityConfigurations' in kwargs:
-            availability_configurations = kwargs['availabilityConfigurations']
-        if availability_configurations is None:
-            raise TypeError("Missing 'availability_configurations' argument")
-        if batch_interval_in_seconds is None and 'batchIntervalInSeconds' in kwargs:
-            batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
-        if batch_interval_in_seconds is None:
-            raise TypeError("Missing 'batch_interval_in_seconds' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_run_now is None and 'isRunNow' in kwargs:
-            is_run_now = kwargs['isRunNow']
-        if is_run_now is None:
-            raise TypeError("Missing 'is_run_now' argument")
-        if is_run_once is None and 'isRunOnce' in kwargs:
-            is_run_once = kwargs['isRunOnce']
-        if is_run_once is None:
-            raise TypeError("Missing 'is_run_once' argument")
-        if maintenance_window_schedules is None and 'maintenanceWindowSchedules' in kwargs:
-            maintenance_window_schedules = kwargs['maintenanceWindowSchedules']
-        if maintenance_window_schedules is None:
-            raise TypeError("Missing 'maintenance_window_schedules' argument")
-        if monitor_type is None and 'monitorType' in kwargs:
-            monitor_type = kwargs['monitorType']
-        if monitor_type is None:
-            raise TypeError("Missing 'monitor_type' argument")
-        if repeat_interval_in_seconds is None and 'repeatIntervalInSeconds' in kwargs:
-            repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
-        if repeat_interval_in_seconds is None:
-            raise TypeError("Missing 'repeat_interval_in_seconds' argument")
-        if scheduling_policy is None and 'schedulingPolicy' in kwargs:
-            scheduling_policy = kwargs['schedulingPolicy']
-        if scheduling_policy is None:
-            raise TypeError("Missing 'scheduling_policy' argument")
-        if script_id is None and 'scriptId' in kwargs:
-            script_id = kwargs['scriptId']
-        if script_id is None:
-            raise TypeError("Missing 'script_id' argument")
-        if script_name is None and 'scriptName' in kwargs:
-            script_name = kwargs['scriptName']
-        if script_name is None:
-            raise TypeError("Missing 'script_name' argument")
-        if script_parameters is None and 'scriptParameters' in kwargs:
-            script_parameters = kwargs['scriptParameters']
-        if script_parameters is None:
-            raise TypeError("Missing 'script_parameters' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if target is None:
-            raise TypeError("Missing 'target' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
-            timeout_in_seconds = kwargs['timeoutInSeconds']
-        if timeout_in_seconds is None:
-            raise TypeError("Missing 'timeout_in_seconds' argument")
-        if vantage_point_count is None and 'vantagePointCount' in kwargs:
-            vantage_point_count = kwargs['vantagePointCount']
-        if vantage_point_count is None:
-            raise TypeError("Missing 'vantage_point_count' argument")
-        if vantage_points is None and 'vantagePoints' in kwargs:
-            vantage_points = kwargs['vantagePoints']
-        if vantage_points is None:
-            raise TypeError("Missing 'vantage_points' argument")
-
-        _setter("apm_domain_id", apm_domain_id)
-        _setter("availability_configurations", availability_configurations)
-        _setter("batch_interval_in_seconds", batch_interval_in_seconds)
-        _setter("configurations", configurations)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_run_now", is_run_now)
-        _setter("is_run_once", is_run_once)
-        _setter("maintenance_window_schedules", maintenance_window_schedules)
-        _setter("monitor_type", monitor_type)
-        _setter("repeat_interval_in_seconds", repeat_interval_in_seconds)
-        _setter("scheduling_policy", scheduling_policy)
-        _setter("script_id", script_id)
-        _setter("script_name", script_name)
-        _setter("script_parameters", script_parameters)
-        _setter("status", status)
-        _setter("target", target)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("timeout_in_seconds", timeout_in_seconds)
-        _setter("vantage_point_count", vantage_point_count)
-        _setter("vantage_points", vantage_points)
+        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "availability_configurations", availability_configurations)
+        pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_run_now", is_run_now)
+        pulumi.set(__self__, "is_run_once", is_run_once)
+        pulumi.set(__self__, "maintenance_window_schedules", maintenance_window_schedules)
+        pulumi.set(__self__, "monitor_type", monitor_type)
+        pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
+        pulumi.set(__self__, "scheduling_policy", scheduling_policy)
+        pulumi.set(__self__, "script_id", script_id)
+        pulumi.set(__self__, "script_name", script_name)
+        pulumi.set(__self__, "script_parameters", script_parameters)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        pulumi.set(__self__, "vantage_point_count", vantage_point_count)
+        pulumi.set(__self__, "vantage_points", vantage_points)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -4417,29 +3046,8 @@ class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
         :param int max_allowed_failures_per_interval: Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
         :param int min_allowed_runs_per_interval: Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
         """
-        GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max_allowed_failures_per_interval=max_allowed_failures_per_interval,
-            min_allowed_runs_per_interval=min_allowed_runs_per_interval,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max_allowed_failures_per_interval: Optional[int] = None,
-             min_allowed_runs_per_interval: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max_allowed_failures_per_interval is None and 'maxAllowedFailuresPerInterval' in kwargs:
-            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
-        if max_allowed_failures_per_interval is None:
-            raise TypeError("Missing 'max_allowed_failures_per_interval' argument")
-        if min_allowed_runs_per_interval is None and 'minAllowedRunsPerInterval' in kwargs:
-            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
-        if min_allowed_runs_per_interval is None:
-            raise TypeError("Missing 'min_allowed_runs_per_interval' argument")
-
-        _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
-        _setter("min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+        pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
     @property
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
@@ -4497,134 +3105,23 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
-        GetMonitorsMonitorCollectionItemConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_certificate_details=client_certificate_details,
-            config_type=config_type,
-            dns_configurations=dns_configurations,
-            is_certificate_validation_enabled=is_certificate_validation_enabled,
-            is_default_snapshot_enabled=is_default_snapshot_enabled,
-            is_failure_retried=is_failure_retried,
-            is_redirection_enabled=is_redirection_enabled,
-            network_configurations=network_configurations,
-            req_authentication_details=req_authentication_details,
-            req_authentication_scheme=req_authentication_scheme,
-            request_headers=request_headers,
-            request_method=request_method,
-            request_post_body=request_post_body,
-            request_query_params=request_query_params,
-            verify_response_codes=verify_response_codes,
-            verify_response_content=verify_response_content,
-            verify_texts=verify_texts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_certificate_details: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult']] = None,
-             config_type: Optional[str] = None,
-             dns_configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult']] = None,
-             is_certificate_validation_enabled: Optional[bool] = None,
-             is_default_snapshot_enabled: Optional[bool] = None,
-             is_failure_retried: Optional[bool] = None,
-             is_redirection_enabled: Optional[bool] = None,
-             network_configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult']] = None,
-             req_authentication_details: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult']] = None,
-             req_authentication_scheme: Optional[str] = None,
-             request_headers: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult']] = None,
-             request_method: Optional[str] = None,
-             request_post_body: Optional[str] = None,
-             request_query_params: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult']] = None,
-             verify_response_codes: Optional[Sequence[str]] = None,
-             verify_response_content: Optional[str] = None,
-             verify_texts: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_certificate_details is None and 'clientCertificateDetails' in kwargs:
-            client_certificate_details = kwargs['clientCertificateDetails']
-        if client_certificate_details is None:
-            raise TypeError("Missing 'client_certificate_details' argument")
-        if config_type is None and 'configType' in kwargs:
-            config_type = kwargs['configType']
-        if config_type is None:
-            raise TypeError("Missing 'config_type' argument")
-        if dns_configurations is None and 'dnsConfigurations' in kwargs:
-            dns_configurations = kwargs['dnsConfigurations']
-        if dns_configurations is None:
-            raise TypeError("Missing 'dns_configurations' argument")
-        if is_certificate_validation_enabled is None and 'isCertificateValidationEnabled' in kwargs:
-            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
-        if is_certificate_validation_enabled is None:
-            raise TypeError("Missing 'is_certificate_validation_enabled' argument")
-        if is_default_snapshot_enabled is None and 'isDefaultSnapshotEnabled' in kwargs:
-            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
-        if is_default_snapshot_enabled is None:
-            raise TypeError("Missing 'is_default_snapshot_enabled' argument")
-        if is_failure_retried is None and 'isFailureRetried' in kwargs:
-            is_failure_retried = kwargs['isFailureRetried']
-        if is_failure_retried is None:
-            raise TypeError("Missing 'is_failure_retried' argument")
-        if is_redirection_enabled is None and 'isRedirectionEnabled' in kwargs:
-            is_redirection_enabled = kwargs['isRedirectionEnabled']
-        if is_redirection_enabled is None:
-            raise TypeError("Missing 'is_redirection_enabled' argument")
-        if network_configurations is None and 'networkConfigurations' in kwargs:
-            network_configurations = kwargs['networkConfigurations']
-        if network_configurations is None:
-            raise TypeError("Missing 'network_configurations' argument")
-        if req_authentication_details is None and 'reqAuthenticationDetails' in kwargs:
-            req_authentication_details = kwargs['reqAuthenticationDetails']
-        if req_authentication_details is None:
-            raise TypeError("Missing 'req_authentication_details' argument")
-        if req_authentication_scheme is None and 'reqAuthenticationScheme' in kwargs:
-            req_authentication_scheme = kwargs['reqAuthenticationScheme']
-        if req_authentication_scheme is None:
-            raise TypeError("Missing 'req_authentication_scheme' argument")
-        if request_headers is None and 'requestHeaders' in kwargs:
-            request_headers = kwargs['requestHeaders']
-        if request_headers is None:
-            raise TypeError("Missing 'request_headers' argument")
-        if request_method is None and 'requestMethod' in kwargs:
-            request_method = kwargs['requestMethod']
-        if request_method is None:
-            raise TypeError("Missing 'request_method' argument")
-        if request_post_body is None and 'requestPostBody' in kwargs:
-            request_post_body = kwargs['requestPostBody']
-        if request_post_body is None:
-            raise TypeError("Missing 'request_post_body' argument")
-        if request_query_params is None and 'requestQueryParams' in kwargs:
-            request_query_params = kwargs['requestQueryParams']
-        if request_query_params is None:
-            raise TypeError("Missing 'request_query_params' argument")
-        if verify_response_codes is None and 'verifyResponseCodes' in kwargs:
-            verify_response_codes = kwargs['verifyResponseCodes']
-        if verify_response_codes is None:
-            raise TypeError("Missing 'verify_response_codes' argument")
-        if verify_response_content is None and 'verifyResponseContent' in kwargs:
-            verify_response_content = kwargs['verifyResponseContent']
-        if verify_response_content is None:
-            raise TypeError("Missing 'verify_response_content' argument")
-        if verify_texts is None and 'verifyTexts' in kwargs:
-            verify_texts = kwargs['verifyTexts']
-        if verify_texts is None:
-            raise TypeError("Missing 'verify_texts' argument")
-
-        _setter("client_certificate_details", client_certificate_details)
-        _setter("config_type", config_type)
-        _setter("dns_configurations", dns_configurations)
-        _setter("is_certificate_validation_enabled", is_certificate_validation_enabled)
-        _setter("is_default_snapshot_enabled", is_default_snapshot_enabled)
-        _setter("is_failure_retried", is_failure_retried)
-        _setter("is_redirection_enabled", is_redirection_enabled)
-        _setter("network_configurations", network_configurations)
-        _setter("req_authentication_details", req_authentication_details)
-        _setter("req_authentication_scheme", req_authentication_scheme)
-        _setter("request_headers", request_headers)
-        _setter("request_method", request_method)
-        _setter("request_post_body", request_post_body)
-        _setter("request_query_params", request_query_params)
-        _setter("verify_response_codes", verify_response_codes)
-        _setter("verify_response_content", verify_response_content)
-        _setter("verify_texts", verify_texts)
+        pulumi.set(__self__, "client_certificate_details", client_certificate_details)
+        pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "dns_configurations", dns_configurations)
+        pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
+        pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "req_authentication_details", req_authentication_details)
+        pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
+        pulumi.set(__self__, "request_headers", request_headers)
+        pulumi.set(__self__, "request_method", request_method)
+        pulumi.set(__self__, "request_post_body", request_post_body)
+        pulumi.set(__self__, "request_query_params", request_query_params)
+        pulumi.set(__self__, "verify_response_codes", verify_response_codes)
+        pulumi.set(__self__, "verify_response_content", verify_response_content)
+        pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
     @pulumi.getter(name="clientCertificateDetails")
@@ -4772,29 +3269,8 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in PEM format.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in PEM format.
         """
-        GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_certificates=client_certificates,
-            private_keys=private_keys,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_certificates: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult']] = None,
-             private_keys: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_certificates is None and 'clientCertificates' in kwargs:
-            client_certificates = kwargs['clientCertificates']
-        if client_certificates is None:
-            raise TypeError("Missing 'client_certificates' argument")
-        if private_keys is None and 'privateKeys' in kwargs:
-            private_keys = kwargs['privateKeys']
-        if private_keys is None:
-            raise TypeError("Missing 'private_keys' argument")
-
-        _setter("client_certificates", client_certificates)
-        _setter("private_keys", private_keys)
+        pulumi.set(__self__, "client_certificates", client_certificates)
+        pulumi.set(__self__, "private_keys", private_keys)
 
     @property
     @pulumi.getter(name="clientCertificates")
@@ -4822,27 +3298,8 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClient
         :param str content: Content of the private key file.
         :param str file_name: Name of the private key file.
         """
-        GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            file_name=file_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-        if file_name is None:
-            raise TypeError("Missing 'file_name' argument")
-
-        _setter("content", content)
-        _setter("file_name", file_name)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
@@ -4870,27 +3327,8 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivat
         :param str content: Content of the private key file.
         :param str file_name: Name of the private key file.
         """
-        GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content=content,
-            file_name=file_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content: Optional[str] = None,
-             file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-        if file_name is None:
-            raise TypeError("Missing 'file_name' argument")
-
-        _setter("content", content)
-        _setter("file_name", file_name)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
@@ -4918,29 +3356,8 @@ class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
         :param bool is_override_dns: If isOverrideDns is true, then DNS settings will be overridden.
         :param str override_dns_ip: Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
-        GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_override_dns=is_override_dns,
-            override_dns_ip=override_dns_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_override_dns: Optional[bool] = None,
-             override_dns_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_override_dns is None and 'isOverrideDns' in kwargs:
-            is_override_dns = kwargs['isOverrideDns']
-        if is_override_dns is None:
-            raise TypeError("Missing 'is_override_dns' argument")
-        if override_dns_ip is None and 'overrideDnsIp' in kwargs:
-            override_dns_ip = kwargs['overrideDnsIp']
-        if override_dns_ip is None:
-            raise TypeError("Missing 'override_dns_ip' argument")
-
-        _setter("is_override_dns", is_override_dns)
-        _setter("override_dns_ip", override_dns_ip)
+        pulumi.set(__self__, "is_override_dns", is_override_dns)
+        pulumi.set(__self__, "override_dns_ip", override_dns_ip)
 
     @property
     @pulumi.getter(name="isOverrideDns")
@@ -4974,48 +3391,11 @@ class GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult(di
         :param str protocol: Type of protocol.
         :param int transmission_rate: Number of probe packets sent out simultaneously.
         """
-        GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            number_of_hops=number_of_hops,
-            probe_mode=probe_mode,
-            probe_per_hop=probe_per_hop,
-            protocol=protocol,
-            transmission_rate=transmission_rate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             number_of_hops: Optional[int] = None,
-             probe_mode: Optional[str] = None,
-             probe_per_hop: Optional[int] = None,
-             protocol: Optional[str] = None,
-             transmission_rate: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if number_of_hops is None and 'numberOfHops' in kwargs:
-            number_of_hops = kwargs['numberOfHops']
-        if number_of_hops is None:
-            raise TypeError("Missing 'number_of_hops' argument")
-        if probe_mode is None and 'probeMode' in kwargs:
-            probe_mode = kwargs['probeMode']
-        if probe_mode is None:
-            raise TypeError("Missing 'probe_mode' argument")
-        if probe_per_hop is None and 'probePerHop' in kwargs:
-            probe_per_hop = kwargs['probePerHop']
-        if probe_per_hop is None:
-            raise TypeError("Missing 'probe_per_hop' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if transmission_rate is None and 'transmissionRate' in kwargs:
-            transmission_rate = kwargs['transmissionRate']
-        if transmission_rate is None:
-            raise TypeError("Missing 'transmission_rate' argument")
-
-        _setter("number_of_hops", number_of_hops)
-        _setter("probe_mode", probe_mode)
-        _setter("probe_per_hop", probe_per_hop)
-        _setter("protocol", protocol)
-        _setter("transmission_rate", transmission_rate)
+        pulumi.set(__self__, "number_of_hops", number_of_hops)
+        pulumi.set(__self__, "probe_mode", probe_mode)
+        pulumi.set(__self__, "probe_per_hop", probe_per_hop)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "transmission_rate", transmission_rate)
 
     @property
     @pulumi.getter(name="numberOfHops")
@@ -5079,71 +3459,14 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult
         :param str auth_user_password: User password for authentication.
         :param str oauth_scheme: Request HTTP OAuth scheme.
         """
-        GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auth_headers=auth_headers,
-            auth_request_method=auth_request_method,
-            auth_request_post_body=auth_request_post_body,
-            auth_token=auth_token,
-            auth_url=auth_url,
-            auth_user_name=auth_user_name,
-            auth_user_password=auth_user_password,
-            oauth_scheme=oauth_scheme,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auth_headers: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult']] = None,
-             auth_request_method: Optional[str] = None,
-             auth_request_post_body: Optional[str] = None,
-             auth_token: Optional[str] = None,
-             auth_url: Optional[str] = None,
-             auth_user_name: Optional[str] = None,
-             auth_user_password: Optional[str] = None,
-             oauth_scheme: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auth_headers is None and 'authHeaders' in kwargs:
-            auth_headers = kwargs['authHeaders']
-        if auth_headers is None:
-            raise TypeError("Missing 'auth_headers' argument")
-        if auth_request_method is None and 'authRequestMethod' in kwargs:
-            auth_request_method = kwargs['authRequestMethod']
-        if auth_request_method is None:
-            raise TypeError("Missing 'auth_request_method' argument")
-        if auth_request_post_body is None and 'authRequestPostBody' in kwargs:
-            auth_request_post_body = kwargs['authRequestPostBody']
-        if auth_request_post_body is None:
-            raise TypeError("Missing 'auth_request_post_body' argument")
-        if auth_token is None and 'authToken' in kwargs:
-            auth_token = kwargs['authToken']
-        if auth_token is None:
-            raise TypeError("Missing 'auth_token' argument")
-        if auth_url is None and 'authUrl' in kwargs:
-            auth_url = kwargs['authUrl']
-        if auth_url is None:
-            raise TypeError("Missing 'auth_url' argument")
-        if auth_user_name is None and 'authUserName' in kwargs:
-            auth_user_name = kwargs['authUserName']
-        if auth_user_name is None:
-            raise TypeError("Missing 'auth_user_name' argument")
-        if auth_user_password is None and 'authUserPassword' in kwargs:
-            auth_user_password = kwargs['authUserPassword']
-        if auth_user_password is None:
-            raise TypeError("Missing 'auth_user_password' argument")
-        if oauth_scheme is None and 'oauthScheme' in kwargs:
-            oauth_scheme = kwargs['oauthScheme']
-        if oauth_scheme is None:
-            raise TypeError("Missing 'oauth_scheme' argument")
-
-        _setter("auth_headers", auth_headers)
-        _setter("auth_request_method", auth_request_method)
-        _setter("auth_request_post_body", auth_request_post_body)
-        _setter("auth_token", auth_token)
-        _setter("auth_url", auth_url)
-        _setter("auth_user_name", auth_user_name)
-        _setter("auth_user_password", auth_user_password)
-        _setter("oauth_scheme", oauth_scheme)
+        pulumi.set(__self__, "auth_headers", auth_headers)
+        pulumi.set(__self__, "auth_request_method", auth_request_method)
+        pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
+        pulumi.set(__self__, "auth_token", auth_token)
+        pulumi.set(__self__, "auth_url", auth_url)
+        pulumi.set(__self__, "auth_user_name", auth_user_name)
+        pulumi.set(__self__, "auth_user_password", auth_user_password)
+        pulumi.set(__self__, "oauth_scheme", oauth_scheme)
 
     @property
     @pulumi.getter(name="authHeaders")
@@ -5219,29 +3542,8 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHe
         :param str header_name: Name of the header.
         :param str header_value: Value of the header.
         """
-        GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            header_name=header_name,
-            header_value=header_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             header_name: Optional[str] = None,
-             header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if header_name is None and 'headerName' in kwargs:
-            header_name = kwargs['headerName']
-        if header_name is None:
-            raise TypeError("Missing 'header_name' argument")
-        if header_value is None and 'headerValue' in kwargs:
-            header_value = kwargs['headerValue']
-        if header_value is None:
-            raise TypeError("Missing 'header_value' argument")
-
-        _setter("header_name", header_name)
-        _setter("header_value", header_value)
+        pulumi.set(__self__, "header_name", header_name)
+        pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -5269,29 +3571,8 @@ class GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult(dict):
         :param str header_name: Name of the header.
         :param str header_value: Value of the header.
         """
-        GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            header_name=header_name,
-            header_value=header_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             header_name: Optional[str] = None,
-             header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if header_name is None and 'headerName' in kwargs:
-            header_name = kwargs['headerName']
-        if header_name is None:
-            raise TypeError("Missing 'header_name' argument")
-        if header_value is None and 'headerValue' in kwargs:
-            header_value = kwargs['headerValue']
-        if header_value is None:
-            raise TypeError("Missing 'header_value' argument")
-
-        _setter("header_name", header_name)
-        _setter("header_value", header_value)
+        pulumi.set(__self__, "header_name", header_name)
+        pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -5319,29 +3600,8 @@ class GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult(dict)
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -5367,20 +3627,7 @@ class GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult(dict):
         """
         :param str text: Verification text in the response.
         """
-        GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            text=text,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if text is None:
-            raise TypeError("Missing 'text' argument")
-
-        _setter("text", text)
+        pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
@@ -5400,29 +3647,8 @@ class GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult(dict):
         :param str time_ended: End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_started: Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
-        GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            time_ended=time_ended,
-            time_started=time_started,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             time_ended: Optional[str] = None,
-             time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if time_ended is None and 'timeEnded' in kwargs:
-            time_ended = kwargs['timeEnded']
-        if time_ended is None:
-            raise TypeError("Missing 'time_ended' argument")
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if time_started is None:
-            raise TypeError("Missing 'time_started' argument")
-
-        _setter("time_ended", time_ended)
-        _setter("time_started", time_started)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="timeEnded")
@@ -5456,50 +3682,11 @@ class GetMonitorsMonitorCollectionItemScriptParameterResult(dict):
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetMonitorsMonitorCollectionItemScriptParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_overwritten=is_overwritten,
-            is_secret=is_secret,
-            monitor_script_parameters=monitor_script_parameters,
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_overwritten: Optional[bool] = None,
-             is_secret: Optional[bool] = None,
-             monitor_script_parameters: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult']] = None,
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_overwritten is None and 'isOverwritten' in kwargs:
-            is_overwritten = kwargs['isOverwritten']
-        if is_overwritten is None:
-            raise TypeError("Missing 'is_overwritten' argument")
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if is_secret is None:
-            raise TypeError("Missing 'is_secret' argument")
-        if monitor_script_parameters is None and 'monitorScriptParameters' in kwargs:
-            monitor_script_parameters = kwargs['monitorScriptParameters']
-        if monitor_script_parameters is None:
-            raise TypeError("Missing 'monitor_script_parameters' argument")
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("is_overwritten", is_overwritten)
-        _setter("is_secret", is_secret)
-        _setter("monitor_script_parameters", monitor_script_parameters)
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "is_overwritten", is_overwritten)
+        pulumi.set(__self__, "is_secret", is_secret)
+        pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isOverwritten")
@@ -5551,29 +3738,8 @@ class GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResul
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -5601,27 +3767,8 @@ class GetMonitorsMonitorCollectionItemVantagePointResult(dict):
         :param str display_name: A filter to return only the resources that match the entire display name.
         :param str name: Name of the vantage point.
         """
-        GetMonitorsMonitorCollectionItemVantagePointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("display_name", display_name)
-        _setter("name", name)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -5653,39 +3800,10 @@ class GetResultResultDataSetResult(dict):
         :param str string_content: Data content in string format. Example: HAR.
         :param str timestamp: The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
-        GetResultResultDataSetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            byte_content=byte_content,
-            name=name,
-            string_content=string_content,
-            timestamp=timestamp,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             byte_content: Optional[str] = None,
-             name: Optional[str] = None,
-             string_content: Optional[str] = None,
-             timestamp: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if byte_content is None and 'byteContent' in kwargs:
-            byte_content = kwargs['byteContent']
-        if byte_content is None:
-            raise TypeError("Missing 'byte_content' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if string_content is None and 'stringContent' in kwargs:
-            string_content = kwargs['stringContent']
-        if string_content is None:
-            raise TypeError("Missing 'string_content' argument")
-        if timestamp is None:
-            raise TypeError("Missing 'timestamp' argument")
-
-        _setter("byte_content", byte_content)
-        _setter("name", name)
-        _setter("string_content", string_content)
-        _setter("timestamp", timestamp)
+        pulumi.set(__self__, "byte_content", byte_content)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "string_content", string_content)
+        pulumi.set(__self__, "timestamp", timestamp)
 
     @property
     @pulumi.getter(name="byteContent")
@@ -5733,35 +3851,10 @@ class GetScriptMonitorStatusCountMapResult(dict):
         :param int invalid: Number of invalid monitors using the script.
         :param int total: Total number of monitors using the script.
         """
-        GetScriptMonitorStatusCountMapResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            enabled=enabled,
-            invalid=invalid,
-            total=total,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[int] = None,
-             enabled: Optional[int] = None,
-             invalid: Optional[int] = None,
-             total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if disabled is None:
-            raise TypeError("Missing 'disabled' argument")
-        if enabled is None:
-            raise TypeError("Missing 'enabled' argument")
-        if invalid is None:
-            raise TypeError("Missing 'invalid' argument")
-        if total is None:
-            raise TypeError("Missing 'total' argument")
-
-        _setter("disabled", disabled)
-        _setter("enabled", enabled)
-        _setter("invalid", invalid)
-        _setter("total", total)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "invalid", invalid)
+        pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
@@ -5811,50 +3904,11 @@ class GetScriptParameterResult(dict):
         :param str param_value: Value of the parameter.
         :param Sequence['GetScriptParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
         """
-        GetScriptParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_overwritten=is_overwritten,
-            is_secret=is_secret,
-            param_name=param_name,
-            param_value=param_value,
-            script_parameters=script_parameters,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_overwritten: Optional[bool] = None,
-             is_secret: Optional[bool] = None,
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             script_parameters: Optional[Sequence['outputs.GetScriptParameterScriptParameterResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_overwritten is None and 'isOverwritten' in kwargs:
-            is_overwritten = kwargs['isOverwritten']
-        if is_overwritten is None:
-            raise TypeError("Missing 'is_overwritten' argument")
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if is_secret is None:
-            raise TypeError("Missing 'is_secret' argument")
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-        if script_parameters is None and 'scriptParameters' in kwargs:
-            script_parameters = kwargs['scriptParameters']
-        if script_parameters is None:
-            raise TypeError("Missing 'script_parameters' argument")
-
-        _setter("is_overwritten", is_overwritten)
-        _setter("is_secret", is_secret)
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
-        _setter("script_parameters", script_parameters)
+        pulumi.set(__self__, "is_overwritten", is_overwritten)
+        pulumi.set(__self__, "is_secret", is_secret)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
+        pulumi.set(__self__, "script_parameters", script_parameters)
 
     @property
     @pulumi.getter(name="isOverwritten")
@@ -5908,36 +3962,9 @@ class GetScriptParameterScriptParameterResult(dict):
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetScriptParameterScriptParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_secret=is_secret,
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_secret: Optional[bool] = None,
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if is_secret is None:
-            raise TypeError("Missing 'is_secret' argument")
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("is_secret", is_secret)
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "is_secret", is_secret)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isSecret")
@@ -5970,29 +3997,10 @@ class GetScriptsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetScriptsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6014,20 +4022,7 @@ class GetScriptsFilterResult(dict):
 class GetScriptsScriptCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetScriptsScriptCollectionItemResult']):
-        GetScriptsScriptCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetScriptsScriptCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6068,107 +4063,20 @@ class GetScriptsScriptCollectionItemResult(dict):
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param str time_uploaded: The time the script was uploaded.
         """
-        GetScriptsScriptCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            apm_domain_id=apm_domain_id,
-            content=content,
-            content_file_name=content_file_name,
-            content_size_in_bytes=content_size_in_bytes,
-            content_type=content_type,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            monitor_status_count_maps=monitor_status_count_maps,
-            parameters=parameters,
-            time_created=time_created,
-            time_updated=time_updated,
-            time_uploaded=time_uploaded,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             apm_domain_id: Optional[str] = None,
-             content: Optional[str] = None,
-             content_file_name: Optional[str] = None,
-             content_size_in_bytes: Optional[int] = None,
-             content_type: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             monitor_status_count_maps: Optional[Sequence['outputs.GetScriptsScriptCollectionItemMonitorStatusCountMapResult']] = None,
-             parameters: Optional[Sequence['outputs.GetScriptsScriptCollectionItemParameterResult']] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             time_uploaded: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if apm_domain_id is None and 'apmDomainId' in kwargs:
-            apm_domain_id = kwargs['apmDomainId']
-        if apm_domain_id is None:
-            raise TypeError("Missing 'apm_domain_id' argument")
-        if content is None:
-            raise TypeError("Missing 'content' argument")
-        if content_file_name is None and 'contentFileName' in kwargs:
-            content_file_name = kwargs['contentFileName']
-        if content_file_name is None:
-            raise TypeError("Missing 'content_file_name' argument")
-        if content_size_in_bytes is None and 'contentSizeInBytes' in kwargs:
-            content_size_in_bytes = kwargs['contentSizeInBytes']
-        if content_size_in_bytes is None:
-            raise TypeError("Missing 'content_size_in_bytes' argument")
-        if content_type is None and 'contentType' in kwargs:
-            content_type = kwargs['contentType']
-        if content_type is None:
-            raise TypeError("Missing 'content_type' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if monitor_status_count_maps is None and 'monitorStatusCountMaps' in kwargs:
-            monitor_status_count_maps = kwargs['monitorStatusCountMaps']
-        if monitor_status_count_maps is None:
-            raise TypeError("Missing 'monitor_status_count_maps' argument")
-        if parameters is None:
-            raise TypeError("Missing 'parameters' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if time_uploaded is None and 'timeUploaded' in kwargs:
-            time_uploaded = kwargs['timeUploaded']
-        if time_uploaded is None:
-            raise TypeError("Missing 'time_uploaded' argument")
-
-        _setter("apm_domain_id", apm_domain_id)
-        _setter("content", content)
-        _setter("content_file_name", content_file_name)
-        _setter("content_size_in_bytes", content_size_in_bytes)
-        _setter("content_type", content_type)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("monitor_status_count_maps", monitor_status_count_maps)
-        _setter("parameters", parameters)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("time_uploaded", time_uploaded)
+        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_file_name", content_file_name)
+        pulumi.set(__self__, "content_size_in_bytes", content_size_in_bytes)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_uploaded", time_uploaded)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -6296,35 +4204,10 @@ class GetScriptsScriptCollectionItemMonitorStatusCountMapResult(dict):
         :param int invalid: Number of invalid monitors using the script.
         :param int total: Total number of monitors using the script.
         """
-        GetScriptsScriptCollectionItemMonitorStatusCountMapResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            enabled=enabled,
-            invalid=invalid,
-            total=total,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[int] = None,
-             enabled: Optional[int] = None,
-             invalid: Optional[int] = None,
-             total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if disabled is None:
-            raise TypeError("Missing 'disabled' argument")
-        if enabled is None:
-            raise TypeError("Missing 'enabled' argument")
-        if invalid is None:
-            raise TypeError("Missing 'invalid' argument")
-        if total is None:
-            raise TypeError("Missing 'total' argument")
-
-        _setter("disabled", disabled)
-        _setter("enabled", enabled)
-        _setter("invalid", invalid)
-        _setter("total", total)
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "invalid", invalid)
+        pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
@@ -6374,50 +4257,11 @@ class GetScriptsScriptCollectionItemParameterResult(dict):
         :param str param_value: Value of the parameter.
         :param Sequence['GetScriptsScriptCollectionItemParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
         """
-        GetScriptsScriptCollectionItemParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_overwritten=is_overwritten,
-            is_secret=is_secret,
-            param_name=param_name,
-            param_value=param_value,
-            script_parameters=script_parameters,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_overwritten: Optional[bool] = None,
-             is_secret: Optional[bool] = None,
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             script_parameters: Optional[Sequence['outputs.GetScriptsScriptCollectionItemParameterScriptParameterResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_overwritten is None and 'isOverwritten' in kwargs:
-            is_overwritten = kwargs['isOverwritten']
-        if is_overwritten is None:
-            raise TypeError("Missing 'is_overwritten' argument")
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if is_secret is None:
-            raise TypeError("Missing 'is_secret' argument")
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-        if script_parameters is None and 'scriptParameters' in kwargs:
-            script_parameters = kwargs['scriptParameters']
-        if script_parameters is None:
-            raise TypeError("Missing 'script_parameters' argument")
-
-        _setter("is_overwritten", is_overwritten)
-        _setter("is_secret", is_secret)
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
-        _setter("script_parameters", script_parameters)
+        pulumi.set(__self__, "is_overwritten", is_overwritten)
+        pulumi.set(__self__, "is_secret", is_secret)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
+        pulumi.set(__self__, "script_parameters", script_parameters)
 
     @property
     @pulumi.getter(name="isOverwritten")
@@ -6471,36 +4315,9 @@ class GetScriptsScriptCollectionItemParameterScriptParameterResult(dict):
         :param str param_name: Name of the parameter.
         :param str param_value: Value of the parameter.
         """
-        GetScriptsScriptCollectionItemParameterScriptParameterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_secret=is_secret,
-            param_name=param_name,
-            param_value=param_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_secret: Optional[bool] = None,
-             param_name: Optional[str] = None,
-             param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_secret is None and 'isSecret' in kwargs:
-            is_secret = kwargs['isSecret']
-        if is_secret is None:
-            raise TypeError("Missing 'is_secret' argument")
-        if param_name is None and 'paramName' in kwargs:
-            param_name = kwargs['paramName']
-        if param_name is None:
-            raise TypeError("Missing 'param_name' argument")
-        if param_value is None and 'paramValue' in kwargs:
-            param_value = kwargs['paramValue']
-        if param_value is None:
-            raise TypeError("Missing 'param_value' argument")
-
-        _setter("is_secret", is_secret)
-        _setter("param_name", param_name)
-        _setter("param_value", param_value)
+        pulumi.set(__self__, "is_secret", is_secret)
+        pulumi.set(__self__, "param_name", param_name)
+        pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isSecret")
@@ -6538,32 +4355,9 @@ class GetVantagePointItemResult(dict):
         :param Sequence['GetVantagePointItemGeoArgs'] geos: Geographic summary of a vantage point.
         :param str name: A filter to return only the resources that match the entire name.
         """
-        GetVantagePointItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            geos=geos,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             geos: Optional[Sequence['outputs.GetVantagePointItemGeoResult']] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if geos is None:
-            raise TypeError("Missing 'geos' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("display_name", display_name)
-        _setter("geos", geos)
-        _setter("name", name)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "geos", geos)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -6607,53 +4401,12 @@ class GetVantagePointItemGeoResult(dict):
         :param float latitude: Degrees north of the Equator.
         :param float longitude: Degrees east of the prime meridian.
         """
-        GetVantagePointItemGeoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            admin_div_code=admin_div_code,
-            city_name=city_name,
-            country_code=country_code,
-            country_name=country_name,
-            latitude=latitude,
-            longitude=longitude,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             admin_div_code: Optional[str] = None,
-             city_name: Optional[str] = None,
-             country_code: Optional[str] = None,
-             country_name: Optional[str] = None,
-             latitude: Optional[float] = None,
-             longitude: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if admin_div_code is None and 'adminDivCode' in kwargs:
-            admin_div_code = kwargs['adminDivCode']
-        if admin_div_code is None:
-            raise TypeError("Missing 'admin_div_code' argument")
-        if city_name is None and 'cityName' in kwargs:
-            city_name = kwargs['cityName']
-        if city_name is None:
-            raise TypeError("Missing 'city_name' argument")
-        if country_code is None and 'countryCode' in kwargs:
-            country_code = kwargs['countryCode']
-        if country_code is None:
-            raise TypeError("Missing 'country_code' argument")
-        if country_name is None and 'countryName' in kwargs:
-            country_name = kwargs['countryName']
-        if country_name is None:
-            raise TypeError("Missing 'country_name' argument")
-        if latitude is None:
-            raise TypeError("Missing 'latitude' argument")
-        if longitude is None:
-            raise TypeError("Missing 'longitude' argument")
-
-        _setter("admin_div_code", admin_div_code)
-        _setter("city_name", city_name)
-        _setter("country_code", country_code)
-        _setter("country_name", country_name)
-        _setter("latitude", latitude)
-        _setter("longitude", longitude)
+        pulumi.set(__self__, "admin_div_code", admin_div_code)
+        pulumi.set(__self__, "city_name", city_name)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "country_name", country_name)
+        pulumi.set(__self__, "latitude", latitude)
+        pulumi.set(__self__, "longitude", longitude)
 
     @property
     @pulumi.getter(name="adminDivCode")
@@ -6713,29 +4466,10 @@ class GetVantagePointsFilterResult(dict):
         """
         :param str name: A filter to return only the resources that match the entire name.
         """
-        GetVantagePointsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6763,20 +4497,7 @@ class GetVantagePointsPublicVantagePointCollectionResult(dict):
         """
         :param Sequence['GetVantagePointsPublicVantagePointCollectionItemArgs'] items: List of PublicVantagePointSummary items.
         """
-        GetVantagePointsPublicVantagePointCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6798,32 +4519,9 @@ class GetVantagePointsPublicVantagePointCollectionItemResult(dict):
         :param Sequence['GetVantagePointsPublicVantagePointCollectionItemGeoArgs'] geos: Geographic summary of a vantage point.
         :param str name: A filter to return only the resources that match the entire name.
         """
-        GetVantagePointsPublicVantagePointCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            geos=geos,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             geos: Optional[Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult']] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if geos is None:
-            raise TypeError("Missing 'geos' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("display_name", display_name)
-        _setter("geos", geos)
-        _setter("name", name)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "geos", geos)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -6867,53 +4565,12 @@ class GetVantagePointsPublicVantagePointCollectionItemGeoResult(dict):
         :param float latitude: Degrees north of the equator.
         :param float longitude: Degrees east of the prime meridian.
         """
-        GetVantagePointsPublicVantagePointCollectionItemGeoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            admin_div_code=admin_div_code,
-            city_name=city_name,
-            country_code=country_code,
-            country_name=country_name,
-            latitude=latitude,
-            longitude=longitude,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             admin_div_code: Optional[str] = None,
-             city_name: Optional[str] = None,
-             country_code: Optional[str] = None,
-             country_name: Optional[str] = None,
-             latitude: Optional[float] = None,
-             longitude: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if admin_div_code is None and 'adminDivCode' in kwargs:
-            admin_div_code = kwargs['adminDivCode']
-        if admin_div_code is None:
-            raise TypeError("Missing 'admin_div_code' argument")
-        if city_name is None and 'cityName' in kwargs:
-            city_name = kwargs['cityName']
-        if city_name is None:
-            raise TypeError("Missing 'city_name' argument")
-        if country_code is None and 'countryCode' in kwargs:
-            country_code = kwargs['countryCode']
-        if country_code is None:
-            raise TypeError("Missing 'country_code' argument")
-        if country_name is None and 'countryName' in kwargs:
-            country_name = kwargs['countryName']
-        if country_name is None:
-            raise TypeError("Missing 'country_name' argument")
-        if latitude is None:
-            raise TypeError("Missing 'latitude' argument")
-        if longitude is None:
-            raise TypeError("Missing 'longitude' argument")
-
-        _setter("admin_div_code", admin_div_code)
-        _setter("city_name", city_name)
-        _setter("country_code", country_code)
-        _setter("country_name", country_name)
-        _setter("latitude", latitude)
-        _setter("longitude", longitude)
+        pulumi.set(__self__, "admin_div_code", admin_div_code)
+        pulumi.set(__self__, "city_name", city_name)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "country_name", country_name)
+        pulumi.set(__self__, "latitude", latitude)
+        pulumi.set(__self__, "longitude", longitude)
 
     @property
     @pulumi.getter(name="adminDivCode")

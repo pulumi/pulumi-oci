@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -54,49 +54,18 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
         :param pulumi.Input[str] user_name: database user name.
         :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        DatabaseInsightConnectionCredentialDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_source_name=credential_source_name,
-            credential_type=credential_type,
-            password_secret_id=password_secret_id,
-            role=role,
-            user_name=user_name,
-            wallet_secret_id=wallet_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_source_name: Optional[pulumi.Input[str]] = None,
-             credential_type: Optional[pulumi.Input[str]] = None,
-             password_secret_id: Optional[pulumi.Input[str]] = None,
-             role: Optional[pulumi.Input[str]] = None,
-             user_name: Optional[pulumi.Input[str]] = None,
-             wallet_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_source_name is None and 'credentialSourceName' in kwargs:
-            credential_source_name = kwargs['credentialSourceName']
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if password_secret_id is None and 'passwordSecretId' in kwargs:
-            password_secret_id = kwargs['passwordSecretId']
-        if user_name is None and 'userName' in kwargs:
-            user_name = kwargs['userName']
-        if wallet_secret_id is None and 'walletSecretId' in kwargs:
-            wallet_secret_id = kwargs['walletSecretId']
-
         if credential_source_name is not None:
-            _setter("credential_source_name", credential_source_name)
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
         if credential_type is not None:
-            _setter("credential_type", credential_type)
+            pulumi.set(__self__, "credential_type", credential_type)
         if password_secret_id is not None:
-            _setter("password_secret_id", password_secret_id)
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
         if role is not None:
-            _setter("role", role)
+            pulumi.set(__self__, "role", role)
         if user_name is not None:
-            _setter("user_name", user_name)
+            pulumi.set(__self__, "user_name", user_name)
         if wallet_secret_id is not None:
-            _setter("wallet_secret_id", wallet_secret_id)
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -186,39 +155,16 @@ class DatabaseInsightConnectionDetailsArgs:
         :param pulumi.Input[str] protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         """
-        DatabaseInsightConnectionDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host_name=host_name,
-            hosts=hosts,
-            port=port,
-            protocol=protocol,
-            service_name=service_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host_name: Optional[pulumi.Input[str]] = None,
-             hosts: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             service_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host_name is None and 'hostName' in kwargs:
-            host_name = kwargs['hostName']
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-
         if host_name is not None:
-            _setter("host_name", host_name)
+            pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
-            _setter("hosts", hosts)
+            pulumi.set(__self__, "hosts", hosts)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if service_name is not None:
-            _setter("service_name", service_name)
+            pulumi.set(__self__, "service_name", service_name)
 
     @property
     @pulumi.getter(name="hostName")
@@ -290,25 +236,10 @@ class DatabaseInsightConnectionDetailsHostArgs:
         :param pulumi.Input[str] host_ip: Host IP used for connection requests for Cloud DB resource.
         :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
-        DatabaseInsightConnectionDetailsHostArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host_ip=host_ip,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host_ip: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host_ip is None and 'hostIp' in kwargs:
-            host_ip = kwargs['hostIp']
-
         if host_ip is not None:
-            _setter("host_ip", host_ip)
+            pulumi.set(__self__, "host_ip", host_ip)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -352,50 +283,17 @@ class DatabaseInsightCredentialDetailsArgs:
         :param pulumi.Input[str] user_name: database user name.
         :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        DatabaseInsightCredentialDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_type=credential_type,
-            credential_source_name=credential_source_name,
-            password_secret_id=password_secret_id,
-            role=role,
-            user_name=user_name,
-            wallet_secret_id=wallet_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_type: Optional[pulumi.Input[str]] = None,
-             credential_source_name: Optional[pulumi.Input[str]] = None,
-             password_secret_id: Optional[pulumi.Input[str]] = None,
-             role: Optional[pulumi.Input[str]] = None,
-             user_name: Optional[pulumi.Input[str]] = None,
-             wallet_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if credential_type is None:
-            raise TypeError("Missing 'credential_type' argument")
-        if credential_source_name is None and 'credentialSourceName' in kwargs:
-            credential_source_name = kwargs['credentialSourceName']
-        if password_secret_id is None and 'passwordSecretId' in kwargs:
-            password_secret_id = kwargs['passwordSecretId']
-        if user_name is None and 'userName' in kwargs:
-            user_name = kwargs['userName']
-        if wallet_secret_id is None and 'walletSecretId' in kwargs:
-            wallet_secret_id = kwargs['walletSecretId']
-
-        _setter("credential_type", credential_type)
+        pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
-            _setter("credential_source_name", credential_source_name)
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
         if password_secret_id is not None:
-            _setter("password_secret_id", password_secret_id)
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
         if role is not None:
-            _setter("role", role)
+            pulumi.set(__self__, "role", role)
         if user_name is not None:
-            _setter("user_name", user_name)
+            pulumi.set(__self__, "user_name", user_name)
         if wallet_secret_id is not None:
-            _setter("wallet_secret_id", wallet_secret_id)
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -485,45 +383,16 @@ class ExadataInsightMemberVmClusterDetailArgs:
         :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param pulumi.Input[str] vmcluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
         """
-        ExadataInsightMemberVmClusterDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            dbm_private_endpoint_id=dbm_private_endpoint_id,
-            member_database_details=member_database_details,
-            opsi_private_endpoint_id=opsi_private_endpoint_id,
-            vmcluster_id=vmcluster_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-             member_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
-             opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-             vmcluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if dbm_private_endpoint_id is None and 'dbmPrivateEndpointId' in kwargs:
-            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
-        if member_database_details is None and 'memberDatabaseDetails' in kwargs:
-            member_database_details = kwargs['memberDatabaseDetails']
-        if opsi_private_endpoint_id is None and 'opsiPrivateEndpointId' in kwargs:
-            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
-        if vmcluster_id is None and 'vmclusterId' in kwargs:
-            vmcluster_id = kwargs['vmclusterId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if dbm_private_endpoint_id is not None:
-            _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
         if member_database_details is not None:
-            _setter("member_database_details", member_database_details)
+            pulumi.set(__self__, "member_database_details", member_database_details)
         if opsi_private_endpoint_id is not None:
-            _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
         if vmcluster_id is not None:
-            _setter("vmcluster_id", vmcluster_id)
+            pulumi.set(__self__, "vmcluster_id", vmcluster_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -617,93 +486,32 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
-        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            connection_details=connection_details,
-            credential_details=credential_details,
-            database_id=database_id,
-            database_resource_type=database_resource_type,
-            dbm_private_endpoint_id=dbm_private_endpoint_id,
-            defined_tags=defined_tags,
-            deployment_type=deployment_type,
-            entity_source=entity_source,
-            freeform_tags=freeform_tags,
-            opsi_private_endpoint_id=opsi_private_endpoint_id,
-            service_name=service_name,
-            system_tags=system_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             connection_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']] = None,
-             credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']] = None,
-             database_id: Optional[pulumi.Input[str]] = None,
-             database_resource_type: Optional[pulumi.Input[str]] = None,
-             dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             deployment_type: Optional[pulumi.Input[str]] = None,
-             entity_source: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-             service_name: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if connection_details is None and 'connectionDetails' in kwargs:
-            connection_details = kwargs['connectionDetails']
-        if credential_details is None and 'credentialDetails' in kwargs:
-            credential_details = kwargs['credentialDetails']
-        if database_id is None and 'databaseId' in kwargs:
-            database_id = kwargs['databaseId']
-        if database_resource_type is None and 'databaseResourceType' in kwargs:
-            database_resource_type = kwargs['databaseResourceType']
-        if dbm_private_endpoint_id is None and 'dbmPrivateEndpointId' in kwargs:
-            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if deployment_type is None and 'deploymentType' in kwargs:
-            deployment_type = kwargs['deploymentType']
-        if entity_source is None and 'entitySource' in kwargs:
-            entity_source = kwargs['entitySource']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if opsi_private_endpoint_id is None and 'opsiPrivateEndpointId' in kwargs:
-            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_details is not None:
-            _setter("connection_details", connection_details)
+            pulumi.set(__self__, "connection_details", connection_details)
         if credential_details is not None:
-            _setter("credential_details", credential_details)
+            pulumi.set(__self__, "credential_details", credential_details)
         if database_id is not None:
-            _setter("database_id", database_id)
+            pulumi.set(__self__, "database_id", database_id)
         if database_resource_type is not None:
-            _setter("database_resource_type", database_resource_type)
+            pulumi.set(__self__, "database_resource_type", database_resource_type)
         if dbm_private_endpoint_id is not None:
-            _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_type is not None:
-            _setter("deployment_type", deployment_type)
+            pulumi.set(__self__, "deployment_type", deployment_type)
         if entity_source is not None:
-            _setter("entity_source", entity_source)
+            pulumi.set(__self__, "entity_source", entity_source)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if opsi_private_endpoint_id is not None:
-            _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
         if service_name is not None:
-            _setter("service_name", service_name)
+            pulumi.set(__self__, "service_name", service_name)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -873,29 +681,12 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
         :param pulumi.Input[str] protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         """
-        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hosts=hosts,
-            protocol=protocol,
-            service_name=service_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hosts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             service_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-
         if hosts is not None:
-            _setter("hosts", hosts)
+            pulumi.set(__self__, "hosts", hosts)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if service_name is not None:
-            _setter("service_name", service_name)
+            pulumi.set(__self__, "service_name", service_name)
 
     @property
     @pulumi.getter
@@ -943,25 +734,10 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
         :param pulumi.Input[str] host_ip: Host IP used for connection requests for Cloud DB resource.
         :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
-        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host_ip=host_ip,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host_ip: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host_ip is None and 'hostIp' in kwargs:
-            host_ip = kwargs['hostIp']
-
         if host_ip is not None:
-            _setter("host_ip", host_ip)
+            pulumi.set(__self__, "host_ip", host_ip)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -1005,50 +781,17 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
         :param pulumi.Input[str] user_name: database user name.
         :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            credential_type=credential_type,
-            credential_source_name=credential_source_name,
-            password_secret_id=password_secret_id,
-            role=role,
-            user_name=user_name,
-            wallet_secret_id=wallet_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             credential_type: Optional[pulumi.Input[str]] = None,
-             credential_source_name: Optional[pulumi.Input[str]] = None,
-             password_secret_id: Optional[pulumi.Input[str]] = None,
-             role: Optional[pulumi.Input[str]] = None,
-             user_name: Optional[pulumi.Input[str]] = None,
-             wallet_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if credential_type is None and 'credentialType' in kwargs:
-            credential_type = kwargs['credentialType']
-        if credential_type is None:
-            raise TypeError("Missing 'credential_type' argument")
-        if credential_source_name is None and 'credentialSourceName' in kwargs:
-            credential_source_name = kwargs['credentialSourceName']
-        if password_secret_id is None and 'passwordSecretId' in kwargs:
-            password_secret_id = kwargs['passwordSecretId']
-        if user_name is None and 'userName' in kwargs:
-            user_name = kwargs['userName']
-        if wallet_secret_id is None and 'walletSecretId' in kwargs:
-            wallet_secret_id = kwargs['walletSecretId']
-
-        _setter("credential_type", credential_type)
+        pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
-            _setter("credential_source_name", credential_source_name)
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
         if password_secret_id is not None:
-            _setter("password_secret_id", password_secret_id)
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
         if role is not None:
-            _setter("role", role)
+            pulumi.set(__self__, "role", role)
         if user_name is not None:
-            _setter("user_name", user_name)
+            pulumi.set(__self__, "user_name", user_name)
         if wallet_secret_id is not None:
-            _setter("wallet_secret_id", wallet_secret_id)
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -1130,22 +873,7 @@ class NewsReportContentTypesArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
         """
-        NewsReportContentTypesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            capacity_planning_resources=capacity_planning_resources,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             capacity_planning_resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if capacity_planning_resources is None and 'capacityPlanningResources' in kwargs:
-            capacity_planning_resources = kwargs['capacityPlanningResources']
-        if capacity_planning_resources is None:
-            raise TypeError("Missing 'capacity_planning_resources' argument")
-
-        _setter("capacity_planning_resources", capacity_planning_resources)
+        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -1177,46 +905,17 @@ class OpsiConfigurationConfigItemArgs:
         :param pulumi.Input[str] name: (Updatable) Name of configuration item.
         :param pulumi.Input[str] value: (Updatable) Value of configuration item.
         """
-        OpsiConfigurationConfigItemArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_item_type=config_item_type,
-            applicable_contexts=applicable_contexts,
-            default_value=default_value,
-            metadatas=metadatas,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_item_type: Optional[pulumi.Input[str]] = None,
-             applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             default_value: Optional[pulumi.Input[str]] = None,
-             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_item_type is None and 'configItemType' in kwargs:
-            config_item_type = kwargs['configItemType']
-        if config_item_type is None:
-            raise TypeError("Missing 'config_item_type' argument")
-        if applicable_contexts is None and 'applicableContexts' in kwargs:
-            applicable_contexts = kwargs['applicableContexts']
-        if default_value is None and 'defaultValue' in kwargs:
-            default_value = kwargs['defaultValue']
-
-        _setter("config_item_type", config_item_type)
+        pulumi.set(__self__, "config_item_type", config_item_type)
         if applicable_contexts is not None:
-            _setter("applicable_contexts", applicable_contexts)
+            pulumi.set(__self__, "applicable_contexts", applicable_contexts)
         if default_value is not None:
-            _setter("default_value", default_value)
+            pulumi.set(__self__, "default_value", default_value)
         if metadatas is not None:
-            _setter("metadatas", metadatas)
+            pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configItemType")
@@ -1308,49 +1007,18 @@ class OpsiConfigurationConfigItemMetadataArgs:
         :param pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]] unit_details: Unit details of configuration item.
         :param pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
         """
-        OpsiConfigurationConfigItemMetadataArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_item_type=config_item_type,
-            data_type=data_type,
-            description=description,
-            display_name=display_name,
-            unit_details=unit_details,
-            value_input_details=value_input_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_item_type: Optional[pulumi.Input[str]] = None,
-             data_type: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             unit_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]] = None,
-             value_input_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_item_type is None and 'configItemType' in kwargs:
-            config_item_type = kwargs['configItemType']
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if unit_details is None and 'unitDetails' in kwargs:
-            unit_details = kwargs['unitDetails']
-        if value_input_details is None and 'valueInputDetails' in kwargs:
-            value_input_details = kwargs['valueInputDetails']
-
         if config_item_type is not None:
-            _setter("config_item_type", config_item_type)
+            pulumi.set(__self__, "config_item_type", config_item_type)
         if data_type is not None:
-            _setter("data_type", data_type)
+            pulumi.set(__self__, "data_type", data_type)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if unit_details is not None:
-            _setter("unit_details", unit_details)
+            pulumi.set(__self__, "unit_details", unit_details)
         if value_input_details is not None:
-            _setter("value_input_details", value_input_details)
+            pulumi.set(__self__, "value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
@@ -1434,25 +1102,10 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
         :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
         :param pulumi.Input[str] unit: Unit of configuration item.
         """
-        OpsiConfigurationConfigItemMetadataUnitDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            unit=unit,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[pulumi.Input[str]] = None,
-             unit: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if unit is not None:
-            _setter("unit", unit)
+            pulumi.set(__self__, "unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1492,39 +1145,14 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
         :param pulumi.Input[str] min_value: Minimum value limit for the configuration item.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] possible_values: Allowed values to pick for the configuration item.
         """
-        OpsiConfigurationConfigItemMetadataValueInputDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            allowed_value_type=allowed_value_type,
-            max_value=max_value,
-            min_value=min_value,
-            possible_values=possible_values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             allowed_value_type: Optional[pulumi.Input[str]] = None,
-             max_value: Optional[pulumi.Input[str]] = None,
-             min_value: Optional[pulumi.Input[str]] = None,
-             possible_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if allowed_value_type is None and 'allowedValueType' in kwargs:
-            allowed_value_type = kwargs['allowedValueType']
-        if max_value is None and 'maxValue' in kwargs:
-            max_value = kwargs['maxValue']
-        if min_value is None and 'minValue' in kwargs:
-            min_value = kwargs['minValue']
-        if possible_values is None and 'possibleValues' in kwargs:
-            possible_values = kwargs['possibleValues']
-
         if allowed_value_type is not None:
-            _setter("allowed_value_type", allowed_value_type)
+            pulumi.set(__self__, "allowed_value_type", allowed_value_type)
         if max_value is not None:
-            _setter("max_value", max_value)
+            pulumi.set(__self__, "max_value", max_value)
         if min_value is not None:
-            _setter("min_value", min_value)
+            pulumi.set(__self__, "min_value", min_value)
         if possible_values is not None:
-            _setter("possible_values", possible_values)
+            pulumi.set(__self__, "possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")
@@ -1581,29 +1209,10 @@ class GetAwrHubAwrSnapshotsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAwrHubAwrSnapshotsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1639,29 +1248,10 @@ class GetAwrHubsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAwrHubsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1697,29 +1287,10 @@ class GetDatabaseInsightsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDatabaseInsightsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1755,29 +1326,10 @@ class GetEnterpriseManagerBridgesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetEnterpriseManagerBridgesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1813,29 +1365,10 @@ class GetExadataInsightsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetExadataInsightsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1871,29 +1404,10 @@ class GetHostInsightsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetHostInsightsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1932,29 +1446,10 @@ class GetNewsReportsFilterArgs:
         """
         :param str name: The news report name.
         """
-        GetNewsReportsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1993,29 +1488,10 @@ class GetOperationsInsightsPrivateEndpointsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOperationsInsightsPrivateEndpointsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2054,29 +1530,10 @@ class GetOperationsInsightsWarehouseUsersFilterArgs:
         """
         :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         """
-        GetOperationsInsightsWarehouseUsersFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2115,29 +1572,10 @@ class GetOperationsInsightsWarehousesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOperationsInsightsWarehousesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2176,29 +1614,10 @@ class GetOpsiConfigurationsFilterArgs:
         """
         :param str name: Name of configuration item.
         """
-        GetOpsiConfigurationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

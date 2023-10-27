@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,75 +45,22 @@ class TargetArgs:
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
         """
-        TargetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            target_resource_id=target_resource_id,
-            target_resource_type=target_resource_type,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            state=state,
-            target_detector_recipes=target_detector_recipes,
-            target_responder_recipes=target_responder_recipes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             target_resource_id: Optional[pulumi.Input[str]] = None,
-             target_resource_type: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             target_detector_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]]] = None,
-             target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if target_resource_id is None and 'targetResourceId' in kwargs:
-            target_resource_id = kwargs['targetResourceId']
-        if target_resource_id is None:
-            raise TypeError("Missing 'target_resource_id' argument")
-        if target_resource_type is None and 'targetResourceType' in kwargs:
-            target_resource_type = kwargs['targetResourceType']
-        if target_resource_type is None:
-            raise TypeError("Missing 'target_resource_type' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if target_detector_recipes is None and 'targetDetectorRecipes' in kwargs:
-            target_detector_recipes = kwargs['targetDetectorRecipes']
-        if target_responder_recipes is None and 'targetResponderRecipes' in kwargs:
-            target_responder_recipes = kwargs['targetResponderRecipes']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("target_resource_id", target_resource_id)
-        _setter("target_resource_type", target_resource_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "target_resource_id", target_resource_id)
+        pulumi.set(__self__, "target_resource_type", target_resource_type)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if target_detector_recipes is not None:
-            _setter("target_detector_recipes", target_detector_recipes)
+            pulumi.set(__self__, "target_detector_recipes", target_detector_recipes)
         if target_responder_recipes is not None:
-            _setter("target_responder_recipes", target_responder_recipes)
+            pulumi.set(__self__, "target_responder_recipes", target_responder_recipes)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -288,113 +235,40 @@ class _TargetState:
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        _TargetState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            inherited_by_compartments=inherited_by_compartments,
-            lifecyle_details=lifecyle_details,
-            recipe_count=recipe_count,
-            state=state,
-            system_tags=system_tags,
-            target_details=target_details,
-            target_detector_recipes=target_detector_recipes,
-            target_resource_id=target_resource_id,
-            target_resource_type=target_resource_type,
-            target_responder_recipes=target_responder_recipes,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             inherited_by_compartments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             lifecyle_details: Optional[pulumi.Input[str]] = None,
-             recipe_count: Optional[pulumi.Input[int]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             target_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailArgs']]]] = None,
-             target_detector_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]]] = None,
-             target_resource_id: Optional[pulumi.Input[str]] = None,
-             target_resource_type: Optional[pulumi.Input[str]] = None,
-             target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if inherited_by_compartments is None and 'inheritedByCompartments' in kwargs:
-            inherited_by_compartments = kwargs['inheritedByCompartments']
-        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
-            lifecyle_details = kwargs['lifecyleDetails']
-        if recipe_count is None and 'recipeCount' in kwargs:
-            recipe_count = kwargs['recipeCount']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_details is None and 'targetDetails' in kwargs:
-            target_details = kwargs['targetDetails']
-        if target_detector_recipes is None and 'targetDetectorRecipes' in kwargs:
-            target_detector_recipes = kwargs['targetDetectorRecipes']
-        if target_resource_id is None and 'targetResourceId' in kwargs:
-            target_resource_id = kwargs['targetResourceId']
-        if target_resource_type is None and 'targetResourceType' in kwargs:
-            target_resource_type = kwargs['targetResourceType']
-        if target_responder_recipes is None and 'targetResponderRecipes' in kwargs:
-            target_responder_recipes = kwargs['targetResponderRecipes']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if inherited_by_compartments is not None:
-            _setter("inherited_by_compartments", inherited_by_compartments)
+            pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
         if lifecyle_details is not None:
-            _setter("lifecyle_details", lifecyle_details)
+            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
         if recipe_count is not None:
-            _setter("recipe_count", recipe_count)
+            pulumi.set(__self__, "recipe_count", recipe_count)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_details is not None:
-            _setter("target_details", target_details)
+            pulumi.set(__self__, "target_details", target_details)
         if target_detector_recipes is not None:
-            _setter("target_detector_recipes", target_detector_recipes)
+            pulumi.set(__self__, "target_detector_recipes", target_detector_recipes)
         if target_resource_id is not None:
-            _setter("target_resource_id", target_resource_id)
+            pulumi.set(__self__, "target_resource_id", target_resource_id)
         if target_resource_type is not None:
-            _setter("target_resource_type", target_resource_type)
+            pulumi.set(__self__, "target_resource_type", target_resource_type)
         if target_responder_recipes is not None:
-            _setter("target_responder_recipes", target_responder_recipes)
+            pulumi.set(__self__, "target_responder_recipes", target_responder_recipes)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -780,10 +654,6 @@ class Target(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            TargetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

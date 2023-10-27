@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['WorkspaceArgs', 'Workspace']
@@ -55,123 +55,40 @@ class WorkspaceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        WorkspaceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            defined_tags=defined_tags,
-            description=description,
-            dns_server_ip=dns_server_ip,
-            dns_server_zone=dns_server_zone,
-            endpoint_compartment_id=endpoint_compartment_id,
-            endpoint_id=endpoint_id,
-            endpoint_name=endpoint_name,
-            freeform_tags=freeform_tags,
-            is_force_operation=is_force_operation,
-            is_private_network_enabled=is_private_network_enabled,
-            quiesce_timeout=quiesce_timeout,
-            registry_compartment_id=registry_compartment_id,
-            registry_id=registry_id,
-            registry_name=registry_name,
-            subnet_id=subnet_id,
-            vcn_id=vcn_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             dns_server_ip: Optional[pulumi.Input[str]] = None,
-             dns_server_zone: Optional[pulumi.Input[str]] = None,
-             endpoint_compartment_id: Optional[pulumi.Input[str]] = None,
-             endpoint_id: Optional[pulumi.Input[str]] = None,
-             endpoint_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_force_operation: Optional[pulumi.Input[bool]] = None,
-             is_private_network_enabled: Optional[pulumi.Input[bool]] = None,
-             quiesce_timeout: Optional[pulumi.Input[int]] = None,
-             registry_compartment_id: Optional[pulumi.Input[str]] = None,
-             registry_id: Optional[pulumi.Input[str]] = None,
-             registry_name: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if dns_server_ip is None and 'dnsServerIp' in kwargs:
-            dns_server_ip = kwargs['dnsServerIp']
-        if dns_server_zone is None and 'dnsServerZone' in kwargs:
-            dns_server_zone = kwargs['dnsServerZone']
-        if endpoint_compartment_id is None and 'endpointCompartmentId' in kwargs:
-            endpoint_compartment_id = kwargs['endpointCompartmentId']
-        if endpoint_id is None and 'endpointId' in kwargs:
-            endpoint_id = kwargs['endpointId']
-        if endpoint_name is None and 'endpointName' in kwargs:
-            endpoint_name = kwargs['endpointName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_force_operation is None and 'isForceOperation' in kwargs:
-            is_force_operation = kwargs['isForceOperation']
-        if is_private_network_enabled is None and 'isPrivateNetworkEnabled' in kwargs:
-            is_private_network_enabled = kwargs['isPrivateNetworkEnabled']
-        if quiesce_timeout is None and 'quiesceTimeout' in kwargs:
-            quiesce_timeout = kwargs['quiesceTimeout']
-        if registry_compartment_id is None and 'registryCompartmentId' in kwargs:
-            registry_compartment_id = kwargs['registryCompartmentId']
-        if registry_id is None and 'registryId' in kwargs:
-            registry_id = kwargs['registryId']
-        if registry_name is None and 'registryName' in kwargs:
-            registry_name = kwargs['registryName']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if dns_server_ip is not None:
-            _setter("dns_server_ip", dns_server_ip)
+            pulumi.set(__self__, "dns_server_ip", dns_server_ip)
         if dns_server_zone is not None:
-            _setter("dns_server_zone", dns_server_zone)
+            pulumi.set(__self__, "dns_server_zone", dns_server_zone)
         if endpoint_compartment_id is not None:
-            _setter("endpoint_compartment_id", endpoint_compartment_id)
+            pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
         if endpoint_id is not None:
-            _setter("endpoint_id", endpoint_id)
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
         if endpoint_name is not None:
-            _setter("endpoint_name", endpoint_name)
+            pulumi.set(__self__, "endpoint_name", endpoint_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_force_operation is not None:
-            _setter("is_force_operation", is_force_operation)
+            pulumi.set(__self__, "is_force_operation", is_force_operation)
         if is_private_network_enabled is not None:
-            _setter("is_private_network_enabled", is_private_network_enabled)
+            pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
         if quiesce_timeout is not None:
-            _setter("quiesce_timeout", quiesce_timeout)
+            pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
         if registry_compartment_id is not None:
-            _setter("registry_compartment_id", registry_compartment_id)
+            pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
         if registry_id is not None:
-            _setter("registry_id", registry_id)
+            pulumi.set(__self__, "registry_id", registry_id)
         if registry_name is not None:
-            _setter("registry_name", registry_name)
+            pulumi.set(__self__, "registry_name", registry_name)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vcn_id is not None:
-            _setter("vcn_id", vcn_id)
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -440,143 +357,50 @@ class _WorkspaceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _WorkspaceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            dns_server_ip=dns_server_ip,
-            dns_server_zone=dns_server_zone,
-            endpoint_compartment_id=endpoint_compartment_id,
-            endpoint_id=endpoint_id,
-            endpoint_name=endpoint_name,
-            freeform_tags=freeform_tags,
-            is_force_operation=is_force_operation,
-            is_private_network_enabled=is_private_network_enabled,
-            quiesce_timeout=quiesce_timeout,
-            registry_compartment_id=registry_compartment_id,
-            registry_id=registry_id,
-            registry_name=registry_name,
-            state=state,
-            state_message=state_message,
-            subnet_id=subnet_id,
-            time_created=time_created,
-            time_updated=time_updated,
-            vcn_id=vcn_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dns_server_ip: Optional[pulumi.Input[str]] = None,
-             dns_server_zone: Optional[pulumi.Input[str]] = None,
-             endpoint_compartment_id: Optional[pulumi.Input[str]] = None,
-             endpoint_id: Optional[pulumi.Input[str]] = None,
-             endpoint_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_force_operation: Optional[pulumi.Input[bool]] = None,
-             is_private_network_enabled: Optional[pulumi.Input[bool]] = None,
-             quiesce_timeout: Optional[pulumi.Input[int]] = None,
-             registry_compartment_id: Optional[pulumi.Input[str]] = None,
-             registry_id: Optional[pulumi.Input[str]] = None,
-             registry_name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             state_message: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dns_server_ip is None and 'dnsServerIp' in kwargs:
-            dns_server_ip = kwargs['dnsServerIp']
-        if dns_server_zone is None and 'dnsServerZone' in kwargs:
-            dns_server_zone = kwargs['dnsServerZone']
-        if endpoint_compartment_id is None and 'endpointCompartmentId' in kwargs:
-            endpoint_compartment_id = kwargs['endpointCompartmentId']
-        if endpoint_id is None and 'endpointId' in kwargs:
-            endpoint_id = kwargs['endpointId']
-        if endpoint_name is None and 'endpointName' in kwargs:
-            endpoint_name = kwargs['endpointName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_force_operation is None and 'isForceOperation' in kwargs:
-            is_force_operation = kwargs['isForceOperation']
-        if is_private_network_enabled is None and 'isPrivateNetworkEnabled' in kwargs:
-            is_private_network_enabled = kwargs['isPrivateNetworkEnabled']
-        if quiesce_timeout is None and 'quiesceTimeout' in kwargs:
-            quiesce_timeout = kwargs['quiesceTimeout']
-        if registry_compartment_id is None and 'registryCompartmentId' in kwargs:
-            registry_compartment_id = kwargs['registryCompartmentId']
-        if registry_id is None and 'registryId' in kwargs:
-            registry_id = kwargs['registryId']
-        if registry_name is None and 'registryName' in kwargs:
-            registry_name = kwargs['registryName']
-        if state_message is None and 'stateMessage' in kwargs:
-            state_message = kwargs['stateMessage']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dns_server_ip is not None:
-            _setter("dns_server_ip", dns_server_ip)
+            pulumi.set(__self__, "dns_server_ip", dns_server_ip)
         if dns_server_zone is not None:
-            _setter("dns_server_zone", dns_server_zone)
+            pulumi.set(__self__, "dns_server_zone", dns_server_zone)
         if endpoint_compartment_id is not None:
-            _setter("endpoint_compartment_id", endpoint_compartment_id)
+            pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
         if endpoint_id is not None:
-            _setter("endpoint_id", endpoint_id)
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
         if endpoint_name is not None:
-            _setter("endpoint_name", endpoint_name)
+            pulumi.set(__self__, "endpoint_name", endpoint_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_force_operation is not None:
-            _setter("is_force_operation", is_force_operation)
+            pulumi.set(__self__, "is_force_operation", is_force_operation)
         if is_private_network_enabled is not None:
-            _setter("is_private_network_enabled", is_private_network_enabled)
+            pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
         if quiesce_timeout is not None:
-            _setter("quiesce_timeout", quiesce_timeout)
+            pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
         if registry_compartment_id is not None:
-            _setter("registry_compartment_id", registry_compartment_id)
+            pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
         if registry_id is not None:
-            _setter("registry_id", registry_id)
+            pulumi.set(__self__, "registry_id", registry_id)
         if registry_name is not None:
-            _setter("registry_name", registry_name)
+            pulumi.set(__self__, "registry_name", registry_name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_message is not None:
-            _setter("state_message", state_message)
+            pulumi.set(__self__, "state_message", state_message)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if vcn_id is not None:
-            _setter("vcn_id", vcn_id)
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -988,10 +812,6 @@ class Workspace(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            WorkspaceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

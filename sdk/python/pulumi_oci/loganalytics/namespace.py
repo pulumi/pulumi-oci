@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NamespaceArgs', 'Namespace']
@@ -23,34 +23,9 @@ class NamespaceArgs:
         :param pulumi.Input[bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
         :param pulumi.Input[str] namespace: The Log Analytics namespace used for the request.
         """
-        NamespaceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            is_onboarded=is_onboarded,
-            namespace=namespace,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             is_onboarded: Optional[pulumi.Input[bool]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if is_onboarded is None and 'isOnboarded' in kwargs:
-            is_onboarded = kwargs['isOnboarded']
-        if is_onboarded is None:
-            raise TypeError("Missing 'is_onboarded' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("is_onboarded", is_onboarded)
-        _setter("namespace", namespace)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "is_onboarded", is_onboarded)
+        pulumi.set(__self__, "namespace", namespace)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -101,31 +76,12 @@ class _NamespaceState:
         :param pulumi.Input[bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
         :param pulumi.Input[str] namespace: The Log Analytics namespace used for the request.
         """
-        _NamespaceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            is_onboarded=is_onboarded,
-            namespace=namespace,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             is_onboarded: Optional[pulumi.Input[bool]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if is_onboarded is None and 'isOnboarded' in kwargs:
-            is_onboarded = kwargs['isOnboarded']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if is_onboarded is not None:
-            _setter("is_onboarded", is_onboarded)
+            pulumi.set(__self__, "is_onboarded", is_onboarded)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -245,10 +201,6 @@ class Namespace(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NamespaceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

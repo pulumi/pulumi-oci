@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -40,24 +40,9 @@ class MediaAssetMediaAssetTagArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        MediaAssetMediaAssetTagArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            value=value,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             value: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("value", value)
+        pulumi.set(__self__, "value", value)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -95,20 +80,7 @@ class MediaAssetMetadataArgs:
         """
         :param pulumi.Input[str] metadata: (Updatable) JSON string containing the technial metadata for the media asset.
         """
-        MediaAssetMetadataArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            metadata=metadata,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             metadata: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if metadata is None:
-            raise TypeError("Missing 'metadata' argument")
-
-        _setter("metadata", metadata)
+        pulumi.set(__self__, "metadata", metadata)
 
     @property
     @pulumi.getter
@@ -138,37 +110,16 @@ class MediaWorkflowJobOutputArgs:
         :param pulumi.Input[str] namespace: The namespace name of the job output.
         :param pulumi.Input[str] object: The object name of the job output.
         """
-        MediaWorkflowJobOutputArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            asset_type=asset_type,
-            bucket=bucket,
-            id=id,
-            namespace=namespace,
-            object=object,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             asset_type: Optional[pulumi.Input[str]] = None,
-             bucket: Optional[pulumi.Input[str]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if asset_type is None and 'assetType' in kwargs:
-            asset_type = kwargs['assetType']
-
         if asset_type is not None:
-            _setter("asset_type", asset_type)
+            pulumi.set(__self__, "asset_type", asset_type)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter(name="assetType")
@@ -242,29 +193,12 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
         :param pulumi.Input[str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
         :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
         """
-        MediaWorkflowJobTaskLifecycleStateArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            lifecycle_details=lifecycle_details,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -326,51 +260,16 @@ class MediaWorkflowTaskArgs:
         :param pulumi.Input[Mapping[str, Any]] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
         """
-        MediaWorkflowTaskArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            parameters=parameters,
-            type=type,
-            version=version,
-            enable_parameter_reference=enable_parameter_reference,
-            enable_when_referenced_parameter_equals=enable_when_referenced_parameter_equals,
-            prerequisites=prerequisites,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[pulumi.Input[str]] = None,
-             parameters: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             enable_parameter_reference: Optional[pulumi.Input[str]] = None,
-             enable_when_referenced_parameter_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             prerequisites: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if parameters is None:
-            raise TypeError("Missing 'parameters' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if version is None:
-            raise TypeError("Missing 'version' argument")
-        if enable_parameter_reference is None and 'enableParameterReference' in kwargs:
-            enable_parameter_reference = kwargs['enableParameterReference']
-        if enable_when_referenced_parameter_equals is None and 'enableWhenReferencedParameterEquals' in kwargs:
-            enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
-
-        _setter("key", key)
-        _setter("parameters", parameters)
-        _setter("type", type)
-        _setter("version", version)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "version", version)
         if enable_parameter_reference is not None:
-            _setter("enable_parameter_reference", enable_parameter_reference)
+            pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
         if enable_when_referenced_parameter_equals is not None:
-            _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+            pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
         if prerequisites is not None:
-            _setter("prerequisites", prerequisites)
+            pulumi.set(__self__, "prerequisites", prerequisites)
 
     @property
     @pulumi.getter
@@ -490,86 +389,29 @@ class StreamCdnConfigConfigArgs:
         :param pulumi.Input[str] origin_auth_sign_encryption: (Updatable) The type of encryption used to compute the signature.
         :param pulumi.Input[str] origin_auth_sign_type: (Updatable) The type of data used to compute the signature.
         """
-        StreamCdnConfigConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            edge_hostname=edge_hostname,
-            edge_path_prefix=edge_path_prefix,
-            edge_token_key=edge_token_key,
-            edge_token_salt=edge_token_salt,
-            is_edge_token_auth=is_edge_token_auth,
-            origin_auth_secret_key_a=origin_auth_secret_key_a,
-            origin_auth_secret_key_b=origin_auth_secret_key_b,
-            origin_auth_secret_key_nonce_a=origin_auth_secret_key_nonce_a,
-            origin_auth_secret_key_nonce_b=origin_auth_secret_key_nonce_b,
-            origin_auth_sign_encryption=origin_auth_sign_encryption,
-            origin_auth_sign_type=origin_auth_sign_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             edge_hostname: Optional[pulumi.Input[str]] = None,
-             edge_path_prefix: Optional[pulumi.Input[str]] = None,
-             edge_token_key: Optional[pulumi.Input[str]] = None,
-             edge_token_salt: Optional[pulumi.Input[str]] = None,
-             is_edge_token_auth: Optional[pulumi.Input[bool]] = None,
-             origin_auth_secret_key_a: Optional[pulumi.Input[str]] = None,
-             origin_auth_secret_key_b: Optional[pulumi.Input[str]] = None,
-             origin_auth_secret_key_nonce_a: Optional[pulumi.Input[str]] = None,
-             origin_auth_secret_key_nonce_b: Optional[pulumi.Input[str]] = None,
-             origin_auth_sign_encryption: Optional[pulumi.Input[str]] = None,
-             origin_auth_sign_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if edge_hostname is None and 'edgeHostname' in kwargs:
-            edge_hostname = kwargs['edgeHostname']
-        if edge_path_prefix is None and 'edgePathPrefix' in kwargs:
-            edge_path_prefix = kwargs['edgePathPrefix']
-        if edge_token_key is None and 'edgeTokenKey' in kwargs:
-            edge_token_key = kwargs['edgeTokenKey']
-        if edge_token_salt is None and 'edgeTokenSalt' in kwargs:
-            edge_token_salt = kwargs['edgeTokenSalt']
-        if is_edge_token_auth is None and 'isEdgeTokenAuth' in kwargs:
-            is_edge_token_auth = kwargs['isEdgeTokenAuth']
-        if origin_auth_secret_key_a is None and 'originAuthSecretKeyA' in kwargs:
-            origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
-        if origin_auth_secret_key_b is None and 'originAuthSecretKeyB' in kwargs:
-            origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
-        if origin_auth_secret_key_nonce_a is None and 'originAuthSecretKeyNonceA' in kwargs:
-            origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
-        if origin_auth_secret_key_nonce_b is None and 'originAuthSecretKeyNonceB' in kwargs:
-            origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
-        if origin_auth_sign_encryption is None and 'originAuthSignEncryption' in kwargs:
-            origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
-        if origin_auth_sign_type is None and 'originAuthSignType' in kwargs:
-            origin_auth_sign_type = kwargs['originAuthSignType']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if edge_hostname is not None:
-            _setter("edge_hostname", edge_hostname)
+            pulumi.set(__self__, "edge_hostname", edge_hostname)
         if edge_path_prefix is not None:
-            _setter("edge_path_prefix", edge_path_prefix)
+            pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
         if edge_token_key is not None:
-            _setter("edge_token_key", edge_token_key)
+            pulumi.set(__self__, "edge_token_key", edge_token_key)
         if edge_token_salt is not None:
-            _setter("edge_token_salt", edge_token_salt)
+            pulumi.set(__self__, "edge_token_salt", edge_token_salt)
         if is_edge_token_auth is not None:
-            _setter("is_edge_token_auth", is_edge_token_auth)
+            pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
         if origin_auth_secret_key_a is not None:
-            _setter("origin_auth_secret_key_a", origin_auth_secret_key_a)
+            pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
         if origin_auth_secret_key_b is not None:
-            _setter("origin_auth_secret_key_b", origin_auth_secret_key_b)
+            pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
         if origin_auth_secret_key_nonce_a is not None:
-            _setter("origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
+            pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
         if origin_auth_secret_key_nonce_b is not None:
-            _setter("origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
+            pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
         if origin_auth_sign_encryption is not None:
-            _setter("origin_auth_sign_encryption", origin_auth_sign_encryption)
+            pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
         if origin_auth_sign_type is not None:
-            _setter("origin_auth_sign_type", origin_auth_sign_type)
+            pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
 
     @property
     @pulumi.getter
@@ -725,26 +567,9 @@ class StreamPackagingConfigEncryptionArgs:
         :param pulumi.Input[str] algorithm: The encryption algorithm for the stream packaging configuration.
         :param pulumi.Input[str] kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
-        StreamPackagingConfigEncryptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            algorithm=algorithm,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             algorithm: Optional[pulumi.Input[str]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if algorithm is None:
-            raise TypeError("Missing 'algorithm' argument")
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-
-        _setter("algorithm", algorithm)
+        pulumi.set(__self__, "algorithm", algorithm)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
@@ -777,29 +602,10 @@ class GetMediaAssetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMediaAssetsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -835,29 +641,10 @@ class GetMediaWorkflowConfigurationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMediaWorkflowConfigurationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -896,29 +683,10 @@ class GetMediaWorkflowJobFactsFilterArgs:
         """
         :param str name: Unique name. It is read-only and generated for the fact.
         """
-        GetMediaWorkflowJobFactsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -957,29 +725,10 @@ class GetMediaWorkflowJobsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMediaWorkflowJobsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1015,29 +764,10 @@ class GetMediaWorkflowsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMediaWorkflowsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1073,29 +803,10 @@ class GetStreamCdnConfigsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetStreamCdnConfigsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1131,29 +842,10 @@ class GetStreamDistributionChannelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetStreamDistributionChannelsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1189,29 +881,10 @@ class GetStreamPackagingConfigsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetStreamPackagingConfigsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,64 +39,19 @@ class LogArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        LogArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            log_group_id=log_group_id,
-            log_type=log_type,
-            configuration=configuration,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            is_enabled=is_enabled,
-            retention_duration=retention_duration,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[pulumi.Input[str]] = None,
-             log_group_id: Optional[pulumi.Input[str]] = None,
-             log_type: Optional[pulumi.Input[str]] = None,
-             configuration: Optional[pulumi.Input['LogConfigurationArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             retention_duration: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if log_group_id is None and 'logGroupId' in kwargs:
-            log_group_id = kwargs['logGroupId']
-        if log_group_id is None:
-            raise TypeError("Missing 'log_group_id' argument")
-        if log_type is None and 'logType' in kwargs:
-            log_type = kwargs['logType']
-        if log_type is None:
-            raise TypeError("Missing 'log_type' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if retention_duration is None and 'retentionDuration' in kwargs:
-            retention_duration = kwargs['retentionDuration']
-
-        _setter("display_name", display_name)
-        _setter("log_group_id", log_group_id)
-        _setter("log_type", log_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_type", log_type)
         if configuration is not None:
-            _setter("configuration", configuration)
+            pulumi.set(__self__, "configuration", configuration)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if retention_duration is not None:
-            _setter("retention_duration", retention_duration)
+            pulumi.set(__self__, "retention_duration", retention_duration)
 
     @property
     @pulumi.getter(name="displayName")
@@ -235,89 +190,32 @@ class _LogState:
         :param pulumi.Input[str] time_created: Time the resource was created.
         :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
         """
-        _LogState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            configuration=configuration,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_enabled=is_enabled,
-            log_group_id=log_group_id,
-            log_type=log_type,
-            retention_duration=retention_duration,
-            state=state,
-            tenancy_id=tenancy_id,
-            time_created=time_created,
-            time_last_modified=time_last_modified,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             configuration: Optional[pulumi.Input['LogConfigurationArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             log_group_id: Optional[pulumi.Input[str]] = None,
-             log_type: Optional[pulumi.Input[str]] = None,
-             retention_duration: Optional[pulumi.Input[int]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             tenancy_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_last_modified: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if log_group_id is None and 'logGroupId' in kwargs:
-            log_group_id = kwargs['logGroupId']
-        if log_type is None and 'logType' in kwargs:
-            log_type = kwargs['logType']
-        if retention_duration is None and 'retentionDuration' in kwargs:
-            retention_duration = kwargs['retentionDuration']
-        if tenancy_id is None and 'tenancyId' in kwargs:
-            tenancy_id = kwargs['tenancyId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_last_modified is None and 'timeLastModified' in kwargs:
-            time_last_modified = kwargs['timeLastModified']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if configuration is not None:
-            _setter("configuration", configuration)
+            pulumi.set(__self__, "configuration", configuration)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if log_group_id is not None:
-            _setter("log_group_id", log_group_id)
+            pulumi.set(__self__, "log_group_id", log_group_id)
         if log_type is not None:
-            _setter("log_type", log_type)
+            pulumi.set(__self__, "log_type", log_type)
         if retention_duration is not None:
-            _setter("retention_duration", retention_duration)
+            pulumi.set(__self__, "retention_duration", retention_duration)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if tenancy_id is not None:
-            _setter("tenancy_id", tenancy_id)
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_last_modified is not None:
-            _setter("time_last_modified", time_last_modified)
+            pulumi.set(__self__, "time_last_modified", time_last_modified)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -611,10 +509,6 @@ class Log(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            LogArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -637,7 +531,6 @@ class Log(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = LogArgs.__new__(LogArgs)
 
-            configuration = _utilities.configure(configuration, LogConfigurationArgs, True)
             __props__.__dict__["configuration"] = configuration
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:

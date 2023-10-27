@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,27 +27,8 @@ class RunStatementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        RunStatementArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            code=code,
-            run_id=run_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             code: Optional[pulumi.Input[str]] = None,
-             run_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if code is None:
-            raise TypeError("Missing 'code' argument")
-        if run_id is None and 'runId' in kwargs:
-            run_id = kwargs['runId']
-        if run_id is None:
-            raise TypeError("Missing 'run_id' argument")
-
-        _setter("code", code)
-        _setter("run_id", run_id)
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "run_id", run_id)
 
     @property
     @pulumi.getter
@@ -102,49 +83,20 @@ class _RunStatementState:
         :param pulumi.Input[str] time_completed: The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
-        _RunStatementState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            code=code,
-            outputs=outputs,
-            progress=progress,
-            run_id=run_id,
-            state=state,
-            time_completed=time_completed,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             code: Optional[pulumi.Input[str]] = None,
-             outputs: Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]]] = None,
-             progress: Optional[pulumi.Input[float]] = None,
-             run_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_completed: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if run_id is None and 'runId' in kwargs:
-            run_id = kwargs['runId']
-        if time_completed is None and 'timeCompleted' in kwargs:
-            time_completed = kwargs['timeCompleted']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
         if outputs is not None:
-            _setter("outputs", outputs)
+            pulumi.set(__self__, "outputs", outputs)
         if progress is not None:
-            _setter("progress", progress)
+            pulumi.set(__self__, "progress", progress)
         if run_id is not None:
-            _setter("run_id", run_id)
+            pulumi.set(__self__, "run_id", run_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_completed is not None:
-            _setter("time_completed", time_completed)
+            pulumi.set(__self__, "time_completed", time_completed)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
@@ -316,10 +268,6 @@ class RunStatement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            RunStatementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

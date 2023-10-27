@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -80,23 +80,10 @@ class ConnectionAdditionalAttribute(dict):
         :param str name: (Updatable) The name of the property entry.
         :param str value: (Updatable) The value of the property entry.
         """
-        ConnectionAdditionalAttribute._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -143,29 +130,12 @@ class ConnectionBootstrapServer(dict):
         :param int port: (Updatable) The port of an endpoint usually specified for a connection.
         :param str private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
-        ConnectionBootstrapServer._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            port=port,
-            private_ip=private_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             port: Optional[int] = None,
-             private_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
 
     @property
     @pulumi.getter
@@ -216,21 +186,8 @@ class ConnectionIngressIp(dict):
         """
         :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
-        ConnectionIngressIp._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ingress_ip=ingress_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ingress_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ingress_ip is None and 'ingressIp' in kwargs:
-            ingress_ip = kwargs['ingressIp']
-
         if ingress_ip is not None:
-            _setter("ingress_ip", ingress_ip)
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
@@ -279,45 +236,18 @@ class DeploymentDeploymentDiagnosticData(dict):
         :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        DeploymentDeploymentDiagnosticData._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            diagnostic_state=diagnostic_state,
-            namespace=namespace,
-            object=object,
-            time_diagnostic_end=time_diagnostic_end,
-            time_diagnostic_start=time_diagnostic_start,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             diagnostic_state: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             time_diagnostic_end: Optional[str] = None,
-             time_diagnostic_start: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if diagnostic_state is None and 'diagnosticState' in kwargs:
-            diagnostic_state = kwargs['diagnosticState']
-        if time_diagnostic_end is None and 'timeDiagnosticEnd' in kwargs:
-            time_diagnostic_end = kwargs['timeDiagnosticEnd']
-        if time_diagnostic_start is None and 'timeDiagnosticStart' in kwargs:
-            time_diagnostic_start = kwargs['timeDiagnosticStart']
-
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if diagnostic_state is not None:
-            _setter("diagnostic_state", diagnostic_state)
+            pulumi.set(__self__, "diagnostic_state", diagnostic_state)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if time_diagnostic_end is not None:
-            _setter("time_diagnostic_end", time_diagnostic_end)
+            pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
         if time_diagnostic_start is not None:
-            _setter("time_diagnostic_start", time_diagnostic_start)
+            pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
@@ -408,45 +338,16 @@ class DeploymentMaintenanceConfiguration(dict):
         :param int major_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         :param int security_patch_upgrade_period_in_days: (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         """
-        DeploymentMaintenanceConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bundle_release_upgrade_period_in_days=bundle_release_upgrade_period_in_days,
-            interim_release_upgrade_period_in_days=interim_release_upgrade_period_in_days,
-            is_interim_release_auto_upgrade_enabled=is_interim_release_auto_upgrade_enabled,
-            major_release_upgrade_period_in_days=major_release_upgrade_period_in_days,
-            security_patch_upgrade_period_in_days=security_patch_upgrade_period_in_days,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bundle_release_upgrade_period_in_days: Optional[int] = None,
-             interim_release_upgrade_period_in_days: Optional[int] = None,
-             is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
-             major_release_upgrade_period_in_days: Optional[int] = None,
-             security_patch_upgrade_period_in_days: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bundle_release_upgrade_period_in_days is None and 'bundleReleaseUpgradePeriodInDays' in kwargs:
-            bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
-        if interim_release_upgrade_period_in_days is None and 'interimReleaseUpgradePeriodInDays' in kwargs:
-            interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
-        if is_interim_release_auto_upgrade_enabled is None and 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
-            is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
-        if major_release_upgrade_period_in_days is None and 'majorReleaseUpgradePeriodInDays' in kwargs:
-            major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
-        if security_patch_upgrade_period_in_days is None and 'securityPatchUpgradePeriodInDays' in kwargs:
-            security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
-
         if bundle_release_upgrade_period_in_days is not None:
-            _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+            pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         if interim_release_upgrade_period_in_days is not None:
-            _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+            pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
         if is_interim_release_auto_upgrade_enabled is not None:
-            _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+            pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
         if major_release_upgrade_period_in_days is not None:
-            _setter("major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+            pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
         if security_patch_upgrade_period_in_days is not None:
-            _setter("security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+            pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
@@ -515,27 +416,8 @@ class DeploymentMaintenanceWindow(dict):
         :param str day: (Updatable) Days of the week.
         :param int start_hour: (Updatable) Start hour for maintenance period. Hour is in UTC.
         """
-        DeploymentMaintenanceWindow._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            day=day,
-            start_hour=start_hour,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             day: Optional[str] = None,
-             start_hour: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if day is None:
-            raise TypeError("Missing 'day' argument")
-        if start_hour is None and 'startHour' in kwargs:
-            start_hour = kwargs['startHour']
-        if start_hour is None:
-            raise TypeError("Missing 'start_hour' argument")
-
-        _setter("day", day)
-        _setter("start_hour", start_hour)
+        pulumi.set(__self__, "day", day)
+        pulumi.set(__self__, "start_hour", start_hour)
 
     @property
     @pulumi.getter
@@ -606,66 +488,23 @@ class DeploymentOggData(dict):
         :param str ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         :param str password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        DeploymentOggData._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            deployment_name=deployment_name,
-            admin_password=admin_password,
-            admin_username=admin_username,
-            certificate=certificate,
-            credential_store=credential_store,
-            identity_domain_id=identity_domain_id,
-            key=key,
-            ogg_version=ogg_version,
-            password_secret_id=password_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             deployment_name: Optional[str] = None,
-             admin_password: Optional[str] = None,
-             admin_username: Optional[str] = None,
-             certificate: Optional[str] = None,
-             credential_store: Optional[str] = None,
-             identity_domain_id: Optional[str] = None,
-             key: Optional[str] = None,
-             ogg_version: Optional[str] = None,
-             password_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if deployment_name is None and 'deploymentName' in kwargs:
-            deployment_name = kwargs['deploymentName']
-        if deployment_name is None:
-            raise TypeError("Missing 'deployment_name' argument")
-        if admin_password is None and 'adminPassword' in kwargs:
-            admin_password = kwargs['adminPassword']
-        if admin_username is None and 'adminUsername' in kwargs:
-            admin_username = kwargs['adminUsername']
-        if credential_store is None and 'credentialStore' in kwargs:
-            credential_store = kwargs['credentialStore']
-        if identity_domain_id is None and 'identityDomainId' in kwargs:
-            identity_domain_id = kwargs['identityDomainId']
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if password_secret_id is None and 'passwordSecretId' in kwargs:
-            password_secret_id = kwargs['passwordSecretId']
-
-        _setter("deployment_name", deployment_name)
+        pulumi.set(__self__, "deployment_name", deployment_name)
         if admin_password is not None:
-            _setter("admin_password", admin_password)
+            pulumi.set(__self__, "admin_password", admin_password)
         if admin_username is not None:
-            _setter("admin_username", admin_username)
+            pulumi.set(__self__, "admin_username", admin_username)
         if certificate is not None:
-            _setter("certificate", certificate)
+            pulumi.set(__self__, "certificate", certificate)
         if credential_store is not None:
-            _setter("credential_store", credential_store)
+            pulumi.set(__self__, "credential_store", credential_store)
         if identity_domain_id is not None:
-            _setter("identity_domain_id", identity_domain_id)
+            pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if ogg_version is not None:
-            _setter("ogg_version", ogg_version)
+            pulumi.set(__self__, "ogg_version", ogg_version)
         if password_secret_id is not None:
-            _setter("password_secret_id", password_secret_id)
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="deploymentName")
@@ -749,25 +588,8 @@ class GetConnectionAdditionalAttributeResult(dict):
         :param str name: The name of the property entry.
         :param str value: The value of the property entry.
         """
-        GetConnectionAdditionalAttributeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -790,20 +612,7 @@ class GetConnectionAdditionalAttributeResult(dict):
 class GetConnectionAssignmentsConnectionAssignmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']):
-        GetConnectionAssignmentsConnectionAssignmentCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -832,67 +641,14 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetConnectionAssignmentsConnectionAssignmentCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alias_name=alias_name,
-            compartment_id=compartment_id,
-            connection_id=connection_id,
-            deployment_id=deployment_id,
-            id=id,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alias_name: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             connection_id: Optional[str] = None,
-             deployment_id: Optional[str] = None,
-             id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alias_name is None and 'aliasName' in kwargs:
-            alias_name = kwargs['aliasName']
-        if alias_name is None:
-            raise TypeError("Missing 'alias_name' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if connection_id is None and 'connectionId' in kwargs:
-            connection_id = kwargs['connectionId']
-        if connection_id is None:
-            raise TypeError("Missing 'connection_id' argument")
-        if deployment_id is None and 'deploymentId' in kwargs:
-            deployment_id = kwargs['deploymentId']
-        if deployment_id is None:
-            raise TypeError("Missing 'deployment_id' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("alias_name", alias_name)
-        _setter("compartment_id", compartment_id)
-        _setter("connection_id", connection_id)
-        _setter("deployment_id", deployment_id)
-        _setter("id", id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "alias_name", alias_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="aliasName")
@@ -968,29 +724,10 @@ class GetConnectionAssignmentsFilterResult(dict):
         """
         :param str name: The name of the connection in the assignment (aliasName).
         """
-        GetConnectionAssignmentsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1022,32 +759,9 @@ class GetConnectionBootstrapServerResult(dict):
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
-        GetConnectionBootstrapServerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            port=port,
-            private_ip=private_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             port: Optional[int] = None,
-             private_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if private_ip is None:
-            raise TypeError("Missing 'private_ip' argument")
-
-        _setter("host", host)
-        _setter("port", port)
-        _setter("private_ip", private_ip)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "private_ip", private_ip)
 
     @property
     @pulumi.getter
@@ -1081,22 +795,7 @@ class GetConnectionIngressIpResult(dict):
         """
         :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
-        GetConnectionIngressIpResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ingress_ip=ingress_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ingress_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ingress_ip is None and 'ingressIp' in kwargs:
-            ingress_ip = kwargs['ingressIp']
-        if ingress_ip is None:
-            raise TypeError("Missing 'ingress_ip' argument")
-
-        _setter("ingress_ip", ingress_ip)
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
@@ -1111,20 +810,7 @@ class GetConnectionIngressIpResult(dict):
 class GetConnectionsConnectionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
-        GetConnectionsConnectionCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -1262,504 +948,79 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
-        GetConnectionsConnectionCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_key_id=access_key_id,
-            account_key=account_key,
-            account_name=account_name,
-            additional_attributes=additional_attributes,
-            authentication_type=authentication_type,
-            azure_tenant_id=azure_tenant_id,
-            bootstrap_servers=bootstrap_servers,
-            client_id=client_id,
-            client_secret=client_secret,
-            compartment_id=compartment_id,
-            connection_factory=connection_factory,
-            connection_string=connection_string,
-            connection_type=connection_type,
-            connection_url=connection_url,
-            consumer_properties=consumer_properties,
-            core_site_xml=core_site_xml,
-            database_id=database_id,
-            database_name=database_name,
-            db_system_id=db_system_id,
-            defined_tags=defined_tags,
-            deployment_id=deployment_id,
-            description=description,
-            display_name=display_name,
-            endpoint=endpoint,
-            freeform_tags=freeform_tags,
-            host=host,
-            id=id,
-            ingress_ips=ingress_ips,
-            jndi_connection_factory=jndi_connection_factory,
-            jndi_initial_context_factory=jndi_initial_context_factory,
-            jndi_provider_url=jndi_provider_url,
-            jndi_security_credentials=jndi_security_credentials,
-            jndi_security_principal=jndi_security_principal,
-            key_id=key_id,
-            key_store=key_store,
-            key_store_password=key_store_password,
-            lifecycle_details=lifecycle_details,
-            nsg_ids=nsg_ids,
-            password=password,
-            port=port,
-            private_ip=private_ip,
-            private_key_file=private_key_file,
-            private_key_passphrase=private_key_passphrase,
-            producer_properties=producer_properties,
-            public_key_fingerprint=public_key_fingerprint,
-            region=region,
-            sas_token=sas_token,
-            secret_access_key=secret_access_key,
-            security_protocol=security_protocol,
-            session_mode=session_mode,
-            should_use_jndi=should_use_jndi,
-            should_validate_server_certificate=should_validate_server_certificate,
-            ssl_ca=ssl_ca,
-            ssl_cert=ssl_cert,
-            ssl_crl=ssl_crl,
-            ssl_key=ssl_key,
-            ssl_key_password=ssl_key_password,
-            ssl_mode=ssl_mode,
-            state=state,
-            stream_pool_id=stream_pool_id,
-            subnet_id=subnet_id,
-            system_tags=system_tags,
-            technology_type=technology_type,
-            tenancy_id=tenancy_id,
-            time_created=time_created,
-            time_updated=time_updated,
-            trust_store=trust_store,
-            trust_store_password=trust_store_password,
-            url=url,
-            user_id=user_id,
-            username=username,
-            vault_id=vault_id,
-            wallet=wallet,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_key_id: Optional[str] = None,
-             account_key: Optional[str] = None,
-             account_name: Optional[str] = None,
-             additional_attributes: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult']] = None,
-             authentication_type: Optional[str] = None,
-             azure_tenant_id: Optional[str] = None,
-             bootstrap_servers: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult']] = None,
-             client_id: Optional[str] = None,
-             client_secret: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             connection_factory: Optional[str] = None,
-             connection_string: Optional[str] = None,
-             connection_type: Optional[str] = None,
-             connection_url: Optional[str] = None,
-             consumer_properties: Optional[str] = None,
-             core_site_xml: Optional[str] = None,
-             database_id: Optional[str] = None,
-             database_name: Optional[str] = None,
-             db_system_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             deployment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             endpoint: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             host: Optional[str] = None,
-             id: Optional[str] = None,
-             ingress_ips: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult']] = None,
-             jndi_connection_factory: Optional[str] = None,
-             jndi_initial_context_factory: Optional[str] = None,
-             jndi_provider_url: Optional[str] = None,
-             jndi_security_credentials: Optional[str] = None,
-             jndi_security_principal: Optional[str] = None,
-             key_id: Optional[str] = None,
-             key_store: Optional[str] = None,
-             key_store_password: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             nsg_ids: Optional[Sequence[str]] = None,
-             password: Optional[str] = None,
-             port: Optional[int] = None,
-             private_ip: Optional[str] = None,
-             private_key_file: Optional[str] = None,
-             private_key_passphrase: Optional[str] = None,
-             producer_properties: Optional[str] = None,
-             public_key_fingerprint: Optional[str] = None,
-             region: Optional[str] = None,
-             sas_token: Optional[str] = None,
-             secret_access_key: Optional[str] = None,
-             security_protocol: Optional[str] = None,
-             session_mode: Optional[str] = None,
-             should_use_jndi: Optional[bool] = None,
-             should_validate_server_certificate: Optional[bool] = None,
-             ssl_ca: Optional[str] = None,
-             ssl_cert: Optional[str] = None,
-             ssl_crl: Optional[str] = None,
-             ssl_key: Optional[str] = None,
-             ssl_key_password: Optional[str] = None,
-             ssl_mode: Optional[str] = None,
-             state: Optional[str] = None,
-             stream_pool_id: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             technology_type: Optional[str] = None,
-             tenancy_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             trust_store: Optional[str] = None,
-             trust_store_password: Optional[str] = None,
-             url: Optional[str] = None,
-             user_id: Optional[str] = None,
-             username: Optional[str] = None,
-             vault_id: Optional[str] = None,
-             wallet: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_key_id is None and 'accessKeyId' in kwargs:
-            access_key_id = kwargs['accessKeyId']
-        if access_key_id is None:
-            raise TypeError("Missing 'access_key_id' argument")
-        if account_key is None and 'accountKey' in kwargs:
-            account_key = kwargs['accountKey']
-        if account_key is None:
-            raise TypeError("Missing 'account_key' argument")
-        if account_name is None and 'accountName' in kwargs:
-            account_name = kwargs['accountName']
-        if account_name is None:
-            raise TypeError("Missing 'account_name' argument")
-        if additional_attributes is None and 'additionalAttributes' in kwargs:
-            additional_attributes = kwargs['additionalAttributes']
-        if additional_attributes is None:
-            raise TypeError("Missing 'additional_attributes' argument")
-        if authentication_type is None and 'authenticationType' in kwargs:
-            authentication_type = kwargs['authenticationType']
-        if authentication_type is None:
-            raise TypeError("Missing 'authentication_type' argument")
-        if azure_tenant_id is None and 'azureTenantId' in kwargs:
-            azure_tenant_id = kwargs['azureTenantId']
-        if azure_tenant_id is None:
-            raise TypeError("Missing 'azure_tenant_id' argument")
-        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
-            bootstrap_servers = kwargs['bootstrapServers']
-        if bootstrap_servers is None:
-            raise TypeError("Missing 'bootstrap_servers' argument")
-        if client_id is None and 'clientId' in kwargs:
-            client_id = kwargs['clientId']
-        if client_id is None:
-            raise TypeError("Missing 'client_id' argument")
-        if client_secret is None and 'clientSecret' in kwargs:
-            client_secret = kwargs['clientSecret']
-        if client_secret is None:
-            raise TypeError("Missing 'client_secret' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if connection_factory is None and 'connectionFactory' in kwargs:
-            connection_factory = kwargs['connectionFactory']
-        if connection_factory is None:
-            raise TypeError("Missing 'connection_factory' argument")
-        if connection_string is None and 'connectionString' in kwargs:
-            connection_string = kwargs['connectionString']
-        if connection_string is None:
-            raise TypeError("Missing 'connection_string' argument")
-        if connection_type is None and 'connectionType' in kwargs:
-            connection_type = kwargs['connectionType']
-        if connection_type is None:
-            raise TypeError("Missing 'connection_type' argument")
-        if connection_url is None and 'connectionUrl' in kwargs:
-            connection_url = kwargs['connectionUrl']
-        if connection_url is None:
-            raise TypeError("Missing 'connection_url' argument")
-        if consumer_properties is None and 'consumerProperties' in kwargs:
-            consumer_properties = kwargs['consumerProperties']
-        if consumer_properties is None:
-            raise TypeError("Missing 'consumer_properties' argument")
-        if core_site_xml is None and 'coreSiteXml' in kwargs:
-            core_site_xml = kwargs['coreSiteXml']
-        if core_site_xml is None:
-            raise TypeError("Missing 'core_site_xml' argument")
-        if database_id is None and 'databaseId' in kwargs:
-            database_id = kwargs['databaseId']
-        if database_id is None:
-            raise TypeError("Missing 'database_id' argument")
-        if database_name is None and 'databaseName' in kwargs:
-            database_name = kwargs['databaseName']
-        if database_name is None:
-            raise TypeError("Missing 'database_name' argument")
-        if db_system_id is None and 'dbSystemId' in kwargs:
-            db_system_id = kwargs['dbSystemId']
-        if db_system_id is None:
-            raise TypeError("Missing 'db_system_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if deployment_id is None and 'deploymentId' in kwargs:
-            deployment_id = kwargs['deploymentId']
-        if deployment_id is None:
-            raise TypeError("Missing 'deployment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if endpoint is None:
-            raise TypeError("Missing 'endpoint' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if ingress_ips is None and 'ingressIps' in kwargs:
-            ingress_ips = kwargs['ingressIps']
-        if ingress_ips is None:
-            raise TypeError("Missing 'ingress_ips' argument")
-        if jndi_connection_factory is None and 'jndiConnectionFactory' in kwargs:
-            jndi_connection_factory = kwargs['jndiConnectionFactory']
-        if jndi_connection_factory is None:
-            raise TypeError("Missing 'jndi_connection_factory' argument")
-        if jndi_initial_context_factory is None and 'jndiInitialContextFactory' in kwargs:
-            jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
-        if jndi_initial_context_factory is None:
-            raise TypeError("Missing 'jndi_initial_context_factory' argument")
-        if jndi_provider_url is None and 'jndiProviderUrl' in kwargs:
-            jndi_provider_url = kwargs['jndiProviderUrl']
-        if jndi_provider_url is None:
-            raise TypeError("Missing 'jndi_provider_url' argument")
-        if jndi_security_credentials is None and 'jndiSecurityCredentials' in kwargs:
-            jndi_security_credentials = kwargs['jndiSecurityCredentials']
-        if jndi_security_credentials is None:
-            raise TypeError("Missing 'jndi_security_credentials' argument")
-        if jndi_security_principal is None and 'jndiSecurityPrincipal' in kwargs:
-            jndi_security_principal = kwargs['jndiSecurityPrincipal']
-        if jndi_security_principal is None:
-            raise TypeError("Missing 'jndi_security_principal' argument")
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_id is None:
-            raise TypeError("Missing 'key_id' argument")
-        if key_store is None and 'keyStore' in kwargs:
-            key_store = kwargs['keyStore']
-        if key_store is None:
-            raise TypeError("Missing 'key_store' argument")
-        if key_store_password is None and 'keyStorePassword' in kwargs:
-            key_store_password = kwargs['keyStorePassword']
-        if key_store_password is None:
-            raise TypeError("Missing 'key_store_password' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if nsg_ids is None:
-            raise TypeError("Missing 'nsg_ids' argument")
-        if password is None:
-            raise TypeError("Missing 'password' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if private_ip is None:
-            raise TypeError("Missing 'private_ip' argument")
-        if private_key_file is None and 'privateKeyFile' in kwargs:
-            private_key_file = kwargs['privateKeyFile']
-        if private_key_file is None:
-            raise TypeError("Missing 'private_key_file' argument")
-        if private_key_passphrase is None and 'privateKeyPassphrase' in kwargs:
-            private_key_passphrase = kwargs['privateKeyPassphrase']
-        if private_key_passphrase is None:
-            raise TypeError("Missing 'private_key_passphrase' argument")
-        if producer_properties is None and 'producerProperties' in kwargs:
-            producer_properties = kwargs['producerProperties']
-        if producer_properties is None:
-            raise TypeError("Missing 'producer_properties' argument")
-        if public_key_fingerprint is None and 'publicKeyFingerprint' in kwargs:
-            public_key_fingerprint = kwargs['publicKeyFingerprint']
-        if public_key_fingerprint is None:
-            raise TypeError("Missing 'public_key_fingerprint' argument")
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if sas_token is None and 'sasToken' in kwargs:
-            sas_token = kwargs['sasToken']
-        if sas_token is None:
-            raise TypeError("Missing 'sas_token' argument")
-        if secret_access_key is None and 'secretAccessKey' in kwargs:
-            secret_access_key = kwargs['secretAccessKey']
-        if secret_access_key is None:
-            raise TypeError("Missing 'secret_access_key' argument")
-        if security_protocol is None and 'securityProtocol' in kwargs:
-            security_protocol = kwargs['securityProtocol']
-        if security_protocol is None:
-            raise TypeError("Missing 'security_protocol' argument")
-        if session_mode is None and 'sessionMode' in kwargs:
-            session_mode = kwargs['sessionMode']
-        if session_mode is None:
-            raise TypeError("Missing 'session_mode' argument")
-        if should_use_jndi is None and 'shouldUseJndi' in kwargs:
-            should_use_jndi = kwargs['shouldUseJndi']
-        if should_use_jndi is None:
-            raise TypeError("Missing 'should_use_jndi' argument")
-        if should_validate_server_certificate is None and 'shouldValidateServerCertificate' in kwargs:
-            should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
-        if should_validate_server_certificate is None:
-            raise TypeError("Missing 'should_validate_server_certificate' argument")
-        if ssl_ca is None and 'sslCa' in kwargs:
-            ssl_ca = kwargs['sslCa']
-        if ssl_ca is None:
-            raise TypeError("Missing 'ssl_ca' argument")
-        if ssl_cert is None and 'sslCert' in kwargs:
-            ssl_cert = kwargs['sslCert']
-        if ssl_cert is None:
-            raise TypeError("Missing 'ssl_cert' argument")
-        if ssl_crl is None and 'sslCrl' in kwargs:
-            ssl_crl = kwargs['sslCrl']
-        if ssl_crl is None:
-            raise TypeError("Missing 'ssl_crl' argument")
-        if ssl_key is None and 'sslKey' in kwargs:
-            ssl_key = kwargs['sslKey']
-        if ssl_key is None:
-            raise TypeError("Missing 'ssl_key' argument")
-        if ssl_key_password is None and 'sslKeyPassword' in kwargs:
-            ssl_key_password = kwargs['sslKeyPassword']
-        if ssl_key_password is None:
-            raise TypeError("Missing 'ssl_key_password' argument")
-        if ssl_mode is None and 'sslMode' in kwargs:
-            ssl_mode = kwargs['sslMode']
-        if ssl_mode is None:
-            raise TypeError("Missing 'ssl_mode' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if stream_pool_id is None and 'streamPoolId' in kwargs:
-            stream_pool_id = kwargs['streamPoolId']
-        if stream_pool_id is None:
-            raise TypeError("Missing 'stream_pool_id' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if technology_type is None and 'technologyType' in kwargs:
-            technology_type = kwargs['technologyType']
-        if technology_type is None:
-            raise TypeError("Missing 'technology_type' argument")
-        if tenancy_id is None and 'tenancyId' in kwargs:
-            tenancy_id = kwargs['tenancyId']
-        if tenancy_id is None:
-            raise TypeError("Missing 'tenancy_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if trust_store is None and 'trustStore' in kwargs:
-            trust_store = kwargs['trustStore']
-        if trust_store is None:
-            raise TypeError("Missing 'trust_store' argument")
-        if trust_store_password is None and 'trustStorePassword' in kwargs:
-            trust_store_password = kwargs['trustStorePassword']
-        if trust_store_password is None:
-            raise TypeError("Missing 'trust_store_password' argument")
-        if url is None:
-            raise TypeError("Missing 'url' argument")
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-        if user_id is None:
-            raise TypeError("Missing 'user_id' argument")
-        if username is None:
-            raise TypeError("Missing 'username' argument")
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-        if vault_id is None:
-            raise TypeError("Missing 'vault_id' argument")
-        if wallet is None:
-            raise TypeError("Missing 'wallet' argument")
-
-        _setter("access_key_id", access_key_id)
-        _setter("account_key", account_key)
-        _setter("account_name", account_name)
-        _setter("additional_attributes", additional_attributes)
-        _setter("authentication_type", authentication_type)
-        _setter("azure_tenant_id", azure_tenant_id)
-        _setter("bootstrap_servers", bootstrap_servers)
-        _setter("client_id", client_id)
-        _setter("client_secret", client_secret)
-        _setter("compartment_id", compartment_id)
-        _setter("connection_factory", connection_factory)
-        _setter("connection_string", connection_string)
-        _setter("connection_type", connection_type)
-        _setter("connection_url", connection_url)
-        _setter("consumer_properties", consumer_properties)
-        _setter("core_site_xml", core_site_xml)
-        _setter("database_id", database_id)
-        _setter("database_name", database_name)
-        _setter("db_system_id", db_system_id)
-        _setter("defined_tags", defined_tags)
-        _setter("deployment_id", deployment_id)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("endpoint", endpoint)
-        _setter("freeform_tags", freeform_tags)
-        _setter("host", host)
-        _setter("id", id)
-        _setter("ingress_ips", ingress_ips)
-        _setter("jndi_connection_factory", jndi_connection_factory)
-        _setter("jndi_initial_context_factory", jndi_initial_context_factory)
-        _setter("jndi_provider_url", jndi_provider_url)
-        _setter("jndi_security_credentials", jndi_security_credentials)
-        _setter("jndi_security_principal", jndi_security_principal)
-        _setter("key_id", key_id)
-        _setter("key_store", key_store)
-        _setter("key_store_password", key_store_password)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("nsg_ids", nsg_ids)
-        _setter("password", password)
-        _setter("port", port)
-        _setter("private_ip", private_ip)
-        _setter("private_key_file", private_key_file)
-        _setter("private_key_passphrase", private_key_passphrase)
-        _setter("producer_properties", producer_properties)
-        _setter("public_key_fingerprint", public_key_fingerprint)
-        _setter("region", region)
-        _setter("sas_token", sas_token)
-        _setter("secret_access_key", secret_access_key)
-        _setter("security_protocol", security_protocol)
-        _setter("session_mode", session_mode)
-        _setter("should_use_jndi", should_use_jndi)
-        _setter("should_validate_server_certificate", should_validate_server_certificate)
-        _setter("ssl_ca", ssl_ca)
-        _setter("ssl_cert", ssl_cert)
-        _setter("ssl_crl", ssl_crl)
-        _setter("ssl_key", ssl_key)
-        _setter("ssl_key_password", ssl_key_password)
-        _setter("ssl_mode", ssl_mode)
-        _setter("state", state)
-        _setter("stream_pool_id", stream_pool_id)
-        _setter("subnet_id", subnet_id)
-        _setter("system_tags", system_tags)
-        _setter("technology_type", technology_type)
-        _setter("tenancy_id", tenancy_id)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("trust_store", trust_store)
-        _setter("trust_store_password", trust_store_password)
-        _setter("url", url)
-        _setter("user_id", user_id)
-        _setter("username", username)
-        _setter("vault_id", vault_id)
-        _setter("wallet", wallet)
+        pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "account_key", account_key)
+        pulumi.set(__self__, "account_name", account_name)
+        pulumi.set(__self__, "additional_attributes", additional_attributes)
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
+        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret", client_secret)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_factory", connection_factory)
+        pulumi.set(__self__, "connection_string", connection_string)
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "connection_url", connection_url)
+        pulumi.set(__self__, "consumer_properties", consumer_properties)
+        pulumi.set(__self__, "core_site_xml", core_site_xml)
+        pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "database_name", database_name)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ingress_ips", ingress_ips)
+        pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+        pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+        pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+        pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_store", key_store)
+        pulumi.set(__self__, "key_store_password", key_store_password)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_key_file", private_key_file)
+        pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        pulumi.set(__self__, "producer_properties", producer_properties)
+        pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "sas_token", sas_token)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
+        pulumi.set(__self__, "security_protocol", security_protocol)
+        pulumi.set(__self__, "session_mode", session_mode)
+        pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
+        pulumi.set(__self__, "ssl_ca", ssl_ca)
+        pulumi.set(__self__, "ssl_cert", ssl_cert)
+        pulumi.set(__self__, "ssl_crl", ssl_crl)
+        pulumi.set(__self__, "ssl_key", ssl_key)
+        pulumi.set(__self__, "ssl_key_password", ssl_key_password)
+        pulumi.set(__self__, "ssl_mode", ssl_mode)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stream_pool_id", stream_pool_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "technology_type", technology_type)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trust_store", trust_store)
+        pulumi.set(__self__, "trust_store_password", trust_store_password)
+        pulumi.set(__self__, "url", url)
+        pulumi.set(__self__, "user_id", user_id)
+        pulumi.set(__self__, "username", username)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "wallet", wallet)
 
     @property
     @pulumi.getter(name="accessKeyId")
@@ -2292,25 +1553,8 @@ class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
         :param str name: The name of the property entry.
         :param str value: The value of the property entry.
         """
-        GetConnectionsConnectionCollectionItemAdditionalAttributeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -2340,32 +1584,9 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
-        GetConnectionsConnectionCollectionItemBootstrapServerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            port=port,
-            private_ip=private_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             port: Optional[int] = None,
-             private_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if private_ip is None:
-            raise TypeError("Missing 'private_ip' argument")
-
-        _setter("host", host)
-        _setter("port", port)
-        _setter("private_ip", private_ip)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "private_ip", private_ip)
 
     @property
     @pulumi.getter
@@ -2399,22 +1620,7 @@ class GetConnectionsConnectionCollectionItemIngressIpResult(dict):
         """
         :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
-        GetConnectionsConnectionCollectionItemIngressIpResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ingress_ip=ingress_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ingress_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ingress_ip is None and 'ingressIp' in kwargs:
-            ingress_ip = kwargs['ingressIp']
-        if ingress_ip is None:
-            raise TypeError("Missing 'ingress_ip' argument")
-
-        _setter("ingress_ip", ingress_ip)
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
@@ -2434,29 +1640,10 @@ class GetConnectionsFilterResult(dict):
         """
         :param str name: The name of the property entry.
         """
-        GetConnectionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2481,20 +1668,7 @@ class GetConnectionsFilterResult(dict):
 class GetDatabaseRegistrationsDatabaseRegistrationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']):
-        GetDatabaseRegistrationsDatabaseRegistrationCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -2557,183 +1731,32 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
-        GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alias_name=alias_name,
-            compartment_id=compartment_id,
-            connection_string=connection_string,
-            database_id=database_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            fqdn=fqdn,
-            freeform_tags=freeform_tags,
-            id=id,
-            ip_address=ip_address,
-            key_id=key_id,
-            lifecycle_details=lifecycle_details,
-            password=password,
-            rce_private_ip=rce_private_ip,
-            secret_compartment_id=secret_compartment_id,
-            secret_id=secret_id,
-            session_mode=session_mode,
-            state=state,
-            subnet_id=subnet_id,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            username=username,
-            vault_id=vault_id,
-            wallet=wallet,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alias_name: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             connection_string: Optional[str] = None,
-             database_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             fqdn: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             ip_address: Optional[str] = None,
-             key_id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             password: Optional[str] = None,
-             rce_private_ip: Optional[str] = None,
-             secret_compartment_id: Optional[str] = None,
-             secret_id: Optional[str] = None,
-             session_mode: Optional[str] = None,
-             state: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             username: Optional[str] = None,
-             vault_id: Optional[str] = None,
-             wallet: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alias_name is None and 'aliasName' in kwargs:
-            alias_name = kwargs['aliasName']
-        if alias_name is None:
-            raise TypeError("Missing 'alias_name' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if connection_string is None and 'connectionString' in kwargs:
-            connection_string = kwargs['connectionString']
-        if connection_string is None:
-            raise TypeError("Missing 'connection_string' argument")
-        if database_id is None and 'databaseId' in kwargs:
-            database_id = kwargs['databaseId']
-        if database_id is None:
-            raise TypeError("Missing 'database_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if fqdn is None:
-            raise TypeError("Missing 'fqdn' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if ip_address is None:
-            raise TypeError("Missing 'ip_address' argument")
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_id is None:
-            raise TypeError("Missing 'key_id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if password is None:
-            raise TypeError("Missing 'password' argument")
-        if rce_private_ip is None and 'rcePrivateIp' in kwargs:
-            rce_private_ip = kwargs['rcePrivateIp']
-        if rce_private_ip is None:
-            raise TypeError("Missing 'rce_private_ip' argument")
-        if secret_compartment_id is None and 'secretCompartmentId' in kwargs:
-            secret_compartment_id = kwargs['secretCompartmentId']
-        if secret_compartment_id is None:
-            raise TypeError("Missing 'secret_compartment_id' argument")
-        if secret_id is None and 'secretId' in kwargs:
-            secret_id = kwargs['secretId']
-        if secret_id is None:
-            raise TypeError("Missing 'secret_id' argument")
-        if session_mode is None and 'sessionMode' in kwargs:
-            session_mode = kwargs['sessionMode']
-        if session_mode is None:
-            raise TypeError("Missing 'session_mode' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if username is None:
-            raise TypeError("Missing 'username' argument")
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-        if vault_id is None:
-            raise TypeError("Missing 'vault_id' argument")
-        if wallet is None:
-            raise TypeError("Missing 'wallet' argument")
-
-        _setter("alias_name", alias_name)
-        _setter("compartment_id", compartment_id)
-        _setter("connection_string", connection_string)
-        _setter("database_id", database_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("fqdn", fqdn)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("ip_address", ip_address)
-        _setter("key_id", key_id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("password", password)
-        _setter("rce_private_ip", rce_private_ip)
-        _setter("secret_compartment_id", secret_compartment_id)
-        _setter("secret_id", secret_id)
-        _setter("session_mode", session_mode)
-        _setter("state", state)
-        _setter("subnet_id", subnet_id)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("username", username)
-        _setter("vault_id", vault_id)
-        _setter("wallet", wallet)
+        pulumi.set(__self__, "alias_name", alias_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_string", connection_string)
+        pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "rce_private_ip", rce_private_ip)
+        pulumi.set(__self__, "secret_compartment_id", secret_compartment_id)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "session_mode", session_mode)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "username", username)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "wallet", wallet)
 
     @property
     @pulumi.getter(name="aliasName")
@@ -2944,29 +1967,10 @@ class GetDatabaseRegistrationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDatabaseRegistrationsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2988,20 +1992,7 @@ class GetDatabaseRegistrationsFilterResult(dict):
 class GetDeploymentBackupsDeploymentBackupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']):
-        GetDeploymentBackupsDeploymentBackupCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -3054,145 +2045,26 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         :param str time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetDeploymentBackupsDeploymentBackupCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backup_type=backup_type,
-            bucket=bucket,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            deployment_id=deployment_id,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_automatic=is_automatic,
-            lifecycle_details=lifecycle_details,
-            namespace=namespace,
-            object=object,
-            ogg_version=ogg_version,
-            size_in_bytes=size_in_bytes,
-            state=state,
-            system_tags=system_tags,
-            time_backup_finished=time_backup_finished,
-            time_created=time_created,
-            time_of_backup=time_of_backup,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backup_type: Optional[str] = None,
-             bucket: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             deployment_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_automatic: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             ogg_version: Optional[str] = None,
-             size_in_bytes: Optional[float] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_backup_finished: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_of_backup: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backup_type is None and 'backupType' in kwargs:
-            backup_type = kwargs['backupType']
-        if backup_type is None:
-            raise TypeError("Missing 'backup_type' argument")
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if deployment_id is None and 'deploymentId' in kwargs:
-            deployment_id = kwargs['deploymentId']
-        if deployment_id is None:
-            raise TypeError("Missing 'deployment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_automatic is None and 'isAutomatic' in kwargs:
-            is_automatic = kwargs['isAutomatic']
-        if is_automatic is None:
-            raise TypeError("Missing 'is_automatic' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if ogg_version is None:
-            raise TypeError("Missing 'ogg_version' argument")
-        if size_in_bytes is None and 'sizeInBytes' in kwargs:
-            size_in_bytes = kwargs['sizeInBytes']
-        if size_in_bytes is None:
-            raise TypeError("Missing 'size_in_bytes' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_backup_finished is None and 'timeBackupFinished' in kwargs:
-            time_backup_finished = kwargs['timeBackupFinished']
-        if time_backup_finished is None:
-            raise TypeError("Missing 'time_backup_finished' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_of_backup is None and 'timeOfBackup' in kwargs:
-            time_of_backup = kwargs['timeOfBackup']
-        if time_of_backup is None:
-            raise TypeError("Missing 'time_of_backup' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("backup_type", backup_type)
-        _setter("bucket", bucket)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("deployment_id", deployment_id)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_automatic", is_automatic)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("namespace", namespace)
-        _setter("object", object)
-        _setter("ogg_version", ogg_version)
-        _setter("size_in_bytes", size_in_bytes)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_backup_finished", time_backup_finished)
-        _setter("time_created", time_created)
-        _setter("time_of_backup", time_of_backup)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_automatic", is_automatic)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_backup_finished", time_backup_finished)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_backup", time_of_backup)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupType")
@@ -3361,29 +2233,10 @@ class GetDeploymentBackupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDeploymentBackupsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3418,51 +2271,12 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
         :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetDeploymentDeploymentDiagnosticDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            diagnostic_state=diagnostic_state,
-            namespace=namespace,
-            object=object,
-            time_diagnostic_end=time_diagnostic_end,
-            time_diagnostic_start=time_diagnostic_start,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             diagnostic_state: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             time_diagnostic_end: Optional[str] = None,
-             time_diagnostic_start: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if diagnostic_state is None and 'diagnosticState' in kwargs:
-            diagnostic_state = kwargs['diagnosticState']
-        if diagnostic_state is None:
-            raise TypeError("Missing 'diagnostic_state' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if time_diagnostic_end is None and 'timeDiagnosticEnd' in kwargs:
-            time_diagnostic_end = kwargs['timeDiagnosticEnd']
-        if time_diagnostic_end is None:
-            raise TypeError("Missing 'time_diagnostic_end' argument")
-        if time_diagnostic_start is None and 'timeDiagnosticStart' in kwargs:
-            time_diagnostic_start = kwargs['timeDiagnosticStart']
-        if time_diagnostic_start is None:
-            raise TypeError("Missing 'time_diagnostic_start' argument")
-
-        _setter("bucket", bucket)
-        _setter("diagnostic_state", diagnostic_state)
-        _setter("namespace", namespace)
-        _setter("object", object)
-        _setter("time_diagnostic_end", time_diagnostic_end)
-        _setter("time_diagnostic_start", time_diagnostic_start)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
@@ -3528,50 +2342,11 @@ class GetDeploymentMaintenanceConfigurationResult(dict):
         :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         """
-        GetDeploymentMaintenanceConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bundle_release_upgrade_period_in_days=bundle_release_upgrade_period_in_days,
-            interim_release_upgrade_period_in_days=interim_release_upgrade_period_in_days,
-            is_interim_release_auto_upgrade_enabled=is_interim_release_auto_upgrade_enabled,
-            major_release_upgrade_period_in_days=major_release_upgrade_period_in_days,
-            security_patch_upgrade_period_in_days=security_patch_upgrade_period_in_days,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bundle_release_upgrade_period_in_days: Optional[int] = None,
-             interim_release_upgrade_period_in_days: Optional[int] = None,
-             is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
-             major_release_upgrade_period_in_days: Optional[int] = None,
-             security_patch_upgrade_period_in_days: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bundle_release_upgrade_period_in_days is None and 'bundleReleaseUpgradePeriodInDays' in kwargs:
-            bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
-        if bundle_release_upgrade_period_in_days is None:
-            raise TypeError("Missing 'bundle_release_upgrade_period_in_days' argument")
-        if interim_release_upgrade_period_in_days is None and 'interimReleaseUpgradePeriodInDays' in kwargs:
-            interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
-        if interim_release_upgrade_period_in_days is None:
-            raise TypeError("Missing 'interim_release_upgrade_period_in_days' argument")
-        if is_interim_release_auto_upgrade_enabled is None and 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
-            is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
-        if is_interim_release_auto_upgrade_enabled is None:
-            raise TypeError("Missing 'is_interim_release_auto_upgrade_enabled' argument")
-        if major_release_upgrade_period_in_days is None and 'majorReleaseUpgradePeriodInDays' in kwargs:
-            major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
-        if major_release_upgrade_period_in_days is None:
-            raise TypeError("Missing 'major_release_upgrade_period_in_days' argument")
-        if security_patch_upgrade_period_in_days is None and 'securityPatchUpgradePeriodInDays' in kwargs:
-            security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
-        if security_patch_upgrade_period_in_days is None:
-            raise TypeError("Missing 'security_patch_upgrade_period_in_days' argument")
-
-        _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
-        _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
-        _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
-        _setter("major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
-        _setter("security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
@@ -3623,27 +2398,8 @@ class GetDeploymentMaintenanceWindowResult(dict):
         :param str day: Days of the week.
         :param int start_hour: Start hour for maintenance period. Hour is in UTC.
         """
-        GetDeploymentMaintenanceWindowResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            day=day,
-            start_hour=start_hour,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             day: Optional[str] = None,
-             start_hour: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if day is None:
-            raise TypeError("Missing 'day' argument")
-        if start_hour is None and 'startHour' in kwargs:
-            start_hour = kwargs['startHour']
-        if start_hour is None:
-            raise TypeError("Missing 'start_hour' argument")
-
-        _setter("day", day)
-        _setter("start_hour", start_hour)
+        pulumi.set(__self__, "day", day)
+        pulumi.set(__self__, "start_hour", start_hour)
 
     @property
     @pulumi.getter
@@ -3683,74 +2439,15 @@ class GetDeploymentOggDataResult(dict):
         :param str ogg_version: Version of OGG
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        GetDeploymentOggDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            admin_password=admin_password,
-            admin_username=admin_username,
-            certificate=certificate,
-            credential_store=credential_store,
-            deployment_name=deployment_name,
-            identity_domain_id=identity_domain_id,
-            key=key,
-            ogg_version=ogg_version,
-            password_secret_id=password_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             admin_password: Optional[str] = None,
-             admin_username: Optional[str] = None,
-             certificate: Optional[str] = None,
-             credential_store: Optional[str] = None,
-             deployment_name: Optional[str] = None,
-             identity_domain_id: Optional[str] = None,
-             key: Optional[str] = None,
-             ogg_version: Optional[str] = None,
-             password_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if admin_password is None and 'adminPassword' in kwargs:
-            admin_password = kwargs['adminPassword']
-        if admin_password is None:
-            raise TypeError("Missing 'admin_password' argument")
-        if admin_username is None and 'adminUsername' in kwargs:
-            admin_username = kwargs['adminUsername']
-        if admin_username is None:
-            raise TypeError("Missing 'admin_username' argument")
-        if certificate is None:
-            raise TypeError("Missing 'certificate' argument")
-        if credential_store is None and 'credentialStore' in kwargs:
-            credential_store = kwargs['credentialStore']
-        if credential_store is None:
-            raise TypeError("Missing 'credential_store' argument")
-        if deployment_name is None and 'deploymentName' in kwargs:
-            deployment_name = kwargs['deploymentName']
-        if deployment_name is None:
-            raise TypeError("Missing 'deployment_name' argument")
-        if identity_domain_id is None and 'identityDomainId' in kwargs:
-            identity_domain_id = kwargs['identityDomainId']
-        if identity_domain_id is None:
-            raise TypeError("Missing 'identity_domain_id' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if ogg_version is None:
-            raise TypeError("Missing 'ogg_version' argument")
-        if password_secret_id is None and 'passwordSecretId' in kwargs:
-            password_secret_id = kwargs['passwordSecretId']
-        if password_secret_id is None:
-            raise TypeError("Missing 'password_secret_id' argument")
-
-        _setter("admin_password", admin_password)
-        _setter("admin_username", admin_username)
-        _setter("certificate", certificate)
-        _setter("credential_store", credential_store)
-        _setter("deployment_name", deployment_name)
-        _setter("identity_domain_id", identity_domain_id)
-        _setter("key", key)
-        _setter("ogg_version", ogg_version)
-        _setter("password_secret_id", password_secret_id)
+        pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "admin_username", admin_username)
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "credential_store", credential_store)
+        pulumi.set(__self__, "deployment_name", deployment_name)
+        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -3836,55 +2533,12 @@ class GetDeploymentTypeItemResult(dict):
         :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
-        GetDeploymentTypeItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            category=category,
-            connection_types=connection_types,
-            deployment_type=deployment_type,
-            display_name=display_name,
-            source_technologies=source_technologies,
-            target_technologies=target_technologies,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             category: Optional[str] = None,
-             connection_types: Optional[Sequence[str]] = None,
-             deployment_type: Optional[str] = None,
-             display_name: Optional[str] = None,
-             source_technologies: Optional[Sequence[str]] = None,
-             target_technologies: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if category is None:
-            raise TypeError("Missing 'category' argument")
-        if connection_types is None and 'connectionTypes' in kwargs:
-            connection_types = kwargs['connectionTypes']
-        if connection_types is None:
-            raise TypeError("Missing 'connection_types' argument")
-        if deployment_type is None and 'deploymentType' in kwargs:
-            deployment_type = kwargs['deploymentType']
-        if deployment_type is None:
-            raise TypeError("Missing 'deployment_type' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if source_technologies is None and 'sourceTechnologies' in kwargs:
-            source_technologies = kwargs['sourceTechnologies']
-        if source_technologies is None:
-            raise TypeError("Missing 'source_technologies' argument")
-        if target_technologies is None and 'targetTechnologies' in kwargs:
-            target_technologies = kwargs['targetTechnologies']
-        if target_technologies is None:
-            raise TypeError("Missing 'target_technologies' argument")
-
-        _setter("category", category)
-        _setter("connection_types", connection_types)
-        _setter("deployment_type", deployment_type)
-        _setter("display_name", display_name)
-        _setter("source_technologies", source_technologies)
-        _setter("target_technologies", target_technologies)
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "connection_types", connection_types)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "source_technologies", source_technologies)
+        pulumi.set(__self__, "target_technologies", target_technologies)
 
     @property
     @pulumi.getter
@@ -3942,20 +2596,7 @@ class GetDeploymentTypesDeploymentTypeCollectionResult(dict):
         """
         :param Sequence['GetDeploymentTypesDeploymentTypeCollectionItemArgs'] items: Array of DeploymentTypeSummary
         """
-        GetDeploymentTypesDeploymentTypeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -3985,62 +2626,13 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
-        GetDeploymentTypesDeploymentTypeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            category=category,
-            connection_types=connection_types,
-            deployment_type=deployment_type,
-            display_name=display_name,
-            ogg_version=ogg_version,
-            source_technologies=source_technologies,
-            target_technologies=target_technologies,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             category: Optional[str] = None,
-             connection_types: Optional[Sequence[str]] = None,
-             deployment_type: Optional[str] = None,
-             display_name: Optional[str] = None,
-             ogg_version: Optional[str] = None,
-             source_technologies: Optional[Sequence[str]] = None,
-             target_technologies: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if category is None:
-            raise TypeError("Missing 'category' argument")
-        if connection_types is None and 'connectionTypes' in kwargs:
-            connection_types = kwargs['connectionTypes']
-        if connection_types is None:
-            raise TypeError("Missing 'connection_types' argument")
-        if deployment_type is None and 'deploymentType' in kwargs:
-            deployment_type = kwargs['deploymentType']
-        if deployment_type is None:
-            raise TypeError("Missing 'deployment_type' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if ogg_version is None:
-            raise TypeError("Missing 'ogg_version' argument")
-        if source_technologies is None and 'sourceTechnologies' in kwargs:
-            source_technologies = kwargs['sourceTechnologies']
-        if source_technologies is None:
-            raise TypeError("Missing 'source_technologies' argument")
-        if target_technologies is None and 'targetTechnologies' in kwargs:
-            target_technologies = kwargs['targetTechnologies']
-        if target_technologies is None:
-            raise TypeError("Missing 'target_technologies' argument")
-
-        _setter("category", category)
-        _setter("connection_types", connection_types)
-        _setter("deployment_type", deployment_type)
-        _setter("display_name", display_name)
-        _setter("ogg_version", ogg_version)
-        _setter("source_technologies", source_technologies)
-        _setter("target_technologies", target_technologies)
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "connection_types", connection_types)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "source_technologies", source_technologies)
+        pulumi.set(__self__, "target_technologies", target_technologies)
 
     @property
     @pulumi.getter
@@ -4105,29 +2697,10 @@ class GetDeploymentTypesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDeploymentTypesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4149,20 +2722,7 @@ class GetDeploymentTypesFilterResult(dict):
 class GetDeploymentUpgradesDeploymentUpgradeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']):
-        GetDeploymentUpgradesDeploymentUpgradeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -4235,212 +2795,35 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         :param str time_started: The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            deployment_id=deployment_id,
-            deployment_upgrade_type=deployment_upgrade_type,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_cancel_allowed=is_cancel_allowed,
-            is_reschedule_allowed=is_reschedule_allowed,
-            is_rollback_allowed=is_rollback_allowed,
-            is_security_fix=is_security_fix,
-            is_snoozed=is_snoozed,
-            lifecycle_details=lifecycle_details,
-            lifecycle_sub_state=lifecycle_sub_state,
-            ogg_version=ogg_version,
-            previous_ogg_version=previous_ogg_version,
-            release_type=release_type,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_finished=time_finished,
-            time_ogg_version_supported_until=time_ogg_version_supported_until,
-            time_released=time_released,
-            time_schedule=time_schedule,
-            time_schedule_max=time_schedule_max,
-            time_snoozed_until=time_snoozed_until,
-            time_started=time_started,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             deployment_id: Optional[str] = None,
-             deployment_upgrade_type: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_cancel_allowed: Optional[bool] = None,
-             is_reschedule_allowed: Optional[bool] = None,
-             is_rollback_allowed: Optional[bool] = None,
-             is_security_fix: Optional[bool] = None,
-             is_snoozed: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             lifecycle_sub_state: Optional[str] = None,
-             ogg_version: Optional[str] = None,
-             previous_ogg_version: Optional[str] = None,
-             release_type: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_finished: Optional[str] = None,
-             time_ogg_version_supported_until: Optional[str] = None,
-             time_released: Optional[str] = None,
-             time_schedule: Optional[str] = None,
-             time_schedule_max: Optional[str] = None,
-             time_snoozed_until: Optional[str] = None,
-             time_started: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if deployment_id is None and 'deploymentId' in kwargs:
-            deployment_id = kwargs['deploymentId']
-        if deployment_id is None:
-            raise TypeError("Missing 'deployment_id' argument")
-        if deployment_upgrade_type is None and 'deploymentUpgradeType' in kwargs:
-            deployment_upgrade_type = kwargs['deploymentUpgradeType']
-        if deployment_upgrade_type is None:
-            raise TypeError("Missing 'deployment_upgrade_type' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_cancel_allowed is None and 'isCancelAllowed' in kwargs:
-            is_cancel_allowed = kwargs['isCancelAllowed']
-        if is_cancel_allowed is None:
-            raise TypeError("Missing 'is_cancel_allowed' argument")
-        if is_reschedule_allowed is None and 'isRescheduleAllowed' in kwargs:
-            is_reschedule_allowed = kwargs['isRescheduleAllowed']
-        if is_reschedule_allowed is None:
-            raise TypeError("Missing 'is_reschedule_allowed' argument")
-        if is_rollback_allowed is None and 'isRollbackAllowed' in kwargs:
-            is_rollback_allowed = kwargs['isRollbackAllowed']
-        if is_rollback_allowed is None:
-            raise TypeError("Missing 'is_rollback_allowed' argument")
-        if is_security_fix is None and 'isSecurityFix' in kwargs:
-            is_security_fix = kwargs['isSecurityFix']
-        if is_security_fix is None:
-            raise TypeError("Missing 'is_security_fix' argument")
-        if is_snoozed is None and 'isSnoozed' in kwargs:
-            is_snoozed = kwargs['isSnoozed']
-        if is_snoozed is None:
-            raise TypeError("Missing 'is_snoozed' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if lifecycle_sub_state is None and 'lifecycleSubState' in kwargs:
-            lifecycle_sub_state = kwargs['lifecycleSubState']
-        if lifecycle_sub_state is None:
-            raise TypeError("Missing 'lifecycle_sub_state' argument")
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if ogg_version is None:
-            raise TypeError("Missing 'ogg_version' argument")
-        if previous_ogg_version is None and 'previousOggVersion' in kwargs:
-            previous_ogg_version = kwargs['previousOggVersion']
-        if previous_ogg_version is None:
-            raise TypeError("Missing 'previous_ogg_version' argument")
-        if release_type is None and 'releaseType' in kwargs:
-            release_type = kwargs['releaseType']
-        if release_type is None:
-            raise TypeError("Missing 'release_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_finished is None and 'timeFinished' in kwargs:
-            time_finished = kwargs['timeFinished']
-        if time_finished is None:
-            raise TypeError("Missing 'time_finished' argument")
-        if time_ogg_version_supported_until is None and 'timeOggVersionSupportedUntil' in kwargs:
-            time_ogg_version_supported_until = kwargs['timeOggVersionSupportedUntil']
-        if time_ogg_version_supported_until is None:
-            raise TypeError("Missing 'time_ogg_version_supported_until' argument")
-        if time_released is None and 'timeReleased' in kwargs:
-            time_released = kwargs['timeReleased']
-        if time_released is None:
-            raise TypeError("Missing 'time_released' argument")
-        if time_schedule is None and 'timeSchedule' in kwargs:
-            time_schedule = kwargs['timeSchedule']
-        if time_schedule is None:
-            raise TypeError("Missing 'time_schedule' argument")
-        if time_schedule_max is None and 'timeScheduleMax' in kwargs:
-            time_schedule_max = kwargs['timeScheduleMax']
-        if time_schedule_max is None:
-            raise TypeError("Missing 'time_schedule_max' argument")
-        if time_snoozed_until is None and 'timeSnoozedUntil' in kwargs:
-            time_snoozed_until = kwargs['timeSnoozedUntil']
-        if time_snoozed_until is None:
-            raise TypeError("Missing 'time_snoozed_until' argument")
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if time_started is None:
-            raise TypeError("Missing 'time_started' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("deployment_id", deployment_id)
-        _setter("deployment_upgrade_type", deployment_upgrade_type)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_cancel_allowed", is_cancel_allowed)
-        _setter("is_reschedule_allowed", is_reschedule_allowed)
-        _setter("is_rollback_allowed", is_rollback_allowed)
-        _setter("is_security_fix", is_security_fix)
-        _setter("is_snoozed", is_snoozed)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("lifecycle_sub_state", lifecycle_sub_state)
-        _setter("ogg_version", ogg_version)
-        _setter("previous_ogg_version", previous_ogg_version)
-        _setter("release_type", release_type)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_finished", time_finished)
-        _setter("time_ogg_version_supported_until", time_ogg_version_supported_until)
-        _setter("time_released", time_released)
-        _setter("time_schedule", time_schedule)
-        _setter("time_schedule_max", time_schedule_max)
-        _setter("time_snoozed_until", time_snoozed_until)
-        _setter("time_started", time_started)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "deployment_upgrade_type", deployment_upgrade_type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_cancel_allowed", is_cancel_allowed)
+        pulumi.set(__self__, "is_reschedule_allowed", is_reschedule_allowed)
+        pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
+        pulumi.set(__self__, "is_security_fix", is_security_fix)
+        pulumi.set(__self__, "is_snoozed", is_snoozed)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "previous_ogg_version", previous_ogg_version)
+        pulumi.set(__self__, "release_type", release_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+        pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "time_schedule", time_schedule)
+        pulumi.set(__self__, "time_schedule_max", time_schedule_max)
+        pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4683,29 +3066,10 @@ class GetDeploymentUpgradesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDeploymentUpgradesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4730,20 +3094,7 @@ class GetDeploymentVersionsDeploymentVersionCollectionResult(dict):
         """
         :param Sequence['GetDeploymentVersionsDeploymentVersionCollectionItemArgs'] items: Array of DeploymentVersionSummary.
         """
-        GetDeploymentVersionsDeploymentVersionCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -4771,57 +3122,12 @@ class GetDeploymentVersionsDeploymentVersionCollectionItemResult(dict):
         :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetDeploymentVersionsDeploymentVersionCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            deployment_type=deployment_type,
-            is_security_fix=is_security_fix,
-            ogg_version=ogg_version,
-            release_type=release_type,
-            time_released=time_released,
-            time_supported_until=time_supported_until,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             deployment_type: Optional[str] = None,
-             is_security_fix: Optional[bool] = None,
-             ogg_version: Optional[str] = None,
-             release_type: Optional[str] = None,
-             time_released: Optional[str] = None,
-             time_supported_until: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if deployment_type is None and 'deploymentType' in kwargs:
-            deployment_type = kwargs['deploymentType']
-        if deployment_type is None:
-            raise TypeError("Missing 'deployment_type' argument")
-        if is_security_fix is None and 'isSecurityFix' in kwargs:
-            is_security_fix = kwargs['isSecurityFix']
-        if is_security_fix is None:
-            raise TypeError("Missing 'is_security_fix' argument")
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if ogg_version is None:
-            raise TypeError("Missing 'ogg_version' argument")
-        if release_type is None and 'releaseType' in kwargs:
-            release_type = kwargs['releaseType']
-        if release_type is None:
-            raise TypeError("Missing 'release_type' argument")
-        if time_released is None and 'timeReleased' in kwargs:
-            time_released = kwargs['timeReleased']
-        if time_released is None:
-            raise TypeError("Missing 'time_released' argument")
-        if time_supported_until is None and 'timeSupportedUntil' in kwargs:
-            time_supported_until = kwargs['timeSupportedUntil']
-        if time_supported_until is None:
-            raise TypeError("Missing 'time_supported_until' argument")
-
-        _setter("deployment_type", deployment_type)
-        _setter("is_security_fix", is_security_fix)
-        _setter("ogg_version", ogg_version)
-        _setter("release_type", release_type)
-        _setter("time_released", time_released)
-        _setter("time_supported_until", time_supported_until)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "is_security_fix", is_security_fix)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "release_type", release_type)
+        pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "time_supported_until", time_supported_until)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -4878,29 +3184,10 @@ class GetDeploymentVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDeploymentVersionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4922,20 +3209,7 @@ class GetDeploymentVersionsFilterResult(dict):
 class GetDeploymentsDeploymentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']):
-        GetDeploymentsDeploymentCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5022,266 +3296,43 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetDeploymentsDeploymentCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            cpu_core_count=cpu_core_count,
-            defined_tags=defined_tags,
-            deployment_backup_id=deployment_backup_id,
-            deployment_diagnostic_datas=deployment_diagnostic_datas,
-            deployment_type=deployment_type,
-            deployment_url=deployment_url,
-            description=description,
-            display_name=display_name,
-            fqdn=fqdn,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_auto_scaling_enabled=is_auto_scaling_enabled,
-            is_healthy=is_healthy,
-            is_latest_version=is_latest_version,
-            is_public=is_public,
-            is_storage_utilization_limit_exceeded=is_storage_utilization_limit_exceeded,
-            license_model=license_model,
-            lifecycle_details=lifecycle_details,
-            lifecycle_sub_state=lifecycle_sub_state,
-            maintenance_configurations=maintenance_configurations,
-            maintenance_windows=maintenance_windows,
-            next_maintenance_action_type=next_maintenance_action_type,
-            next_maintenance_description=next_maintenance_description,
-            nsg_ids=nsg_ids,
-            ogg_datas=ogg_datas,
-            private_ip_address=private_ip_address,
-            public_ip_address=public_ip_address,
-            state=state,
-            storage_utilization_in_bytes=storage_utilization_in_bytes,
-            subnet_id=subnet_id,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_of_next_maintenance=time_of_next_maintenance,
-            time_ogg_version_supported_until=time_ogg_version_supported_until,
-            time_updated=time_updated,
-            time_upgrade_required=time_upgrade_required,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             cpu_core_count: Optional[int] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             deployment_backup_id: Optional[str] = None,
-             deployment_diagnostic_datas: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult']] = None,
-             deployment_type: Optional[str] = None,
-             deployment_url: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             fqdn: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_auto_scaling_enabled: Optional[bool] = None,
-             is_healthy: Optional[bool] = None,
-             is_latest_version: Optional[bool] = None,
-             is_public: Optional[bool] = None,
-             is_storage_utilization_limit_exceeded: Optional[bool] = None,
-             license_model: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             lifecycle_sub_state: Optional[str] = None,
-             maintenance_configurations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult']] = None,
-             maintenance_windows: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult']] = None,
-             next_maintenance_action_type: Optional[str] = None,
-             next_maintenance_description: Optional[str] = None,
-             nsg_ids: Optional[Sequence[str]] = None,
-             ogg_datas: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult']] = None,
-             private_ip_address: Optional[str] = None,
-             public_ip_address: Optional[str] = None,
-             state: Optional[str] = None,
-             storage_utilization_in_bytes: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_of_next_maintenance: Optional[str] = None,
-             time_ogg_version_supported_until: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             time_upgrade_required: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
-            cpu_core_count = kwargs['cpuCoreCount']
-        if cpu_core_count is None:
-            raise TypeError("Missing 'cpu_core_count' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if deployment_backup_id is None and 'deploymentBackupId' in kwargs:
-            deployment_backup_id = kwargs['deploymentBackupId']
-        if deployment_backup_id is None:
-            raise TypeError("Missing 'deployment_backup_id' argument")
-        if deployment_diagnostic_datas is None and 'deploymentDiagnosticDatas' in kwargs:
-            deployment_diagnostic_datas = kwargs['deploymentDiagnosticDatas']
-        if deployment_diagnostic_datas is None:
-            raise TypeError("Missing 'deployment_diagnostic_datas' argument")
-        if deployment_type is None and 'deploymentType' in kwargs:
-            deployment_type = kwargs['deploymentType']
-        if deployment_type is None:
-            raise TypeError("Missing 'deployment_type' argument")
-        if deployment_url is None and 'deploymentUrl' in kwargs:
-            deployment_url = kwargs['deploymentUrl']
-        if deployment_url is None:
-            raise TypeError("Missing 'deployment_url' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if fqdn is None:
-            raise TypeError("Missing 'fqdn' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_auto_scaling_enabled is None and 'isAutoScalingEnabled' in kwargs:
-            is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
-        if is_auto_scaling_enabled is None:
-            raise TypeError("Missing 'is_auto_scaling_enabled' argument")
-        if is_healthy is None and 'isHealthy' in kwargs:
-            is_healthy = kwargs['isHealthy']
-        if is_healthy is None:
-            raise TypeError("Missing 'is_healthy' argument")
-        if is_latest_version is None and 'isLatestVersion' in kwargs:
-            is_latest_version = kwargs['isLatestVersion']
-        if is_latest_version is None:
-            raise TypeError("Missing 'is_latest_version' argument")
-        if is_public is None and 'isPublic' in kwargs:
-            is_public = kwargs['isPublic']
-        if is_public is None:
-            raise TypeError("Missing 'is_public' argument")
-        if is_storage_utilization_limit_exceeded is None and 'isStorageUtilizationLimitExceeded' in kwargs:
-            is_storage_utilization_limit_exceeded = kwargs['isStorageUtilizationLimitExceeded']
-        if is_storage_utilization_limit_exceeded is None:
-            raise TypeError("Missing 'is_storage_utilization_limit_exceeded' argument")
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-        if license_model is None:
-            raise TypeError("Missing 'license_model' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if lifecycle_sub_state is None and 'lifecycleSubState' in kwargs:
-            lifecycle_sub_state = kwargs['lifecycleSubState']
-        if lifecycle_sub_state is None:
-            raise TypeError("Missing 'lifecycle_sub_state' argument")
-        if maintenance_configurations is None and 'maintenanceConfigurations' in kwargs:
-            maintenance_configurations = kwargs['maintenanceConfigurations']
-        if maintenance_configurations is None:
-            raise TypeError("Missing 'maintenance_configurations' argument")
-        if maintenance_windows is None and 'maintenanceWindows' in kwargs:
-            maintenance_windows = kwargs['maintenanceWindows']
-        if maintenance_windows is None:
-            raise TypeError("Missing 'maintenance_windows' argument")
-        if next_maintenance_action_type is None and 'nextMaintenanceActionType' in kwargs:
-            next_maintenance_action_type = kwargs['nextMaintenanceActionType']
-        if next_maintenance_action_type is None:
-            raise TypeError("Missing 'next_maintenance_action_type' argument")
-        if next_maintenance_description is None and 'nextMaintenanceDescription' in kwargs:
-            next_maintenance_description = kwargs['nextMaintenanceDescription']
-        if next_maintenance_description is None:
-            raise TypeError("Missing 'next_maintenance_description' argument")
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if nsg_ids is None:
-            raise TypeError("Missing 'nsg_ids' argument")
-        if ogg_datas is None and 'oggDatas' in kwargs:
-            ogg_datas = kwargs['oggDatas']
-        if ogg_datas is None:
-            raise TypeError("Missing 'ogg_datas' argument")
-        if private_ip_address is None and 'privateIpAddress' in kwargs:
-            private_ip_address = kwargs['privateIpAddress']
-        if private_ip_address is None:
-            raise TypeError("Missing 'private_ip_address' argument")
-        if public_ip_address is None and 'publicIpAddress' in kwargs:
-            public_ip_address = kwargs['publicIpAddress']
-        if public_ip_address is None:
-            raise TypeError("Missing 'public_ip_address' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if storage_utilization_in_bytes is None and 'storageUtilizationInBytes' in kwargs:
-            storage_utilization_in_bytes = kwargs['storageUtilizationInBytes']
-        if storage_utilization_in_bytes is None:
-            raise TypeError("Missing 'storage_utilization_in_bytes' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_of_next_maintenance is None and 'timeOfNextMaintenance' in kwargs:
-            time_of_next_maintenance = kwargs['timeOfNextMaintenance']
-        if time_of_next_maintenance is None:
-            raise TypeError("Missing 'time_of_next_maintenance' argument")
-        if time_ogg_version_supported_until is None and 'timeOggVersionSupportedUntil' in kwargs:
-            time_ogg_version_supported_until = kwargs['timeOggVersionSupportedUntil']
-        if time_ogg_version_supported_until is None:
-            raise TypeError("Missing 'time_ogg_version_supported_until' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if time_upgrade_required is None and 'timeUpgradeRequired' in kwargs:
-            time_upgrade_required = kwargs['timeUpgradeRequired']
-        if time_upgrade_required is None:
-            raise TypeError("Missing 'time_upgrade_required' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("cpu_core_count", cpu_core_count)
-        _setter("defined_tags", defined_tags)
-        _setter("deployment_backup_id", deployment_backup_id)
-        _setter("deployment_diagnostic_datas", deployment_diagnostic_datas)
-        _setter("deployment_type", deployment_type)
-        _setter("deployment_url", deployment_url)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("fqdn", fqdn)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_auto_scaling_enabled", is_auto_scaling_enabled)
-        _setter("is_healthy", is_healthy)
-        _setter("is_latest_version", is_latest_version)
-        _setter("is_public", is_public)
-        _setter("is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
-        _setter("license_model", license_model)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("lifecycle_sub_state", lifecycle_sub_state)
-        _setter("maintenance_configurations", maintenance_configurations)
-        _setter("maintenance_windows", maintenance_windows)
-        _setter("next_maintenance_action_type", next_maintenance_action_type)
-        _setter("next_maintenance_description", next_maintenance_description)
-        _setter("nsg_ids", nsg_ids)
-        _setter("ogg_datas", ogg_datas)
-        _setter("private_ip_address", private_ip_address)
-        _setter("public_ip_address", public_ip_address)
-        _setter("state", state)
-        _setter("storage_utilization_in_bytes", storage_utilization_in_bytes)
-        _setter("subnet_id", subnet_id)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_of_next_maintenance", time_of_next_maintenance)
-        _setter("time_ogg_version_supported_until", time_ogg_version_supported_until)
-        _setter("time_updated", time_updated)
-        _setter("time_upgrade_required", time_upgrade_required)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
+        pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "deployment_url", deployment_url)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        pulumi.set(__self__, "is_healthy", is_healthy)
+        pulumi.set(__self__, "is_latest_version", is_latest_version)
+        pulumi.set(__self__, "is_public", is_public)
+        pulumi.set(__self__, "is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
+        pulumi.set(__self__, "license_model", license_model)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
+        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
+        pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "ogg_datas", ogg_datas)
+        pulumi.set(__self__, "private_ip_address", private_ip_address)
+        pulumi.set(__self__, "public_ip_address", public_ip_address)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_utilization_in_bytes", storage_utilization_in_bytes)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
+        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5597,51 +3648,12 @@ class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict)
         :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            diagnostic_state=diagnostic_state,
-            namespace=namespace,
-            object=object,
-            time_diagnostic_end=time_diagnostic_end,
-            time_diagnostic_start=time_diagnostic_start,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             diagnostic_state: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             time_diagnostic_end: Optional[str] = None,
-             time_diagnostic_start: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if diagnostic_state is None and 'diagnosticState' in kwargs:
-            diagnostic_state = kwargs['diagnosticState']
-        if diagnostic_state is None:
-            raise TypeError("Missing 'diagnostic_state' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if time_diagnostic_end is None and 'timeDiagnosticEnd' in kwargs:
-            time_diagnostic_end = kwargs['timeDiagnosticEnd']
-        if time_diagnostic_end is None:
-            raise TypeError("Missing 'time_diagnostic_end' argument")
-        if time_diagnostic_start is None and 'timeDiagnosticStart' in kwargs:
-            time_diagnostic_start = kwargs['timeDiagnosticStart']
-        if time_diagnostic_start is None:
-            raise TypeError("Missing 'time_diagnostic_start' argument")
-
-        _setter("bucket", bucket)
-        _setter("diagnostic_state", diagnostic_state)
-        _setter("namespace", namespace)
-        _setter("object", object)
-        _setter("time_diagnostic_end", time_diagnostic_end)
-        _setter("time_diagnostic_start", time_diagnostic_start)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
@@ -5707,50 +3719,11 @@ class GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult(dict)
         :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         """
-        GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bundle_release_upgrade_period_in_days=bundle_release_upgrade_period_in_days,
-            interim_release_upgrade_period_in_days=interim_release_upgrade_period_in_days,
-            is_interim_release_auto_upgrade_enabled=is_interim_release_auto_upgrade_enabled,
-            major_release_upgrade_period_in_days=major_release_upgrade_period_in_days,
-            security_patch_upgrade_period_in_days=security_patch_upgrade_period_in_days,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bundle_release_upgrade_period_in_days: Optional[int] = None,
-             interim_release_upgrade_period_in_days: Optional[int] = None,
-             is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
-             major_release_upgrade_period_in_days: Optional[int] = None,
-             security_patch_upgrade_period_in_days: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bundle_release_upgrade_period_in_days is None and 'bundleReleaseUpgradePeriodInDays' in kwargs:
-            bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
-        if bundle_release_upgrade_period_in_days is None:
-            raise TypeError("Missing 'bundle_release_upgrade_period_in_days' argument")
-        if interim_release_upgrade_period_in_days is None and 'interimReleaseUpgradePeriodInDays' in kwargs:
-            interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
-        if interim_release_upgrade_period_in_days is None:
-            raise TypeError("Missing 'interim_release_upgrade_period_in_days' argument")
-        if is_interim_release_auto_upgrade_enabled is None and 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
-            is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
-        if is_interim_release_auto_upgrade_enabled is None:
-            raise TypeError("Missing 'is_interim_release_auto_upgrade_enabled' argument")
-        if major_release_upgrade_period_in_days is None and 'majorReleaseUpgradePeriodInDays' in kwargs:
-            major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
-        if major_release_upgrade_period_in_days is None:
-            raise TypeError("Missing 'major_release_upgrade_period_in_days' argument")
-        if security_patch_upgrade_period_in_days is None and 'securityPatchUpgradePeriodInDays' in kwargs:
-            security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
-        if security_patch_upgrade_period_in_days is None:
-            raise TypeError("Missing 'security_patch_upgrade_period_in_days' argument")
-
-        _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
-        _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
-        _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
-        _setter("major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
-        _setter("security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
@@ -5802,27 +3775,8 @@ class GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult(dict):
         :param str day: Days of the week.
         :param int start_hour: Start hour for maintenance period. Hour is in UTC.
         """
-        GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            day=day,
-            start_hour=start_hour,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             day: Optional[str] = None,
-             start_hour: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if day is None:
-            raise TypeError("Missing 'day' argument")
-        if start_hour is None and 'startHour' in kwargs:
-            start_hour = kwargs['startHour']
-        if start_hour is None:
-            raise TypeError("Missing 'start_hour' argument")
-
-        _setter("day", day)
-        _setter("start_hour", start_hour)
+        pulumi.set(__self__, "day", day)
+        pulumi.set(__self__, "start_hour", start_hour)
 
     @property
     @pulumi.getter
@@ -5862,74 +3816,15 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         :param str ogg_version: Version of OGG
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        GetDeploymentsDeploymentCollectionItemOggDataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            admin_password=admin_password,
-            admin_username=admin_username,
-            certificate=certificate,
-            credential_store=credential_store,
-            deployment_name=deployment_name,
-            identity_domain_id=identity_domain_id,
-            key=key,
-            ogg_version=ogg_version,
-            password_secret_id=password_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             admin_password: Optional[str] = None,
-             admin_username: Optional[str] = None,
-             certificate: Optional[str] = None,
-             credential_store: Optional[str] = None,
-             deployment_name: Optional[str] = None,
-             identity_domain_id: Optional[str] = None,
-             key: Optional[str] = None,
-             ogg_version: Optional[str] = None,
-             password_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if admin_password is None and 'adminPassword' in kwargs:
-            admin_password = kwargs['adminPassword']
-        if admin_password is None:
-            raise TypeError("Missing 'admin_password' argument")
-        if admin_username is None and 'adminUsername' in kwargs:
-            admin_username = kwargs['adminUsername']
-        if admin_username is None:
-            raise TypeError("Missing 'admin_username' argument")
-        if certificate is None:
-            raise TypeError("Missing 'certificate' argument")
-        if credential_store is None and 'credentialStore' in kwargs:
-            credential_store = kwargs['credentialStore']
-        if credential_store is None:
-            raise TypeError("Missing 'credential_store' argument")
-        if deployment_name is None and 'deploymentName' in kwargs:
-            deployment_name = kwargs['deploymentName']
-        if deployment_name is None:
-            raise TypeError("Missing 'deployment_name' argument")
-        if identity_domain_id is None and 'identityDomainId' in kwargs:
-            identity_domain_id = kwargs['identityDomainId']
-        if identity_domain_id is None:
-            raise TypeError("Missing 'identity_domain_id' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if ogg_version is None:
-            raise TypeError("Missing 'ogg_version' argument")
-        if password_secret_id is None and 'passwordSecretId' in kwargs:
-            password_secret_id = kwargs['passwordSecretId']
-        if password_secret_id is None:
-            raise TypeError("Missing 'password_secret_id' argument")
-
-        _setter("admin_password", admin_password)
-        _setter("admin_username", admin_username)
-        _setter("certificate", certificate)
-        _setter("credential_store", credential_store)
-        _setter("deployment_name", deployment_name)
-        _setter("identity_domain_id", identity_domain_id)
-        _setter("key", key)
-        _setter("ogg_version", ogg_version)
-        _setter("password_secret_id", password_secret_id)
+        pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "admin_username", admin_username)
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "credential_store", credential_store)
+        pulumi.set(__self__, "deployment_name", deployment_name)
+        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "ogg_version", ogg_version)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -6004,29 +3899,10 @@ class GetDeploymentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDeploymentsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6055,34 +3931,9 @@ class GetMessageItemResult(dict):
         :param str deployment_message_status: The deployment Message Status.
         :param str id: The deployment Message Id.
         """
-        GetMessageItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            deployment_message=deployment_message,
-            deployment_message_status=deployment_message_status,
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             deployment_message: Optional[str] = None,
-             deployment_message_status: Optional[str] = None,
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if deployment_message is None and 'deploymentMessage' in kwargs:
-            deployment_message = kwargs['deploymentMessage']
-        if deployment_message is None:
-            raise TypeError("Missing 'deployment_message' argument")
-        if deployment_message_status is None and 'deploymentMessageStatus' in kwargs:
-            deployment_message_status = kwargs['deploymentMessageStatus']
-        if deployment_message_status is None:
-            raise TypeError("Missing 'deployment_message_status' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("deployment_message", deployment_message)
-        _setter("deployment_message_status", deployment_message_status)
-        _setter("id", id)
+        pulumi.set(__self__, "deployment_message", deployment_message)
+        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="deploymentMessage")
@@ -6116,20 +3967,7 @@ class GetMessagesDeploymentMessagesCollectionResult(dict):
         """
         :param Sequence['GetMessagesDeploymentMessagesCollectionItemArgs'] items: An array of DeploymentMessages.
         """
-        GetMessagesDeploymentMessagesCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6151,34 +3989,9 @@ class GetMessagesDeploymentMessagesCollectionItemResult(dict):
         :param str deployment_message_status: The deployment Message Status.
         :param str id: The deployment Message Id.
         """
-        GetMessagesDeploymentMessagesCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            deployment_message=deployment_message,
-            deployment_message_status=deployment_message_status,
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             deployment_message: Optional[str] = None,
-             deployment_message_status: Optional[str] = None,
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if deployment_message is None and 'deploymentMessage' in kwargs:
-            deployment_message = kwargs['deploymentMessage']
-        if deployment_message is None:
-            raise TypeError("Missing 'deployment_message' argument")
-        if deployment_message_status is None and 'deploymentMessageStatus' in kwargs:
-            deployment_message_status = kwargs['deploymentMessageStatus']
-        if deployment_message_status is None:
-            raise TypeError("Missing 'deployment_message_status' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("deployment_message", deployment_message)
-        _setter("deployment_message_status", deployment_message_status)
-        _setter("id", id)
+        pulumi.set(__self__, "deployment_message", deployment_message)
+        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="deploymentMessage")
@@ -6211,29 +4024,10 @@ class GetMessagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMessagesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6274,74 +4068,15 @@ class GetTrailFileItemResult(dict):
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str trail_file_id: A Trail File identifier
         """
-        GetTrailFileItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            consumers=consumers,
-            display_name=display_name,
-            max_sequence_number=max_sequence_number,
-            min_sequence_number=min_sequence_number,
-            number_of_sequences=number_of_sequences,
-            producer=producer,
-            size_in_bytes=size_in_bytes,
-            time_last_updated=time_last_updated,
-            trail_file_id=trail_file_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             consumers: Optional[Sequence[str]] = None,
-             display_name: Optional[str] = None,
-             max_sequence_number: Optional[str] = None,
-             min_sequence_number: Optional[str] = None,
-             number_of_sequences: Optional[int] = None,
-             producer: Optional[str] = None,
-             size_in_bytes: Optional[float] = None,
-             time_last_updated: Optional[str] = None,
-             trail_file_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if consumers is None:
-            raise TypeError("Missing 'consumers' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if max_sequence_number is None and 'maxSequenceNumber' in kwargs:
-            max_sequence_number = kwargs['maxSequenceNumber']
-        if max_sequence_number is None:
-            raise TypeError("Missing 'max_sequence_number' argument")
-        if min_sequence_number is None and 'minSequenceNumber' in kwargs:
-            min_sequence_number = kwargs['minSequenceNumber']
-        if min_sequence_number is None:
-            raise TypeError("Missing 'min_sequence_number' argument")
-        if number_of_sequences is None and 'numberOfSequences' in kwargs:
-            number_of_sequences = kwargs['numberOfSequences']
-        if number_of_sequences is None:
-            raise TypeError("Missing 'number_of_sequences' argument")
-        if producer is None:
-            raise TypeError("Missing 'producer' argument")
-        if size_in_bytes is None and 'sizeInBytes' in kwargs:
-            size_in_bytes = kwargs['sizeInBytes']
-        if size_in_bytes is None:
-            raise TypeError("Missing 'size_in_bytes' argument")
-        if time_last_updated is None and 'timeLastUpdated' in kwargs:
-            time_last_updated = kwargs['timeLastUpdated']
-        if time_last_updated is None:
-            raise TypeError("Missing 'time_last_updated' argument")
-        if trail_file_id is None and 'trailFileId' in kwargs:
-            trail_file_id = kwargs['trailFileId']
-        if trail_file_id is None:
-            raise TypeError("Missing 'trail_file_id' argument")
-
-        _setter("consumers", consumers)
-        _setter("display_name", display_name)
-        _setter("max_sequence_number", max_sequence_number)
-        _setter("min_sequence_number", min_sequence_number)
-        _setter("number_of_sequences", number_of_sequences)
-        _setter("producer", producer)
-        _setter("size_in_bytes", size_in_bytes)
-        _setter("time_last_updated", time_last_updated)
-        _setter("trail_file_id", trail_file_id)
+        pulumi.set(__self__, "consumers", consumers)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
+        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
+        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
+        pulumi.set(__self__, "producer", producer)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+        pulumi.set(__self__, "trail_file_id", trail_file_id)
 
     @property
     @pulumi.getter
@@ -6422,29 +4157,10 @@ class GetTrailFilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTrailFilesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6471,27 +4187,8 @@ class GetTrailFilesTrailFileCollectionResult(dict):
         :param Sequence['GetTrailFilesTrailFileCollectionItemArgs'] items: An array of TrailFiles.
         :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetTrailFilesTrailFileCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-            time_last_fetched=time_last_fetched,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult']] = None,
-             time_last_fetched: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-        if time_last_fetched is None and 'timeLastFetched' in kwargs:
-            time_last_fetched = kwargs['timeLastFetched']
-        if time_last_fetched is None:
-            raise TypeError("Missing 'time_last_fetched' argument")
-
-        _setter("items", items)
-        _setter("time_last_fetched", time_last_fetched)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
 
     @property
     @pulumi.getter
@@ -6533,74 +4230,15 @@ class GetTrailFilesTrailFileCollectionItemResult(dict):
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str trail_file_id: A Trail File identifier
         """
-        GetTrailFilesTrailFileCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            consumers=consumers,
-            display_name=display_name,
-            max_sequence_number=max_sequence_number,
-            min_sequence_number=min_sequence_number,
-            number_of_sequences=number_of_sequences,
-            producer=producer,
-            size_in_bytes=size_in_bytes,
-            time_last_updated=time_last_updated,
-            trail_file_id=trail_file_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             consumers: Optional[Sequence[str]] = None,
-             display_name: Optional[str] = None,
-             max_sequence_number: Optional[str] = None,
-             min_sequence_number: Optional[str] = None,
-             number_of_sequences: Optional[int] = None,
-             producer: Optional[str] = None,
-             size_in_bytes: Optional[float] = None,
-             time_last_updated: Optional[str] = None,
-             trail_file_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if consumers is None:
-            raise TypeError("Missing 'consumers' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if max_sequence_number is None and 'maxSequenceNumber' in kwargs:
-            max_sequence_number = kwargs['maxSequenceNumber']
-        if max_sequence_number is None:
-            raise TypeError("Missing 'max_sequence_number' argument")
-        if min_sequence_number is None and 'minSequenceNumber' in kwargs:
-            min_sequence_number = kwargs['minSequenceNumber']
-        if min_sequence_number is None:
-            raise TypeError("Missing 'min_sequence_number' argument")
-        if number_of_sequences is None and 'numberOfSequences' in kwargs:
-            number_of_sequences = kwargs['numberOfSequences']
-        if number_of_sequences is None:
-            raise TypeError("Missing 'number_of_sequences' argument")
-        if producer is None:
-            raise TypeError("Missing 'producer' argument")
-        if size_in_bytes is None and 'sizeInBytes' in kwargs:
-            size_in_bytes = kwargs['sizeInBytes']
-        if size_in_bytes is None:
-            raise TypeError("Missing 'size_in_bytes' argument")
-        if time_last_updated is None and 'timeLastUpdated' in kwargs:
-            time_last_updated = kwargs['timeLastUpdated']
-        if time_last_updated is None:
-            raise TypeError("Missing 'time_last_updated' argument")
-        if trail_file_id is None and 'trailFileId' in kwargs:
-            trail_file_id = kwargs['trailFileId']
-        if trail_file_id is None:
-            raise TypeError("Missing 'trail_file_id' argument")
-
-        _setter("consumers", consumers)
-        _setter("display_name", display_name)
-        _setter("max_sequence_number", max_sequence_number)
-        _setter("min_sequence_number", min_sequence_number)
-        _setter("number_of_sequences", number_of_sequences)
-        _setter("producer", producer)
-        _setter("size_in_bytes", size_in_bytes)
-        _setter("time_last_updated", time_last_updated)
-        _setter("trail_file_id", trail_file_id)
+        pulumi.set(__self__, "consumers", consumers)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
+        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
+        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
+        pulumi.set(__self__, "producer", producer)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+        pulumi.set(__self__, "trail_file_id", trail_file_id)
 
     @property
     @pulumi.getter
@@ -6688,43 +4326,10 @@ class GetTrailSequenceItemResult(dict):
         :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetTrailSequenceItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            sequence_id=sequence_id,
-            size_in_bytes=size_in_bytes,
-            time_last_updated=time_last_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             sequence_id: Optional[str] = None,
-             size_in_bytes: Optional[float] = None,
-             time_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if sequence_id is None and 'sequenceId' in kwargs:
-            sequence_id = kwargs['sequenceId']
-        if sequence_id is None:
-            raise TypeError("Missing 'sequence_id' argument")
-        if size_in_bytes is None and 'sizeInBytes' in kwargs:
-            size_in_bytes = kwargs['sizeInBytes']
-        if size_in_bytes is None:
-            raise TypeError("Missing 'size_in_bytes' argument")
-        if time_last_updated is None and 'timeLastUpdated' in kwargs:
-            time_last_updated = kwargs['timeLastUpdated']
-        if time_last_updated is None:
-            raise TypeError("Missing 'time_last_updated' argument")
-
-        _setter("display_name", display_name)
-        _setter("sequence_id", sequence_id)
-        _setter("size_in_bytes", size_in_bytes)
-        _setter("time_last_updated", time_last_updated)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "sequence_id", sequence_id)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
 
     @property
     @pulumi.getter(name="displayName")
@@ -6765,29 +4370,10 @@ class GetTrailSequencesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTrailSequencesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6814,27 +4400,8 @@ class GetTrailSequencesTrailSequenceCollectionResult(dict):
         :param Sequence['GetTrailSequencesTrailSequenceCollectionItemArgs'] items: An array of TrailSequences.
         :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetTrailSequencesTrailSequenceCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-            time_last_fetched=time_last_fetched,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult']] = None,
-             time_last_fetched: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-        if time_last_fetched is None and 'timeLastFetched' in kwargs:
-            time_last_fetched = kwargs['timeLastFetched']
-        if time_last_fetched is None:
-            raise TypeError("Missing 'time_last_fetched' argument")
-
-        _setter("items", items)
-        _setter("time_last_fetched", time_last_fetched)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
 
     @property
     @pulumi.getter
@@ -6866,43 +4433,10 @@ class GetTrailSequencesTrailSequenceCollectionItemResult(dict):
         :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        GetTrailSequencesTrailSequenceCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            sequence_id=sequence_id,
-            size_in_bytes=size_in_bytes,
-            time_last_updated=time_last_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             sequence_id: Optional[str] = None,
-             size_in_bytes: Optional[float] = None,
-             time_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if sequence_id is None and 'sequenceId' in kwargs:
-            sequence_id = kwargs['sequenceId']
-        if sequence_id is None:
-            raise TypeError("Missing 'sequence_id' argument")
-        if size_in_bytes is None and 'sizeInBytes' in kwargs:
-            size_in_bytes = kwargs['sizeInBytes']
-        if size_in_bytes is None:
-            raise TypeError("Missing 'size_in_bytes' argument")
-        if time_last_updated is None and 'timeLastUpdated' in kwargs:
-            time_last_updated = kwargs['timeLastUpdated']
-        if time_last_updated is None:
-            raise TypeError("Missing 'time_last_updated' argument")
-
-        _setter("display_name", display_name)
-        _setter("sequence_id", sequence_id)
-        _setter("size_in_bytes", size_in_bytes)
-        _setter("time_last_updated", time_last_updated)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "sequence_id", sequence_id)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
 
     @property
     @pulumi.getter(name="displayName")

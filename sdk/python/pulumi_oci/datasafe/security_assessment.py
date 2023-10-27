@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,55 +39,18 @@ class SecurityAssessmentArgs:
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
         """
-        SecurityAssessmentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            target_id=target_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            schedule=schedule,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             schedule: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "target_id", target_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if schedule is not None:
-            _setter("schedule", schedule)
+            pulumi.set(__self__, "schedule", schedule)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -242,153 +205,56 @@ class _SecurityAssessmentState:
         :param pulumi.Input[str] triggered_by: Indicates whether the security assessment was created by system or by a user.
         :param pulumi.Input[str] type: The type of this security assessment. The possible types are:
         """
-        _SecurityAssessmentState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            ignored_assessment_ids=ignored_assessment_ids,
-            ignored_targets=ignored_targets,
-            is_baseline=is_baseline,
-            is_deviated_from_baseline=is_deviated_from_baseline,
-            last_compared_baseline_id=last_compared_baseline_id,
-            lifecycle_details=lifecycle_details,
-            link=link,
-            schedule=schedule,
-            schedule_security_assessment_id=schedule_security_assessment_id,
-            state=state,
-            statistics=statistics,
-            system_tags=system_tags,
-            target_id=target_id,
-            target_ids=target_ids,
-            target_version=target_version,
-            time_created=time_created,
-            time_last_assessed=time_last_assessed,
-            time_updated=time_updated,
-            triggered_by=triggered_by,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             ignored_assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ignored_targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             is_baseline: Optional[pulumi.Input[bool]] = None,
-             is_deviated_from_baseline: Optional[pulumi.Input[bool]] = None,
-             last_compared_baseline_id: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             link: Optional[pulumi.Input[str]] = None,
-             schedule: Optional[pulumi.Input[str]] = None,
-             schedule_security_assessment_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             statistics: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticArgs']]]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             target_version: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_last_assessed: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             triggered_by: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if ignored_assessment_ids is None and 'ignoredAssessmentIds' in kwargs:
-            ignored_assessment_ids = kwargs['ignoredAssessmentIds']
-        if ignored_targets is None and 'ignoredTargets' in kwargs:
-            ignored_targets = kwargs['ignoredTargets']
-        if is_baseline is None and 'isBaseline' in kwargs:
-            is_baseline = kwargs['isBaseline']
-        if is_deviated_from_baseline is None and 'isDeviatedFromBaseline' in kwargs:
-            is_deviated_from_baseline = kwargs['isDeviatedFromBaseline']
-        if last_compared_baseline_id is None and 'lastComparedBaselineId' in kwargs:
-            last_compared_baseline_id = kwargs['lastComparedBaselineId']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if schedule_security_assessment_id is None and 'scheduleSecurityAssessmentId' in kwargs:
-            schedule_security_assessment_id = kwargs['scheduleSecurityAssessmentId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if target_version is None and 'targetVersion' in kwargs:
-            target_version = kwargs['targetVersion']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_last_assessed is None and 'timeLastAssessed' in kwargs:
-            time_last_assessed = kwargs['timeLastAssessed']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if triggered_by is None and 'triggeredBy' in kwargs:
-            triggered_by = kwargs['triggeredBy']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ignored_assessment_ids is not None:
-            _setter("ignored_assessment_ids", ignored_assessment_ids)
+            pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
         if ignored_targets is not None:
-            _setter("ignored_targets", ignored_targets)
+            pulumi.set(__self__, "ignored_targets", ignored_targets)
         if is_baseline is not None:
-            _setter("is_baseline", is_baseline)
+            pulumi.set(__self__, "is_baseline", is_baseline)
         if is_deviated_from_baseline is not None:
-            _setter("is_deviated_from_baseline", is_deviated_from_baseline)
+            pulumi.set(__self__, "is_deviated_from_baseline", is_deviated_from_baseline)
         if last_compared_baseline_id is not None:
-            _setter("last_compared_baseline_id", last_compared_baseline_id)
+            pulumi.set(__self__, "last_compared_baseline_id", last_compared_baseline_id)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if link is not None:
-            _setter("link", link)
+            pulumi.set(__self__, "link", link)
         if schedule is not None:
-            _setter("schedule", schedule)
+            pulumi.set(__self__, "schedule", schedule)
         if schedule_security_assessment_id is not None:
-            _setter("schedule_security_assessment_id", schedule_security_assessment_id)
+            pulumi.set(__self__, "schedule_security_assessment_id", schedule_security_assessment_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if statistics is not None:
-            _setter("statistics", statistics)
+            pulumi.set(__self__, "statistics", statistics)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if target_ids is not None:
-            _setter("target_ids", target_ids)
+            pulumi.set(__self__, "target_ids", target_ids)
         if target_version is not None:
-            _setter("target_version", target_version)
+            pulumi.set(__self__, "target_version", target_version)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_last_assessed is not None:
-            _setter("time_last_assessed", time_last_assessed)
+            pulumi.set(__self__, "time_last_assessed", time_last_assessed)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if triggered_by is not None:
-            _setter("triggered_by", triggered_by)
+            pulumi.set(__self__, "triggered_by", triggered_by)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -812,10 +678,6 @@ class SecurityAssessment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            SecurityAssessmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

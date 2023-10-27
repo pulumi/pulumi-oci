@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -245,68 +245,25 @@ class CloudGuardDataSourceDataSourceDetails(dict):
         :param Sequence[str] regions: (Updatable) Logging Query regions
         :param int threshold: (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
         """
-        CloudGuardDataSourceDataSourceDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_feed_provider=data_source_feed_provider,
-            additional_entities_count=additional_entities_count,
-            interval_in_minutes=interval_in_minutes,
-            logging_query_details=logging_query_details,
-            logging_query_type=logging_query_type,
-            operator=operator,
-            query=query,
-            query_start_time=query_start_time,
-            regions=regions,
-            threshold=threshold,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_feed_provider: Optional[str] = None,
-             additional_entities_count: Optional[int] = None,
-             interval_in_minutes: Optional[int] = None,
-             logging_query_details: Optional['outputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails'] = None,
-             logging_query_type: Optional[str] = None,
-             operator: Optional[str] = None,
-             query: Optional[str] = None,
-             query_start_time: Optional['outputs.CloudGuardDataSourceDataSourceDetailsQueryStartTime'] = None,
-             regions: Optional[Sequence[str]] = None,
-             threshold: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_feed_provider is None and 'dataSourceFeedProvider' in kwargs:
-            data_source_feed_provider = kwargs['dataSourceFeedProvider']
-        if data_source_feed_provider is None:
-            raise TypeError("Missing 'data_source_feed_provider' argument")
-        if additional_entities_count is None and 'additionalEntitiesCount' in kwargs:
-            additional_entities_count = kwargs['additionalEntitiesCount']
-        if interval_in_minutes is None and 'intervalInMinutes' in kwargs:
-            interval_in_minutes = kwargs['intervalInMinutes']
-        if logging_query_details is None and 'loggingQueryDetails' in kwargs:
-            logging_query_details = kwargs['loggingQueryDetails']
-        if logging_query_type is None and 'loggingQueryType' in kwargs:
-            logging_query_type = kwargs['loggingQueryType']
-        if query_start_time is None and 'queryStartTime' in kwargs:
-            query_start_time = kwargs['queryStartTime']
-
-        _setter("data_source_feed_provider", data_source_feed_provider)
+        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
         if additional_entities_count is not None:
-            _setter("additional_entities_count", additional_entities_count)
+            pulumi.set(__self__, "additional_entities_count", additional_entities_count)
         if interval_in_minutes is not None:
-            _setter("interval_in_minutes", interval_in_minutes)
+            pulumi.set(__self__, "interval_in_minutes", interval_in_minutes)
         if logging_query_details is not None:
-            _setter("logging_query_details", logging_query_details)
+            pulumi.set(__self__, "logging_query_details", logging_query_details)
         if logging_query_type is not None:
-            _setter("logging_query_type", logging_query_type)
+            pulumi.set(__self__, "logging_query_type", logging_query_type)
         if operator is not None:
-            _setter("operator", operator)
+            pulumi.set(__self__, "operator", operator)
         if query is not None:
-            _setter("query", query)
+            pulumi.set(__self__, "query", query)
         if query_start_time is not None:
-            _setter("query_start_time", query_start_time)
+            pulumi.set(__self__, "query_start_time", query_start_time)
         if regions is not None:
-            _setter("regions", regions)
+            pulumi.set(__self__, "regions", regions)
         if threshold is not None:
-            _setter("threshold", threshold)
+            pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter(name="dataSourceFeedProvider")
@@ -417,28 +374,9 @@ class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails(dict):
         :param str logging_query_type: (Updatable) Logging query type for data source (Sighting/Insight)
         :param int key_entities_count: (Updatable) The key entities count used for data source query
         """
-        CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            logging_query_type=logging_query_type,
-            key_entities_count=key_entities_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             logging_query_type: Optional[str] = None,
-             key_entities_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if logging_query_type is None and 'loggingQueryType' in kwargs:
-            logging_query_type = kwargs['loggingQueryType']
-        if logging_query_type is None:
-            raise TypeError("Missing 'logging_query_type' argument")
-        if key_entities_count is None and 'keyEntitiesCount' in kwargs:
-            key_entities_count = kwargs['keyEntitiesCount']
-
-        _setter("logging_query_type", logging_query_type)
+        pulumi.set(__self__, "logging_query_type", logging_query_type)
         if key_entities_count is not None:
-            _setter("key_entities_count", key_entities_count)
+            pulumi.set(__self__, "key_entities_count", key_entities_count)
 
     @property
     @pulumi.getter(name="loggingQueryType")
@@ -485,28 +423,9 @@ class CloudGuardDataSourceDataSourceDetailsQueryStartTime(dict):
         :param str start_policy_type: (Updatable) policy used for deciding the query start time
         :param str query_start_time: (Updatable) Time when the query can start, if not specified it can start immediately.
         """
-        CloudGuardDataSourceDataSourceDetailsQueryStartTime._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            start_policy_type=start_policy_type,
-            query_start_time=query_start_time,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             start_policy_type: Optional[str] = None,
-             query_start_time: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if start_policy_type is None and 'startPolicyType' in kwargs:
-            start_policy_type = kwargs['startPolicyType']
-        if start_policy_type is None:
-            raise TypeError("Missing 'start_policy_type' argument")
-        if query_start_time is None and 'queryStartTime' in kwargs:
-            query_start_time = kwargs['queryStartTime']
-
-        _setter("start_policy_type", start_policy_type)
+        pulumi.set(__self__, "start_policy_type", start_policy_type)
         if query_start_time is not None:
-            _setter("query_start_time", query_start_time)
+            pulumi.set(__self__, "query_start_time", query_start_time)
 
     @property
     @pulumi.getter(name="startPolicyType")
@@ -553,27 +472,10 @@ class CloudGuardDataSourceDataSourceDetectorMappingInfo(dict):
         :param str detector_recipe_id: Id of the attached detectorRecipeId to the Data Source.
         :param str detector_rule_id: Id of the attached detectorRuleId to the Data Source.
         """
-        CloudGuardDataSourceDataSourceDetectorMappingInfo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            detector_recipe_id=detector_recipe_id,
-            detector_rule_id=detector_rule_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             detector_recipe_id: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if detector_recipe_id is None and 'detectorRecipeId' in kwargs:
-            detector_recipe_id = kwargs['detectorRecipeId']
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-
         if detector_recipe_id is not None:
-            _setter("detector_recipe_id", detector_recipe_id)
+            pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
         if detector_rule_id is not None:
-            _setter("detector_rule_id", detector_rule_id)
+            pulumi.set(__self__, "detector_rule_id", detector_rule_id)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -601,23 +503,10 @@ class CloudGuardDataSourceRegionStatusDetail(dict):
         :param str region: Data Source replication region.
         :param str status: Status of data Source
         """
-        CloudGuardDataSourceRegionStatusDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            region=region,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if region is not None:
-            _setter("region", region)
+            pulumi.set(__self__, "region", region)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
@@ -649,24 +538,9 @@ class DataMaskRuleTargetSelected(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        DataMaskRuleTargetSelected._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            kind=kind,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             kind: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if kind is None:
-            raise TypeError("Missing 'kind' argument")
-
-        _setter("kind", kind)
+        pulumi.set(__self__, "kind", kind)
         if values is not None:
-            _setter("values", values)
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
@@ -765,103 +639,36 @@ class DetectorRecipeDetectorRule(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        DetectorRecipeDetectorRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            detector_rule_id=detector_rule_id,
-            candidate_responder_rules=candidate_responder_rules,
-            data_source_id=data_source_id,
-            description=description,
-            detector=detector,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional['outputs.DetectorRecipeDetectorRuleDetails'] = None,
-             detector_rule_id: Optional[str] = None,
-             candidate_responder_rules: Optional[Sequence['outputs.DetectorRecipeDetectorRuleCandidateResponderRule']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             detector: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.DetectorRecipeDetectorRuleEntitiesMapping']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if candidate_responder_rules is None and 'candidateResponderRules' in kwargs:
-            candidate_responder_rules = kwargs['candidateResponderRules']
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
-        _setter("details", details)
-        _setter("detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         if candidate_responder_rules is not None:
-            _setter("candidate_responder_rules", candidate_responder_rules)
+            pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
         if data_source_id is not None:
-            _setter("data_source_id", data_source_id)
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if detector is not None:
-            _setter("detector", detector)
+            pulumi.set(__self__, "detector", detector)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
-            _setter("entities_mappings", entities_mappings)
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            _setter("managed_list_types", managed_list_types)
+            pulumi.set(__self__, "managed_list_types", managed_list_types)
         if recommendation is not None:
-            _setter("recommendation", recommendation)
+            pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
-            _setter("resource_type", resource_type)
+            pulumi.set(__self__, "resource_type", resource_type)
         if service_type is not None:
-            _setter("service_type", service_type)
+            pulumi.set(__self__, "service_type", service_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -1026,31 +833,12 @@ class DetectorRecipeDetectorRuleCandidateResponderRule(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        DetectorRecipeDetectorRuleCandidateResponderRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            id=id,
-            is_preferred=is_preferred,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             is_preferred: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if is_preferred is None and 'isPreferred' in kwargs:
-            is_preferred = kwargs['isPreferred']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if is_preferred is not None:
-            _setter("is_preferred", is_preferred)
+            pulumi.set(__self__, "is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1129,67 +917,24 @@ class DetectorRecipeDetectorRuleDetails(dict):
         :param Sequence[str] labels: (Updatable) user defined labels for a detector rule
         :param str recommendation: (Updatable) Recommendation for DetectorRecipeDetectorRule
         """
-        DetectorRecipeDetectorRuleDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-            risk_level=risk_level,
-            condition=condition,
-            configurations=configurations,
-            data_source_id=data_source_id,
-            description=description,
-            entities_mappings=entities_mappings,
-            is_configuration_allowed=is_configuration_allowed,
-            labels=labels,
-            recommendation=recommendation,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             risk_level: Optional[str] = None,
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfiguration']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsEntitiesMapping']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-
-        _setter("is_enabled", is_enabled)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "risk_level", risk_level)
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if data_source_id is not None:
-            _setter("data_source_id", data_source_id)
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if entities_mappings is not None:
-            _setter("entities_mappings", entities_mappings)
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if is_configuration_allowed is not None:
-            _setter("is_configuration_allowed", is_configuration_allowed)
+            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if recommendation is not None:
-            _setter("recommendation", recommendation)
+            pulumi.set(__self__, "recommendation", recommendation)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1306,41 +1051,14 @@ class DetectorRecipeDetectorRuleDetailsConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs'] values: (Updatable) List of configuration values
         """
-        DetectorRecipeDetectorRuleDetailsConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            data_type=data_type,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             data_type: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfigurationValue']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-
-        _setter("config_key", config_key)
-        _setter("name", name)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
         if data_type is not None:
-            _setter("data_type", data_type)
+            pulumi.set(__self__, "data_type", data_type)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
         if values is not None:
-            _setter("values", values)
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -1413,34 +1131,9 @@ class DetectorRecipeDetectorRuleDetailsConfigurationValue(dict):
         :param str managed_list_type: (Updatable) type of the managed list
         :param str value: (Updatable) configuration value
         """
-        DetectorRecipeDetectorRuleDetailsConfigurationValue._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -1501,34 +1194,11 @@ class DetectorRecipeDetectorRuleDetailsEntitiesMapping(dict):
                Avoid entering confidential information.
         :param str entity_type: (Updatable) Possible type of entity
         """
-        DetectorRecipeDetectorRuleDetailsEntitiesMapping._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            query_field=query_field,
-            display_name=display_name,
-            entity_type=entity_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             query_field: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "query_field", query_field)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entity_type is not None:
-            _setter("entity_type", entity_type)
+            pulumi.set(__self__, "entity_type", entity_type)
 
     @property
     @pulumi.getter(name="queryField")
@@ -1591,33 +1261,12 @@ class DetectorRecipeDetectorRuleEntitiesMapping(dict):
         :param str entity_type: (Updatable) Possible type of entity
         :param str query_field: (Updatable) The entity value mapped to a data source query
         """
-        DetectorRecipeDetectorRuleEntitiesMapping._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entity_type is not None:
-            _setter("entity_type", entity_type)
+            pulumi.set(__self__, "entity_type", entity_type)
         if query_field is not None:
-            _setter("query_field", query_field)
+            pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1722,101 +1371,38 @@ class DetectorRecipeEffectiveDetectorRule(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        DetectorRecipeEffectiveDetectorRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            candidate_responder_rules=candidate_responder_rules,
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             candidate_responder_rules: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleCandidateResponderRule']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetail']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleEntitiesMapping']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if candidate_responder_rules is None and 'candidateResponderRules' in kwargs:
-            candidate_responder_rules = kwargs['candidateResponderRules']
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if candidate_responder_rules is not None:
-            _setter("candidate_responder_rules", candidate_responder_rules)
+            pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
         if data_source_id is not None:
-            _setter("data_source_id", data_source_id)
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if details is not None:
-            _setter("details", details)
+            pulumi.set(__self__, "details", details)
         if detector is not None:
-            _setter("detector", detector)
+            pulumi.set(__self__, "detector", detector)
         if detector_rule_id is not None:
-            _setter("detector_rule_id", detector_rule_id)
+            pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
-            _setter("entities_mappings", entities_mappings)
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            _setter("managed_list_types", managed_list_types)
+            pulumi.set(__self__, "managed_list_types", managed_list_types)
         if recommendation is not None:
-            _setter("recommendation", recommendation)
+            pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
-            _setter("resource_type", resource_type)
+            pulumi.set(__self__, "resource_type", resource_type)
         if service_type is not None:
-            _setter("service_type", service_type)
+            pulumi.set(__self__, "service_type", service_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -1981,31 +1567,12 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        DetectorRecipeEffectiveDetectorRuleCandidateResponderRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            id=id,
-            is_preferred=is_preferred,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             is_preferred: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if is_preferred is None and 'isPreferred' in kwargs:
-            is_preferred = kwargs['isPreferred']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if is_preferred is not None:
-            _setter("is_preferred", is_preferred)
+            pulumi.set(__self__, "is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2072,45 +1639,18 @@ class DetectorRecipeEffectiveDetectorRuleDetail(dict):
         :param Sequence[str] labels: (Updatable) user defined labels for a detector rule
         :param str risk_level: (Updatable) The Risk Level
         """
-        DetectorRecipeEffectiveDetectorRuleDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfiguration']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if is_configuration_allowed is not None:
-            _setter("is_configuration_allowed", is_configuration_allowed)
+            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if risk_level is not None:
-            _setter("risk_level", risk_level)
+            pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -2195,39 +1735,16 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: (Updatable) List of configuration values
         """
-        DetectorRecipeEffectiveDetectorRuleDetailConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-
         if config_key is not None:
-            _setter("config_key", config_key)
+            pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
-            _setter("data_type", data_type)
+            pulumi.set(__self__, "data_type", data_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
         if values is not None:
-            _setter("values", values)
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -2300,31 +1817,12 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue(dict):
         :param str managed_list_type: (Updatable) type of the managed list
         :param str value: (Updatable) configuration value
         """
-        DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-
         if list_type is not None:
-            _setter("list_type", list_type)
+            pulumi.set(__self__, "list_type", list_type)
         if managed_list_type is not None:
-            _setter("managed_list_type", managed_list_type)
+            pulumi.set(__self__, "managed_list_type", managed_list_type)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -2385,33 +1883,12 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMapping(dict):
         :param str entity_type: (Updatable) Possible type of entity
         :param str query_field: (Updatable) The entity value mapped to a data source query
         """
-        DetectorRecipeEffectiveDetectorRuleEntitiesMapping._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entity_type is not None:
-            _setter("entity_type", entity_type)
+            pulumi.set(__self__, "entity_type", entity_type)
         if query_field is not None:
-            _setter("query_field", query_field)
+            pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2502,77 +1979,30 @@ class ResponderRecipeEffectiveResponderRule(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        ResponderRecipeEffectiveResponderRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.ResponderRecipeEffectiveResponderRuleDetail']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if details is not None:
-            _setter("details", details)
+            pulumi.set(__self__, "details", details)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if policies is not None:
-            _setter("policies", policies)
+            pulumi.set(__self__, "policies", policies)
         if responder_rule_id is not None:
-            _setter("responder_rule_id", responder_rule_id)
+            pulumi.set(__self__, "responder_rule_id", responder_rule_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if supported_modes is not None:
-            _setter("supported_modes", supported_modes)
+            pulumi.set(__self__, "supported_modes", supported_modes)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2705,33 +2135,14 @@ class ResponderRecipeEffectiveResponderRuleDetail(dict):
         :param bool is_enabled: (Updatable) Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        ResponderRecipeEffectiveResponderRuleDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.ResponderRecipeEffectiveResponderRuleDetailConfiguration']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if mode is not None:
-            _setter("mode", mode)
+            pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -2794,29 +2205,12 @@ class ResponderRecipeEffectiveResponderRuleDetailConfiguration(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
-        ResponderRecipeEffectiveResponderRuleDetailConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-
         if config_key is not None:
-            _setter("config_key", config_key)
+            pulumi.set(__self__, "config_key", config_key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -2905,79 +2299,28 @@ class ResponderRecipeResponderRule(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        ResponderRecipeResponderRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            responder_rule_id=responder_rule_id,
-            compartment_id=compartment_id,
-            description=description,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional['outputs.ResponderRecipeResponderRuleDetails'] = None,
-             responder_rule_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
-        _setter("details", details)
-        _setter("responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if policies is not None:
-            _setter("policies", policies)
+            pulumi.set(__self__, "policies", policies)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if supported_modes is not None:
-            _setter("supported_modes", supported_modes)
+            pulumi.set(__self__, "supported_modes", supported_modes)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -3110,34 +2453,13 @@ class ResponderRecipeResponderRuleDetails(dict):
         :param Sequence['ResponderRecipeResponderRuleDetailsConfigurationArgs'] configurations: ResponderRule configurations
         :param str mode: Execution Mode for ResponderRule
         """
-        ResponderRecipeResponderRuleDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-            condition=condition,
-            configurations=configurations,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.ResponderRecipeResponderRuleDetailsConfiguration']] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if mode is not None:
-            _setter("mode", mode)
+            pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -3200,29 +2522,12 @@ class ResponderRecipeResponderRuleDetailsConfiguration(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
-        ResponderRecipeResponderRuleDetailsConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-
         if config_key is not None:
-            _setter("config_key", config_key)
+            pulumi.set(__self__, "config_key", config_key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -3285,39 +2590,14 @@ class TargetTargetDetail(dict):
         :param str target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param Sequence['TargetTargetDetailTargetSecurityZoneRecipeArgs'] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
         """
-        TargetTargetDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            security_zone_display_name=security_zone_display_name,
-            security_zone_id=security_zone_id,
-            target_resource_type=target_resource_type,
-            target_security_zone_recipes=target_security_zone_recipes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             security_zone_display_name: Optional[str] = None,
-             security_zone_id: Optional[str] = None,
-             target_resource_type: Optional[str] = None,
-             target_security_zone_recipes: Optional[Sequence['outputs.TargetTargetDetailTargetSecurityZoneRecipe']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if security_zone_display_name is None and 'securityZoneDisplayName' in kwargs:
-            security_zone_display_name = kwargs['securityZoneDisplayName']
-        if security_zone_id is None and 'securityZoneId' in kwargs:
-            security_zone_id = kwargs['securityZoneId']
-        if target_resource_type is None and 'targetResourceType' in kwargs:
-            target_resource_type = kwargs['targetResourceType']
-        if target_security_zone_recipes is None and 'targetSecurityZoneRecipes' in kwargs:
-            target_security_zone_recipes = kwargs['targetSecurityZoneRecipes']
-
         if security_zone_display_name is not None:
-            _setter("security_zone_display_name", security_zone_display_name)
+            pulumi.set(__self__, "security_zone_display_name", security_zone_display_name)
         if security_zone_id is not None:
-            _setter("security_zone_id", security_zone_id)
+            pulumi.set(__self__, "security_zone_id", security_zone_id)
         if target_resource_type is not None:
-            _setter("target_resource_type", target_resource_type)
+            pulumi.set(__self__, "target_resource_type", target_resource_type)
         if target_security_zone_recipes is not None:
-            _setter("target_security_zone_recipes", target_security_zone_recipes)
+            pulumi.set(__self__, "target_security_zone_recipes", target_security_zone_recipes)
 
     @property
     @pulumi.getter(name="securityZoneDisplayName")
@@ -3422,85 +2702,32 @@ class TargetTargetDetailTargetSecurityZoneRecipe(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        TargetTargetDetailTargetSecurityZoneRecipe._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            owner=owner,
-            security_policies=security_policies,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             owner: Optional[str] = None,
-             security_policies: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if security_policies is None and 'securityPolicies' in kwargs:
-            security_policies = kwargs['securityPolicies']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if owner is not None:
-            _setter("owner", owner)
+            pulumi.set(__self__, "owner", owner)
         if security_policies is not None:
-            _setter("security_policies", security_policies)
+            pulumi.set(__self__, "security_policies", security_policies)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3675,78 +2902,29 @@ class TargetTargetDetectorRecipe(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        TargetTargetDetectorRecipe._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            detector_recipe_id=detector_recipe_id,
-            compartment_id=compartment_id,
-            description=description,
-            detector=detector,
-            detector_rules=detector_rules,
-            display_name=display_name,
-            effective_detector_rules=effective_detector_rules,
-            id=id,
-            owner=owner,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             detector_recipe_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             detector: Optional[str] = None,
-             detector_rules: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRule']] = None,
-             display_name: Optional[str] = None,
-             effective_detector_rules: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRule']] = None,
-             id: Optional[str] = None,
-             owner: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if detector_recipe_id is None and 'detectorRecipeId' in kwargs:
-            detector_recipe_id = kwargs['detectorRecipeId']
-        if detector_recipe_id is None:
-            raise TypeError("Missing 'detector_recipe_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if detector_rules is None and 'detectorRules' in kwargs:
-            detector_rules = kwargs['detectorRules']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if effective_detector_rules is None and 'effectiveDetectorRules' in kwargs:
-            effective_detector_rules = kwargs['effectiveDetectorRules']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
-        _setter("detector_recipe_id", detector_recipe_id)
+        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if detector is not None:
-            _setter("detector", detector)
+            pulumi.set(__self__, "detector", detector)
         if detector_rules is not None:
-            _setter("detector_rules", detector_rules)
+            pulumi.set(__self__, "detector_rules", detector_rules)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if effective_detector_rules is not None:
-            _setter("effective_detector_rules", effective_detector_rules)
+            pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if owner is not None:
-            _setter("owner", owner)
+            pulumi.set(__self__, "owner", owner)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -3923,97 +3101,34 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        TargetTargetDetectorRecipeDetectorRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            detector_rule_id=detector_rule_id,
-            data_source_id=data_source_id,
-            description=description,
-            detector=detector,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional['outputs.TargetTargetDetectorRecipeDetectorRuleDetails'] = None,
-             detector_rule_id: Optional[str] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             detector: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
-        _setter("details", details)
-        _setter("detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         if data_source_id is not None:
-            _setter("data_source_id", data_source_id)
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if detector is not None:
-            _setter("detector", detector)
+            pulumi.set(__self__, "detector", detector)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
-            _setter("entities_mappings", entities_mappings)
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            _setter("managed_list_types", managed_list_types)
+            pulumi.set(__self__, "managed_list_types", managed_list_types)
         if recommendation is not None:
-            _setter("recommendation", recommendation)
+            pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
-            _setter("resource_type", resource_type)
+            pulumi.set(__self__, "resource_type", resource_type)
         if service_type is not None:
-            _setter("service_type", service_type)
+            pulumi.set(__self__, "service_type", service_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -4180,47 +3295,18 @@ class TargetTargetDetectorRecipeDetectorRuleDetails(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        TargetTargetDetectorRecipeDetectorRuleDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition_groups=condition_groups,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition_groups: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup']] = None,
-             configurations: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition_groups is None and 'conditionGroups' in kwargs:
-            condition_groups = kwargs['conditionGroups']
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-
         if condition_groups is not None:
-            _setter("condition_groups", condition_groups)
+            pulumi.set(__self__, "condition_groups", condition_groups)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if is_configuration_allowed is not None:
-            _setter("is_configuration_allowed", is_configuration_allowed)
+            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if risk_level is not None:
-            _setter("risk_level", risk_level)
+            pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -4297,27 +3383,8 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup(dict):
         :param str compartment_id: (Updatable) compartment associated with condition
         :param str condition: (Updatable) Base condition object
         """
-        TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            condition=condition,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             condition: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("condition", condition)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4370,39 +3437,16 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs'] values: List of configuration values
         """
-        TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-
         if config_key is not None:
-            _setter("config_key", config_key)
+            pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
-            _setter("data_type", data_type)
+            pulumi.set(__self__, "data_type", data_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
         if values is not None:
-            _setter("values", values)
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -4475,31 +3519,12 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue(dict):
         :param str managed_list_type: type of the managed list
         :param str value: (Updatable) configuration value
         """
-        TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-
         if list_type is not None:
-            _setter("list_type", list_type)
+            pulumi.set(__self__, "list_type", list_type)
         if managed_list_type is not None:
-            _setter("managed_list_type", managed_list_type)
+            pulumi.set(__self__, "managed_list_type", managed_list_type)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -4560,33 +3585,12 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        TargetTargetDetectorRecipeDetectorRuleEntitiesMapping._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entity_type is not None:
-            _setter("entity_type", entity_type)
+            pulumi.set(__self__, "entity_type", entity_type)
         if query_field is not None:
-            _setter("query_field", query_field)
+            pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4689,95 +3693,36 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        TargetTargetDetectorRecipeEffectiveDetectorRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetail']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if data_source_id is not None:
-            _setter("data_source_id", data_source_id)
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if details is not None:
-            _setter("details", details)
+            pulumi.set(__self__, "details", details)
         if detector is not None:
-            _setter("detector", detector)
+            pulumi.set(__self__, "detector", detector)
         if detector_rule_id is not None:
-            _setter("detector_rule_id", detector_rule_id)
+            pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
-            _setter("entities_mappings", entities_mappings)
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            _setter("managed_list_types", managed_list_types)
+            pulumi.set(__self__, "managed_list_types", managed_list_types)
         if recommendation is not None:
-            _setter("recommendation", recommendation)
+            pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
-            _setter("resource_type", resource_type)
+            pulumi.set(__self__, "resource_type", resource_type)
         if service_type is not None:
-            _setter("service_type", service_type)
+            pulumi.set(__self__, "service_type", service_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -4944,47 +3889,18 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        TargetTargetDetectorRecipeEffectiveDetectorRuleDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition_groups=condition_groups,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition_groups: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup']] = None,
-             configurations: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition_groups is None and 'conditionGroups' in kwargs:
-            condition_groups = kwargs['conditionGroups']
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-
         if condition_groups is not None:
-            _setter("condition_groups", condition_groups)
+            pulumi.set(__self__, "condition_groups", condition_groups)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if is_configuration_allowed is not None:
-            _setter("is_configuration_allowed", is_configuration_allowed)
+            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if risk_level is not None:
-            _setter("risk_level", risk_level)
+            pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -5061,25 +3977,10 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup(dict):
         :param str compartment_id: (Updatable) compartment associated with condition
         :param str condition: (Updatable) Base condition object
         """
-        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            condition=condition,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             condition: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5132,39 +4033,16 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-
         if config_key is not None:
-            _setter("config_key", config_key)
+            pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
-            _setter("data_type", data_type)
+            pulumi.set(__self__, "data_type", data_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
         if values is not None:
-            _setter("values", values)
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -5237,31 +4115,12 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue(di
         :param str managed_list_type: type of the managed list
         :param str value: (Updatable) configuration value
         """
-        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-
         if list_type is not None:
-            _setter("list_type", list_type)
+            pulumi.set(__self__, "list_type", list_type)
         if managed_list_type is not None:
-            _setter("managed_list_type", managed_list_type)
+            pulumi.set(__self__, "managed_list_type", managed_list_type)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -5322,33 +4181,12 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if entity_type is not None:
-            _setter("entity_type", entity_type)
+            pulumi.set(__self__, "entity_type", entity_type)
         if query_field is not None:
-            _setter("query_field", query_field)
+            pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -5435,70 +4273,25 @@ class TargetTargetResponderRecipe(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        TargetTargetResponderRecipe._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            responder_recipe_id=responder_recipe_id,
-            compartment_id=compartment_id,
-            description=description,
-            display_name=display_name,
-            effective_responder_rules=effective_responder_rules,
-            id=id,
-            owner=owner,
-            responder_rules=responder_rules,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             responder_recipe_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             effective_responder_rules: Optional[Sequence['outputs.TargetTargetResponderRecipeEffectiveResponderRule']] = None,
-             id: Optional[str] = None,
-             owner: Optional[str] = None,
-             responder_rules: Optional[Sequence['outputs.TargetTargetResponderRecipeResponderRule']] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if responder_recipe_id is None and 'responderRecipeId' in kwargs:
-            responder_recipe_id = kwargs['responderRecipeId']
-        if responder_recipe_id is None:
-            raise TypeError("Missing 'responder_recipe_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if effective_responder_rules is None and 'effectiveResponderRules' in kwargs:
-            effective_responder_rules = kwargs['effectiveResponderRules']
-        if responder_rules is None and 'responderRules' in kwargs:
-            responder_rules = kwargs['responderRules']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
-        _setter("responder_recipe_id", responder_recipe_id)
+        pulumi.set(__self__, "responder_recipe_id", responder_recipe_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if effective_responder_rules is not None:
-            _setter("effective_responder_rules", effective_responder_rules)
+            pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if owner is not None:
-            _setter("owner", owner)
+            pulumi.set(__self__, "owner", owner)
         if responder_rules is not None:
-            _setter("responder_rules", responder_rules)
+            pulumi.set(__self__, "responder_rules", responder_rules)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="responderRecipeId")
@@ -5651,77 +4444,30 @@ class TargetTargetResponderRecipeEffectiveResponderRule(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        TargetTargetResponderRecipeEffectiveResponderRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.TargetTargetResponderRecipeEffectiveResponderRuleDetail']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if details is not None:
-            _setter("details", details)
+            pulumi.set(__self__, "details", details)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if policies is not None:
-            _setter("policies", policies)
+            pulumi.set(__self__, "policies", policies)
         if responder_rule_id is not None:
-            _setter("responder_rule_id", responder_rule_id)
+            pulumi.set(__self__, "responder_rule_id", responder_rule_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if supported_modes is not None:
-            _setter("supported_modes", supported_modes)
+            pulumi.set(__self__, "supported_modes", supported_modes)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5858,33 +4604,14 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetail(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: (Updatable) Execution Mode for ResponderRule
         """
-        TargetTargetResponderRecipeEffectiveResponderRuleDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if mode is not None:
-            _setter("mode", mode)
+            pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -5947,29 +4674,12 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration(dict)
         :param str name: (Updatable) configuration name
         :param str value: (Updatable) configuration value
         """
-        TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-
         if config_key is not None:
-            _setter("config_key", config_key)
+            pulumi.set(__self__, "config_key", config_key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -6062,79 +4772,28 @@ class TargetTargetResponderRecipeResponderRule(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        TargetTargetResponderRecipeResponderRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            responder_rule_id=responder_rule_id,
-            compartment_id=compartment_id,
-            description=description,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional['outputs.TargetTargetResponderRecipeResponderRuleDetails'] = None,
-             responder_rule_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
-        _setter("details", details)
-        _setter("responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if policies is not None:
-            _setter("policies", policies)
+            pulumi.set(__self__, "policies", policies)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if supported_modes is not None:
-            _setter("supported_modes", supported_modes)
+            pulumi.set(__self__, "supported_modes", supported_modes)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -6271,33 +4930,14 @@ class TargetTargetResponderRecipeResponderRuleDetails(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: (Updatable) Execution Mode for ResponderRule
         """
-        TargetTargetResponderRecipeResponderRuleDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.TargetTargetResponderRecipeResponderRuleDetailsConfiguration']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if configurations is not None:
-            _setter("configurations", configurations)
+            pulumi.set(__self__, "configurations", configurations)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if mode is not None:
-            _setter("mode", mode)
+            pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -6360,32 +5000,9 @@ class TargetTargetResponderRecipeResponderRuleDetailsConfiguration(dict):
         :param str name: (Updatable) configuration name
         :param str value: (Updatable) configuration value
         """
-        TargetTargetResponderRecipeResponderRuleDetailsConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -6421,25 +5038,8 @@ class GetDataMaskRuleTargetSelectedResult(dict):
         :param str kind: Target selection.
         :param Sequence[str] values: Types of Targets
         """
-        GetDataMaskRuleTargetSelectedResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            kind=kind,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             kind: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if kind is None:
-            raise TypeError("Missing 'kind' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("kind", kind)
-        _setter("values", values)
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
@@ -6462,20 +5062,7 @@ class GetDataMaskRuleTargetSelectedResult(dict):
 class GetDataMaskRulesDataMaskRuleCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionItemResult']):
-        GetDataMaskRulesDataMaskRuleCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6518,114 +5105,21 @@ class GetDataMaskRulesDataMaskRuleCollectionItemResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetDataMaskRulesDataMaskRuleCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            data_mask_categories=data_mask_categories,
-            data_mask_rule_status=data_mask_rule_status,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            iam_group_id=iam_group_id,
-            id=id,
-            lifecyle_details=lifecyle_details,
-            state=state,
-            system_tags=system_tags,
-            target_selecteds=target_selecteds,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             data_mask_categories: Optional[Sequence[str]] = None,
-             data_mask_rule_status: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             iam_group_id: Optional[str] = None,
-             id: Optional[str] = None,
-             lifecyle_details: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_selecteds: Optional[Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult']] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if data_mask_categories is None and 'dataMaskCategories' in kwargs:
-            data_mask_categories = kwargs['dataMaskCategories']
-        if data_mask_categories is None:
-            raise TypeError("Missing 'data_mask_categories' argument")
-        if data_mask_rule_status is None and 'dataMaskRuleStatus' in kwargs:
-            data_mask_rule_status = kwargs['dataMaskRuleStatus']
-        if data_mask_rule_status is None:
-            raise TypeError("Missing 'data_mask_rule_status' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if iam_group_id is None and 'iamGroupId' in kwargs:
-            iam_group_id = kwargs['iamGroupId']
-        if iam_group_id is None:
-            raise TypeError("Missing 'iam_group_id' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
-            lifecyle_details = kwargs['lifecyleDetails']
-        if lifecyle_details is None:
-            raise TypeError("Missing 'lifecyle_details' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_selecteds is None and 'targetSelecteds' in kwargs:
-            target_selecteds = kwargs['targetSelecteds']
-        if target_selecteds is None:
-            raise TypeError("Missing 'target_selecteds' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("data_mask_categories", data_mask_categories)
-        _setter("data_mask_rule_status", data_mask_rule_status)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("iam_group_id", iam_group_id)
-        _setter("id", id)
-        _setter("lifecyle_details", lifecyle_details)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_selecteds", target_selecteds)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_mask_categories", data_mask_categories)
+        pulumi.set(__self__, "data_mask_rule_status", data_mask_rule_status)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "iam_group_id", iam_group_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_selecteds", target_selecteds)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -6757,25 +5251,8 @@ class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult(dict):
         :param str kind: Target selection.
         :param Sequence[str] values: Types of Targets
         """
-        GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            kind=kind,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             kind: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if kind is None:
-            raise TypeError("Missing 'kind' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("kind", kind)
-        _setter("values", values)
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
@@ -6803,29 +5280,10 @@ class GetDataMaskRulesFilterResult(dict):
         """
         :param Sequence[str] values: Types of Targets
         """
-        GetDataMaskRulesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6871,77 +5329,16 @@ class GetDataSourceDataSourceDetailResult(dict):
         :param Sequence[str] regions: Logging Query regions
         :param int threshold: The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
         """
-        GetDataSourceDataSourceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_entities_count=additional_entities_count,
-            data_source_feed_provider=data_source_feed_provider,
-            interval_in_minutes=interval_in_minutes,
-            logging_query_details=logging_query_details,
-            logging_query_type=logging_query_type,
-            operator=operator,
-            query=query,
-            query_start_times=query_start_times,
-            regions=regions,
-            threshold=threshold,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_entities_count: Optional[int] = None,
-             data_source_feed_provider: Optional[str] = None,
-             interval_in_minutes: Optional[int] = None,
-             logging_query_details: Optional[Sequence['outputs.GetDataSourceDataSourceDetailLoggingQueryDetailResult']] = None,
-             logging_query_type: Optional[str] = None,
-             operator: Optional[str] = None,
-             query: Optional[str] = None,
-             query_start_times: Optional[Sequence['outputs.GetDataSourceDataSourceDetailQueryStartTimeResult']] = None,
-             regions: Optional[Sequence[str]] = None,
-             threshold: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_entities_count is None and 'additionalEntitiesCount' in kwargs:
-            additional_entities_count = kwargs['additionalEntitiesCount']
-        if additional_entities_count is None:
-            raise TypeError("Missing 'additional_entities_count' argument")
-        if data_source_feed_provider is None and 'dataSourceFeedProvider' in kwargs:
-            data_source_feed_provider = kwargs['dataSourceFeedProvider']
-        if data_source_feed_provider is None:
-            raise TypeError("Missing 'data_source_feed_provider' argument")
-        if interval_in_minutes is None and 'intervalInMinutes' in kwargs:
-            interval_in_minutes = kwargs['intervalInMinutes']
-        if interval_in_minutes is None:
-            raise TypeError("Missing 'interval_in_minutes' argument")
-        if logging_query_details is None and 'loggingQueryDetails' in kwargs:
-            logging_query_details = kwargs['loggingQueryDetails']
-        if logging_query_details is None:
-            raise TypeError("Missing 'logging_query_details' argument")
-        if logging_query_type is None and 'loggingQueryType' in kwargs:
-            logging_query_type = kwargs['loggingQueryType']
-        if logging_query_type is None:
-            raise TypeError("Missing 'logging_query_type' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-        if query_start_times is None and 'queryStartTimes' in kwargs:
-            query_start_times = kwargs['queryStartTimes']
-        if query_start_times is None:
-            raise TypeError("Missing 'query_start_times' argument")
-        if regions is None:
-            raise TypeError("Missing 'regions' argument")
-        if threshold is None:
-            raise TypeError("Missing 'threshold' argument")
-
-        _setter("additional_entities_count", additional_entities_count)
-        _setter("data_source_feed_provider", data_source_feed_provider)
-        _setter("interval_in_minutes", interval_in_minutes)
-        _setter("logging_query_details", logging_query_details)
-        _setter("logging_query_type", logging_query_type)
-        _setter("operator", operator)
-        _setter("query", query)
-        _setter("query_start_times", query_start_times)
-        _setter("regions", regions)
-        _setter("threshold", threshold)
+        pulumi.set(__self__, "additional_entities_count", additional_entities_count)
+        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+        pulumi.set(__self__, "interval_in_minutes", interval_in_minutes)
+        pulumi.set(__self__, "logging_query_details", logging_query_details)
+        pulumi.set(__self__, "logging_query_type", logging_query_type)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "query_start_times", query_start_times)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter(name="additionalEntitiesCount")
@@ -7033,29 +5430,8 @@ class GetDataSourceDataSourceDetailLoggingQueryDetailResult(dict):
         :param int key_entities_count: The key entities count used for data source query
         :param str logging_query_type: Logging query type for data source (Sighting/Insight)
         """
-        GetDataSourceDataSourceDetailLoggingQueryDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key_entities_count=key_entities_count,
-            logging_query_type=logging_query_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key_entities_count: Optional[int] = None,
-             logging_query_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key_entities_count is None and 'keyEntitiesCount' in kwargs:
-            key_entities_count = kwargs['keyEntitiesCount']
-        if key_entities_count is None:
-            raise TypeError("Missing 'key_entities_count' argument")
-        if logging_query_type is None and 'loggingQueryType' in kwargs:
-            logging_query_type = kwargs['loggingQueryType']
-        if logging_query_type is None:
-            raise TypeError("Missing 'logging_query_type' argument")
-
-        _setter("key_entities_count", key_entities_count)
-        _setter("logging_query_type", logging_query_type)
+        pulumi.set(__self__, "key_entities_count", key_entities_count)
+        pulumi.set(__self__, "logging_query_type", logging_query_type)
 
     @property
     @pulumi.getter(name="keyEntitiesCount")
@@ -7083,29 +5459,8 @@ class GetDataSourceDataSourceDetailQueryStartTimeResult(dict):
         :param str query_start_time: Time when the query can start, if not specified it can start immediately.
         :param str start_policy_type: policy used for deciding the query start time
         """
-        GetDataSourceDataSourceDetailQueryStartTimeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            query_start_time=query_start_time,
-            start_policy_type=start_policy_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             query_start_time: Optional[str] = None,
-             start_policy_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if query_start_time is None and 'queryStartTime' in kwargs:
-            query_start_time = kwargs['queryStartTime']
-        if query_start_time is None:
-            raise TypeError("Missing 'query_start_time' argument")
-        if start_policy_type is None and 'startPolicyType' in kwargs:
-            start_policy_type = kwargs['startPolicyType']
-        if start_policy_type is None:
-            raise TypeError("Missing 'start_policy_type' argument")
-
-        _setter("query_start_time", query_start_time)
-        _setter("start_policy_type", start_policy_type)
+        pulumi.set(__self__, "query_start_time", query_start_time)
+        pulumi.set(__self__, "start_policy_type", start_policy_type)
 
     @property
     @pulumi.getter(name="queryStartTime")
@@ -7133,29 +5488,8 @@ class GetDataSourceDataSourceDetectorMappingInfoResult(dict):
         :param str detector_recipe_id: Id of the attached detectorRecipeId to the Data Source.
         :param str detector_rule_id: Id of the attached detectorRuleId to the Data Source.
         """
-        GetDataSourceDataSourceDetectorMappingInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            detector_recipe_id=detector_recipe_id,
-            detector_rule_id=detector_rule_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             detector_recipe_id: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if detector_recipe_id is None and 'detectorRecipeId' in kwargs:
-            detector_recipe_id = kwargs['detectorRecipeId']
-        if detector_recipe_id is None:
-            raise TypeError("Missing 'detector_recipe_id' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-
-        _setter("detector_recipe_id", detector_recipe_id)
-        _setter("detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -7193,58 +5527,13 @@ class GetDataSourceEventItemResult(dict):
         :param str status: Current data source event info status
         :param str time_created: Data source event created time
         """
-        GetDataSourceEventItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            comments=comments,
-            data_source_id=data_source_id,
-            event_date=event_date,
-            event_infos=event_infos,
-            region=region,
-            status=status,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             comments: Optional[str] = None,
-             data_source_id: Optional[str] = None,
-             event_date: Optional[str] = None,
-             event_infos: Optional[Sequence['outputs.GetDataSourceEventItemEventInfoResult']] = None,
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if comments is None:
-            raise TypeError("Missing 'comments' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if event_date is None and 'eventDate' in kwargs:
-            event_date = kwargs['eventDate']
-        if event_date is None:
-            raise TypeError("Missing 'event_date' argument")
-        if event_infos is None and 'eventInfos' in kwargs:
-            event_infos = kwargs['eventInfos']
-        if event_infos is None:
-            raise TypeError("Missing 'event_infos' argument")
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("comments", comments)
-        _setter("data_source_id", data_source_id)
-        _setter("event_date", event_date)
-        _setter("event_infos", event_infos)
-        _setter("region", region)
-        _setter("status", status)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "comments", comments)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "event_date", event_date)
+        pulumi.set(__self__, "event_infos", event_infos)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
@@ -7314,48 +5603,11 @@ class GetDataSourceEventItemEventInfoResult(dict):
         """
         :param str data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
         """
-        GetDataSourceEventItemEventInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_feed_provider=data_source_feed_provider,
-            log_result=log_result,
-            observed_value=observed_value,
-            operator=operator,
-            trigger_value=trigger_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_feed_provider: Optional[str] = None,
-             log_result: Optional[str] = None,
-             observed_value: Optional[str] = None,
-             operator: Optional[str] = None,
-             trigger_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_feed_provider is None and 'dataSourceFeedProvider' in kwargs:
-            data_source_feed_provider = kwargs['dataSourceFeedProvider']
-        if data_source_feed_provider is None:
-            raise TypeError("Missing 'data_source_feed_provider' argument")
-        if log_result is None and 'logResult' in kwargs:
-            log_result = kwargs['logResult']
-        if log_result is None:
-            raise TypeError("Missing 'log_result' argument")
-        if observed_value is None and 'observedValue' in kwargs:
-            observed_value = kwargs['observedValue']
-        if observed_value is None:
-            raise TypeError("Missing 'observed_value' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-        if trigger_value is None and 'triggerValue' in kwargs:
-            trigger_value = kwargs['triggerValue']
-        if trigger_value is None:
-            raise TypeError("Missing 'trigger_value' argument")
-
-        _setter("data_source_feed_provider", data_source_feed_provider)
-        _setter("log_result", log_result)
-        _setter("observed_value", observed_value)
-        _setter("operator", operator)
-        _setter("trigger_value", trigger_value)
+        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+        pulumi.set(__self__, "log_result", log_result)
+        pulumi.set(__self__, "observed_value", observed_value)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "trigger_value", trigger_value)
 
     @property
     @pulumi.getter(name="dataSourceFeedProvider")
@@ -7393,20 +5645,7 @@ class GetDataSourceEventsDataSourceEventCollectionResult(dict):
         """
         :param Sequence['GetDataSourceEventsDataSourceEventCollectionItemArgs'] items: List of event related to a DataSource
         """
-        GetDataSourceEventsDataSourceEventCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDataSourceEventsDataSourceEventCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -7436,58 +5675,13 @@ class GetDataSourceEventsDataSourceEventCollectionItemResult(dict):
         :param str status: Current data source event info status
         :param str time_created: Data source event created time
         """
-        GetDataSourceEventsDataSourceEventCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            comments=comments,
-            data_source_id=data_source_id,
-            event_date=event_date,
-            event_infos=event_infos,
-            region=region,
-            status=status,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             comments: Optional[str] = None,
-             data_source_id: Optional[str] = None,
-             event_date: Optional[str] = None,
-             event_infos: Optional[Sequence['outputs.GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult']] = None,
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if comments is None:
-            raise TypeError("Missing 'comments' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if event_date is None and 'eventDate' in kwargs:
-            event_date = kwargs['eventDate']
-        if event_date is None:
-            raise TypeError("Missing 'event_date' argument")
-        if event_infos is None and 'eventInfos' in kwargs:
-            event_infos = kwargs['eventInfos']
-        if event_infos is None:
-            raise TypeError("Missing 'event_infos' argument")
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("comments", comments)
-        _setter("data_source_id", data_source_id)
-        _setter("event_date", event_date)
-        _setter("event_infos", event_infos)
-        _setter("region", region)
-        _setter("status", status)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "comments", comments)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "event_date", event_date)
+        pulumi.set(__self__, "event_infos", event_infos)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
@@ -7557,48 +5751,11 @@ class GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult(dict):
         """
         :param str data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
         """
-        GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_feed_provider=data_source_feed_provider,
-            log_result=log_result,
-            observed_value=observed_value,
-            operator=operator,
-            trigger_value=trigger_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_feed_provider: Optional[str] = None,
-             log_result: Optional[str] = None,
-             observed_value: Optional[str] = None,
-             operator: Optional[str] = None,
-             trigger_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_feed_provider is None and 'dataSourceFeedProvider' in kwargs:
-            data_source_feed_provider = kwargs['dataSourceFeedProvider']
-        if data_source_feed_provider is None:
-            raise TypeError("Missing 'data_source_feed_provider' argument")
-        if log_result is None and 'logResult' in kwargs:
-            log_result = kwargs['logResult']
-        if log_result is None:
-            raise TypeError("Missing 'log_result' argument")
-        if observed_value is None and 'observedValue' in kwargs:
-            observed_value = kwargs['observedValue']
-        if observed_value is None:
-            raise TypeError("Missing 'observed_value' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-        if trigger_value is None and 'triggerValue' in kwargs:
-            trigger_value = kwargs['triggerValue']
-        if trigger_value is None:
-            raise TypeError("Missing 'trigger_value' argument")
-
-        _setter("data_source_feed_provider", data_source_feed_provider)
-        _setter("log_result", log_result)
-        _setter("observed_value", observed_value)
-        _setter("operator", operator)
-        _setter("trigger_value", trigger_value)
+        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+        pulumi.set(__self__, "log_result", log_result)
+        pulumi.set(__self__, "observed_value", observed_value)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "trigger_value", trigger_value)
 
     @property
     @pulumi.getter(name="dataSourceFeedProvider")
@@ -7635,29 +5792,10 @@ class GetDataSourceEventsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDataSourceEventsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -7684,25 +5822,8 @@ class GetDataSourceRegionStatusDetailResult(dict):
         :param str region: Data Source replication region.
         :param str status: Status of data Source
         """
-        GetDataSourceRegionStatusDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            region=region,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-
-        _setter("region", region)
-        _setter("status", status)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
@@ -7725,20 +5846,7 @@ class GetDataSourceRegionStatusDetailResult(dict):
 class GetDataSourcesDataSourceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDataSourcesDataSourceCollectionItemResult']):
-        GetDataSourcesDataSourceCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDataSourcesDataSourceCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -7779,107 +5887,20 @@ class GetDataSourcesDataSourceCollectionItemResult(dict):
         :param str time_created: The date and time the Data source was created. Format defined by RFC3339.
         :param str time_updated: The date and time the Data source was updated. Format defined by RFC3339.
         """
-        GetDataSourcesDataSourceCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            data_source_details=data_source_details,
-            data_source_detector_mapping_infos=data_source_detector_mapping_infos,
-            data_source_feed_provider=data_source_feed_provider,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            region_status_details=region_status_details,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             data_source_details: Optional[Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetailResult']] = None,
-             data_source_detector_mapping_infos: Optional[Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoResult']] = None,
-             data_source_feed_provider: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             region_status_details: Optional[Sequence['outputs.GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult']] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if data_source_details is None and 'dataSourceDetails' in kwargs:
-            data_source_details = kwargs['dataSourceDetails']
-        if data_source_details is None:
-            raise TypeError("Missing 'data_source_details' argument")
-        if data_source_detector_mapping_infos is None and 'dataSourceDetectorMappingInfos' in kwargs:
-            data_source_detector_mapping_infos = kwargs['dataSourceDetectorMappingInfos']
-        if data_source_detector_mapping_infos is None:
-            raise TypeError("Missing 'data_source_detector_mapping_infos' argument")
-        if data_source_feed_provider is None and 'dataSourceFeedProvider' in kwargs:
-            data_source_feed_provider = kwargs['dataSourceFeedProvider']
-        if data_source_feed_provider is None:
-            raise TypeError("Missing 'data_source_feed_provider' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if region_status_details is None and 'regionStatusDetails' in kwargs:
-            region_status_details = kwargs['regionStatusDetails']
-        if region_status_details is None:
-            raise TypeError("Missing 'region_status_details' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("data_source_details", data_source_details)
-        _setter("data_source_detector_mapping_infos", data_source_detector_mapping_infos)
-        _setter("data_source_feed_provider", data_source_feed_provider)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("region_status_details", region_status_details)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_source_details", data_source_details)
+        pulumi.set(__self__, "data_source_detector_mapping_infos", data_source_detector_mapping_infos)
+        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region_status_details", region_status_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8019,77 +6040,16 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailResult(dict):
         :param Sequence[str] regions: Logging Query regions
         :param int threshold: The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
         """
-        GetDataSourcesDataSourceCollectionItemDataSourceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_entities_count=additional_entities_count,
-            data_source_feed_provider=data_source_feed_provider,
-            interval_in_minutes=interval_in_minutes,
-            logging_query_details=logging_query_details,
-            logging_query_type=logging_query_type,
-            operator=operator,
-            query=query,
-            query_start_times=query_start_times,
-            regions=regions,
-            threshold=threshold,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_entities_count: Optional[int] = None,
-             data_source_feed_provider: Optional[str] = None,
-             interval_in_minutes: Optional[int] = None,
-             logging_query_details: Optional[Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailResult']] = None,
-             logging_query_type: Optional[str] = None,
-             operator: Optional[str] = None,
-             query: Optional[str] = None,
-             query_start_times: Optional[Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeResult']] = None,
-             regions: Optional[Sequence[str]] = None,
-             threshold: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_entities_count is None and 'additionalEntitiesCount' in kwargs:
-            additional_entities_count = kwargs['additionalEntitiesCount']
-        if additional_entities_count is None:
-            raise TypeError("Missing 'additional_entities_count' argument")
-        if data_source_feed_provider is None and 'dataSourceFeedProvider' in kwargs:
-            data_source_feed_provider = kwargs['dataSourceFeedProvider']
-        if data_source_feed_provider is None:
-            raise TypeError("Missing 'data_source_feed_provider' argument")
-        if interval_in_minutes is None and 'intervalInMinutes' in kwargs:
-            interval_in_minutes = kwargs['intervalInMinutes']
-        if interval_in_minutes is None:
-            raise TypeError("Missing 'interval_in_minutes' argument")
-        if logging_query_details is None and 'loggingQueryDetails' in kwargs:
-            logging_query_details = kwargs['loggingQueryDetails']
-        if logging_query_details is None:
-            raise TypeError("Missing 'logging_query_details' argument")
-        if logging_query_type is None and 'loggingQueryType' in kwargs:
-            logging_query_type = kwargs['loggingQueryType']
-        if logging_query_type is None:
-            raise TypeError("Missing 'logging_query_type' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-        if query_start_times is None and 'queryStartTimes' in kwargs:
-            query_start_times = kwargs['queryStartTimes']
-        if query_start_times is None:
-            raise TypeError("Missing 'query_start_times' argument")
-        if regions is None:
-            raise TypeError("Missing 'regions' argument")
-        if threshold is None:
-            raise TypeError("Missing 'threshold' argument")
-
-        _setter("additional_entities_count", additional_entities_count)
-        _setter("data_source_feed_provider", data_source_feed_provider)
-        _setter("interval_in_minutes", interval_in_minutes)
-        _setter("logging_query_details", logging_query_details)
-        _setter("logging_query_type", logging_query_type)
-        _setter("operator", operator)
-        _setter("query", query)
-        _setter("query_start_times", query_start_times)
-        _setter("regions", regions)
-        _setter("threshold", threshold)
+        pulumi.set(__self__, "additional_entities_count", additional_entities_count)
+        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+        pulumi.set(__self__, "interval_in_minutes", interval_in_minutes)
+        pulumi.set(__self__, "logging_query_details", logging_query_details)
+        pulumi.set(__self__, "logging_query_type", logging_query_type)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "query_start_times", query_start_times)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter(name="additionalEntitiesCount")
@@ -8181,29 +6141,8 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailRe
         :param int key_entities_count: The key entities count used for data source query
         :param str logging_query_type: A filter to return only resources their query type matches the given LoggingQueryType.
         """
-        GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key_entities_count=key_entities_count,
-            logging_query_type=logging_query_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key_entities_count: Optional[int] = None,
-             logging_query_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key_entities_count is None and 'keyEntitiesCount' in kwargs:
-            key_entities_count = kwargs['keyEntitiesCount']
-        if key_entities_count is None:
-            raise TypeError("Missing 'key_entities_count' argument")
-        if logging_query_type is None and 'loggingQueryType' in kwargs:
-            logging_query_type = kwargs['loggingQueryType']
-        if logging_query_type is None:
-            raise TypeError("Missing 'logging_query_type' argument")
-
-        _setter("key_entities_count", key_entities_count)
-        _setter("logging_query_type", logging_query_type)
+        pulumi.set(__self__, "key_entities_count", key_entities_count)
+        pulumi.set(__self__, "logging_query_type", logging_query_type)
 
     @property
     @pulumi.getter(name="keyEntitiesCount")
@@ -8231,29 +6170,8 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeResult
         :param str query_start_time: Time when the query can start, if not specified it can start immediately.
         :param str start_policy_type: policy used for deciding the query start time
         """
-        GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            query_start_time=query_start_time,
-            start_policy_type=start_policy_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             query_start_time: Optional[str] = None,
-             start_policy_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if query_start_time is None and 'queryStartTime' in kwargs:
-            query_start_time = kwargs['queryStartTime']
-        if query_start_time is None:
-            raise TypeError("Missing 'query_start_time' argument")
-        if start_policy_type is None and 'startPolicyType' in kwargs:
-            start_policy_type = kwargs['startPolicyType']
-        if start_policy_type is None:
-            raise TypeError("Missing 'start_policy_type' argument")
-
-        _setter("query_start_time", query_start_time)
-        _setter("start_policy_type", start_policy_type)
+        pulumi.set(__self__, "query_start_time", query_start_time)
+        pulumi.set(__self__, "start_policy_type", start_policy_type)
 
     @property
     @pulumi.getter(name="queryStartTime")
@@ -8281,29 +6199,8 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoResult(
         :param str detector_recipe_id: Id of the attached detectorRecipeId to the Data Source.
         :param str detector_rule_id: Id of the attached detectorRuleId to the Data Source.
         """
-        GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            detector_recipe_id=detector_recipe_id,
-            detector_rule_id=detector_rule_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             detector_recipe_id: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if detector_recipe_id is None and 'detectorRecipeId' in kwargs:
-            detector_recipe_id = kwargs['detectorRecipeId']
-        if detector_recipe_id is None:
-            raise TypeError("Missing 'detector_recipe_id' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-
-        _setter("detector_recipe_id", detector_recipe_id)
-        _setter("detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -8331,25 +6228,8 @@ class GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult(dict):
         :param str region: Data Source replication region.
         :param str status: Status of data Source
         """
-        GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            region=region,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-
-        _setter("region", region)
-        _setter("status", status)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
@@ -8374,29 +6254,10 @@ class GetDataSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDataSourcesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -8451,117 +6312,22 @@ class GetDetectorRecipeDetectorRuleResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        GetDetectorRecipeDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            candidate_responder_rules=candidate_responder_rules,
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             candidate_responder_rules: Optional[Sequence['outputs.GetDetectorRecipeDetectorRuleCandidateResponderRuleResult']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetDetectorRecipeDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetDetectorRecipeDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if candidate_responder_rules is None and 'candidateResponderRules' in kwargs:
-            candidate_responder_rules = kwargs['candidateResponderRules']
-        if candidate_responder_rules is None:
-            raise TypeError("Missing 'candidate_responder_rules' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("candidate_responder_rules", candidate_responder_rules)
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -8703,34 +6469,9 @@ class GetDetectorRecipeDetectorRuleCandidateResponderRuleResult(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        GetDetectorRecipeDetectorRuleCandidateResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            id=id,
-            is_preferred=is_preferred,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             is_preferred: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_preferred is None and 'isPreferred' in kwargs:
-            is_preferred = kwargs['isPreferred']
-        if is_preferred is None:
-            raise TypeError("Missing 'is_preferred' argument")
-
-        _setter("display_name", display_name)
-        _setter("id", id)
-        _setter("is_preferred", is_preferred)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -8782,75 +6523,16 @@ class GetDetectorRecipeDetectorRuleDetailResult(dict):
         :param str recommendation: Recommendation for DetectorRecipeDetectorRule
         :param str risk_level: The Risk Level
         """
-        GetDetectorRecipeDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            data_source_id=data_source_id,
-            description=description,
-            entities_mappings=entities_mappings,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            recommendation=recommendation,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationResult']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetDetectorRecipeDetectorRuleDetailEntitiesMappingResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("entities_mappings", entities_mappings)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("recommendation", recommendation)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -8948,44 +6630,11 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationResult(dict):
         :param str value: configuration value
         :param Sequence['GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetDetectorRecipeDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -9039,34 +6688,9 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationValueResult(dict):
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetDetectorRecipeDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -9104,36 +6728,9 @@ class GetDetectorRecipeDetectorRuleDetailEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetDetectorRecipeDetectorRuleDetailEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -9171,36 +6768,9 @@ class GetDetectorRecipeDetectorRuleEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetDetectorRecipeDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -9264,117 +6834,22 @@ class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        GetDetectorRecipeEffectiveDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            candidate_responder_rules=candidate_responder_rules,
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             candidate_responder_rules: Optional[Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if candidate_responder_rules is None and 'candidateResponderRules' in kwargs:
-            candidate_responder_rules = kwargs['candidateResponderRules']
-        if candidate_responder_rules is None:
-            raise TypeError("Missing 'candidate_responder_rules' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("candidate_responder_rules", candidate_responder_rules)
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -9516,34 +6991,9 @@ class GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            id=id,
-            is_preferred=is_preferred,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             is_preferred: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_preferred is None and 'isPreferred' in kwargs:
-            is_preferred = kwargs['isPreferred']
-        if is_preferred is None:
-            raise TypeError("Missing 'is_preferred' argument")
-
-        _setter("display_name", display_name)
-        _setter("id", id)
-        _setter("is_preferred", is_preferred)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -9587,51 +7037,12 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailResult(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        GetDetectorRecipeEffectiveDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -9697,44 +7108,11 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(dict):
         :param str value: configuration value
         :param Sequence['GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -9788,34 +7166,9 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult(dict)
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -9853,36 +7206,9 @@ class GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -9913,20 +7239,7 @@ class GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult(dict):
 class GetDetectorRecipesDetectorRecipeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemResult']):
-        GetDetectorRecipesDetectorRecipeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -9971,117 +7284,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            detector=detector,
-            detector_rules=detector_rules,
-            display_name=display_name,
-            effective_detector_rules=effective_detector_rules,
-            freeform_tags=freeform_tags,
-            id=id,
-            owner=owner,
-            source_detector_recipe_id=source_detector_recipe_id,
-            state=state,
-            system_tags=system_tags,
-            target_ids=target_ids,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             detector: Optional[str] = None,
-             detector_rules: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult']] = None,
-             display_name: Optional[str] = None,
-             effective_detector_rules: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult']] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             owner: Optional[str] = None,
-             source_detector_recipe_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_ids: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rules is None and 'detectorRules' in kwargs:
-            detector_rules = kwargs['detectorRules']
-        if detector_rules is None:
-            raise TypeError("Missing 'detector_rules' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if effective_detector_rules is None and 'effectiveDetectorRules' in kwargs:
-            effective_detector_rules = kwargs['effectiveDetectorRules']
-        if effective_detector_rules is None:
-            raise TypeError("Missing 'effective_detector_rules' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if source_detector_recipe_id is None and 'sourceDetectorRecipeId' in kwargs:
-            source_detector_recipe_id = kwargs['sourceDetectorRecipeId']
-        if source_detector_recipe_id is None:
-            raise TypeError("Missing 'source_detector_recipe_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if target_ids is None:
-            raise TypeError("Missing 'target_ids' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("detector", detector)
-        _setter("detector_rules", detector_rules)
-        _setter("display_name", display_name)
-        _setter("effective_detector_rules", effective_detector_rules)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("owner", owner)
-        _setter("source_detector_recipe_id", source_detector_recipe_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_ids", target_ids)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rules", detector_rules)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_ids", target_ids)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -10249,117 +7467,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            candidate_responder_rules=candidate_responder_rules,
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             candidate_responder_rules: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleResult']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if candidate_responder_rules is None and 'candidateResponderRules' in kwargs:
-            candidate_responder_rules = kwargs['candidateResponderRules']
-        if candidate_responder_rules is None:
-            raise TypeError("Missing 'candidate_responder_rules' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("candidate_responder_rules", candidate_responder_rules)
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -10501,34 +7624,9 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespond
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            id=id,
-            is_preferred=is_preferred,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             is_preferred: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_preferred is None and 'isPreferred' in kwargs:
-            is_preferred = kwargs['isPreferred']
-        if is_preferred is None:
-            raise TypeError("Missing 'is_preferred' argument")
-
-        _setter("display_name", display_name)
-        _setter("id", id)
-        _setter("is_preferred", is_preferred)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -10580,75 +7678,16 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult(dic
         :param str recommendation: Recommendation for DetectorRecipeDetectorRule
         :param str risk_level: The Risk Level
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            data_source_id=data_source_id,
-            description=description,
-            entities_mappings=entities_mappings,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            recommendation=recommendation,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("entities_mappings", entities_mappings)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("recommendation", recommendation)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -10746,44 +7785,11 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
         :param str value: configuration value
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -10837,34 +7843,9 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -10902,36 +7883,9 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMa
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -10969,36 +7923,9 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingR
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -11062,117 +7989,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            candidate_responder_rules=candidate_responder_rules,
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             candidate_responder_rules: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleResult']] = None,
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if candidate_responder_rules is None and 'candidateResponderRules' in kwargs:
-            candidate_responder_rules = kwargs['candidateResponderRules']
-        if candidate_responder_rules is None:
-            raise TypeError("Missing 'candidate_responder_rules' argument")
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("candidate_responder_rules", candidate_responder_rules)
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -11314,34 +8146,9 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandida
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            id=id,
-            is_preferred=is_preferred,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             is_preferred: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_preferred is None and 'isPreferred' in kwargs:
-            is_preferred = kwargs['isPreferred']
-        if is_preferred is None:
-            raise TypeError("Missing 'is_preferred' argument")
-
-        _setter("display_name", display_name)
-        _setter("id", id)
-        _setter("is_preferred", is_preferred)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -11385,51 +8192,12 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailR
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -11495,44 +8263,11 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
         :param str value: configuration value
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -11586,34 +8321,9 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -11651,36 +8361,9 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitie
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -11717,29 +8400,10 @@ class GetDetectorRecipesFilterResult(dict):
         :param str name: configuration name
         :param Sequence[str] values: List of configuration values
         """
-        GetDetectorRecipesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -11776,43 +8440,10 @@ class GetGuardTargetTargetDetailResult(dict):
         :param str target_resource_type: possible type of targets
         :param Sequence['GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs'] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
         """
-        GetGuardTargetTargetDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            security_zone_display_name=security_zone_display_name,
-            security_zone_id=security_zone_id,
-            target_resource_type=target_resource_type,
-            target_security_zone_recipes=target_security_zone_recipes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             security_zone_display_name: Optional[str] = None,
-             security_zone_id: Optional[str] = None,
-             target_resource_type: Optional[str] = None,
-             target_security_zone_recipes: Optional[Sequence['outputs.GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if security_zone_display_name is None and 'securityZoneDisplayName' in kwargs:
-            security_zone_display_name = kwargs['securityZoneDisplayName']
-        if security_zone_display_name is None:
-            raise TypeError("Missing 'security_zone_display_name' argument")
-        if security_zone_id is None and 'securityZoneId' in kwargs:
-            security_zone_id = kwargs['securityZoneId']
-        if security_zone_id is None:
-            raise TypeError("Missing 'security_zone_id' argument")
-        if target_resource_type is None and 'targetResourceType' in kwargs:
-            target_resource_type = kwargs['targetResourceType']
-        if target_resource_type is None:
-            raise TypeError("Missing 'target_resource_type' argument")
-        if target_security_zone_recipes is None and 'targetSecurityZoneRecipes' in kwargs:
-            target_security_zone_recipes = kwargs['targetSecurityZoneRecipes']
-        if target_security_zone_recipes is None:
-            raise TypeError("Missing 'target_security_zone_recipes' argument")
-
-        _setter("security_zone_display_name", security_zone_display_name)
-        _setter("security_zone_id", security_zone_id)
-        _setter("target_resource_type", target_resource_type)
-        _setter("target_security_zone_recipes", target_security_zone_recipes)
+        pulumi.set(__self__, "security_zone_display_name", security_zone_display_name)
+        pulumi.set(__self__, "security_zone_id", security_zone_id)
+        pulumi.set(__self__, "target_resource_type", target_resource_type)
+        pulumi.set(__self__, "target_security_zone_recipes", target_security_zone_recipes)
 
     @property
     @pulumi.getter(name="securityZoneDisplayName")
@@ -11878,98 +8509,19 @@ class GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            owner=owner,
-            security_policies=security_policies,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             owner: Optional[str] = None,
-             security_policies: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if security_policies is None and 'securityPolicies' in kwargs:
-            security_policies = kwargs['securityPolicies']
-        if security_policies is None:
-            raise TypeError("Missing 'security_policies' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("owner", owner)
-        _setter("security_policies", security_policies)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "security_policies", security_policies)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12105,89 +8657,18 @@ class GetGuardTargetTargetDetectorRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetTargetDetectorRecipeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            detector=detector,
-            detector_recipe_id=detector_recipe_id,
-            detector_rules=detector_rules,
-            display_name=display_name,
-            effective_detector_rules=effective_detector_rules,
-            id=id,
-            owner=owner,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             detector: Optional[str] = None,
-             detector_recipe_id: Optional[str] = None,
-             detector_rules: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleResult']] = None,
-             display_name: Optional[str] = None,
-             effective_detector_rules: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult']] = None,
-             id: Optional[str] = None,
-             owner: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_recipe_id is None and 'detectorRecipeId' in kwargs:
-            detector_recipe_id = kwargs['detectorRecipeId']
-        if detector_recipe_id is None:
-            raise TypeError("Missing 'detector_recipe_id' argument")
-        if detector_rules is None and 'detectorRules' in kwargs:
-            detector_rules = kwargs['detectorRules']
-        if detector_rules is None:
-            raise TypeError("Missing 'detector_rules' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if effective_detector_rules is None and 'effectiveDetectorRules' in kwargs:
-            effective_detector_rules = kwargs['effectiveDetectorRules']
-        if effective_detector_rules is None:
-            raise TypeError("Missing 'effective_detector_rules' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("detector", detector)
-        _setter("detector_recipe_id", detector_recipe_id)
-        _setter("detector_rules", detector_rules)
-        _setter("display_name", display_name)
-        _setter("effective_detector_rules", effective_detector_rules)
-        _setter("id", id)
-        _setter("owner", owner)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+        pulumi.set(__self__, "detector_rules", detector_rules)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12321,110 +8802,21 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetTargetDetectorRecipeDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -12564,53 +8956,12 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition_groups=condition_groups,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition_groups: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult']] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition_groups is None and 'conditionGroups' in kwargs:
-            condition_groups = kwargs['conditionGroups']
-        if condition_groups is None:
-            raise TypeError("Missing 'condition_groups' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition_groups", condition_groups)
-        _setter("configurations", configurations)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition_groups", condition_groups)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -12670,27 +9021,8 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult(d
         :param str compartment_id: Compartment Identifier
         :param str condition: Base condition object
         """
-        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            condition=condition,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             condition: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("condition", condition)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12724,44 +9056,11 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult(di
         :param str value: configuration value
         :param Sequence['GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -12815,34 +9114,9 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResu
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -12880,36 +9154,9 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -12971,110 +9218,21 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -13214,53 +9372,12 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailResult(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition_groups=condition_groups,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition_groups: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult']] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition_groups is None and 'conditionGroups' in kwargs:
-            condition_groups = kwargs['conditionGroups']
-        if condition_groups is None:
-            raise TypeError("Missing 'condition_groups' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition_groups", condition_groups)
-        _setter("configurations", configurations)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition_groups", condition_groups)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -13320,27 +9437,8 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGrou
         :param str compartment_id: Compartment Identifier
         :param str condition: Base condition object
         """
-        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            condition=condition,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             condition: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("condition", condition)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13374,44 +9472,11 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration
         :param str value: configuration value
         :param Sequence['GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -13465,34 +9530,9 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -13530,36 +9570,9 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResu
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -13611,79 +9624,16 @@ class GetGuardTargetTargetResponderRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetTargetResponderRecipeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            display_name=display_name,
-            effective_responder_rules=effective_responder_rules,
-            id=id,
-            owner=owner,
-            responder_recipe_id=responder_recipe_id,
-            responder_rules=responder_rules,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             effective_responder_rules: Optional[Sequence['outputs.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult']] = None,
-             id: Optional[str] = None,
-             owner: Optional[str] = None,
-             responder_recipe_id: Optional[str] = None,
-             responder_rules: Optional[Sequence['outputs.GetGuardTargetTargetResponderRecipeResponderRuleResult']] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if effective_responder_rules is None and 'effectiveResponderRules' in kwargs:
-            effective_responder_rules = kwargs['effectiveResponderRules']
-        if effective_responder_rules is None:
-            raise TypeError("Missing 'effective_responder_rules' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if responder_recipe_id is None and 'responderRecipeId' in kwargs:
-            responder_recipe_id = kwargs['responderRecipeId']
-        if responder_recipe_id is None:
-            raise TypeError("Missing 'responder_recipe_id' argument")
-        if responder_rules is None and 'responderRules' in kwargs:
-            responder_rules = kwargs['responderRules']
-        if responder_rules is None:
-            raise TypeError("Missing 'responder_rules' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("effective_responder_rules", effective_responder_rules)
-        _setter("id", id)
-        _setter("owner", owner)
-        _setter("responder_recipe_id", responder_recipe_id)
-        _setter("responder_rules", responder_rules)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "responder_recipe_id", responder_recipe_id)
+        pulumi.set(__self__, "responder_rules", responder_rules)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13795,89 +9745,18 @@ class GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13989,37 +9868,10 @@ class GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailResult(dict
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -14065,32 +9917,9 @@ class GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurati
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -14146,89 +9975,18 @@ class GetGuardTargetTargetResponderRecipeResponderRuleResult(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetGuardTargetTargetResponderRecipeResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetTargetResponderRecipeResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -14340,37 +10098,10 @@ class GetGuardTargetTargetResponderRecipeResponderRuleDetailResult(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetGuardTargetTargetResponderRecipeResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -14416,32 +10147,9 @@ class GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationResult(
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -14478,29 +10186,10 @@ class GetGuardTargetsFilterResult(dict):
         :param str name: configuration name
         :param Sequence[str] values: List of configuration values
         """
-        GetGuardTargetsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -14528,20 +10217,7 @@ class GetGuardTargetsFilterResult(dict):
 class GetGuardTargetsTargetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetGuardTargetsTargetCollectionItemResult']):
-        GetGuardTargetsTargetCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -14590,135 +10266,24 @@ class GetGuardTargetsTargetCollectionItemResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetsTargetCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            inherited_by_compartments=inherited_by_compartments,
-            lifecyle_details=lifecyle_details,
-            recipe_count=recipe_count,
-            state=state,
-            system_tags=system_tags,
-            target_details=target_details,
-            target_detector_recipes=target_detector_recipes,
-            target_resource_id=target_resource_id,
-            target_resource_type=target_resource_type,
-            target_responder_recipes=target_responder_recipes,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             inherited_by_compartments: Optional[Sequence[str]] = None,
-             lifecyle_details: Optional[str] = None,
-             recipe_count: Optional[int] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_details: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetailResult']] = None,
-             target_detector_recipes: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult']] = None,
-             target_resource_id: Optional[str] = None,
-             target_resource_type: Optional[str] = None,
-             target_responder_recipes: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult']] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if inherited_by_compartments is None and 'inheritedByCompartments' in kwargs:
-            inherited_by_compartments = kwargs['inheritedByCompartments']
-        if inherited_by_compartments is None:
-            raise TypeError("Missing 'inherited_by_compartments' argument")
-        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
-            lifecyle_details = kwargs['lifecyleDetails']
-        if lifecyle_details is None:
-            raise TypeError("Missing 'lifecyle_details' argument")
-        if recipe_count is None and 'recipeCount' in kwargs:
-            recipe_count = kwargs['recipeCount']
-        if recipe_count is None:
-            raise TypeError("Missing 'recipe_count' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_details is None and 'targetDetails' in kwargs:
-            target_details = kwargs['targetDetails']
-        if target_details is None:
-            raise TypeError("Missing 'target_details' argument")
-        if target_detector_recipes is None and 'targetDetectorRecipes' in kwargs:
-            target_detector_recipes = kwargs['targetDetectorRecipes']
-        if target_detector_recipes is None:
-            raise TypeError("Missing 'target_detector_recipes' argument")
-        if target_resource_id is None and 'targetResourceId' in kwargs:
-            target_resource_id = kwargs['targetResourceId']
-        if target_resource_id is None:
-            raise TypeError("Missing 'target_resource_id' argument")
-        if target_resource_type is None and 'targetResourceType' in kwargs:
-            target_resource_type = kwargs['targetResourceType']
-        if target_resource_type is None:
-            raise TypeError("Missing 'target_resource_type' argument")
-        if target_responder_recipes is None and 'targetResponderRecipes' in kwargs:
-            target_responder_recipes = kwargs['targetResponderRecipes']
-        if target_responder_recipes is None:
-            raise TypeError("Missing 'target_responder_recipes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("inherited_by_compartments", inherited_by_compartments)
-        _setter("lifecyle_details", lifecyle_details)
-        _setter("recipe_count", recipe_count)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_details", target_details)
-        _setter("target_detector_recipes", target_detector_recipes)
-        _setter("target_resource_id", target_resource_id)
-        _setter("target_resource_type", target_resource_type)
-        _setter("target_responder_recipes", target_responder_recipes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
+        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        pulumi.set(__self__, "recipe_count", recipe_count)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_details", target_details)
+        pulumi.set(__self__, "target_detector_recipes", target_detector_recipes)
+        pulumi.set(__self__, "target_resource_id", target_resource_id)
+        pulumi.set(__self__, "target_resource_type", target_resource_type)
+        pulumi.set(__self__, "target_responder_recipes", target_responder_recipes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -14878,43 +10443,10 @@ class GetGuardTargetsTargetCollectionItemTargetDetailResult(dict):
         :param str target_resource_type: possible type of targets
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs'] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
         """
-        GetGuardTargetsTargetCollectionItemTargetDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            security_zone_display_name=security_zone_display_name,
-            security_zone_id=security_zone_id,
-            target_resource_type=target_resource_type,
-            target_security_zone_recipes=target_security_zone_recipes,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             security_zone_display_name: Optional[str] = None,
-             security_zone_id: Optional[str] = None,
-             target_resource_type: Optional[str] = None,
-             target_security_zone_recipes: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if security_zone_display_name is None and 'securityZoneDisplayName' in kwargs:
-            security_zone_display_name = kwargs['securityZoneDisplayName']
-        if security_zone_display_name is None:
-            raise TypeError("Missing 'security_zone_display_name' argument")
-        if security_zone_id is None and 'securityZoneId' in kwargs:
-            security_zone_id = kwargs['securityZoneId']
-        if security_zone_id is None:
-            raise TypeError("Missing 'security_zone_id' argument")
-        if target_resource_type is None and 'targetResourceType' in kwargs:
-            target_resource_type = kwargs['targetResourceType']
-        if target_resource_type is None:
-            raise TypeError("Missing 'target_resource_type' argument")
-        if target_security_zone_recipes is None and 'targetSecurityZoneRecipes' in kwargs:
-            target_security_zone_recipes = kwargs['targetSecurityZoneRecipes']
-        if target_security_zone_recipes is None:
-            raise TypeError("Missing 'target_security_zone_recipes' argument")
-
-        _setter("security_zone_display_name", security_zone_display_name)
-        _setter("security_zone_id", security_zone_id)
-        _setter("target_resource_type", target_resource_type)
-        _setter("target_security_zone_recipes", target_security_zone_recipes)
+        pulumi.set(__self__, "security_zone_display_name", security_zone_display_name)
+        pulumi.set(__self__, "security_zone_id", security_zone_id)
+        pulumi.set(__self__, "target_resource_type", target_resource_type)
+        pulumi.set(__self__, "target_security_zone_recipes", target_security_zone_recipes)
 
     @property
     @pulumi.getter(name="securityZoneDisplayName")
@@ -14980,98 +10512,19 @@ class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeRes
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            owner=owner,
-            security_policies=security_policies,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             owner: Optional[str] = None,
-             security_policies: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if security_policies is None and 'securityPolicies' in kwargs:
-            security_policies = kwargs['securityPolicies']
-        if security_policies is None:
-            raise TypeError("Missing 'security_policies' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("owner", owner)
-        _setter("security_policies", security_policies)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "security_policies", security_policies)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -15207,89 +10660,18 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            detector=detector,
-            detector_recipe_id=detector_recipe_id,
-            detector_rules=detector_rules,
-            display_name=display_name,
-            effective_detector_rules=effective_detector_rules,
-            id=id,
-            owner=owner,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             detector: Optional[str] = None,
-             detector_recipe_id: Optional[str] = None,
-             detector_rules: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult']] = None,
-             display_name: Optional[str] = None,
-             effective_detector_rules: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleResult']] = None,
-             id: Optional[str] = None,
-             owner: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_recipe_id is None and 'detectorRecipeId' in kwargs:
-            detector_recipe_id = kwargs['detectorRecipeId']
-        if detector_recipe_id is None:
-            raise TypeError("Missing 'detector_recipe_id' argument")
-        if detector_rules is None and 'detectorRules' in kwargs:
-            detector_rules = kwargs['detectorRules']
-        if detector_rules is None:
-            raise TypeError("Missing 'detector_rules' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if effective_detector_rules is None and 'effectiveDetectorRules' in kwargs:
-            effective_detector_rules = kwargs['effectiveDetectorRules']
-        if effective_detector_rules is None:
-            raise TypeError("Missing 'effective_detector_rules' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("detector", detector)
-        _setter("detector_recipe_id", detector_recipe_id)
-        _setter("detector_rules", detector_rules)
-        _setter("display_name", display_name)
-        _setter("effective_detector_rules", effective_detector_rules)
-        _setter("id", id)
-        _setter("owner", owner)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+        pulumi.set(__self__, "detector_rules", detector_rules)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -15423,110 +10805,21 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult(
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -15666,53 +10959,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailR
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition_groups=condition_groups,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition_groups: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupResult']] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition_groups is None and 'conditionGroups' in kwargs:
-            condition_groups = kwargs['conditionGroups']
-        if condition_groups is None:
-            raise TypeError("Missing 'condition_groups' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition_groups", condition_groups)
-        _setter("configurations", configurations)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition_groups", condition_groups)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -15772,27 +11024,8 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str condition: Base condition object
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            condition=condition,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             condition: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("condition", condition)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -15826,44 +11059,11 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
         :param str value: configuration value
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -15917,34 +11117,9 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -15982,36 +11157,9 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitie
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -16073,110 +11221,21 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_source_id=data_source_id,
-            description=description,
-            details=details,
-            detector=detector,
-            detector_rule_id=detector_rule_id,
-            display_name=display_name,
-            entities_mappings=entities_mappings,
-            lifecycle_details=lifecycle_details,
-            managed_list_types=managed_list_types,
-            recommendation=recommendation,
-            resource_type=resource_type,
-            service_type=service_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_source_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailResult']] = None,
-             detector: Optional[str] = None,
-             detector_rule_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entities_mappings: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult']] = None,
-             lifecycle_details: Optional[str] = None,
-             managed_list_types: Optional[Sequence[str]] = None,
-             recommendation: Optional[str] = None,
-             resource_type: Optional[str] = None,
-             service_type: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_source_id is None and 'dataSourceId' in kwargs:
-            data_source_id = kwargs['dataSourceId']
-        if data_source_id is None:
-            raise TypeError("Missing 'data_source_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if detector is None:
-            raise TypeError("Missing 'detector' argument")
-        if detector_rule_id is None and 'detectorRuleId' in kwargs:
-            detector_rule_id = kwargs['detectorRuleId']
-        if detector_rule_id is None:
-            raise TypeError("Missing 'detector_rule_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entities_mappings is None and 'entitiesMappings' in kwargs:
-            entities_mappings = kwargs['entitiesMappings']
-        if entities_mappings is None:
-            raise TypeError("Missing 'entities_mappings' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if managed_list_types is None and 'managedListTypes' in kwargs:
-            managed_list_types = kwargs['managedListTypes']
-        if managed_list_types is None:
-            raise TypeError("Missing 'managed_list_types' argument")
-        if recommendation is None:
-            raise TypeError("Missing 'recommendation' argument")
-        if resource_type is None and 'resourceType' in kwargs:
-            resource_type = kwargs['resourceType']
-        if resource_type is None:
-            raise TypeError("Missing 'resource_type' argument")
-        if service_type is None and 'serviceType' in kwargs:
-            service_type = kwargs['serviceType']
-        if service_type is None:
-            raise TypeError("Missing 'service_type' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("data_source_id", data_source_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("detector", detector)
-        _setter("detector_rule_id", detector_rule_id)
-        _setter("display_name", display_name)
-        _setter("entities_mappings", entities_mappings)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("managed_list_types", managed_list_types)
-        _setter("recommendation", recommendation)
-        _setter("resource_type", resource_type)
-        _setter("service_type", service_type)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "data_source_id", data_source_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "detector", detector)
+        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_list_types", managed_list_types)
+        pulumi.set(__self__, "recommendation", recommendation)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -16316,53 +11375,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition_groups=condition_groups,
-            configurations=configurations,
-            is_configuration_allowed=is_configuration_allowed,
-            is_enabled=is_enabled,
-            labels=labels,
-            risk_level=risk_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition_groups: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult']] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult']] = None,
-             is_configuration_allowed: Optional[bool] = None,
-             is_enabled: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             risk_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition_groups is None and 'conditionGroups' in kwargs:
-            condition_groups = kwargs['conditionGroups']
-        if condition_groups is None:
-            raise TypeError("Missing 'condition_groups' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_configuration_allowed is None and 'isConfigurationAllowed' in kwargs:
-            is_configuration_allowed = kwargs['isConfigurationAllowed']
-        if is_configuration_allowed is None:
-            raise TypeError("Missing 'is_configuration_allowed' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if risk_level is None and 'riskLevel' in kwargs:
-            risk_level = kwargs['riskLevel']
-        if risk_level is None:
-            raise TypeError("Missing 'risk_level' argument")
-
-        _setter("condition_groups", condition_groups)
-        _setter("configurations", configurations)
-        _setter("is_configuration_allowed", is_configuration_allowed)
-        _setter("is_enabled", is_enabled)
-        _setter("labels", labels)
-        _setter("risk_level", risk_level)
+        pulumi.set(__self__, "condition_groups", condition_groups)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -16422,27 +11440,8 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str condition: Base condition object
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            condition=condition,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             condition: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("condition", condition)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -16476,44 +11475,11 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str value: configuration value
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            data_type=data_type,
-            name=name,
-            value=value,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             data_type: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             values: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("config_key", config_key)
-        _setter("data_type", data_type)
-        _setter("name", name)
-        _setter("value", value)
-        _setter("values", values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -16567,34 +11533,9 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            list_type=list_type,
-            managed_list_type=managed_list_type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             list_type: Optional[str] = None,
-             managed_list_type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if managed_list_type is None and 'managedListType' in kwargs:
-            managed_list_type = kwargs['managedListType']
-        if managed_list_type is None:
-            raise TypeError("Missing 'managed_list_type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("list_type", list_type)
-        _setter("managed_list_type", managed_list_type)
-        _setter("value", value)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "managed_list_type", managed_list_type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -16632,36 +11573,9 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            entity_type=entity_type,
-            query_field=query_field,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             query_field: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if query_field is None and 'queryField' in kwargs:
-            query_field = kwargs['queryField']
-        if query_field is None:
-            raise TypeError("Missing 'query_field' argument")
-
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("query_field", query_field)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -16713,79 +11627,16 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            display_name=display_name,
-            effective_responder_rules=effective_responder_rules,
-            id=id,
-            owner=owner,
-            responder_recipe_id=responder_recipe_id,
-            responder_rules=responder_rules,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             effective_responder_rules: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleResult']] = None,
-             id: Optional[str] = None,
-             owner: Optional[str] = None,
-             responder_recipe_id: Optional[str] = None,
-             responder_rules: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleResult']] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if effective_responder_rules is None and 'effectiveResponderRules' in kwargs:
-            effective_responder_rules = kwargs['effectiveResponderRules']
-        if effective_responder_rules is None:
-            raise TypeError("Missing 'effective_responder_rules' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if responder_recipe_id is None and 'responderRecipeId' in kwargs:
-            responder_recipe_id = kwargs['responderRecipeId']
-        if responder_recipe_id is None:
-            raise TypeError("Missing 'responder_recipe_id' argument")
-        if responder_rules is None and 'responderRules' in kwargs:
-            responder_rules = kwargs['responderRules']
-        if responder_rules is None:
-            raise TypeError("Missing 'responder_rules' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("effective_responder_rules", effective_responder_rules)
-        _setter("id", id)
-        _setter("owner", owner)
-        _setter("responder_recipe_id", responder_recipe_id)
-        _setter("responder_rules", responder_rules)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "responder_recipe_id", responder_recipe_id)
+        pulumi.set(__self__, "responder_rules", responder_rules)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -16897,89 +11748,18 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponder
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -17091,37 +11871,10 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponder
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -17167,32 +11920,9 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponder
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -17248,89 +11978,18 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleResul
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -17442,37 +12101,10 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetai
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -17518,32 +12150,9 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetai
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -17576,29 +12185,10 @@ class GetManagedListsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetManagedListsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -17620,20 +12210,7 @@ class GetManagedListsFilterResult(dict):
 class GetManagedListsManagedListCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetManagedListsManagedListCollectionItemResult']):
-        GetManagedListsManagedListCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetManagedListsManagedListCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -17678,121 +12255,22 @@ class GetManagedListsManagedListCollectionItemResult(dict):
         :param str time_created: The date and time the managed list was created. Format defined by RFC3339.
         :param str time_updated: The date and time the managed list was updated. Format defined by RFC3339.
         """
-        GetManagedListsManagedListCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            feed_provider=feed_provider,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_editable=is_editable,
-            lifecyle_details=lifecyle_details,
-            list_items=list_items,
-            list_type=list_type,
-            source_managed_list_id=source_managed_list_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             feed_provider: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_editable: Optional[bool] = None,
-             lifecyle_details: Optional[str] = None,
-             list_items: Optional[Sequence[str]] = None,
-             list_type: Optional[str] = None,
-             source_managed_list_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if feed_provider is None and 'feedProvider' in kwargs:
-            feed_provider = kwargs['feedProvider']
-        if feed_provider is None:
-            raise TypeError("Missing 'feed_provider' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_editable is None and 'isEditable' in kwargs:
-            is_editable = kwargs['isEditable']
-        if is_editable is None:
-            raise TypeError("Missing 'is_editable' argument")
-        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
-            lifecyle_details = kwargs['lifecyleDetails']
-        if lifecyle_details is None:
-            raise TypeError("Missing 'lifecyle_details' argument")
-        if list_items is None and 'listItems' in kwargs:
-            list_items = kwargs['listItems']
-        if list_items is None:
-            raise TypeError("Missing 'list_items' argument")
-        if list_type is None and 'listType' in kwargs:
-            list_type = kwargs['listType']
-        if list_type is None:
-            raise TypeError("Missing 'list_type' argument")
-        if source_managed_list_id is None and 'sourceManagedListId' in kwargs:
-            source_managed_list_id = kwargs['sourceManagedListId']
-        if source_managed_list_id is None:
-            raise TypeError("Missing 'source_managed_list_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("feed_provider", feed_provider)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_editable", is_editable)
-        _setter("lifecyle_details", lifecyle_details)
-        _setter("list_items", list_items)
-        _setter("list_type", list_type)
-        _setter("source_managed_list_id", source_managed_list_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "feed_provider", feed_provider)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_editable", is_editable)
+        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+        pulumi.set(__self__, "list_items", list_items)
+        pulumi.set(__self__, "list_type", list_type)
+        pulumi.set(__self__, "source_managed_list_id", source_managed_list_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -17929,29 +12407,10 @@ class GetProblemEntitiesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetProblemEntitiesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -17976,20 +12435,7 @@ class GetProblemEntitiesProblemEntityCollectionResult(dict):
         """
         :param Sequence['GetProblemEntitiesProblemEntityCollectionItemArgs'] items: List of problem entities summaries related to a data source.
         """
-        GetProblemEntitiesProblemEntityCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetProblemEntitiesProblemEntityCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -18017,55 +12463,12 @@ class GetProblemEntitiesProblemEntityCollectionItemResult(dict):
         :param str time_first_detected: Data source problem entities first detected time
         :param str time_last_detected: Data source problem entities last detected time
         """
-        GetProblemEntitiesProblemEntityCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            entity_details=entity_details,
-            problem_id=problem_id,
-            regions=regions,
-            result_url=result_url,
-            time_first_detected=time_first_detected,
-            time_last_detected=time_last_detected,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             entity_details: Optional[Sequence['outputs.GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult']] = None,
-             problem_id: Optional[str] = None,
-             regions: Optional[Sequence[str]] = None,
-             result_url: Optional[str] = None,
-             time_first_detected: Optional[str] = None,
-             time_last_detected: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if entity_details is None and 'entityDetails' in kwargs:
-            entity_details = kwargs['entityDetails']
-        if entity_details is None:
-            raise TypeError("Missing 'entity_details' argument")
-        if problem_id is None and 'problemId' in kwargs:
-            problem_id = kwargs['problemId']
-        if problem_id is None:
-            raise TypeError("Missing 'problem_id' argument")
-        if regions is None:
-            raise TypeError("Missing 'regions' argument")
-        if result_url is None and 'resultUrl' in kwargs:
-            result_url = kwargs['resultUrl']
-        if result_url is None:
-            raise TypeError("Missing 'result_url' argument")
-        if time_first_detected is None and 'timeFirstDetected' in kwargs:
-            time_first_detected = kwargs['timeFirstDetected']
-        if time_first_detected is None:
-            raise TypeError("Missing 'time_first_detected' argument")
-        if time_last_detected is None and 'timeLastDetected' in kwargs:
-            time_last_detected = kwargs['timeLastDetected']
-        if time_last_detected is None:
-            raise TypeError("Missing 'time_last_detected' argument")
-
-        _setter("entity_details", entity_details)
-        _setter("problem_id", problem_id)
-        _setter("regions", regions)
-        _setter("result_url", result_url)
-        _setter("time_first_detected", time_first_detected)
-        _setter("time_last_detected", time_last_detected)
+        pulumi.set(__self__, "entity_details", entity_details)
+        pulumi.set(__self__, "problem_id", problem_id)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "result_url", result_url)
+        pulumi.set(__self__, "time_first_detected", time_first_detected)
+        pulumi.set(__self__, "time_last_detected", time_last_detected)
 
     @property
     @pulumi.getter(name="entityDetails")
@@ -18127,32 +12530,9 @@ class GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult(dict):
         :param str type: Type of entity
         :param str value: The entity value
         """
-        GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("display_name", display_name)
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -18196,55 +12576,12 @@ class GetProblemEntityItemResult(dict):
         :param str time_first_detected: Data source problem entities first detected time
         :param str time_last_detected: Data source problem entities last detected time
         """
-        GetProblemEntityItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            entity_details=entity_details,
-            problem_id=problem_id,
-            regions=regions,
-            result_url=result_url,
-            time_first_detected=time_first_detected,
-            time_last_detected=time_last_detected,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             entity_details: Optional[Sequence['outputs.GetProblemEntityItemEntityDetailResult']] = None,
-             problem_id: Optional[str] = None,
-             regions: Optional[Sequence[str]] = None,
-             result_url: Optional[str] = None,
-             time_first_detected: Optional[str] = None,
-             time_last_detected: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if entity_details is None and 'entityDetails' in kwargs:
-            entity_details = kwargs['entityDetails']
-        if entity_details is None:
-            raise TypeError("Missing 'entity_details' argument")
-        if problem_id is None and 'problemId' in kwargs:
-            problem_id = kwargs['problemId']
-        if problem_id is None:
-            raise TypeError("Missing 'problem_id' argument")
-        if regions is None:
-            raise TypeError("Missing 'regions' argument")
-        if result_url is None and 'resultUrl' in kwargs:
-            result_url = kwargs['resultUrl']
-        if result_url is None:
-            raise TypeError("Missing 'result_url' argument")
-        if time_first_detected is None and 'timeFirstDetected' in kwargs:
-            time_first_detected = kwargs['timeFirstDetected']
-        if time_first_detected is None:
-            raise TypeError("Missing 'time_first_detected' argument")
-        if time_last_detected is None and 'timeLastDetected' in kwargs:
-            time_last_detected = kwargs['timeLastDetected']
-        if time_last_detected is None:
-            raise TypeError("Missing 'time_last_detected' argument")
-
-        _setter("entity_details", entity_details)
-        _setter("problem_id", problem_id)
-        _setter("regions", regions)
-        _setter("result_url", result_url)
-        _setter("time_first_detected", time_first_detected)
-        _setter("time_last_detected", time_last_detected)
+        pulumi.set(__self__, "entity_details", entity_details)
+        pulumi.set(__self__, "problem_id", problem_id)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "result_url", result_url)
+        pulumi.set(__self__, "time_first_detected", time_first_detected)
+        pulumi.set(__self__, "time_last_detected", time_last_detected)
 
     @property
     @pulumi.getter(name="entityDetails")
@@ -18306,32 +12643,9 @@ class GetProblemEntityItemEntityDetailResult(dict):
         :param str type: Type of entity
         :param str value: The entity value
         """
-        GetProblemEntityItemEntityDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("display_name", display_name)
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -18387,89 +12701,18 @@ class GetResponderRecipeEffectiveResponderRuleResult(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetResponderRecipeEffectiveResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetResponderRecipeEffectiveResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -18581,37 +12824,10 @@ class GetResponderRecipeEffectiveResponderRuleDetailResult(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetResponderRecipeEffectiveResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetResponderRecipeEffectiveResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -18657,32 +12873,9 @@ class GetResponderRecipeEffectiveResponderRuleDetailConfigurationResult(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetResponderRecipeEffectiveResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -18738,89 +12931,18 @@ class GetResponderRecipeResponderRuleResult(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetResponderRecipeResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetResponderRecipeResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -18932,37 +13054,10 @@ class GetResponderRecipeResponderRuleDetailResult(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetResponderRecipeResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetResponderRecipeResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -19008,32 +13103,9 @@ class GetResponderRecipeResponderRuleDetailConfigurationResult(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetResponderRecipeResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -19069,29 +13141,10 @@ class GetResponderRecipesFilterResult(dict):
         """
         :param str name: configuration name
         """
-        GetResponderRecipesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19116,20 +13169,7 @@ class GetResponderRecipesFilterResult(dict):
 class GetResponderRecipesResponderRecipeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResult']):
-        GetResponderRecipesResponderRecipeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -19172,112 +13212,21 @@ class GetResponderRecipesResponderRecipeCollectionItemResult(dict):
         :param str time_created: The date and time the responder recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         """
-        GetResponderRecipesResponderRecipeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            effective_responder_rules=effective_responder_rules,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            owner=owner,
-            responder_rules=responder_rules,
-            source_responder_recipe_id=source_responder_recipe_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             effective_responder_rules: Optional[Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResult']] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             owner: Optional[str] = None,
-             responder_rules: Optional[Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResponderRuleResult']] = None,
-             source_responder_recipe_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if effective_responder_rules is None and 'effectiveResponderRules' in kwargs:
-            effective_responder_rules = kwargs['effectiveResponderRules']
-        if effective_responder_rules is None:
-            raise TypeError("Missing 'effective_responder_rules' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if responder_rules is None and 'responderRules' in kwargs:
-            responder_rules = kwargs['responderRules']
-        if responder_rules is None:
-            raise TypeError("Missing 'responder_rules' argument")
-        if source_responder_recipe_id is None and 'sourceResponderRecipeId' in kwargs:
-            source_responder_recipe_id = kwargs['sourceResponderRecipeId']
-        if source_responder_recipe_id is None:
-            raise TypeError("Missing 'source_responder_recipe_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("effective_responder_rules", effective_responder_rules)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("owner", owner)
-        _setter("responder_rules", responder_rules)
-        _setter("source_responder_recipe_id", source_responder_recipe_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "responder_rules", responder_rules)
+        pulumi.set(__self__, "source_responder_recipe_id", source_responder_recipe_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -19429,89 +13378,18 @@ class GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResu
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -19623,37 +13501,10 @@ class GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDeta
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -19699,32 +13550,9 @@ class GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDeta
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -19780,89 +13608,18 @@ class GetResponderRecipesResponderRecipeCollectionItemResponderRuleResult(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        GetResponderRecipesResponderRecipeCollectionItemResponderRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            description=description,
-            details=details,
-            display_name=display_name,
-            lifecycle_details=lifecycle_details,
-            policies=policies,
-            responder_rule_id=responder_rule_id,
-            state=state,
-            supported_modes=supported_modes,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             description: Optional[str] = None,
-             details: Optional[Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailResult']] = None,
-             display_name: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             policies: Optional[Sequence[str]] = None,
-             responder_rule_id: Optional[str] = None,
-             state: Optional[str] = None,
-             supported_modes: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if policies is None:
-            raise TypeError("Missing 'policies' argument")
-        if responder_rule_id is None and 'responderRuleId' in kwargs:
-            responder_rule_id = kwargs['responderRuleId']
-        if responder_rule_id is None:
-            raise TypeError("Missing 'responder_rule_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if supported_modes is None and 'supportedModes' in kwargs:
-            supported_modes = kwargs['supportedModes']
-        if supported_modes is None:
-            raise TypeError("Missing 'supported_modes' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("description", description)
-        _setter("details", details)
-        _setter("display_name", display_name)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("policies", policies)
-        _setter("responder_rule_id", responder_rule_id)
-        _setter("state", state)
-        _setter("supported_modes", supported_modes)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "supported_modes", supported_modes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -19974,37 +13731,10 @@ class GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailResult(
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            configurations=configurations,
-            is_enabled=is_enabled,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             configurations: Optional[Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationResult']] = None,
-             is_enabled: Optional[bool] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if configurations is None:
-            raise TypeError("Missing 'configurations' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("condition", condition)
-        _setter("configurations", configurations)
-        _setter("is_enabled", is_enabled)
-        _setter("mode", mode)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter
@@ -20050,32 +13780,9 @@ class GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigu
         :param str name: configuration name
         :param str value: configuration value
         """
-        GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            config_key=config_key,
-            name=name,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             config_key: Optional[str] = None,
-             name: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if config_key is None and 'configKey' in kwargs:
-            config_key = kwargs['configKey']
-        if config_key is None:
-            raise TypeError("Missing 'config_key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("config_key", config_key)
-        _setter("name", name)
-        _setter("value", value)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -20108,29 +13815,10 @@ class GetSecurityPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecurityPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20152,20 +13840,7 @@ class GetSecurityPoliciesFilterResult(dict):
 class GetSecurityPoliciesSecurityPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionItemResult']):
-        GetSecurityPoliciesSecurityPolicyCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -20206,101 +13881,20 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
         :param str time_created: The time the security policy was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the security policy was last updated. An RFC3339 formatted datetime string.
         """
-        GetSecurityPoliciesSecurityPolicyCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            category=category,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            friendly_name=friendly_name,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            owner=owner,
-            services=services,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             category: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             friendly_name: Optional[str] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             owner: Optional[str] = None,
-             services: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if category is None:
-            raise TypeError("Missing 'category' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if friendly_name is None and 'friendlyName' in kwargs:
-            friendly_name = kwargs['friendlyName']
-        if friendly_name is None:
-            raise TypeError("Missing 'friendly_name' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if services is None:
-            raise TypeError("Missing 'services' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("category", category)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("friendly_name", friendly_name)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("owner", owner)
-        _setter("services", services)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "friendly_name", friendly_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "services", services)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -20421,29 +14015,10 @@ class GetSecurityRecipesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecurityRecipesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20465,20 +14040,7 @@ class GetSecurityRecipesFilterResult(dict):
 class GetSecurityRecipesSecurityRecipeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSecurityRecipesSecurityRecipeCollectionItemResult']):
-        GetSecurityRecipesSecurityRecipeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSecurityRecipesSecurityRecipeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -20515,91 +14077,18 @@ class GetSecurityRecipesSecurityRecipeCollectionItemResult(dict):
         :param str time_created: The time the recipe was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the recipe was last updated. An RFC3339 formatted datetime string.
         """
-        GetSecurityRecipesSecurityRecipeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            owner=owner,
-            security_policies=security_policies,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             owner: Optional[str] = None,
-             security_policies: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if owner is None:
-            raise TypeError("Missing 'owner' argument")
-        if security_policies is None and 'securityPolicies' in kwargs:
-            security_policies = kwargs['securityPolicies']
-        if security_policies is None:
-            raise TypeError("Missing 'security_policies' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("owner", owner)
-        _setter("security_policies", security_policies)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "security_policies", security_policies)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -20704,29 +14193,10 @@ class GetSecurityZonesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecurityZonesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20748,20 +14218,7 @@ class GetSecurityZonesFilterResult(dict):
 class GetSecurityZonesSecurityZoneCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSecurityZonesSecurityZoneCollectionItemResult']):
-        GetSecurityZonesSecurityZoneCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSecurityZonesSecurityZoneCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -20800,100 +14257,19 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         :param str time_created: The time the security zone was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the security zone was last updated. An RFC3339 formatted datetime string.
         """
-        GetSecurityZonesSecurityZoneCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            inherited_by_compartments=inherited_by_compartments,
-            lifecycle_details=lifecycle_details,
-            security_zone_recipe_id=security_zone_recipe_id,
-            security_zone_target_id=security_zone_target_id,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             inherited_by_compartments: Optional[Sequence[str]] = None,
-             lifecycle_details: Optional[str] = None,
-             security_zone_recipe_id: Optional[str] = None,
-             security_zone_target_id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if inherited_by_compartments is None and 'inheritedByCompartments' in kwargs:
-            inherited_by_compartments = kwargs['inheritedByCompartments']
-        if inherited_by_compartments is None:
-            raise TypeError("Missing 'inherited_by_compartments' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if security_zone_recipe_id is None and 'securityZoneRecipeId' in kwargs:
-            security_zone_recipe_id = kwargs['securityZoneRecipeId']
-        if security_zone_recipe_id is None:
-            raise TypeError("Missing 'security_zone_recipe_id' argument")
-        if security_zone_target_id is None and 'securityZoneTargetId' in kwargs:
-            security_zone_target_id = kwargs['securityZoneTargetId']
-        if security_zone_target_id is None:
-            raise TypeError("Missing 'security_zone_target_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("inherited_by_compartments", inherited_by_compartments)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("security_zone_recipe_id", security_zone_recipe_id)
-        _setter("security_zone_target_id", security_zone_target_id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "security_zone_recipe_id", security_zone_recipe_id)
+        pulumi.set(__self__, "security_zone_target_id", security_zone_target_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

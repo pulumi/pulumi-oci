@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,73 +43,20 @@ class NamespaceScheduledTaskArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
         """
-        NamespaceScheduledTaskArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            compartment_id=compartment_id,
-            kind=kind,
-            namespace=namespace,
-            schedules=schedules,
-            task_type=task_type,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            saved_search_id=saved_search_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input['NamespaceScheduledTaskActionArgs']] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             kind: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             schedules: Optional[pulumi.Input['NamespaceScheduledTaskSchedulesArgs']] = None,
-             task_type: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             saved_search_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if kind is None:
-            raise TypeError("Missing 'kind' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if schedules is None:
-            raise TypeError("Missing 'schedules' argument")
-        if task_type is None and 'taskType' in kwargs:
-            task_type = kwargs['taskType']
-        if task_type is None:
-            raise TypeError("Missing 'task_type' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if saved_search_id is None and 'savedSearchId' in kwargs:
-            saved_search_id = kwargs['savedSearchId']
-
-        _setter("action", action)
-        _setter("compartment_id", compartment_id)
-        _setter("kind", kind)
-        _setter("namespace", namespace)
-        _setter("schedules", schedules)
-        _setter("task_type", task_type)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "schedules", schedules)
+        pulumi.set(__self__, "task_type", task_type)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if saved_search_id is not None:
-            _setter("saved_search_id", saved_search_id)
+            pulumi.set(__self__, "saved_search_id", saved_search_id)
 
     @property
     @pulumi.getter
@@ -279,107 +226,40 @@ class _NamespaceScheduledTaskState:
         :param pulumi.Input[str] time_updated: The date and time the scheduled task was last updated, in the format defined by RFC3339.
         :param pulumi.Input[str] work_request_id: most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         """
-        _NamespaceScheduledTaskState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            kind=kind,
-            namespace=namespace,
-            num_occurrences=num_occurrences,
-            saved_search_id=saved_search_id,
-            scheduled_task_id=scheduled_task_id,
-            schedules=schedules,
-            state=state,
-            task_status=task_status,
-            task_type=task_type,
-            time_created=time_created,
-            time_updated=time_updated,
-            work_request_id=work_request_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input['NamespaceScheduledTaskActionArgs']] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             kind: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             num_occurrences: Optional[pulumi.Input[str]] = None,
-             saved_search_id: Optional[pulumi.Input[str]] = None,
-             scheduled_task_id: Optional[pulumi.Input[str]] = None,
-             schedules: Optional[pulumi.Input['NamespaceScheduledTaskSchedulesArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             task_status: Optional[pulumi.Input[str]] = None,
-             task_type: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if num_occurrences is None and 'numOccurrences' in kwargs:
-            num_occurrences = kwargs['numOccurrences']
-        if saved_search_id is None and 'savedSearchId' in kwargs:
-            saved_search_id = kwargs['savedSearchId']
-        if scheduled_task_id is None and 'scheduledTaskId' in kwargs:
-            scheduled_task_id = kwargs['scheduledTaskId']
-        if task_status is None and 'taskStatus' in kwargs:
-            task_status = kwargs['taskStatus']
-        if task_type is None and 'taskType' in kwargs:
-            task_type = kwargs['taskType']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if work_request_id is None and 'workRequestId' in kwargs:
-            work_request_id = kwargs['workRequestId']
-
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kind is not None:
-            _setter("kind", kind)
+            pulumi.set(__self__, "kind", kind)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if num_occurrences is not None:
-            _setter("num_occurrences", num_occurrences)
+            pulumi.set(__self__, "num_occurrences", num_occurrences)
         if saved_search_id is not None:
-            _setter("saved_search_id", saved_search_id)
+            pulumi.set(__self__, "saved_search_id", saved_search_id)
         if scheduled_task_id is not None:
-            _setter("scheduled_task_id", scheduled_task_id)
+            pulumi.set(__self__, "scheduled_task_id", scheduled_task_id)
         if schedules is not None:
-            _setter("schedules", schedules)
+            pulumi.set(__self__, "schedules", schedules)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if task_status is not None:
-            _setter("task_status", task_status)
+            pulumi.set(__self__, "task_status", task_status)
         if task_type is not None:
-            _setter("task_type", task_type)
+            pulumi.set(__self__, "task_type", task_type)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if work_request_id is not None:
-            _setter("work_request_id", work_request_id)
+            pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter
@@ -662,10 +542,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NamespaceScheduledTaskArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -690,7 +566,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NamespaceScheduledTaskArgs.__new__(NamespaceScheduledTaskArgs)
 
-            action = _utilities.configure(action, NamespaceScheduledTaskActionArgs, True)
             if action is None and not opts.urn:
                 raise TypeError("Missing required property 'action'")
             __props__.__dict__["action"] = action
@@ -707,7 +582,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                 raise TypeError("Missing required property 'namespace'")
             __props__.__dict__["namespace"] = namespace
             __props__.__dict__["saved_search_id"] = saved_search_id
-            schedules = _utilities.configure(schedules, NamespaceScheduledTaskSchedulesArgs, True)
             if schedules is None and not opts.urn:
                 raise TypeError("Missing required property 'schedules'")
             __props__.__dict__["schedules"] = schedules

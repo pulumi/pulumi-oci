@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -30,41 +30,12 @@ class KeyVersionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        KeyVersionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key_id=key_id,
-            management_endpoint=management_endpoint,
-            external_key_version_id=external_key_version_id,
-            time_of_deletion=time_of_deletion,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key_id: Optional[pulumi.Input[str]] = None,
-             management_endpoint: Optional[pulumi.Input[str]] = None,
-             external_key_version_id: Optional[pulumi.Input[str]] = None,
-             time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_id is None:
-            raise TypeError("Missing 'key_id' argument")
-        if management_endpoint is None and 'managementEndpoint' in kwargs:
-            management_endpoint = kwargs['managementEndpoint']
-        if management_endpoint is None:
-            raise TypeError("Missing 'management_endpoint' argument")
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
-            time_of_deletion = kwargs['timeOfDeletion']
-
-        _setter("key_id", key_id)
-        _setter("management_endpoint", management_endpoint)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "management_endpoint", management_endpoint)
         if external_key_version_id is not None:
-            _setter("external_key_version_id", external_key_version_id)
+            pulumi.set(__self__, "external_key_version_id", external_key_version_id)
         if time_of_deletion is not None:
-            _setter("time_of_deletion", time_of_deletion)
+            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
 
     @property
     @pulumi.getter(name="keyId")
@@ -155,103 +126,36 @@ class _KeyVersionState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_id: The OCID of the vault that contains this key version.
         """
-        _KeyVersionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            external_key_reference_details=external_key_reference_details,
-            external_key_version_id=external_key_version_id,
-            is_primary=is_primary,
-            key_id=key_id,
-            key_version_id=key_version_id,
-            management_endpoint=management_endpoint,
-            public_key=public_key,
-            replica_details=replica_details,
-            restored_from_key_id=restored_from_key_id,
-            restored_from_key_version_id=restored_from_key_version_id,
-            state=state,
-            time_created=time_created,
-            time_of_deletion=time_of_deletion,
-            vault_id=vault_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]] = None,
-             external_key_version_id: Optional[pulumi.Input[str]] = None,
-             is_primary: Optional[pulumi.Input[bool]] = None,
-             key_id: Optional[pulumi.Input[str]] = None,
-             key_version_id: Optional[pulumi.Input[str]] = None,
-             management_endpoint: Optional[pulumi.Input[str]] = None,
-             public_key: Optional[pulumi.Input[str]] = None,
-             replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]] = None,
-             restored_from_key_id: Optional[pulumi.Input[str]] = None,
-             restored_from_key_version_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_of_deletion: Optional[pulumi.Input[str]] = None,
-             vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if external_key_reference_details is None and 'externalKeyReferenceDetails' in kwargs:
-            external_key_reference_details = kwargs['externalKeyReferenceDetails']
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-        if is_primary is None and 'isPrimary' in kwargs:
-            is_primary = kwargs['isPrimary']
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_version_id is None and 'keyVersionId' in kwargs:
-            key_version_id = kwargs['keyVersionId']
-        if management_endpoint is None and 'managementEndpoint' in kwargs:
-            management_endpoint = kwargs['managementEndpoint']
-        if public_key is None and 'publicKey' in kwargs:
-            public_key = kwargs['publicKey']
-        if replica_details is None and 'replicaDetails' in kwargs:
-            replica_details = kwargs['replicaDetails']
-        if restored_from_key_id is None and 'restoredFromKeyId' in kwargs:
-            restored_from_key_id = kwargs['restoredFromKeyId']
-        if restored_from_key_version_id is None and 'restoredFromKeyVersionId' in kwargs:
-            restored_from_key_version_id = kwargs['restoredFromKeyVersionId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
-            time_of_deletion = kwargs['timeOfDeletion']
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if external_key_reference_details is not None:
-            _setter("external_key_reference_details", external_key_reference_details)
+            pulumi.set(__self__, "external_key_reference_details", external_key_reference_details)
         if external_key_version_id is not None:
-            _setter("external_key_version_id", external_key_version_id)
+            pulumi.set(__self__, "external_key_version_id", external_key_version_id)
         if is_primary is not None:
-            _setter("is_primary", is_primary)
+            pulumi.set(__self__, "is_primary", is_primary)
         if key_id is not None:
-            _setter("key_id", key_id)
+            pulumi.set(__self__, "key_id", key_id)
         if key_version_id is not None:
-            _setter("key_version_id", key_version_id)
+            pulumi.set(__self__, "key_version_id", key_version_id)
         if management_endpoint is not None:
-            _setter("management_endpoint", management_endpoint)
+            pulumi.set(__self__, "management_endpoint", management_endpoint)
         if public_key is not None:
-            _setter("public_key", public_key)
+            pulumi.set(__self__, "public_key", public_key)
         if replica_details is not None:
-            _setter("replica_details", replica_details)
+            pulumi.set(__self__, "replica_details", replica_details)
         if restored_from_key_id is not None:
-            _setter("restored_from_key_id", restored_from_key_id)
+            pulumi.set(__self__, "restored_from_key_id", restored_from_key_id)
         if restored_from_key_version_id is not None:
-            _setter("restored_from_key_version_id", restored_from_key_version_id)
+            pulumi.set(__self__, "restored_from_key_version_id", restored_from_key_version_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_of_deletion is not None:
-            _setter("time_of_deletion", time_of_deletion)
+            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
         if vault_id is not None:
-            _setter("vault_id", vault_id)
+            pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -505,10 +409,6 @@ class KeyVersion(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            KeyVersionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

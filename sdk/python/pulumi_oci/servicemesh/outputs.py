@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -114,30 +114,9 @@ class AccessPolicyRule(dict):
         :param 'AccessPolicyRuleDestinationArgs' destination: (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
         :param 'AccessPolicyRuleSourceArgs' source: (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
         """
-        AccessPolicyRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            destination=destination,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             destination: Optional['outputs.AccessPolicyRuleDestination'] = None,
-             source: Optional['outputs.AccessPolicyRuleSource'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("action", action)
-        _setter("destination", destination)
-        _setter("source", source)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -208,50 +187,19 @@ class AccessPolicyRuleDestination(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AccessPolicyRuleDestination._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             hostnames: Optional[Sequence[str]] = None,
-             ingress_gateway_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             ports: Optional[Sequence[int]] = None,
-             protocol: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if hostnames is not None:
-            _setter("hostnames", hostnames)
+            pulumi.set(__self__, "hostnames", hostnames)
         if ingress_gateway_id is not None:
-            _setter("ingress_gateway_id", ingress_gateway_id)
+            pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
         if ip_addresses is not None:
-            _setter("ip_addresses", ip_addresses)
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
         if ports is not None:
-            _setter("ports", ports)
+            pulumi.set(__self__, "ports", ports)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if virtual_service_id is not None:
-            _setter("virtual_service_id", virtual_service_id)
+            pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -358,50 +306,19 @@ class AccessPolicyRuleSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AccessPolicyRuleSource._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             hostnames: Optional[Sequence[str]] = None,
-             ingress_gateway_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             ports: Optional[Sequence[int]] = None,
-             protocol: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if hostnames is not None:
-            _setter("hostnames", hostnames)
+            pulumi.set(__self__, "hostnames", hostnames)
         if ingress_gateway_id is not None:
-            _setter("ingress_gateway_id", ingress_gateway_id)
+            pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
         if ip_addresses is not None:
-            _setter("ip_addresses", ip_addresses)
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
         if ports is not None:
-            _setter("ports", ports)
+            pulumi.set(__self__, "ports", ports)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if virtual_service_id is not None:
-            _setter("virtual_service_id", virtual_service_id)
+            pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -488,21 +405,8 @@ class IngressGatewayAccessLogging(dict):
         """
         :param bool is_enabled: (Updatable) Determines if the logging configuration is enabled.
         """
-        IngressGatewayAccessLogging._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -528,29 +432,10 @@ class IngressGatewayHost(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[str] hostnames: (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
         """
-        IngressGatewayHost._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            listeners=listeners,
-            name=name,
-            hostnames=hostnames,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             listeners: Optional[Sequence['outputs.IngressGatewayHostListener']] = None,
-             name: Optional[str] = None,
-             hostnames: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if listeners is None:
-            raise TypeError("Missing 'listeners' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("listeners", listeners)
-        _setter("name", name)
+        pulumi.set(__self__, "listeners", listeners)
+        pulumi.set(__self__, "name", name)
         if hostnames is not None:
-            _setter("hostnames", hostnames)
+            pulumi.set(__self__, "hostnames", hostnames)
 
     @property
     @pulumi.getter
@@ -592,29 +477,10 @@ class IngressGatewayHostListener(dict):
         :param str protocol: (Updatable) Type of protocol used.
         :param 'IngressGatewayHostListenerTlsArgs' tls: (Updatable) TLS enforcement config for the ingress listener.
         """
-        IngressGatewayHostListener._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            protocol=protocol,
-            tls=tls,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             tls: Optional['outputs.IngressGatewayHostListenerTls'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-
-        _setter("port", port)
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
         if tls is not None:
-            _setter("tls", tls)
+            pulumi.set(__self__, "tls", tls)
 
     @property
     @pulumi.getter
@@ -671,32 +537,11 @@ class IngressGatewayHostListenerTls(dict):
         :param 'IngressGatewayHostListenerTlsClientValidationArgs' client_validation: (Updatable) Resource representing the TLS configuration used for validating client certificates.
         :param 'IngressGatewayHostListenerTlsServerCertificateArgs' server_certificate: (Updatable) Resource representing the location of the TLS certificate.
         """
-        IngressGatewayHostListenerTls._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            mode=mode,
-            client_validation=client_validation,
-            server_certificate=server_certificate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             mode: Optional[str] = None,
-             client_validation: Optional['outputs.IngressGatewayHostListenerTlsClientValidation'] = None,
-             server_certificate: Optional['outputs.IngressGatewayHostListenerTlsServerCertificate'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-        if client_validation is None and 'clientValidation' in kwargs:
-            client_validation = kwargs['clientValidation']
-        if server_certificate is None and 'serverCertificate' in kwargs:
-            server_certificate = kwargs['serverCertificate']
-
-        _setter("mode", mode)
+        pulumi.set(__self__, "mode", mode)
         if client_validation is not None:
-            _setter("client_validation", client_validation)
+            pulumi.set(__self__, "client_validation", client_validation)
         if server_certificate is not None:
-            _setter("server_certificate", server_certificate)
+            pulumi.set(__self__, "server_certificate", server_certificate)
 
     @property
     @pulumi.getter
@@ -751,27 +596,10 @@ class IngressGatewayHostListenerTlsClientValidation(dict):
         :param Sequence[str] subject_alternate_names: (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
         :param 'IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs' trusted_ca_bundle: (Updatable) Resource representing the CA bundle.
         """
-        IngressGatewayHostListenerTlsClientValidation._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subject_alternate_names=subject_alternate_names,
-            trusted_ca_bundle=trusted_ca_bundle,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subject_alternate_names: Optional[Sequence[str]] = None,
-             trusted_ca_bundle: Optional['outputs.IngressGatewayHostListenerTlsClientValidationTrustedCaBundle'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subject_alternate_names is None and 'subjectAlternateNames' in kwargs:
-            subject_alternate_names = kwargs['subjectAlternateNames']
-        if trusted_ca_bundle is None and 'trustedCaBundle' in kwargs:
-            trusted_ca_bundle = kwargs['trustedCaBundle']
-
         if subject_alternate_names is not None:
-            _setter("subject_alternate_names", subject_alternate_names)
+            pulumi.set(__self__, "subject_alternate_names", subject_alternate_names)
         if trusted_ca_bundle is not None:
-            _setter("trusted_ca_bundle", trusted_ca_bundle)
+            pulumi.set(__self__, "trusted_ca_bundle", trusted_ca_bundle)
 
     @property
     @pulumi.getter(name="subjectAlternateNames")
@@ -820,32 +648,11 @@ class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle(dict):
         :param str ca_bundle_id: (Updatable) The OCID of the CA Bundle resource.
         :param str secret_name: (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         """
-        IngressGatewayHostListenerTlsClientValidationTrustedCaBundle._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            ca_bundle_id=ca_bundle_id,
-            secret_name=secret_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             ca_bundle_id: Optional[str] = None,
-             secret_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ca_bundle_id is None and 'caBundleId' in kwargs:
-            ca_bundle_id = kwargs['caBundleId']
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if ca_bundle_id is not None:
-            _setter("ca_bundle_id", ca_bundle_id)
+            pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
         if secret_name is not None:
-            _setter("secret_name", secret_name)
+            pulumi.set(__self__, "secret_name", secret_name)
 
     @property
     @pulumi.getter
@@ -902,32 +709,11 @@ class IngressGatewayHostListenerTlsServerCertificate(dict):
         :param str certificate_id: (Updatable) The OCID of the leaf certificate resource.
         :param str secret_name: (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         """
-        IngressGatewayHostListenerTlsServerCertificate._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            certificate_id=certificate_id,
-            secret_name=secret_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             certificate_id: Optional[str] = None,
-             secret_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if secret_name is not None:
-            _setter("secret_name", secret_name)
+            pulumi.set(__self__, "secret_name", secret_name)
 
     @property
     @pulumi.getter
@@ -982,27 +768,10 @@ class IngressGatewayMtls(dict):
         :param str certificate_id: (Updatable) The OCID of the leaf certificate resource.
         :param int maximum_validity: (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        IngressGatewayMtls._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[str] = None,
-             maximum_validity: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if maximum_validity is not None:
-            _setter("maximum_validity", maximum_validity)
+            pulumi.set(__self__, "maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -1075,65 +844,22 @@ class IngressGatewayRouteTableRouteRule(dict):
         :param str path_type: (Updatable) Match type for the route
         :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        IngressGatewayRouteTableRouteRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            type=type,
-            ingress_gateway_host=ingress_gateway_host,
-            is_grpc=is_grpc,
-            is_host_rewrite_enabled=is_host_rewrite_enabled,
-            is_path_rewrite_enabled=is_path_rewrite_enabled,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[Sequence['outputs.IngressGatewayRouteTableRouteRuleDestination']] = None,
-             type: Optional[str] = None,
-             ingress_gateway_host: Optional['outputs.IngressGatewayRouteTableRouteRuleIngressGatewayHost'] = None,
-             is_grpc: Optional[bool] = None,
-             is_host_rewrite_enabled: Optional[bool] = None,
-             is_path_rewrite_enabled: Optional[bool] = None,
-             path: Optional[str] = None,
-             path_type: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ingress_gateway_host is None and 'ingressGatewayHost' in kwargs:
-            ingress_gateway_host = kwargs['ingressGatewayHost']
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if is_host_rewrite_enabled is None and 'isHostRewriteEnabled' in kwargs:
-            is_host_rewrite_enabled = kwargs['isHostRewriteEnabled']
-        if is_path_rewrite_enabled is None and 'isPathRewriteEnabled' in kwargs:
-            is_path_rewrite_enabled = kwargs['isPathRewriteEnabled']
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-
-        _setter("destinations", destinations)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "type", type)
         if ingress_gateway_host is not None:
-            _setter("ingress_gateway_host", ingress_gateway_host)
+            pulumi.set(__self__, "ingress_gateway_host", ingress_gateway_host)
         if is_grpc is not None:
-            _setter("is_grpc", is_grpc)
+            pulumi.set(__self__, "is_grpc", is_grpc)
         if is_host_rewrite_enabled is not None:
-            _setter("is_host_rewrite_enabled", is_host_rewrite_enabled)
+            pulumi.set(__self__, "is_host_rewrite_enabled", is_host_rewrite_enabled)
         if is_path_rewrite_enabled is not None:
-            _setter("is_path_rewrite_enabled", is_path_rewrite_enabled)
+            pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
         if path is not None:
-            _setter("path", path)
+            pulumi.set(__self__, "path", path)
         if path_type is not None:
-            _setter("path_type", path_type)
+            pulumi.set(__self__, "path_type", path_type)
         if request_timeout_in_ms is not None:
-            _setter("request_timeout_in_ms", request_timeout_in_ms)
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1240,30 +966,11 @@ class IngressGatewayRouteTableRouteRuleDestination(dict):
         :param int port: (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         :param int weight: (Updatable) Weight of traffic target.
         """
-        IngressGatewayRouteTableRouteRuleDestination._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            virtual_service_id=virtual_service_id,
-            port=port,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             virtual_service_id: Optional[str] = None,
-             port: Optional[int] = None,
-             weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if weight is not None:
-            _setter("weight", weight)
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter(name="virtualServiceId")
@@ -1299,24 +1006,9 @@ class IngressGatewayRouteTableRouteRuleIngressGatewayHost(dict):
         :param str name: (Updatable) Name of the ingress gateway host that this route should apply to.
         :param int port: (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         """
-        IngressGatewayRouteTableRouteRuleIngressGatewayHost._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
@@ -1342,20 +1034,7 @@ class MeshCertificateAuthority(dict):
         """
         :param str id: The OCID of the certificate authority resource.
         """
-        MeshCertificateAuthority._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("id", id)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -1377,20 +1056,7 @@ class MeshMtls(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        MeshMtls._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            minimum=minimum,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             minimum: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if minimum is None:
-            raise TypeError("Missing 'minimum' argument")
-
-        _setter("minimum", minimum)
+        pulumi.set(__self__, "minimum", minimum)
 
     @property
     @pulumi.getter
@@ -1429,21 +1095,8 @@ class VirtualDeploymentAccessLogging(dict):
         """
         :param bool is_enabled: (Updatable) Determines if the logging configuration is enabled.
         """
-        VirtualDeploymentAccessLogging._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1486,37 +1139,12 @@ class VirtualDeploymentListener(dict):
         :param str idle_timeout_in_ms: (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
         :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        VirtualDeploymentListener._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            protocol=protocol,
-            idle_timeout_in_ms=idle_timeout_in_ms,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             idle_timeout_in_ms: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if idle_timeout_in_ms is None and 'idleTimeoutInMs' in kwargs:
-            idle_timeout_in_ms = kwargs['idleTimeoutInMs']
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-
-        _setter("port", port)
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
         if idle_timeout_in_ms is not None:
-            _setter("idle_timeout_in_ms", idle_timeout_in_ms)
+            pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
         if request_timeout_in_ms is not None:
-            _setter("request_timeout_in_ms", request_timeout_in_ms)
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1560,24 +1188,9 @@ class VirtualDeploymentServiceDiscovery(dict):
         :param str type: (Updatable) Type of service discovery.
         :param str hostname: (Updatable) The hostname of the virtual deployments.
         """
-        VirtualDeploymentServiceDiscovery._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            hostname=hostname,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if hostname is not None:
-            _setter("hostname", hostname)
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1603,20 +1216,7 @@ class VirtualServiceDefaultRoutingPolicy(dict):
         """
         :param str type: (Updatable) Type of the virtual service routing policy.
         """
-        VirtualServiceDefaultRoutingPolicy._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -1657,32 +1257,11 @@ class VirtualServiceMtls(dict):
         :param str certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param int maximum_validity: (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        VirtualServiceMtls._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            mode=mode,
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             mode: Optional[str] = None,
-             certificate_id: Optional[str] = None,
-             maximum_validity: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-
-        _setter("mode", mode)
+        pulumi.set(__self__, "mode", mode)
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if maximum_validity is not None:
-            _setter("maximum_validity", maximum_validity)
+            pulumi.set(__self__, "maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter
@@ -1747,47 +1326,16 @@ class VirtualServiceRouteTableRouteRule(dict):
         :param str path_type: (Updatable) Match type for the route
         :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        VirtualServiceRouteTableRouteRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            type=type,
-            is_grpc=is_grpc,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[Sequence['outputs.VirtualServiceRouteTableRouteRuleDestination']] = None,
-             type: Optional[str] = None,
-             is_grpc: Optional[bool] = None,
-             path: Optional[str] = None,
-             path_type: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-
-        _setter("destinations", destinations)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "type", type)
         if is_grpc is not None:
-            _setter("is_grpc", is_grpc)
+            pulumi.set(__self__, "is_grpc", is_grpc)
         if path is not None:
-            _setter("path", path)
+            pulumi.set(__self__, "path", path)
         if path_type is not None:
-            _setter("path_type", path_type)
+            pulumi.set(__self__, "path_type", path_type)
         if request_timeout_in_ms is not None:
-            _setter("request_timeout_in_ms", request_timeout_in_ms)
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1866,31 +1414,10 @@ class VirtualServiceRouteTableRouteRuleDestination(dict):
         :param int weight: (Updatable) Weight of traffic target.
         :param int port: (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
         """
-        VirtualServiceRouteTableRouteRuleDestination._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            virtual_deployment_id=virtual_deployment_id,
-            weight=weight,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             virtual_deployment_id: Optional[str] = None,
-             weight: Optional[int] = None,
-             port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if virtual_deployment_id is None and 'virtualDeploymentId' in kwargs:
-            virtual_deployment_id = kwargs['virtualDeploymentId']
-        if virtual_deployment_id is None:
-            raise TypeError("Missing 'virtual_deployment_id' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("virtual_deployment_id", virtual_deployment_id)
-        _setter("weight", weight)
+        pulumi.set(__self__, "virtual_deployment_id", virtual_deployment_id)
+        pulumi.set(__self__, "weight", weight)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="virtualDeploymentId")
@@ -1921,20 +1448,7 @@ class VirtualServiceRouteTableRouteRuleDestination(dict):
 class GetAccessPoliciesAccessPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemResult']):
-        GetAccessPoliciesAccessPolicyCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -1973,96 +1487,19 @@ class GetAccessPoliciesAccessPolicyCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        GetAccessPoliciesAccessPolicyCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            mesh_id=mesh_id,
-            name=name,
-            rules=rules,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             mesh_id: Optional[str] = None,
-             name: Optional[str] = None,
-             rules: Optional[Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleResult']] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if mesh_id is None and 'meshId' in kwargs:
-            mesh_id = kwargs['meshId']
-        if mesh_id is None:
-            raise TypeError("Missing 'mesh_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if rules is None:
-            raise TypeError("Missing 'rules' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("mesh_id", mesh_id)
-        _setter("name", name)
-        _setter("rules", rules)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mesh_id", mesh_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2180,30 +1617,9 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleResult(dict):
         :param Sequence['GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs'] destinations: Target of the access policy. This can either be the source or the destination of the traffic.
         :param Sequence['GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs'] sources: Target of the access policy. This can either be the source or the destination of the traffic.
         """
-        GetAccessPoliciesAccessPolicyCollectionItemRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            destinations=destinations,
-            sources=sources,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             destinations: Optional[Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult']] = None,
-             sources: Optional[Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if sources is None:
-            raise TypeError("Missing 'sources' argument")
-
-        _setter("action", action)
-        _setter("destinations", destinations)
-        _setter("sources", sources)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "sources", sources)
 
     @property
     @pulumi.getter
@@ -2249,56 +1665,13 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            type=type,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostnames: Optional[Sequence[str]] = None,
-             ingress_gateway_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             ports: Optional[Sequence[int]] = None,
-             protocol: Optional[str] = None,
-             type: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostnames is None:
-            raise TypeError("Missing 'hostnames' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ingress_gateway_id is None:
-            raise TypeError("Missing 'ingress_gateway_id' argument")
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if ip_addresses is None:
-            raise TypeError("Missing 'ip_addresses' argument")
-        if ports is None:
-            raise TypeError("Missing 'ports' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("hostnames", hostnames)
-        _setter("ingress_gateway_id", ingress_gateway_id)
-        _setter("ip_addresses", ip_addresses)
-        _setter("ports", ports)
-        _setter("protocol", protocol)
-        _setter("type", type)
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "ports", ports)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -2376,56 +1749,13 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            type=type,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostnames: Optional[Sequence[str]] = None,
-             ingress_gateway_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             ports: Optional[Sequence[int]] = None,
-             protocol: Optional[str] = None,
-             type: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostnames is None:
-            raise TypeError("Missing 'hostnames' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ingress_gateway_id is None:
-            raise TypeError("Missing 'ingress_gateway_id' argument")
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if ip_addresses is None:
-            raise TypeError("Missing 'ip_addresses' argument")
-        if ports is None:
-            raise TypeError("Missing 'ports' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("hostnames", hostnames)
-        _setter("ingress_gateway_id", ingress_gateway_id)
-        _setter("ip_addresses", ip_addresses)
-        _setter("ports", ports)
-        _setter("protocol", protocol)
-        _setter("type", type)
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "ports", ports)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -2493,29 +1823,10 @@ class GetAccessPoliciesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetAccessPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2547,30 +1858,9 @@ class GetAccessPolicyRuleResult(dict):
         :param Sequence['GetAccessPolicyRuleDestinationArgs'] destinations: Target of the access policy. This can either be the source or the destination of the traffic.
         :param Sequence['GetAccessPolicyRuleSourceArgs'] sources: Target of the access policy. This can either be the source or the destination of the traffic.
         """
-        GetAccessPolicyRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            destinations=destinations,
-            sources=sources,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             destinations: Optional[Sequence['outputs.GetAccessPolicyRuleDestinationResult']] = None,
-             sources: Optional[Sequence['outputs.GetAccessPolicyRuleSourceResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if sources is None:
-            raise TypeError("Missing 'sources' argument")
-
-        _setter("action", action)
-        _setter("destinations", destinations)
-        _setter("sources", sources)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "sources", sources)
 
     @property
     @pulumi.getter
@@ -2616,56 +1906,13 @@ class GetAccessPolicyRuleDestinationResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        GetAccessPolicyRuleDestinationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            type=type,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostnames: Optional[Sequence[str]] = None,
-             ingress_gateway_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             ports: Optional[Sequence[int]] = None,
-             protocol: Optional[str] = None,
-             type: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostnames is None:
-            raise TypeError("Missing 'hostnames' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ingress_gateway_id is None:
-            raise TypeError("Missing 'ingress_gateway_id' argument")
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if ip_addresses is None:
-            raise TypeError("Missing 'ip_addresses' argument")
-        if ports is None:
-            raise TypeError("Missing 'ports' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("hostnames", hostnames)
-        _setter("ingress_gateway_id", ingress_gateway_id)
-        _setter("ip_addresses", ip_addresses)
-        _setter("ports", ports)
-        _setter("protocol", protocol)
-        _setter("type", type)
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "ports", ports)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -2743,56 +1990,13 @@ class GetAccessPolicyRuleSourceResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        GetAccessPolicyRuleSourceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            type=type,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostnames: Optional[Sequence[str]] = None,
-             ingress_gateway_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             ports: Optional[Sequence[int]] = None,
-             protocol: Optional[str] = None,
-             type: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostnames is None:
-            raise TypeError("Missing 'hostnames' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ingress_gateway_id is None:
-            raise TypeError("Missing 'ingress_gateway_id' argument")
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if ip_addresses is None:
-            raise TypeError("Missing 'ip_addresses' argument")
-        if ports is None:
-            raise TypeError("Missing 'ports' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("hostnames", hostnames)
-        _setter("ingress_gateway_id", ingress_gateway_id)
-        _setter("ip_addresses", ip_addresses)
-        _setter("ports", ports)
-        _setter("protocol", protocol)
-        _setter("type", type)
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "ports", ports)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -2858,22 +2062,7 @@ class GetIngressGatewayAccessLoggingResult(dict):
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        GetIngressGatewayAccessLoggingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -2895,30 +2084,9 @@ class GetIngressGatewayHostResult(dict):
         :param Sequence['GetIngressGatewayHostListenerArgs'] listeners: The listeners for the ingress gateway.
         :param str name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         """
-        GetIngressGatewayHostResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostnames=hostnames,
-            listeners=listeners,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostnames: Optional[Sequence[str]] = None,
-             listeners: Optional[Sequence['outputs.GetIngressGatewayHostListenerResult']] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostnames is None:
-            raise TypeError("Missing 'hostnames' argument")
-        if listeners is None:
-            raise TypeError("Missing 'listeners' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("hostnames", hostnames)
-        _setter("listeners", listeners)
-        _setter("name", name)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "listeners", listeners)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -2956,30 +2124,9 @@ class GetIngressGatewayHostListenerResult(dict):
         :param str protocol: Type of protocol used.
         :param Sequence['GetIngressGatewayHostListenerTlArgs'] tls: TLS enforcement config for the ingress listener.
         """
-        GetIngressGatewayHostListenerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            protocol=protocol,
-            tls=tls,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             tls: Optional[Sequence['outputs.GetIngressGatewayHostListenerTlResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if tls is None:
-            raise TypeError("Missing 'tls' argument")
-
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("tls", tls)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "tls", tls)
 
     @property
     @pulumi.getter
@@ -3017,34 +2164,9 @@ class GetIngressGatewayHostListenerTlResult(dict):
         :param str mode: DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
         :param Sequence['GetIngressGatewayHostListenerTlServerCertificateArgs'] server_certificates: Resource representing the location of the TLS certificate.
         """
-        GetIngressGatewayHostListenerTlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_validations=client_validations,
-            mode=mode,
-            server_certificates=server_certificates,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_validations: Optional[Sequence['outputs.GetIngressGatewayHostListenerTlClientValidationResult']] = None,
-             mode: Optional[str] = None,
-             server_certificates: Optional[Sequence['outputs.GetIngressGatewayHostListenerTlServerCertificateResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_validations is None and 'clientValidations' in kwargs:
-            client_validations = kwargs['clientValidations']
-        if client_validations is None:
-            raise TypeError("Missing 'client_validations' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-        if server_certificates is None and 'serverCertificates' in kwargs:
-            server_certificates = kwargs['serverCertificates']
-        if server_certificates is None:
-            raise TypeError("Missing 'server_certificates' argument")
-
-        _setter("client_validations", client_validations)
-        _setter("mode", mode)
-        _setter("server_certificates", server_certificates)
+        pulumi.set(__self__, "client_validations", client_validations)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "server_certificates", server_certificates)
 
     @property
     @pulumi.getter(name="clientValidations")
@@ -3080,29 +2202,8 @@ class GetIngressGatewayHostListenerTlClientValidationResult(dict):
         :param Sequence[str] subject_alternate_names: A list of alternate names to verify the subject identity in the certificate presented by the client.
         :param Sequence['GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs'] trusted_ca_bundles: Resource representing the CA bundle.
         """
-        GetIngressGatewayHostListenerTlClientValidationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subject_alternate_names=subject_alternate_names,
-            trusted_ca_bundles=trusted_ca_bundles,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subject_alternate_names: Optional[Sequence[str]] = None,
-             trusted_ca_bundles: Optional[Sequence['outputs.GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subject_alternate_names is None and 'subjectAlternateNames' in kwargs:
-            subject_alternate_names = kwargs['subjectAlternateNames']
-        if subject_alternate_names is None:
-            raise TypeError("Missing 'subject_alternate_names' argument")
-        if trusted_ca_bundles is None and 'trustedCaBundles' in kwargs:
-            trusted_ca_bundles = kwargs['trustedCaBundles']
-        if trusted_ca_bundles is None:
-            raise TypeError("Missing 'trusted_ca_bundles' argument")
-
-        _setter("subject_alternate_names", subject_alternate_names)
-        _setter("trusted_ca_bundles", trusted_ca_bundles)
+        pulumi.set(__self__, "subject_alternate_names", subject_alternate_names)
+        pulumi.set(__self__, "trusted_ca_bundles", trusted_ca_bundles)
 
     @property
     @pulumi.getter(name="subjectAlternateNames")
@@ -3132,34 +2233,9 @@ class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult(dict)
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_bundle_id=ca_bundle_id,
-            secret_name=secret_name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_bundle_id: Optional[str] = None,
-             secret_name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_bundle_id is None and 'caBundleId' in kwargs:
-            ca_bundle_id = kwargs['caBundleId']
-        if ca_bundle_id is None:
-            raise TypeError("Missing 'ca_bundle_id' argument")
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-        if secret_name is None:
-            raise TypeError("Missing 'secret_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("ca_bundle_id", ca_bundle_id)
-        _setter("secret_name", secret_name)
-        _setter("type", type)
+        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
+        pulumi.set(__self__, "secret_name", secret_name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="caBundleId")
@@ -3197,34 +2273,9 @@ class GetIngressGatewayHostListenerTlServerCertificateResult(dict):
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        GetIngressGatewayHostListenerTlServerCertificateResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            secret_name=secret_name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[str] = None,
-             secret_name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if certificate_id is None:
-            raise TypeError("Missing 'certificate_id' argument")
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-        if secret_name is None:
-            raise TypeError("Missing 'secret_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("certificate_id", certificate_id)
-        _setter("secret_name", secret_name)
-        _setter("type", type)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "secret_name", secret_name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -3260,29 +2311,8 @@ class GetIngressGatewayMtlResult(dict):
         :param str certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        GetIngressGatewayMtlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[str] = None,
-             maximum_validity: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if certificate_id is None:
-            raise TypeError("Missing 'certificate_id' argument")
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-        if maximum_validity is None:
-            raise TypeError("Missing 'maximum_validity' argument")
-
-        _setter("certificate_id", certificate_id)
-        _setter("maximum_validity", maximum_validity)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -3324,72 +2354,15 @@ class GetIngressGatewayRouteTableRouteRuleResult(dict):
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        GetIngressGatewayRouteTableRouteRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            ingress_gateway_hosts=ingress_gateway_hosts,
-            is_grpc=is_grpc,
-            is_host_rewrite_enabled=is_host_rewrite_enabled,
-            is_path_rewrite_enabled=is_path_rewrite_enabled,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[Sequence['outputs.GetIngressGatewayRouteTableRouteRuleDestinationResult']] = None,
-             ingress_gateway_hosts: Optional[Sequence['outputs.GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult']] = None,
-             is_grpc: Optional[bool] = None,
-             is_host_rewrite_enabled: Optional[bool] = None,
-             is_path_rewrite_enabled: Optional[bool] = None,
-             path: Optional[str] = None,
-             path_type: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if ingress_gateway_hosts is None and 'ingressGatewayHosts' in kwargs:
-            ingress_gateway_hosts = kwargs['ingressGatewayHosts']
-        if ingress_gateway_hosts is None:
-            raise TypeError("Missing 'ingress_gateway_hosts' argument")
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if is_grpc is None:
-            raise TypeError("Missing 'is_grpc' argument")
-        if is_host_rewrite_enabled is None and 'isHostRewriteEnabled' in kwargs:
-            is_host_rewrite_enabled = kwargs['isHostRewriteEnabled']
-        if is_host_rewrite_enabled is None:
-            raise TypeError("Missing 'is_host_rewrite_enabled' argument")
-        if is_path_rewrite_enabled is None and 'isPathRewriteEnabled' in kwargs:
-            is_path_rewrite_enabled = kwargs['isPathRewriteEnabled']
-        if is_path_rewrite_enabled is None:
-            raise TypeError("Missing 'is_path_rewrite_enabled' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if path_type is None:
-            raise TypeError("Missing 'path_type' argument")
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-        if request_timeout_in_ms is None:
-            raise TypeError("Missing 'request_timeout_in_ms' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("destinations", destinations)
-        _setter("ingress_gateway_hosts", ingress_gateway_hosts)
-        _setter("is_grpc", is_grpc)
-        _setter("is_host_rewrite_enabled", is_host_rewrite_enabled)
-        _setter("is_path_rewrite_enabled", is_path_rewrite_enabled)
-        _setter("path", path)
-        _setter("path_type", path_type)
-        _setter("request_timeout_in_ms", request_timeout_in_ms)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "ingress_gateway_hosts", ingress_gateway_hosts)
+        pulumi.set(__self__, "is_grpc", is_grpc)
+        pulumi.set(__self__, "is_host_rewrite_enabled", is_host_rewrite_enabled)
+        pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -3475,32 +2448,9 @@ class GetIngressGatewayRouteTableRouteRuleDestinationResult(dict):
         :param str virtual_service_id: The OCID of the virtual service where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        GetIngressGatewayRouteTableRouteRuleDestinationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            virtual_service_id=virtual_service_id,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             virtual_service_id: Optional[str] = None,
-             weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("port", port)
-        _setter("virtual_service_id", virtual_service_id)
-        _setter("weight", weight)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
@@ -3536,25 +2486,8 @@ class GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult(dict):
         :param str name: Name of the ingress gateway host that this route should apply to.
         :param int port: The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         """
-        GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-
-        _setter("name", name)
-        _setter("port", port)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
@@ -3582,29 +2515,10 @@ class GetIngressGatewayRouteTablesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetIngressGatewayRouteTablesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3629,20 +2543,7 @@ class GetIngressGatewayRouteTablesFilterResult(dict):
 class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult']):
-        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -3683,103 +2584,20 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            id=id,
-            ingress_gateway_id=ingress_gateway_id,
-            lifecycle_details=lifecycle_details,
-            name=name,
-            priority=priority,
-            route_rules=route_rules,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             ingress_gateway_id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             name: Optional[str] = None,
-             priority: Optional[int] = None,
-             route_rules: Optional[Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleResult']] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ingress_gateway_id is None:
-            raise TypeError("Missing 'ingress_gateway_id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if priority is None:
-            raise TypeError("Missing 'priority' argument")
-        if route_rules is None and 'routeRules' in kwargs:
-            route_rules = kwargs['routeRules']
-        if route_rules is None:
-            raise TypeError("Missing 'route_rules' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("ingress_gateway_id", ingress_gateway_id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("name", name)
-        _setter("priority", priority)
-        _setter("route_rules", route_rules)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "priority", priority)
+        pulumi.set(__self__, "route_rules", route_rules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3917,72 +2735,15 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            ingress_gateway_hosts=ingress_gateway_hosts,
-            is_grpc=is_grpc,
-            is_host_rewrite_enabled=is_host_rewrite_enabled,
-            is_path_rewrite_enabled=is_path_rewrite_enabled,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationResult']] = None,
-             ingress_gateway_hosts: Optional[Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostResult']] = None,
-             is_grpc: Optional[bool] = None,
-             is_host_rewrite_enabled: Optional[bool] = None,
-             is_path_rewrite_enabled: Optional[bool] = None,
-             path: Optional[str] = None,
-             path_type: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if ingress_gateway_hosts is None and 'ingressGatewayHosts' in kwargs:
-            ingress_gateway_hosts = kwargs['ingressGatewayHosts']
-        if ingress_gateway_hosts is None:
-            raise TypeError("Missing 'ingress_gateway_hosts' argument")
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if is_grpc is None:
-            raise TypeError("Missing 'is_grpc' argument")
-        if is_host_rewrite_enabled is None and 'isHostRewriteEnabled' in kwargs:
-            is_host_rewrite_enabled = kwargs['isHostRewriteEnabled']
-        if is_host_rewrite_enabled is None:
-            raise TypeError("Missing 'is_host_rewrite_enabled' argument")
-        if is_path_rewrite_enabled is None and 'isPathRewriteEnabled' in kwargs:
-            is_path_rewrite_enabled = kwargs['isPathRewriteEnabled']
-        if is_path_rewrite_enabled is None:
-            raise TypeError("Missing 'is_path_rewrite_enabled' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if path_type is None:
-            raise TypeError("Missing 'path_type' argument")
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-        if request_timeout_in_ms is None:
-            raise TypeError("Missing 'request_timeout_in_ms' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("destinations", destinations)
-        _setter("ingress_gateway_hosts", ingress_gateway_hosts)
-        _setter("is_grpc", is_grpc)
-        _setter("is_host_rewrite_enabled", is_host_rewrite_enabled)
-        _setter("is_path_rewrite_enabled", is_path_rewrite_enabled)
-        _setter("path", path)
-        _setter("path_type", path_type)
-        _setter("request_timeout_in_ms", request_timeout_in_ms)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "ingress_gateway_hosts", ingress_gateway_hosts)
+        pulumi.set(__self__, "is_grpc", is_grpc)
+        pulumi.set(__self__, "is_host_rewrite_enabled", is_host_rewrite_enabled)
+        pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -4068,32 +2829,9 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         :param str virtual_service_id: The OCID of the virtual service where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            virtual_service_id=virtual_service_id,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             virtual_service_id: Optional[str] = None,
-             weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("port", port)
-        _setter("virtual_service_id", virtual_service_id)
-        _setter("weight", weight)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
@@ -4129,25 +2867,8 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         :param str name: A filter to return only resources that match the entire name given.
         :param int port: The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         """
-        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-
-        _setter("name", name)
-        _setter("port", port)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
@@ -4175,29 +2896,10 @@ class GetIngressGatewaysFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetIngressGatewaysFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4222,20 +2924,7 @@ class GetIngressGatewaysFilterResult(dict):
 class GetIngressGatewaysIngressGatewayCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemResult']):
-        GetIngressGatewaysIngressGatewayCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -4278,108 +2967,21 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_loggings=access_loggings,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            hosts=hosts,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            mesh_id=mesh_id,
-            mtls=mtls,
-            name=name,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_loggings: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult']] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             hosts: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostResult']] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             mesh_id: Optional[str] = None,
-             mtls: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemMtlResult']] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_loggings is None and 'accessLoggings' in kwargs:
-            access_loggings = kwargs['accessLoggings']
-        if access_loggings is None:
-            raise TypeError("Missing 'access_loggings' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if hosts is None:
-            raise TypeError("Missing 'hosts' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if mesh_id is None and 'meshId' in kwargs:
-            mesh_id = kwargs['meshId']
-        if mesh_id is None:
-            raise TypeError("Missing 'mesh_id' argument")
-        if mtls is None:
-            raise TypeError("Missing 'mtls' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("access_loggings", access_loggings)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("hosts", hosts)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("mesh_id", mesh_id)
-        _setter("mtls", mtls)
-        _setter("name", name)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "access_loggings", access_loggings)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mesh_id", mesh_id)
+        pulumi.set(__self__, "mtls", mtls)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="accessLoggings")
@@ -4509,22 +3111,7 @@ class GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult(dict):
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -4546,30 +3133,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostResult(dict):
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs'] listeners: The listeners for the ingress gateway.
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemHostResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostnames=hostnames,
-            listeners=listeners,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostnames: Optional[Sequence[str]] = None,
-             listeners: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult']] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostnames is None:
-            raise TypeError("Missing 'hostnames' argument")
-        if listeners is None:
-            raise TypeError("Missing 'listeners' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("hostnames", hostnames)
-        _setter("listeners", listeners)
-        _setter("name", name)
+        pulumi.set(__self__, "hostnames", hostnames)
+        pulumi.set(__self__, "listeners", listeners)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -4607,30 +3173,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult(dict):
         :param str protocol: Type of protocol used.
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs'] tls: TLS enforcement config for the ingress listener.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            protocol=protocol,
-            tls=tls,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             tls: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if tls is None:
-            raise TypeError("Missing 'tls' argument")
-
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("tls", tls)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "tls", tls)
 
     @property
     @pulumi.getter
@@ -4668,34 +3213,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult(dict):
         :param str mode: DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs'] server_certificates: Resource representing the location of the TLS certificate.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_validations=client_validations,
-            mode=mode,
-            server_certificates=server_certificates,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_validations: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationResult']] = None,
-             mode: Optional[str] = None,
-             server_certificates: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_validations is None and 'clientValidations' in kwargs:
-            client_validations = kwargs['clientValidations']
-        if client_validations is None:
-            raise TypeError("Missing 'client_validations' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-        if server_certificates is None and 'serverCertificates' in kwargs:
-            server_certificates = kwargs['serverCertificates']
-        if server_certificates is None:
-            raise TypeError("Missing 'server_certificates' argument")
-
-        _setter("client_validations", client_validations)
-        _setter("mode", mode)
-        _setter("server_certificates", server_certificates)
+        pulumi.set(__self__, "client_validations", client_validations)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "server_certificates", server_certificates)
 
     @property
     @pulumi.getter(name="clientValidations")
@@ -4731,29 +3251,8 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidati
         :param Sequence[str] subject_alternate_names: A list of alternate names to verify the subject identity in the certificate presented by the client.
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs'] trusted_ca_bundles: Resource representing the CA bundle.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subject_alternate_names=subject_alternate_names,
-            trusted_ca_bundles=trusted_ca_bundles,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subject_alternate_names: Optional[Sequence[str]] = None,
-             trusted_ca_bundles: Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subject_alternate_names is None and 'subjectAlternateNames' in kwargs:
-            subject_alternate_names = kwargs['subjectAlternateNames']
-        if subject_alternate_names is None:
-            raise TypeError("Missing 'subject_alternate_names' argument")
-        if trusted_ca_bundles is None and 'trustedCaBundles' in kwargs:
-            trusted_ca_bundles = kwargs['trustedCaBundles']
-        if trusted_ca_bundles is None:
-            raise TypeError("Missing 'trusted_ca_bundles' argument")
-
-        _setter("subject_alternate_names", subject_alternate_names)
-        _setter("trusted_ca_bundles", trusted_ca_bundles)
+        pulumi.set(__self__, "subject_alternate_names", subject_alternate_names)
+        pulumi.set(__self__, "trusted_ca_bundles", trusted_ca_bundles)
 
     @property
     @pulumi.getter(name="subjectAlternateNames")
@@ -4783,34 +3282,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidati
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_bundle_id=ca_bundle_id,
-            secret_name=secret_name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_bundle_id: Optional[str] = None,
-             secret_name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_bundle_id is None and 'caBundleId' in kwargs:
-            ca_bundle_id = kwargs['caBundleId']
-        if ca_bundle_id is None:
-            raise TypeError("Missing 'ca_bundle_id' argument")
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-        if secret_name is None:
-            raise TypeError("Missing 'secret_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("ca_bundle_id", ca_bundle_id)
-        _setter("secret_name", secret_name)
-        _setter("type", type)
+        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
+        pulumi.set(__self__, "secret_name", secret_name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="caBundleId")
@@ -4848,34 +3322,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertific
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            secret_name=secret_name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[str] = None,
-             secret_name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if certificate_id is None:
-            raise TypeError("Missing 'certificate_id' argument")
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-        if secret_name is None:
-            raise TypeError("Missing 'secret_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("certificate_id", certificate_id)
-        _setter("secret_name", secret_name)
-        _setter("type", type)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "secret_name", secret_name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -4911,29 +3360,8 @@ class GetIngressGatewaysIngressGatewayCollectionItemMtlResult(dict):
         :param str certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        GetIngressGatewaysIngressGatewayCollectionItemMtlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[str] = None,
-             maximum_validity: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if certificate_id is None:
-            raise TypeError("Missing 'certificate_id' argument")
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-        if maximum_validity is None:
-            raise TypeError("Missing 'maximum_validity' argument")
-
-        _setter("certificate_id", certificate_id)
-        _setter("maximum_validity", maximum_validity)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -4959,20 +3387,7 @@ class GetMeshCertificateAuthorityResult(dict):
         """
         :param str id: Unique identifier that is immutable on creation.
         """
-        GetMeshCertificateAuthorityResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("id", id)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -4990,20 +3405,7 @@ class GetMeshMtlResult(dict):
         """
         :param str minimum: DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
         """
-        GetMeshMtlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            minimum=minimum,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             minimum: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if minimum is None:
-            raise TypeError("Missing 'minimum' argument")
-
-        _setter("minimum", minimum)
+        pulumi.set(__self__, "minimum", minimum)
 
     @property
     @pulumi.getter
@@ -5020,29 +3422,10 @@ class GetMeshesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMeshesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5064,20 +3447,7 @@ class GetMeshesFilterResult(dict):
 class GetMeshesMeshCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMeshesMeshCollectionItemResult']):
-        GetMeshesMeshCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMeshesMeshCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5116,98 +3486,19 @@ class GetMeshesMeshCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        GetMeshesMeshCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_authorities=certificate_authorities,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            mtls=mtls,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_authorities: Optional[Sequence['outputs.GetMeshesMeshCollectionItemCertificateAuthorityResult']] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             mtls: Optional[Sequence['outputs.GetMeshesMeshCollectionItemMtlResult']] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_authorities is None and 'certificateAuthorities' in kwargs:
-            certificate_authorities = kwargs['certificateAuthorities']
-        if certificate_authorities is None:
-            raise TypeError("Missing 'certificate_authorities' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if mtls is None:
-            raise TypeError("Missing 'mtls' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("certificate_authorities", certificate_authorities)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("mtls", mtls)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "certificate_authorities", certificate_authorities)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mtls", mtls)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="certificateAuthorities")
@@ -5321,20 +3612,7 @@ class GetMeshesMeshCollectionItemCertificateAuthorityResult(dict):
         """
         :param str id: Unique Mesh identifier.
         """
-        GetMeshesMeshCollectionItemCertificateAuthorityResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("id", id)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -5352,20 +3630,7 @@ class GetMeshesMeshCollectionItemMtlResult(dict):
         """
         :param str minimum: DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
         """
-        GetMeshesMeshCollectionItemMtlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            minimum=minimum,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             minimum: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if minimum is None:
-            raise TypeError("Missing 'minimum' argument")
-
-        _setter("minimum", minimum)
+        pulumi.set(__self__, "minimum", minimum)
 
     @property
     @pulumi.getter
@@ -5383,22 +3648,7 @@ class GetVirtualDeploymentAccessLoggingResult(dict):
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        GetVirtualDeploymentAccessLoggingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -5422,39 +3672,10 @@ class GetVirtualDeploymentListenerResult(dict):
         :param str protocol: Type of protocol used in virtual deployment.
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        GetVirtualDeploymentListenerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idle_timeout_in_ms=idle_timeout_in_ms,
-            port=port,
-            protocol=protocol,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idle_timeout_in_ms: Optional[str] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idle_timeout_in_ms is None and 'idleTimeoutInMs' in kwargs:
-            idle_timeout_in_ms = kwargs['idleTimeoutInMs']
-        if idle_timeout_in_ms is None:
-            raise TypeError("Missing 'idle_timeout_in_ms' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-        if request_timeout_in_ms is None:
-            raise TypeError("Missing 'request_timeout_in_ms' argument")
-
-        _setter("idle_timeout_in_ms", idle_timeout_in_ms)
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("request_timeout_in_ms", request_timeout_in_ms)
+        pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter(name="idleTimeoutInMs")
@@ -5498,25 +3719,8 @@ class GetVirtualDeploymentServiceDiscoveryResult(dict):
         :param str hostname: The hostname of the virtual deployments.
         :param str type: Type of service discovery.
         """
-        GetVirtualDeploymentServiceDiscoveryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostname=hostname,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostname: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("hostname", hostname)
-        _setter("type", type)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -5544,29 +3748,10 @@ class GetVirtualDeploymentsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetVirtualDeploymentsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5591,20 +3776,7 @@ class GetVirtualDeploymentsFilterResult(dict):
 class GetVirtualDeploymentsVirtualDeploymentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemResult']):
-        GetVirtualDeploymentsVirtualDeploymentCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5647,110 +3819,21 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemResult(dict):
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param str virtual_service_id: Unique VirtualService identifier.
         """
-        GetVirtualDeploymentsVirtualDeploymentCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_loggings=access_loggings,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            listeners=listeners,
-            name=name,
-            service_discoveries=service_discoveries,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_loggings: Optional[Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult']] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             listeners: Optional[Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult']] = None,
-             name: Optional[str] = None,
-             service_discoveries: Optional[Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult']] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_loggings is None and 'accessLoggings' in kwargs:
-            access_loggings = kwargs['accessLoggings']
-        if access_loggings is None:
-            raise TypeError("Missing 'access_loggings' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if listeners is None:
-            raise TypeError("Missing 'listeners' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if service_discoveries is None and 'serviceDiscoveries' in kwargs:
-            service_discoveries = kwargs['serviceDiscoveries']
-        if service_discoveries is None:
-            raise TypeError("Missing 'service_discoveries' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("access_loggings", access_loggings)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("listeners", listeners)
-        _setter("name", name)
-        _setter("service_discoveries", service_discoveries)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "access_loggings", access_loggings)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "listeners", listeners)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "service_discoveries", service_discoveries)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter(name="accessLoggings")
@@ -5880,22 +3963,7 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult(di
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -5919,39 +3987,10 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult(dict):
         :param str protocol: Type of protocol used in virtual deployment.
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idle_timeout_in_ms=idle_timeout_in_ms,
-            port=port,
-            protocol=protocol,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idle_timeout_in_ms: Optional[str] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idle_timeout_in_ms is None and 'idleTimeoutInMs' in kwargs:
-            idle_timeout_in_ms = kwargs['idleTimeoutInMs']
-        if idle_timeout_in_ms is None:
-            raise TypeError("Missing 'idle_timeout_in_ms' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-        if request_timeout_in_ms is None:
-            raise TypeError("Missing 'request_timeout_in_ms' argument")
-
-        _setter("idle_timeout_in_ms", idle_timeout_in_ms)
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("request_timeout_in_ms", request_timeout_in_ms)
+        pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter(name="idleTimeoutInMs")
@@ -5995,25 +4034,8 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult
         :param str hostname: The hostname of the virtual deployments.
         :param str type: Type of service discovery.
         """
-        GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostname=hostname,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostname: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("hostname", hostname)
-        _setter("type", type)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -6039,20 +4061,7 @@ class GetVirtualServiceDefaultRoutingPolicyResult(dict):
         """
         :param str type: Type of the virtual service routing policy.
         """
-        GetVirtualServiceDefaultRoutingPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -6074,34 +4083,9 @@ class GetVirtualServiceMtlResult(dict):
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         :param str mode: DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
         """
-        GetVirtualServiceMtlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[str] = None,
-             maximum_validity: Optional[int] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if certificate_id is None:
-            raise TypeError("Missing 'certificate_id' argument")
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-        if maximum_validity is None:
-            raise TypeError("Missing 'maximum_validity' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("certificate_id", certificate_id)
-        _setter("maximum_validity", maximum_validity)
-        _setter("mode", mode)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "maximum_validity", maximum_validity)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -6145,51 +4129,12 @@ class GetVirtualServiceRouteTableRouteRuleResult(dict):
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        GetVirtualServiceRouteTableRouteRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            is_grpc=is_grpc,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[Sequence['outputs.GetVirtualServiceRouteTableRouteRuleDestinationResult']] = None,
-             is_grpc: Optional[bool] = None,
-             path: Optional[str] = None,
-             path_type: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if is_grpc is None:
-            raise TypeError("Missing 'is_grpc' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if path_type is None:
-            raise TypeError("Missing 'path_type' argument")
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-        if request_timeout_in_ms is None:
-            raise TypeError("Missing 'request_timeout_in_ms' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("destinations", destinations)
-        _setter("is_grpc", is_grpc)
-        _setter("path", path)
-        _setter("path_type", path_type)
-        _setter("request_timeout_in_ms", request_timeout_in_ms)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "is_grpc", is_grpc)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -6251,32 +4196,9 @@ class GetVirtualServiceRouteTableRouteRuleDestinationResult(dict):
         :param str virtual_deployment_id: The OCID of the virtual deployment where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        GetVirtualServiceRouteTableRouteRuleDestinationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            virtual_deployment_id=virtual_deployment_id,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             virtual_deployment_id: Optional[str] = None,
-             weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if virtual_deployment_id is None and 'virtualDeploymentId' in kwargs:
-            virtual_deployment_id = kwargs['virtualDeploymentId']
-        if virtual_deployment_id is None:
-            raise TypeError("Missing 'virtual_deployment_id' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("port", port)
-        _setter("virtual_deployment_id", virtual_deployment_id)
-        _setter("weight", weight)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "virtual_deployment_id", virtual_deployment_id)
+        pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
@@ -6312,29 +4234,10 @@ class GetVirtualServiceRouteTablesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetVirtualServiceRouteTablesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6359,20 +4262,7 @@ class GetVirtualServiceRouteTablesFilterResult(dict):
 class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult']):
-        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6413,103 +4303,20 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult(d
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param str virtual_service_id: Unique VirtualService identifier.
         """
-        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            name=name,
-            priority=priority,
-            route_rules=route_rules,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             name: Optional[str] = None,
-             priority: Optional[int] = None,
-             route_rules: Optional[Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleResult']] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if priority is None:
-            raise TypeError("Missing 'priority' argument")
-        if route_rules is None and 'routeRules' in kwargs:
-            route_rules = kwargs['routeRules']
-        if route_rules is None:
-            raise TypeError("Missing 'route_rules' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("name", name)
-        _setter("priority", priority)
-        _setter("route_rules", route_rules)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "priority", priority)
+        pulumi.set(__self__, "route_rules", route_rules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -6641,51 +4448,12 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            is_grpc=is_grpc,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationResult']] = None,
-             is_grpc: Optional[bool] = None,
-             path: Optional[str] = None,
-             path_type: Optional[str] = None,
-             request_timeout_in_ms: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if is_grpc is None:
-            raise TypeError("Missing 'is_grpc' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if path_type is None:
-            raise TypeError("Missing 'path_type' argument")
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-        if request_timeout_in_ms is None:
-            raise TypeError("Missing 'request_timeout_in_ms' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("destinations", destinations)
-        _setter("is_grpc", is_grpc)
-        _setter("path", path)
-        _setter("path_type", path_type)
-        _setter("request_timeout_in_ms", request_timeout_in_ms)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "is_grpc", is_grpc)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -6747,32 +4515,9 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
         :param str virtual_deployment_id: The OCID of the virtual deployment where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            virtual_deployment_id=virtual_deployment_id,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[int] = None,
-             virtual_deployment_id: Optional[str] = None,
-             weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if virtual_deployment_id is None and 'virtualDeploymentId' in kwargs:
-            virtual_deployment_id = kwargs['virtualDeploymentId']
-        if virtual_deployment_id is None:
-            raise TypeError("Missing 'virtual_deployment_id' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("port", port)
-        _setter("virtual_deployment_id", virtual_deployment_id)
-        _setter("weight", weight)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "virtual_deployment_id", virtual_deployment_id)
+        pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
@@ -6808,29 +4553,10 @@ class GetVirtualServicesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetVirtualServicesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6855,20 +4581,7 @@ class GetVirtualServicesFilterResult(dict):
 class GetVirtualServicesVirtualServiceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemResult']):
-        GetVirtualServicesVirtualServiceCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6911,108 +4624,21 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        GetVirtualServicesVirtualServiceCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            default_routing_policies=default_routing_policies,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            hosts=hosts,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            mesh_id=mesh_id,
-            mtls=mtls,
-            name=name,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             default_routing_policies: Optional[Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult']] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             hosts: Optional[Sequence[str]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             mesh_id: Optional[str] = None,
-             mtls: Optional[Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemMtlResult']] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if default_routing_policies is None and 'defaultRoutingPolicies' in kwargs:
-            default_routing_policies = kwargs['defaultRoutingPolicies']
-        if default_routing_policies is None:
-            raise TypeError("Missing 'default_routing_policies' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if hosts is None:
-            raise TypeError("Missing 'hosts' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if mesh_id is None and 'meshId' in kwargs:
-            mesh_id = kwargs['meshId']
-        if mesh_id is None:
-            raise TypeError("Missing 'mesh_id' argument")
-        if mtls is None:
-            raise TypeError("Missing 'mtls' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("default_routing_policies", default_routing_policies)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("hosts", hosts)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("mesh_id", mesh_id)
-        _setter("mtls", mtls)
-        _setter("name", name)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "default_routing_policies", default_routing_policies)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mesh_id", mesh_id)
+        pulumi.set(__self__, "mtls", mtls)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7142,20 +4768,7 @@ class GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult(d
         """
         :param str type: Type of the virtual service routing policy.
         """
-        GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -7177,34 +4790,9 @@ class GetVirtualServicesVirtualServiceCollectionItemMtlResult(dict):
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         :param str mode: DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
         """
-        GetVirtualServicesVirtualServiceCollectionItemMtlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-            mode=mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[str] = None,
-             maximum_validity: Optional[int] = None,
-             mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if certificate_id is None:
-            raise TypeError("Missing 'certificate_id' argument")
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-        if maximum_validity is None:
-            raise TypeError("Missing 'maximum_validity' argument")
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-
-        _setter("certificate_id", certificate_id)
-        _setter("maximum_validity", maximum_validity)
-        _setter("mode", mode)
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "maximum_validity", maximum_validity)
+        pulumi.set(__self__, "mode", mode)
 
     @property
     @pulumi.getter(name="certificateId")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,69 +41,22 @@ class MediaWorkflowJobArgs:
         :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
         :param pulumi.Input[str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         """
-        MediaWorkflowJobArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            workflow_identifier_type=workflow_identifier_type,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            media_workflow_configuration_ids=media_workflow_configuration_ids,
-            media_workflow_id=media_workflow_id,
-            media_workflow_name=media_workflow_name,
-            parameters=parameters,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             workflow_identifier_type: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             media_workflow_id: Optional[pulumi.Input[str]] = None,
-             media_workflow_name: Optional[pulumi.Input[str]] = None,
-             parameters: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if workflow_identifier_type is None and 'workflowIdentifierType' in kwargs:
-            workflow_identifier_type = kwargs['workflowIdentifierType']
-        if workflow_identifier_type is None:
-            raise TypeError("Missing 'workflow_identifier_type' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if media_workflow_configuration_ids is None and 'mediaWorkflowConfigurationIds' in kwargs:
-            media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
-        if media_workflow_id is None and 'mediaWorkflowId' in kwargs:
-            media_workflow_id = kwargs['mediaWorkflowId']
-        if media_workflow_name is None and 'mediaWorkflowName' in kwargs:
-            media_workflow_name = kwargs['mediaWorkflowName']
-
-        _setter("compartment_id", compartment_id)
-        _setter("workflow_identifier_type", workflow_identifier_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "workflow_identifier_type", workflow_identifier_type)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if media_workflow_configuration_ids is not None:
-            _setter("media_workflow_configuration_ids", media_workflow_configuration_ids)
+            pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
         if media_workflow_id is not None:
-            _setter("media_workflow_id", media_workflow_id)
+            pulumi.set(__self__, "media_workflow_id", media_workflow_id)
         if media_workflow_name is not None:
-            _setter("media_workflow_name", media_workflow_name)
+            pulumi.set(__self__, "media_workflow_name", media_workflow_name)
         if parameters is not None:
-            _setter("parameters", parameters)
+            pulumi.set(__self__, "parameters", parameters)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -266,121 +219,44 @@ class _MediaWorkflowJobState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _MediaWorkflowJobState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            media_workflow_configuration_ids=media_workflow_configuration_ids,
-            media_workflow_id=media_workflow_id,
-            media_workflow_name=media_workflow_name,
-            outputs=outputs,
-            parameters=parameters,
-            runnable=runnable,
-            state=state,
-            system_tags=system_tags,
-            task_lifecycle_states=task_lifecycle_states,
-            time_created=time_created,
-            time_ended=time_ended,
-            time_started=time_started,
-            time_updated=time_updated,
-            workflow_identifier_type=workflow_identifier_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             media_workflow_id: Optional[pulumi.Input[str]] = None,
-             media_workflow_name: Optional[pulumi.Input[str]] = None,
-             outputs: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]] = None,
-             parameters: Optional[pulumi.Input[str]] = None,
-             runnable: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             task_lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_ended: Optional[pulumi.Input[str]] = None,
-             time_started: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             workflow_identifier_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if media_workflow_configuration_ids is None and 'mediaWorkflowConfigurationIds' in kwargs:
-            media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
-        if media_workflow_id is None and 'mediaWorkflowId' in kwargs:
-            media_workflow_id = kwargs['mediaWorkflowId']
-        if media_workflow_name is None and 'mediaWorkflowName' in kwargs:
-            media_workflow_name = kwargs['mediaWorkflowName']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if task_lifecycle_states is None and 'taskLifecycleStates' in kwargs:
-            task_lifecycle_states = kwargs['taskLifecycleStates']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_ended is None and 'timeEnded' in kwargs:
-            time_ended = kwargs['timeEnded']
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if workflow_identifier_type is None and 'workflowIdentifierType' in kwargs:
-            workflow_identifier_type = kwargs['workflowIdentifierType']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if media_workflow_configuration_ids is not None:
-            _setter("media_workflow_configuration_ids", media_workflow_configuration_ids)
+            pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
         if media_workflow_id is not None:
-            _setter("media_workflow_id", media_workflow_id)
+            pulumi.set(__self__, "media_workflow_id", media_workflow_id)
         if media_workflow_name is not None:
-            _setter("media_workflow_name", media_workflow_name)
+            pulumi.set(__self__, "media_workflow_name", media_workflow_name)
         if outputs is not None:
-            _setter("outputs", outputs)
+            pulumi.set(__self__, "outputs", outputs)
         if parameters is not None:
-            _setter("parameters", parameters)
+            pulumi.set(__self__, "parameters", parameters)
         if runnable is not None:
-            _setter("runnable", runnable)
+            pulumi.set(__self__, "runnable", runnable)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if task_lifecycle_states is not None:
-            _setter("task_lifecycle_states", task_lifecycle_states)
+            pulumi.set(__self__, "task_lifecycle_states", task_lifecycle_states)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_ended is not None:
-            _setter("time_ended", time_ended)
+            pulumi.set(__self__, "time_ended", time_ended)
         if time_started is not None:
-            _setter("time_started", time_started)
+            pulumi.set(__self__, "time_started", time_started)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if workflow_identifier_type is not None:
-            _setter("workflow_identifier_type", workflow_identifier_type)
+            pulumi.set(__self__, "workflow_identifier_type", workflow_identifier_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -732,10 +608,6 @@ class MediaWorkflowJob(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MediaWorkflowJobArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

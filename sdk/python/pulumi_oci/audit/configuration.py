@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ConfigurationArgs', 'Configuration']
@@ -25,29 +25,8 @@ class ConfigurationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            retention_period_days=retention_period_days,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             retention_period_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if retention_period_days is None and 'retentionPeriodDays' in kwargs:
-            retention_period_days = kwargs['retentionPeriodDays']
-        if retention_period_days is None:
-            raise TypeError("Missing 'retention_period_days' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("retention_period_days", retention_period_days)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "retention_period_days", retention_period_days)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -92,27 +71,10 @@ class _ConfigurationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _ConfigurationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            retention_period_days=retention_period_days,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             retention_period_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if retention_period_days is None and 'retentionPeriodDays' in kwargs:
-            retention_period_days = kwargs['retentionPeriodDays']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if retention_period_days is not None:
-            _setter("retention_period_days", retention_period_days)
+            pulumi.set(__self__, "retention_period_days", retention_period_days)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -212,10 +174,6 @@ class Configuration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

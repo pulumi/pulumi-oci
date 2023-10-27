@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalDbNodeArgs', 'ExternalDbNode']
@@ -25,28 +25,9 @@ class ExternalDbNodeArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         """
-        ExternalDbNodeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_db_node_id=external_db_node_id,
-            external_connector_id=external_connector_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_db_node_id: Optional[pulumi.Input[str]] = None,
-             external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
-            external_db_node_id = kwargs['externalDbNodeId']
-        if external_db_node_id is None:
-            raise TypeError("Missing 'external_db_node_id' argument")
-        if external_connector_id is None and 'externalConnectorId' in kwargs:
-            external_connector_id = kwargs['externalConnectorId']
-
-        _setter("external_db_node_id", external_db_node_id)
+        pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         if external_connector_id is not None:
-            _setter("external_connector_id", external_connector_id)
+            pulumi.set(__self__, "external_connector_id", external_connector_id)
 
     @property
     @pulumi.getter(name="externalDbNodeId")
@@ -117,103 +98,36 @@ class _ExternalDbNodeState:
         :param pulumi.Input[str] time_created: The date and time the external DB node was created.
         :param pulumi.Input[str] time_updated: The date and time the external DB node was last updated.
         """
-        _ExternalDbNodeState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_details=additional_details,
-            compartment_id=compartment_id,
-            component_name=component_name,
-            cpu_core_count=cpu_core_count,
-            display_name=display_name,
-            domain_name=domain_name,
-            external_connector_id=external_connector_id,
-            external_db_node_id=external_db_node_id,
-            external_db_system_id=external_db_system_id,
-            host_name=host_name,
-            lifecycle_details=lifecycle_details,
-            memory_size_in_gbs=memory_size_in_gbs,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             component_name: Optional[pulumi.Input[str]] = None,
-             cpu_core_count: Optional[pulumi.Input[float]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             domain_name: Optional[pulumi.Input[str]] = None,
-             external_connector_id: Optional[pulumi.Input[str]] = None,
-             external_db_node_id: Optional[pulumi.Input[str]] = None,
-             external_db_system_id: Optional[pulumi.Input[str]] = None,
-             host_name: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             memory_size_in_gbs: Optional[pulumi.Input[float]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_details is None and 'additionalDetails' in kwargs:
-            additional_details = kwargs['additionalDetails']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if component_name is None and 'componentName' in kwargs:
-            component_name = kwargs['componentName']
-        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
-            cpu_core_count = kwargs['cpuCoreCount']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if domain_name is None and 'domainName' in kwargs:
-            domain_name = kwargs['domainName']
-        if external_connector_id is None and 'externalConnectorId' in kwargs:
-            external_connector_id = kwargs['externalConnectorId']
-        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
-            external_db_node_id = kwargs['externalDbNodeId']
-        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
-            external_db_system_id = kwargs['externalDbSystemId']
-        if host_name is None and 'hostName' in kwargs:
-            host_name = kwargs['hostName']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
-            memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if additional_details is not None:
-            _setter("additional_details", additional_details)
+            pulumi.set(__self__, "additional_details", additional_details)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if component_name is not None:
-            _setter("component_name", component_name)
+            pulumi.set(__self__, "component_name", component_name)
         if cpu_core_count is not None:
-            _setter("cpu_core_count", cpu_core_count)
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if domain_name is not None:
-            _setter("domain_name", domain_name)
+            pulumi.set(__self__, "domain_name", domain_name)
         if external_connector_id is not None:
-            _setter("external_connector_id", external_connector_id)
+            pulumi.set(__self__, "external_connector_id", external_connector_id)
         if external_db_node_id is not None:
-            _setter("external_db_node_id", external_db_node_id)
+            pulumi.set(__self__, "external_db_node_id", external_db_node_id)
         if external_db_system_id is not None:
-            _setter("external_db_system_id", external_db_system_id)
+            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
         if host_name is not None:
-            _setter("host_name", host_name)
+            pulumi.set(__self__, "host_name", host_name)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if memory_size_in_gbs is not None:
-            _setter("memory_size_in_gbs", memory_size_in_gbs)
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -459,10 +373,6 @@ class ExternalDbNode(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalDbNodeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

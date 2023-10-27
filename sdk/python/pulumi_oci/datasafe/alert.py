@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AlertArgs', 'Alert']
@@ -33,48 +33,17 @@ class AlertArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AlertArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alert_id=alert_id,
-            comment=comment,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alert_id: Optional[pulumi.Input[str]] = None,
-             comment: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alert_id is None and 'alertId' in kwargs:
-            alert_id = kwargs['alertId']
-        if alert_id is None:
-            raise TypeError("Missing 'alert_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("alert_id", alert_id)
+        pulumi.set(__self__, "alert_id", alert_id)
         if comment is not None:
-            _setter("comment", comment)
+            pulumi.set(__self__, "comment", comment)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter(name="alertId")
@@ -207,135 +176,50 @@ class _AlertState:
         :param pulumi.Input[str] time_created: Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        _AlertState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alert_id=alert_id,
-            alert_type=alert_type,
-            comment=comment,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            feature_details=feature_details,
-            freeform_tags=freeform_tags,
-            operation=operation,
-            operation_status=operation_status,
-            operation_time=operation_time,
-            policy_id=policy_id,
-            resource_name=resource_name,
-            severity=severity,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            target_ids=target_ids,
-            target_names=target_names,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alert_id: Optional[pulumi.Input[str]] = None,
-             alert_type: Optional[pulumi.Input[str]] = None,
-             comment: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             feature_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             operation: Optional[pulumi.Input[str]] = None,
-             operation_status: Optional[pulumi.Input[str]] = None,
-             operation_time: Optional[pulumi.Input[str]] = None,
-             policy_id: Optional[pulumi.Input[str]] = None,
-             resource_name: Optional[pulumi.Input[str]] = None,
-             severity: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             target_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alert_id is None and 'alertId' in kwargs:
-            alert_id = kwargs['alertId']
-        if alert_type is None and 'alertType' in kwargs:
-            alert_type = kwargs['alertType']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if feature_details is None and 'featureDetails' in kwargs:
-            feature_details = kwargs['featureDetails']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if operation_status is None and 'operationStatus' in kwargs:
-            operation_status = kwargs['operationStatus']
-        if operation_time is None and 'operationTime' in kwargs:
-            operation_time = kwargs['operationTime']
-        if policy_id is None and 'policyId' in kwargs:
-            policy_id = kwargs['policyId']
-        if resource_name is None and 'resourceName' in kwargs:
-            resource_name = kwargs['resourceName']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if target_names is None and 'targetNames' in kwargs:
-            target_names = kwargs['targetNames']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if alert_id is not None:
-            _setter("alert_id", alert_id)
+            pulumi.set(__self__, "alert_id", alert_id)
         if alert_type is not None:
-            _setter("alert_type", alert_type)
+            pulumi.set(__self__, "alert_type", alert_type)
         if comment is not None:
-            _setter("comment", comment)
+            pulumi.set(__self__, "comment", comment)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if feature_details is not None:
-            _setter("feature_details", feature_details)
+            pulumi.set(__self__, "feature_details", feature_details)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if operation is not None:
-            _setter("operation", operation)
+            pulumi.set(__self__, "operation", operation)
         if operation_status is not None:
-            _setter("operation_status", operation_status)
+            pulumi.set(__self__, "operation_status", operation_status)
         if operation_time is not None:
-            _setter("operation_time", operation_time)
+            pulumi.set(__self__, "operation_time", operation_time)
         if policy_id is not None:
-            _setter("policy_id", policy_id)
+            pulumi.set(__self__, "policy_id", policy_id)
         if resource_name is not None:
-            _setter("resource_name", resource_name)
+            pulumi.set(__self__, "resource_name", resource_name)
         if severity is not None:
-            _setter("severity", severity)
+            pulumi.set(__self__, "severity", severity)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_ids is not None:
-            _setter("target_ids", target_ids)
+            pulumi.set(__self__, "target_ids", target_ids)
         if target_names is not None:
-            _setter("target_names", target_names)
+            pulumi.set(__self__, "target_names", target_names)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alertId")
@@ -673,10 +557,6 @@ class Alert(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AlertArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

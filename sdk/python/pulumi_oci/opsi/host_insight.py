@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['HostInsightArgs', 'HostInsight']
@@ -43,81 +43,26 @@ class HostInsightArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         """
-        HostInsightArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            entity_source=entity_source,
-            compute_id=compute_id,
-            defined_tags=defined_tags,
-            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
-            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
-            enterprise_manager_identifier=enterprise_manager_identifier,
-            exadata_insight_id=exadata_insight_id,
-            freeform_tags=freeform_tags,
-            management_agent_id=management_agent_id,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             entity_source: Optional[pulumi.Input[str]] = None,
-             compute_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
-             enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
-             enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
-             exadata_insight_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             management_agent_id: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if entity_source is None and 'entitySource' in kwargs:
-            entity_source = kwargs['entitySource']
-        if entity_source is None:
-            raise TypeError("Missing 'entity_source' argument")
-        if compute_id is None and 'computeId' in kwargs:
-            compute_id = kwargs['computeId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
-            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
-        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
-            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
-        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
-            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
-        if exadata_insight_id is None and 'exadataInsightId' in kwargs:
-            exadata_insight_id = kwargs['exadataInsightId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if management_agent_id is None and 'managementAgentId' in kwargs:
-            management_agent_id = kwargs['managementAgentId']
-
-        _setter("compartment_id", compartment_id)
-        _setter("entity_source", entity_source)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "entity_source", entity_source)
         if compute_id is not None:
-            _setter("compute_id", compute_id)
+            pulumi.set(__self__, "compute_id", compute_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if enterprise_manager_bridge_id is not None:
-            _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
         if enterprise_manager_entity_identifier is not None:
-            _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
         if enterprise_manager_identifier is not None:
-            _setter("enterprise_manager_identifier", enterprise_manager_identifier)
+            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
         if exadata_insight_id is not None:
-            _setter("exadata_insight_id", exadata_insight_id)
+            pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if management_agent_id is not None:
-            _setter("management_agent_id", management_agent_id)
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -318,167 +263,58 @@ class _HostInsightState:
         :param pulumi.Input[str] time_created: The time the the host insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the host insight was updated. An RFC3339 formatted datetime string
         """
-        _HostInsightState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            compute_id=compute_id,
-            defined_tags=defined_tags,
-            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
-            enterprise_manager_entity_display_name=enterprise_manager_entity_display_name,
-            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
-            enterprise_manager_entity_name=enterprise_manager_entity_name,
-            enterprise_manager_entity_type=enterprise_manager_entity_type,
-            enterprise_manager_identifier=enterprise_manager_identifier,
-            entity_source=entity_source,
-            exadata_insight_id=exadata_insight_id,
-            freeform_tags=freeform_tags,
-            host_display_name=host_display_name,
-            host_name=host_name,
-            host_type=host_type,
-            lifecycle_details=lifecycle_details,
-            management_agent_id=management_agent_id,
-            platform_name=platform_name,
-            platform_type=platform_type,
-            platform_version=platform_version,
-            processor_count=processor_count,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             compute_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
-             enterprise_manager_entity_display_name: Optional[pulumi.Input[str]] = None,
-             enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
-             enterprise_manager_entity_name: Optional[pulumi.Input[str]] = None,
-             enterprise_manager_entity_type: Optional[pulumi.Input[str]] = None,
-             enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
-             entity_source: Optional[pulumi.Input[str]] = None,
-             exadata_insight_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             host_display_name: Optional[pulumi.Input[str]] = None,
-             host_name: Optional[pulumi.Input[str]] = None,
-             host_type: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             management_agent_id: Optional[pulumi.Input[str]] = None,
-             platform_name: Optional[pulumi.Input[str]] = None,
-             platform_type: Optional[pulumi.Input[str]] = None,
-             platform_version: Optional[pulumi.Input[str]] = None,
-             processor_count: Optional[pulumi.Input[int]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compute_id is None and 'computeId' in kwargs:
-            compute_id = kwargs['computeId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
-            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
-        if enterprise_manager_entity_display_name is None and 'enterpriseManagerEntityDisplayName' in kwargs:
-            enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
-        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
-            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
-        if enterprise_manager_entity_name is None and 'enterpriseManagerEntityName' in kwargs:
-            enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
-        if enterprise_manager_entity_type is None and 'enterpriseManagerEntityType' in kwargs:
-            enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
-        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
-            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
-        if entity_source is None and 'entitySource' in kwargs:
-            entity_source = kwargs['entitySource']
-        if exadata_insight_id is None and 'exadataInsightId' in kwargs:
-            exadata_insight_id = kwargs['exadataInsightId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if host_display_name is None and 'hostDisplayName' in kwargs:
-            host_display_name = kwargs['hostDisplayName']
-        if host_name is None and 'hostName' in kwargs:
-            host_name = kwargs['hostName']
-        if host_type is None and 'hostType' in kwargs:
-            host_type = kwargs['hostType']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if management_agent_id is None and 'managementAgentId' in kwargs:
-            management_agent_id = kwargs['managementAgentId']
-        if platform_name is None and 'platformName' in kwargs:
-            platform_name = kwargs['platformName']
-        if platform_type is None and 'platformType' in kwargs:
-            platform_type = kwargs['platformType']
-        if platform_version is None and 'platformVersion' in kwargs:
-            platform_version = kwargs['platformVersion']
-        if processor_count is None and 'processorCount' in kwargs:
-            processor_count = kwargs['processorCount']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_id is not None:
-            _setter("compute_id", compute_id)
+            pulumi.set(__self__, "compute_id", compute_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if enterprise_manager_bridge_id is not None:
-            _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
         if enterprise_manager_entity_display_name is not None:
-            _setter("enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+            pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
         if enterprise_manager_entity_identifier is not None:
-            _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
         if enterprise_manager_entity_name is not None:
-            _setter("enterprise_manager_entity_name", enterprise_manager_entity_name)
+            pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
         if enterprise_manager_entity_type is not None:
-            _setter("enterprise_manager_entity_type", enterprise_manager_entity_type)
+            pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
         if enterprise_manager_identifier is not None:
-            _setter("enterprise_manager_identifier", enterprise_manager_identifier)
+            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
         if entity_source is not None:
-            _setter("entity_source", entity_source)
+            pulumi.set(__self__, "entity_source", entity_source)
         if exadata_insight_id is not None:
-            _setter("exadata_insight_id", exadata_insight_id)
+            pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_display_name is not None:
-            _setter("host_display_name", host_display_name)
+            pulumi.set(__self__, "host_display_name", host_display_name)
         if host_name is not None:
-            _setter("host_name", host_name)
+            pulumi.set(__self__, "host_name", host_name)
         if host_type is not None:
-            _setter("host_type", host_type)
+            pulumi.set(__self__, "host_type", host_type)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if management_agent_id is not None:
-            _setter("management_agent_id", management_agent_id)
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
         if platform_name is not None:
-            _setter("platform_name", platform_name)
+            pulumi.set(__self__, "platform_name", platform_name)
         if platform_type is not None:
-            _setter("platform_type", platform_type)
+            pulumi.set(__self__, "platform_type", platform_type)
         if platform_version is not None:
-            _setter("platform_version", platform_version)
+            pulumi.set(__self__, "platform_version", platform_version)
         if processor_count is not None:
-            _setter("processor_count", processor_count)
+            pulumi.set(__self__, "processor_count", processor_count)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -922,10 +758,6 @@ class HostInsight(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            HostInsightArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -318,39 +318,14 @@ class AuditPolicyAuditCondition(dict):
         :param bool is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
         """
-        AuditPolicyAuditCondition._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_policy_name=audit_policy_name,
-            enable_conditions=enable_conditions,
-            is_data_safe_service_account_audited=is_data_safe_service_account_audited,
-            is_priv_users_managed_by_data_safe=is_priv_users_managed_by_data_safe,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_policy_name: Optional[str] = None,
-             enable_conditions: Optional[Sequence['outputs.AuditPolicyAuditConditionEnableCondition']] = None,
-             is_data_safe_service_account_audited: Optional[bool] = None,
-             is_priv_users_managed_by_data_safe: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_policy_name is None and 'auditPolicyName' in kwargs:
-            audit_policy_name = kwargs['auditPolicyName']
-        if enable_conditions is None and 'enableConditions' in kwargs:
-            enable_conditions = kwargs['enableConditions']
-        if is_data_safe_service_account_audited is None and 'isDataSafeServiceAccountAudited' in kwargs:
-            is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
-        if is_priv_users_managed_by_data_safe is None and 'isPrivUsersManagedByDataSafe' in kwargs:
-            is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
-
         if audit_policy_name is not None:
-            _setter("audit_policy_name", audit_policy_name)
+            pulumi.set(__self__, "audit_policy_name", audit_policy_name)
         if enable_conditions is not None:
-            _setter("enable_conditions", enable_conditions)
+            pulumi.set(__self__, "enable_conditions", enable_conditions)
         if is_data_safe_service_account_audited is not None:
-            _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
+            pulumi.set(__self__, "is_data_safe_service_account_audited", is_data_safe_service_account_audited)
         if is_priv_users_managed_by_data_safe is not None:
-            _setter("is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
+            pulumi.set(__self__, "is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
 
     @property
     @pulumi.getter(name="auditPolicyName")
@@ -421,39 +396,14 @@ class AuditPolicyAuditConditionEnableCondition(dict):
         :param str entity_type: The entity type that the policy must be enabled for.
         :param str operation_status: The operation status that the policy must be enabled for.
         """
-        AuditPolicyAuditConditionEnableCondition._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            entity_names=entity_names,
-            entity_selection=entity_selection,
-            entity_type=entity_type,
-            operation_status=operation_status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             entity_names: Optional[Sequence[str]] = None,
-             entity_selection: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             operation_status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if entity_names is None and 'entityNames' in kwargs:
-            entity_names = kwargs['entityNames']
-        if entity_selection is None and 'entitySelection' in kwargs:
-            entity_selection = kwargs['entitySelection']
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if operation_status is None and 'operationStatus' in kwargs:
-            operation_status = kwargs['operationStatus']
-
         if entity_names is not None:
-            _setter("entity_names", entity_names)
+            pulumi.set(__self__, "entity_names", entity_names)
         if entity_selection is not None:
-            _setter("entity_selection", entity_selection)
+            pulumi.set(__self__, "entity_selection", entity_selection)
         if entity_type is not None:
-            _setter("entity_type", entity_type)
+            pulumi.set(__self__, "entity_type", entity_type)
         if operation_status is not None:
-            _setter("operation_status", operation_status)
+            pulumi.set(__self__, "operation_status", operation_status)
 
     @property
     @pulumi.getter(name="entityNames")
@@ -552,81 +502,28 @@ class AuditPolicyAuditSpecification(dict):
         :param bool is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         :param str partially_enabled_msg: Provides information about the policy that has been only partially enabled.
         """
-        AuditPolicyAuditSpecification._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_policy_category=audit_policy_category,
-            audit_policy_name=audit_policy_name,
-            database_policy_names=database_policy_names,
-            enable_status=enable_status,
-            enabled_entities=enabled_entities,
-            is_created=is_created,
-            is_enabled_for_all_users=is_enabled_for_all_users,
-            is_seeded_in_data_safe=is_seeded_in_data_safe,
-            is_seeded_in_target=is_seeded_in_target,
-            is_view_only=is_view_only,
-            partially_enabled_msg=partially_enabled_msg,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_policy_category: Optional[str] = None,
-             audit_policy_name: Optional[str] = None,
-             database_policy_names: Optional[Sequence[str]] = None,
-             enable_status: Optional[str] = None,
-             enabled_entities: Optional[str] = None,
-             is_created: Optional[bool] = None,
-             is_enabled_for_all_users: Optional[bool] = None,
-             is_seeded_in_data_safe: Optional[bool] = None,
-             is_seeded_in_target: Optional[bool] = None,
-             is_view_only: Optional[bool] = None,
-             partially_enabled_msg: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_policy_category is None and 'auditPolicyCategory' in kwargs:
-            audit_policy_category = kwargs['auditPolicyCategory']
-        if audit_policy_name is None and 'auditPolicyName' in kwargs:
-            audit_policy_name = kwargs['auditPolicyName']
-        if database_policy_names is None and 'databasePolicyNames' in kwargs:
-            database_policy_names = kwargs['databasePolicyNames']
-        if enable_status is None and 'enableStatus' in kwargs:
-            enable_status = kwargs['enableStatus']
-        if enabled_entities is None and 'enabledEntities' in kwargs:
-            enabled_entities = kwargs['enabledEntities']
-        if is_created is None and 'isCreated' in kwargs:
-            is_created = kwargs['isCreated']
-        if is_enabled_for_all_users is None and 'isEnabledForAllUsers' in kwargs:
-            is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
-        if is_seeded_in_data_safe is None and 'isSeededInDataSafe' in kwargs:
-            is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
-        if is_seeded_in_target is None and 'isSeededInTarget' in kwargs:
-            is_seeded_in_target = kwargs['isSeededInTarget']
-        if is_view_only is None and 'isViewOnly' in kwargs:
-            is_view_only = kwargs['isViewOnly']
-        if partially_enabled_msg is None and 'partiallyEnabledMsg' in kwargs:
-            partially_enabled_msg = kwargs['partiallyEnabledMsg']
-
         if audit_policy_category is not None:
-            _setter("audit_policy_category", audit_policy_category)
+            pulumi.set(__self__, "audit_policy_category", audit_policy_category)
         if audit_policy_name is not None:
-            _setter("audit_policy_name", audit_policy_name)
+            pulumi.set(__self__, "audit_policy_name", audit_policy_name)
         if database_policy_names is not None:
-            _setter("database_policy_names", database_policy_names)
+            pulumi.set(__self__, "database_policy_names", database_policy_names)
         if enable_status is not None:
-            _setter("enable_status", enable_status)
+            pulumi.set(__self__, "enable_status", enable_status)
         if enabled_entities is not None:
-            _setter("enabled_entities", enabled_entities)
+            pulumi.set(__self__, "enabled_entities", enabled_entities)
         if is_created is not None:
-            _setter("is_created", is_created)
+            pulumi.set(__self__, "is_created", is_created)
         if is_enabled_for_all_users is not None:
-            _setter("is_enabled_for_all_users", is_enabled_for_all_users)
+            pulumi.set(__self__, "is_enabled_for_all_users", is_enabled_for_all_users)
         if is_seeded_in_data_safe is not None:
-            _setter("is_seeded_in_data_safe", is_seeded_in_data_safe)
+            pulumi.set(__self__, "is_seeded_in_data_safe", is_seeded_in_data_safe)
         if is_seeded_in_target is not None:
-            _setter("is_seeded_in_target", is_seeded_in_target)
+            pulumi.set(__self__, "is_seeded_in_target", is_seeded_in_target)
         if is_view_only is not None:
-            _setter("is_view_only", is_view_only)
+            pulumi.set(__self__, "is_view_only", is_view_only)
         if partially_enabled_msg is not None:
-            _setter("partially_enabled_msg", partially_enabled_msg)
+            pulumi.set(__self__, "partially_enabled_msg", partially_enabled_msg)
 
     @property
     @pulumi.getter(name="auditPolicyCategory")
@@ -805,121 +702,44 @@ class AuditProfileAuditTrail(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
-        AuditProfileAuditTrail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_collection_start_time=audit_collection_start_time,
-            audit_profile_id=audit_profile_id,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_auto_purge_enabled=is_auto_purge_enabled,
-            lifecycle_details=lifecycle_details,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_last_collected=time_last_collected,
-            time_updated=time_updated,
-            trail_location=trail_location,
-            work_request_id=work_request_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_collection_start_time: Optional[str] = None,
-             audit_profile_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_auto_purge_enabled: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_last_collected: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             trail_location: Optional[str] = None,
-             work_request_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_collection_start_time is None and 'auditCollectionStartTime' in kwargs:
-            audit_collection_start_time = kwargs['auditCollectionStartTime']
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_auto_purge_enabled is None and 'isAutoPurgeEnabled' in kwargs:
-            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_last_collected is None and 'timeLastCollected' in kwargs:
-            time_last_collected = kwargs['timeLastCollected']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if trail_location is None and 'trailLocation' in kwargs:
-            trail_location = kwargs['trailLocation']
-        if work_request_id is None and 'workRequestId' in kwargs:
-            work_request_id = kwargs['workRequestId']
-
         if audit_collection_start_time is not None:
-            _setter("audit_collection_start_time", audit_collection_start_time)
+            pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
         if audit_profile_id is not None:
-            _setter("audit_profile_id", audit_profile_id)
+            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if is_auto_purge_enabled is not None:
-            _setter("is_auto_purge_enabled", is_auto_purge_enabled)
+            pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_last_collected is not None:
-            _setter("time_last_collected", time_last_collected)
+            pulumi.set(__self__, "time_last_collected", time_last_collected)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if trail_location is not None:
-            _setter("trail_location", trail_location)
+            pulumi.set(__self__, "trail_location", trail_location)
         if work_request_id is not None:
-            _setter("work_request_id", work_request_id)
+            pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -1106,33 +926,12 @@ class DataSafeConfigurationGlobalSetting(dict):
         :param int offline_retention_period: The offline retention period in months.
         :param int online_retention_period: The online retention period in months.
         """
-        DataSafeConfigurationGlobalSetting._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_paid_usage=is_paid_usage,
-            offline_retention_period=offline_retention_period,
-            online_retention_period=online_retention_period,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_paid_usage: Optional[bool] = None,
-             offline_retention_period: Optional[int] = None,
-             online_retention_period: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_paid_usage is None and 'isPaidUsage' in kwargs:
-            is_paid_usage = kwargs['isPaidUsage']
-        if offline_retention_period is None and 'offlineRetentionPeriod' in kwargs:
-            offline_retention_period = kwargs['offlineRetentionPeriod']
-        if online_retention_period is None and 'onlineRetentionPeriod' in kwargs:
-            online_retention_period = kwargs['onlineRetentionPeriod']
-
         if is_paid_usage is not None:
-            _setter("is_paid_usage", is_paid_usage)
+            pulumi.set(__self__, "is_paid_usage", is_paid_usage)
         if offline_retention_period is not None:
-            _setter("offline_retention_period", offline_retention_period)
+            pulumi.set(__self__, "offline_retention_period", offline_retention_period)
         if online_retention_period is not None:
-            _setter("online_retention_period", online_retention_period)
+            pulumi.set(__self__, "online_retention_period", online_retention_period)
 
     @property
     @pulumi.getter(name="isPaidUsage")
@@ -1187,27 +986,10 @@ class DiscoveryJobsResultModifiedAttribute(dict):
         :param Sequence[str] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param Sequence[str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
-        DiscoveryJobsResultModifiedAttribute._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_defined_child_column_keys=app_defined_child_column_keys,
-            db_defined_child_column_keys=db_defined_child_column_keys,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_defined_child_column_keys: Optional[Sequence[str]] = None,
-             db_defined_child_column_keys: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
-            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
-            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-
         if app_defined_child_column_keys is not None:
-            _setter("app_defined_child_column_keys", app_defined_child_column_keys)
+            pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
         if db_defined_child_column_keys is not None:
-            _setter("db_defined_child_column_keys", db_defined_child_column_keys)
+            pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -1336,148 +1118,51 @@ class LibraryMasingFormatFormatEntry(dict):
         :param str table_name: (Updatable) The name of the table that contains the substitution column.
         :param str user_defined_function: (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        LibraryMasingFormatFormatEntry._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            column_name=column_name,
-            description=description,
-            end_date=end_date,
-            end_length=end_length,
-            end_value=end_value,
-            fixed_number=fixed_number,
-            fixed_string=fixed_string,
-            grouping_columns=grouping_columns,
-            length=length,
-            library_masking_format_id=library_masking_format_id,
-            post_processing_function=post_processing_function,
-            random_lists=random_lists,
-            regular_expression=regular_expression,
-            replace_with=replace_with,
-            schema_name=schema_name,
-            sql_expression=sql_expression,
-            start_date=start_date,
-            start_length=start_length,
-            start_position=start_position,
-            start_value=start_value,
-            table_name=table_name,
-            user_defined_function=user_defined_function,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             column_name: Optional[str] = None,
-             description: Optional[str] = None,
-             end_date: Optional[str] = None,
-             end_length: Optional[int] = None,
-             end_value: Optional[float] = None,
-             fixed_number: Optional[float] = None,
-             fixed_string: Optional[str] = None,
-             grouping_columns: Optional[Sequence[str]] = None,
-             length: Optional[int] = None,
-             library_masking_format_id: Optional[str] = None,
-             post_processing_function: Optional[str] = None,
-             random_lists: Optional[Sequence[str]] = None,
-             regular_expression: Optional[str] = None,
-             replace_with: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sql_expression: Optional[str] = None,
-             start_date: Optional[str] = None,
-             start_length: Optional[int] = None,
-             start_position: Optional[int] = None,
-             start_value: Optional[float] = None,
-             table_name: Optional[str] = None,
-             user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if end_date is None and 'endDate' in kwargs:
-            end_date = kwargs['endDate']
-        if end_length is None and 'endLength' in kwargs:
-            end_length = kwargs['endLength']
-        if end_value is None and 'endValue' in kwargs:
-            end_value = kwargs['endValue']
-        if fixed_number is None and 'fixedNumber' in kwargs:
-            fixed_number = kwargs['fixedNumber']
-        if fixed_string is None and 'fixedString' in kwargs:
-            fixed_string = kwargs['fixedString']
-        if grouping_columns is None and 'groupingColumns' in kwargs:
-            grouping_columns = kwargs['groupingColumns']
-        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
-            library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if post_processing_function is None and 'postProcessingFunction' in kwargs:
-            post_processing_function = kwargs['postProcessingFunction']
-        if random_lists is None and 'randomLists' in kwargs:
-            random_lists = kwargs['randomLists']
-        if regular_expression is None and 'regularExpression' in kwargs:
-            regular_expression = kwargs['regularExpression']
-        if replace_with is None and 'replaceWith' in kwargs:
-            replace_with = kwargs['replaceWith']
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if sql_expression is None and 'sqlExpression' in kwargs:
-            sql_expression = kwargs['sqlExpression']
-        if start_date is None and 'startDate' in kwargs:
-            start_date = kwargs['startDate']
-        if start_length is None and 'startLength' in kwargs:
-            start_length = kwargs['startLength']
-        if start_position is None and 'startPosition' in kwargs:
-            start_position = kwargs['startPosition']
-        if start_value is None and 'startValue' in kwargs:
-            start_value = kwargs['startValue']
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if user_defined_function is None and 'userDefinedFunction' in kwargs:
-            user_defined_function = kwargs['userDefinedFunction']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if column_name is not None:
-            _setter("column_name", column_name)
+            pulumi.set(__self__, "column_name", column_name)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if end_date is not None:
-            _setter("end_date", end_date)
+            pulumi.set(__self__, "end_date", end_date)
         if end_length is not None:
-            _setter("end_length", end_length)
+            pulumi.set(__self__, "end_length", end_length)
         if end_value is not None:
-            _setter("end_value", end_value)
+            pulumi.set(__self__, "end_value", end_value)
         if fixed_number is not None:
-            _setter("fixed_number", fixed_number)
+            pulumi.set(__self__, "fixed_number", fixed_number)
         if fixed_string is not None:
-            _setter("fixed_string", fixed_string)
+            pulumi.set(__self__, "fixed_string", fixed_string)
         if grouping_columns is not None:
-            _setter("grouping_columns", grouping_columns)
+            pulumi.set(__self__, "grouping_columns", grouping_columns)
         if length is not None:
-            _setter("length", length)
+            pulumi.set(__self__, "length", length)
         if library_masking_format_id is not None:
-            _setter("library_masking_format_id", library_masking_format_id)
+            pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
         if post_processing_function is not None:
-            _setter("post_processing_function", post_processing_function)
+            pulumi.set(__self__, "post_processing_function", post_processing_function)
         if random_lists is not None:
-            _setter("random_lists", random_lists)
+            pulumi.set(__self__, "random_lists", random_lists)
         if regular_expression is not None:
-            _setter("regular_expression", regular_expression)
+            pulumi.set(__self__, "regular_expression", regular_expression)
         if replace_with is not None:
-            _setter("replace_with", replace_with)
+            pulumi.set(__self__, "replace_with", replace_with)
         if schema_name is not None:
-            _setter("schema_name", schema_name)
+            pulumi.set(__self__, "schema_name", schema_name)
         if sql_expression is not None:
-            _setter("sql_expression", sql_expression)
+            pulumi.set(__self__, "sql_expression", sql_expression)
         if start_date is not None:
-            _setter("start_date", start_date)
+            pulumi.set(__self__, "start_date", start_date)
         if start_length is not None:
-            _setter("start_length", start_length)
+            pulumi.set(__self__, "start_length", start_length)
         if start_position is not None:
-            _setter("start_position", start_position)
+            pulumi.set(__self__, "start_position", start_position)
         if start_value is not None:
-            _setter("start_value", start_value)
+            pulumi.set(__self__, "start_value", start_value)
         if table_name is not None:
-            _setter("table_name", table_name)
+            pulumi.set(__self__, "table_name", table_name)
         if user_defined_function is not None:
-            _setter("user_defined_function", user_defined_function)
+            pulumi.set(__self__, "user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter
@@ -1696,30 +1381,11 @@ class MaskingPoliciesMaskingColumnMaskingFormat(dict):
         :param str condition: (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
         :param str description: (Updatable) The description of the format entry.
         """
-        MaskingPoliciesMaskingColumnMaskingFormat._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            format_entries=format_entries,
-            condition=condition,
-            description=description,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             format_entries: Optional[Sequence['outputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntry']] = None,
-             condition: Optional[str] = None,
-             description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if format_entries is None and 'formatEntries' in kwargs:
-            format_entries = kwargs['formatEntries']
-        if format_entries is None:
-            raise TypeError("Missing 'format_entries' argument")
-
-        _setter("format_entries", format_entries)
+        pulumi.set(__self__, "format_entries", format_entries)
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
 
     @property
     @pulumi.getter(name="formatEntries")
@@ -1856,148 +1522,51 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
         :param str table_name: (Updatable) The name of the table that contains the substitution column.
         :param str user_defined_function: (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        MaskingPoliciesMaskingColumnMaskingFormatFormatEntry._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            column_name=column_name,
-            description=description,
-            end_date=end_date,
-            end_length=end_length,
-            end_value=end_value,
-            fixed_number=fixed_number,
-            fixed_string=fixed_string,
-            grouping_columns=grouping_columns,
-            length=length,
-            library_masking_format_id=library_masking_format_id,
-            post_processing_function=post_processing_function,
-            random_lists=random_lists,
-            regular_expression=regular_expression,
-            replace_with=replace_with,
-            schema_name=schema_name,
-            sql_expression=sql_expression,
-            start_date=start_date,
-            start_length=start_length,
-            start_position=start_position,
-            start_value=start_value,
-            table_name=table_name,
-            user_defined_function=user_defined_function,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             column_name: Optional[str] = None,
-             description: Optional[str] = None,
-             end_date: Optional[str] = None,
-             end_length: Optional[int] = None,
-             end_value: Optional[float] = None,
-             fixed_number: Optional[float] = None,
-             fixed_string: Optional[str] = None,
-             grouping_columns: Optional[Sequence[str]] = None,
-             length: Optional[int] = None,
-             library_masking_format_id: Optional[str] = None,
-             post_processing_function: Optional[str] = None,
-             random_lists: Optional[Sequence[str]] = None,
-             regular_expression: Optional[str] = None,
-             replace_with: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sql_expression: Optional[str] = None,
-             start_date: Optional[str] = None,
-             start_length: Optional[int] = None,
-             start_position: Optional[int] = None,
-             start_value: Optional[float] = None,
-             table_name: Optional[str] = None,
-             user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if end_date is None and 'endDate' in kwargs:
-            end_date = kwargs['endDate']
-        if end_length is None and 'endLength' in kwargs:
-            end_length = kwargs['endLength']
-        if end_value is None and 'endValue' in kwargs:
-            end_value = kwargs['endValue']
-        if fixed_number is None and 'fixedNumber' in kwargs:
-            fixed_number = kwargs['fixedNumber']
-        if fixed_string is None and 'fixedString' in kwargs:
-            fixed_string = kwargs['fixedString']
-        if grouping_columns is None and 'groupingColumns' in kwargs:
-            grouping_columns = kwargs['groupingColumns']
-        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
-            library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if post_processing_function is None and 'postProcessingFunction' in kwargs:
-            post_processing_function = kwargs['postProcessingFunction']
-        if random_lists is None and 'randomLists' in kwargs:
-            random_lists = kwargs['randomLists']
-        if regular_expression is None and 'regularExpression' in kwargs:
-            regular_expression = kwargs['regularExpression']
-        if replace_with is None and 'replaceWith' in kwargs:
-            replace_with = kwargs['replaceWith']
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if sql_expression is None and 'sqlExpression' in kwargs:
-            sql_expression = kwargs['sqlExpression']
-        if start_date is None and 'startDate' in kwargs:
-            start_date = kwargs['startDate']
-        if start_length is None and 'startLength' in kwargs:
-            start_length = kwargs['startLength']
-        if start_position is None and 'startPosition' in kwargs:
-            start_position = kwargs['startPosition']
-        if start_value is None and 'startValue' in kwargs:
-            start_value = kwargs['startValue']
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if user_defined_function is None and 'userDefinedFunction' in kwargs:
-            user_defined_function = kwargs['userDefinedFunction']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if column_name is not None:
-            _setter("column_name", column_name)
+            pulumi.set(__self__, "column_name", column_name)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if end_date is not None:
-            _setter("end_date", end_date)
+            pulumi.set(__self__, "end_date", end_date)
         if end_length is not None:
-            _setter("end_length", end_length)
+            pulumi.set(__self__, "end_length", end_length)
         if end_value is not None:
-            _setter("end_value", end_value)
+            pulumi.set(__self__, "end_value", end_value)
         if fixed_number is not None:
-            _setter("fixed_number", fixed_number)
+            pulumi.set(__self__, "fixed_number", fixed_number)
         if fixed_string is not None:
-            _setter("fixed_string", fixed_string)
+            pulumi.set(__self__, "fixed_string", fixed_string)
         if grouping_columns is not None:
-            _setter("grouping_columns", grouping_columns)
+            pulumi.set(__self__, "grouping_columns", grouping_columns)
         if length is not None:
-            _setter("length", length)
+            pulumi.set(__self__, "length", length)
         if library_masking_format_id is not None:
-            _setter("library_masking_format_id", library_masking_format_id)
+            pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
         if post_processing_function is not None:
-            _setter("post_processing_function", post_processing_function)
+            pulumi.set(__self__, "post_processing_function", post_processing_function)
         if random_lists is not None:
-            _setter("random_lists", random_lists)
+            pulumi.set(__self__, "random_lists", random_lists)
         if regular_expression is not None:
-            _setter("regular_expression", regular_expression)
+            pulumi.set(__self__, "regular_expression", regular_expression)
         if replace_with is not None:
-            _setter("replace_with", replace_with)
+            pulumi.set(__self__, "replace_with", replace_with)
         if schema_name is not None:
-            _setter("schema_name", schema_name)
+            pulumi.set(__self__, "schema_name", schema_name)
         if sql_expression is not None:
-            _setter("sql_expression", sql_expression)
+            pulumi.set(__self__, "sql_expression", sql_expression)
         if start_date is not None:
-            _setter("start_date", start_date)
+            pulumi.set(__self__, "start_date", start_date)
         if start_length is not None:
-            _setter("start_length", start_length)
+            pulumi.set(__self__, "start_length", start_length)
         if start_position is not None:
-            _setter("start_position", start_position)
+            pulumi.set(__self__, "start_position", start_position)
         if start_value is not None:
-            _setter("start_value", start_value)
+            pulumi.set(__self__, "start_value", start_value)
         if table_name is not None:
-            _setter("table_name", table_name)
+            pulumi.set(__self__, "table_name", table_name)
         if user_defined_function is not None:
-            _setter("user_defined_function", user_defined_function)
+            pulumi.set(__self__, "user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter
@@ -2220,34 +1789,11 @@ class MaskingPolicyColumnSource(dict):
         :param str sensitive_data_model_id: (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
         :param str target_id: (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
         """
-        MaskingPolicyColumnSource._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_source=column_source,
-            sensitive_data_model_id=sensitive_data_model_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_source: Optional[str] = None,
-             sensitive_data_model_id: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_source is None and 'columnSource' in kwargs:
-            column_source = kwargs['columnSource']
-        if column_source is None:
-            raise TypeError("Missing 'column_source' argument")
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-
-        _setter("column_source", column_source)
+        pulumi.set(__self__, "column_source", column_source)
         if sensitive_data_model_id is not None:
-            _setter("sensitive_data_model_id", sensitive_data_model_id)
+            pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="columnSource")
@@ -2310,46 +1856,11 @@ class ReportDefinitionColumnFilter(dict):
         :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
         """
-        ReportDefinitionColumnFilter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            expressions=expressions,
-            field_name=field_name,
-            is_enabled=is_enabled,
-            is_hidden=is_hidden,
-            operator=operator,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             expressions: Optional[Sequence[str]] = None,
-             field_name: Optional[str] = None,
-             is_enabled: Optional[bool] = None,
-             is_hidden: Optional[bool] = None,
-             operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if expressions is None:
-            raise TypeError("Missing 'expressions' argument")
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-
-        _setter("expressions", expressions)
-        _setter("field_name", field_name)
-        _setter("is_enabled", is_enabled)
-        _setter("is_hidden", is_hidden)
-        _setter("operator", operator)
+        pulumi.set(__self__, "expressions", expressions)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "is_hidden", is_hidden)
+        pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter
@@ -2432,49 +1943,12 @@ class ReportDefinitionColumnInfo(dict):
         :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str data_type: (Updatable) Specifies the data type of the column.
         """
-        ReportDefinitionColumnInfo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            display_order=display_order,
-            field_name=field_name,
-            is_hidden=is_hidden,
-            data_type=data_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[str] = None,
-             display_order: Optional[int] = None,
-             field_name: Optional[str] = None,
-             is_hidden: Optional[bool] = None,
-             data_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if display_order is None and 'displayOrder' in kwargs:
-            display_order = kwargs['displayOrder']
-        if display_order is None:
-            raise TypeError("Missing 'display_order' argument")
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-
-        _setter("display_name", display_name)
-        _setter("display_order", display_order)
-        _setter("field_name", field_name)
-        _setter("is_hidden", is_hidden)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "display_order", display_order)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_hidden", is_hidden)
         if data_type is not None:
-            _setter("data_type", data_type)
+            pulumi.set(__self__, "data_type", data_type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2549,36 +2023,9 @@ class ReportDefinitionColumnSorting(dict):
         :param bool is_ascending: (Updatable) Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
         :param int sorting_order: (Updatable) Indicates the order at which column must be sorted.
         """
-        ReportDefinitionColumnSorting._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            field_name=field_name,
-            is_ascending=is_ascending,
-            sorting_order=sorting_order,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             field_name: Optional[str] = None,
-             is_ascending: Optional[bool] = None,
-             sorting_order: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_ascending is None and 'isAscending' in kwargs:
-            is_ascending = kwargs['isAscending']
-        if is_ascending is None:
-            raise TypeError("Missing 'is_ascending' argument")
-        if sorting_order is None and 'sortingOrder' in kwargs:
-            sorting_order = kwargs['sortingOrder']
-        if sorting_order is None:
-            raise TypeError("Missing 'sorting_order' argument")
-
-        _setter("field_name", field_name)
-        _setter("is_ascending", is_ascending)
-        _setter("sorting_order", sorting_order)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_ascending", is_ascending)
+        pulumi.set(__self__, "sorting_order", sorting_order)
 
     @property
     @pulumi.getter(name="fieldName")
@@ -2651,51 +2098,16 @@ class ReportDefinitionSummary(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ReportDefinitionSummary._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_order=display_order,
-            name=name,
-            count_of=count_of,
-            group_by_field_name=group_by_field_name,
-            is_hidden=is_hidden,
-            scim_filter=scim_filter,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_order: Optional[int] = None,
-             name: Optional[str] = None,
-             count_of: Optional[str] = None,
-             group_by_field_name: Optional[str] = None,
-             is_hidden: Optional[bool] = None,
-             scim_filter: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_order is None and 'displayOrder' in kwargs:
-            display_order = kwargs['displayOrder']
-        if display_order is None:
-            raise TypeError("Missing 'display_order' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if count_of is None and 'countOf' in kwargs:
-            count_of = kwargs['countOf']
-        if group_by_field_name is None and 'groupByFieldName' in kwargs:
-            group_by_field_name = kwargs['groupByFieldName']
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if scim_filter is None and 'scimFilter' in kwargs:
-            scim_filter = kwargs['scimFilter']
-
-        _setter("display_order", display_order)
-        _setter("name", name)
+        pulumi.set(__self__, "display_order", display_order)
+        pulumi.set(__self__, "name", name)
         if count_of is not None:
-            _setter("count_of", count_of)
+            pulumi.set(__self__, "count_of", count_of)
         if group_by_field_name is not None:
-            _setter("group_by_field_name", group_by_field_name)
+            pulumi.set(__self__, "group_by_field_name", group_by_field_name)
         if is_hidden is not None:
-            _setter("is_hidden", is_hidden)
+            pulumi.set(__self__, "is_hidden", is_hidden)
         if scim_filter is not None:
-            _setter("scim_filter", scim_filter)
+            pulumi.set(__self__, "scim_filter", scim_filter)
 
     @property
     @pulumi.getter(name="displayOrder")
@@ -2792,51 +2204,20 @@ class SecurityAssessmentStatistic(dict):
         :param Sequence['SecurityAssessmentStatisticPassArgs'] passes: Statistics showing the number of findings with a particular risk level for each category.
         :param int targets_count: The total number of targets in this security assessment.
         """
-        SecurityAssessmentStatistic._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            advisories=advisories,
-            evaluates=evaluates,
-            high_risks=high_risks,
-            low_risks=low_risks,
-            medium_risks=medium_risks,
-            passes=passes,
-            targets_count=targets_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             advisories: Optional[Sequence['outputs.SecurityAssessmentStatisticAdvisory']] = None,
-             evaluates: Optional[Sequence['outputs.SecurityAssessmentStatisticEvaluate']] = None,
-             high_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticHighRisk']] = None,
-             low_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticLowRisk']] = None,
-             medium_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticMediumRisk']] = None,
-             passes: Optional[Sequence['outputs.SecurityAssessmentStatisticPass']] = None,
-             targets_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if high_risks is None and 'highRisks' in kwargs:
-            high_risks = kwargs['highRisks']
-        if low_risks is None and 'lowRisks' in kwargs:
-            low_risks = kwargs['lowRisks']
-        if medium_risks is None and 'mediumRisks' in kwargs:
-            medium_risks = kwargs['mediumRisks']
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-
         if advisories is not None:
-            _setter("advisories", advisories)
+            pulumi.set(__self__, "advisories", advisories)
         if evaluates is not None:
-            _setter("evaluates", evaluates)
+            pulumi.set(__self__, "evaluates", evaluates)
         if high_risks is not None:
-            _setter("high_risks", high_risks)
+            pulumi.set(__self__, "high_risks", high_risks)
         if low_risks is not None:
-            _setter("low_risks", low_risks)
+            pulumi.set(__self__, "low_risks", low_risks)
         if medium_risks is not None:
-            _setter("medium_risks", medium_risks)
+            pulumi.set(__self__, "medium_risks", medium_risks)
         if passes is not None:
-            _setter("passes", passes)
+            pulumi.set(__self__, "passes", passes)
         if targets_count is not None:
-            _setter("targets_count", targets_count)
+            pulumi.set(__self__, "targets_count", targets_count)
 
     @property
     @pulumi.getter
@@ -2947,63 +2328,22 @@ class SecurityAssessmentStatisticAdvisory(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        SecurityAssessmentStatisticAdvisory._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-
         if auditing_findings_count is not None:
-            _setter("auditing_findings_count", auditing_findings_count)
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            _setter("authorization_control_findings_count", authorization_control_findings_count)
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            _setter("data_encryption_findings_count", data_encryption_findings_count)
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            _setter("db_configuration_findings_count", db_configuration_findings_count)
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            _setter("targets_count", targets_count)
+            pulumi.set(__self__, "targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            _setter("user_accounts_findings_count", user_accounts_findings_count)
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -3122,63 +2462,22 @@ class SecurityAssessmentStatisticEvaluate(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        SecurityAssessmentStatisticEvaluate._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-
         if auditing_findings_count is not None:
-            _setter("auditing_findings_count", auditing_findings_count)
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            _setter("authorization_control_findings_count", authorization_control_findings_count)
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            _setter("data_encryption_findings_count", data_encryption_findings_count)
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            _setter("db_configuration_findings_count", db_configuration_findings_count)
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            _setter("targets_count", targets_count)
+            pulumi.set(__self__, "targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            _setter("user_accounts_findings_count", user_accounts_findings_count)
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -3297,63 +2596,22 @@ class SecurityAssessmentStatisticHighRisk(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        SecurityAssessmentStatisticHighRisk._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-
         if auditing_findings_count is not None:
-            _setter("auditing_findings_count", auditing_findings_count)
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            _setter("authorization_control_findings_count", authorization_control_findings_count)
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            _setter("data_encryption_findings_count", data_encryption_findings_count)
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            _setter("db_configuration_findings_count", db_configuration_findings_count)
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            _setter("targets_count", targets_count)
+            pulumi.set(__self__, "targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            _setter("user_accounts_findings_count", user_accounts_findings_count)
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -3472,63 +2730,22 @@ class SecurityAssessmentStatisticLowRisk(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        SecurityAssessmentStatisticLowRisk._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-
         if auditing_findings_count is not None:
-            _setter("auditing_findings_count", auditing_findings_count)
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            _setter("authorization_control_findings_count", authorization_control_findings_count)
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            _setter("data_encryption_findings_count", data_encryption_findings_count)
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            _setter("db_configuration_findings_count", db_configuration_findings_count)
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            _setter("targets_count", targets_count)
+            pulumi.set(__self__, "targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            _setter("user_accounts_findings_count", user_accounts_findings_count)
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -3647,63 +2864,22 @@ class SecurityAssessmentStatisticMediumRisk(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        SecurityAssessmentStatisticMediumRisk._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-
         if auditing_findings_count is not None:
-            _setter("auditing_findings_count", auditing_findings_count)
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            _setter("authorization_control_findings_count", authorization_control_findings_count)
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            _setter("data_encryption_findings_count", data_encryption_findings_count)
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            _setter("db_configuration_findings_count", db_configuration_findings_count)
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            _setter("targets_count", targets_count)
+            pulumi.set(__self__, "targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            _setter("user_accounts_findings_count", user_accounts_findings_count)
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -3822,63 +2998,22 @@ class SecurityAssessmentStatisticPass(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        SecurityAssessmentStatisticPass._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-
         if auditing_findings_count is not None:
-            _setter("auditing_findings_count", auditing_findings_count)
+            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            _setter("authorization_control_findings_count", authorization_control_findings_count)
+            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            _setter("data_encryption_findings_count", data_encryption_findings_count)
+            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            _setter("db_configuration_findings_count", db_configuration_findings_count)
+            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            _setter("targets_count", targets_count)
+            pulumi.set(__self__, "targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            _setter("user_accounts_findings_count", user_accounts_findings_count)
+            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -3979,34 +3114,11 @@ class TargetDatabaseConnectionOption(dict):
         :param str datasafe_private_endpoint_id: (Updatable) The OCID of the Data Safe private endpoint.
         :param str on_prem_connector_id: (Updatable) The OCID of the on-premises connector.
         """
-        TargetDatabaseConnectionOption._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connection_type=connection_type,
-            datasafe_private_endpoint_id=datasafe_private_endpoint_id,
-            on_prem_connector_id=on_prem_connector_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connection_type: Optional[str] = None,
-             datasafe_private_endpoint_id: Optional[str] = None,
-             on_prem_connector_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_type is None and 'connectionType' in kwargs:
-            connection_type = kwargs['connectionType']
-        if connection_type is None:
-            raise TypeError("Missing 'connection_type' argument")
-        if datasafe_private_endpoint_id is None and 'datasafePrivateEndpointId' in kwargs:
-            datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
-        if on_prem_connector_id is None and 'onPremConnectorId' in kwargs:
-            on_prem_connector_id = kwargs['onPremConnectorId']
-
-        _setter("connection_type", connection_type)
+        pulumi.set(__self__, "connection_type", connection_type)
         if datasafe_private_endpoint_id is not None:
-            _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
+            pulumi.set(__self__, "datasafe_private_endpoint_id", datasafe_private_endpoint_id)
         if on_prem_connector_id is not None:
-            _setter("on_prem_connector_id", on_prem_connector_id)
+            pulumi.set(__self__, "on_prem_connector_id", on_prem_connector_id)
 
     @property
     @pulumi.getter(name="connectionType")
@@ -4061,27 +3173,8 @@ class TargetDatabaseCredentials(dict):
         :param str password: (Updatable) The password of the database user.
         :param str user_name: (Updatable) The database user name.
         """
-        TargetDatabaseCredentials._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            password=password,
-            user_name=user_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             password: Optional[str] = None,
-             user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if password is None:
-            raise TypeError("Missing 'password' argument")
-        if user_name is None and 'userName' in kwargs:
-            user_name = kwargs['userName']
-        if user_name is None:
-            raise TypeError("Missing 'user_name' argument")
-
-        _setter("password", password)
-        _setter("user_name", user_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter
@@ -4156,71 +3249,22 @@ class TargetDatabaseDatabaseDetails(dict):
         :param str service_name: (Updatable) The service name of the database registered as target database.
         :param str vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
         """
-        TargetDatabaseDatabaseDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            database_type=database_type,
-            infrastructure_type=infrastructure_type,
-            autonomous_database_id=autonomous_database_id,
-            db_system_id=db_system_id,
-            instance_id=instance_id,
-            ip_addresses=ip_addresses,
-            listener_port=listener_port,
-            service_name=service_name,
-            vm_cluster_id=vm_cluster_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             database_type: Optional[str] = None,
-             infrastructure_type: Optional[str] = None,
-             autonomous_database_id: Optional[str] = None,
-             db_system_id: Optional[str] = None,
-             instance_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             listener_port: Optional[int] = None,
-             service_name: Optional[str] = None,
-             vm_cluster_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if database_type is None and 'databaseType' in kwargs:
-            database_type = kwargs['databaseType']
-        if database_type is None:
-            raise TypeError("Missing 'database_type' argument")
-        if infrastructure_type is None and 'infrastructureType' in kwargs:
-            infrastructure_type = kwargs['infrastructureType']
-        if infrastructure_type is None:
-            raise TypeError("Missing 'infrastructure_type' argument")
-        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
-            autonomous_database_id = kwargs['autonomousDatabaseId']
-        if db_system_id is None and 'dbSystemId' in kwargs:
-            db_system_id = kwargs['dbSystemId']
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if listener_port is None and 'listenerPort' in kwargs:
-            listener_port = kwargs['listenerPort']
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-        if vm_cluster_id is None and 'vmClusterId' in kwargs:
-            vm_cluster_id = kwargs['vmClusterId']
-
-        _setter("database_type", database_type)
-        _setter("infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         if autonomous_database_id is not None:
-            _setter("autonomous_database_id", autonomous_database_id)
+            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         if db_system_id is not None:
-            _setter("db_system_id", db_system_id)
+            pulumi.set(__self__, "db_system_id", db_system_id)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if ip_addresses is not None:
-            _setter("ip_addresses", ip_addresses)
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
         if listener_port is not None:
-            _setter("listener_port", listener_port)
+            pulumi.set(__self__, "listener_port", listener_port)
         if service_name is not None:
-            _setter("service_name", service_name)
+            pulumi.set(__self__, "service_name", service_name)
         if vm_cluster_id is not None:
-            _setter("vm_cluster_id", vm_cluster_id)
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="databaseType")
@@ -4337,44 +3381,15 @@ class TargetDatabaseTlsConfig(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        TargetDatabaseTlsConfig._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            status=status,
-            certificate_store_type=certificate_store_type,
-            key_store_content=key_store_content,
-            store_password=store_password,
-            trust_store_content=trust_store_content,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             status: Optional[str] = None,
-             certificate_store_type: Optional[str] = None,
-             key_store_content: Optional[str] = None,
-             store_password: Optional[str] = None,
-             trust_store_content: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if certificate_store_type is None and 'certificateStoreType' in kwargs:
-            certificate_store_type = kwargs['certificateStoreType']
-        if key_store_content is None and 'keyStoreContent' in kwargs:
-            key_store_content = kwargs['keyStoreContent']
-        if store_password is None and 'storePassword' in kwargs:
-            store_password = kwargs['storePassword']
-        if trust_store_content is None and 'trustStoreContent' in kwargs:
-            trust_store_content = kwargs['trustStoreContent']
-
-        _setter("status", status)
+        pulumi.set(__self__, "status", status)
         if certificate_store_type is not None:
-            _setter("certificate_store_type", certificate_store_type)
+            pulumi.set(__self__, "certificate_store_type", certificate_store_type)
         if key_store_content is not None:
-            _setter("key_store_content", key_store_content)
+            pulumi.set(__self__, "key_store_content", key_store_content)
         if store_password is not None:
-            _setter("store_password", store_password)
+            pulumi.set(__self__, "store_password", store_password)
         if trust_store_content is not None:
-            _setter("trust_store_content", trust_store_content)
+            pulumi.set(__self__, "trust_store_content", trust_store_content)
 
     @property
     @pulumi.getter
@@ -4455,33 +3470,12 @@ class UserAssessmentIgnoredTarget(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        UserAssessmentIgnoredTarget._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            lifecycle_state=lifecycle_state,
-            target_id=target_id,
-            user_assessment_id=user_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             lifecycle_state: Optional[str] = None,
-             target_id: Optional[str] = None,
-             user_assessment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if lifecycle_state is None and 'lifecycleState' in kwargs:
-            lifecycle_state = kwargs['lifecycleState']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if user_assessment_id is None and 'userAssessmentId' in kwargs:
-            user_assessment_id = kwargs['userAssessmentId']
-
         if lifecycle_state is not None:
-            _setter("lifecycle_state", lifecycle_state)
+            pulumi.set(__self__, "lifecycle_state", lifecycle_state)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if user_assessment_id is not None:
-            _setter("user_assessment_id", user_assessment_id)
+            pulumi.set(__self__, "user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")
@@ -4521,46 +3515,11 @@ class GetAlertAnalyticItemResult(dict):
         :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetAlertAnalyticItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-            metric_name=metric_name,
-            time_ended=time_ended,
-            time_started=time_started,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetAlertAnalyticItemDimensionResult']] = None,
-             metric_name: Optional[str] = None,
-             time_ended: Optional[str] = None,
-             time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-        if metric_name is None and 'metricName' in kwargs:
-            metric_name = kwargs['metricName']
-        if metric_name is None:
-            raise TypeError("Missing 'metric_name' argument")
-        if time_ended is None and 'timeEnded' in kwargs:
-            time_ended = kwargs['timeEnded']
-        if time_ended is None:
-            raise TypeError("Missing 'time_ended' argument")
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if time_started is None:
-            raise TypeError("Missing 'time_started' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
-        _setter("metric_name", metric_name)
-        _setter("time_ended", time_ended)
-        _setter("time_started", time_started)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter
@@ -4610,22 +3569,7 @@ class GetAlertAnalyticItemDimensionResult(dict):
         """
         :param Mapping[str, Any] group_by: A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
         """
-        GetAlertAnalyticItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            group_by=group_by,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             group_by: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if group_by is None and 'groupBy' in kwargs:
-            group_by = kwargs['groupBy']
-        if group_by is None:
-            raise TypeError("Missing 'group_by' argument")
-
-        _setter("group_by", group_by)
+        pulumi.set(__self__, "group_by", group_by)
 
     @property
     @pulumi.getter(name="groupBy")
@@ -4640,20 +3584,7 @@ class GetAlertAnalyticItemDimensionResult(dict):
 class GetAlertPoliciesAlertPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionItemResult']):
-        GetAlertPoliciesAlertPolicyCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -4692,98 +3623,19 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
         :param str time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetAlertPoliciesAlertPolicyCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alert_policy_type=alert_policy_type,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_user_defined=is_user_defined,
-            severity=severity,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alert_policy_type: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_user_defined: Optional[bool] = None,
-             severity: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alert_policy_type is None and 'alertPolicyType' in kwargs:
-            alert_policy_type = kwargs['alertPolicyType']
-        if alert_policy_type is None:
-            raise TypeError("Missing 'alert_policy_type' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_user_defined is None and 'isUserDefined' in kwargs:
-            is_user_defined = kwargs['isUserDefined']
-        if is_user_defined is None:
-            raise TypeError("Missing 'is_user_defined' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("alert_policy_type", alert_policy_type)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_user_defined", is_user_defined)
-        _setter("severity", severity)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "alert_policy_type", alert_policy_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_user_defined", is_user_defined)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alertPolicyType")
@@ -4896,29 +3748,10 @@ class GetAlertPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAlertPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4947,30 +3780,9 @@ class GetAlertPolicyRuleItemResult(dict):
         :param str expression: The conditional expression of the alert policy rule which evaluates to boolean value.
         :param str key: The unique key of the alert policy rule.
         """
-        GetAlertPolicyRuleItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            expression=expression,
-            key=key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             expression: Optional[str] = None,
-             key: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if expression is None:
-            raise TypeError("Missing 'expression' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-
-        _setter("description", description)
-        _setter("expression", expression)
-        _setter("key", key)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "key", key)
 
     @property
     @pulumi.getter
@@ -5004,20 +3816,7 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionResult(dict):
         """
         :param Sequence['GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs'] items: Array of alert policy rules summary
         """
-        GetAlertPolicyRulesAlertPolicyRuleCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5039,30 +3838,9 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(dict):
         :param str expression: The conditional expression of the alert policy rule which evaluates to boolean value.
         :param str key: The unique key of the alert policy rule.
         """
-        GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            expression=expression,
-            key=key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             expression: Optional[str] = None,
-             key: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if expression is None:
-            raise TypeError("Missing 'expression' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-
-        _setter("description", description)
-        _setter("expression", expression)
-        _setter("key", key)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "key", key)
 
     @property
     @pulumi.getter
@@ -5095,29 +3873,10 @@ class GetAlertPolicyRulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAlertPolicyRulesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5139,20 +3898,7 @@ class GetAlertPolicyRulesFilterResult(dict):
 class GetAlertsAlertCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAlertsAlertCollectionItemResult']):
-        GetAlertsAlertCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAlertsAlertCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5210,162 +3956,29 @@ class GetAlertsAlertCollectionItemResult(dict):
         :param str time_created: Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetAlertsAlertCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            alert_id=alert_id,
-            alert_type=alert_type,
-            comment=comment,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            feature_details=feature_details,
-            freeform_tags=freeform_tags,
-            id=id,
-            operation=operation,
-            operation_status=operation_status,
-            operation_time=operation_time,
-            policy_id=policy_id,
-            resource_name=resource_name,
-            severity=severity,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            target_ids=target_ids,
-            target_names=target_names,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             alert_id: Optional[str] = None,
-             alert_type: Optional[str] = None,
-             comment: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             feature_details: Optional[Mapping[str, Any]] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             operation: Optional[str] = None,
-             operation_status: Optional[str] = None,
-             operation_time: Optional[str] = None,
-             policy_id: Optional[str] = None,
-             resource_name: Optional[str] = None,
-             severity: Optional[str] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_ids: Optional[Sequence[str]] = None,
-             target_names: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if alert_id is None and 'alertId' in kwargs:
-            alert_id = kwargs['alertId']
-        if alert_id is None:
-            raise TypeError("Missing 'alert_id' argument")
-        if alert_type is None and 'alertType' in kwargs:
-            alert_type = kwargs['alertType']
-        if alert_type is None:
-            raise TypeError("Missing 'alert_type' argument")
-        if comment is None:
-            raise TypeError("Missing 'comment' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if feature_details is None and 'featureDetails' in kwargs:
-            feature_details = kwargs['featureDetails']
-        if feature_details is None:
-            raise TypeError("Missing 'feature_details' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if operation is None:
-            raise TypeError("Missing 'operation' argument")
-        if operation_status is None and 'operationStatus' in kwargs:
-            operation_status = kwargs['operationStatus']
-        if operation_status is None:
-            raise TypeError("Missing 'operation_status' argument")
-        if operation_time is None and 'operationTime' in kwargs:
-            operation_time = kwargs['operationTime']
-        if operation_time is None:
-            raise TypeError("Missing 'operation_time' argument")
-        if policy_id is None and 'policyId' in kwargs:
-            policy_id = kwargs['policyId']
-        if policy_id is None:
-            raise TypeError("Missing 'policy_id' argument")
-        if resource_name is None and 'resourceName' in kwargs:
-            resource_name = kwargs['resourceName']
-        if resource_name is None:
-            raise TypeError("Missing 'resource_name' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if target_ids is None:
-            raise TypeError("Missing 'target_ids' argument")
-        if target_names is None and 'targetNames' in kwargs:
-            target_names = kwargs['targetNames']
-        if target_names is None:
-            raise TypeError("Missing 'target_names' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("alert_id", alert_id)
-        _setter("alert_type", alert_type)
-        _setter("comment", comment)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("feature_details", feature_details)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("operation", operation)
-        _setter("operation_status", operation_status)
-        _setter("operation_time", operation_time)
-        _setter("policy_id", policy_id)
-        _setter("resource_name", resource_name)
-        _setter("severity", severity)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("system_tags", system_tags)
-        _setter("target_ids", target_ids)
-        _setter("target_names", target_names)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "alert_id", alert_id)
+        pulumi.set(__self__, "alert_type", alert_type)
+        pulumi.set(__self__, "comment", comment)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "feature_details", feature_details)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "operation_status", operation_status)
+        pulumi.set(__self__, "operation_time", operation_time)
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "resource_name", resource_name)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_ids", target_ids)
+        pulumi.set(__self__, "target_names", target_names)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alertId")
@@ -5555,29 +4168,10 @@ class GetAlertsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAlertsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5599,20 +4193,7 @@ class GetAlertsFilterResult(dict):
 class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult']):
-        GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5659,128 +4240,23 @@ class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult(dict):
         :param str time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
         :param str time_requested: The date time when archive retrieval was requested, in the format defined by RFC3339.
         """
-        GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_event_count=audit_event_count,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            end_date=end_date,
-            error_info=error_info,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            start_date=start_date,
-            state=state,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_completed=time_completed,
-            time_of_expiry=time_of_expiry,
-            time_requested=time_requested,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_event_count: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             end_date: Optional[str] = None,
-             error_info: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             start_date: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_completed: Optional[str] = None,
-             time_of_expiry: Optional[str] = None,
-             time_requested: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_event_count is None and 'auditEventCount' in kwargs:
-            audit_event_count = kwargs['auditEventCount']
-        if audit_event_count is None:
-            raise TypeError("Missing 'audit_event_count' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if end_date is None and 'endDate' in kwargs:
-            end_date = kwargs['endDate']
-        if end_date is None:
-            raise TypeError("Missing 'end_date' argument")
-        if error_info is None and 'errorInfo' in kwargs:
-            error_info = kwargs['errorInfo']
-        if error_info is None:
-            raise TypeError("Missing 'error_info' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if start_date is None and 'startDate' in kwargs:
-            start_date = kwargs['startDate']
-        if start_date is None:
-            raise TypeError("Missing 'start_date' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_completed is None and 'timeCompleted' in kwargs:
-            time_completed = kwargs['timeCompleted']
-        if time_completed is None:
-            raise TypeError("Missing 'time_completed' argument")
-        if time_of_expiry is None and 'timeOfExpiry' in kwargs:
-            time_of_expiry = kwargs['timeOfExpiry']
-        if time_of_expiry is None:
-            raise TypeError("Missing 'time_of_expiry' argument")
-        if time_requested is None and 'timeRequested' in kwargs:
-            time_requested = kwargs['timeRequested']
-        if time_requested is None:
-            raise TypeError("Missing 'time_requested' argument")
-
-        _setter("audit_event_count", audit_event_count)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("end_date", end_date)
-        _setter("error_info", error_info)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("start_date", start_date)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_completed", time_completed)
-        _setter("time_of_expiry", time_of_expiry)
-        _setter("time_requested", time_requested)
+        pulumi.set(__self__, "audit_event_count", audit_event_count)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "error_info", error_info)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_completed", time_completed)
+        pulumi.set(__self__, "time_of_expiry", time_of_expiry)
+        pulumi.set(__self__, "time_requested", time_requested)
 
     @property
     @pulumi.getter(name="auditEventCount")
@@ -5925,29 +4401,10 @@ class GetAuditArchiveRetrievalsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAuditArchiveRetrievalsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5982,53 +4439,12 @@ class GetAuditEventAnalyticItemResult(dict):
         :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetAuditEventAnalyticItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-            display_name=display_name,
-            metric_name=metric_name,
-            time_ended=time_ended,
-            time_started=time_started,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetAuditEventAnalyticItemDimensionResult']] = None,
-             display_name: Optional[str] = None,
-             metric_name: Optional[str] = None,
-             time_ended: Optional[str] = None,
-             time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if metric_name is None and 'metricName' in kwargs:
-            metric_name = kwargs['metricName']
-        if metric_name is None:
-            raise TypeError("Missing 'metric_name' argument")
-        if time_ended is None and 'timeEnded' in kwargs:
-            time_ended = kwargs['timeEnded']
-        if time_ended is None:
-            raise TypeError("Missing 'time_ended' argument")
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if time_started is None:
-            raise TypeError("Missing 'time_started' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
-        _setter("display_name", display_name)
-        _setter("metric_name", metric_name)
-        _setter("time_ended", time_ended)
-        _setter("time_started", time_started)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter
@@ -6106,92 +4522,17 @@ class GetAuditEventAnalyticItemDimensionResult(dict):
         :param Sequence[str] target_ids: The OCID of the target database that was audited.
         :param Sequence[str] target_names: The name of the target database that was audited.
         """
-        GetAuditEventAnalyticItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_event_times=audit_event_times,
-            audit_types=audit_types,
-            client_hostnames=client_hostnames,
-            client_ids=client_ids,
-            client_programs=client_programs,
-            db_user_names=db_user_names,
-            event_names=event_names,
-            object_types=object_types,
-            target_classes=target_classes,
-            target_ids=target_ids,
-            target_names=target_names,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_event_times: Optional[Sequence[str]] = None,
-             audit_types: Optional[Sequence[str]] = None,
-             client_hostnames: Optional[Sequence[str]] = None,
-             client_ids: Optional[Sequence[str]] = None,
-             client_programs: Optional[Sequence[str]] = None,
-             db_user_names: Optional[Sequence[str]] = None,
-             event_names: Optional[Sequence[str]] = None,
-             object_types: Optional[Sequence[str]] = None,
-             target_classes: Optional[Sequence[str]] = None,
-             target_ids: Optional[Sequence[str]] = None,
-             target_names: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_event_times is None and 'auditEventTimes' in kwargs:
-            audit_event_times = kwargs['auditEventTimes']
-        if audit_event_times is None:
-            raise TypeError("Missing 'audit_event_times' argument")
-        if audit_types is None and 'auditTypes' in kwargs:
-            audit_types = kwargs['auditTypes']
-        if audit_types is None:
-            raise TypeError("Missing 'audit_types' argument")
-        if client_hostnames is None and 'clientHostnames' in kwargs:
-            client_hostnames = kwargs['clientHostnames']
-        if client_hostnames is None:
-            raise TypeError("Missing 'client_hostnames' argument")
-        if client_ids is None and 'clientIds' in kwargs:
-            client_ids = kwargs['clientIds']
-        if client_ids is None:
-            raise TypeError("Missing 'client_ids' argument")
-        if client_programs is None and 'clientPrograms' in kwargs:
-            client_programs = kwargs['clientPrograms']
-        if client_programs is None:
-            raise TypeError("Missing 'client_programs' argument")
-        if db_user_names is None and 'dbUserNames' in kwargs:
-            db_user_names = kwargs['dbUserNames']
-        if db_user_names is None:
-            raise TypeError("Missing 'db_user_names' argument")
-        if event_names is None and 'eventNames' in kwargs:
-            event_names = kwargs['eventNames']
-        if event_names is None:
-            raise TypeError("Missing 'event_names' argument")
-        if object_types is None and 'objectTypes' in kwargs:
-            object_types = kwargs['objectTypes']
-        if object_types is None:
-            raise TypeError("Missing 'object_types' argument")
-        if target_classes is None and 'targetClasses' in kwargs:
-            target_classes = kwargs['targetClasses']
-        if target_classes is None:
-            raise TypeError("Missing 'target_classes' argument")
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if target_ids is None:
-            raise TypeError("Missing 'target_ids' argument")
-        if target_names is None and 'targetNames' in kwargs:
-            target_names = kwargs['targetNames']
-        if target_names is None:
-            raise TypeError("Missing 'target_names' argument")
-
-        _setter("audit_event_times", audit_event_times)
-        _setter("audit_types", audit_types)
-        _setter("client_hostnames", client_hostnames)
-        _setter("client_ids", client_ids)
-        _setter("client_programs", client_programs)
-        _setter("db_user_names", db_user_names)
-        _setter("event_names", event_names)
-        _setter("object_types", object_types)
-        _setter("target_classes", target_classes)
-        _setter("target_ids", target_ids)
-        _setter("target_names", target_names)
+        pulumi.set(__self__, "audit_event_times", audit_event_times)
+        pulumi.set(__self__, "audit_types", audit_types)
+        pulumi.set(__self__, "client_hostnames", client_hostnames)
+        pulumi.set(__self__, "client_ids", client_ids)
+        pulumi.set(__self__, "client_programs", client_programs)
+        pulumi.set(__self__, "db_user_names", db_user_names)
+        pulumi.set(__self__, "event_names", event_names)
+        pulumi.set(__self__, "object_types", object_types)
+        pulumi.set(__self__, "target_classes", target_classes)
+        pulumi.set(__self__, "target_ids", target_ids)
+        pulumi.set(__self__, "target_names", target_names)
 
     @property
     @pulumi.getter(name="auditEventTimes")
@@ -6358,247 +4699,40 @@ class GetAuditEventItemResult(dict):
         :param str target_name: The name of the target database that was audited.
         :param str time_collected: Timestamp when this audit event was collected from the target database by Data Safe.
         """
-        GetAuditEventItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action_taken=action_taken,
-            audit_event_time=audit_event_time,
-            audit_location=audit_location,
-            audit_policies=audit_policies,
-            audit_trail_id=audit_trail_id,
-            audit_type=audit_type,
-            client_hostname=client_hostname,
-            client_id=client_id,
-            client_ip=client_ip,
-            client_program=client_program,
-            command_param=command_param,
-            command_text=command_text,
-            compartment_id=compartment_id,
-            database_type=database_type,
-            db_user_name=db_user_name,
-            defined_tags=defined_tags,
-            error_code=error_code,
-            error_message=error_message,
-            event_name=event_name,
-            extended_event_attributes=extended_event_attributes,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_alerted=is_alerted,
-            object=object,
-            object_owner=object_owner,
-            object_type=object_type,
-            operation=operation,
-            operation_status=operation_status,
-            os_terminal=os_terminal,
-            os_user_name=os_user_name,
-            target_class=target_class,
-            target_id=target_id,
-            target_name=target_name,
-            time_collected=time_collected,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action_taken: Optional[str] = None,
-             audit_event_time: Optional[str] = None,
-             audit_location: Optional[str] = None,
-             audit_policies: Optional[str] = None,
-             audit_trail_id: Optional[str] = None,
-             audit_type: Optional[str] = None,
-             client_hostname: Optional[str] = None,
-             client_id: Optional[str] = None,
-             client_ip: Optional[str] = None,
-             client_program: Optional[str] = None,
-             command_param: Optional[str] = None,
-             command_text: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             database_type: Optional[str] = None,
-             db_user_name: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             error_code: Optional[str] = None,
-             error_message: Optional[str] = None,
-             event_name: Optional[str] = None,
-             extended_event_attributes: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_alerted: Optional[bool] = None,
-             object: Optional[str] = None,
-             object_owner: Optional[str] = None,
-             object_type: Optional[str] = None,
-             operation: Optional[str] = None,
-             operation_status: Optional[str] = None,
-             os_terminal: Optional[str] = None,
-             os_user_name: Optional[str] = None,
-             target_class: Optional[str] = None,
-             target_id: Optional[str] = None,
-             target_name: Optional[str] = None,
-             time_collected: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action_taken is None and 'actionTaken' in kwargs:
-            action_taken = kwargs['actionTaken']
-        if action_taken is None:
-            raise TypeError("Missing 'action_taken' argument")
-        if audit_event_time is None and 'auditEventTime' in kwargs:
-            audit_event_time = kwargs['auditEventTime']
-        if audit_event_time is None:
-            raise TypeError("Missing 'audit_event_time' argument")
-        if audit_location is None and 'auditLocation' in kwargs:
-            audit_location = kwargs['auditLocation']
-        if audit_location is None:
-            raise TypeError("Missing 'audit_location' argument")
-        if audit_policies is None and 'auditPolicies' in kwargs:
-            audit_policies = kwargs['auditPolicies']
-        if audit_policies is None:
-            raise TypeError("Missing 'audit_policies' argument")
-        if audit_trail_id is None and 'auditTrailId' in kwargs:
-            audit_trail_id = kwargs['auditTrailId']
-        if audit_trail_id is None:
-            raise TypeError("Missing 'audit_trail_id' argument")
-        if audit_type is None and 'auditType' in kwargs:
-            audit_type = kwargs['auditType']
-        if audit_type is None:
-            raise TypeError("Missing 'audit_type' argument")
-        if client_hostname is None and 'clientHostname' in kwargs:
-            client_hostname = kwargs['clientHostname']
-        if client_hostname is None:
-            raise TypeError("Missing 'client_hostname' argument")
-        if client_id is None and 'clientId' in kwargs:
-            client_id = kwargs['clientId']
-        if client_id is None:
-            raise TypeError("Missing 'client_id' argument")
-        if client_ip is None and 'clientIp' in kwargs:
-            client_ip = kwargs['clientIp']
-        if client_ip is None:
-            raise TypeError("Missing 'client_ip' argument")
-        if client_program is None and 'clientProgram' in kwargs:
-            client_program = kwargs['clientProgram']
-        if client_program is None:
-            raise TypeError("Missing 'client_program' argument")
-        if command_param is None and 'commandParam' in kwargs:
-            command_param = kwargs['commandParam']
-        if command_param is None:
-            raise TypeError("Missing 'command_param' argument")
-        if command_text is None and 'commandText' in kwargs:
-            command_text = kwargs['commandText']
-        if command_text is None:
-            raise TypeError("Missing 'command_text' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if database_type is None and 'databaseType' in kwargs:
-            database_type = kwargs['databaseType']
-        if database_type is None:
-            raise TypeError("Missing 'database_type' argument")
-        if db_user_name is None and 'dbUserName' in kwargs:
-            db_user_name = kwargs['dbUserName']
-        if db_user_name is None:
-            raise TypeError("Missing 'db_user_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if error_code is None and 'errorCode' in kwargs:
-            error_code = kwargs['errorCode']
-        if error_code is None:
-            raise TypeError("Missing 'error_code' argument")
-        if error_message is None and 'errorMessage' in kwargs:
-            error_message = kwargs['errorMessage']
-        if error_message is None:
-            raise TypeError("Missing 'error_message' argument")
-        if event_name is None and 'eventName' in kwargs:
-            event_name = kwargs['eventName']
-        if event_name is None:
-            raise TypeError("Missing 'event_name' argument")
-        if extended_event_attributes is None and 'extendedEventAttributes' in kwargs:
-            extended_event_attributes = kwargs['extendedEventAttributes']
-        if extended_event_attributes is None:
-            raise TypeError("Missing 'extended_event_attributes' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_alerted is None and 'isAlerted' in kwargs:
-            is_alerted = kwargs['isAlerted']
-        if is_alerted is None:
-            raise TypeError("Missing 'is_alerted' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_owner is None and 'objectOwner' in kwargs:
-            object_owner = kwargs['objectOwner']
-        if object_owner is None:
-            raise TypeError("Missing 'object_owner' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if operation is None:
-            raise TypeError("Missing 'operation' argument")
-        if operation_status is None and 'operationStatus' in kwargs:
-            operation_status = kwargs['operationStatus']
-        if operation_status is None:
-            raise TypeError("Missing 'operation_status' argument")
-        if os_terminal is None and 'osTerminal' in kwargs:
-            os_terminal = kwargs['osTerminal']
-        if os_terminal is None:
-            raise TypeError("Missing 'os_terminal' argument")
-        if os_user_name is None and 'osUserName' in kwargs:
-            os_user_name = kwargs['osUserName']
-        if os_user_name is None:
-            raise TypeError("Missing 'os_user_name' argument")
-        if target_class is None and 'targetClass' in kwargs:
-            target_class = kwargs['targetClass']
-        if target_class is None:
-            raise TypeError("Missing 'target_class' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if target_name is None and 'targetName' in kwargs:
-            target_name = kwargs['targetName']
-        if target_name is None:
-            raise TypeError("Missing 'target_name' argument")
-        if time_collected is None and 'timeCollected' in kwargs:
-            time_collected = kwargs['timeCollected']
-        if time_collected is None:
-            raise TypeError("Missing 'time_collected' argument")
-
-        _setter("action_taken", action_taken)
-        _setter("audit_event_time", audit_event_time)
-        _setter("audit_location", audit_location)
-        _setter("audit_policies", audit_policies)
-        _setter("audit_trail_id", audit_trail_id)
-        _setter("audit_type", audit_type)
-        _setter("client_hostname", client_hostname)
-        _setter("client_id", client_id)
-        _setter("client_ip", client_ip)
-        _setter("client_program", client_program)
-        _setter("command_param", command_param)
-        _setter("command_text", command_text)
-        _setter("compartment_id", compartment_id)
-        _setter("database_type", database_type)
-        _setter("db_user_name", db_user_name)
-        _setter("defined_tags", defined_tags)
-        _setter("error_code", error_code)
-        _setter("error_message", error_message)
-        _setter("event_name", event_name)
-        _setter("extended_event_attributes", extended_event_attributes)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_alerted", is_alerted)
-        _setter("object", object)
-        _setter("object_owner", object_owner)
-        _setter("object_type", object_type)
-        _setter("operation", operation)
-        _setter("operation_status", operation_status)
-        _setter("os_terminal", os_terminal)
-        _setter("os_user_name", os_user_name)
-        _setter("target_class", target_class)
-        _setter("target_id", target_id)
-        _setter("target_name", target_name)
-        _setter("time_collected", time_collected)
+        pulumi.set(__self__, "action_taken", action_taken)
+        pulumi.set(__self__, "audit_event_time", audit_event_time)
+        pulumi.set(__self__, "audit_location", audit_location)
+        pulumi.set(__self__, "audit_policies", audit_policies)
+        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        pulumi.set(__self__, "audit_type", audit_type)
+        pulumi.set(__self__, "client_hostname", client_hostname)
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_ip", client_ip)
+        pulumi.set(__self__, "client_program", client_program)
+        pulumi.set(__self__, "command_param", command_param)
+        pulumi.set(__self__, "command_text", command_text)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_user_name", db_user_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "error_code", error_code)
+        pulumi.set(__self__, "error_message", error_message)
+        pulumi.set(__self__, "event_name", event_name)
+        pulumi.set(__self__, "extended_event_attributes", extended_event_attributes)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_alerted", is_alerted)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_owner", object_owner)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "operation_status", operation_status)
+        pulumi.set(__self__, "os_terminal", os_terminal)
+        pulumi.set(__self__, "os_user_name", os_user_name)
+        pulumi.set(__self__, "target_class", target_class)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_name", target_name)
+        pulumi.set(__self__, "time_collected", time_collected)
 
     @property
     @pulumi.getter(name="actionTaken")
@@ -6883,20 +5017,7 @@ class GetAuditEventsAuditEventCollectionResult(dict):
         """
         :param Sequence['GetAuditEventsAuditEventCollectionItemArgs'] items: Array of audit event summary.
         """
-        GetAuditEventsAuditEventCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditEventsAuditEventCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6983,247 +5104,40 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str target_name: The name of the target database that was audited.
         :param str time_collected: The timestamp when this audit event was collected from the target database by Data Safe.
         """
-        GetAuditEventsAuditEventCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action_taken=action_taken,
-            audit_event_time=audit_event_time,
-            audit_location=audit_location,
-            audit_policies=audit_policies,
-            audit_trail_id=audit_trail_id,
-            audit_type=audit_type,
-            client_hostname=client_hostname,
-            client_id=client_id,
-            client_ip=client_ip,
-            client_program=client_program,
-            command_param=command_param,
-            command_text=command_text,
-            compartment_id=compartment_id,
-            database_type=database_type,
-            db_user_name=db_user_name,
-            defined_tags=defined_tags,
-            error_code=error_code,
-            error_message=error_message,
-            event_name=event_name,
-            extended_event_attributes=extended_event_attributes,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_alerted=is_alerted,
-            object=object,
-            object_owner=object_owner,
-            object_type=object_type,
-            operation=operation,
-            operation_status=operation_status,
-            os_terminal=os_terminal,
-            os_user_name=os_user_name,
-            target_class=target_class,
-            target_id=target_id,
-            target_name=target_name,
-            time_collected=time_collected,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action_taken: Optional[str] = None,
-             audit_event_time: Optional[str] = None,
-             audit_location: Optional[str] = None,
-             audit_policies: Optional[str] = None,
-             audit_trail_id: Optional[str] = None,
-             audit_type: Optional[str] = None,
-             client_hostname: Optional[str] = None,
-             client_id: Optional[str] = None,
-             client_ip: Optional[str] = None,
-             client_program: Optional[str] = None,
-             command_param: Optional[str] = None,
-             command_text: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             database_type: Optional[str] = None,
-             db_user_name: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             error_code: Optional[str] = None,
-             error_message: Optional[str] = None,
-             event_name: Optional[str] = None,
-             extended_event_attributes: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_alerted: Optional[bool] = None,
-             object: Optional[str] = None,
-             object_owner: Optional[str] = None,
-             object_type: Optional[str] = None,
-             operation: Optional[str] = None,
-             operation_status: Optional[str] = None,
-             os_terminal: Optional[str] = None,
-             os_user_name: Optional[str] = None,
-             target_class: Optional[str] = None,
-             target_id: Optional[str] = None,
-             target_name: Optional[str] = None,
-             time_collected: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action_taken is None and 'actionTaken' in kwargs:
-            action_taken = kwargs['actionTaken']
-        if action_taken is None:
-            raise TypeError("Missing 'action_taken' argument")
-        if audit_event_time is None and 'auditEventTime' in kwargs:
-            audit_event_time = kwargs['auditEventTime']
-        if audit_event_time is None:
-            raise TypeError("Missing 'audit_event_time' argument")
-        if audit_location is None and 'auditLocation' in kwargs:
-            audit_location = kwargs['auditLocation']
-        if audit_location is None:
-            raise TypeError("Missing 'audit_location' argument")
-        if audit_policies is None and 'auditPolicies' in kwargs:
-            audit_policies = kwargs['auditPolicies']
-        if audit_policies is None:
-            raise TypeError("Missing 'audit_policies' argument")
-        if audit_trail_id is None and 'auditTrailId' in kwargs:
-            audit_trail_id = kwargs['auditTrailId']
-        if audit_trail_id is None:
-            raise TypeError("Missing 'audit_trail_id' argument")
-        if audit_type is None and 'auditType' in kwargs:
-            audit_type = kwargs['auditType']
-        if audit_type is None:
-            raise TypeError("Missing 'audit_type' argument")
-        if client_hostname is None and 'clientHostname' in kwargs:
-            client_hostname = kwargs['clientHostname']
-        if client_hostname is None:
-            raise TypeError("Missing 'client_hostname' argument")
-        if client_id is None and 'clientId' in kwargs:
-            client_id = kwargs['clientId']
-        if client_id is None:
-            raise TypeError("Missing 'client_id' argument")
-        if client_ip is None and 'clientIp' in kwargs:
-            client_ip = kwargs['clientIp']
-        if client_ip is None:
-            raise TypeError("Missing 'client_ip' argument")
-        if client_program is None and 'clientProgram' in kwargs:
-            client_program = kwargs['clientProgram']
-        if client_program is None:
-            raise TypeError("Missing 'client_program' argument")
-        if command_param is None and 'commandParam' in kwargs:
-            command_param = kwargs['commandParam']
-        if command_param is None:
-            raise TypeError("Missing 'command_param' argument")
-        if command_text is None and 'commandText' in kwargs:
-            command_text = kwargs['commandText']
-        if command_text is None:
-            raise TypeError("Missing 'command_text' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if database_type is None and 'databaseType' in kwargs:
-            database_type = kwargs['databaseType']
-        if database_type is None:
-            raise TypeError("Missing 'database_type' argument")
-        if db_user_name is None and 'dbUserName' in kwargs:
-            db_user_name = kwargs['dbUserName']
-        if db_user_name is None:
-            raise TypeError("Missing 'db_user_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if error_code is None and 'errorCode' in kwargs:
-            error_code = kwargs['errorCode']
-        if error_code is None:
-            raise TypeError("Missing 'error_code' argument")
-        if error_message is None and 'errorMessage' in kwargs:
-            error_message = kwargs['errorMessage']
-        if error_message is None:
-            raise TypeError("Missing 'error_message' argument")
-        if event_name is None and 'eventName' in kwargs:
-            event_name = kwargs['eventName']
-        if event_name is None:
-            raise TypeError("Missing 'event_name' argument")
-        if extended_event_attributes is None and 'extendedEventAttributes' in kwargs:
-            extended_event_attributes = kwargs['extendedEventAttributes']
-        if extended_event_attributes is None:
-            raise TypeError("Missing 'extended_event_attributes' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_alerted is None and 'isAlerted' in kwargs:
-            is_alerted = kwargs['isAlerted']
-        if is_alerted is None:
-            raise TypeError("Missing 'is_alerted' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_owner is None and 'objectOwner' in kwargs:
-            object_owner = kwargs['objectOwner']
-        if object_owner is None:
-            raise TypeError("Missing 'object_owner' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if operation is None:
-            raise TypeError("Missing 'operation' argument")
-        if operation_status is None and 'operationStatus' in kwargs:
-            operation_status = kwargs['operationStatus']
-        if operation_status is None:
-            raise TypeError("Missing 'operation_status' argument")
-        if os_terminal is None and 'osTerminal' in kwargs:
-            os_terminal = kwargs['osTerminal']
-        if os_terminal is None:
-            raise TypeError("Missing 'os_terminal' argument")
-        if os_user_name is None and 'osUserName' in kwargs:
-            os_user_name = kwargs['osUserName']
-        if os_user_name is None:
-            raise TypeError("Missing 'os_user_name' argument")
-        if target_class is None and 'targetClass' in kwargs:
-            target_class = kwargs['targetClass']
-        if target_class is None:
-            raise TypeError("Missing 'target_class' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if target_name is None and 'targetName' in kwargs:
-            target_name = kwargs['targetName']
-        if target_name is None:
-            raise TypeError("Missing 'target_name' argument")
-        if time_collected is None and 'timeCollected' in kwargs:
-            time_collected = kwargs['timeCollected']
-        if time_collected is None:
-            raise TypeError("Missing 'time_collected' argument")
-
-        _setter("action_taken", action_taken)
-        _setter("audit_event_time", audit_event_time)
-        _setter("audit_location", audit_location)
-        _setter("audit_policies", audit_policies)
-        _setter("audit_trail_id", audit_trail_id)
-        _setter("audit_type", audit_type)
-        _setter("client_hostname", client_hostname)
-        _setter("client_id", client_id)
-        _setter("client_ip", client_ip)
-        _setter("client_program", client_program)
-        _setter("command_param", command_param)
-        _setter("command_text", command_text)
-        _setter("compartment_id", compartment_id)
-        _setter("database_type", database_type)
-        _setter("db_user_name", db_user_name)
-        _setter("defined_tags", defined_tags)
-        _setter("error_code", error_code)
-        _setter("error_message", error_message)
-        _setter("event_name", event_name)
-        _setter("extended_event_attributes", extended_event_attributes)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_alerted", is_alerted)
-        _setter("object", object)
-        _setter("object_owner", object_owner)
-        _setter("object_type", object_type)
-        _setter("operation", operation)
-        _setter("operation_status", operation_status)
-        _setter("os_terminal", os_terminal)
-        _setter("os_user_name", os_user_name)
-        _setter("target_class", target_class)
-        _setter("target_id", target_id)
-        _setter("target_name", target_name)
-        _setter("time_collected", time_collected)
+        pulumi.set(__self__, "action_taken", action_taken)
+        pulumi.set(__self__, "audit_event_time", audit_event_time)
+        pulumi.set(__self__, "audit_location", audit_location)
+        pulumi.set(__self__, "audit_policies", audit_policies)
+        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        pulumi.set(__self__, "audit_type", audit_type)
+        pulumi.set(__self__, "client_hostname", client_hostname)
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_ip", client_ip)
+        pulumi.set(__self__, "client_program", client_program)
+        pulumi.set(__self__, "command_param", command_param)
+        pulumi.set(__self__, "command_text", command_text)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_user_name", db_user_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "error_code", error_code)
+        pulumi.set(__self__, "error_message", error_message)
+        pulumi.set(__self__, "event_name", event_name)
+        pulumi.set(__self__, "extended_event_attributes", extended_event_attributes)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_alerted", is_alerted)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_owner", object_owner)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "operation_status", operation_status)
+        pulumi.set(__self__, "os_terminal", os_terminal)
+        pulumi.set(__self__, "os_user_name", os_user_name)
+        pulumi.set(__self__, "target_class", target_class)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_name", target_name)
+        pulumi.set(__self__, "time_collected", time_collected)
 
     @property
     @pulumi.getter(name="actionTaken")
@@ -7507,29 +5421,10 @@ class GetAuditEventsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAuditEventsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -7551,20 +5446,7 @@ class GetAuditEventsFilterResult(dict):
 class GetAuditPoliciesAuditPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemResult']):
-        GetAuditPoliciesAuditPolicyCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -7615,149 +5497,26 @@ class GetAuditPoliciesAuditPolicyCollectionItemResult(dict):
         :param str time_last_retrieved: The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
         :param str time_updated: The last date and time the audit policy was updated, in the format defined by RFC3339.
         """
-        GetAuditPoliciesAuditPolicyCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_conditions=audit_conditions,
-            audit_policy_id=audit_policy_id,
-            audit_specifications=audit_specifications,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_data_safe_service_account_excluded=is_data_safe_service_account_excluded,
-            lifecycle_details=lifecycle_details,
-            provision_trigger=provision_trigger,
-            retrieve_from_target_trigger=retrieve_from_target_trigger,
-            state=state,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_last_provisioned=time_last_provisioned,
-            time_last_retrieved=time_last_retrieved,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_conditions: Optional[Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult']] = None,
-             audit_policy_id: Optional[str] = None,
-             audit_specifications: Optional[Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationResult']] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_data_safe_service_account_excluded: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             provision_trigger: Optional[int] = None,
-             retrieve_from_target_trigger: Optional[int] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_last_provisioned: Optional[str] = None,
-             time_last_retrieved: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_conditions is None and 'auditConditions' in kwargs:
-            audit_conditions = kwargs['auditConditions']
-        if audit_conditions is None:
-            raise TypeError("Missing 'audit_conditions' argument")
-        if audit_policy_id is None and 'auditPolicyId' in kwargs:
-            audit_policy_id = kwargs['auditPolicyId']
-        if audit_policy_id is None:
-            raise TypeError("Missing 'audit_policy_id' argument")
-        if audit_specifications is None and 'auditSpecifications' in kwargs:
-            audit_specifications = kwargs['auditSpecifications']
-        if audit_specifications is None:
-            raise TypeError("Missing 'audit_specifications' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_data_safe_service_account_excluded is None and 'isDataSafeServiceAccountExcluded' in kwargs:
-            is_data_safe_service_account_excluded = kwargs['isDataSafeServiceAccountExcluded']
-        if is_data_safe_service_account_excluded is None:
-            raise TypeError("Missing 'is_data_safe_service_account_excluded' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if provision_trigger is None and 'provisionTrigger' in kwargs:
-            provision_trigger = kwargs['provisionTrigger']
-        if provision_trigger is None:
-            raise TypeError("Missing 'provision_trigger' argument")
-        if retrieve_from_target_trigger is None and 'retrieveFromTargetTrigger' in kwargs:
-            retrieve_from_target_trigger = kwargs['retrieveFromTargetTrigger']
-        if retrieve_from_target_trigger is None:
-            raise TypeError("Missing 'retrieve_from_target_trigger' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_last_provisioned is None and 'timeLastProvisioned' in kwargs:
-            time_last_provisioned = kwargs['timeLastProvisioned']
-        if time_last_provisioned is None:
-            raise TypeError("Missing 'time_last_provisioned' argument")
-        if time_last_retrieved is None and 'timeLastRetrieved' in kwargs:
-            time_last_retrieved = kwargs['timeLastRetrieved']
-        if time_last_retrieved is None:
-            raise TypeError("Missing 'time_last_retrieved' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("audit_conditions", audit_conditions)
-        _setter("audit_policy_id", audit_policy_id)
-        _setter("audit_specifications", audit_specifications)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_data_safe_service_account_excluded", is_data_safe_service_account_excluded)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("provision_trigger", provision_trigger)
-        _setter("retrieve_from_target_trigger", retrieve_from_target_trigger)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_last_provisioned", time_last_provisioned)
-        _setter("time_last_retrieved", time_last_retrieved)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "audit_conditions", audit_conditions)
+        pulumi.set(__self__, "audit_policy_id", audit_policy_id)
+        pulumi.set(__self__, "audit_specifications", audit_specifications)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_data_safe_service_account_excluded", is_data_safe_service_account_excluded)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "provision_trigger", provision_trigger)
+        pulumi.set(__self__, "retrieve_from_target_trigger", retrieve_from_target_trigger)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_provisioned", time_last_provisioned)
+        pulumi.set(__self__, "time_last_retrieved", time_last_retrieved)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="auditConditions")
@@ -7927,43 +5686,10 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult(dict):
         :param bool is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
         """
-        GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_policy_name=audit_policy_name,
-            enable_conditions=enable_conditions,
-            is_data_safe_service_account_audited=is_data_safe_service_account_audited,
-            is_priv_users_managed_by_data_safe=is_priv_users_managed_by_data_safe,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_policy_name: Optional[str] = None,
-             enable_conditions: Optional[Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResult']] = None,
-             is_data_safe_service_account_audited: Optional[bool] = None,
-             is_priv_users_managed_by_data_safe: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_policy_name is None and 'auditPolicyName' in kwargs:
-            audit_policy_name = kwargs['auditPolicyName']
-        if audit_policy_name is None:
-            raise TypeError("Missing 'audit_policy_name' argument")
-        if enable_conditions is None and 'enableConditions' in kwargs:
-            enable_conditions = kwargs['enableConditions']
-        if enable_conditions is None:
-            raise TypeError("Missing 'enable_conditions' argument")
-        if is_data_safe_service_account_audited is None and 'isDataSafeServiceAccountAudited' in kwargs:
-            is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
-        if is_data_safe_service_account_audited is None:
-            raise TypeError("Missing 'is_data_safe_service_account_audited' argument")
-        if is_priv_users_managed_by_data_safe is None and 'isPrivUsersManagedByDataSafe' in kwargs:
-            is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
-        if is_priv_users_managed_by_data_safe is None:
-            raise TypeError("Missing 'is_priv_users_managed_by_data_safe' argument")
-
-        _setter("audit_policy_name", audit_policy_name)
-        _setter("enable_conditions", enable_conditions)
-        _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
-        _setter("is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
+        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+        pulumi.set(__self__, "enable_conditions", enable_conditions)
+        pulumi.set(__self__, "is_data_safe_service_account_audited", is_data_safe_service_account_audited)
+        pulumi.set(__self__, "is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
 
     @property
     @pulumi.getter(name="auditPolicyName")
@@ -8011,43 +5737,10 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResu
         :param str entity_type: The entity type that the policy must be enabled for.
         :param str operation_status: The operation status that the policy must be enabled for.
         """
-        GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            entity_names=entity_names,
-            entity_selection=entity_selection,
-            entity_type=entity_type,
-            operation_status=operation_status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             entity_names: Optional[Sequence[str]] = None,
-             entity_selection: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             operation_status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if entity_names is None and 'entityNames' in kwargs:
-            entity_names = kwargs['entityNames']
-        if entity_names is None:
-            raise TypeError("Missing 'entity_names' argument")
-        if entity_selection is None and 'entitySelection' in kwargs:
-            entity_selection = kwargs['entitySelection']
-        if entity_selection is None:
-            raise TypeError("Missing 'entity_selection' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if operation_status is None and 'operationStatus' in kwargs:
-            operation_status = kwargs['operationStatus']
-        if operation_status is None:
-            raise TypeError("Missing 'operation_status' argument")
-
-        _setter("entity_names", entity_names)
-        _setter("entity_selection", entity_selection)
-        _setter("entity_type", entity_type)
-        _setter("operation_status", operation_status)
+        pulumi.set(__self__, "entity_names", entity_names)
+        pulumi.set(__self__, "entity_selection", entity_selection)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "operation_status", operation_status)
 
     @property
     @pulumi.getter(name="entityNames")
@@ -8109,92 +5802,17 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationResult(dict):
         :param bool is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         :param str partially_enabled_msg: Provides information about the policy that has been only partially enabled.
         """
-        GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_policy_category=audit_policy_category,
-            audit_policy_name=audit_policy_name,
-            database_policy_names=database_policy_names,
-            enable_status=enable_status,
-            enabled_entities=enabled_entities,
-            is_created=is_created,
-            is_enabled_for_all_users=is_enabled_for_all_users,
-            is_seeded_in_data_safe=is_seeded_in_data_safe,
-            is_seeded_in_target=is_seeded_in_target,
-            is_view_only=is_view_only,
-            partially_enabled_msg=partially_enabled_msg,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_policy_category: Optional[str] = None,
-             audit_policy_name: Optional[str] = None,
-             database_policy_names: Optional[Sequence[str]] = None,
-             enable_status: Optional[str] = None,
-             enabled_entities: Optional[str] = None,
-             is_created: Optional[bool] = None,
-             is_enabled_for_all_users: Optional[bool] = None,
-             is_seeded_in_data_safe: Optional[bool] = None,
-             is_seeded_in_target: Optional[bool] = None,
-             is_view_only: Optional[bool] = None,
-             partially_enabled_msg: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_policy_category is None and 'auditPolicyCategory' in kwargs:
-            audit_policy_category = kwargs['auditPolicyCategory']
-        if audit_policy_category is None:
-            raise TypeError("Missing 'audit_policy_category' argument")
-        if audit_policy_name is None and 'auditPolicyName' in kwargs:
-            audit_policy_name = kwargs['auditPolicyName']
-        if audit_policy_name is None:
-            raise TypeError("Missing 'audit_policy_name' argument")
-        if database_policy_names is None and 'databasePolicyNames' in kwargs:
-            database_policy_names = kwargs['databasePolicyNames']
-        if database_policy_names is None:
-            raise TypeError("Missing 'database_policy_names' argument")
-        if enable_status is None and 'enableStatus' in kwargs:
-            enable_status = kwargs['enableStatus']
-        if enable_status is None:
-            raise TypeError("Missing 'enable_status' argument")
-        if enabled_entities is None and 'enabledEntities' in kwargs:
-            enabled_entities = kwargs['enabledEntities']
-        if enabled_entities is None:
-            raise TypeError("Missing 'enabled_entities' argument")
-        if is_created is None and 'isCreated' in kwargs:
-            is_created = kwargs['isCreated']
-        if is_created is None:
-            raise TypeError("Missing 'is_created' argument")
-        if is_enabled_for_all_users is None and 'isEnabledForAllUsers' in kwargs:
-            is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
-        if is_enabled_for_all_users is None:
-            raise TypeError("Missing 'is_enabled_for_all_users' argument")
-        if is_seeded_in_data_safe is None and 'isSeededInDataSafe' in kwargs:
-            is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
-        if is_seeded_in_data_safe is None:
-            raise TypeError("Missing 'is_seeded_in_data_safe' argument")
-        if is_seeded_in_target is None and 'isSeededInTarget' in kwargs:
-            is_seeded_in_target = kwargs['isSeededInTarget']
-        if is_seeded_in_target is None:
-            raise TypeError("Missing 'is_seeded_in_target' argument")
-        if is_view_only is None and 'isViewOnly' in kwargs:
-            is_view_only = kwargs['isViewOnly']
-        if is_view_only is None:
-            raise TypeError("Missing 'is_view_only' argument")
-        if partially_enabled_msg is None and 'partiallyEnabledMsg' in kwargs:
-            partially_enabled_msg = kwargs['partiallyEnabledMsg']
-        if partially_enabled_msg is None:
-            raise TypeError("Missing 'partially_enabled_msg' argument")
-
-        _setter("audit_policy_category", audit_policy_category)
-        _setter("audit_policy_name", audit_policy_name)
-        _setter("database_policy_names", database_policy_names)
-        _setter("enable_status", enable_status)
-        _setter("enabled_entities", enabled_entities)
-        _setter("is_created", is_created)
-        _setter("is_enabled_for_all_users", is_enabled_for_all_users)
-        _setter("is_seeded_in_data_safe", is_seeded_in_data_safe)
-        _setter("is_seeded_in_target", is_seeded_in_target)
-        _setter("is_view_only", is_view_only)
-        _setter("partially_enabled_msg", partially_enabled_msg)
+        pulumi.set(__self__, "audit_policy_category", audit_policy_category)
+        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+        pulumi.set(__self__, "database_policy_names", database_policy_names)
+        pulumi.set(__self__, "enable_status", enable_status)
+        pulumi.set(__self__, "enabled_entities", enabled_entities)
+        pulumi.set(__self__, "is_created", is_created)
+        pulumi.set(__self__, "is_enabled_for_all_users", is_enabled_for_all_users)
+        pulumi.set(__self__, "is_seeded_in_data_safe", is_seeded_in_data_safe)
+        pulumi.set(__self__, "is_seeded_in_target", is_seeded_in_target)
+        pulumi.set(__self__, "is_view_only", is_view_only)
+        pulumi.set(__self__, "partially_enabled_msg", partially_enabled_msg)
 
     @property
     @pulumi.getter(name="auditPolicyCategory")
@@ -8291,29 +5909,10 @@ class GetAuditPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAuditPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -8344,43 +5943,10 @@ class GetAuditPolicyAuditConditionResult(dict):
         :param bool is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
         """
-        GetAuditPolicyAuditConditionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_policy_name=audit_policy_name,
-            enable_conditions=enable_conditions,
-            is_data_safe_service_account_audited=is_data_safe_service_account_audited,
-            is_priv_users_managed_by_data_safe=is_priv_users_managed_by_data_safe,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_policy_name: Optional[str] = None,
-             enable_conditions: Optional[Sequence['outputs.GetAuditPolicyAuditConditionEnableConditionResult']] = None,
-             is_data_safe_service_account_audited: Optional[bool] = None,
-             is_priv_users_managed_by_data_safe: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_policy_name is None and 'auditPolicyName' in kwargs:
-            audit_policy_name = kwargs['auditPolicyName']
-        if audit_policy_name is None:
-            raise TypeError("Missing 'audit_policy_name' argument")
-        if enable_conditions is None and 'enableConditions' in kwargs:
-            enable_conditions = kwargs['enableConditions']
-        if enable_conditions is None:
-            raise TypeError("Missing 'enable_conditions' argument")
-        if is_data_safe_service_account_audited is None and 'isDataSafeServiceAccountAudited' in kwargs:
-            is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
-        if is_data_safe_service_account_audited is None:
-            raise TypeError("Missing 'is_data_safe_service_account_audited' argument")
-        if is_priv_users_managed_by_data_safe is None and 'isPrivUsersManagedByDataSafe' in kwargs:
-            is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
-        if is_priv_users_managed_by_data_safe is None:
-            raise TypeError("Missing 'is_priv_users_managed_by_data_safe' argument")
-
-        _setter("audit_policy_name", audit_policy_name)
-        _setter("enable_conditions", enable_conditions)
-        _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
-        _setter("is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
+        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+        pulumi.set(__self__, "enable_conditions", enable_conditions)
+        pulumi.set(__self__, "is_data_safe_service_account_audited", is_data_safe_service_account_audited)
+        pulumi.set(__self__, "is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
 
     @property
     @pulumi.getter(name="auditPolicyName")
@@ -8428,43 +5994,10 @@ class GetAuditPolicyAuditConditionEnableConditionResult(dict):
         :param str entity_type: The entity type that the policy must be enabled for.
         :param str operation_status: The operation status that the policy must be enabled for.
         """
-        GetAuditPolicyAuditConditionEnableConditionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            entity_names=entity_names,
-            entity_selection=entity_selection,
-            entity_type=entity_type,
-            operation_status=operation_status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             entity_names: Optional[Sequence[str]] = None,
-             entity_selection: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             operation_status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if entity_names is None and 'entityNames' in kwargs:
-            entity_names = kwargs['entityNames']
-        if entity_names is None:
-            raise TypeError("Missing 'entity_names' argument")
-        if entity_selection is None and 'entitySelection' in kwargs:
-            entity_selection = kwargs['entitySelection']
-        if entity_selection is None:
-            raise TypeError("Missing 'entity_selection' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if operation_status is None and 'operationStatus' in kwargs:
-            operation_status = kwargs['operationStatus']
-        if operation_status is None:
-            raise TypeError("Missing 'operation_status' argument")
-
-        _setter("entity_names", entity_names)
-        _setter("entity_selection", entity_selection)
-        _setter("entity_type", entity_type)
-        _setter("operation_status", operation_status)
+        pulumi.set(__self__, "entity_names", entity_names)
+        pulumi.set(__self__, "entity_selection", entity_selection)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "operation_status", operation_status)
 
     @property
     @pulumi.getter(name="entityNames")
@@ -8526,92 +6059,17 @@ class GetAuditPolicyAuditSpecificationResult(dict):
         :param bool is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         :param str partially_enabled_msg: Provides information about the policy that has been only partially enabled.
         """
-        GetAuditPolicyAuditSpecificationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_policy_category=audit_policy_category,
-            audit_policy_name=audit_policy_name,
-            database_policy_names=database_policy_names,
-            enable_status=enable_status,
-            enabled_entities=enabled_entities,
-            is_created=is_created,
-            is_enabled_for_all_users=is_enabled_for_all_users,
-            is_seeded_in_data_safe=is_seeded_in_data_safe,
-            is_seeded_in_target=is_seeded_in_target,
-            is_view_only=is_view_only,
-            partially_enabled_msg=partially_enabled_msg,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_policy_category: Optional[str] = None,
-             audit_policy_name: Optional[str] = None,
-             database_policy_names: Optional[Sequence[str]] = None,
-             enable_status: Optional[str] = None,
-             enabled_entities: Optional[str] = None,
-             is_created: Optional[bool] = None,
-             is_enabled_for_all_users: Optional[bool] = None,
-             is_seeded_in_data_safe: Optional[bool] = None,
-             is_seeded_in_target: Optional[bool] = None,
-             is_view_only: Optional[bool] = None,
-             partially_enabled_msg: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_policy_category is None and 'auditPolicyCategory' in kwargs:
-            audit_policy_category = kwargs['auditPolicyCategory']
-        if audit_policy_category is None:
-            raise TypeError("Missing 'audit_policy_category' argument")
-        if audit_policy_name is None and 'auditPolicyName' in kwargs:
-            audit_policy_name = kwargs['auditPolicyName']
-        if audit_policy_name is None:
-            raise TypeError("Missing 'audit_policy_name' argument")
-        if database_policy_names is None and 'databasePolicyNames' in kwargs:
-            database_policy_names = kwargs['databasePolicyNames']
-        if database_policy_names is None:
-            raise TypeError("Missing 'database_policy_names' argument")
-        if enable_status is None and 'enableStatus' in kwargs:
-            enable_status = kwargs['enableStatus']
-        if enable_status is None:
-            raise TypeError("Missing 'enable_status' argument")
-        if enabled_entities is None and 'enabledEntities' in kwargs:
-            enabled_entities = kwargs['enabledEntities']
-        if enabled_entities is None:
-            raise TypeError("Missing 'enabled_entities' argument")
-        if is_created is None and 'isCreated' in kwargs:
-            is_created = kwargs['isCreated']
-        if is_created is None:
-            raise TypeError("Missing 'is_created' argument")
-        if is_enabled_for_all_users is None and 'isEnabledForAllUsers' in kwargs:
-            is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
-        if is_enabled_for_all_users is None:
-            raise TypeError("Missing 'is_enabled_for_all_users' argument")
-        if is_seeded_in_data_safe is None and 'isSeededInDataSafe' in kwargs:
-            is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
-        if is_seeded_in_data_safe is None:
-            raise TypeError("Missing 'is_seeded_in_data_safe' argument")
-        if is_seeded_in_target is None and 'isSeededInTarget' in kwargs:
-            is_seeded_in_target = kwargs['isSeededInTarget']
-        if is_seeded_in_target is None:
-            raise TypeError("Missing 'is_seeded_in_target' argument")
-        if is_view_only is None and 'isViewOnly' in kwargs:
-            is_view_only = kwargs['isViewOnly']
-        if is_view_only is None:
-            raise TypeError("Missing 'is_view_only' argument")
-        if partially_enabled_msg is None and 'partiallyEnabledMsg' in kwargs:
-            partially_enabled_msg = kwargs['partiallyEnabledMsg']
-        if partially_enabled_msg is None:
-            raise TypeError("Missing 'partially_enabled_msg' argument")
-
-        _setter("audit_policy_category", audit_policy_category)
-        _setter("audit_policy_name", audit_policy_name)
-        _setter("database_policy_names", database_policy_names)
-        _setter("enable_status", enable_status)
-        _setter("enabled_entities", enabled_entities)
-        _setter("is_created", is_created)
-        _setter("is_enabled_for_all_users", is_enabled_for_all_users)
-        _setter("is_seeded_in_data_safe", is_seeded_in_data_safe)
-        _setter("is_seeded_in_target", is_seeded_in_target)
-        _setter("is_view_only", is_view_only)
-        _setter("partially_enabled_msg", partially_enabled_msg)
+        pulumi.set(__self__, "audit_policy_category", audit_policy_category)
+        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+        pulumi.set(__self__, "database_policy_names", database_policy_names)
+        pulumi.set(__self__, "enable_status", enable_status)
+        pulumi.set(__self__, "enabled_entities", enabled_entities)
+        pulumi.set(__self__, "is_created", is_created)
+        pulumi.set(__self__, "is_enabled_for_all_users", is_enabled_for_all_users)
+        pulumi.set(__self__, "is_seeded_in_data_safe", is_seeded_in_data_safe)
+        pulumi.set(__self__, "is_seeded_in_target", is_seeded_in_target)
+        pulumi.set(__self__, "is_view_only", is_view_only)
+        pulumi.set(__self__, "partially_enabled_msg", partially_enabled_msg)
 
     @property
     @pulumi.getter(name="auditPolicyCategory")
@@ -8711,25 +6169,8 @@ class GetAuditProfileAnalyticItemResult(dict):
         :param str count: Total count of aggregated metric.
         :param Sequence['GetAuditProfileAnalyticItemDimensionArgs'] dimensions: Details of aggregation dimensions used for summarizing audit profiles.
         """
-        GetAuditProfileAnalyticItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetAuditProfileAnalyticItemDimensionResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
 
     @property
     @pulumi.getter
@@ -8755,22 +6196,7 @@ class GetAuditProfileAnalyticItemDimensionResult(dict):
         """
         :param bool is_paid_usage_enabled: Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
         """
-        GetAuditProfileAnalyticItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_paid_usage_enabled=is_paid_usage_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_paid_usage_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_paid_usage_enabled is None and 'isPaidUsageEnabled' in kwargs:
-            is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
-        if is_paid_usage_enabled is None:
-            raise TypeError("Missing 'is_paid_usage_enabled' argument")
-
-        _setter("is_paid_usage_enabled", is_paid_usage_enabled)
+        pulumi.set(__self__, "is_paid_usage_enabled", is_paid_usage_enabled)
 
     @property
     @pulumi.getter(name="isPaidUsageEnabled")
@@ -8824,140 +6250,25 @@ class GetAuditProfileAuditTrailResult(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
-        GetAuditProfileAuditTrailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_collection_start_time=audit_collection_start_time,
-            audit_profile_id=audit_profile_id,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_auto_purge_enabled=is_auto_purge_enabled,
-            lifecycle_details=lifecycle_details,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_last_collected=time_last_collected,
-            time_updated=time_updated,
-            trail_location=trail_location,
-            work_request_id=work_request_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_collection_start_time: Optional[str] = None,
-             audit_profile_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_auto_purge_enabled: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_last_collected: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             trail_location: Optional[str] = None,
-             work_request_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_collection_start_time is None and 'auditCollectionStartTime' in kwargs:
-            audit_collection_start_time = kwargs['auditCollectionStartTime']
-        if audit_collection_start_time is None:
-            raise TypeError("Missing 'audit_collection_start_time' argument")
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_auto_purge_enabled is None and 'isAutoPurgeEnabled' in kwargs:
-            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
-        if is_auto_purge_enabled is None:
-            raise TypeError("Missing 'is_auto_purge_enabled' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_last_collected is None and 'timeLastCollected' in kwargs:
-            time_last_collected = kwargs['timeLastCollected']
-        if time_last_collected is None:
-            raise TypeError("Missing 'time_last_collected' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if trail_location is None and 'trailLocation' in kwargs:
-            trail_location = kwargs['trailLocation']
-        if trail_location is None:
-            raise TypeError("Missing 'trail_location' argument")
-        if work_request_id is None and 'workRequestId' in kwargs:
-            work_request_id = kwargs['workRequestId']
-        if work_request_id is None:
-            raise TypeError("Missing 'work_request_id' argument")
-
-        _setter("audit_collection_start_time", audit_collection_start_time)
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_auto_purge_enabled", is_auto_purge_enabled)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_last_collected", time_last_collected)
-        _setter("time_updated", time_updated)
-        _setter("trail_location", trail_location)
-        _setter("work_request_id", work_request_id)
+        pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_collected", time_last_collected)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -9125,41 +6436,10 @@ class GetAuditProfileAvailableAuditVolumeItemResult(dict):
         :param str trail_location: The audit trail location.
         :param str volume: Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
         """
-        GetAuditProfileAvailableAuditVolumeItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_profile_id=audit_profile_id,
-            month_in_consideration=month_in_consideration,
-            trail_location=trail_location,
-            volume=volume,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_profile_id: Optional[str] = None,
-             month_in_consideration: Optional[str] = None,
-             trail_location: Optional[str] = None,
-             volume: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if month_in_consideration is None and 'monthInConsideration' in kwargs:
-            month_in_consideration = kwargs['monthInConsideration']
-        if month_in_consideration is None:
-            raise TypeError("Missing 'month_in_consideration' argument")
-        if trail_location is None and 'trailLocation' in kwargs:
-            trail_location = kwargs['trailLocation']
-        if trail_location is None:
-            raise TypeError("Missing 'trail_location' argument")
-        if volume is None:
-            raise TypeError("Missing 'volume' argument")
-
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("month_in_consideration", month_in_consideration)
-        _setter("trail_location", trail_location)
-        _setter("volume", volume)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
+        pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "volume", volume)
 
     @property
     @pulumi.getter(name="auditProfileId")
@@ -9201,20 +6481,7 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionResult(d
         """
         :param Sequence['GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs'] items: Array of available audit volume summary.
         """
-        GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -9232,20 +6499,7 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResu
         """
         :param Sequence['GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs'] items: Array of available audit volume summary.
         """
-        GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -9269,41 +6523,10 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem
         :param str trail_location: The audit trail location.
         :param str volume: Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
         """
-        GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_profile_id=audit_profile_id,
-            month_in_consideration=month_in_consideration,
-            trail_location=trail_location,
-            volume=volume,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_profile_id: Optional[str] = None,
-             month_in_consideration: Optional[str] = None,
-             trail_location: Optional[str] = None,
-             volume: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if month_in_consideration is None and 'monthInConsideration' in kwargs:
-            month_in_consideration = kwargs['monthInConsideration']
-        if month_in_consideration is None:
-            raise TypeError("Missing 'month_in_consideration' argument")
-        if trail_location is None and 'trailLocation' in kwargs:
-            trail_location = kwargs['trailLocation']
-        if trail_location is None:
-            raise TypeError("Missing 'trail_location' argument")
-        if volume is None:
-            raise TypeError("Missing 'volume' argument")
-
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("month_in_consideration", month_in_consideration)
-        _setter("trail_location", trail_location)
-        _setter("volume", volume)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
+        pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "volume", volume)
 
     @property
     @pulumi.getter(name="auditProfileId")
@@ -9344,29 +6567,10 @@ class GetAuditProfileAvailableAuditVolumesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAuditProfileAvailableAuditVolumesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -9397,43 +6601,10 @@ class GetAuditProfileCollectedAuditVolumeItemResult(dict):
         :param str month_in_consideration: Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
         :param str online_volume: The audit data volume collected by Data Safe and is available online in repository.
         """
-        GetAuditProfileCollectedAuditVolumeItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            archived_volume=archived_volume,
-            audit_profile_id=audit_profile_id,
-            month_in_consideration=month_in_consideration,
-            online_volume=online_volume,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             archived_volume: Optional[str] = None,
-             audit_profile_id: Optional[str] = None,
-             month_in_consideration: Optional[str] = None,
-             online_volume: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if archived_volume is None and 'archivedVolume' in kwargs:
-            archived_volume = kwargs['archivedVolume']
-        if archived_volume is None:
-            raise TypeError("Missing 'archived_volume' argument")
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if month_in_consideration is None and 'monthInConsideration' in kwargs:
-            month_in_consideration = kwargs['monthInConsideration']
-        if month_in_consideration is None:
-            raise TypeError("Missing 'month_in_consideration' argument")
-        if online_volume is None and 'onlineVolume' in kwargs:
-            online_volume = kwargs['onlineVolume']
-        if online_volume is None:
-            raise TypeError("Missing 'online_volume' argument")
-
-        _setter("archived_volume", archived_volume)
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("month_in_consideration", month_in_consideration)
-        _setter("online_volume", online_volume)
+        pulumi.set(__self__, "archived_volume", archived_volume)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
+        pulumi.set(__self__, "online_volume", online_volume)
 
     @property
     @pulumi.getter(name="archivedVolume")
@@ -9475,20 +6646,7 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionResult(d
         """
         :param Sequence['GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs'] items: Array of collected audit volume summary.
         """
-        GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -9506,20 +6664,7 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResu
         """
         :param Sequence['GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs'] items: Array of collected audit volume summary.
         """
-        GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -9543,43 +6688,10 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem
         :param str month_in_consideration: Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
         :param str online_volume: The audit data volume collected by Data Safe and is available online in repository.
         """
-        GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            archived_volume=archived_volume,
-            audit_profile_id=audit_profile_id,
-            month_in_consideration=month_in_consideration,
-            online_volume=online_volume,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             archived_volume: Optional[str] = None,
-             audit_profile_id: Optional[str] = None,
-             month_in_consideration: Optional[str] = None,
-             online_volume: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if archived_volume is None and 'archivedVolume' in kwargs:
-            archived_volume = kwargs['archivedVolume']
-        if archived_volume is None:
-            raise TypeError("Missing 'archived_volume' argument")
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if month_in_consideration is None and 'monthInConsideration' in kwargs:
-            month_in_consideration = kwargs['monthInConsideration']
-        if month_in_consideration is None:
-            raise TypeError("Missing 'month_in_consideration' argument")
-        if online_volume is None and 'onlineVolume' in kwargs:
-            online_volume = kwargs['onlineVolume']
-        if online_volume is None:
-            raise TypeError("Missing 'online_volume' argument")
-
-        _setter("archived_volume", archived_volume)
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("month_in_consideration", month_in_consideration)
-        _setter("online_volume", online_volume)
+        pulumi.set(__self__, "archived_volume", archived_volume)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
+        pulumi.set(__self__, "online_volume", online_volume)
 
     @property
     @pulumi.getter(name="archivedVolume")
@@ -9620,29 +6732,10 @@ class GetAuditProfileCollectedAuditVolumesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAuditProfileCollectedAuditVolumesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -9664,20 +6757,7 @@ class GetAuditProfileCollectedAuditVolumesFilterResult(dict):
 class GetAuditProfilesAuditProfileCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditProfilesAuditProfileCollectionItemResult']):
-        GetAuditProfilesAuditProfileCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditProfilesAuditProfileCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -9729,149 +6809,26 @@ class GetAuditProfilesAuditProfileCollectionItemResult(dict):
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         """
-        GetAuditProfilesAuditProfileCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_collected_volume=audit_collected_volume,
-            audit_profile_id=audit_profile_id,
-            audit_trails=audit_trails,
-            change_retention_trigger=change_retention_trigger,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_override_global_retention_setting=is_override_global_retention_setting,
-            is_paid_usage_enabled=is_paid_usage_enabled,
-            lifecycle_details=lifecycle_details,
-            offline_months=offline_months,
-            online_months=online_months,
-            state=state,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_collected_volume: Optional[str] = None,
-             audit_profile_id: Optional[str] = None,
-             audit_trails: Optional[Sequence['outputs.GetAuditProfilesAuditProfileCollectionItemAuditTrailResult']] = None,
-             change_retention_trigger: Optional[int] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_override_global_retention_setting: Optional[bool] = None,
-             is_paid_usage_enabled: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             offline_months: Optional[int] = None,
-             online_months: Optional[int] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_collected_volume is None and 'auditCollectedVolume' in kwargs:
-            audit_collected_volume = kwargs['auditCollectedVolume']
-        if audit_collected_volume is None:
-            raise TypeError("Missing 'audit_collected_volume' argument")
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if audit_trails is None and 'auditTrails' in kwargs:
-            audit_trails = kwargs['auditTrails']
-        if audit_trails is None:
-            raise TypeError("Missing 'audit_trails' argument")
-        if change_retention_trigger is None and 'changeRetentionTrigger' in kwargs:
-            change_retention_trigger = kwargs['changeRetentionTrigger']
-        if change_retention_trigger is None:
-            raise TypeError("Missing 'change_retention_trigger' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_override_global_retention_setting is None and 'isOverrideGlobalRetentionSetting' in kwargs:
-            is_override_global_retention_setting = kwargs['isOverrideGlobalRetentionSetting']
-        if is_override_global_retention_setting is None:
-            raise TypeError("Missing 'is_override_global_retention_setting' argument")
-        if is_paid_usage_enabled is None and 'isPaidUsageEnabled' in kwargs:
-            is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
-        if is_paid_usage_enabled is None:
-            raise TypeError("Missing 'is_paid_usage_enabled' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if offline_months is None and 'offlineMonths' in kwargs:
-            offline_months = kwargs['offlineMonths']
-        if offline_months is None:
-            raise TypeError("Missing 'offline_months' argument")
-        if online_months is None and 'onlineMonths' in kwargs:
-            online_months = kwargs['onlineMonths']
-        if online_months is None:
-            raise TypeError("Missing 'online_months' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("audit_collected_volume", audit_collected_volume)
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("audit_trails", audit_trails)
-        _setter("change_retention_trigger", change_retention_trigger)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_override_global_retention_setting", is_override_global_retention_setting)
-        _setter("is_paid_usage_enabled", is_paid_usage_enabled)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("offline_months", offline_months)
-        _setter("online_months", online_months)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "audit_collected_volume", audit_collected_volume)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "audit_trails", audit_trails)
+        pulumi.set(__self__, "change_retention_trigger", change_retention_trigger)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_override_global_retention_setting", is_override_global_retention_setting)
+        pulumi.set(__self__, "is_paid_usage_enabled", is_paid_usage_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "offline_months", offline_months)
+        pulumi.set(__self__, "online_months", online_months)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="auditCollectedVolume")
@@ -10074,140 +7031,25 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
-        GetAuditProfilesAuditProfileCollectionItemAuditTrailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_collection_start_time=audit_collection_start_time,
-            audit_profile_id=audit_profile_id,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_auto_purge_enabled=is_auto_purge_enabled,
-            lifecycle_details=lifecycle_details,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_last_collected=time_last_collected,
-            time_updated=time_updated,
-            trail_location=trail_location,
-            work_request_id=work_request_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_collection_start_time: Optional[str] = None,
-             audit_profile_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_auto_purge_enabled: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_last_collected: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             trail_location: Optional[str] = None,
-             work_request_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_collection_start_time is None and 'auditCollectionStartTime' in kwargs:
-            audit_collection_start_time = kwargs['auditCollectionStartTime']
-        if audit_collection_start_time is None:
-            raise TypeError("Missing 'audit_collection_start_time' argument")
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_auto_purge_enabled is None and 'isAutoPurgeEnabled' in kwargs:
-            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
-        if is_auto_purge_enabled is None:
-            raise TypeError("Missing 'is_auto_purge_enabled' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_last_collected is None and 'timeLastCollected' in kwargs:
-            time_last_collected = kwargs['timeLastCollected']
-        if time_last_collected is None:
-            raise TypeError("Missing 'time_last_collected' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if trail_location is None and 'trailLocation' in kwargs:
-            trail_location = kwargs['trailLocation']
-        if trail_location is None:
-            raise TypeError("Missing 'trail_location' argument")
-        if work_request_id is None and 'workRequestId' in kwargs:
-            work_request_id = kwargs['workRequestId']
-        if work_request_id is None:
-            raise TypeError("Missing 'work_request_id' argument")
-
-        _setter("audit_collection_start_time", audit_collection_start_time)
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_auto_purge_enabled", is_auto_purge_enabled)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_last_collected", time_last_collected)
-        _setter("time_updated", time_updated)
-        _setter("trail_location", trail_location)
-        _setter("work_request_id", work_request_id)
+        pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_collected", time_last_collected)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -10368,29 +7210,10 @@ class GetAuditProfilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAuditProfilesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -10417,25 +7240,8 @@ class GetAuditTrailAnalyticItemResult(dict):
         :param str count: Total count of aggregated metric.
         :param Sequence['GetAuditTrailAnalyticItemDimensionArgs'] dimensions: Details of aggregation dimensions used for summarizing audit trails.
         """
-        GetAuditTrailAnalyticItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetAuditTrailAnalyticItemDimensionResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
 
     @property
     @pulumi.getter
@@ -10467,37 +7273,10 @@ class GetAuditTrailAnalyticItemDimensionResult(dict):
         :param str status: The current sub-state of the audit trail..
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetAuditTrailAnalyticItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            location=location,
-            state=state,
-            status=status,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             location: Optional[str] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if location is None:
-            raise TypeError("Missing 'location' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("location", location)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter
@@ -10536,20 +7315,7 @@ class GetAuditTrailAnalyticItemDimensionResult(dict):
 class GetAuditTrailsAuditTrailCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditTrailsAuditTrailCollectionItemResult']):
-        GetAuditTrailsAuditTrailCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAuditTrailsAuditTrailCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -10603,154 +7369,27 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
-        GetAuditTrailsAuditTrailCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            audit_collection_start_time=audit_collection_start_time,
-            audit_profile_id=audit_profile_id,
-            audit_trail_id=audit_trail_id,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_auto_purge_enabled=is_auto_purge_enabled,
-            lifecycle_details=lifecycle_details,
-            resume_trigger=resume_trigger,
-            state=state,
-            status=status,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_last_collected=time_last_collected,
-            time_updated=time_updated,
-            trail_location=trail_location,
-            work_request_id=work_request_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             audit_collection_start_time: Optional[str] = None,
-             audit_profile_id: Optional[str] = None,
-             audit_trail_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_auto_purge_enabled: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             resume_trigger: Optional[int] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_last_collected: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             trail_location: Optional[str] = None,
-             work_request_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if audit_collection_start_time is None and 'auditCollectionStartTime' in kwargs:
-            audit_collection_start_time = kwargs['auditCollectionStartTime']
-        if audit_collection_start_time is None:
-            raise TypeError("Missing 'audit_collection_start_time' argument")
-        if audit_profile_id is None and 'auditProfileId' in kwargs:
-            audit_profile_id = kwargs['auditProfileId']
-        if audit_profile_id is None:
-            raise TypeError("Missing 'audit_profile_id' argument")
-        if audit_trail_id is None and 'auditTrailId' in kwargs:
-            audit_trail_id = kwargs['auditTrailId']
-        if audit_trail_id is None:
-            raise TypeError("Missing 'audit_trail_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_auto_purge_enabled is None and 'isAutoPurgeEnabled' in kwargs:
-            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
-        if is_auto_purge_enabled is None:
-            raise TypeError("Missing 'is_auto_purge_enabled' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if resume_trigger is None and 'resumeTrigger' in kwargs:
-            resume_trigger = kwargs['resumeTrigger']
-        if resume_trigger is None:
-            raise TypeError("Missing 'resume_trigger' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_last_collected is None and 'timeLastCollected' in kwargs:
-            time_last_collected = kwargs['timeLastCollected']
-        if time_last_collected is None:
-            raise TypeError("Missing 'time_last_collected' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if trail_location is None and 'trailLocation' in kwargs:
-            trail_location = kwargs['trailLocation']
-        if trail_location is None:
-            raise TypeError("Missing 'trail_location' argument")
-        if work_request_id is None and 'workRequestId' in kwargs:
-            work_request_id = kwargs['workRequestId']
-        if work_request_id is None:
-            raise TypeError("Missing 'work_request_id' argument")
-
-        _setter("audit_collection_start_time", audit_collection_start_time)
-        _setter("audit_profile_id", audit_profile_id)
-        _setter("audit_trail_id", audit_trail_id)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_auto_purge_enabled", is_auto_purge_enabled)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("resume_trigger", resume_trigger)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_last_collected", time_last_collected)
-        _setter("time_updated", time_updated)
-        _setter("trail_location", trail_location)
-        _setter("work_request_id", work_request_id)
+        pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
+        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "resume_trigger", resume_trigger)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_collected", time_last_collected)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trail_location", trail_location)
+        pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -10924,29 +7563,10 @@ class GetAuditTrailsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAuditTrailsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -10973,29 +7593,8 @@ class GetCompatibleFormatsForDataTypeFormatsForDataTypeResult(dict):
         :param str data_type: The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
         :param Sequence['GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs'] masking_formats: An array of the basic masking formats compatible with the data type category.
         """
-        GetCompatibleFormatsForDataTypeFormatsForDataTypeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_type=data_type,
-            masking_formats=masking_formats,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_type: Optional[str] = None,
-             masking_formats: Optional[Sequence['outputs.GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if masking_formats is None and 'maskingFormats' in kwargs:
-            masking_formats = kwargs['maskingFormats']
-        if masking_formats is None:
-            raise TypeError("Missing 'masking_formats' argument")
-
-        _setter("data_type", data_type)
-        _setter("masking_formats", masking_formats)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "masking_formats", masking_formats)
 
     @property
     @pulumi.getter(name="dataType")
@@ -11025,30 +7624,9 @@ class GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult(dict)
         :param str id: The OCID of the masking format.
         :param str name: The name of the masking format.
         """
-        GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            id=id,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             id: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("description", description)
-        _setter("id", id)
-        _setter("name", name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -11084,29 +7662,8 @@ class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult(dict):
         :param Sequence['GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs'] masking_formats: An array of the library masking formats compatible with the sensitive type.
         :param str sensitive_type_id: The OCID of the sensitive type.
         """
-        GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            masking_formats=masking_formats,
-            sensitive_type_id=sensitive_type_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             masking_formats: Optional[Sequence['outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult']] = None,
-             sensitive_type_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if masking_formats is None and 'maskingFormats' in kwargs:
-            masking_formats = kwargs['maskingFormats']
-        if masking_formats is None:
-            raise TypeError("Missing 'masking_formats' argument")
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-        if sensitive_type_id is None:
-            raise TypeError("Missing 'sensitive_type_id' argument")
-
-        _setter("masking_formats", masking_formats)
-        _setter("sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "masking_formats", masking_formats)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
 
     @property
     @pulumi.getter(name="maskingFormats")
@@ -11136,30 +7693,9 @@ class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatRe
         :param str id: The OCID of the masking format.
         :param str name: The name of the masking format.
         """
-        GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            id=id,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             id: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("description", description)
-        _setter("id", id)
-        _setter("name", name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -11197,36 +7733,9 @@ class GetDataSafeConfigurationGlobalSettingResult(dict):
         :param int offline_retention_period: The offline retention period in months.
         :param int online_retention_period: The online retention period in months.
         """
-        GetDataSafeConfigurationGlobalSettingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_paid_usage=is_paid_usage,
-            offline_retention_period=offline_retention_period,
-            online_retention_period=online_retention_period,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_paid_usage: Optional[bool] = None,
-             offline_retention_period: Optional[int] = None,
-             online_retention_period: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_paid_usage is None and 'isPaidUsage' in kwargs:
-            is_paid_usage = kwargs['isPaidUsage']
-        if is_paid_usage is None:
-            raise TypeError("Missing 'is_paid_usage' argument")
-        if offline_retention_period is None and 'offlineRetentionPeriod' in kwargs:
-            offline_retention_period = kwargs['offlineRetentionPeriod']
-        if offline_retention_period is None:
-            raise TypeError("Missing 'offline_retention_period' argument")
-        if online_retention_period is None and 'onlineRetentionPeriod' in kwargs:
-            online_retention_period = kwargs['onlineRetentionPeriod']
-        if online_retention_period is None:
-            raise TypeError("Missing 'online_retention_period' argument")
-
-        _setter("is_paid_usage", is_paid_usage)
-        _setter("offline_retention_period", offline_retention_period)
-        _setter("online_retention_period", online_retention_period)
+        pulumi.set(__self__, "is_paid_usage", is_paid_usage)
+        pulumi.set(__self__, "offline_retention_period", offline_retention_period)
+        pulumi.set(__self__, "online_retention_period", online_retention_period)
 
     @property
     @pulumi.getter(name="isPaidUsage")
@@ -11288,114 +7797,21 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
         :param str time_created: The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str vcn_id: A filter to return only resources that match the specified VCN OCID.
         """
-        GetDataSafePrivateEndpointsDataSafePrivateEndpointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            endpoint_fqdn=endpoint_fqdn,
-            freeform_tags=freeform_tags,
-            id=id,
-            nsg_ids=nsg_ids,
-            private_endpoint_id=private_endpoint_id,
-            private_endpoint_ip=private_endpoint_ip,
-            state=state,
-            subnet_id=subnet_id,
-            system_tags=system_tags,
-            time_created=time_created,
-            vcn_id=vcn_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             endpoint_fqdn: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             nsg_ids: Optional[Sequence[str]] = None,
-             private_endpoint_id: Optional[str] = None,
-             private_endpoint_ip: Optional[str] = None,
-             state: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             vcn_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if endpoint_fqdn is None and 'endpointFqdn' in kwargs:
-            endpoint_fqdn = kwargs['endpointFqdn']
-        if endpoint_fqdn is None:
-            raise TypeError("Missing 'endpoint_fqdn' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if nsg_ids is None:
-            raise TypeError("Missing 'nsg_ids' argument")
-        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
-            private_endpoint_id = kwargs['privateEndpointId']
-        if private_endpoint_id is None:
-            raise TypeError("Missing 'private_endpoint_id' argument")
-        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
-            private_endpoint_ip = kwargs['privateEndpointIp']
-        if private_endpoint_ip is None:
-            raise TypeError("Missing 'private_endpoint_ip' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-        if vcn_id is None:
-            raise TypeError("Missing 'vcn_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("endpoint_fqdn", endpoint_fqdn)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("nsg_ids", nsg_ids)
-        _setter("private_endpoint_id", private_endpoint_id)
-        _setter("private_endpoint_ip", private_endpoint_ip)
-        _setter("state", state)
-        _setter("subnet_id", subnet_id)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("vcn_id", vcn_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -11524,29 +7940,10 @@ class GetDataSafePrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDataSafePrivateEndpointsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -11575,32 +7972,9 @@ class GetDiscoveryAnalyticItemResult(dict):
         :param Sequence['GetDiscoveryAnalyticItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        GetDiscoveryAnalyticItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-            metric_name=metric_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetDiscoveryAnalyticItemDimensionResult']] = None,
-             metric_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-        if metric_name is None and 'metricName' in kwargs:
-            metric_name = kwargs['metricName']
-        if metric_name is None:
-            raise TypeError("Missing 'metric_name' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
-        _setter("metric_name", metric_name)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -11636,29 +8010,8 @@ class GetDiscoveryAnalyticItemDimensionResult(dict):
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetDiscoveryAnalyticItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            sensitive_data_model_id=sensitive_data_model_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             sensitive_data_model_id: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_data_model_id is None:
-            raise TypeError("Missing 'sensitive_data_model_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("sensitive_data_model_id", sensitive_data_model_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
@@ -11684,20 +8037,7 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionResult(dict):
         """
         :param Sequence['GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs'] items: An array of discovery analytics summary objects.
         """
-        GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -11719,32 +8059,9 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult(dict):
         :param Sequence['GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-            metric_name=metric_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult']] = None,
-             metric_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-        if metric_name is None and 'metricName' in kwargs:
-            metric_name = kwargs['metricName']
-        if metric_name is None:
-            raise TypeError("Missing 'metric_name' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
-        _setter("metric_name", metric_name)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -11780,29 +8097,8 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult(dict)
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            sensitive_data_model_id=sensitive_data_model_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             sensitive_data_model_id: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_data_model_id is None:
-            raise TypeError("Missing 'sensitive_data_model_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("sensitive_data_model_id", sensitive_data_model_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
@@ -11827,29 +8123,10 @@ class GetDiscoveryAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDiscoveryAnalyticsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -11876,29 +8153,8 @@ class GetDiscoveryJobsResultModifiedAttributeResult(dict):
         :param Sequence[str] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param Sequence[str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
-        GetDiscoveryJobsResultModifiedAttributeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_defined_child_column_keys=app_defined_child_column_keys,
-            db_defined_child_column_keys=db_defined_child_column_keys,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_defined_child_column_keys: Optional[Sequence[str]] = None,
-             db_defined_child_column_keys: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
-            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if app_defined_child_column_keys is None:
-            raise TypeError("Missing 'app_defined_child_column_keys' argument")
-        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
-            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-        if db_defined_child_column_keys is None:
-            raise TypeError("Missing 'db_defined_child_column_keys' argument")
-
-        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
-        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
+        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
+        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -11921,20 +8177,7 @@ class GetDiscoveryJobsResultModifiedAttributeResult(dict):
 class GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult']):
-        GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -11987,151 +8230,26 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         :param str sensitive_columnkey: The unique key that identifies the sensitive column represented by the discovery result.
         :param str sensitive_type_id: The OCID of the sensitive type associated with the sensitive column.
         """
-        GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_defined_child_column_keys=app_defined_child_column_keys,
-            app_name=app_name,
-            column_name=column_name,
-            data_type=data_type,
-            db_defined_child_column_keys=db_defined_child_column_keys,
-            discovery_job_id=discovery_job_id,
-            discovery_type=discovery_type,
-            estimated_data_value_count=estimated_data_value_count,
-            is_result_applied=is_result_applied,
-            key=key,
-            modified_attributes=modified_attributes,
-            object=object,
-            object_type=object_type,
-            parent_column_keys=parent_column_keys,
-            planned_action=planned_action,
-            relation_type=relation_type,
-            sample_data_values=sample_data_values,
-            schema_name=schema_name,
-            sensitive_columnkey=sensitive_columnkey,
-            sensitive_type_id=sensitive_type_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_defined_child_column_keys: Optional[Sequence[str]] = None,
-             app_name: Optional[str] = None,
-             column_name: Optional[str] = None,
-             data_type: Optional[str] = None,
-             db_defined_child_column_keys: Optional[Sequence[str]] = None,
-             discovery_job_id: Optional[str] = None,
-             discovery_type: Optional[str] = None,
-             estimated_data_value_count: Optional[str] = None,
-             is_result_applied: Optional[bool] = None,
-             key: Optional[str] = None,
-             modified_attributes: Optional[Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeResult']] = None,
-             object: Optional[str] = None,
-             object_type: Optional[str] = None,
-             parent_column_keys: Optional[Sequence[str]] = None,
-             planned_action: Optional[str] = None,
-             relation_type: Optional[str] = None,
-             sample_data_values: Optional[Sequence[str]] = None,
-             schema_name: Optional[str] = None,
-             sensitive_columnkey: Optional[str] = None,
-             sensitive_type_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
-            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if app_defined_child_column_keys is None:
-            raise TypeError("Missing 'app_defined_child_column_keys' argument")
-        if app_name is None and 'appName' in kwargs:
-            app_name = kwargs['appName']
-        if app_name is None:
-            raise TypeError("Missing 'app_name' argument")
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
-            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-        if db_defined_child_column_keys is None:
-            raise TypeError("Missing 'db_defined_child_column_keys' argument")
-        if discovery_job_id is None and 'discoveryJobId' in kwargs:
-            discovery_job_id = kwargs['discoveryJobId']
-        if discovery_job_id is None:
-            raise TypeError("Missing 'discovery_job_id' argument")
-        if discovery_type is None and 'discoveryType' in kwargs:
-            discovery_type = kwargs['discoveryType']
-        if discovery_type is None:
-            raise TypeError("Missing 'discovery_type' argument")
-        if estimated_data_value_count is None and 'estimatedDataValueCount' in kwargs:
-            estimated_data_value_count = kwargs['estimatedDataValueCount']
-        if estimated_data_value_count is None:
-            raise TypeError("Missing 'estimated_data_value_count' argument")
-        if is_result_applied is None and 'isResultApplied' in kwargs:
-            is_result_applied = kwargs['isResultApplied']
-        if is_result_applied is None:
-            raise TypeError("Missing 'is_result_applied' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if modified_attributes is None and 'modifiedAttributes' in kwargs:
-            modified_attributes = kwargs['modifiedAttributes']
-        if modified_attributes is None:
-            raise TypeError("Missing 'modified_attributes' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if parent_column_keys is None and 'parentColumnKeys' in kwargs:
-            parent_column_keys = kwargs['parentColumnKeys']
-        if parent_column_keys is None:
-            raise TypeError("Missing 'parent_column_keys' argument")
-        if planned_action is None and 'plannedAction' in kwargs:
-            planned_action = kwargs['plannedAction']
-        if planned_action is None:
-            raise TypeError("Missing 'planned_action' argument")
-        if relation_type is None and 'relationType' in kwargs:
-            relation_type = kwargs['relationType']
-        if relation_type is None:
-            raise TypeError("Missing 'relation_type' argument")
-        if sample_data_values is None and 'sampleDataValues' in kwargs:
-            sample_data_values = kwargs['sampleDataValues']
-        if sample_data_values is None:
-            raise TypeError("Missing 'sample_data_values' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sensitive_columnkey is None and 'sensitiveColumnkey' in kwargs:
-            sensitive_columnkey = kwargs['sensitiveColumnkey']
-        if sensitive_columnkey is None:
-            raise TypeError("Missing 'sensitive_columnkey' argument")
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-        if sensitive_type_id is None:
-            raise TypeError("Missing 'sensitive_type_id' argument")
-
-        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
-        _setter("app_name", app_name)
-        _setter("column_name", column_name)
-        _setter("data_type", data_type)
-        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
-        _setter("discovery_job_id", discovery_job_id)
-        _setter("discovery_type", discovery_type)
-        _setter("estimated_data_value_count", estimated_data_value_count)
-        _setter("is_result_applied", is_result_applied)
-        _setter("key", key)
-        _setter("modified_attributes", modified_attributes)
-        _setter("object", object)
-        _setter("object_type", object_type)
-        _setter("parent_column_keys", parent_column_keys)
-        _setter("planned_action", planned_action)
-        _setter("relation_type", relation_type)
-        _setter("sample_data_values", sample_data_values)
-        _setter("schema_name", schema_name)
-        _setter("sensitive_columnkey", sensitive_columnkey)
-        _setter("sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
+        pulumi.set(__self__, "discovery_job_id", discovery_job_id)
+        pulumi.set(__self__, "discovery_type", discovery_type)
+        pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
+        pulumi.set(__self__, "is_result_applied", is_result_applied)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "modified_attributes", modified_attributes)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "parent_column_keys", parent_column_keys)
+        pulumi.set(__self__, "planned_action", planned_action)
+        pulumi.set(__self__, "relation_type", relation_type)
+        pulumi.set(__self__, "sample_data_values", sample_data_values)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_columnkey", sensitive_columnkey)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -12312,29 +8430,8 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeRe
         :param Sequence[str] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param Sequence[str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
-        GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_defined_child_column_keys=app_defined_child_column_keys,
-            db_defined_child_column_keys=db_defined_child_column_keys,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_defined_child_column_keys: Optional[Sequence[str]] = None,
-             db_defined_child_column_keys: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
-            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if app_defined_child_column_keys is None:
-            raise TypeError("Missing 'app_defined_child_column_keys' argument")
-        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
-            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-        if db_defined_child_column_keys is None:
-            raise TypeError("Missing 'db_defined_child_column_keys' argument")
-
-        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
-        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
+        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
+        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -12359,29 +8456,10 @@ class GetDiscoveryJobsResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDiscoveryJobsResultsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -12450,170 +8528,29 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        GetLibraryMaskingFormatFormatEntryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_name=column_name,
-            description=description,
-            end_date=end_date,
-            end_length=end_length,
-            end_value=end_value,
-            fixed_number=fixed_number,
-            fixed_string=fixed_string,
-            grouping_columns=grouping_columns,
-            length=length,
-            library_masking_format_id=library_masking_format_id,
-            post_processing_function=post_processing_function,
-            random_lists=random_lists,
-            regular_expression=regular_expression,
-            replace_with=replace_with,
-            schema_name=schema_name,
-            sql_expression=sql_expression,
-            start_date=start_date,
-            start_length=start_length,
-            start_position=start_position,
-            start_value=start_value,
-            table_name=table_name,
-            type=type,
-            user_defined_function=user_defined_function,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_name: Optional[str] = None,
-             description: Optional[str] = None,
-             end_date: Optional[str] = None,
-             end_length: Optional[int] = None,
-             end_value: Optional[float] = None,
-             fixed_number: Optional[float] = None,
-             fixed_string: Optional[str] = None,
-             grouping_columns: Optional[Sequence[str]] = None,
-             length: Optional[int] = None,
-             library_masking_format_id: Optional[str] = None,
-             post_processing_function: Optional[str] = None,
-             random_lists: Optional[Sequence[str]] = None,
-             regular_expression: Optional[str] = None,
-             replace_with: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sql_expression: Optional[str] = None,
-             start_date: Optional[str] = None,
-             start_length: Optional[int] = None,
-             start_position: Optional[int] = None,
-             start_value: Optional[float] = None,
-             table_name: Optional[str] = None,
-             type: Optional[str] = None,
-             user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if end_date is None and 'endDate' in kwargs:
-            end_date = kwargs['endDate']
-        if end_date is None:
-            raise TypeError("Missing 'end_date' argument")
-        if end_length is None and 'endLength' in kwargs:
-            end_length = kwargs['endLength']
-        if end_length is None:
-            raise TypeError("Missing 'end_length' argument")
-        if end_value is None and 'endValue' in kwargs:
-            end_value = kwargs['endValue']
-        if end_value is None:
-            raise TypeError("Missing 'end_value' argument")
-        if fixed_number is None and 'fixedNumber' in kwargs:
-            fixed_number = kwargs['fixedNumber']
-        if fixed_number is None:
-            raise TypeError("Missing 'fixed_number' argument")
-        if fixed_string is None and 'fixedString' in kwargs:
-            fixed_string = kwargs['fixedString']
-        if fixed_string is None:
-            raise TypeError("Missing 'fixed_string' argument")
-        if grouping_columns is None and 'groupingColumns' in kwargs:
-            grouping_columns = kwargs['groupingColumns']
-        if grouping_columns is None:
-            raise TypeError("Missing 'grouping_columns' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
-            library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if library_masking_format_id is None:
-            raise TypeError("Missing 'library_masking_format_id' argument")
-        if post_processing_function is None and 'postProcessingFunction' in kwargs:
-            post_processing_function = kwargs['postProcessingFunction']
-        if post_processing_function is None:
-            raise TypeError("Missing 'post_processing_function' argument")
-        if random_lists is None and 'randomLists' in kwargs:
-            random_lists = kwargs['randomLists']
-        if random_lists is None:
-            raise TypeError("Missing 'random_lists' argument")
-        if regular_expression is None and 'regularExpression' in kwargs:
-            regular_expression = kwargs['regularExpression']
-        if regular_expression is None:
-            raise TypeError("Missing 'regular_expression' argument")
-        if replace_with is None and 'replaceWith' in kwargs:
-            replace_with = kwargs['replaceWith']
-        if replace_with is None:
-            raise TypeError("Missing 'replace_with' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sql_expression is None and 'sqlExpression' in kwargs:
-            sql_expression = kwargs['sqlExpression']
-        if sql_expression is None:
-            raise TypeError("Missing 'sql_expression' argument")
-        if start_date is None and 'startDate' in kwargs:
-            start_date = kwargs['startDate']
-        if start_date is None:
-            raise TypeError("Missing 'start_date' argument")
-        if start_length is None and 'startLength' in kwargs:
-            start_length = kwargs['startLength']
-        if start_length is None:
-            raise TypeError("Missing 'start_length' argument")
-        if start_position is None and 'startPosition' in kwargs:
-            start_position = kwargs['startPosition']
-        if start_position is None:
-            raise TypeError("Missing 'start_position' argument")
-        if start_value is None and 'startValue' in kwargs:
-            start_value = kwargs['startValue']
-        if start_value is None:
-            raise TypeError("Missing 'start_value' argument")
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if table_name is None:
-            raise TypeError("Missing 'table_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if user_defined_function is None and 'userDefinedFunction' in kwargs:
-            user_defined_function = kwargs['userDefinedFunction']
-        if user_defined_function is None:
-            raise TypeError("Missing 'user_defined_function' argument")
-
-        _setter("column_name", column_name)
-        _setter("description", description)
-        _setter("end_date", end_date)
-        _setter("end_length", end_length)
-        _setter("end_value", end_value)
-        _setter("fixed_number", fixed_number)
-        _setter("fixed_string", fixed_string)
-        _setter("grouping_columns", grouping_columns)
-        _setter("length", length)
-        _setter("library_masking_format_id", library_masking_format_id)
-        _setter("post_processing_function", post_processing_function)
-        _setter("random_lists", random_lists)
-        _setter("regular_expression", regular_expression)
-        _setter("replace_with", replace_with)
-        _setter("schema_name", schema_name)
-        _setter("sql_expression", sql_expression)
-        _setter("start_date", start_date)
-        _setter("start_length", start_length)
-        _setter("start_position", start_position)
-        _setter("start_value", start_value)
-        _setter("table_name", table_name)
-        _setter("type", type)
-        _setter("user_defined_function", user_defined_function)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "end_length", end_length)
+        pulumi.set(__self__, "end_value", end_value)
+        pulumi.set(__self__, "fixed_number", fixed_number)
+        pulumi.set(__self__, "fixed_string", fixed_string)
+        pulumi.set(__self__, "grouping_columns", grouping_columns)
+        pulumi.set(__self__, "length", length)
+        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "post_processing_function", post_processing_function)
+        pulumi.set(__self__, "random_lists", random_lists)
+        pulumi.set(__self__, "regular_expression", regular_expression)
+        pulumi.set(__self__, "replace_with", replace_with)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sql_expression", sql_expression)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "start_length", start_length)
+        pulumi.set(__self__, "start_position", start_position)
+        pulumi.set(__self__, "start_value", start_value)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -12806,29 +8743,10 @@ class GetLibraryMaskingFormatsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetLibraryMaskingFormatsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -12850,20 +8768,7 @@ class GetLibraryMaskingFormatsFilterResult(dict):
 class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult']):
-        GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -12900,91 +8805,18 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult(dict):
         :param str time_created: The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         :param str time_updated: The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
-        GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            format_entries=format_entries,
-            freeform_tags=freeform_tags,
-            id=id,
-            sensitive_type_ids=sensitive_type_ids,
-            source=source,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             format_entries: Optional[Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResult']] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             sensitive_type_ids: Optional[Sequence[str]] = None,
-             source: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if format_entries is None and 'formatEntries' in kwargs:
-            format_entries = kwargs['formatEntries']
-        if format_entries is None:
-            raise TypeError("Missing 'format_entries' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if sensitive_type_ids is None and 'sensitiveTypeIds' in kwargs:
-            sensitive_type_ids = kwargs['sensitiveTypeIds']
-        if sensitive_type_ids is None:
-            raise TypeError("Missing 'sensitive_type_ids' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("format_entries", format_entries)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("sensitive_type_ids", sensitive_type_ids)
-        _setter("source", source)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "format_entries", format_entries)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13134,170 +8966,29 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_name=column_name,
-            description=description,
-            end_date=end_date,
-            end_length=end_length,
-            end_value=end_value,
-            fixed_number=fixed_number,
-            fixed_string=fixed_string,
-            grouping_columns=grouping_columns,
-            length=length,
-            library_masking_format_id=library_masking_format_id,
-            post_processing_function=post_processing_function,
-            random_lists=random_lists,
-            regular_expression=regular_expression,
-            replace_with=replace_with,
-            schema_name=schema_name,
-            sql_expression=sql_expression,
-            start_date=start_date,
-            start_length=start_length,
-            start_position=start_position,
-            start_value=start_value,
-            table_name=table_name,
-            type=type,
-            user_defined_function=user_defined_function,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_name: Optional[str] = None,
-             description: Optional[str] = None,
-             end_date: Optional[str] = None,
-             end_length: Optional[int] = None,
-             end_value: Optional[float] = None,
-             fixed_number: Optional[float] = None,
-             fixed_string: Optional[str] = None,
-             grouping_columns: Optional[Sequence[str]] = None,
-             length: Optional[int] = None,
-             library_masking_format_id: Optional[str] = None,
-             post_processing_function: Optional[str] = None,
-             random_lists: Optional[Sequence[str]] = None,
-             regular_expression: Optional[str] = None,
-             replace_with: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sql_expression: Optional[str] = None,
-             start_date: Optional[str] = None,
-             start_length: Optional[int] = None,
-             start_position: Optional[int] = None,
-             start_value: Optional[float] = None,
-             table_name: Optional[str] = None,
-             type: Optional[str] = None,
-             user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if end_date is None and 'endDate' in kwargs:
-            end_date = kwargs['endDate']
-        if end_date is None:
-            raise TypeError("Missing 'end_date' argument")
-        if end_length is None and 'endLength' in kwargs:
-            end_length = kwargs['endLength']
-        if end_length is None:
-            raise TypeError("Missing 'end_length' argument")
-        if end_value is None and 'endValue' in kwargs:
-            end_value = kwargs['endValue']
-        if end_value is None:
-            raise TypeError("Missing 'end_value' argument")
-        if fixed_number is None and 'fixedNumber' in kwargs:
-            fixed_number = kwargs['fixedNumber']
-        if fixed_number is None:
-            raise TypeError("Missing 'fixed_number' argument")
-        if fixed_string is None and 'fixedString' in kwargs:
-            fixed_string = kwargs['fixedString']
-        if fixed_string is None:
-            raise TypeError("Missing 'fixed_string' argument")
-        if grouping_columns is None and 'groupingColumns' in kwargs:
-            grouping_columns = kwargs['groupingColumns']
-        if grouping_columns is None:
-            raise TypeError("Missing 'grouping_columns' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
-            library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if library_masking_format_id is None:
-            raise TypeError("Missing 'library_masking_format_id' argument")
-        if post_processing_function is None and 'postProcessingFunction' in kwargs:
-            post_processing_function = kwargs['postProcessingFunction']
-        if post_processing_function is None:
-            raise TypeError("Missing 'post_processing_function' argument")
-        if random_lists is None and 'randomLists' in kwargs:
-            random_lists = kwargs['randomLists']
-        if random_lists is None:
-            raise TypeError("Missing 'random_lists' argument")
-        if regular_expression is None and 'regularExpression' in kwargs:
-            regular_expression = kwargs['regularExpression']
-        if regular_expression is None:
-            raise TypeError("Missing 'regular_expression' argument")
-        if replace_with is None and 'replaceWith' in kwargs:
-            replace_with = kwargs['replaceWith']
-        if replace_with is None:
-            raise TypeError("Missing 'replace_with' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sql_expression is None and 'sqlExpression' in kwargs:
-            sql_expression = kwargs['sqlExpression']
-        if sql_expression is None:
-            raise TypeError("Missing 'sql_expression' argument")
-        if start_date is None and 'startDate' in kwargs:
-            start_date = kwargs['startDate']
-        if start_date is None:
-            raise TypeError("Missing 'start_date' argument")
-        if start_length is None and 'startLength' in kwargs:
-            start_length = kwargs['startLength']
-        if start_length is None:
-            raise TypeError("Missing 'start_length' argument")
-        if start_position is None and 'startPosition' in kwargs:
-            start_position = kwargs['startPosition']
-        if start_position is None:
-            raise TypeError("Missing 'start_position' argument")
-        if start_value is None and 'startValue' in kwargs:
-            start_value = kwargs['startValue']
-        if start_value is None:
-            raise TypeError("Missing 'start_value' argument")
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if table_name is None:
-            raise TypeError("Missing 'table_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if user_defined_function is None and 'userDefinedFunction' in kwargs:
-            user_defined_function = kwargs['userDefinedFunction']
-        if user_defined_function is None:
-            raise TypeError("Missing 'user_defined_function' argument")
-
-        _setter("column_name", column_name)
-        _setter("description", description)
-        _setter("end_date", end_date)
-        _setter("end_length", end_length)
-        _setter("end_value", end_value)
-        _setter("fixed_number", fixed_number)
-        _setter("fixed_string", fixed_string)
-        _setter("grouping_columns", grouping_columns)
-        _setter("length", length)
-        _setter("library_masking_format_id", library_masking_format_id)
-        _setter("post_processing_function", post_processing_function)
-        _setter("random_lists", random_lists)
-        _setter("regular_expression", regular_expression)
-        _setter("replace_with", replace_with)
-        _setter("schema_name", schema_name)
-        _setter("sql_expression", sql_expression)
-        _setter("start_date", start_date)
-        _setter("start_length", start_length)
-        _setter("start_position", start_position)
-        _setter("start_value", start_value)
-        _setter("table_name", table_name)
-        _setter("type", type)
-        _setter("user_defined_function", user_defined_function)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "end_length", end_length)
+        pulumi.set(__self__, "end_value", end_value)
+        pulumi.set(__self__, "fixed_number", fixed_number)
+        pulumi.set(__self__, "fixed_string", fixed_string)
+        pulumi.set(__self__, "grouping_columns", grouping_columns)
+        pulumi.set(__self__, "length", length)
+        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "post_processing_function", post_processing_function)
+        pulumi.set(__self__, "random_lists", random_lists)
+        pulumi.set(__self__, "regular_expression", regular_expression)
+        pulumi.set(__self__, "replace_with", replace_with)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sql_expression", sql_expression)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "start_length", start_length)
+        pulumi.set(__self__, "start_position", start_position)
+        pulumi.set(__self__, "start_value", start_value)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -13490,29 +9181,10 @@ class GetListUserGrantsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetListUserGrantsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -13545,48 +9217,11 @@ class GetListUserGrantsGrantResult(dict):
         :param str privilege_category: A filter to return only items that match the specified user privilege category.
         :param str privilege_type: A filter to return only items that match the specified privilege grant type.
         """
-        GetListUserGrantsGrantResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            depth_level=depth_level,
-            grant_name=grant_name,
-            key=key,
-            privilege_category=privilege_category,
-            privilege_type=privilege_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             depth_level: Optional[int] = None,
-             grant_name: Optional[str] = None,
-             key: Optional[str] = None,
-             privilege_category: Optional[str] = None,
-             privilege_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if depth_level is None and 'depthLevel' in kwargs:
-            depth_level = kwargs['depthLevel']
-        if depth_level is None:
-            raise TypeError("Missing 'depth_level' argument")
-        if grant_name is None and 'grantName' in kwargs:
-            grant_name = kwargs['grantName']
-        if grant_name is None:
-            raise TypeError("Missing 'grant_name' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if privilege_category is None and 'privilegeCategory' in kwargs:
-            privilege_category = kwargs['privilegeCategory']
-        if privilege_category is None:
-            raise TypeError("Missing 'privilege_category' argument")
-        if privilege_type is None and 'privilegeType' in kwargs:
-            privilege_type = kwargs['privilegeType']
-        if privilege_type is None:
-            raise TypeError("Missing 'privilege_type' argument")
-
-        _setter("depth_level", depth_level)
-        _setter("grant_name", grant_name)
-        _setter("key", key)
-        _setter("privilege_category", privilege_category)
-        _setter("privilege_type", privilege_type)
+        pulumi.set(__self__, "depth_level", depth_level)
+        pulumi.set(__self__, "grant_name", grant_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "privilege_category", privilege_category)
+        pulumi.set(__self__, "privilege_type", privilege_type)
 
     @property
     @pulumi.getter(name="depthLevel")
@@ -13640,32 +9275,9 @@ class GetMaskingAnalyticItemResult(dict):
         :param Sequence['GetMaskingAnalyticItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        GetMaskingAnalyticItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-            metric_name=metric_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetMaskingAnalyticItemDimensionResult']] = None,
-             metric_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-        if metric_name is None and 'metricName' in kwargs:
-            metric_name = kwargs['metricName']
-        if metric_name is None:
-            raise TypeError("Missing 'metric_name' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
-        _setter("metric_name", metric_name)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -13701,29 +9313,8 @@ class GetMaskingAnalyticItemDimensionResult(dict):
         :param str policy_id: The OCID of the masking policy..
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetMaskingAnalyticItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            policy_id=policy_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             policy_id: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if policy_id is None and 'policyId' in kwargs:
-            policy_id = kwargs['policyId']
-        if policy_id is None:
-            raise TypeError("Missing 'policy_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("policy_id", policy_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="policyId")
@@ -13748,29 +9339,10 @@ class GetMaskingAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMaskingAnalyticsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -13795,20 +9367,7 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionResult(dict):
         """
         :param Sequence['GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs'] items: An array of masking analytics summary objects.
         """
-        GetMaskingAnalyticsMaskingAnalyticsCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -13830,32 +9389,9 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult(dict):
         :param Sequence['GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count=count,
-            dimensions=dimensions,
-            metric_name=metric_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count: Optional[str] = None,
-             dimensions: Optional[Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult']] = None,
-             metric_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count is None:
-            raise TypeError("Missing 'count' argument")
-        if dimensions is None:
-            raise TypeError("Missing 'dimensions' argument")
-        if metric_name is None and 'metricName' in kwargs:
-            metric_name = kwargs['metricName']
-        if metric_name is None:
-            raise TypeError("Missing 'metric_name' argument")
-
-        _setter("count", count)
-        _setter("dimensions", dimensions)
-        _setter("metric_name", metric_name)
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -13891,29 +9427,8 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult(dict):
         :param str policy_id: The OCID of the masking policy..
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            policy_id=policy_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             policy_id: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if policy_id is None and 'policyId' in kwargs:
-            policy_id = kwargs['policyId']
-        if policy_id is None:
-            raise TypeError("Missing 'policy_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("policy_id", policy_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="policyId")
@@ -13938,29 +9453,10 @@ class GetMaskingPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMaskingPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -13989,32 +9485,9 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatResult(dict):
         :param str description: The description of the format entry.
         :param Sequence['GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs'] format_entries: An array of format entries. The combined output of all the format entries is  used for masking the column data values.
         """
-        GetMaskingPoliciesMaskingColumnMaskingFormatResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            description=description,
-            format_entries=format_entries,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             description: Optional[str] = None,
-             format_entries: Optional[Sequence['outputs.GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if format_entries is None and 'formatEntries' in kwargs:
-            format_entries = kwargs['formatEntries']
-        if format_entries is None:
-            raise TypeError("Missing 'format_entries' argument")
-
-        _setter("condition", condition)
-        _setter("description", description)
-        _setter("format_entries", format_entries)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "format_entries", format_entries)
 
     @property
     @pulumi.getter
@@ -14092,170 +9565,29 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_name=column_name,
-            description=description,
-            end_date=end_date,
-            end_length=end_length,
-            end_value=end_value,
-            fixed_number=fixed_number,
-            fixed_string=fixed_string,
-            grouping_columns=grouping_columns,
-            length=length,
-            library_masking_format_id=library_masking_format_id,
-            post_processing_function=post_processing_function,
-            random_lists=random_lists,
-            regular_expression=regular_expression,
-            replace_with=replace_with,
-            schema_name=schema_name,
-            sql_expression=sql_expression,
-            start_date=start_date,
-            start_length=start_length,
-            start_position=start_position,
-            start_value=start_value,
-            table_name=table_name,
-            type=type,
-            user_defined_function=user_defined_function,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_name: Optional[str] = None,
-             description: Optional[str] = None,
-             end_date: Optional[str] = None,
-             end_length: Optional[int] = None,
-             end_value: Optional[float] = None,
-             fixed_number: Optional[float] = None,
-             fixed_string: Optional[str] = None,
-             grouping_columns: Optional[Sequence[str]] = None,
-             length: Optional[int] = None,
-             library_masking_format_id: Optional[str] = None,
-             post_processing_function: Optional[str] = None,
-             random_lists: Optional[Sequence[str]] = None,
-             regular_expression: Optional[str] = None,
-             replace_with: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sql_expression: Optional[str] = None,
-             start_date: Optional[str] = None,
-             start_length: Optional[int] = None,
-             start_position: Optional[int] = None,
-             start_value: Optional[float] = None,
-             table_name: Optional[str] = None,
-             type: Optional[str] = None,
-             user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if end_date is None and 'endDate' in kwargs:
-            end_date = kwargs['endDate']
-        if end_date is None:
-            raise TypeError("Missing 'end_date' argument")
-        if end_length is None and 'endLength' in kwargs:
-            end_length = kwargs['endLength']
-        if end_length is None:
-            raise TypeError("Missing 'end_length' argument")
-        if end_value is None and 'endValue' in kwargs:
-            end_value = kwargs['endValue']
-        if end_value is None:
-            raise TypeError("Missing 'end_value' argument")
-        if fixed_number is None and 'fixedNumber' in kwargs:
-            fixed_number = kwargs['fixedNumber']
-        if fixed_number is None:
-            raise TypeError("Missing 'fixed_number' argument")
-        if fixed_string is None and 'fixedString' in kwargs:
-            fixed_string = kwargs['fixedString']
-        if fixed_string is None:
-            raise TypeError("Missing 'fixed_string' argument")
-        if grouping_columns is None and 'groupingColumns' in kwargs:
-            grouping_columns = kwargs['groupingColumns']
-        if grouping_columns is None:
-            raise TypeError("Missing 'grouping_columns' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
-            library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if library_masking_format_id is None:
-            raise TypeError("Missing 'library_masking_format_id' argument")
-        if post_processing_function is None and 'postProcessingFunction' in kwargs:
-            post_processing_function = kwargs['postProcessingFunction']
-        if post_processing_function is None:
-            raise TypeError("Missing 'post_processing_function' argument")
-        if random_lists is None and 'randomLists' in kwargs:
-            random_lists = kwargs['randomLists']
-        if random_lists is None:
-            raise TypeError("Missing 'random_lists' argument")
-        if regular_expression is None and 'regularExpression' in kwargs:
-            regular_expression = kwargs['regularExpression']
-        if regular_expression is None:
-            raise TypeError("Missing 'regular_expression' argument")
-        if replace_with is None and 'replaceWith' in kwargs:
-            replace_with = kwargs['replaceWith']
-        if replace_with is None:
-            raise TypeError("Missing 'replace_with' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sql_expression is None and 'sqlExpression' in kwargs:
-            sql_expression = kwargs['sqlExpression']
-        if sql_expression is None:
-            raise TypeError("Missing 'sql_expression' argument")
-        if start_date is None and 'startDate' in kwargs:
-            start_date = kwargs['startDate']
-        if start_date is None:
-            raise TypeError("Missing 'start_date' argument")
-        if start_length is None and 'startLength' in kwargs:
-            start_length = kwargs['startLength']
-        if start_length is None:
-            raise TypeError("Missing 'start_length' argument")
-        if start_position is None and 'startPosition' in kwargs:
-            start_position = kwargs['startPosition']
-        if start_position is None:
-            raise TypeError("Missing 'start_position' argument")
-        if start_value is None and 'startValue' in kwargs:
-            start_value = kwargs['startValue']
-        if start_value is None:
-            raise TypeError("Missing 'start_value' argument")
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if table_name is None:
-            raise TypeError("Missing 'table_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if user_defined_function is None and 'userDefinedFunction' in kwargs:
-            user_defined_function = kwargs['userDefinedFunction']
-        if user_defined_function is None:
-            raise TypeError("Missing 'user_defined_function' argument")
-
-        _setter("column_name", column_name)
-        _setter("description", description)
-        _setter("end_date", end_date)
-        _setter("end_length", end_length)
-        _setter("end_value", end_value)
-        _setter("fixed_number", fixed_number)
-        _setter("fixed_string", fixed_string)
-        _setter("grouping_columns", grouping_columns)
-        _setter("length", length)
-        _setter("library_masking_format_id", library_masking_format_id)
-        _setter("post_processing_function", post_processing_function)
-        _setter("random_lists", random_lists)
-        _setter("regular_expression", regular_expression)
-        _setter("replace_with", replace_with)
-        _setter("schema_name", schema_name)
-        _setter("sql_expression", sql_expression)
-        _setter("start_date", start_date)
-        _setter("start_length", start_length)
-        _setter("start_position", start_position)
-        _setter("start_value", start_value)
-        _setter("table_name", table_name)
-        _setter("type", type)
-        _setter("user_defined_function", user_defined_function)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "end_length", end_length)
+        pulumi.set(__self__, "end_value", end_value)
+        pulumi.set(__self__, "fixed_number", fixed_number)
+        pulumi.set(__self__, "fixed_string", fixed_string)
+        pulumi.set(__self__, "grouping_columns", grouping_columns)
+        pulumi.set(__self__, "length", length)
+        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "post_processing_function", post_processing_function)
+        pulumi.set(__self__, "random_lists", random_lists)
+        pulumi.set(__self__, "regular_expression", regular_expression)
+        pulumi.set(__self__, "replace_with", replace_with)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sql_expression", sql_expression)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "start_length", start_length)
+        pulumi.set(__self__, "start_position", start_position)
+        pulumi.set(__self__, "start_value", start_value)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -14448,29 +9780,10 @@ class GetMaskingPoliciesMaskingColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMaskingPoliciesMaskingColumnsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -14492,20 +9805,7 @@ class GetMaskingPoliciesMaskingColumnsFilterResult(dict):
 class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult']):
-        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -14550,121 +9850,22 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult(dict):
         :param str time_created: The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            child_columns=child_columns,
-            column_name=column_name,
-            data_type=data_type,
-            is_masking_enabled=is_masking_enabled,
-            key=key,
-            lifecycle_details=lifecycle_details,
-            masking_column_group=masking_column_group,
-            masking_formats=masking_formats,
-            masking_policy_id=masking_policy_id,
-            object=object,
-            object_type=object_type,
-            schema_name=schema_name,
-            sensitive_type_id=sensitive_type_id,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             child_columns: Optional[Sequence[str]] = None,
-             column_name: Optional[str] = None,
-             data_type: Optional[str] = None,
-             is_masking_enabled: Optional[bool] = None,
-             key: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             masking_column_group: Optional[str] = None,
-             masking_formats: Optional[Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatResult']] = None,
-             masking_policy_id: Optional[str] = None,
-             object: Optional[str] = None,
-             object_type: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sensitive_type_id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if child_columns is None and 'childColumns' in kwargs:
-            child_columns = kwargs['childColumns']
-        if child_columns is None:
-            raise TypeError("Missing 'child_columns' argument")
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if is_masking_enabled is None and 'isMaskingEnabled' in kwargs:
-            is_masking_enabled = kwargs['isMaskingEnabled']
-        if is_masking_enabled is None:
-            raise TypeError("Missing 'is_masking_enabled' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if masking_column_group is None and 'maskingColumnGroup' in kwargs:
-            masking_column_group = kwargs['maskingColumnGroup']
-        if masking_column_group is None:
-            raise TypeError("Missing 'masking_column_group' argument")
-        if masking_formats is None and 'maskingFormats' in kwargs:
-            masking_formats = kwargs['maskingFormats']
-        if masking_formats is None:
-            raise TypeError("Missing 'masking_formats' argument")
-        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
-            masking_policy_id = kwargs['maskingPolicyId']
-        if masking_policy_id is None:
-            raise TypeError("Missing 'masking_policy_id' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-        if sensitive_type_id is None:
-            raise TypeError("Missing 'sensitive_type_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("child_columns", child_columns)
-        _setter("column_name", column_name)
-        _setter("data_type", data_type)
-        _setter("is_masking_enabled", is_masking_enabled)
-        _setter("key", key)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("masking_column_group", masking_column_group)
-        _setter("masking_formats", masking_formats)
-        _setter("masking_policy_id", masking_policy_id)
-        _setter("object", object)
-        _setter("object_type", object_type)
-        _setter("schema_name", schema_name)
-        _setter("sensitive_type_id", sensitive_type_id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "child_columns", child_columns)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "is_masking_enabled", is_masking_enabled)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "masking_column_group", masking_column_group)
+        pulumi.set(__self__, "masking_formats", masking_formats)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="childColumns")
@@ -14806,32 +10007,9 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatRe
         :param str description: The description of the format entry.
         :param Sequence['GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs'] format_entries: An array of format entries. The combined output of all the format entries is  used for masking the column data values.
         """
-        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition=condition,
-            description=description,
-            format_entries=format_entries,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition: Optional[str] = None,
-             description: Optional[str] = None,
-             format_entries: Optional[Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if format_entries is None and 'formatEntries' in kwargs:
-            format_entries = kwargs['formatEntries']
-        if format_entries is None:
-            raise TypeError("Missing 'format_entries' argument")
-
-        _setter("condition", condition)
-        _setter("description", description)
-        _setter("format_entries", format_entries)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "format_entries", format_entries)
 
     @property
     @pulumi.getter
@@ -14909,170 +10087,29 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_name=column_name,
-            description=description,
-            end_date=end_date,
-            end_length=end_length,
-            end_value=end_value,
-            fixed_number=fixed_number,
-            fixed_string=fixed_string,
-            grouping_columns=grouping_columns,
-            length=length,
-            library_masking_format_id=library_masking_format_id,
-            post_processing_function=post_processing_function,
-            random_lists=random_lists,
-            regular_expression=regular_expression,
-            replace_with=replace_with,
-            schema_name=schema_name,
-            sql_expression=sql_expression,
-            start_date=start_date,
-            start_length=start_length,
-            start_position=start_position,
-            start_value=start_value,
-            table_name=table_name,
-            type=type,
-            user_defined_function=user_defined_function,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_name: Optional[str] = None,
-             description: Optional[str] = None,
-             end_date: Optional[str] = None,
-             end_length: Optional[int] = None,
-             end_value: Optional[float] = None,
-             fixed_number: Optional[float] = None,
-             fixed_string: Optional[str] = None,
-             grouping_columns: Optional[Sequence[str]] = None,
-             length: Optional[int] = None,
-             library_masking_format_id: Optional[str] = None,
-             post_processing_function: Optional[str] = None,
-             random_lists: Optional[Sequence[str]] = None,
-             regular_expression: Optional[str] = None,
-             replace_with: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sql_expression: Optional[str] = None,
-             start_date: Optional[str] = None,
-             start_length: Optional[int] = None,
-             start_position: Optional[int] = None,
-             start_value: Optional[float] = None,
-             table_name: Optional[str] = None,
-             type: Optional[str] = None,
-             user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if end_date is None and 'endDate' in kwargs:
-            end_date = kwargs['endDate']
-        if end_date is None:
-            raise TypeError("Missing 'end_date' argument")
-        if end_length is None and 'endLength' in kwargs:
-            end_length = kwargs['endLength']
-        if end_length is None:
-            raise TypeError("Missing 'end_length' argument")
-        if end_value is None and 'endValue' in kwargs:
-            end_value = kwargs['endValue']
-        if end_value is None:
-            raise TypeError("Missing 'end_value' argument")
-        if fixed_number is None and 'fixedNumber' in kwargs:
-            fixed_number = kwargs['fixedNumber']
-        if fixed_number is None:
-            raise TypeError("Missing 'fixed_number' argument")
-        if fixed_string is None and 'fixedString' in kwargs:
-            fixed_string = kwargs['fixedString']
-        if fixed_string is None:
-            raise TypeError("Missing 'fixed_string' argument")
-        if grouping_columns is None and 'groupingColumns' in kwargs:
-            grouping_columns = kwargs['groupingColumns']
-        if grouping_columns is None:
-            raise TypeError("Missing 'grouping_columns' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-        if library_masking_format_id is None and 'libraryMaskingFormatId' in kwargs:
-            library_masking_format_id = kwargs['libraryMaskingFormatId']
-        if library_masking_format_id is None:
-            raise TypeError("Missing 'library_masking_format_id' argument")
-        if post_processing_function is None and 'postProcessingFunction' in kwargs:
-            post_processing_function = kwargs['postProcessingFunction']
-        if post_processing_function is None:
-            raise TypeError("Missing 'post_processing_function' argument")
-        if random_lists is None and 'randomLists' in kwargs:
-            random_lists = kwargs['randomLists']
-        if random_lists is None:
-            raise TypeError("Missing 'random_lists' argument")
-        if regular_expression is None and 'regularExpression' in kwargs:
-            regular_expression = kwargs['regularExpression']
-        if regular_expression is None:
-            raise TypeError("Missing 'regular_expression' argument")
-        if replace_with is None and 'replaceWith' in kwargs:
-            replace_with = kwargs['replaceWith']
-        if replace_with is None:
-            raise TypeError("Missing 'replace_with' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sql_expression is None and 'sqlExpression' in kwargs:
-            sql_expression = kwargs['sqlExpression']
-        if sql_expression is None:
-            raise TypeError("Missing 'sql_expression' argument")
-        if start_date is None and 'startDate' in kwargs:
-            start_date = kwargs['startDate']
-        if start_date is None:
-            raise TypeError("Missing 'start_date' argument")
-        if start_length is None and 'startLength' in kwargs:
-            start_length = kwargs['startLength']
-        if start_length is None:
-            raise TypeError("Missing 'start_length' argument")
-        if start_position is None and 'startPosition' in kwargs:
-            start_position = kwargs['startPosition']
-        if start_position is None:
-            raise TypeError("Missing 'start_position' argument")
-        if start_value is None and 'startValue' in kwargs:
-            start_value = kwargs['startValue']
-        if start_value is None:
-            raise TypeError("Missing 'start_value' argument")
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if table_name is None:
-            raise TypeError("Missing 'table_name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if user_defined_function is None and 'userDefinedFunction' in kwargs:
-            user_defined_function = kwargs['userDefinedFunction']
-        if user_defined_function is None:
-            raise TypeError("Missing 'user_defined_function' argument")
-
-        _setter("column_name", column_name)
-        _setter("description", description)
-        _setter("end_date", end_date)
-        _setter("end_length", end_length)
-        _setter("end_value", end_value)
-        _setter("fixed_number", fixed_number)
-        _setter("fixed_string", fixed_string)
-        _setter("grouping_columns", grouping_columns)
-        _setter("length", length)
-        _setter("library_masking_format_id", library_masking_format_id)
-        _setter("post_processing_function", post_processing_function)
-        _setter("random_lists", random_lists)
-        _setter("regular_expression", regular_expression)
-        _setter("replace_with", replace_with)
-        _setter("schema_name", schema_name)
-        _setter("sql_expression", sql_expression)
-        _setter("start_date", start_date)
-        _setter("start_length", start_length)
-        _setter("start_position", start_position)
-        _setter("start_value", start_value)
-        _setter("table_name", table_name)
-        _setter("type", type)
-        _setter("user_defined_function", user_defined_function)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "end_length", end_length)
+        pulumi.set(__self__, "end_value", end_value)
+        pulumi.set(__self__, "fixed_number", fixed_number)
+        pulumi.set(__self__, "fixed_string", fixed_string)
+        pulumi.set(__self__, "grouping_columns", grouping_columns)
+        pulumi.set(__self__, "length", length)
+        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "post_processing_function", post_processing_function)
+        pulumi.set(__self__, "random_lists", random_lists)
+        pulumi.set(__self__, "regular_expression", regular_expression)
+        pulumi.set(__self__, "replace_with", replace_with)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sql_expression", sql_expression)
+        pulumi.set(__self__, "start_date", start_date)
+        pulumi.set(__self__, "start_length", start_length)
+        pulumi.set(__self__, "start_position", start_position)
+        pulumi.set(__self__, "start_value", start_value)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -15263,20 +10300,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
 class GetMaskingPoliciesMaskingPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemResult']):
-        GetMaskingPoliciesMaskingPolicyCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -15324,133 +10348,24 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         :param str time_created: The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
-        GetMaskingPoliciesMaskingPolicyCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            add_masking_columns_from_sdm_trigger=add_masking_columns_from_sdm_trigger,
-            column_sources=column_sources,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_drop_temp_tables_enabled=is_drop_temp_tables_enabled,
-            is_redo_logging_enabled=is_redo_logging_enabled,
-            is_refresh_stats_enabled=is_refresh_stats_enabled,
-            parallel_degree=parallel_degree,
-            post_masking_script=post_masking_script,
-            pre_masking_script=pre_masking_script,
-            recompile=recompile,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             add_masking_columns_from_sdm_trigger: Optional[int] = None,
-             column_sources: Optional[Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult']] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_drop_temp_tables_enabled: Optional[bool] = None,
-             is_redo_logging_enabled: Optional[bool] = None,
-             is_refresh_stats_enabled: Optional[bool] = None,
-             parallel_degree: Optional[str] = None,
-             post_masking_script: Optional[str] = None,
-             pre_masking_script: Optional[str] = None,
-             recompile: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if add_masking_columns_from_sdm_trigger is None and 'addMaskingColumnsFromSdmTrigger' in kwargs:
-            add_masking_columns_from_sdm_trigger = kwargs['addMaskingColumnsFromSdmTrigger']
-        if add_masking_columns_from_sdm_trigger is None:
-            raise TypeError("Missing 'add_masking_columns_from_sdm_trigger' argument")
-        if column_sources is None and 'columnSources' in kwargs:
-            column_sources = kwargs['columnSources']
-        if column_sources is None:
-            raise TypeError("Missing 'column_sources' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_drop_temp_tables_enabled is None and 'isDropTempTablesEnabled' in kwargs:
-            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
-        if is_drop_temp_tables_enabled is None:
-            raise TypeError("Missing 'is_drop_temp_tables_enabled' argument")
-        if is_redo_logging_enabled is None and 'isRedoLoggingEnabled' in kwargs:
-            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
-        if is_redo_logging_enabled is None:
-            raise TypeError("Missing 'is_redo_logging_enabled' argument")
-        if is_refresh_stats_enabled is None and 'isRefreshStatsEnabled' in kwargs:
-            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
-        if is_refresh_stats_enabled is None:
-            raise TypeError("Missing 'is_refresh_stats_enabled' argument")
-        if parallel_degree is None and 'parallelDegree' in kwargs:
-            parallel_degree = kwargs['parallelDegree']
-        if parallel_degree is None:
-            raise TypeError("Missing 'parallel_degree' argument")
-        if post_masking_script is None and 'postMaskingScript' in kwargs:
-            post_masking_script = kwargs['postMaskingScript']
-        if post_masking_script is None:
-            raise TypeError("Missing 'post_masking_script' argument")
-        if pre_masking_script is None and 'preMaskingScript' in kwargs:
-            pre_masking_script = kwargs['preMaskingScript']
-        if pre_masking_script is None:
-            raise TypeError("Missing 'pre_masking_script' argument")
-        if recompile is None:
-            raise TypeError("Missing 'recompile' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
-        _setter("column_sources", column_sources)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
-        _setter("is_redo_logging_enabled", is_redo_logging_enabled)
-        _setter("is_refresh_stats_enabled", is_refresh_stats_enabled)
-        _setter("parallel_degree", parallel_degree)
-        _setter("post_masking_script", post_masking_script)
-        _setter("pre_masking_script", pre_masking_script)
-        _setter("recompile", recompile)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
+        pulumi.set(__self__, "column_sources", column_sources)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
+        pulumi.set(__self__, "parallel_degree", parallel_degree)
+        pulumi.set(__self__, "post_masking_script", post_masking_script)
+        pulumi.set(__self__, "pre_masking_script", pre_masking_script)
+        pulumi.set(__self__, "recompile", recompile)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
@@ -15605,36 +10520,9 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult(dict):
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_source=column_source,
-            sensitive_data_model_id=sensitive_data_model_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_source: Optional[str] = None,
-             sensitive_data_model_id: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_source is None and 'columnSource' in kwargs:
-            column_source = kwargs['columnSource']
-        if column_source is None:
-            raise TypeError("Missing 'column_source' argument")
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_data_model_id is None:
-            raise TypeError("Missing 'sensitive_data_model_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("column_source", column_source)
-        _setter("sensitive_data_model_id", sensitive_data_model_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "column_source", column_source)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="columnSource")
@@ -15672,36 +10560,9 @@ class GetMaskingPolicyColumnSourceResult(dict):
         :param str sensitive_data_model_id: The OCID of the sensitive data model that's used as the source of masking columns.
         :param str target_id: The OCID of the target database that's used as the source of masking columns.
         """
-        GetMaskingPolicyColumnSourceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_source=column_source,
-            sensitive_data_model_id=sensitive_data_model_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_source: Optional[str] = None,
-             sensitive_data_model_id: Optional[str] = None,
-             target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_source is None and 'columnSource' in kwargs:
-            column_source = kwargs['columnSource']
-        if column_source is None:
-            raise TypeError("Missing 'column_source' argument")
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_data_model_id is None:
-            raise TypeError("Missing 'sensitive_data_model_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("column_source", column_source)
-        _setter("sensitive_data_model_id", sensitive_data_model_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "column_source", column_source)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="columnSource")
@@ -15734,29 +10595,10 @@ class GetMaskingPolicyMaskingObjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMaskingPolicyMaskingObjectsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -15781,20 +10623,7 @@ class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult(dict):
         """
         :param Sequence['GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs'] items: An array of masking object summary objects.
         """
-        GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -15816,34 +10645,9 @@ class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult(dict):
         :param str object_type: A filter to return only items related to a specific object type.
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object=object,
-            object_type=object_type,
-            schema_name=schema_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object: Optional[str] = None,
-             object_type: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-
-        _setter("object", object)
-        _setter("object_type", object_type)
-        _setter("schema_name", schema_name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
 
     @property
     @pulumi.getter
@@ -15876,29 +10680,10 @@ class GetMaskingPolicyMaskingSchemasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMaskingPolicyMaskingSchemasFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -15923,20 +10708,7 @@ class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult(dict):
         """
         :param Sequence['GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs'] items: An array of masking schema summary objects.
         """
-        GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -15954,22 +10726,7 @@ class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult(dict):
         """
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            schema_name=schema_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             schema_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-
-        _setter("schema_name", schema_name)
+        pulumi.set(__self__, "schema_name", schema_name)
 
     @property
     @pulumi.getter(name="schemaName")
@@ -15986,29 +10743,10 @@ class GetMaskingReportMaskedColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMaskingReportMaskedColumnsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -16033,20 +10771,7 @@ class GetMaskingReportMaskedColumnsMaskedColumnCollectionResult(dict):
         """
         :param Sequence['GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs'] items: An array of masking column summary objects.
         """
-        GetMaskingReportMaskedColumnsMaskedColumnCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -16082,81 +10807,16 @@ class GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult(dict):
         :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
         :param str total_masked_values: The total number of values masked in the column.
         """
-        GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_name=column_name,
-            key=key,
-            masking_column_group=masking_column_group,
-            masking_format_used=masking_format_used,
-            object=object,
-            object_type=object_type,
-            parent_column_key=parent_column_key,
-            schema_name=schema_name,
-            sensitive_type_id=sensitive_type_id,
-            total_masked_values=total_masked_values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_name: Optional[str] = None,
-             key: Optional[str] = None,
-             masking_column_group: Optional[str] = None,
-             masking_format_used: Optional[str] = None,
-             object: Optional[str] = None,
-             object_type: Optional[str] = None,
-             parent_column_key: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sensitive_type_id: Optional[str] = None,
-             total_masked_values: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if masking_column_group is None and 'maskingColumnGroup' in kwargs:
-            masking_column_group = kwargs['maskingColumnGroup']
-        if masking_column_group is None:
-            raise TypeError("Missing 'masking_column_group' argument")
-        if masking_format_used is None and 'maskingFormatUsed' in kwargs:
-            masking_format_used = kwargs['maskingFormatUsed']
-        if masking_format_used is None:
-            raise TypeError("Missing 'masking_format_used' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if parent_column_key is None and 'parentColumnKey' in kwargs:
-            parent_column_key = kwargs['parentColumnKey']
-        if parent_column_key is None:
-            raise TypeError("Missing 'parent_column_key' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-        if sensitive_type_id is None:
-            raise TypeError("Missing 'sensitive_type_id' argument")
-        if total_masked_values is None and 'totalMaskedValues' in kwargs:
-            total_masked_values = kwargs['totalMaskedValues']
-        if total_masked_values is None:
-            raise TypeError("Missing 'total_masked_values' argument")
-
-        _setter("column_name", column_name)
-        _setter("key", key)
-        _setter("masking_column_group", masking_column_group)
-        _setter("masking_format_used", masking_format_used)
-        _setter("object", object)
-        _setter("object_type", object_type)
-        _setter("parent_column_key", parent_column_key)
-        _setter("schema_name", schema_name)
-        _setter("sensitive_type_id", sensitive_type_id)
-        _setter("total_masked_values", total_masked_values)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "masking_column_group", masking_column_group)
+        pulumi.set(__self__, "masking_format_used", masking_format_used)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "parent_column_key", parent_column_key)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "total_masked_values", total_masked_values)
 
     @property
     @pulumi.getter(name="columnName")
@@ -16245,29 +10905,10 @@ class GetMaskingReportsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMaskingReportsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -16310,81 +10951,16 @@ class GetMaskingReportsMaskedColumnItemResult(dict):
         :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
         :param str total_masked_values: The total number of values masked in the column.
         """
-        GetMaskingReportsMaskedColumnItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_name=column_name,
-            key=key,
-            masking_column_group=masking_column_group,
-            masking_format_used=masking_format_used,
-            object=object,
-            object_type=object_type,
-            parent_column_key=parent_column_key,
-            schema_name=schema_name,
-            sensitive_type_id=sensitive_type_id,
-            total_masked_values=total_masked_values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_name: Optional[str] = None,
-             key: Optional[str] = None,
-             masking_column_group: Optional[str] = None,
-             masking_format_used: Optional[str] = None,
-             object: Optional[str] = None,
-             object_type: Optional[str] = None,
-             parent_column_key: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sensitive_type_id: Optional[str] = None,
-             total_masked_values: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if masking_column_group is None and 'maskingColumnGroup' in kwargs:
-            masking_column_group = kwargs['maskingColumnGroup']
-        if masking_column_group is None:
-            raise TypeError("Missing 'masking_column_group' argument")
-        if masking_format_used is None and 'maskingFormatUsed' in kwargs:
-            masking_format_used = kwargs['maskingFormatUsed']
-        if masking_format_used is None:
-            raise TypeError("Missing 'masking_format_used' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if parent_column_key is None and 'parentColumnKey' in kwargs:
-            parent_column_key = kwargs['parentColumnKey']
-        if parent_column_key is None:
-            raise TypeError("Missing 'parent_column_key' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-        if sensitive_type_id is None:
-            raise TypeError("Missing 'sensitive_type_id' argument")
-        if total_masked_values is None and 'totalMaskedValues' in kwargs:
-            total_masked_values = kwargs['totalMaskedValues']
-        if total_masked_values is None:
-            raise TypeError("Missing 'total_masked_values' argument")
-
-        _setter("column_name", column_name)
-        _setter("key", key)
-        _setter("masking_column_group", masking_column_group)
-        _setter("masking_format_used", masking_format_used)
-        _setter("object", object)
-        _setter("object_type", object_type)
-        _setter("parent_column_key", parent_column_key)
-        _setter("schema_name", schema_name)
-        _setter("sensitive_type_id", sensitive_type_id)
-        _setter("total_masked_values", total_masked_values)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "masking_column_group", masking_column_group)
+        pulumi.set(__self__, "masking_format_used", masking_format_used)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "parent_column_key", parent_column_key)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "total_masked_values", total_masked_values)
 
     @property
     @pulumi.getter(name="columnName")
@@ -16471,20 +11047,7 @@ class GetMaskingReportsMaskedColumnItemResult(dict):
 class GetMaskingReportsMaskingReportCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMaskingReportsMaskingReportCollectionItemResult']):
-        GetMaskingReportsMaskingReportCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMaskingReportsMaskingReportCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -16535,142 +11098,25 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         :param str total_masked_sensitive_types: The total number of unique sensitive types associated with the masked columns.
         :param str total_masked_values: The total number of masked values.
         """
-        GetMaskingReportsMaskingReportCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            id=id,
-            is_drop_temp_tables_enabled=is_drop_temp_tables_enabled,
-            is_redo_logging_enabled=is_redo_logging_enabled,
-            is_refresh_stats_enabled=is_refresh_stats_enabled,
-            masking_policy_id=masking_policy_id,
-            masking_work_request_id=masking_work_request_id,
-            parallel_degree=parallel_degree,
-            recompile=recompile,
-            state=state,
-            target_id=target_id,
-            time_created=time_created,
-            time_masking_finished=time_masking_finished,
-            time_masking_started=time_masking_started,
-            total_masked_columns=total_masked_columns,
-            total_masked_objects=total_masked_objects,
-            total_masked_schemas=total_masked_schemas,
-            total_masked_sensitive_types=total_masked_sensitive_types,
-            total_masked_values=total_masked_values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             id: Optional[str] = None,
-             is_drop_temp_tables_enabled: Optional[bool] = None,
-             is_redo_logging_enabled: Optional[bool] = None,
-             is_refresh_stats_enabled: Optional[bool] = None,
-             masking_policy_id: Optional[str] = None,
-             masking_work_request_id: Optional[str] = None,
-             parallel_degree: Optional[str] = None,
-             recompile: Optional[str] = None,
-             state: Optional[str] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_masking_finished: Optional[str] = None,
-             time_masking_started: Optional[str] = None,
-             total_masked_columns: Optional[str] = None,
-             total_masked_objects: Optional[str] = None,
-             total_masked_schemas: Optional[str] = None,
-             total_masked_sensitive_types: Optional[str] = None,
-             total_masked_values: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_drop_temp_tables_enabled is None and 'isDropTempTablesEnabled' in kwargs:
-            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
-        if is_drop_temp_tables_enabled is None:
-            raise TypeError("Missing 'is_drop_temp_tables_enabled' argument")
-        if is_redo_logging_enabled is None and 'isRedoLoggingEnabled' in kwargs:
-            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
-        if is_redo_logging_enabled is None:
-            raise TypeError("Missing 'is_redo_logging_enabled' argument")
-        if is_refresh_stats_enabled is None and 'isRefreshStatsEnabled' in kwargs:
-            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
-        if is_refresh_stats_enabled is None:
-            raise TypeError("Missing 'is_refresh_stats_enabled' argument")
-        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
-            masking_policy_id = kwargs['maskingPolicyId']
-        if masking_policy_id is None:
-            raise TypeError("Missing 'masking_policy_id' argument")
-        if masking_work_request_id is None and 'maskingWorkRequestId' in kwargs:
-            masking_work_request_id = kwargs['maskingWorkRequestId']
-        if masking_work_request_id is None:
-            raise TypeError("Missing 'masking_work_request_id' argument")
-        if parallel_degree is None and 'parallelDegree' in kwargs:
-            parallel_degree = kwargs['parallelDegree']
-        if parallel_degree is None:
-            raise TypeError("Missing 'parallel_degree' argument")
-        if recompile is None:
-            raise TypeError("Missing 'recompile' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_masking_finished is None and 'timeMaskingFinished' in kwargs:
-            time_masking_finished = kwargs['timeMaskingFinished']
-        if time_masking_finished is None:
-            raise TypeError("Missing 'time_masking_finished' argument")
-        if time_masking_started is None and 'timeMaskingStarted' in kwargs:
-            time_masking_started = kwargs['timeMaskingStarted']
-        if time_masking_started is None:
-            raise TypeError("Missing 'time_masking_started' argument")
-        if total_masked_columns is None and 'totalMaskedColumns' in kwargs:
-            total_masked_columns = kwargs['totalMaskedColumns']
-        if total_masked_columns is None:
-            raise TypeError("Missing 'total_masked_columns' argument")
-        if total_masked_objects is None and 'totalMaskedObjects' in kwargs:
-            total_masked_objects = kwargs['totalMaskedObjects']
-        if total_masked_objects is None:
-            raise TypeError("Missing 'total_masked_objects' argument")
-        if total_masked_schemas is None and 'totalMaskedSchemas' in kwargs:
-            total_masked_schemas = kwargs['totalMaskedSchemas']
-        if total_masked_schemas is None:
-            raise TypeError("Missing 'total_masked_schemas' argument")
-        if total_masked_sensitive_types is None and 'totalMaskedSensitiveTypes' in kwargs:
-            total_masked_sensitive_types = kwargs['totalMaskedSensitiveTypes']
-        if total_masked_sensitive_types is None:
-            raise TypeError("Missing 'total_masked_sensitive_types' argument")
-        if total_masked_values is None and 'totalMaskedValues' in kwargs:
-            total_masked_values = kwargs['totalMaskedValues']
-        if total_masked_values is None:
-            raise TypeError("Missing 'total_masked_values' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("id", id)
-        _setter("is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
-        _setter("is_redo_logging_enabled", is_redo_logging_enabled)
-        _setter("is_refresh_stats_enabled", is_refresh_stats_enabled)
-        _setter("masking_policy_id", masking_policy_id)
-        _setter("masking_work_request_id", masking_work_request_id)
-        _setter("parallel_degree", parallel_degree)
-        _setter("recompile", recompile)
-        _setter("state", state)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_masking_finished", time_masking_finished)
-        _setter("time_masking_started", time_masking_started)
-        _setter("total_masked_columns", total_masked_columns)
-        _setter("total_masked_objects", total_masked_objects)
-        _setter("total_masked_schemas", total_masked_schemas)
-        _setter("total_masked_sensitive_types", total_masked_sensitive_types)
-        _setter("total_masked_values", total_masked_values)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
+        pulumi.set(__self__, "parallel_degree", parallel_degree)
+        pulumi.set(__self__, "recompile", recompile)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_masking_finished", time_masking_finished)
+        pulumi.set(__self__, "time_masking_started", time_masking_started)
+        pulumi.set(__self__, "total_masked_columns", total_masked_columns)
+        pulumi.set(__self__, "total_masked_objects", total_masked_objects)
+        pulumi.set(__self__, "total_masked_schemas", total_masked_schemas)
+        pulumi.set(__self__, "total_masked_sensitive_types", total_masked_sensitive_types)
+        pulumi.set(__self__, "total_masked_values", total_masked_values)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -16831,29 +11277,10 @@ class GetOnpremConnectorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOnpremConnectorsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -16900,93 +11327,18 @@ class GetOnpremConnectorsOnPremConnectorResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetOnpremConnectorsOnPremConnectorResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            available_version=available_version,
-            compartment_id=compartment_id,
-            created_version=created_version,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             available_version: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             created_version: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if available_version is None and 'availableVersion' in kwargs:
-            available_version = kwargs['availableVersion']
-        if available_version is None:
-            raise TypeError("Missing 'available_version' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if created_version is None and 'createdVersion' in kwargs:
-            created_version = kwargs['createdVersion']
-        if created_version is None:
-            raise TypeError("Missing 'created_version' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("available_version", available_version)
-        _setter("compartment_id", compartment_id)
-        _setter("created_version", created_version)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "available_version", available_version)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_version", created_version)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availableVersion")
@@ -17100,46 +11452,11 @@ class GetReportDefinitionColumnFilterResult(dict):
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: Specifies the type of operator that must be applied for example in, eq etc.
         """
-        GetReportDefinitionColumnFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            expressions=expressions,
-            field_name=field_name,
-            is_enabled=is_enabled,
-            is_hidden=is_hidden,
-            operator=operator,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             expressions: Optional[Sequence[str]] = None,
-             field_name: Optional[str] = None,
-             is_enabled: Optional[bool] = None,
-             is_hidden: Optional[bool] = None,
-             operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if expressions is None:
-            raise TypeError("Missing 'expressions' argument")
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-
-        _setter("expressions", expressions)
-        _setter("field_name", field_name)
-        _setter("is_enabled", is_enabled)
-        _setter("is_hidden", is_hidden)
-        _setter("operator", operator)
+        pulumi.set(__self__, "expressions", expressions)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "is_hidden", is_hidden)
+        pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter
@@ -17197,50 +11514,11 @@ class GetReportDefinitionColumnInfoResult(dict):
         :param str field_name: Name of the column that must be sorted.
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         """
-        GetReportDefinitionColumnInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_type=data_type,
-            display_name=display_name,
-            display_order=display_order,
-            field_name=field_name,
-            is_hidden=is_hidden,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_type: Optional[str] = None,
-             display_name: Optional[str] = None,
-             display_order: Optional[int] = None,
-             field_name: Optional[str] = None,
-             is_hidden: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if display_order is None and 'displayOrder' in kwargs:
-            display_order = kwargs['displayOrder']
-        if display_order is None:
-            raise TypeError("Missing 'display_order' argument")
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-
-        _setter("data_type", data_type)
-        _setter("display_name", display_name)
-        _setter("display_order", display_order)
-        _setter("field_name", field_name)
-        _setter("is_hidden", is_hidden)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "display_order", display_order)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_hidden", is_hidden)
 
     @property
     @pulumi.getter(name="dataType")
@@ -17294,36 +11572,9 @@ class GetReportDefinitionColumnSortingResult(dict):
         :param bool is_ascending: Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
         :param int sorting_order: Indicates the order at which column must be sorted.
         """
-        GetReportDefinitionColumnSortingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            field_name=field_name,
-            is_ascending=is_ascending,
-            sorting_order=sorting_order,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             field_name: Optional[str] = None,
-             is_ascending: Optional[bool] = None,
-             sorting_order: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_ascending is None and 'isAscending' in kwargs:
-            is_ascending = kwargs['isAscending']
-        if is_ascending is None:
-            raise TypeError("Missing 'is_ascending' argument")
-        if sorting_order is None and 'sortingOrder' in kwargs:
-            sorting_order = kwargs['sortingOrder']
-        if sorting_order is None:
-            raise TypeError("Missing 'sorting_order' argument")
-
-        _setter("field_name", field_name)
-        _setter("is_ascending", is_ascending)
-        _setter("sorting_order", sorting_order)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_ascending", is_ascending)
+        pulumi.set(__self__, "sorting_order", sorting_order)
 
     @property
     @pulumi.getter(name="fieldName")
@@ -17367,55 +11618,12 @@ class GetReportDefinitionSummaryResult(dict):
         :param str name: Name of the report summary.
         :param str scim_filter: Additional scim filters used to get the specific summary.
         """
-        GetReportDefinitionSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count_of=count_of,
-            display_order=display_order,
-            group_by_field_name=group_by_field_name,
-            is_hidden=is_hidden,
-            name=name,
-            scim_filter=scim_filter,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count_of: Optional[str] = None,
-             display_order: Optional[int] = None,
-             group_by_field_name: Optional[str] = None,
-             is_hidden: Optional[bool] = None,
-             name: Optional[str] = None,
-             scim_filter: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count_of is None and 'countOf' in kwargs:
-            count_of = kwargs['countOf']
-        if count_of is None:
-            raise TypeError("Missing 'count_of' argument")
-        if display_order is None and 'displayOrder' in kwargs:
-            display_order = kwargs['displayOrder']
-        if display_order is None:
-            raise TypeError("Missing 'display_order' argument")
-        if group_by_field_name is None and 'groupByFieldName' in kwargs:
-            group_by_field_name = kwargs['groupByFieldName']
-        if group_by_field_name is None:
-            raise TypeError("Missing 'group_by_field_name' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if scim_filter is None and 'scimFilter' in kwargs:
-            scim_filter = kwargs['scimFilter']
-        if scim_filter is None:
-            raise TypeError("Missing 'scim_filter' argument")
-
-        _setter("count_of", count_of)
-        _setter("display_order", display_order)
-        _setter("group_by_field_name", group_by_field_name)
-        _setter("is_hidden", is_hidden)
-        _setter("name", name)
-        _setter("scim_filter", scim_filter)
+        pulumi.set(__self__, "count_of", count_of)
+        pulumi.set(__self__, "display_order", display_order)
+        pulumi.set(__self__, "group_by_field_name", group_by_field_name)
+        pulumi.set(__self__, "is_hidden", is_hidden)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "scim_filter", scim_filter)
 
     @property
     @pulumi.getter(name="countOf")
@@ -17475,29 +11683,10 @@ class GetReportDefinitionsFilterResult(dict):
         """
         :param str name: Name of the report summary.
         """
-        GetReportDefinitionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -17522,20 +11711,7 @@ class GetReportDefinitionsFilterResult(dict):
 class GetReportDefinitionsReportDefinitionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemResult']):
-        GetReportDefinitionsReportDefinitionCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -17602,192 +11778,33 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param str time_created: Specifies the data and time the report definition was created.
         :param str time_updated: The date and time the report definition was update.
         """
-        GetReportDefinitionsReportDefinitionCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            category=category,
-            column_filters=column_filters,
-            column_infos=column_infos,
-            column_sortings=column_sortings,
-            compartment_id=compartment_id,
-            compliance_standards=compliance_standards,
-            data_source=data_source,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            display_order=display_order,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_seeded=is_seeded,
-            parent_id=parent_id,
-            record_time_span=record_time_span,
-            schedule=schedule,
-            scheduled_report_compartment_id=scheduled_report_compartment_id,
-            scheduled_report_mime_type=scheduled_report_mime_type,
-            scheduled_report_name=scheduled_report_name,
-            scheduled_report_row_limit=scheduled_report_row_limit,
-            scim_filter=scim_filter,
-            state=state,
-            summaries=summaries,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             category: Optional[str] = None,
-             column_filters: Optional[Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult']] = None,
-             column_infos: Optional[Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult']] = None,
-             column_sortings: Optional[Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult']] = None,
-             compartment_id: Optional[str] = None,
-             compliance_standards: Optional[Sequence[str]] = None,
-             data_source: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             display_order: Optional[int] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_seeded: Optional[bool] = None,
-             parent_id: Optional[str] = None,
-             record_time_span: Optional[str] = None,
-             schedule: Optional[str] = None,
-             scheduled_report_compartment_id: Optional[str] = None,
-             scheduled_report_mime_type: Optional[str] = None,
-             scheduled_report_name: Optional[str] = None,
-             scheduled_report_row_limit: Optional[int] = None,
-             scim_filter: Optional[str] = None,
-             state: Optional[str] = None,
-             summaries: Optional[Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemSummaryResult']] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if category is None:
-            raise TypeError("Missing 'category' argument")
-        if column_filters is None and 'columnFilters' in kwargs:
-            column_filters = kwargs['columnFilters']
-        if column_filters is None:
-            raise TypeError("Missing 'column_filters' argument")
-        if column_infos is None and 'columnInfos' in kwargs:
-            column_infos = kwargs['columnInfos']
-        if column_infos is None:
-            raise TypeError("Missing 'column_infos' argument")
-        if column_sortings is None and 'columnSortings' in kwargs:
-            column_sortings = kwargs['columnSortings']
-        if column_sortings is None:
-            raise TypeError("Missing 'column_sortings' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if compliance_standards is None and 'complianceStandards' in kwargs:
-            compliance_standards = kwargs['complianceStandards']
-        if compliance_standards is None:
-            raise TypeError("Missing 'compliance_standards' argument")
-        if data_source is None and 'dataSource' in kwargs:
-            data_source = kwargs['dataSource']
-        if data_source is None:
-            raise TypeError("Missing 'data_source' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if display_order is None and 'displayOrder' in kwargs:
-            display_order = kwargs['displayOrder']
-        if display_order is None:
-            raise TypeError("Missing 'display_order' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_seeded is None and 'isSeeded' in kwargs:
-            is_seeded = kwargs['isSeeded']
-        if is_seeded is None:
-            raise TypeError("Missing 'is_seeded' argument")
-        if parent_id is None and 'parentId' in kwargs:
-            parent_id = kwargs['parentId']
-        if parent_id is None:
-            raise TypeError("Missing 'parent_id' argument")
-        if record_time_span is None and 'recordTimeSpan' in kwargs:
-            record_time_span = kwargs['recordTimeSpan']
-        if record_time_span is None:
-            raise TypeError("Missing 'record_time_span' argument")
-        if schedule is None:
-            raise TypeError("Missing 'schedule' argument")
-        if scheduled_report_compartment_id is None and 'scheduledReportCompartmentId' in kwargs:
-            scheduled_report_compartment_id = kwargs['scheduledReportCompartmentId']
-        if scheduled_report_compartment_id is None:
-            raise TypeError("Missing 'scheduled_report_compartment_id' argument")
-        if scheduled_report_mime_type is None and 'scheduledReportMimeType' in kwargs:
-            scheduled_report_mime_type = kwargs['scheduledReportMimeType']
-        if scheduled_report_mime_type is None:
-            raise TypeError("Missing 'scheduled_report_mime_type' argument")
-        if scheduled_report_name is None and 'scheduledReportName' in kwargs:
-            scheduled_report_name = kwargs['scheduledReportName']
-        if scheduled_report_name is None:
-            raise TypeError("Missing 'scheduled_report_name' argument")
-        if scheduled_report_row_limit is None and 'scheduledReportRowLimit' in kwargs:
-            scheduled_report_row_limit = kwargs['scheduledReportRowLimit']
-        if scheduled_report_row_limit is None:
-            raise TypeError("Missing 'scheduled_report_row_limit' argument")
-        if scim_filter is None and 'scimFilter' in kwargs:
-            scim_filter = kwargs['scimFilter']
-        if scim_filter is None:
-            raise TypeError("Missing 'scim_filter' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if summaries is None:
-            raise TypeError("Missing 'summaries' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("category", category)
-        _setter("column_filters", column_filters)
-        _setter("column_infos", column_infos)
-        _setter("column_sortings", column_sortings)
-        _setter("compartment_id", compartment_id)
-        _setter("compliance_standards", compliance_standards)
-        _setter("data_source", data_source)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("display_order", display_order)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_seeded", is_seeded)
-        _setter("parent_id", parent_id)
-        _setter("record_time_span", record_time_span)
-        _setter("schedule", schedule)
-        _setter("scheduled_report_compartment_id", scheduled_report_compartment_id)
-        _setter("scheduled_report_mime_type", scheduled_report_mime_type)
-        _setter("scheduled_report_name", scheduled_report_name)
-        _setter("scheduled_report_row_limit", scheduled_report_row_limit)
-        _setter("scim_filter", scim_filter)
-        _setter("state", state)
-        _setter("summaries", summaries)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "column_filters", column_filters)
+        pulumi.set(__self__, "column_infos", column_infos)
+        pulumi.set(__self__, "column_sortings", column_sortings)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compliance_standards", compliance_standards)
+        pulumi.set(__self__, "data_source", data_source)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "display_order", display_order)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_seeded", is_seeded)
+        pulumi.set(__self__, "parent_id", parent_id)
+        pulumi.set(__self__, "record_time_span", record_time_span)
+        pulumi.set(__self__, "schedule", schedule)
+        pulumi.set(__self__, "scheduled_report_compartment_id", scheduled_report_compartment_id)
+        pulumi.set(__self__, "scheduled_report_mime_type", scheduled_report_mime_type)
+        pulumi.set(__self__, "scheduled_report_name", scheduled_report_name)
+        pulumi.set(__self__, "scheduled_report_row_limit", scheduled_report_row_limit)
+        pulumi.set(__self__, "scim_filter", scim_filter)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "summaries", summaries)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -18021,46 +12038,11 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult(dict)
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: Specifies the type of operator that must be applied for example in, eq etc.
         """
-        GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            expressions=expressions,
-            field_name=field_name,
-            is_enabled=is_enabled,
-            is_hidden=is_hidden,
-            operator=operator,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             expressions: Optional[Sequence[str]] = None,
-             field_name: Optional[str] = None,
-             is_enabled: Optional[bool] = None,
-             is_hidden: Optional[bool] = None,
-             operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if expressions is None:
-            raise TypeError("Missing 'expressions' argument")
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-
-        _setter("expressions", expressions)
-        _setter("field_name", field_name)
-        _setter("is_enabled", is_enabled)
-        _setter("is_hidden", is_hidden)
-        _setter("operator", operator)
+        pulumi.set(__self__, "expressions", expressions)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "is_hidden", is_hidden)
+        pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter
@@ -18118,50 +12100,11 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult(dict):
         :param str field_name: Name of the column that must be sorted.
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         """
-        GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            data_type=data_type,
-            display_name=display_name,
-            display_order=display_order,
-            field_name=field_name,
-            is_hidden=is_hidden,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             data_type: Optional[str] = None,
-             display_name: Optional[str] = None,
-             display_order: Optional[int] = None,
-             field_name: Optional[str] = None,
-             is_hidden: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if display_order is None and 'displayOrder' in kwargs:
-            display_order = kwargs['displayOrder']
-        if display_order is None:
-            raise TypeError("Missing 'display_order' argument")
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-
-        _setter("data_type", data_type)
-        _setter("display_name", display_name)
-        _setter("display_order", display_order)
-        _setter("field_name", field_name)
-        _setter("is_hidden", is_hidden)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "display_order", display_order)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_hidden", is_hidden)
 
     @property
     @pulumi.getter(name="dataType")
@@ -18215,36 +12158,9 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult(dict
         :param bool is_ascending: Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
         :param int sorting_order: Indicates the order at which column must be sorted.
         """
-        GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            field_name=field_name,
-            is_ascending=is_ascending,
-            sorting_order=sorting_order,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             field_name: Optional[str] = None,
-             is_ascending: Optional[bool] = None,
-             sorting_order: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if field_name is None and 'fieldName' in kwargs:
-            field_name = kwargs['fieldName']
-        if field_name is None:
-            raise TypeError("Missing 'field_name' argument")
-        if is_ascending is None and 'isAscending' in kwargs:
-            is_ascending = kwargs['isAscending']
-        if is_ascending is None:
-            raise TypeError("Missing 'is_ascending' argument")
-        if sorting_order is None and 'sortingOrder' in kwargs:
-            sorting_order = kwargs['sortingOrder']
-        if sorting_order is None:
-            raise TypeError("Missing 'sorting_order' argument")
-
-        _setter("field_name", field_name)
-        _setter("is_ascending", is_ascending)
-        _setter("sorting_order", sorting_order)
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "is_ascending", is_ascending)
+        pulumi.set(__self__, "sorting_order", sorting_order)
 
     @property
     @pulumi.getter(name="fieldName")
@@ -18288,55 +12204,12 @@ class GetReportDefinitionsReportDefinitionCollectionItemSummaryResult(dict):
         :param str name: Name of the report summary.
         :param str scim_filter: Additional scim filters used to get the specific summary.
         """
-        GetReportDefinitionsReportDefinitionCollectionItemSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            count_of=count_of,
-            display_order=display_order,
-            group_by_field_name=group_by_field_name,
-            is_hidden=is_hidden,
-            name=name,
-            scim_filter=scim_filter,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             count_of: Optional[str] = None,
-             display_order: Optional[int] = None,
-             group_by_field_name: Optional[str] = None,
-             is_hidden: Optional[bool] = None,
-             name: Optional[str] = None,
-             scim_filter: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if count_of is None and 'countOf' in kwargs:
-            count_of = kwargs['countOf']
-        if count_of is None:
-            raise TypeError("Missing 'count_of' argument")
-        if display_order is None and 'displayOrder' in kwargs:
-            display_order = kwargs['displayOrder']
-        if display_order is None:
-            raise TypeError("Missing 'display_order' argument")
-        if group_by_field_name is None and 'groupByFieldName' in kwargs:
-            group_by_field_name = kwargs['groupByFieldName']
-        if group_by_field_name is None:
-            raise TypeError("Missing 'group_by_field_name' argument")
-        if is_hidden is None and 'isHidden' in kwargs:
-            is_hidden = kwargs['isHidden']
-        if is_hidden is None:
-            raise TypeError("Missing 'is_hidden' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if scim_filter is None and 'scimFilter' in kwargs:
-            scim_filter = kwargs['scimFilter']
-        if scim_filter is None:
-            raise TypeError("Missing 'scim_filter' argument")
-
-        _setter("count_of", count_of)
-        _setter("display_order", display_order)
-        _setter("group_by_field_name", group_by_field_name)
-        _setter("is_hidden", is_hidden)
-        _setter("name", name)
-        _setter("scim_filter", scim_filter)
+        pulumi.set(__self__, "count_of", count_of)
+        pulumi.set(__self__, "display_order", display_order)
+        pulumi.set(__self__, "group_by_field_name", group_by_field_name)
+        pulumi.set(__self__, "is_hidden", is_hidden)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "scim_filter", scim_filter)
 
     @property
     @pulumi.getter(name="countOf")
@@ -18393,29 +12266,10 @@ class GetReportsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetReportsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18437,20 +12291,7 @@ class GetReportsFilterResult(dict):
 class GetReportsReportCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetReportsReportCollectionItemResult']):
-        GetReportsReportCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetReportsReportCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -18487,91 +12328,18 @@ class GetReportsReportCollectionItemResult(dict):
         :param str time_generated: Specifies the date and time the report was generated.
         :param str type: An optional filter to return only resources that match the specified type.
         """
-        GetReportsReportCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            mime_type=mime_type,
-            report_definition_id=report_definition_id,
-            state=state,
-            system_tags=system_tags,
-            time_generated=time_generated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             mime_type: Optional[str] = None,
-             report_definition_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_generated: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if mime_type is None and 'mimeType' in kwargs:
-            mime_type = kwargs['mimeType']
-        if mime_type is None:
-            raise TypeError("Missing 'mime_type' argument")
-        if report_definition_id is None and 'reportDefinitionId' in kwargs:
-            report_definition_id = kwargs['reportDefinitionId']
-        if report_definition_id is None:
-            raise TypeError("Missing 'report_definition_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_generated is None and 'timeGenerated' in kwargs:
-            time_generated = kwargs['timeGenerated']
-        if time_generated is None:
-            raise TypeError("Missing 'time_generated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("mime_type", mime_type)
-        _setter("report_definition_id", report_definition_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_generated", time_generated)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "mime_type", mime_type)
+        pulumi.set(__self__, "report_definition_id", report_definition_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_generated", time_generated)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -18676,29 +12444,10 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18720,20 +12469,7 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult(dict):
 class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult']):
-        GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -18768,88 +12504,17 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceCo
         :param str sync_status: A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
         :param str time_last_synced: The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            column_name=column_name,
-            difference_type=difference_type,
-            key=key,
-            masking_columnkey=masking_columnkey,
-            object=object,
-            planned_action=planned_action,
-            schema_name=schema_name,
-            sensitive_columnkey=sensitive_columnkey,
-            sensitive_type_id=sensitive_type_id,
-            sync_status=sync_status,
-            time_last_synced=time_last_synced,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             column_name: Optional[str] = None,
-             difference_type: Optional[str] = None,
-             key: Optional[str] = None,
-             masking_columnkey: Optional[str] = None,
-             object: Optional[str] = None,
-             planned_action: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             sensitive_columnkey: Optional[str] = None,
-             sensitive_type_id: Optional[str] = None,
-             sync_status: Optional[str] = None,
-             time_last_synced: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if difference_type is None and 'differenceType' in kwargs:
-            difference_type = kwargs['differenceType']
-        if difference_type is None:
-            raise TypeError("Missing 'difference_type' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if masking_columnkey is None and 'maskingColumnkey' in kwargs:
-            masking_columnkey = kwargs['maskingColumnkey']
-        if masking_columnkey is None:
-            raise TypeError("Missing 'masking_columnkey' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if planned_action is None and 'plannedAction' in kwargs:
-            planned_action = kwargs['plannedAction']
-        if planned_action is None:
-            raise TypeError("Missing 'planned_action' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sensitive_columnkey is None and 'sensitiveColumnkey' in kwargs:
-            sensitive_columnkey = kwargs['sensitiveColumnkey']
-        if sensitive_columnkey is None:
-            raise TypeError("Missing 'sensitive_columnkey' argument")
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-        if sensitive_type_id is None:
-            raise TypeError("Missing 'sensitive_type_id' argument")
-        if sync_status is None and 'syncStatus' in kwargs:
-            sync_status = kwargs['syncStatus']
-        if sync_status is None:
-            raise TypeError("Missing 'sync_status' argument")
-        if time_last_synced is None and 'timeLastSynced' in kwargs:
-            time_last_synced = kwargs['timeLastSynced']
-        if time_last_synced is None:
-            raise TypeError("Missing 'time_last_synced' argument")
-
-        _setter("column_name", column_name)
-        _setter("difference_type", difference_type)
-        _setter("key", key)
-        _setter("masking_columnkey", masking_columnkey)
-        _setter("object", object)
-        _setter("planned_action", planned_action)
-        _setter("schema_name", schema_name)
-        _setter("sensitive_columnkey", sensitive_columnkey)
-        _setter("sensitive_type_id", sensitive_type_id)
-        _setter("sync_status", sync_status)
-        _setter("time_last_synced", time_last_synced)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "difference_type", difference_type)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "masking_columnkey", masking_columnkey)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "planned_action", planned_action)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_columnkey", sensitive_columnkey)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "sync_status", sync_status)
+        pulumi.set(__self__, "time_last_synced", time_last_synced)
 
     @property
     @pulumi.getter(name="columnName")
@@ -18946,29 +12611,10 @@ class GetSdmMaskingPolicyDifferencesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSdmMaskingPolicyDifferencesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18990,20 +12636,7 @@ class GetSdmMaskingPolicyDifferencesFilterResult(dict):
 class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult']):
-        GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -19040,95 +12673,18 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResu
         :param str time_created: The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_creation_started: The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            difference_type=difference_type,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            masking_policy_id=masking_policy_id,
-            sensitive_data_model_id=sensitive_data_model_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_creation_started=time_creation_started,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             difference_type: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             masking_policy_id: Optional[str] = None,
-             sensitive_data_model_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_creation_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if difference_type is None and 'differenceType' in kwargs:
-            difference_type = kwargs['differenceType']
-        if difference_type is None:
-            raise TypeError("Missing 'difference_type' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
-            masking_policy_id = kwargs['maskingPolicyId']
-        if masking_policy_id is None:
-            raise TypeError("Missing 'masking_policy_id' argument")
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_data_model_id is None:
-            raise TypeError("Missing 'sensitive_data_model_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_creation_started is None and 'timeCreationStarted' in kwargs:
-            time_creation_started = kwargs['timeCreationStarted']
-        if time_creation_started is None:
-            raise TypeError("Missing 'time_creation_started' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("difference_type", difference_type)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("masking_policy_id", masking_policy_id)
-        _setter("sensitive_data_model_id", sensitive_data_model_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_creation_started", time_creation_started)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "difference_type", difference_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_creation_started", time_creation_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -19250,76 +12806,15 @@ class GetSecurityAssessmentComparisonTargetResult(dict):
         :param Sequence['GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs'] privileges_and_roles: Comparison between findings belonging to Privileges and Roles category.
         :param Sequence['GetSecurityAssessmentComparisonTargetUserAccountArgs'] user_accounts: Comparison between findings belonging to User Accounts category.
         """
-        GetSecurityAssessmentComparisonTargetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditings=auditings,
-            authorization_controls=authorization_controls,
-            baseline_target_id=baseline_target_id,
-            current_target_id=current_target_id,
-            data_encryptions=data_encryptions,
-            db_configurations=db_configurations,
-            fine_grained_access_controls=fine_grained_access_controls,
-            privileges_and_roles=privileges_and_roles,
-            user_accounts=user_accounts,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditings: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingResult']] = None,
-             authorization_controls: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlResult']] = None,
-             baseline_target_id: Optional[str] = None,
-             current_target_id: Optional[str] = None,
-             data_encryptions: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionResult']] = None,
-             db_configurations: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationResult']] = None,
-             fine_grained_access_controls: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult']] = None,
-             privileges_and_roles: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult']] = None,
-             user_accounts: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditings is None:
-            raise TypeError("Missing 'auditings' argument")
-        if authorization_controls is None and 'authorizationControls' in kwargs:
-            authorization_controls = kwargs['authorizationControls']
-        if authorization_controls is None:
-            raise TypeError("Missing 'authorization_controls' argument")
-        if baseline_target_id is None and 'baselineTargetId' in kwargs:
-            baseline_target_id = kwargs['baselineTargetId']
-        if baseline_target_id is None:
-            raise TypeError("Missing 'baseline_target_id' argument")
-        if current_target_id is None and 'currentTargetId' in kwargs:
-            current_target_id = kwargs['currentTargetId']
-        if current_target_id is None:
-            raise TypeError("Missing 'current_target_id' argument")
-        if data_encryptions is None and 'dataEncryptions' in kwargs:
-            data_encryptions = kwargs['dataEncryptions']
-        if data_encryptions is None:
-            raise TypeError("Missing 'data_encryptions' argument")
-        if db_configurations is None and 'dbConfigurations' in kwargs:
-            db_configurations = kwargs['dbConfigurations']
-        if db_configurations is None:
-            raise TypeError("Missing 'db_configurations' argument")
-        if fine_grained_access_controls is None and 'fineGrainedAccessControls' in kwargs:
-            fine_grained_access_controls = kwargs['fineGrainedAccessControls']
-        if fine_grained_access_controls is None:
-            raise TypeError("Missing 'fine_grained_access_controls' argument")
-        if privileges_and_roles is None and 'privilegesAndRoles' in kwargs:
-            privileges_and_roles = kwargs['privilegesAndRoles']
-        if privileges_and_roles is None:
-            raise TypeError("Missing 'privileges_and_roles' argument")
-        if user_accounts is None and 'userAccounts' in kwargs:
-            user_accounts = kwargs['userAccounts']
-        if user_accounts is None:
-            raise TypeError("Missing 'user_accounts' argument")
-
-        _setter("auditings", auditings)
-        _setter("authorization_controls", authorization_controls)
-        _setter("baseline_target_id", baseline_target_id)
-        _setter("current_target_id", current_target_id)
-        _setter("data_encryptions", data_encryptions)
-        _setter("db_configurations", db_configurations)
-        _setter("fine_grained_access_controls", fine_grained_access_controls)
-        _setter("privileges_and_roles", privileges_and_roles)
-        _setter("user_accounts", user_accounts)
+        pulumi.set(__self__, "auditings", auditings)
+        pulumi.set(__self__, "authorization_controls", authorization_controls)
+        pulumi.set(__self__, "baseline_target_id", baseline_target_id)
+        pulumi.set(__self__, "current_target_id", current_target_id)
+        pulumi.set(__self__, "data_encryptions", data_encryptions)
+        pulumi.set(__self__, "db_configurations", db_configurations)
+        pulumi.set(__self__, "fine_grained_access_controls", fine_grained_access_controls)
+        pulumi.set(__self__, "privileges_and_roles", privileges_and_roles)
+        pulumi.set(__self__, "user_accounts", user_accounts)
 
     @property
     @pulumi.getter
@@ -19411,51 +12906,12 @@ class GetSecurityAssessmentComparisonTargetAuditingResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        GetSecurityAssessmentComparisonTargetAuditingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            added_items=added_items,
-            baselines=baselines,
-            currents=currents,
-            modified_items=modified_items,
-            removed_items=removed_items,
-            severity=severity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             added_items: Optional[Sequence[str]] = None,
-             baselines: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingCurrentResult']] = None,
-             modified_items: Optional[Sequence[str]] = None,
-             removed_items: Optional[Sequence[str]] = None,
-             severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if added_items is None and 'addedItems' in kwargs:
-            added_items = kwargs['addedItems']
-        if added_items is None:
-            raise TypeError("Missing 'added_items' argument")
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if modified_items is None and 'modifiedItems' in kwargs:
-            modified_items = kwargs['modifiedItems']
-        if modified_items is None:
-            raise TypeError("Missing 'modified_items' argument")
-        if removed_items is None and 'removedItems' in kwargs:
-            removed_items = kwargs['removedItems']
-        if removed_items is None:
-            raise TypeError("Missing 'removed_items' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-
-        _setter("added_items", added_items)
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("modified_items", modified_items)
-        _setter("removed_items", removed_items)
-        _setter("severity", severity)
+        pulumi.set(__self__, "added_items", added_items)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "modified_items", modified_items)
+        pulumi.set(__self__, "removed_items", removed_items)
+        pulumi.set(__self__, "severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -19525,50 +12981,13 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetAuditingBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -19638,30 +13057,9 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -19707,50 +13105,13 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetAuditingCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -19820,30 +13181,9 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult(dict):
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -19887,51 +13227,12 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        GetSecurityAssessmentComparisonTargetAuthorizationControlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            added_items=added_items,
-            baselines=baselines,
-            currents=currents,
-            modified_items=modified_items,
-            removed_items=removed_items,
-            severity=severity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             added_items: Optional[Sequence[str]] = None,
-             baselines: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult']] = None,
-             modified_items: Optional[Sequence[str]] = None,
-             removed_items: Optional[Sequence[str]] = None,
-             severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if added_items is None and 'addedItems' in kwargs:
-            added_items = kwargs['addedItems']
-        if added_items is None:
-            raise TypeError("Missing 'added_items' argument")
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if modified_items is None and 'modifiedItems' in kwargs:
-            modified_items = kwargs['modifiedItems']
-        if modified_items is None:
-            raise TypeError("Missing 'modified_items' argument")
-        if removed_items is None and 'removedItems' in kwargs:
-            removed_items = kwargs['removedItems']
-        if removed_items is None:
-            raise TypeError("Missing 'removed_items' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-
-        _setter("added_items", added_items)
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("modified_items", modified_items)
-        _setter("removed_items", removed_items)
-        _setter("severity", severity)
+        pulumi.set(__self__, "added_items", added_items)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "modified_items", modified_items)
+        pulumi.set(__self__, "removed_items", removed_items)
+        pulumi.set(__self__, "severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -20001,50 +13302,13 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult(di
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -20114,30 +13378,9 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -20183,50 +13426,13 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult(dic
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -20296,30 +13502,9 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceR
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -20363,51 +13548,12 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        GetSecurityAssessmentComparisonTargetDataEncryptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            added_items=added_items,
-            baselines=baselines,
-            currents=currents,
-            modified_items=modified_items,
-            removed_items=removed_items,
-            severity=severity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             added_items: Optional[Sequence[str]] = None,
-             baselines: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult']] = None,
-             modified_items: Optional[Sequence[str]] = None,
-             removed_items: Optional[Sequence[str]] = None,
-             severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if added_items is None and 'addedItems' in kwargs:
-            added_items = kwargs['addedItems']
-        if added_items is None:
-            raise TypeError("Missing 'added_items' argument")
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if modified_items is None and 'modifiedItems' in kwargs:
-            modified_items = kwargs['modifiedItems']
-        if modified_items is None:
-            raise TypeError("Missing 'modified_items' argument")
-        if removed_items is None and 'removedItems' in kwargs:
-            removed_items = kwargs['removedItems']
-        if removed_items is None:
-            raise TypeError("Missing 'removed_items' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-
-        _setter("added_items", added_items)
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("modified_items", modified_items)
-        _setter("removed_items", removed_items)
-        _setter("severity", severity)
+        pulumi.set(__self__, "added_items", added_items)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "modified_items", modified_items)
+        pulumi.set(__self__, "removed_items", removed_items)
+        pulumi.set(__self__, "severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -20477,50 +13623,13 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -20590,30 +13699,9 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -20659,50 +13747,13 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -20772,30 +13823,9 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult(
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -20839,51 +13869,12 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        GetSecurityAssessmentComparisonTargetDbConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            added_items=added_items,
-            baselines=baselines,
-            currents=currents,
-            modified_items=modified_items,
-            removed_items=removed_items,
-            severity=severity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             added_items: Optional[Sequence[str]] = None,
-             baselines: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult']] = None,
-             modified_items: Optional[Sequence[str]] = None,
-             removed_items: Optional[Sequence[str]] = None,
-             severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if added_items is None and 'addedItems' in kwargs:
-            added_items = kwargs['addedItems']
-        if added_items is None:
-            raise TypeError("Missing 'added_items' argument")
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if modified_items is None and 'modifiedItems' in kwargs:
-            modified_items = kwargs['modifiedItems']
-        if modified_items is None:
-            raise TypeError("Missing 'modified_items' argument")
-        if removed_items is None and 'removedItems' in kwargs:
-            removed_items = kwargs['removedItems']
-        if removed_items is None:
-            raise TypeError("Missing 'removed_items' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-
-        _setter("added_items", added_items)
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("modified_items", modified_items)
-        _setter("removed_items", removed_items)
-        _setter("severity", severity)
+        pulumi.set(__self__, "added_items", added_items)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "modified_items", modified_items)
+        pulumi.set(__self__, "removed_items", removed_items)
+        pulumi.set(__self__, "severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -20953,50 +13944,13 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -21066,30 +14020,9 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -21135,50 +14068,13 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -21248,30 +14144,9 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -21315,51 +14190,12 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            added_items=added_items,
-            baselines=baselines,
-            currents=currents,
-            modified_items=modified_items,
-            removed_items=removed_items,
-            severity=severity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             added_items: Optional[Sequence[str]] = None,
-             baselines: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult']] = None,
-             modified_items: Optional[Sequence[str]] = None,
-             removed_items: Optional[Sequence[str]] = None,
-             severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if added_items is None and 'addedItems' in kwargs:
-            added_items = kwargs['addedItems']
-        if added_items is None:
-            raise TypeError("Missing 'added_items' argument")
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if modified_items is None and 'modifiedItems' in kwargs:
-            modified_items = kwargs['modifiedItems']
-        if modified_items is None:
-            raise TypeError("Missing 'modified_items' argument")
-        if removed_items is None and 'removedItems' in kwargs:
-            removed_items = kwargs['removedItems']
-        if removed_items is None:
-            raise TypeError("Missing 'removed_items' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-
-        _setter("added_items", added_items)
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("modified_items", modified_items)
-        _setter("removed_items", removed_items)
-        _setter("severity", severity)
+        pulumi.set(__self__, "added_items", added_items)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "modified_items", modified_items)
+        pulumi.set(__self__, "removed_items", removed_items)
+        pulumi.set(__self__, "severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -21429,50 +14265,13 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResul
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -21542,30 +14341,9 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -21611,50 +14389,13 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -21724,30 +14465,9 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefere
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -21791,51 +14511,12 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            added_items=added_items,
-            baselines=baselines,
-            currents=currents,
-            modified_items=modified_items,
-            removed_items=removed_items,
-            severity=severity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             added_items: Optional[Sequence[str]] = None,
-             baselines: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult']] = None,
-             modified_items: Optional[Sequence[str]] = None,
-             removed_items: Optional[Sequence[str]] = None,
-             severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if added_items is None and 'addedItems' in kwargs:
-            added_items = kwargs['addedItems']
-        if added_items is None:
-            raise TypeError("Missing 'added_items' argument")
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if modified_items is None and 'modifiedItems' in kwargs:
-            modified_items = kwargs['modifiedItems']
-        if modified_items is None:
-            raise TypeError("Missing 'modified_items' argument")
-        if removed_items is None and 'removedItems' in kwargs:
-            removed_items = kwargs['removedItems']
-        if removed_items is None:
-            raise TypeError("Missing 'removed_items' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-
-        _setter("added_items", added_items)
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("modified_items", modified_items)
-        _setter("removed_items", removed_items)
-        _setter("severity", severity)
+        pulumi.set(__self__, "added_items", added_items)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "modified_items", modified_items)
+        pulumi.set(__self__, "removed_items", removed_items)
+        pulumi.set(__self__, "severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -21905,50 +14586,13 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult(dict)
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -22018,30 +14662,9 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -22087,50 +14710,13 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -22200,30 +14786,9 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResu
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -22267,51 +14832,12 @@ class GetSecurityAssessmentComparisonTargetUserAccountResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        GetSecurityAssessmentComparisonTargetUserAccountResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            added_items=added_items,
-            baselines=baselines,
-            currents=currents,
-            modified_items=modified_items,
-            removed_items=removed_items,
-            severity=severity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             added_items: Optional[Sequence[str]] = None,
-             baselines: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountCurrentResult']] = None,
-             modified_items: Optional[Sequence[str]] = None,
-             removed_items: Optional[Sequence[str]] = None,
-             severity: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if added_items is None and 'addedItems' in kwargs:
-            added_items = kwargs['addedItems']
-        if added_items is None:
-            raise TypeError("Missing 'added_items' argument")
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if modified_items is None and 'modifiedItems' in kwargs:
-            modified_items = kwargs['modifiedItems']
-        if modified_items is None:
-            raise TypeError("Missing 'modified_items' argument")
-        if removed_items is None and 'removedItems' in kwargs:
-            removed_items = kwargs['removedItems']
-        if removed_items is None:
-            raise TypeError("Missing 'removed_items' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-
-        _setter("added_items", added_items)
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("modified_items", modified_items)
-        _setter("removed_items", removed_items)
-        _setter("severity", severity)
+        pulumi.set(__self__, "added_items", added_items)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "modified_items", modified_items)
+        pulumi.set(__self__, "removed_items", removed_items)
+        pulumi.set(__self__, "severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -22381,50 +14907,13 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetUserAccountBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -22494,30 +14983,9 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -22563,50 +15031,13 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentComparisonTargetUserAccountCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("title", title)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter
@@ -22676,30 +15107,9 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -22732,29 +15142,10 @@ class GetSecurityAssessmentFindingFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecurityAssessmentFindingFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22784,64 +15175,15 @@ class GetSecurityAssessmentFindingFindingResult(dict):
                  summary: str,
                  target_id: str,
                  title: str):
-        GetSecurityAssessmentFindingFindingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assessment_id=assessment_id,
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            target_id=target_id,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assessment_id: Optional[str] = None,
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentFindingFindingReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             target_id: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assessment_id is None and 'assessmentId' in kwargs:
-            assessment_id = kwargs['assessmentId']
-        if assessment_id is None:
-            raise TypeError("Missing 'assessment_id' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("assessment_id", assessment_id)
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("target_id", target_id)
-        _setter("title", title)
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter(name="assessmentId")
@@ -22895,30 +15237,9 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
                  cis: str,
                  gdpr: str,
                  stig: str):
-        GetSecurityAssessmentFindingFindingReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -22942,29 +15263,10 @@ class GetSecurityAssessmentFindingsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecurityAssessmentFindingsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23005,64 +15307,15 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         :param str target_id: The OCID of the target database.
         :param str title: The short title for the finding.
         """
-        GetSecurityAssessmentFindingsFindingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assessment_id=assessment_id,
-            details=details,
-            key=key,
-            references=references,
-            remarks=remarks,
-            severity=severity,
-            summary=summary,
-            target_id=target_id,
-            title=title,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assessment_id: Optional[str] = None,
-             details: Optional[Sequence[str]] = None,
-             key: Optional[str] = None,
-             references: Optional[Sequence['outputs.GetSecurityAssessmentFindingsFindingReferenceResult']] = None,
-             remarks: Optional[str] = None,
-             severity: Optional[str] = None,
-             summary: Optional[str] = None,
-             target_id: Optional[str] = None,
-             title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assessment_id is None and 'assessmentId' in kwargs:
-            assessment_id = kwargs['assessmentId']
-        if assessment_id is None:
-            raise TypeError("Missing 'assessment_id' argument")
-        if details is None:
-            raise TypeError("Missing 'details' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if references is None:
-            raise TypeError("Missing 'references' argument")
-        if remarks is None:
-            raise TypeError("Missing 'remarks' argument")
-        if severity is None:
-            raise TypeError("Missing 'severity' argument")
-        if summary is None:
-            raise TypeError("Missing 'summary' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if title is None:
-            raise TypeError("Missing 'title' argument")
-
-        _setter("assessment_id", assessment_id)
-        _setter("details", details)
-        _setter("key", key)
-        _setter("references", references)
-        _setter("remarks", remarks)
-        _setter("severity", severity)
-        _setter("summary", summary)
-        _setter("target_id", target_id)
-        _setter("title", title)
+        pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "references", references)
+        pulumi.set(__self__, "remarks", remarks)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "title", title)
 
     @property
     @pulumi.getter(name="assessmentId")
@@ -23148,30 +15401,9 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        GetSecurityAssessmentFindingsFindingReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cis=cis,
-            gdpr=gdpr,
-            stig=stig,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cis: Optional[str] = None,
-             gdpr: Optional[str] = None,
-             stig: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cis is None:
-            raise TypeError("Missing 'cis' argument")
-        if gdpr is None:
-            raise TypeError("Missing 'gdpr' argument")
-        if stig is None:
-            raise TypeError("Missing 'stig' argument")
-
-        _setter("cis", cis)
-        _setter("gdpr", gdpr)
-        _setter("stig", stig)
+        pulumi.set(__self__, "cis", cis)
+        pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "stig", stig)
 
     @property
     @pulumi.getter
@@ -23217,58 +15449,13 @@ class GetSecurityAssessmentStatisticResult(dict):
         :param Sequence['GetSecurityAssessmentStatisticPassArgs'] passes: Statistics showing the number of findings with a particular risk level for each category.
         :param int targets_count: The total number of targets in this security assessment.
         """
-        GetSecurityAssessmentStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            advisories=advisories,
-            evaluates=evaluates,
-            high_risks=high_risks,
-            low_risks=low_risks,
-            medium_risks=medium_risks,
-            passes=passes,
-            targets_count=targets_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             advisories: Optional[Sequence['outputs.GetSecurityAssessmentStatisticAdvisoryResult']] = None,
-             evaluates: Optional[Sequence['outputs.GetSecurityAssessmentStatisticEvaluateResult']] = None,
-             high_risks: Optional[Sequence['outputs.GetSecurityAssessmentStatisticHighRiskResult']] = None,
-             low_risks: Optional[Sequence['outputs.GetSecurityAssessmentStatisticLowRiskResult']] = None,
-             medium_risks: Optional[Sequence['outputs.GetSecurityAssessmentStatisticMediumRiskResult']] = None,
-             passes: Optional[Sequence['outputs.GetSecurityAssessmentStatisticPassResult']] = None,
-             targets_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if advisories is None:
-            raise TypeError("Missing 'advisories' argument")
-        if evaluates is None:
-            raise TypeError("Missing 'evaluates' argument")
-        if high_risks is None and 'highRisks' in kwargs:
-            high_risks = kwargs['highRisks']
-        if high_risks is None:
-            raise TypeError("Missing 'high_risks' argument")
-        if low_risks is None and 'lowRisks' in kwargs:
-            low_risks = kwargs['lowRisks']
-        if low_risks is None:
-            raise TypeError("Missing 'low_risks' argument")
-        if medium_risks is None and 'mediumRisks' in kwargs:
-            medium_risks = kwargs['mediumRisks']
-        if medium_risks is None:
-            raise TypeError("Missing 'medium_risks' argument")
-        if passes is None:
-            raise TypeError("Missing 'passes' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-
-        _setter("advisories", advisories)
-        _setter("evaluates", evaluates)
-        _setter("high_risks", high_risks)
-        _setter("low_risks", low_risks)
-        _setter("medium_risks", medium_risks)
-        _setter("passes", passes)
-        _setter("targets_count", targets_count)
+        pulumi.set(__self__, "advisories", advisories)
+        pulumi.set(__self__, "evaluates", evaluates)
+        pulumi.set(__self__, "high_risks", high_risks)
+        pulumi.set(__self__, "low_risks", low_risks)
+        pulumi.set(__self__, "medium_risks", medium_risks)
+        pulumi.set(__self__, "passes", passes)
+        pulumi.set(__self__, "targets_count", targets_count)
 
     @property
     @pulumi.getter
@@ -23348,71 +15535,14 @@ class GetSecurityAssessmentStatisticAdvisoryResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentStatisticAdvisoryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -23500,71 +15630,14 @@ class GetSecurityAssessmentStatisticEvaluateResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentStatisticEvaluateResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -23652,71 +15725,14 @@ class GetSecurityAssessmentStatisticHighRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentStatisticHighRiskResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -23804,71 +15820,14 @@ class GetSecurityAssessmentStatisticLowRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentStatisticLowRiskResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -23956,71 +15915,14 @@ class GetSecurityAssessmentStatisticMediumRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentStatisticMediumRiskResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -24108,71 +16010,14 @@ class GetSecurityAssessmentStatisticPassResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentStatisticPassResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -24245,29 +16090,10 @@ class GetSecurityAssessmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecurityAssessmentsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -24342,183 +16168,32 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         :param str triggered_by: A filter to return only security asessments that were created by either user or system.
         :param str type: A filter to return only items that match the specified security assessment type.
         """
-        GetSecurityAssessmentsSecurityAssessmentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            ignored_assessment_ids=ignored_assessment_ids,
-            ignored_targets=ignored_targets,
-            is_baseline=is_baseline,
-            is_deviated_from_baseline=is_deviated_from_baseline,
-            last_compared_baseline_id=last_compared_baseline_id,
-            lifecycle_details=lifecycle_details,
-            link=link,
-            schedule=schedule,
-            schedule_security_assessment_id=schedule_security_assessment_id,
-            state=state,
-            statistics=statistics,
-            system_tags=system_tags,
-            target_id=target_id,
-            target_ids=target_ids,
-            target_version=target_version,
-            time_created=time_created,
-            time_last_assessed=time_last_assessed,
-            time_updated=time_updated,
-            triggered_by=triggered_by,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             ignored_assessment_ids: Optional[Sequence[str]] = None,
-             ignored_targets: Optional[Sequence[str]] = None,
-             is_baseline: Optional[bool] = None,
-             is_deviated_from_baseline: Optional[bool] = None,
-             last_compared_baseline_id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             link: Optional[str] = None,
-             schedule: Optional[str] = None,
-             schedule_security_assessment_id: Optional[str] = None,
-             state: Optional[str] = None,
-             statistics: Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticResult']] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             target_ids: Optional[Sequence[str]] = None,
-             target_version: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_last_assessed: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             triggered_by: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if ignored_assessment_ids is None and 'ignoredAssessmentIds' in kwargs:
-            ignored_assessment_ids = kwargs['ignoredAssessmentIds']
-        if ignored_assessment_ids is None:
-            raise TypeError("Missing 'ignored_assessment_ids' argument")
-        if ignored_targets is None and 'ignoredTargets' in kwargs:
-            ignored_targets = kwargs['ignoredTargets']
-        if ignored_targets is None:
-            raise TypeError("Missing 'ignored_targets' argument")
-        if is_baseline is None and 'isBaseline' in kwargs:
-            is_baseline = kwargs['isBaseline']
-        if is_baseline is None:
-            raise TypeError("Missing 'is_baseline' argument")
-        if is_deviated_from_baseline is None and 'isDeviatedFromBaseline' in kwargs:
-            is_deviated_from_baseline = kwargs['isDeviatedFromBaseline']
-        if is_deviated_from_baseline is None:
-            raise TypeError("Missing 'is_deviated_from_baseline' argument")
-        if last_compared_baseline_id is None and 'lastComparedBaselineId' in kwargs:
-            last_compared_baseline_id = kwargs['lastComparedBaselineId']
-        if last_compared_baseline_id is None:
-            raise TypeError("Missing 'last_compared_baseline_id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if link is None:
-            raise TypeError("Missing 'link' argument")
-        if schedule is None:
-            raise TypeError("Missing 'schedule' argument")
-        if schedule_security_assessment_id is None and 'scheduleSecurityAssessmentId' in kwargs:
-            schedule_security_assessment_id = kwargs['scheduleSecurityAssessmentId']
-        if schedule_security_assessment_id is None:
-            raise TypeError("Missing 'schedule_security_assessment_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if statistics is None:
-            raise TypeError("Missing 'statistics' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if target_ids is None:
-            raise TypeError("Missing 'target_ids' argument")
-        if target_version is None and 'targetVersion' in kwargs:
-            target_version = kwargs['targetVersion']
-        if target_version is None:
-            raise TypeError("Missing 'target_version' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_last_assessed is None and 'timeLastAssessed' in kwargs:
-            time_last_assessed = kwargs['timeLastAssessed']
-        if time_last_assessed is None:
-            raise TypeError("Missing 'time_last_assessed' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if triggered_by is None and 'triggeredBy' in kwargs:
-            triggered_by = kwargs['triggeredBy']
-        if triggered_by is None:
-            raise TypeError("Missing 'triggered_by' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("ignored_assessment_ids", ignored_assessment_ids)
-        _setter("ignored_targets", ignored_targets)
-        _setter("is_baseline", is_baseline)
-        _setter("is_deviated_from_baseline", is_deviated_from_baseline)
-        _setter("last_compared_baseline_id", last_compared_baseline_id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("link", link)
-        _setter("schedule", schedule)
-        _setter("schedule_security_assessment_id", schedule_security_assessment_id)
-        _setter("state", state)
-        _setter("statistics", statistics)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("target_ids", target_ids)
-        _setter("target_version", target_version)
-        _setter("time_created", time_created)
-        _setter("time_last_assessed", time_last_assessed)
-        _setter("time_updated", time_updated)
-        _setter("triggered_by", triggered_by)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
+        pulumi.set(__self__, "ignored_targets", ignored_targets)
+        pulumi.set(__self__, "is_baseline", is_baseline)
+        pulumi.set(__self__, "is_deviated_from_baseline", is_deviated_from_baseline)
+        pulumi.set(__self__, "last_compared_baseline_id", last_compared_baseline_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "link", link)
+        pulumi.set(__self__, "schedule", schedule)
+        pulumi.set(__self__, "schedule_security_assessment_id", schedule_security_assessment_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "statistics", statistics)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_ids", target_ids)
+        pulumi.set(__self__, "target_version", target_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "triggered_by", triggered_by)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -24748,58 +16423,13 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
         :param Sequence['GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs'] passes: Statistics showing the number of findings with a particular risk level for each category.
         :param int targets_count: The total number of targets in this security assessment.
         """
-        GetSecurityAssessmentsSecurityAssessmentStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            advisories=advisories,
-            evaluates=evaluates,
-            high_risks=high_risks,
-            low_risks=low_risks,
-            medium_risks=medium_risks,
-            passes=passes,
-            targets_count=targets_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             advisories: Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult']] = None,
-             evaluates: Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult']] = None,
-             high_risks: Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult']] = None,
-             low_risks: Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult']] = None,
-             medium_risks: Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult']] = None,
-             passes: Optional[Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticPassResult']] = None,
-             targets_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if advisories is None:
-            raise TypeError("Missing 'advisories' argument")
-        if evaluates is None:
-            raise TypeError("Missing 'evaluates' argument")
-        if high_risks is None and 'highRisks' in kwargs:
-            high_risks = kwargs['highRisks']
-        if high_risks is None:
-            raise TypeError("Missing 'high_risks' argument")
-        if low_risks is None and 'lowRisks' in kwargs:
-            low_risks = kwargs['lowRisks']
-        if low_risks is None:
-            raise TypeError("Missing 'low_risks' argument")
-        if medium_risks is None and 'mediumRisks' in kwargs:
-            medium_risks = kwargs['mediumRisks']
-        if medium_risks is None:
-            raise TypeError("Missing 'medium_risks' argument")
-        if passes is None:
-            raise TypeError("Missing 'passes' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-
-        _setter("advisories", advisories)
-        _setter("evaluates", evaluates)
-        _setter("high_risks", high_risks)
-        _setter("low_risks", low_risks)
-        _setter("medium_risks", medium_risks)
-        _setter("passes", passes)
-        _setter("targets_count", targets_count)
+        pulumi.set(__self__, "advisories", advisories)
+        pulumi.set(__self__, "evaluates", evaluates)
+        pulumi.set(__self__, "high_risks", high_risks)
+        pulumi.set(__self__, "low_risks", low_risks)
+        pulumi.set(__self__, "medium_risks", medium_risks)
+        pulumi.set(__self__, "passes", passes)
+        pulumi.set(__self__, "targets_count", targets_count)
 
     @property
     @pulumi.getter
@@ -24879,71 +16509,14 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -25031,71 +16604,14 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -25183,71 +16699,14 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -25335,71 +16794,14 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -25487,71 +16889,14 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -25639,71 +16984,14 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticPassResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        GetSecurityAssessmentsSecurityAssessmentStatisticPassResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auditing_findings_count=auditing_findings_count,
-            authorization_control_findings_count=authorization_control_findings_count,
-            data_encryption_findings_count=data_encryption_findings_count,
-            db_configuration_findings_count=db_configuration_findings_count,
-            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
-            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
-            targets_count=targets_count,
-            user_accounts_findings_count=user_accounts_findings_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auditing_findings_count: Optional[int] = None,
-             authorization_control_findings_count: Optional[int] = None,
-             data_encryption_findings_count: Optional[int] = None,
-             db_configuration_findings_count: Optional[int] = None,
-             fine_grained_access_control_findings_count: Optional[int] = None,
-             privileges_and_roles_findings_count: Optional[int] = None,
-             targets_count: Optional[int] = None,
-             user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auditing_findings_count is None and 'auditingFindingsCount' in kwargs:
-            auditing_findings_count = kwargs['auditingFindingsCount']
-        if auditing_findings_count is None:
-            raise TypeError("Missing 'auditing_findings_count' argument")
-        if authorization_control_findings_count is None and 'authorizationControlFindingsCount' in kwargs:
-            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
-        if authorization_control_findings_count is None:
-            raise TypeError("Missing 'authorization_control_findings_count' argument")
-        if data_encryption_findings_count is None and 'dataEncryptionFindingsCount' in kwargs:
-            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
-        if data_encryption_findings_count is None:
-            raise TypeError("Missing 'data_encryption_findings_count' argument")
-        if db_configuration_findings_count is None and 'dbConfigurationFindingsCount' in kwargs:
-            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
-        if db_configuration_findings_count is None:
-            raise TypeError("Missing 'db_configuration_findings_count' argument")
-        if fine_grained_access_control_findings_count is None and 'fineGrainedAccessControlFindingsCount' in kwargs:
-            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
-        if fine_grained_access_control_findings_count is None:
-            raise TypeError("Missing 'fine_grained_access_control_findings_count' argument")
-        if privileges_and_roles_findings_count is None and 'privilegesAndRolesFindingsCount' in kwargs:
-            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
-        if privileges_and_roles_findings_count is None:
-            raise TypeError("Missing 'privileges_and_roles_findings_count' argument")
-        if targets_count is None and 'targetsCount' in kwargs:
-            targets_count = kwargs['targetsCount']
-        if targets_count is None:
-            raise TypeError("Missing 'targets_count' argument")
-        if user_accounts_findings_count is None and 'userAccountsFindingsCount' in kwargs:
-            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
-        if user_accounts_findings_count is None:
-            raise TypeError("Missing 'user_accounts_findings_count' argument")
-
-        _setter("auditing_findings_count", auditing_findings_count)
-        _setter("authorization_control_findings_count", authorization_control_findings_count)
-        _setter("data_encryption_findings_count", data_encryption_findings_count)
-        _setter("db_configuration_findings_count", db_configuration_findings_count)
-        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        _setter("targets_count", targets_count)
-        _setter("user_accounts_findings_count", user_accounts_findings_count)
+        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        pulumi.set(__self__, "targets_count", targets_count)
+        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -25776,29 +17064,10 @@ class GetSensitiveDataModelSensitiveObjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSensitiveDataModelSensitiveObjectsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -25823,20 +17092,7 @@ class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult(dict)
         """
         :param Sequence['GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs'] items: An array of sensitive object summary objects.
         """
-        GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -25858,34 +17114,9 @@ class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult(d
         :param str object_type: A filter to return only items related to a specific object type.
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object=object,
-            object_type=object_type,
-            schema_name=schema_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object: Optional[str] = None,
-             object_type: Optional[str] = None,
-             schema_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-
-        _setter("object", object)
-        _setter("object_type", object_type)
-        _setter("schema_name", schema_name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
 
     @property
     @pulumi.getter
@@ -25918,29 +17149,10 @@ class GetSensitiveDataModelSensitiveSchemasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSensitiveDataModelSensitiveSchemasFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -25965,20 +17177,7 @@ class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult(dict)
         """
         :param Sequence['GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs'] items: An array of sensitive schema summary objects.
         """
-        GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -25996,22 +17195,7 @@ class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult(d
         """
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            schema_name=schema_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             schema_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-
-        _setter("schema_name", schema_name)
+        pulumi.set(__self__, "schema_name", schema_name)
 
     @property
     @pulumi.getter(name="schemaName")
@@ -26028,29 +17212,10 @@ class GetSensitiveDataModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSensitiveDataModelsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -26074,29 +17239,10 @@ class GetSensitiveDataModelsSensitiveColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSensitiveDataModelsSensitiveColumnsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -26118,20 +17264,7 @@ class GetSensitiveDataModelsSensitiveColumnsFilterResult(dict):
 class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult']):
-        GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -26188,159 +17321,28 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
         :param str time_created: The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
         :param str time_updated: The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         """
-        GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_defined_child_column_keys=app_defined_child_column_keys,
-            app_name=app_name,
-            column_groups=column_groups,
-            column_name=column_name,
-            data_type=data_type,
-            db_defined_child_column_keys=db_defined_child_column_keys,
-            estimated_data_value_count=estimated_data_value_count,
-            key=key,
-            lifecycle_details=lifecycle_details,
-            object=object,
-            object_type=object_type,
-            parent_column_keys=parent_column_keys,
-            relation_type=relation_type,
-            sample_data_values=sample_data_values,
-            schema_name=schema_name,
-            sensitive_data_model_id=sensitive_data_model_id,
-            sensitive_type_id=sensitive_type_id,
-            source=source,
-            state=state,
-            status=status,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_defined_child_column_keys: Optional[Sequence[str]] = None,
-             app_name: Optional[str] = None,
-             column_groups: Optional[Sequence[str]] = None,
-             column_name: Optional[str] = None,
-             data_type: Optional[str] = None,
-             db_defined_child_column_keys: Optional[Sequence[str]] = None,
-             estimated_data_value_count: Optional[str] = None,
-             key: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             object: Optional[str] = None,
-             object_type: Optional[str] = None,
-             parent_column_keys: Optional[Sequence[str]] = None,
-             relation_type: Optional[str] = None,
-             sample_data_values: Optional[Sequence[str]] = None,
-             schema_name: Optional[str] = None,
-             sensitive_data_model_id: Optional[str] = None,
-             sensitive_type_id: Optional[str] = None,
-             source: Optional[str] = None,
-             state: Optional[str] = None,
-             status: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
-            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if app_defined_child_column_keys is None:
-            raise TypeError("Missing 'app_defined_child_column_keys' argument")
-        if app_name is None and 'appName' in kwargs:
-            app_name = kwargs['appName']
-        if app_name is None:
-            raise TypeError("Missing 'app_name' argument")
-        if column_groups is None and 'columnGroups' in kwargs:
-            column_groups = kwargs['columnGroups']
-        if column_groups is None:
-            raise TypeError("Missing 'column_groups' argument")
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
-            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-        if db_defined_child_column_keys is None:
-            raise TypeError("Missing 'db_defined_child_column_keys' argument")
-        if estimated_data_value_count is None and 'estimatedDataValueCount' in kwargs:
-            estimated_data_value_count = kwargs['estimatedDataValueCount']
-        if estimated_data_value_count is None:
-            raise TypeError("Missing 'estimated_data_value_count' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if parent_column_keys is None and 'parentColumnKeys' in kwargs:
-            parent_column_keys = kwargs['parentColumnKeys']
-        if parent_column_keys is None:
-            raise TypeError("Missing 'parent_column_keys' argument")
-        if relation_type is None and 'relationType' in kwargs:
-            relation_type = kwargs['relationType']
-        if relation_type is None:
-            raise TypeError("Missing 'relation_type' argument")
-        if sample_data_values is None and 'sampleDataValues' in kwargs:
-            sample_data_values = kwargs['sampleDataValues']
-        if sample_data_values is None:
-            raise TypeError("Missing 'sample_data_values' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_data_model_id is None:
-            raise TypeError("Missing 'sensitive_data_model_id' argument")
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-        if sensitive_type_id is None:
-            raise TypeError("Missing 'sensitive_type_id' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
-        _setter("app_name", app_name)
-        _setter("column_groups", column_groups)
-        _setter("column_name", column_name)
-        _setter("data_type", data_type)
-        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
-        _setter("estimated_data_value_count", estimated_data_value_count)
-        _setter("key", key)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("object", object)
-        _setter("object_type", object_type)
-        _setter("parent_column_keys", parent_column_keys)
-        _setter("relation_type", relation_type)
-        _setter("sample_data_values", sample_data_values)
-        _setter("schema_name", schema_name)
-        _setter("sensitive_data_model_id", sensitive_data_model_id)
-        _setter("sensitive_type_id", sensitive_type_id)
-        _setter("source", source)
-        _setter("state", state)
-        _setter("status", status)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
+        pulumi.set(__self__, "app_name", app_name)
+        pulumi.set(__self__, "column_groups", column_groups)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
+        pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "parent_column_keys", parent_column_keys)
+        pulumi.set(__self__, "relation_type", relation_type)
+        pulumi.set(__self__, "sample_data_values", sample_data_values)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -26523,20 +17525,7 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
 class GetSensitiveDataModelsSensitiveDataModelCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionItemResult']):
-        GetSensitiveDataModelsSensitiveDataModelCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -26585,135 +17574,24 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         :param str time_created: The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetSensitiveDataModelsSensitiveDataModelCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_suite_name=app_suite_name,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_app_defined_relation_discovery_enabled=is_app_defined_relation_discovery_enabled,
-            is_include_all_schemas=is_include_all_schemas,
-            is_include_all_sensitive_types=is_include_all_sensitive_types,
-            is_sample_data_collection_enabled=is_sample_data_collection_enabled,
-            schemas_for_discoveries=schemas_for_discoveries,
-            sensitive_type_ids_for_discoveries=sensitive_type_ids_for_discoveries,
-            state=state,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_suite_name: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_app_defined_relation_discovery_enabled: Optional[bool] = None,
-             is_include_all_schemas: Optional[bool] = None,
-             is_include_all_sensitive_types: Optional[bool] = None,
-             is_sample_data_collection_enabled: Optional[bool] = None,
-             schemas_for_discoveries: Optional[Sequence[str]] = None,
-             sensitive_type_ids_for_discoveries: Optional[Sequence[str]] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_suite_name is None and 'appSuiteName' in kwargs:
-            app_suite_name = kwargs['appSuiteName']
-        if app_suite_name is None:
-            raise TypeError("Missing 'app_suite_name' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_app_defined_relation_discovery_enabled is None and 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
-            is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
-        if is_app_defined_relation_discovery_enabled is None:
-            raise TypeError("Missing 'is_app_defined_relation_discovery_enabled' argument")
-        if is_include_all_schemas is None and 'isIncludeAllSchemas' in kwargs:
-            is_include_all_schemas = kwargs['isIncludeAllSchemas']
-        if is_include_all_schemas is None:
-            raise TypeError("Missing 'is_include_all_schemas' argument")
-        if is_include_all_sensitive_types is None and 'isIncludeAllSensitiveTypes' in kwargs:
-            is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
-        if is_include_all_sensitive_types is None:
-            raise TypeError("Missing 'is_include_all_sensitive_types' argument")
-        if is_sample_data_collection_enabled is None and 'isSampleDataCollectionEnabled' in kwargs:
-            is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
-        if is_sample_data_collection_enabled is None:
-            raise TypeError("Missing 'is_sample_data_collection_enabled' argument")
-        if schemas_for_discoveries is None and 'schemasForDiscoveries' in kwargs:
-            schemas_for_discoveries = kwargs['schemasForDiscoveries']
-        if schemas_for_discoveries is None:
-            raise TypeError("Missing 'schemas_for_discoveries' argument")
-        if sensitive_type_ids_for_discoveries is None and 'sensitiveTypeIdsForDiscoveries' in kwargs:
-            sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
-        if sensitive_type_ids_for_discoveries is None:
-            raise TypeError("Missing 'sensitive_type_ids_for_discoveries' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("app_suite_name", app_suite_name)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
-        _setter("is_include_all_schemas", is_include_all_schemas)
-        _setter("is_include_all_sensitive_types", is_include_all_sensitive_types)
-        _setter("is_sample_data_collection_enabled", is_sample_data_collection_enabled)
-        _setter("schemas_for_discoveries", schemas_for_discoveries)
-        _setter("sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "app_suite_name", app_suite_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
+        pulumi.set(__self__, "is_include_all_schemas", is_include_all_schemas)
+        pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
+        pulumi.set(__self__, "is_sample_data_collection_enabled", is_sample_data_collection_enabled)
+        pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
+        pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="appSuiteName")
@@ -26866,29 +17744,10 @@ class GetSensitiveTypesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSensitiveTypesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -26910,20 +17769,7 @@ class GetSensitiveTypesFilterResult(dict):
 class GetSensitiveTypesSensitiveTypeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSensitiveTypesSensitiveTypeCollectionItemResult']):
-        GetSensitiveTypesSensitiveTypeCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetSensitiveTypesSensitiveTypeCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -26974,140 +17820,25 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
         :param str time_created: The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetSensitiveTypesSensitiveTypeCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            comment_pattern=comment_pattern,
-            compartment_id=compartment_id,
-            data_pattern=data_pattern,
-            default_masking_format_id=default_masking_format_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            entity_type=entity_type,
-            freeform_tags=freeform_tags,
-            id=id,
-            name_pattern=name_pattern,
-            parent_category_id=parent_category_id,
-            search_type=search_type,
-            short_name=short_name,
-            source=source,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             comment_pattern: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             data_pattern: Optional[str] = None,
-             default_masking_format_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             name_pattern: Optional[str] = None,
-             parent_category_id: Optional[str] = None,
-             search_type: Optional[str] = None,
-             short_name: Optional[str] = None,
-             source: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if comment_pattern is None and 'commentPattern' in kwargs:
-            comment_pattern = kwargs['commentPattern']
-        if comment_pattern is None:
-            raise TypeError("Missing 'comment_pattern' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if data_pattern is None and 'dataPattern' in kwargs:
-            data_pattern = kwargs['dataPattern']
-        if data_pattern is None:
-            raise TypeError("Missing 'data_pattern' argument")
-        if default_masking_format_id is None and 'defaultMaskingFormatId' in kwargs:
-            default_masking_format_id = kwargs['defaultMaskingFormatId']
-        if default_masking_format_id is None:
-            raise TypeError("Missing 'default_masking_format_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if name_pattern is None and 'namePattern' in kwargs:
-            name_pattern = kwargs['namePattern']
-        if name_pattern is None:
-            raise TypeError("Missing 'name_pattern' argument")
-        if parent_category_id is None and 'parentCategoryId' in kwargs:
-            parent_category_id = kwargs['parentCategoryId']
-        if parent_category_id is None:
-            raise TypeError("Missing 'parent_category_id' argument")
-        if search_type is None and 'searchType' in kwargs:
-            search_type = kwargs['searchType']
-        if search_type is None:
-            raise TypeError("Missing 'search_type' argument")
-        if short_name is None and 'shortName' in kwargs:
-            short_name = kwargs['shortName']
-        if short_name is None:
-            raise TypeError("Missing 'short_name' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("comment_pattern", comment_pattern)
-        _setter("compartment_id", compartment_id)
-        _setter("data_pattern", data_pattern)
-        _setter("default_masking_format_id", default_masking_format_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("entity_type", entity_type)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("name_pattern", name_pattern)
-        _setter("parent_category_id", parent_category_id)
-        _setter("search_type", search_type)
-        _setter("short_name", short_name)
-        _setter("source", source)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "comment_pattern", comment_pattern)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_pattern", data_pattern)
+        pulumi.set(__self__, "default_masking_format_id", default_masking_format_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name_pattern", name_pattern)
+        pulumi.set(__self__, "parent_category_id", parent_category_id)
+        pulumi.set(__self__, "search_type", search_type)
+        pulumi.set(__self__, "short_name", short_name)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="commentPattern")
@@ -27268,29 +17999,10 @@ class GetTargetAlertPolicyAssociationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTargetAlertPolicyAssociationsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -27312,20 +18024,7 @@ class GetTargetAlertPolicyAssociationsFilterResult(dict):
 class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult']):
-        GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -27364,100 +18063,19 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
         :param str time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_enabled=is_enabled,
-            policy_id=policy_id,
-            state=state,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_enabled: Optional[bool] = None,
-             policy_id: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if policy_id is None and 'policyId' in kwargs:
-            policy_id = kwargs['policyId']
-        if policy_id is None:
-            raise TypeError("Missing 'policy_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_enabled", is_enabled)
-        _setter("policy_id", policy_id)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "policy_id", policy_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -27577,36 +18195,9 @@ class GetTargetDatabaseConnectionOptionResult(dict):
         :param str datasafe_private_endpoint_id: The OCID of the Data Safe private endpoint.
         :param str on_prem_connector_id: The OCID of the on-premises connector.
         """
-        GetTargetDatabaseConnectionOptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connection_type=connection_type,
-            datasafe_private_endpoint_id=datasafe_private_endpoint_id,
-            on_prem_connector_id=on_prem_connector_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connection_type: Optional[str] = None,
-             datasafe_private_endpoint_id: Optional[str] = None,
-             on_prem_connector_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_type is None and 'connectionType' in kwargs:
-            connection_type = kwargs['connectionType']
-        if connection_type is None:
-            raise TypeError("Missing 'connection_type' argument")
-        if datasafe_private_endpoint_id is None and 'datasafePrivateEndpointId' in kwargs:
-            datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
-        if datasafe_private_endpoint_id is None:
-            raise TypeError("Missing 'datasafe_private_endpoint_id' argument")
-        if on_prem_connector_id is None and 'onPremConnectorId' in kwargs:
-            on_prem_connector_id = kwargs['onPremConnectorId']
-        if on_prem_connector_id is None:
-            raise TypeError("Missing 'on_prem_connector_id' argument")
-
-        _setter("connection_type", connection_type)
-        _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
-        _setter("on_prem_connector_id", on_prem_connector_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "datasafe_private_endpoint_id", datasafe_private_endpoint_id)
+        pulumi.set(__self__, "on_prem_connector_id", on_prem_connector_id)
 
     @property
     @pulumi.getter(name="connectionType")
@@ -27644,27 +18235,8 @@ class GetTargetDatabaseCredentialResult(dict):
         :param str password: The password of the database user.
         :param str user_name: The database user name.
         """
-        GetTargetDatabaseCredentialResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            password=password,
-            user_name=user_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             password: Optional[str] = None,
-             user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if password is None:
-            raise TypeError("Missing 'password' argument")
-        if user_name is None and 'userName' in kwargs:
-            user_name = kwargs['userName']
-        if user_name is None:
-            raise TypeError("Missing 'user_name' argument")
-
-        _setter("password", password)
-        _setter("user_name", user_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter
@@ -27706,78 +18278,15 @@ class GetTargetDatabaseDatabaseDetailResult(dict):
         :param str service_name: The service name of the database registered as target database.
         :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
         """
-        GetTargetDatabaseDatabaseDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autonomous_database_id=autonomous_database_id,
-            database_type=database_type,
-            db_system_id=db_system_id,
-            infrastructure_type=infrastructure_type,
-            instance_id=instance_id,
-            ip_addresses=ip_addresses,
-            listener_port=listener_port,
-            service_name=service_name,
-            vm_cluster_id=vm_cluster_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autonomous_database_id: Optional[str] = None,
-             database_type: Optional[str] = None,
-             db_system_id: Optional[str] = None,
-             infrastructure_type: Optional[str] = None,
-             instance_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             listener_port: Optional[int] = None,
-             service_name: Optional[str] = None,
-             vm_cluster_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
-            autonomous_database_id = kwargs['autonomousDatabaseId']
-        if autonomous_database_id is None:
-            raise TypeError("Missing 'autonomous_database_id' argument")
-        if database_type is None and 'databaseType' in kwargs:
-            database_type = kwargs['databaseType']
-        if database_type is None:
-            raise TypeError("Missing 'database_type' argument")
-        if db_system_id is None and 'dbSystemId' in kwargs:
-            db_system_id = kwargs['dbSystemId']
-        if db_system_id is None:
-            raise TypeError("Missing 'db_system_id' argument")
-        if infrastructure_type is None and 'infrastructureType' in kwargs:
-            infrastructure_type = kwargs['infrastructureType']
-        if infrastructure_type is None:
-            raise TypeError("Missing 'infrastructure_type' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if instance_id is None:
-            raise TypeError("Missing 'instance_id' argument")
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if ip_addresses is None:
-            raise TypeError("Missing 'ip_addresses' argument")
-        if listener_port is None and 'listenerPort' in kwargs:
-            listener_port = kwargs['listenerPort']
-        if listener_port is None:
-            raise TypeError("Missing 'listener_port' argument")
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-        if service_name is None:
-            raise TypeError("Missing 'service_name' argument")
-        if vm_cluster_id is None and 'vmClusterId' in kwargs:
-            vm_cluster_id = kwargs['vmClusterId']
-        if vm_cluster_id is None:
-            raise TypeError("Missing 'vm_cluster_id' argument")
-
-        _setter("autonomous_database_id", autonomous_database_id)
-        _setter("database_type", database_type)
-        _setter("db_system_id", db_system_id)
-        _setter("infrastructure_type", infrastructure_type)
-        _setter("instance_id", instance_id)
-        _setter("ip_addresses", ip_addresses)
-        _setter("listener_port", listener_port)
-        _setter("service_name", service_name)
-        _setter("vm_cluster_id", vm_cluster_id)
+        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -27858,29 +18367,10 @@ class GetTargetDatabaseRoleFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTargetDatabaseRoleFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -27908,64 +18398,13 @@ class GetTargetDatabaseRoleRoleResult(dict):
                  is_oracle_maintained: bool,
                  is_password_required: bool,
                  role_name: str):
-        GetTargetDatabaseRoleRoleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            authentication_type=authentication_type,
-            is_common=is_common,
-            is_implicit=is_implicit,
-            is_inherited=is_inherited,
-            is_oracle_maintained=is_oracle_maintained,
-            is_password_required=is_password_required,
-            role_name=role_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             authentication_type: Optional[str] = None,
-             is_common: Optional[bool] = None,
-             is_implicit: Optional[bool] = None,
-             is_inherited: Optional[bool] = None,
-             is_oracle_maintained: Optional[bool] = None,
-             is_password_required: Optional[bool] = None,
-             role_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if authentication_type is None and 'authenticationType' in kwargs:
-            authentication_type = kwargs['authenticationType']
-        if authentication_type is None:
-            raise TypeError("Missing 'authentication_type' argument")
-        if is_common is None and 'isCommon' in kwargs:
-            is_common = kwargs['isCommon']
-        if is_common is None:
-            raise TypeError("Missing 'is_common' argument")
-        if is_implicit is None and 'isImplicit' in kwargs:
-            is_implicit = kwargs['isImplicit']
-        if is_implicit is None:
-            raise TypeError("Missing 'is_implicit' argument")
-        if is_inherited is None and 'isInherited' in kwargs:
-            is_inherited = kwargs['isInherited']
-        if is_inherited is None:
-            raise TypeError("Missing 'is_inherited' argument")
-        if is_oracle_maintained is None and 'isOracleMaintained' in kwargs:
-            is_oracle_maintained = kwargs['isOracleMaintained']
-        if is_oracle_maintained is None:
-            raise TypeError("Missing 'is_oracle_maintained' argument")
-        if is_password_required is None and 'isPasswordRequired' in kwargs:
-            is_password_required = kwargs['isPasswordRequired']
-        if is_password_required is None:
-            raise TypeError("Missing 'is_password_required' argument")
-        if role_name is None and 'roleName' in kwargs:
-            role_name = kwargs['roleName']
-        if role_name is None:
-            raise TypeError("Missing 'role_name' argument")
-
-        _setter("authentication_type", authentication_type)
-        _setter("is_common", is_common)
-        _setter("is_implicit", is_implicit)
-        _setter("is_inherited", is_inherited)
-        _setter("is_oracle_maintained", is_oracle_maintained)
-        _setter("is_password_required", is_password_required)
-        _setter("role_name", role_name)
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "is_common", is_common)
+        pulumi.set(__self__, "is_implicit", is_implicit)
+        pulumi.set(__self__, "is_inherited", is_inherited)
+        pulumi.set(__self__, "is_oracle_maintained", is_oracle_maintained)
+        pulumi.set(__self__, "is_password_required", is_password_required)
+        pulumi.set(__self__, "role_name", role_name)
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -28009,29 +18448,10 @@ class GetTargetDatabaseRolesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTargetDatabaseRolesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -28068,64 +18488,13 @@ class GetTargetDatabaseRolesRoleResult(dict):
         :param bool is_password_required: Is password required.
         :param str role_name: A filter to return only a specific role based on role name.
         """
-        GetTargetDatabaseRolesRoleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            authentication_type=authentication_type,
-            is_common=is_common,
-            is_implicit=is_implicit,
-            is_inherited=is_inherited,
-            is_oracle_maintained=is_oracle_maintained,
-            is_password_required=is_password_required,
-            role_name=role_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             authentication_type: Optional[str] = None,
-             is_common: Optional[bool] = None,
-             is_implicit: Optional[bool] = None,
-             is_inherited: Optional[bool] = None,
-             is_oracle_maintained: Optional[bool] = None,
-             is_password_required: Optional[bool] = None,
-             role_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if authentication_type is None and 'authenticationType' in kwargs:
-            authentication_type = kwargs['authenticationType']
-        if authentication_type is None:
-            raise TypeError("Missing 'authentication_type' argument")
-        if is_common is None and 'isCommon' in kwargs:
-            is_common = kwargs['isCommon']
-        if is_common is None:
-            raise TypeError("Missing 'is_common' argument")
-        if is_implicit is None and 'isImplicit' in kwargs:
-            is_implicit = kwargs['isImplicit']
-        if is_implicit is None:
-            raise TypeError("Missing 'is_implicit' argument")
-        if is_inherited is None and 'isInherited' in kwargs:
-            is_inherited = kwargs['isInherited']
-        if is_inherited is None:
-            raise TypeError("Missing 'is_inherited' argument")
-        if is_oracle_maintained is None and 'isOracleMaintained' in kwargs:
-            is_oracle_maintained = kwargs['isOracleMaintained']
-        if is_oracle_maintained is None:
-            raise TypeError("Missing 'is_oracle_maintained' argument")
-        if is_password_required is None and 'isPasswordRequired' in kwargs:
-            is_password_required = kwargs['isPasswordRequired']
-        if is_password_required is None:
-            raise TypeError("Missing 'is_password_required' argument")
-        if role_name is None and 'roleName' in kwargs:
-            role_name = kwargs['roleName']
-        if role_name is None:
-            raise TypeError("Missing 'role_name' argument")
-
-        _setter("authentication_type", authentication_type)
-        _setter("is_common", is_common)
-        _setter("is_implicit", is_implicit)
-        _setter("is_inherited", is_inherited)
-        _setter("is_oracle_maintained", is_oracle_maintained)
-        _setter("is_password_required", is_password_required)
-        _setter("role_name", role_name)
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "is_common", is_common)
+        pulumi.set(__self__, "is_implicit", is_implicit)
+        pulumi.set(__self__, "is_inherited", is_inherited)
+        pulumi.set(__self__, "is_oracle_maintained", is_oracle_maintained)
+        pulumi.set(__self__, "is_password_required", is_password_required)
+        pulumi.set(__self__, "role_name", role_name)
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -28199,48 +18568,11 @@ class GetTargetDatabaseTlsConfigResult(dict):
         :param str store_password: The password to read the trust store and key store files, if they are password protected.
         :param str trust_store_content: Base64 encoded string of trust store file content.
         """
-        GetTargetDatabaseTlsConfigResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_store_type=certificate_store_type,
-            key_store_content=key_store_content,
-            status=status,
-            store_password=store_password,
-            trust_store_content=trust_store_content,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_store_type: Optional[str] = None,
-             key_store_content: Optional[str] = None,
-             status: Optional[str] = None,
-             store_password: Optional[str] = None,
-             trust_store_content: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_store_type is None and 'certificateStoreType' in kwargs:
-            certificate_store_type = kwargs['certificateStoreType']
-        if certificate_store_type is None:
-            raise TypeError("Missing 'certificate_store_type' argument")
-        if key_store_content is None and 'keyStoreContent' in kwargs:
-            key_store_content = kwargs['keyStoreContent']
-        if key_store_content is None:
-            raise TypeError("Missing 'key_store_content' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if store_password is None and 'storePassword' in kwargs:
-            store_password = kwargs['storePassword']
-        if store_password is None:
-            raise TypeError("Missing 'store_password' argument")
-        if trust_store_content is None and 'trustStoreContent' in kwargs:
-            trust_store_content = kwargs['trustStoreContent']
-        if trust_store_content is None:
-            raise TypeError("Missing 'trust_store_content' argument")
-
-        _setter("certificate_store_type", certificate_store_type)
-        _setter("key_store_content", key_store_content)
-        _setter("status", status)
-        _setter("store_password", store_password)
-        _setter("trust_store_content", trust_store_content)
+        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        pulumi.set(__self__, "key_store_content", key_store_content)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "store_password", store_password)
+        pulumi.set(__self__, "trust_store_content", trust_store_content)
 
     @property
     @pulumi.getter(name="certificateStoreType")
@@ -28304,65 +18636,14 @@ class GetTargetDatabasesColumnsColumnResult(dict):
         :param str schema_name: A filter to return only items related to specific schema name.
         :param str table_name: A filter to return only items related to specific table name.
         """
-        GetTargetDatabasesColumnsColumnResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            character_length=character_length,
-            column_name=column_name,
-            data_type=data_type,
-            length=length,
-            precision=precision,
-            scale=scale,
-            schema_name=schema_name,
-            table_name=table_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             character_length: Optional[int] = None,
-             column_name: Optional[str] = None,
-             data_type: Optional[str] = None,
-             length: Optional[str] = None,
-             precision: Optional[int] = None,
-             scale: Optional[int] = None,
-             schema_name: Optional[str] = None,
-             table_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if character_length is None and 'characterLength' in kwargs:
-            character_length = kwargs['characterLength']
-        if character_length is None:
-            raise TypeError("Missing 'character_length' argument")
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if column_name is None:
-            raise TypeError("Missing 'column_name' argument")
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if data_type is None:
-            raise TypeError("Missing 'data_type' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-        if precision is None:
-            raise TypeError("Missing 'precision' argument")
-        if scale is None:
-            raise TypeError("Missing 'scale' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if table_name is None:
-            raise TypeError("Missing 'table_name' argument")
-
-        _setter("character_length", character_length)
-        _setter("column_name", column_name)
-        _setter("data_type", data_type)
-        _setter("length", length)
-        _setter("precision", precision)
-        _setter("scale", scale)
-        _setter("schema_name", schema_name)
-        _setter("table_name", table_name)
+        pulumi.set(__self__, "character_length", character_length)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "length", length)
+        pulumi.set(__self__, "precision", precision)
+        pulumi.set(__self__, "scale", scale)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "table_name", table_name)
 
     @property
     @pulumi.getter(name="characterLength")
@@ -28435,29 +18716,10 @@ class GetTargetDatabasesColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTargetDatabasesColumnsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -28481,29 +18743,10 @@ class GetTargetDatabasesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTargetDatabasesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -28527,29 +18770,10 @@ class GetTargetDatabasesSchemasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTargetDatabasesSchemasFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -28576,29 +18800,8 @@ class GetTargetDatabasesSchemasSchemaResult(dict):
         :param bool is_oracle_maintained: A filter to return only items related to specific type of schema.
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        GetTargetDatabasesSchemasSchemaResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_oracle_maintained=is_oracle_maintained,
-            schema_name=schema_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_oracle_maintained: Optional[bool] = None,
-             schema_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_oracle_maintained is None and 'isOracleMaintained' in kwargs:
-            is_oracle_maintained = kwargs['isOracleMaintained']
-        if is_oracle_maintained is None:
-            raise TypeError("Missing 'is_oracle_maintained' argument")
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-
-        _setter("is_oracle_maintained", is_oracle_maintained)
-        _setter("schema_name", schema_name)
+        pulumi.set(__self__, "is_oracle_maintained", is_oracle_maintained)
+        pulumi.set(__self__, "schema_name", schema_name)
 
     @property
     @pulumi.getter(name="isOracleMaintained")
@@ -28623,29 +18826,10 @@ class GetTargetDatabasesTablesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTargetDatabasesTablesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -28672,29 +18856,8 @@ class GetTargetDatabasesTablesTableResult(dict):
         :param str schema_name: A filter to return only items related to specific schema name.
         :param str table_name: A filter to return only items related to specific table name.
         """
-        GetTargetDatabasesTablesTableResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            schema_name=schema_name,
-            table_name=table_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             schema_name: Optional[str] = None,
-             table_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if schema_name is None:
-            raise TypeError("Missing 'schema_name' argument")
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if table_name is None:
-            raise TypeError("Missing 'table_name' argument")
-
-        _setter("schema_name", schema_name)
-        _setter("table_name", table_name)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "table_name", table_name)
 
     @property
     @pulumi.getter(name="schemaName")
@@ -28750,119 +18913,22 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         :param str time_updated: The date and time of the target database update in Data Safe.
         :param Sequence['GetTargetDatabasesTargetDatabaseTlsConfigArgs'] tls_configs: The details required to establish a TLS enabled connection.
         """
-        GetTargetDatabasesTargetDatabaseResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            associated_resource_ids=associated_resource_ids,
-            compartment_id=compartment_id,
-            connection_options=connection_options,
-            credentials=credentials,
-            database_details=database_details,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            tls_configs=tls_configs,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             associated_resource_ids: Optional[Sequence[str]] = None,
-             compartment_id: Optional[str] = None,
-             connection_options: Optional[Sequence['outputs.GetTargetDatabasesTargetDatabaseConnectionOptionResult']] = None,
-             credentials: Optional[Sequence['outputs.GetTargetDatabasesTargetDatabaseCredentialResult']] = None,
-             database_details: Optional[Sequence['outputs.GetTargetDatabasesTargetDatabaseDatabaseDetailResult']] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             tls_configs: Optional[Sequence['outputs.GetTargetDatabasesTargetDatabaseTlsConfigResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if associated_resource_ids is None and 'associatedResourceIds' in kwargs:
-            associated_resource_ids = kwargs['associatedResourceIds']
-        if associated_resource_ids is None:
-            raise TypeError("Missing 'associated_resource_ids' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if connection_options is None and 'connectionOptions' in kwargs:
-            connection_options = kwargs['connectionOptions']
-        if connection_options is None:
-            raise TypeError("Missing 'connection_options' argument")
-        if credentials is None:
-            raise TypeError("Missing 'credentials' argument")
-        if database_details is None and 'databaseDetails' in kwargs:
-            database_details = kwargs['databaseDetails']
-        if database_details is None:
-            raise TypeError("Missing 'database_details' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if tls_configs is None and 'tlsConfigs' in kwargs:
-            tls_configs = kwargs['tlsConfigs']
-        if tls_configs is None:
-            raise TypeError("Missing 'tls_configs' argument")
-
-        _setter("associated_resource_ids", associated_resource_ids)
-        _setter("compartment_id", compartment_id)
-        _setter("connection_options", connection_options)
-        _setter("credentials", credentials)
-        _setter("database_details", database_details)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("tls_configs", tls_configs)
+        pulumi.set(__self__, "associated_resource_ids", associated_resource_ids)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_options", connection_options)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "database_details", database_details)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "tls_configs", tls_configs)
 
     @property
     @pulumi.getter(name="associatedResourceIds")
@@ -29006,36 +19072,9 @@ class GetTargetDatabasesTargetDatabaseConnectionOptionResult(dict):
         :param str datasafe_private_endpoint_id: The OCID of the Data Safe private endpoint.
         :param str on_prem_connector_id: The OCID of the on-premises connector.
         """
-        GetTargetDatabasesTargetDatabaseConnectionOptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connection_type=connection_type,
-            datasafe_private_endpoint_id=datasafe_private_endpoint_id,
-            on_prem_connector_id=on_prem_connector_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connection_type: Optional[str] = None,
-             datasafe_private_endpoint_id: Optional[str] = None,
-             on_prem_connector_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_type is None and 'connectionType' in kwargs:
-            connection_type = kwargs['connectionType']
-        if connection_type is None:
-            raise TypeError("Missing 'connection_type' argument")
-        if datasafe_private_endpoint_id is None and 'datasafePrivateEndpointId' in kwargs:
-            datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
-        if datasafe_private_endpoint_id is None:
-            raise TypeError("Missing 'datasafe_private_endpoint_id' argument")
-        if on_prem_connector_id is None and 'onPremConnectorId' in kwargs:
-            on_prem_connector_id = kwargs['onPremConnectorId']
-        if on_prem_connector_id is None:
-            raise TypeError("Missing 'on_prem_connector_id' argument")
-
-        _setter("connection_type", connection_type)
-        _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
-        _setter("on_prem_connector_id", on_prem_connector_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "datasafe_private_endpoint_id", datasafe_private_endpoint_id)
+        pulumi.set(__self__, "on_prem_connector_id", on_prem_connector_id)
 
     @property
     @pulumi.getter(name="connectionType")
@@ -29073,27 +19112,8 @@ class GetTargetDatabasesTargetDatabaseCredentialResult(dict):
         :param str password: The password of the database user.
         :param str user_name: The database user name.
         """
-        GetTargetDatabasesTargetDatabaseCredentialResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            password=password,
-            user_name=user_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             password: Optional[str] = None,
-             user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if password is None:
-            raise TypeError("Missing 'password' argument")
-        if user_name is None and 'userName' in kwargs:
-            user_name = kwargs['userName']
-        if user_name is None:
-            raise TypeError("Missing 'user_name' argument")
-
-        _setter("password", password)
-        _setter("user_name", user_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter
@@ -29135,78 +19155,15 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
         :param str service_name: The service name of the database registered as target database.
         :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
         """
-        GetTargetDatabasesTargetDatabaseDatabaseDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autonomous_database_id=autonomous_database_id,
-            database_type=database_type,
-            db_system_id=db_system_id,
-            infrastructure_type=infrastructure_type,
-            instance_id=instance_id,
-            ip_addresses=ip_addresses,
-            listener_port=listener_port,
-            service_name=service_name,
-            vm_cluster_id=vm_cluster_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autonomous_database_id: Optional[str] = None,
-             database_type: Optional[str] = None,
-             db_system_id: Optional[str] = None,
-             infrastructure_type: Optional[str] = None,
-             instance_id: Optional[str] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             listener_port: Optional[int] = None,
-             service_name: Optional[str] = None,
-             vm_cluster_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
-            autonomous_database_id = kwargs['autonomousDatabaseId']
-        if autonomous_database_id is None:
-            raise TypeError("Missing 'autonomous_database_id' argument")
-        if database_type is None and 'databaseType' in kwargs:
-            database_type = kwargs['databaseType']
-        if database_type is None:
-            raise TypeError("Missing 'database_type' argument")
-        if db_system_id is None and 'dbSystemId' in kwargs:
-            db_system_id = kwargs['dbSystemId']
-        if db_system_id is None:
-            raise TypeError("Missing 'db_system_id' argument")
-        if infrastructure_type is None and 'infrastructureType' in kwargs:
-            infrastructure_type = kwargs['infrastructureType']
-        if infrastructure_type is None:
-            raise TypeError("Missing 'infrastructure_type' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if instance_id is None:
-            raise TypeError("Missing 'instance_id' argument")
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if ip_addresses is None:
-            raise TypeError("Missing 'ip_addresses' argument")
-        if listener_port is None and 'listenerPort' in kwargs:
-            listener_port = kwargs['listenerPort']
-        if listener_port is None:
-            raise TypeError("Missing 'listener_port' argument")
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-        if service_name is None:
-            raise TypeError("Missing 'service_name' argument")
-        if vm_cluster_id is None and 'vmClusterId' in kwargs:
-            vm_cluster_id = kwargs['vmClusterId']
-        if vm_cluster_id is None:
-            raise TypeError("Missing 'vm_cluster_id' argument")
-
-        _setter("autonomous_database_id", autonomous_database_id)
-        _setter("database_type", database_type)
-        _setter("db_system_id", db_system_id)
-        _setter("infrastructure_type", infrastructure_type)
-        _setter("instance_id", instance_id)
-        _setter("ip_addresses", ip_addresses)
-        _setter("listener_port", listener_port)
-        _setter("service_name", service_name)
-        _setter("vm_cluster_id", vm_cluster_id)
+        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -29296,48 +19253,11 @@ class GetTargetDatabasesTargetDatabaseTlsConfigResult(dict):
         :param str store_password: The password to read the trust store and key store files, if they are password protected.
         :param str trust_store_content: Base64 encoded string of trust store file content.
         """
-        GetTargetDatabasesTargetDatabaseTlsConfigResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_store_type=certificate_store_type,
-            key_store_content=key_store_content,
-            status=status,
-            store_password=store_password,
-            trust_store_content=trust_store_content,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_store_type: Optional[str] = None,
-             key_store_content: Optional[str] = None,
-             status: Optional[str] = None,
-             store_password: Optional[str] = None,
-             trust_store_content: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_store_type is None and 'certificateStoreType' in kwargs:
-            certificate_store_type = kwargs['certificateStoreType']
-        if certificate_store_type is None:
-            raise TypeError("Missing 'certificate_store_type' argument")
-        if key_store_content is None and 'keyStoreContent' in kwargs:
-            key_store_content = kwargs['keyStoreContent']
-        if key_store_content is None:
-            raise TypeError("Missing 'key_store_content' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if store_password is None and 'storePassword' in kwargs:
-            store_password = kwargs['storePassword']
-        if store_password is None:
-            raise TypeError("Missing 'store_password' argument")
-        if trust_store_content is None and 'trustStoreContent' in kwargs:
-            trust_store_content = kwargs['trustStoreContent']
-        if trust_store_content is None:
-            raise TypeError("Missing 'trust_store_content' argument")
-
-        _setter("certificate_store_type", certificate_store_type)
-        _setter("key_store_content", key_store_content)
-        _setter("status", status)
-        _setter("store_password", store_password)
-        _setter("trust_store_content", trust_store_content)
+        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+        pulumi.set(__self__, "key_store_content", key_store_content)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "store_password", store_password)
+        pulumi.set(__self__, "trust_store_content", trust_store_content)
 
     @property
     @pulumi.getter(name="certificateStoreType")
@@ -29386,30 +19306,9 @@ class GetUserAssessmentComparisonSummaryResult(dict):
                  baselines: Sequence['outputs.GetUserAssessmentComparisonSummaryBaselineResult'],
                  currents: Sequence['outputs.GetUserAssessmentComparisonSummaryCurrentResult'],
                  status: str):
-        GetUserAssessmentComparisonSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            baselines=baselines,
-            currents=currents,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             baselines: Optional[Sequence['outputs.GetUserAssessmentComparisonSummaryBaselineResult']] = None,
-             currents: Optional[Sequence['outputs.GetUserAssessmentComparisonSummaryCurrentResult']] = None,
-             status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if baselines is None:
-            raise TypeError("Missing 'baselines' argument")
-        if currents is None:
-            raise TypeError("Missing 'currents' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-
-        _setter("baselines", baselines)
-        _setter("currents", currents)
-        _setter("status", status)
+        pulumi.set(__self__, "baselines", baselines)
+        pulumi.set(__self__, "currents", currents)
+        pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
@@ -29435,29 +19334,8 @@ class GetUserAssessmentComparisonSummaryBaselineResult(dict):
         """
         :param str user_assessment_id: The OCID of the user assessment.
         """
-        GetUserAssessmentComparisonSummaryBaselineResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            target_id=target_id,
-            user_assessment_id=user_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             target_id: Optional[str] = None,
-             user_assessment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if user_assessment_id is None and 'userAssessmentId' in kwargs:
-            user_assessment_id = kwargs['userAssessmentId']
-        if user_assessment_id is None:
-            raise TypeError("Missing 'user_assessment_id' argument")
-
-        _setter("target_id", target_id)
-        _setter("user_assessment_id", user_assessment_id)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="targetId")
@@ -29481,29 +19359,8 @@ class GetUserAssessmentComparisonSummaryCurrentResult(dict):
         """
         :param str user_assessment_id: The OCID of the user assessment.
         """
-        GetUserAssessmentComparisonSummaryCurrentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            target_id=target_id,
-            user_assessment_id=user_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             target_id: Optional[str] = None,
-             user_assessment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if user_assessment_id is None and 'userAssessmentId' in kwargs:
-            user_assessment_id = kwargs['userAssessmentId']
-        if user_assessment_id is None:
-            raise TypeError("Missing 'user_assessment_id' argument")
-
-        _setter("target_id", target_id)
-        _setter("user_assessment_id", user_assessment_id)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="targetId")
@@ -29528,36 +19385,9 @@ class GetUserAssessmentIgnoredTargetResult(dict):
         """
         :param str user_assessment_id: The OCID of the user assessment.
         """
-        GetUserAssessmentIgnoredTargetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            lifecycle_state=lifecycle_state,
-            target_id=target_id,
-            user_assessment_id=user_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             lifecycle_state: Optional[str] = None,
-             target_id: Optional[str] = None,
-             user_assessment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if lifecycle_state is None and 'lifecycleState' in kwargs:
-            lifecycle_state = kwargs['lifecycleState']
-        if lifecycle_state is None:
-            raise TypeError("Missing 'lifecycle_state' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if user_assessment_id is None and 'userAssessmentId' in kwargs:
-            user_assessment_id = kwargs['userAssessmentId']
-        if user_assessment_id is None:
-            raise TypeError("Missing 'user_assessment_id' argument")
-
-        _setter("lifecycle_state", lifecycle_state)
-        _setter("target_id", target_id)
-        _setter("user_assessment_id", user_assessment_id)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")
@@ -29584,29 +19414,10 @@ class GetUserAssessmentProfileAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetUserAssessmentProfileAnalyticsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -29635,34 +19446,9 @@ class GetUserAssessmentProfileAnalyticsProfileAggregationResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param Sequence[Any] items: The array of profile aggregation data.
         """
-        GetUserAssessmentProfileAnalyticsProfileAggregationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             items: Optional[Sequence[Any]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("defined_tags", defined_tags)
-        _setter("freeform_tags", freeform_tags)
-        _setter("items", items)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -29695,29 +19481,10 @@ class GetUserAssessmentProfilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetUserAssessmentProfilesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -29794,204 +19561,33 @@ class GetUserAssessmentProfilesProfileResult(dict):
         :param str user_assessment_id: The OCID of the user assessment.
         :param int user_count: The number of users having a given profile.
         """
-        GetUserAssessmentProfilesProfileResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            composite_limit=composite_limit,
-            connect_time=connect_time,
-            cpu_per_call=cpu_per_call,
-            cpu_per_session=cpu_per_session,
-            defined_tags=defined_tags,
-            failed_login_attempts=failed_login_attempts,
-            freeform_tags=freeform_tags,
-            idle_time=idle_time,
-            inactive_account_time=inactive_account_time,
-            is_user_created=is_user_created,
-            logical_reads_per_call=logical_reads_per_call,
-            logical_reads_per_session=logical_reads_per_session,
-            password_grace_time=password_grace_time,
-            password_life_time=password_life_time,
-            password_lock_time=password_lock_time,
-            password_reuse_max=password_reuse_max,
-            password_reuse_time=password_reuse_time,
-            password_rollover_time=password_rollover_time,
-            password_verification_function=password_verification_function,
-            password_verification_function_details=password_verification_function_details,
-            private_sga=private_sga,
-            profile_name=profile_name,
-            sessions_per_user=sessions_per_user,
-            target_id=target_id,
-            user_assessment_id=user_assessment_id,
-            user_count=user_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             composite_limit: Optional[str] = None,
-             connect_time: Optional[str] = None,
-             cpu_per_call: Optional[str] = None,
-             cpu_per_session: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             failed_login_attempts: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             idle_time: Optional[str] = None,
-             inactive_account_time: Optional[str] = None,
-             is_user_created: Optional[bool] = None,
-             logical_reads_per_call: Optional[str] = None,
-             logical_reads_per_session: Optional[str] = None,
-             password_grace_time: Optional[str] = None,
-             password_life_time: Optional[str] = None,
-             password_lock_time: Optional[str] = None,
-             password_reuse_max: Optional[str] = None,
-             password_reuse_time: Optional[str] = None,
-             password_rollover_time: Optional[str] = None,
-             password_verification_function: Optional[str] = None,
-             password_verification_function_details: Optional[str] = None,
-             private_sga: Optional[str] = None,
-             profile_name: Optional[str] = None,
-             sessions_per_user: Optional[str] = None,
-             target_id: Optional[str] = None,
-             user_assessment_id: Optional[str] = None,
-             user_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if composite_limit is None and 'compositeLimit' in kwargs:
-            composite_limit = kwargs['compositeLimit']
-        if composite_limit is None:
-            raise TypeError("Missing 'composite_limit' argument")
-        if connect_time is None and 'connectTime' in kwargs:
-            connect_time = kwargs['connectTime']
-        if connect_time is None:
-            raise TypeError("Missing 'connect_time' argument")
-        if cpu_per_call is None and 'cpuPerCall' in kwargs:
-            cpu_per_call = kwargs['cpuPerCall']
-        if cpu_per_call is None:
-            raise TypeError("Missing 'cpu_per_call' argument")
-        if cpu_per_session is None and 'cpuPerSession' in kwargs:
-            cpu_per_session = kwargs['cpuPerSession']
-        if cpu_per_session is None:
-            raise TypeError("Missing 'cpu_per_session' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if failed_login_attempts is None and 'failedLoginAttempts' in kwargs:
-            failed_login_attempts = kwargs['failedLoginAttempts']
-        if failed_login_attempts is None:
-            raise TypeError("Missing 'failed_login_attempts' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if idle_time is None and 'idleTime' in kwargs:
-            idle_time = kwargs['idleTime']
-        if idle_time is None:
-            raise TypeError("Missing 'idle_time' argument")
-        if inactive_account_time is None and 'inactiveAccountTime' in kwargs:
-            inactive_account_time = kwargs['inactiveAccountTime']
-        if inactive_account_time is None:
-            raise TypeError("Missing 'inactive_account_time' argument")
-        if is_user_created is None and 'isUserCreated' in kwargs:
-            is_user_created = kwargs['isUserCreated']
-        if is_user_created is None:
-            raise TypeError("Missing 'is_user_created' argument")
-        if logical_reads_per_call is None and 'logicalReadsPerCall' in kwargs:
-            logical_reads_per_call = kwargs['logicalReadsPerCall']
-        if logical_reads_per_call is None:
-            raise TypeError("Missing 'logical_reads_per_call' argument")
-        if logical_reads_per_session is None and 'logicalReadsPerSession' in kwargs:
-            logical_reads_per_session = kwargs['logicalReadsPerSession']
-        if logical_reads_per_session is None:
-            raise TypeError("Missing 'logical_reads_per_session' argument")
-        if password_grace_time is None and 'passwordGraceTime' in kwargs:
-            password_grace_time = kwargs['passwordGraceTime']
-        if password_grace_time is None:
-            raise TypeError("Missing 'password_grace_time' argument")
-        if password_life_time is None and 'passwordLifeTime' in kwargs:
-            password_life_time = kwargs['passwordLifeTime']
-        if password_life_time is None:
-            raise TypeError("Missing 'password_life_time' argument")
-        if password_lock_time is None and 'passwordLockTime' in kwargs:
-            password_lock_time = kwargs['passwordLockTime']
-        if password_lock_time is None:
-            raise TypeError("Missing 'password_lock_time' argument")
-        if password_reuse_max is None and 'passwordReuseMax' in kwargs:
-            password_reuse_max = kwargs['passwordReuseMax']
-        if password_reuse_max is None:
-            raise TypeError("Missing 'password_reuse_max' argument")
-        if password_reuse_time is None and 'passwordReuseTime' in kwargs:
-            password_reuse_time = kwargs['passwordReuseTime']
-        if password_reuse_time is None:
-            raise TypeError("Missing 'password_reuse_time' argument")
-        if password_rollover_time is None and 'passwordRolloverTime' in kwargs:
-            password_rollover_time = kwargs['passwordRolloverTime']
-        if password_rollover_time is None:
-            raise TypeError("Missing 'password_rollover_time' argument")
-        if password_verification_function is None and 'passwordVerificationFunction' in kwargs:
-            password_verification_function = kwargs['passwordVerificationFunction']
-        if password_verification_function is None:
-            raise TypeError("Missing 'password_verification_function' argument")
-        if password_verification_function_details is None and 'passwordVerificationFunctionDetails' in kwargs:
-            password_verification_function_details = kwargs['passwordVerificationFunctionDetails']
-        if password_verification_function_details is None:
-            raise TypeError("Missing 'password_verification_function_details' argument")
-        if private_sga is None and 'privateSga' in kwargs:
-            private_sga = kwargs['privateSga']
-        if private_sga is None:
-            raise TypeError("Missing 'private_sga' argument")
-        if profile_name is None and 'profileName' in kwargs:
-            profile_name = kwargs['profileName']
-        if profile_name is None:
-            raise TypeError("Missing 'profile_name' argument")
-        if sessions_per_user is None and 'sessionsPerUser' in kwargs:
-            sessions_per_user = kwargs['sessionsPerUser']
-        if sessions_per_user is None:
-            raise TypeError("Missing 'sessions_per_user' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if user_assessment_id is None and 'userAssessmentId' in kwargs:
-            user_assessment_id = kwargs['userAssessmentId']
-        if user_assessment_id is None:
-            raise TypeError("Missing 'user_assessment_id' argument")
-        if user_count is None and 'userCount' in kwargs:
-            user_count = kwargs['userCount']
-        if user_count is None:
-            raise TypeError("Missing 'user_count' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("composite_limit", composite_limit)
-        _setter("connect_time", connect_time)
-        _setter("cpu_per_call", cpu_per_call)
-        _setter("cpu_per_session", cpu_per_session)
-        _setter("defined_tags", defined_tags)
-        _setter("failed_login_attempts", failed_login_attempts)
-        _setter("freeform_tags", freeform_tags)
-        _setter("idle_time", idle_time)
-        _setter("inactive_account_time", inactive_account_time)
-        _setter("is_user_created", is_user_created)
-        _setter("logical_reads_per_call", logical_reads_per_call)
-        _setter("logical_reads_per_session", logical_reads_per_session)
-        _setter("password_grace_time", password_grace_time)
-        _setter("password_life_time", password_life_time)
-        _setter("password_lock_time", password_lock_time)
-        _setter("password_reuse_max", password_reuse_max)
-        _setter("password_reuse_time", password_reuse_time)
-        _setter("password_rollover_time", password_rollover_time)
-        _setter("password_verification_function", password_verification_function)
-        _setter("password_verification_function_details", password_verification_function_details)
-        _setter("private_sga", private_sga)
-        _setter("profile_name", profile_name)
-        _setter("sessions_per_user", sessions_per_user)
-        _setter("target_id", target_id)
-        _setter("user_assessment_id", user_assessment_id)
-        _setter("user_count", user_count)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "composite_limit", composite_limit)
+        pulumi.set(__self__, "connect_time", connect_time)
+        pulumi.set(__self__, "cpu_per_call", cpu_per_call)
+        pulumi.set(__self__, "cpu_per_session", cpu_per_session)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "failed_login_attempts", failed_login_attempts)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "idle_time", idle_time)
+        pulumi.set(__self__, "inactive_account_time", inactive_account_time)
+        pulumi.set(__self__, "is_user_created", is_user_created)
+        pulumi.set(__self__, "logical_reads_per_call", logical_reads_per_call)
+        pulumi.set(__self__, "logical_reads_per_session", logical_reads_per_session)
+        pulumi.set(__self__, "password_grace_time", password_grace_time)
+        pulumi.set(__self__, "password_life_time", password_life_time)
+        pulumi.set(__self__, "password_lock_time", password_lock_time)
+        pulumi.set(__self__, "password_reuse_max", password_reuse_max)
+        pulumi.set(__self__, "password_reuse_time", password_reuse_time)
+        pulumi.set(__self__, "password_rollover_time", password_rollover_time)
+        pulumi.set(__self__, "password_verification_function", password_verification_function)
+        pulumi.set(__self__, "password_verification_function_details", password_verification_function_details)
+        pulumi.set(__self__, "private_sga", private_sga)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "sessions_per_user", sessions_per_user)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        pulumi.set(__self__, "user_count", user_count)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -30216,29 +19812,10 @@ class GetUserAssessmentUserAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetUserAssessmentUserAnalyticsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -30263,20 +19840,7 @@ class GetUserAssessmentUserAnalyticsUserAggregationResult(dict):
         """
         :param Sequence['GetUserAssessmentUserAnalyticsUserAggregationItemArgs'] items: The array of user aggregation data.
         """
-        GetUserAssessmentUserAnalyticsUserAggregationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetUserAssessmentUserAnalyticsUserAggregationItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -30291,13 +19855,6 @@ class GetUserAssessmentUserAnalyticsUserAggregationResult(dict):
 class GetUserAssessmentUserAnalyticsUserAggregationItemResult(dict):
     def __init__(__self__):
         pass
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        pass
-
 
 
 @pulumi.output_type
@@ -30306,29 +19863,10 @@ class GetUserAssessmentUsersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetUserAssessmentUsersFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -30375,97 +19913,18 @@ class GetUserAssessmentUsersUserResult(dict):
         :param str user_profile: A filter to return only items that match the specified user profile.
         :param Sequence[str] user_types: The user type, which can be a combination of the following:
         """
-        GetUserAssessmentUsersUserResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_status=account_status,
-            admin_roles=admin_roles,
-            authentication_type=authentication_type,
-            key=key,
-            target_id=target_id,
-            time_last_login=time_last_login,
-            time_password_changed=time_password_changed,
-            time_user_created=time_user_created,
-            user_category=user_category,
-            user_name=user_name,
-            user_profile=user_profile,
-            user_types=user_types,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_status: Optional[str] = None,
-             admin_roles: Optional[Sequence[str]] = None,
-             authentication_type: Optional[str] = None,
-             key: Optional[str] = None,
-             target_id: Optional[str] = None,
-             time_last_login: Optional[str] = None,
-             time_password_changed: Optional[str] = None,
-             time_user_created: Optional[str] = None,
-             user_category: Optional[str] = None,
-             user_name: Optional[str] = None,
-             user_profile: Optional[str] = None,
-             user_types: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_status is None and 'accountStatus' in kwargs:
-            account_status = kwargs['accountStatus']
-        if account_status is None:
-            raise TypeError("Missing 'account_status' argument")
-        if admin_roles is None and 'adminRoles' in kwargs:
-            admin_roles = kwargs['adminRoles']
-        if admin_roles is None:
-            raise TypeError("Missing 'admin_roles' argument")
-        if authentication_type is None and 'authenticationType' in kwargs:
-            authentication_type = kwargs['authenticationType']
-        if authentication_type is None:
-            raise TypeError("Missing 'authentication_type' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if time_last_login is None and 'timeLastLogin' in kwargs:
-            time_last_login = kwargs['timeLastLogin']
-        if time_last_login is None:
-            raise TypeError("Missing 'time_last_login' argument")
-        if time_password_changed is None and 'timePasswordChanged' in kwargs:
-            time_password_changed = kwargs['timePasswordChanged']
-        if time_password_changed is None:
-            raise TypeError("Missing 'time_password_changed' argument")
-        if time_user_created is None and 'timeUserCreated' in kwargs:
-            time_user_created = kwargs['timeUserCreated']
-        if time_user_created is None:
-            raise TypeError("Missing 'time_user_created' argument")
-        if user_category is None and 'userCategory' in kwargs:
-            user_category = kwargs['userCategory']
-        if user_category is None:
-            raise TypeError("Missing 'user_category' argument")
-        if user_name is None and 'userName' in kwargs:
-            user_name = kwargs['userName']
-        if user_name is None:
-            raise TypeError("Missing 'user_name' argument")
-        if user_profile is None and 'userProfile' in kwargs:
-            user_profile = kwargs['userProfile']
-        if user_profile is None:
-            raise TypeError("Missing 'user_profile' argument")
-        if user_types is None and 'userTypes' in kwargs:
-            user_types = kwargs['userTypes']
-        if user_types is None:
-            raise TypeError("Missing 'user_types' argument")
-
-        _setter("account_status", account_status)
-        _setter("admin_roles", admin_roles)
-        _setter("authentication_type", authentication_type)
-        _setter("key", key)
-        _setter("target_id", target_id)
-        _setter("time_last_login", time_last_login)
-        _setter("time_password_changed", time_password_changed)
-        _setter("time_user_created", time_user_created)
-        _setter("user_category", user_category)
-        _setter("user_name", user_name)
-        _setter("user_profile", user_profile)
-        _setter("user_types", user_types)
+        pulumi.set(__self__, "account_status", account_status)
+        pulumi.set(__self__, "admin_roles", admin_roles)
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_last_login", time_last_login)
+        pulumi.set(__self__, "time_password_changed", time_password_changed)
+        pulumi.set(__self__, "time_user_created", time_user_created)
+        pulumi.set(__self__, "user_category", user_category)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_profile", user_profile)
+        pulumi.set(__self__, "user_types", user_types)
 
     @property
     @pulumi.getter(name="accountStatus")
@@ -30570,29 +20029,10 @@ class GetUserAssessmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetUserAssessmentsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -30619,36 +20059,9 @@ class GetUserAssessmentsIgnoredTargetResult(dict):
         """
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetUserAssessmentsIgnoredTargetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            lifecycle_state=lifecycle_state,
-            target_id=target_id,
-            user_assessment_id=user_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             lifecycle_state: Optional[str] = None,
-             target_id: Optional[str] = None,
-             user_assessment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if lifecycle_state is None and 'lifecycleState' in kwargs:
-            lifecycle_state = kwargs['lifecycleState']
-        if lifecycle_state is None:
-            raise TypeError("Missing 'lifecycle_state' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if user_assessment_id is None and 'userAssessmentId' in kwargs:
-            user_assessment_id = kwargs['userAssessmentId']
-        if user_assessment_id is None:
-            raise TypeError("Missing 'user_assessment_id' argument")
-
-        _setter("lifecycle_state", lifecycle_state)
-        _setter("target_id", target_id)
-        _setter("user_assessment_id", user_assessment_id)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")
@@ -30722,171 +20135,30 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         :param str triggered_by: A filter to return user assessments that were created by either the system or by a user only.
         :param str type: A filter to return only items that match the specified assessment type.
         """
-        GetUserAssessmentsUserAssessmentResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            ignored_assessment_ids=ignored_assessment_ids,
-            ignored_targets=ignored_targets,
-            is_baseline=is_baseline,
-            is_deviated_from_baseline=is_deviated_from_baseline,
-            last_compared_baseline_id=last_compared_baseline_id,
-            lifecycle_details=lifecycle_details,
-            schedule=schedule,
-            schedule_assessment_id=schedule_assessment_id,
-            state=state,
-            statistics=statistics,
-            system_tags=system_tags,
-            target_id=target_id,
-            target_ids=target_ids,
-            time_created=time_created,
-            time_last_assessed=time_last_assessed,
-            time_updated=time_updated,
-            triggered_by=triggered_by,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             ignored_assessment_ids: Optional[Sequence[str]] = None,
-             ignored_targets: Optional[Sequence['outputs.GetUserAssessmentsUserAssessmentIgnoredTargetResult']] = None,
-             is_baseline: Optional[bool] = None,
-             is_deviated_from_baseline: Optional[bool] = None,
-             last_compared_baseline_id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             schedule: Optional[str] = None,
-             schedule_assessment_id: Optional[str] = None,
-             state: Optional[str] = None,
-             statistics: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             target_id: Optional[str] = None,
-             target_ids: Optional[Sequence[str]] = None,
-             time_created: Optional[str] = None,
-             time_last_assessed: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             triggered_by: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if ignored_assessment_ids is None and 'ignoredAssessmentIds' in kwargs:
-            ignored_assessment_ids = kwargs['ignoredAssessmentIds']
-        if ignored_assessment_ids is None:
-            raise TypeError("Missing 'ignored_assessment_ids' argument")
-        if ignored_targets is None and 'ignoredTargets' in kwargs:
-            ignored_targets = kwargs['ignoredTargets']
-        if ignored_targets is None:
-            raise TypeError("Missing 'ignored_targets' argument")
-        if is_baseline is None and 'isBaseline' in kwargs:
-            is_baseline = kwargs['isBaseline']
-        if is_baseline is None:
-            raise TypeError("Missing 'is_baseline' argument")
-        if is_deviated_from_baseline is None and 'isDeviatedFromBaseline' in kwargs:
-            is_deviated_from_baseline = kwargs['isDeviatedFromBaseline']
-        if is_deviated_from_baseline is None:
-            raise TypeError("Missing 'is_deviated_from_baseline' argument")
-        if last_compared_baseline_id is None and 'lastComparedBaselineId' in kwargs:
-            last_compared_baseline_id = kwargs['lastComparedBaselineId']
-        if last_compared_baseline_id is None:
-            raise TypeError("Missing 'last_compared_baseline_id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if schedule is None:
-            raise TypeError("Missing 'schedule' argument")
-        if schedule_assessment_id is None and 'scheduleAssessmentId' in kwargs:
-            schedule_assessment_id = kwargs['scheduleAssessmentId']
-        if schedule_assessment_id is None:
-            raise TypeError("Missing 'schedule_assessment_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if statistics is None:
-            raise TypeError("Missing 'statistics' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if target_ids is None:
-            raise TypeError("Missing 'target_ids' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_last_assessed is None and 'timeLastAssessed' in kwargs:
-            time_last_assessed = kwargs['timeLastAssessed']
-        if time_last_assessed is None:
-            raise TypeError("Missing 'time_last_assessed' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if triggered_by is None and 'triggeredBy' in kwargs:
-            triggered_by = kwargs['triggeredBy']
-        if triggered_by is None:
-            raise TypeError("Missing 'triggered_by' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("ignored_assessment_ids", ignored_assessment_ids)
-        _setter("ignored_targets", ignored_targets)
-        _setter("is_baseline", is_baseline)
-        _setter("is_deviated_from_baseline", is_deviated_from_baseline)
-        _setter("last_compared_baseline_id", last_compared_baseline_id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("schedule", schedule)
-        _setter("schedule_assessment_id", schedule_assessment_id)
-        _setter("state", state)
-        _setter("statistics", statistics)
-        _setter("system_tags", system_tags)
-        _setter("target_id", target_id)
-        _setter("target_ids", target_ids)
-        _setter("time_created", time_created)
-        _setter("time_last_assessed", time_last_assessed)
-        _setter("time_updated", time_updated)
-        _setter("triggered_by", triggered_by)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
+        pulumi.set(__self__, "ignored_targets", ignored_targets)
+        pulumi.set(__self__, "is_baseline", is_baseline)
+        pulumi.set(__self__, "is_deviated_from_baseline", is_deviated_from_baseline)
+        pulumi.set(__self__, "last_compared_baseline_id", last_compared_baseline_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "schedule", schedule)
+        pulumi.set(__self__, "schedule_assessment_id", schedule_assessment_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "statistics", statistics)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_ids", target_ids)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "triggered_by", triggered_by)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -31090,36 +20362,9 @@ class GetUserAssessmentsUserAssessmentIgnoredTargetResult(dict):
         """
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        GetUserAssessmentsUserAssessmentIgnoredTargetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            lifecycle_state=lifecycle_state,
-            target_id=target_id,
-            user_assessment_id=user_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             lifecycle_state: Optional[str] = None,
-             target_id: Optional[str] = None,
-             user_assessment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if lifecycle_state is None and 'lifecycleState' in kwargs:
-            lifecycle_state = kwargs['lifecycleState']
-        if lifecycle_state is None:
-            raise TypeError("Missing 'lifecycle_state' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-        if user_assessment_id is None and 'userAssessmentId' in kwargs:
-            user_assessment_id = kwargs['userAssessmentId']
-        if user_assessment_id is None:
-            raise TypeError("Missing 'user_assessment_id' argument")
-
-        _setter("lifecycle_state", lifecycle_state)
-        _setter("target_id", target_id)
-        _setter("user_assessment_id", user_assessment_id)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")

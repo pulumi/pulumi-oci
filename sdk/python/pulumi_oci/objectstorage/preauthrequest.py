@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['PreauthrequestArgs', 'Preauthrequest']
@@ -37,62 +37,21 @@ class PreauthrequestArgs:
         :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         :param pulumi.Input[str] object_name: The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         """
-        PreauthrequestArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_type=access_type,
-            bucket=bucket,
-            namespace=namespace,
-            time_expires=time_expires,
-            bucket_listing_action=bucket_listing_action,
-            name=name,
-            object=object,
-            object_name=object_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_type: Optional[pulumi.Input[str]] = None,
-             bucket: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             time_expires: Optional[pulumi.Input[str]] = None,
-             bucket_listing_action: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             object_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_type is None and 'accessType' in kwargs:
-            access_type = kwargs['accessType']
-        if access_type is None:
-            raise TypeError("Missing 'access_type' argument")
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if time_expires is None and 'timeExpires' in kwargs:
-            time_expires = kwargs['timeExpires']
-        if time_expires is None:
-            raise TypeError("Missing 'time_expires' argument")
-        if bucket_listing_action is None and 'bucketListingAction' in kwargs:
-            bucket_listing_action = kwargs['bucketListingAction']
-        if object_name is None and 'objectName' in kwargs:
-            object_name = kwargs['objectName']
-
-        _setter("access_type", access_type)
-        _setter("bucket", bucket)
-        _setter("namespace", namespace)
-        _setter("time_expires", time_expires)
+        pulumi.set(__self__, "access_type", access_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "time_expires", time_expires)
         if bucket_listing_action is not None:
-            _setter("bucket_listing_action", bucket_listing_action)
+            pulumi.set(__self__, "bucket_listing_action", bucket_listing_action)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if object is not None:
             warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
             pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if object_name is not None:
-            _setter("object_name", object_name)
+            pulumi.set(__self__, "object_name", object_name)
 
     @property
     @pulumi.getter(name="accessType")
@@ -232,82 +191,33 @@ class _PreauthrequestState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _PreauthrequestState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_type=access_type,
-            access_uri=access_uri,
-            bucket=bucket,
-            bucket_listing_action=bucket_listing_action,
-            full_path=full_path,
-            name=name,
-            namespace=namespace,
-            object=object,
-            object_name=object_name,
-            par_id=par_id,
-            time_created=time_created,
-            time_expires=time_expires,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_type: Optional[pulumi.Input[str]] = None,
-             access_uri: Optional[pulumi.Input[str]] = None,
-             bucket: Optional[pulumi.Input[str]] = None,
-             bucket_listing_action: Optional[pulumi.Input[str]] = None,
-             full_path: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             object_name: Optional[pulumi.Input[str]] = None,
-             par_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_expires: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_type is None and 'accessType' in kwargs:
-            access_type = kwargs['accessType']
-        if access_uri is None and 'accessUri' in kwargs:
-            access_uri = kwargs['accessUri']
-        if bucket_listing_action is None and 'bucketListingAction' in kwargs:
-            bucket_listing_action = kwargs['bucketListingAction']
-        if full_path is None and 'fullPath' in kwargs:
-            full_path = kwargs['fullPath']
-        if object_name is None and 'objectName' in kwargs:
-            object_name = kwargs['objectName']
-        if par_id is None and 'parId' in kwargs:
-            par_id = kwargs['parId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_expires is None and 'timeExpires' in kwargs:
-            time_expires = kwargs['timeExpires']
-
         if access_type is not None:
-            _setter("access_type", access_type)
+            pulumi.set(__self__, "access_type", access_type)
         if access_uri is not None:
-            _setter("access_uri", access_uri)
+            pulumi.set(__self__, "access_uri", access_uri)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if bucket_listing_action is not None:
-            _setter("bucket_listing_action", bucket_listing_action)
+            pulumi.set(__self__, "bucket_listing_action", bucket_listing_action)
         if full_path is not None:
-            _setter("full_path", full_path)
+            pulumi.set(__self__, "full_path", full_path)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object is not None:
             warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
             pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if object_name is not None:
-            _setter("object_name", object_name)
+            pulumi.set(__self__, "object_name", object_name)
         if par_id is not None:
-            _setter("par_id", par_id)
+            pulumi.set(__self__, "par_id", par_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_expires is not None:
-            _setter("time_expires", time_expires)
+            pulumi.set(__self__, "time_expires", time_expires)
 
     @property
     @pulumi.getter(name="accessType")
@@ -562,10 +472,6 @@ class Preauthrequest(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            PreauthrequestArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -149,78 +149,29 @@ class DomainsMyOauth2clientCredentialArgs:
                * type: complex
                * uniqueness: none
         """
-        DomainsMyOauth2clientCredentialArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idcs_endpoint=idcs_endpoint,
-            schemas=schemas,
-            scopes=scopes,
-            authorization=authorization,
-            description=description,
-            expires_on=expires_on,
-            is_reset_secret=is_reset_secret,
-            name=name,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            status=status,
-            tags=tags,
-            user=user,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialScopeArgs']]]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             expires_on: Optional[pulumi.Input[str]] = None,
-             is_reset_secret: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialTagArgs']]]] = None,
-             user: Optional[pulumi.Input['DomainsMyOauth2clientCredentialUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_endpoint is None:
-            raise TypeError("Missing 'idcs_endpoint' argument")
-        if schemas is None:
-            raise TypeError("Missing 'schemas' argument")
-        if scopes is None:
-            raise TypeError("Missing 'scopes' argument")
-        if expires_on is None and 'expiresOn' in kwargs:
-            expires_on = kwargs['expiresOn']
-        if is_reset_secret is None and 'isResetSecret' in kwargs:
-            is_reset_secret = kwargs['isResetSecret']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-
-        _setter("idcs_endpoint", idcs_endpoint)
-        _setter("schemas", schemas)
-        _setter("scopes", scopes)
+        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+        pulumi.set(__self__, "schemas", schemas)
+        pulumi.set(__self__, "scopes", scopes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if expires_on is not None:
-            _setter("expires_on", expires_on)
+            pulumi.set(__self__, "expires_on", expires_on)
         if is_reset_secret is not None:
-            _setter("is_reset_secret", is_reset_secret)
+            pulumi.set(__self__, "is_reset_secret", is_reset_secret)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if user is not None:
-            _setter("user", user)
+            pulumi.set(__self__, "user", user)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -722,127 +673,50 @@ class _DomainsMyOauth2clientCredentialState:
                * type: complex
                * uniqueness: none
         """
-        _DomainsMyOauth2clientCredentialState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            authorization=authorization,
-            compartment_ocid=compartment_ocid,
-            delete_in_progress=delete_in_progress,
-            description=description,
-            domain_ocid=domain_ocid,
-            expires_on=expires_on,
-            idcs_created_bies=idcs_created_bies,
-            idcs_endpoint=idcs_endpoint,
-            idcs_last_modified_bies=idcs_last_modified_bies,
-            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
-            idcs_prevented_operations=idcs_prevented_operations,
-            is_reset_secret=is_reset_secret,
-            metas=metas,
-            name=name,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            schemas=schemas,
-            scopes=scopes,
-            status=status,
-            tags=tags,
-            tenancy_ocid=tenancy_ocid,
-            user=user,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             authorization: Optional[pulumi.Input[str]] = None,
-             compartment_ocid: Optional[pulumi.Input[str]] = None,
-             delete_in_progress: Optional[pulumi.Input[bool]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             domain_ocid: Optional[pulumi.Input[str]] = None,
-             expires_on: Optional[pulumi.Input[str]] = None,
-             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialIdcsCreatedByArgs']]]] = None,
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs']]]] = None,
-             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
-             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             is_reset_secret: Optional[pulumi.Input[bool]] = None,
-             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialMetaArgs']]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialScopeArgs']]]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyOauth2clientCredentialTagArgs']]]] = None,
-             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             user: Optional[pulumi.Input['DomainsMyOauth2clientCredentialUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_ocid is None and 'compartmentOcid' in kwargs:
-            compartment_ocid = kwargs['compartmentOcid']
-        if delete_in_progress is None and 'deleteInProgress' in kwargs:
-            delete_in_progress = kwargs['deleteInProgress']
-        if domain_ocid is None and 'domainOcid' in kwargs:
-            domain_ocid = kwargs['domainOcid']
-        if expires_on is None and 'expiresOn' in kwargs:
-            expires_on = kwargs['expiresOn']
-        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
-            idcs_created_bies = kwargs['idcsCreatedBies']
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
-            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
-            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
-            idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if is_reset_secret is None and 'isResetSecret' in kwargs:
-            is_reset_secret = kwargs['isResetSecret']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
-            tenancy_ocid = kwargs['tenancyOcid']
-
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if compartment_ocid is not None:
-            _setter("compartment_ocid", compartment_ocid)
+            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            _setter("delete_in_progress", delete_in_progress)
+            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if domain_ocid is not None:
-            _setter("domain_ocid", domain_ocid)
+            pulumi.set(__self__, "domain_ocid", domain_ocid)
         if expires_on is not None:
-            _setter("expires_on", expires_on)
+            pulumi.set(__self__, "expires_on", expires_on)
         if idcs_created_bies is not None:
-            _setter("idcs_created_bies", idcs_created_bies)
+            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            _setter("idcs_endpoint", idcs_endpoint)
+            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
+            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            _setter("idcs_prevented_operations", idcs_prevented_operations)
+            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
         if is_reset_secret is not None:
-            _setter("is_reset_secret", is_reset_secret)
+            pulumi.set(__self__, "is_reset_secret", is_reset_secret)
         if metas is not None:
-            _setter("metas", metas)
+            pulumi.set(__self__, "metas", metas)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            _setter("schemas", schemas)
+            pulumi.set(__self__, "schemas", schemas)
         if scopes is not None:
-            _setter("scopes", scopes)
+            pulumi.set(__self__, "scopes", scopes)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if tenancy_ocid is not None:
-            _setter("tenancy_ocid", tenancy_ocid)
+            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
         if user is not None:
-            _setter("user", user)
+            pulumi.set(__self__, "user", user)
 
     @property
     @pulumi.getter
@@ -1479,10 +1353,6 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DomainsMyOauth2clientCredentialArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1528,7 +1398,6 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
             __props__.__dict__["scopes"] = scopes
             __props__.__dict__["status"] = status
             __props__.__dict__["tags"] = tags
-            user = _utilities.configure(user, DomainsMyOauth2clientCredentialUserArgs, True)
             __props__.__dict__["user"] = user
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

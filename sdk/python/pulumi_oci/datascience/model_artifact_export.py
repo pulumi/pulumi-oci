@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ModelArtifactExportArgs', 'ModelArtifactExport']
@@ -23,55 +23,12 @@ class ModelArtifactExportArgs:
         """
         The set of arguments for constructing a ModelArtifactExport resource.
         """
-        ModelArtifactExportArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            artifact_source_type=artifact_source_type,
-            model_id=model_id,
-            namespace=namespace,
-            source_bucket=source_bucket,
-            source_object_name=source_object_name,
-            source_region=source_region,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             artifact_source_type: Optional[pulumi.Input[str]] = None,
-             model_id: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             source_bucket: Optional[pulumi.Input[str]] = None,
-             source_object_name: Optional[pulumi.Input[str]] = None,
-             source_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if artifact_source_type is None and 'artifactSourceType' in kwargs:
-            artifact_source_type = kwargs['artifactSourceType']
-        if artifact_source_type is None:
-            raise TypeError("Missing 'artifact_source_type' argument")
-        if model_id is None and 'modelId' in kwargs:
-            model_id = kwargs['modelId']
-        if model_id is None:
-            raise TypeError("Missing 'model_id' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if source_bucket is None and 'sourceBucket' in kwargs:
-            source_bucket = kwargs['sourceBucket']
-        if source_bucket is None:
-            raise TypeError("Missing 'source_bucket' argument")
-        if source_object_name is None and 'sourceObjectName' in kwargs:
-            source_object_name = kwargs['sourceObjectName']
-        if source_object_name is None:
-            raise TypeError("Missing 'source_object_name' argument")
-        if source_region is None and 'sourceRegion' in kwargs:
-            source_region = kwargs['sourceRegion']
-        if source_region is None:
-            raise TypeError("Missing 'source_region' argument")
-
-        _setter("artifact_source_type", artifact_source_type)
-        _setter("model_id", model_id)
-        _setter("namespace", namespace)
-        _setter("source_bucket", source_bucket)
-        _setter("source_object_name", source_object_name)
-        _setter("source_region", source_region)
+        pulumi.set(__self__, "artifact_source_type", artifact_source_type)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "source_bucket", source_bucket)
+        pulumi.set(__self__, "source_object_name", source_object_name)
+        pulumi.set(__self__, "source_region", source_region)
 
     @property
     @pulumi.getter(name="artifactSourceType")
@@ -140,49 +97,18 @@ class _ModelArtifactExportState:
         """
         Input properties used for looking up and filtering ModelArtifactExport resources.
         """
-        _ModelArtifactExportState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            artifact_source_type=artifact_source_type,
-            model_id=model_id,
-            namespace=namespace,
-            source_bucket=source_bucket,
-            source_object_name=source_object_name,
-            source_region=source_region,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             artifact_source_type: Optional[pulumi.Input[str]] = None,
-             model_id: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             source_bucket: Optional[pulumi.Input[str]] = None,
-             source_object_name: Optional[pulumi.Input[str]] = None,
-             source_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if artifact_source_type is None and 'artifactSourceType' in kwargs:
-            artifact_source_type = kwargs['artifactSourceType']
-        if model_id is None and 'modelId' in kwargs:
-            model_id = kwargs['modelId']
-        if source_bucket is None and 'sourceBucket' in kwargs:
-            source_bucket = kwargs['sourceBucket']
-        if source_object_name is None and 'sourceObjectName' in kwargs:
-            source_object_name = kwargs['sourceObjectName']
-        if source_region is None and 'sourceRegion' in kwargs:
-            source_region = kwargs['sourceRegion']
-
         if artifact_source_type is not None:
-            _setter("artifact_source_type", artifact_source_type)
+            pulumi.set(__self__, "artifact_source_type", artifact_source_type)
         if model_id is not None:
-            _setter("model_id", model_id)
+            pulumi.set(__self__, "model_id", model_id)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if source_bucket is not None:
-            _setter("source_bucket", source_bucket)
+            pulumi.set(__self__, "source_bucket", source_bucket)
         if source_object_name is not None:
-            _setter("source_object_name", source_object_name)
+            pulumi.set(__self__, "source_object_name", source_object_name)
         if source_region is not None:
-            _setter("source_region", source_region)
+            pulumi.set(__self__, "source_region", source_region)
 
     @property
     @pulumi.getter(name="artifactSourceType")
@@ -274,10 +200,6 @@ class ModelArtifactExport(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ModelArtifactExportArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NetworkFirewallPolicyApplicationGroupArgs', 'NetworkFirewallPolicyApplicationGroup']
@@ -27,31 +27,10 @@ class NetworkFirewallPolicyApplicationGroupArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: Name of the application group.
         """
-        NetworkFirewallPolicyApplicationGroupArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            apps=apps,
-            network_firewall_policy_id=network_firewall_policy_id,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if apps is None:
-            raise TypeError("Missing 'apps' argument")
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_firewall_policy_id is None:
-            raise TypeError("Missing 'network_firewall_policy_id' argument")
-
-        _setter("apps", apps)
-        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "apps", apps)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -114,41 +93,16 @@ class _NetworkFirewallPolicyApplicationGroupState:
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application group belongs to.
         :param pulumi.Input[int] total_apps: Count of total applications in the given application group.
         """
-        _NetworkFirewallPolicyApplicationGroupState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            apps=apps,
-            name=name,
-            network_firewall_policy_id=network_firewall_policy_id,
-            parent_resource_id=parent_resource_id,
-            total_apps=total_apps,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             parent_resource_id: Optional[pulumi.Input[str]] = None,
-             total_apps: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if parent_resource_id is None and 'parentResourceId' in kwargs:
-            parent_resource_id = kwargs['parentResourceId']
-        if total_apps is None and 'totalApps' in kwargs:
-            total_apps = kwargs['totalApps']
-
         if apps is not None:
-            _setter("apps", apps)
+            pulumi.set(__self__, "apps", apps)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
-            _setter("network_firewall_policy_id", network_firewall_policy_id)
+            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            _setter("parent_resource_id", parent_resource_id)
+            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         if total_apps is not None:
-            _setter("total_apps", total_apps)
+            pulumi.set(__self__, "total_apps", total_apps)
 
     @property
     @pulumi.getter
@@ -298,10 +252,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkFirewallPolicyApplicationGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

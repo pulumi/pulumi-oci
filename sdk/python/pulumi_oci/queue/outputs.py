@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -22,29 +22,10 @@ class GetQueuesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetQueuesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -66,20 +47,7 @@ class GetQueuesFilterResult(dict):
 class GetQueuesQueueCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetQueuesQueueCollectionItemResult']):
-        GetQueuesQueueCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetQueuesQueueCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -128,144 +96,25 @@ class GetQueuesQueueCollectionItemResult(dict):
         :param int timeout_in_seconds: The default polling timeout of the messages in the queue, in seconds.
         :param int visibility_in_seconds: The default visibility timeout of the messages consumed from the queue, in seconds.
         """
-        GetQueuesQueueCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            channel_consumption_limit=channel_consumption_limit,
-            compartment_id=compartment_id,
-            custom_encryption_key_id=custom_encryption_key_id,
-            dead_letter_queue_delivery_count=dead_letter_queue_delivery_count,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            messages_endpoint=messages_endpoint,
-            purge_queue=purge_queue,
-            purge_type=purge_type,
-            retention_in_seconds=retention_in_seconds,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            timeout_in_seconds=timeout_in_seconds,
-            visibility_in_seconds=visibility_in_seconds,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             channel_consumption_limit: Optional[int] = None,
-             compartment_id: Optional[str] = None,
-             custom_encryption_key_id: Optional[str] = None,
-             dead_letter_queue_delivery_count: Optional[int] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             messages_endpoint: Optional[str] = None,
-             purge_queue: Optional[bool] = None,
-             purge_type: Optional[str] = None,
-             retention_in_seconds: Optional[int] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             timeout_in_seconds: Optional[int] = None,
-             visibility_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if channel_consumption_limit is None and 'channelConsumptionLimit' in kwargs:
-            channel_consumption_limit = kwargs['channelConsumptionLimit']
-        if channel_consumption_limit is None:
-            raise TypeError("Missing 'channel_consumption_limit' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if custom_encryption_key_id is None and 'customEncryptionKeyId' in kwargs:
-            custom_encryption_key_id = kwargs['customEncryptionKeyId']
-        if custom_encryption_key_id is None:
-            raise TypeError("Missing 'custom_encryption_key_id' argument")
-        if dead_letter_queue_delivery_count is None and 'deadLetterQueueDeliveryCount' in kwargs:
-            dead_letter_queue_delivery_count = kwargs['deadLetterQueueDeliveryCount']
-        if dead_letter_queue_delivery_count is None:
-            raise TypeError("Missing 'dead_letter_queue_delivery_count' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if messages_endpoint is None and 'messagesEndpoint' in kwargs:
-            messages_endpoint = kwargs['messagesEndpoint']
-        if messages_endpoint is None:
-            raise TypeError("Missing 'messages_endpoint' argument")
-        if purge_queue is None and 'purgeQueue' in kwargs:
-            purge_queue = kwargs['purgeQueue']
-        if purge_queue is None:
-            raise TypeError("Missing 'purge_queue' argument")
-        if purge_type is None and 'purgeType' in kwargs:
-            purge_type = kwargs['purgeType']
-        if purge_type is None:
-            raise TypeError("Missing 'purge_type' argument")
-        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
-            retention_in_seconds = kwargs['retentionInSeconds']
-        if retention_in_seconds is None:
-            raise TypeError("Missing 'retention_in_seconds' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
-            timeout_in_seconds = kwargs['timeoutInSeconds']
-        if timeout_in_seconds is None:
-            raise TypeError("Missing 'timeout_in_seconds' argument")
-        if visibility_in_seconds is None and 'visibilityInSeconds' in kwargs:
-            visibility_in_seconds = kwargs['visibilityInSeconds']
-        if visibility_in_seconds is None:
-            raise TypeError("Missing 'visibility_in_seconds' argument")
-
-        _setter("channel_consumption_limit", channel_consumption_limit)
-        _setter("compartment_id", compartment_id)
-        _setter("custom_encryption_key_id", custom_encryption_key_id)
-        _setter("dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("messages_endpoint", messages_endpoint)
-        _setter("purge_queue", purge_queue)
-        _setter("purge_type", purge_type)
-        _setter("retention_in_seconds", retention_in_seconds)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("timeout_in_seconds", timeout_in_seconds)
-        _setter("visibility_in_seconds", visibility_in_seconds)
+        pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "custom_encryption_key_id", custom_encryption_key_id)
+        pulumi.set(__self__, "dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "messages_endpoint", messages_endpoint)
+        pulumi.set(__self__, "purge_queue", purge_queue)
+        pulumi.set(__self__, "purge_type", purge_type)
+        pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
 
     @property
     @pulumi.getter(name="channelConsumptionLimit")

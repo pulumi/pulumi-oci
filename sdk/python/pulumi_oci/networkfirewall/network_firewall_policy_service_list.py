@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NetworkFirewallPolicyServiceListArgs', 'NetworkFirewallPolicyServiceList']
@@ -27,31 +27,10 @@ class NetworkFirewallPolicyServiceListArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: Name of the service Group.
         """
-        NetworkFirewallPolicyServiceListArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_firewall_policy_id=network_firewall_policy_id,
-            services=services,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_firewall_policy_id is None:
-            raise TypeError("Missing 'network_firewall_policy_id' argument")
-        if services is None:
-            raise TypeError("Missing 'services' argument")
-
-        _setter("network_firewall_policy_id", network_firewall_policy_id)
-        _setter("services", services)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "services", services)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
@@ -114,41 +93,16 @@ class _NetworkFirewallPolicyServiceListState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] total_services: Count of total services in the given service List.
         """
-        _NetworkFirewallPolicyServiceListState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            network_firewall_policy_id=network_firewall_policy_id,
-            parent_resource_id=parent_resource_id,
-            services=services,
-            total_services=total_services,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             parent_resource_id: Optional[pulumi.Input[str]] = None,
-             services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             total_services: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if parent_resource_id is None and 'parentResourceId' in kwargs:
-            parent_resource_id = kwargs['parentResourceId']
-        if total_services is None and 'totalServices' in kwargs:
-            total_services = kwargs['totalServices']
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
-            _setter("network_firewall_policy_id", network_firewall_policy_id)
+            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            _setter("parent_resource_id", parent_resource_id)
+            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         if services is not None:
-            _setter("services", services)
+            pulumi.set(__self__, "services", services)
         if total_services is not None:
-            _setter("total_services", total_services)
+            pulumi.set(__self__, "total_services", total_services)
 
     @property
     @pulumi.getter
@@ -298,10 +252,6 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkFirewallPolicyServiceListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

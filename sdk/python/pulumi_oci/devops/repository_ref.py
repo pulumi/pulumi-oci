@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['RepositoryRefArgs', 'RepositoryRef']
@@ -31,48 +31,13 @@ class RepositoryRefArgs:
         :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
         :param pulumi.Input[str] object_id: (Updatable) SHA-1 hash value of the object pointed to by the tag.
         """
-        RepositoryRefArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ref_name=ref_name,
-            ref_type=ref_type,
-            repository_id=repository_id,
-            commit_id=commit_id,
-            object_id=object_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ref_name: Optional[pulumi.Input[str]] = None,
-             ref_type: Optional[pulumi.Input[str]] = None,
-             repository_id: Optional[pulumi.Input[str]] = None,
-             commit_id: Optional[pulumi.Input[str]] = None,
-             object_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ref_name is None and 'refName' in kwargs:
-            ref_name = kwargs['refName']
-        if ref_name is None:
-            raise TypeError("Missing 'ref_name' argument")
-        if ref_type is None and 'refType' in kwargs:
-            ref_type = kwargs['refType']
-        if ref_type is None:
-            raise TypeError("Missing 'ref_type' argument")
-        if repository_id is None and 'repositoryId' in kwargs:
-            repository_id = kwargs['repositoryId']
-        if repository_id is None:
-            raise TypeError("Missing 'repository_id' argument")
-        if commit_id is None and 'commitId' in kwargs:
-            commit_id = kwargs['commitId']
-        if object_id is None and 'objectId' in kwargs:
-            object_id = kwargs['objectId']
-
-        _setter("ref_name", ref_name)
-        _setter("ref_type", ref_type)
-        _setter("repository_id", repository_id)
+        pulumi.set(__self__, "ref_name", ref_name)
+        pulumi.set(__self__, "ref_type", ref_type)
+        pulumi.set(__self__, "repository_id", repository_id)
         if commit_id is not None:
-            _setter("commit_id", commit_id)
+            pulumi.set(__self__, "commit_id", commit_id)
         if object_id is not None:
-            _setter("object_id", object_id)
+            pulumi.set(__self__, "object_id", object_id)
 
     @property
     @pulumi.getter(name="refName")
@@ -165,63 +130,22 @@ class _RepositoryRefState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _RepositoryRefState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            commit_id=commit_id,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            full_ref_name=full_ref_name,
-            object_id=object_id,
-            ref_name=ref_name,
-            ref_type=ref_type,
-            repository_id=repository_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             commit_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             full_ref_name: Optional[pulumi.Input[str]] = None,
-             object_id: Optional[pulumi.Input[str]] = None,
-             ref_name: Optional[pulumi.Input[str]] = None,
-             ref_type: Optional[pulumi.Input[str]] = None,
-             repository_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if commit_id is None and 'commitId' in kwargs:
-            commit_id = kwargs['commitId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if full_ref_name is None and 'fullRefName' in kwargs:
-            full_ref_name = kwargs['fullRefName']
-        if object_id is None and 'objectId' in kwargs:
-            object_id = kwargs['objectId']
-        if ref_name is None and 'refName' in kwargs:
-            ref_name = kwargs['refName']
-        if ref_type is None and 'refType' in kwargs:
-            ref_type = kwargs['refType']
-        if repository_id is None and 'repositoryId' in kwargs:
-            repository_id = kwargs['repositoryId']
-
         if commit_id is not None:
-            _setter("commit_id", commit_id)
+            pulumi.set(__self__, "commit_id", commit_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if full_ref_name is not None:
-            _setter("full_ref_name", full_ref_name)
+            pulumi.set(__self__, "full_ref_name", full_ref_name)
         if object_id is not None:
-            _setter("object_id", object_id)
+            pulumi.set(__self__, "object_id", object_id)
         if ref_name is not None:
-            _setter("ref_name", ref_name)
+            pulumi.set(__self__, "ref_name", ref_name)
         if ref_type is not None:
-            _setter("ref_type", ref_type)
+            pulumi.set(__self__, "ref_type", ref_type)
         if repository_id is not None:
-            _setter("repository_id", repository_id)
+            pulumi.set(__self__, "repository_id", repository_id)
 
     @property
     @pulumi.getter(name="commitId")
@@ -417,10 +341,6 @@ class RepositoryRef(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            RepositoryRefArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

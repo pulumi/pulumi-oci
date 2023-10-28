@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -28,29 +28,10 @@ class GetNotificationTopicsFilterResult(dict):
         """
         :param str name: A filter to only return resources that match the given name exactly.
         """
-        GetNotificationTopicsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -100,89 +81,18 @@ class GetNotificationTopicsNotificationTopicResult(dict):
         :param str time_created: The time the topic was created.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
-        GetNotificationTopicsNotificationTopicResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            api_endpoint=api_endpoint,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            etag=etag,
-            freeform_tags=freeform_tags,
-            id=id,
-            name=name,
-            short_topic_id=short_topic_id,
-            state=state,
-            time_created=time_created,
-            topic_id=topic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             api_endpoint: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             etag: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             name: Optional[str] = None,
-             short_topic_id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             topic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if api_endpoint is None and 'apiEndpoint' in kwargs:
-            api_endpoint = kwargs['apiEndpoint']
-        if api_endpoint is None:
-            raise TypeError("Missing 'api_endpoint' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if etag is None:
-            raise TypeError("Missing 'etag' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if short_topic_id is None and 'shortTopicId' in kwargs:
-            short_topic_id = kwargs['shortTopicId']
-        if short_topic_id is None:
-            raise TypeError("Missing 'short_topic_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if topic_id is None and 'topicId' in kwargs:
-            topic_id = kwargs['topicId']
-        if topic_id is None:
-            raise TypeError("Missing 'topic_id' argument")
-
-        _setter("api_endpoint", api_endpoint)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("etag", etag)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("name", name)
-        _setter("short_topic_id", short_topic_id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("topic_id", topic_id)
+        pulumi.set(__self__, "api_endpoint", api_endpoint)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "etag", etag)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "short_topic_id", short_topic_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "topic_id", topic_id)
 
     @property
     @pulumi.getter(name="apiEndpoint")
@@ -287,29 +197,10 @@ class GetSubscriptionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSubscriptionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -353,82 +244,17 @@ class GetSubscriptionsSubscriptionResult(dict):
         :param str state: The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
         :param str topic_id: Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
         """
-        GetSubscriptionsSubscriptionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            created_time=created_time,
-            defined_tags=defined_tags,
-            delivery_policies=delivery_policies,
-            endpoint=endpoint,
-            etag=etag,
-            freeform_tags=freeform_tags,
-            id=id,
-            protocol=protocol,
-            state=state,
-            topic_id=topic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             created_time: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             delivery_policies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult']] = None,
-             endpoint: Optional[str] = None,
-             etag: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             protocol: Optional[str] = None,
-             state: Optional[str] = None,
-             topic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if created_time is None and 'createdTime' in kwargs:
-            created_time = kwargs['createdTime']
-        if created_time is None:
-            raise TypeError("Missing 'created_time' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if delivery_policies is None and 'deliveryPolicies' in kwargs:
-            delivery_policies = kwargs['deliveryPolicies']
-        if delivery_policies is None:
-            raise TypeError("Missing 'delivery_policies' argument")
-        if endpoint is None:
-            raise TypeError("Missing 'endpoint' argument")
-        if etag is None:
-            raise TypeError("Missing 'etag' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if topic_id is None and 'topicId' in kwargs:
-            topic_id = kwargs['topicId']
-        if topic_id is None:
-            raise TypeError("Missing 'topic_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("created_time", created_time)
-        _setter("defined_tags", defined_tags)
-        _setter("delivery_policies", delivery_policies)
-        _setter("endpoint", endpoint)
-        _setter("etag", etag)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("protocol", protocol)
-        _setter("state", state)
-        _setter("topic_id", topic_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "delivery_policies", delivery_policies)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "etag", etag)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "topic_id", topic_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -520,22 +346,7 @@ class GetSubscriptionsSubscriptionResult(dict):
 class GetSubscriptionsSubscriptionDeliveryPolicyResult(dict):
     def __init__(__self__, *,
                  backoff_retry_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']):
-        GetSubscriptionsSubscriptionDeliveryPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backoff_retry_policies=backoff_retry_policies,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backoff_retry_policies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backoff_retry_policies is None and 'backoffRetryPolicies' in kwargs:
-            backoff_retry_policies = kwargs['backoffRetryPolicies']
-        if backoff_retry_policies is None:
-            raise TypeError("Missing 'backoff_retry_policies' argument")
-
-        _setter("backoff_retry_policies", backoff_retry_policies)
+        pulumi.set(__self__, "backoff_retry_policies", backoff_retry_policies)
 
     @property
     @pulumi.getter(name="backoffRetryPolicies")
@@ -552,29 +363,8 @@ class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult(dict):
         :param int max_retry_duration: The maximum retry duration in milliseconds.
         :param str policy_type: The type of delivery policy. Default value: EXPONENTIAL.
         """
-        GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max_retry_duration=max_retry_duration,
-            policy_type=policy_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max_retry_duration: Optional[int] = None,
-             policy_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max_retry_duration is None and 'maxRetryDuration' in kwargs:
-            max_retry_duration = kwargs['maxRetryDuration']
-        if max_retry_duration is None:
-            raise TypeError("Missing 'max_retry_duration' argument")
-        if policy_type is None and 'policyType' in kwargs:
-            policy_type = kwargs['policyType']
-        if policy_type is None:
-            raise TypeError("Missing 'policy_type' argument")
-
-        _setter("max_retry_duration", max_retry_duration)
-        _setter("policy_type", policy_type)
+        pulumi.set(__self__, "max_retry_duration", max_retry_duration)
+        pulumi.set(__self__, "policy_type", policy_type)
 
     @property
     @pulumi.getter(name="maxRetryDuration")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -79,167 +79,60 @@ class AddressActionVerificationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AddressActionVerificationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            osp_home_region=osp_home_region,
-            address_key=address_key,
-            city=city,
-            company_name=company_name,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             osp_home_region: Optional[pulumi.Input[str]] = None,
-             address_key: Optional[pulumi.Input[str]] = None,
-             city: Optional[pulumi.Input[str]] = None,
-             company_name: Optional[pulumi.Input[str]] = None,
-             contributor_class: Optional[pulumi.Input[str]] = None,
-             country: Optional[pulumi.Input[str]] = None,
-             county: Optional[pulumi.Input[str]] = None,
-             department_name: Optional[pulumi.Input[str]] = None,
-             email_address: Optional[pulumi.Input[str]] = None,
-             first_name: Optional[pulumi.Input[str]] = None,
-             internal_number: Optional[pulumi.Input[str]] = None,
-             job_title: Optional[pulumi.Input[str]] = None,
-             last_name: Optional[pulumi.Input[str]] = None,
-             line1: Optional[pulumi.Input[str]] = None,
-             line2: Optional[pulumi.Input[str]] = None,
-             line3: Optional[pulumi.Input[str]] = None,
-             line4: Optional[pulumi.Input[str]] = None,
-             middle_name: Optional[pulumi.Input[str]] = None,
-             municipal_inscription: Optional[pulumi.Input[str]] = None,
-             phone_country_code: Optional[pulumi.Input[str]] = None,
-             phone_number: Optional[pulumi.Input[str]] = None,
-             postal_code: Optional[pulumi.Input[str]] = None,
-             province: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             state_inscription: Optional[pulumi.Input[str]] = None,
-             street_name: Optional[pulumi.Input[str]] = None,
-             street_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if osp_home_region is None and 'ospHomeRegion' in kwargs:
-            osp_home_region = kwargs['ospHomeRegion']
-        if osp_home_region is None:
-            raise TypeError("Missing 'osp_home_region' argument")
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-
-        _setter("compartment_id", compartment_id)
-        _setter("osp_home_region", osp_home_region)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "osp_home_region", osp_home_region)
         if address_key is not None:
-            _setter("address_key", address_key)
+            pulumi.set(__self__, "address_key", address_key)
         if city is not None:
-            _setter("city", city)
+            pulumi.set(__self__, "city", city)
         if company_name is not None:
-            _setter("company_name", company_name)
+            pulumi.set(__self__, "company_name", company_name)
         if contributor_class is not None:
-            _setter("contributor_class", contributor_class)
+            pulumi.set(__self__, "contributor_class", contributor_class)
         if country is not None:
-            _setter("country", country)
+            pulumi.set(__self__, "country", country)
         if county is not None:
-            _setter("county", county)
+            pulumi.set(__self__, "county", county)
         if department_name is not None:
-            _setter("department_name", department_name)
+            pulumi.set(__self__, "department_name", department_name)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if first_name is not None:
-            _setter("first_name", first_name)
+            pulumi.set(__self__, "first_name", first_name)
         if internal_number is not None:
-            _setter("internal_number", internal_number)
+            pulumi.set(__self__, "internal_number", internal_number)
         if job_title is not None:
-            _setter("job_title", job_title)
+            pulumi.set(__self__, "job_title", job_title)
         if last_name is not None:
-            _setter("last_name", last_name)
+            pulumi.set(__self__, "last_name", last_name)
         if line1 is not None:
-            _setter("line1", line1)
+            pulumi.set(__self__, "line1", line1)
         if line2 is not None:
-            _setter("line2", line2)
+            pulumi.set(__self__, "line2", line2)
         if line3 is not None:
-            _setter("line3", line3)
+            pulumi.set(__self__, "line3", line3)
         if line4 is not None:
-            _setter("line4", line4)
+            pulumi.set(__self__, "line4", line4)
         if middle_name is not None:
-            _setter("middle_name", middle_name)
+            pulumi.set(__self__, "middle_name", middle_name)
         if municipal_inscription is not None:
-            _setter("municipal_inscription", municipal_inscription)
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            _setter("phone_country_code", phone_country_code)
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
         if phone_number is not None:
-            _setter("phone_number", phone_number)
+            pulumi.set(__self__, "phone_number", phone_number)
         if postal_code is not None:
-            _setter("postal_code", postal_code)
+            pulumi.set(__self__, "postal_code", postal_code)
         if province is not None:
-            _setter("province", province)
+            pulumi.set(__self__, "province", province)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_inscription is not None:
-            _setter("state_inscription", state_inscription)
+            pulumi.set(__self__, "state_inscription", state_inscription)
         if street_name is not None:
-            _setter("street_name", street_name)
+            pulumi.set(__self__, "street_name", street_name)
         if street_number is not None:
-            _setter("street_number", street_number)
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -654,179 +547,68 @@ class _AddressActionVerificationState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] verification_code: Address verification code.
         """
-        _AddressActionVerificationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            address_key=address_key,
-            addresses=addresses,
-            city=city,
-            company_name=company_name,
-            compartment_id=compartment_id,
-            contributor_class=contributor_class,
-            country=country,
-            county=county,
-            department_name=department_name,
-            email_address=email_address,
-            first_name=first_name,
-            internal_number=internal_number,
-            job_title=job_title,
-            last_name=last_name,
-            line1=line1,
-            line2=line2,
-            line3=line3,
-            line4=line4,
-            middle_name=middle_name,
-            municipal_inscription=municipal_inscription,
-            osp_home_region=osp_home_region,
-            phone_country_code=phone_country_code,
-            phone_number=phone_number,
-            postal_code=postal_code,
-            province=province,
-            quality=quality,
-            state=state,
-            state_inscription=state_inscription,
-            street_name=street_name,
-            street_number=street_number,
-            verification_code=verification_code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             address_key: Optional[pulumi.Input[str]] = None,
-             addresses: Optional[pulumi.Input[Sequence[pulumi.Input['AddressActionVerificationAddressArgs']]]] = None,
-             city: Optional[pulumi.Input[str]] = None,
-             company_name: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             contributor_class: Optional[pulumi.Input[str]] = None,
-             country: Optional[pulumi.Input[str]] = None,
-             county: Optional[pulumi.Input[str]] = None,
-             department_name: Optional[pulumi.Input[str]] = None,
-             email_address: Optional[pulumi.Input[str]] = None,
-             first_name: Optional[pulumi.Input[str]] = None,
-             internal_number: Optional[pulumi.Input[str]] = None,
-             job_title: Optional[pulumi.Input[str]] = None,
-             last_name: Optional[pulumi.Input[str]] = None,
-             line1: Optional[pulumi.Input[str]] = None,
-             line2: Optional[pulumi.Input[str]] = None,
-             line3: Optional[pulumi.Input[str]] = None,
-             line4: Optional[pulumi.Input[str]] = None,
-             middle_name: Optional[pulumi.Input[str]] = None,
-             municipal_inscription: Optional[pulumi.Input[str]] = None,
-             osp_home_region: Optional[pulumi.Input[str]] = None,
-             phone_country_code: Optional[pulumi.Input[str]] = None,
-             phone_number: Optional[pulumi.Input[str]] = None,
-             postal_code: Optional[pulumi.Input[str]] = None,
-             province: Optional[pulumi.Input[str]] = None,
-             quality: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             state_inscription: Optional[pulumi.Input[str]] = None,
-             street_name: Optional[pulumi.Input[str]] = None,
-             street_number: Optional[pulumi.Input[str]] = None,
-             verification_code: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if address_key is None and 'addressKey' in kwargs:
-            address_key = kwargs['addressKey']
-        if company_name is None and 'companyName' in kwargs:
-            company_name = kwargs['companyName']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if contributor_class is None and 'contributorClass' in kwargs:
-            contributor_class = kwargs['contributorClass']
-        if department_name is None and 'departmentName' in kwargs:
-            department_name = kwargs['departmentName']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if first_name is None and 'firstName' in kwargs:
-            first_name = kwargs['firstName']
-        if internal_number is None and 'internalNumber' in kwargs:
-            internal_number = kwargs['internalNumber']
-        if job_title is None and 'jobTitle' in kwargs:
-            job_title = kwargs['jobTitle']
-        if last_name is None and 'lastName' in kwargs:
-            last_name = kwargs['lastName']
-        if middle_name is None and 'middleName' in kwargs:
-            middle_name = kwargs['middleName']
-        if municipal_inscription is None and 'municipalInscription' in kwargs:
-            municipal_inscription = kwargs['municipalInscription']
-        if osp_home_region is None and 'ospHomeRegion' in kwargs:
-            osp_home_region = kwargs['ospHomeRegion']
-        if phone_country_code is None and 'phoneCountryCode' in kwargs:
-            phone_country_code = kwargs['phoneCountryCode']
-        if phone_number is None and 'phoneNumber' in kwargs:
-            phone_number = kwargs['phoneNumber']
-        if postal_code is None and 'postalCode' in kwargs:
-            postal_code = kwargs['postalCode']
-        if state_inscription is None and 'stateInscription' in kwargs:
-            state_inscription = kwargs['stateInscription']
-        if street_name is None and 'streetName' in kwargs:
-            street_name = kwargs['streetName']
-        if street_number is None and 'streetNumber' in kwargs:
-            street_number = kwargs['streetNumber']
-        if verification_code is None and 'verificationCode' in kwargs:
-            verification_code = kwargs['verificationCode']
-
         if address_key is not None:
-            _setter("address_key", address_key)
+            pulumi.set(__self__, "address_key", address_key)
         if addresses is not None:
-            _setter("addresses", addresses)
+            pulumi.set(__self__, "addresses", addresses)
         if city is not None:
-            _setter("city", city)
+            pulumi.set(__self__, "city", city)
         if company_name is not None:
-            _setter("company_name", company_name)
+            pulumi.set(__self__, "company_name", company_name)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if contributor_class is not None:
-            _setter("contributor_class", contributor_class)
+            pulumi.set(__self__, "contributor_class", contributor_class)
         if country is not None:
-            _setter("country", country)
+            pulumi.set(__self__, "country", country)
         if county is not None:
-            _setter("county", county)
+            pulumi.set(__self__, "county", county)
         if department_name is not None:
-            _setter("department_name", department_name)
+            pulumi.set(__self__, "department_name", department_name)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if first_name is not None:
-            _setter("first_name", first_name)
+            pulumi.set(__self__, "first_name", first_name)
         if internal_number is not None:
-            _setter("internal_number", internal_number)
+            pulumi.set(__self__, "internal_number", internal_number)
         if job_title is not None:
-            _setter("job_title", job_title)
+            pulumi.set(__self__, "job_title", job_title)
         if last_name is not None:
-            _setter("last_name", last_name)
+            pulumi.set(__self__, "last_name", last_name)
         if line1 is not None:
-            _setter("line1", line1)
+            pulumi.set(__self__, "line1", line1)
         if line2 is not None:
-            _setter("line2", line2)
+            pulumi.set(__self__, "line2", line2)
         if line3 is not None:
-            _setter("line3", line3)
+            pulumi.set(__self__, "line3", line3)
         if line4 is not None:
-            _setter("line4", line4)
+            pulumi.set(__self__, "line4", line4)
         if middle_name is not None:
-            _setter("middle_name", middle_name)
+            pulumi.set(__self__, "middle_name", middle_name)
         if municipal_inscription is not None:
-            _setter("municipal_inscription", municipal_inscription)
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
         if osp_home_region is not None:
-            _setter("osp_home_region", osp_home_region)
+            pulumi.set(__self__, "osp_home_region", osp_home_region)
         if phone_country_code is not None:
-            _setter("phone_country_code", phone_country_code)
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
         if phone_number is not None:
-            _setter("phone_number", phone_number)
+            pulumi.set(__self__, "phone_number", phone_number)
         if postal_code is not None:
-            _setter("postal_code", postal_code)
+            pulumi.set(__self__, "postal_code", postal_code)
         if province is not None:
-            _setter("province", province)
+            pulumi.set(__self__, "province", province)
         if quality is not None:
-            _setter("quality", quality)
+            pulumi.set(__self__, "quality", quality)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_inscription is not None:
-            _setter("state_inscription", state_inscription)
+            pulumi.set(__self__, "state_inscription", state_inscription)
         if street_name is not None:
-            _setter("street_name", street_name)
+            pulumi.set(__self__, "street_name", street_name)
         if street_number is not None:
-            _setter("street_number", street_number)
+            pulumi.set(__self__, "street_number", street_number)
         if verification_code is not None:
-            _setter("verification_code", verification_code)
+            pulumi.set(__self__, "verification_code", verification_code)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -1390,10 +1172,6 @@ class AddressActionVerification(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AddressActionVerificationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

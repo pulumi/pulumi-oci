@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -40,28 +40,9 @@ class ApplicationImagePolicyConfigArgs:
         :param pulumi.Input[bool] is_policy_enabled: (Updatable) Define if image signature verification policy is enabled for the application.
         :param pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]] key_details: (Updatable) A list of KMS key details.
         """
-        ApplicationImagePolicyConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_policy_enabled=is_policy_enabled,
-            key_details=key_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_policy_enabled: Optional[pulumi.Input[bool]] = None,
-             key_details: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_policy_enabled is None and 'isPolicyEnabled' in kwargs:
-            is_policy_enabled = kwargs['isPolicyEnabled']
-        if is_policy_enabled is None:
-            raise TypeError("Missing 'is_policy_enabled' argument")
-        if key_details is None and 'keyDetails' in kwargs:
-            key_details = kwargs['keyDetails']
-
-        _setter("is_policy_enabled", is_policy_enabled)
+        pulumi.set(__self__, "is_policy_enabled", is_policy_enabled)
         if key_details is not None:
-            _setter("key_details", key_details)
+            pulumi.set(__self__, "key_details", key_details)
 
     @property
     @pulumi.getter(name="isPolicyEnabled")
@@ -95,22 +76,7 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
         """
         :param pulumi.Input[str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         """
-        ApplicationImagePolicyConfigKeyDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_id is None:
-            raise TypeError("Missing 'kms_key_id' argument")
-
-        _setter("kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -138,27 +104,10 @@ class ApplicationTraceConfigArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ApplicationTraceConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            domain_id=domain_id,
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             domain_id: Optional[pulumi.Input[str]] = None,
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if domain_id is None and 'domainId' in kwargs:
-            domain_id = kwargs['domainId']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if domain_id is not None:
-            _setter("domain_id", domain_id)
+            pulumi.set(__self__, "domain_id", domain_id)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="domainId")
@@ -198,24 +147,9 @@ class FunctionProvisionedConcurrencyConfigArgs:
         :param pulumi.Input[str] strategy: (Updatable) The strategy for provisioned concurrency to be used.
         :param pulumi.Input[int] count: (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         """
-        FunctionProvisionedConcurrencyConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            strategy=strategy,
-            count=count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             strategy: Optional[pulumi.Input[str]] = None,
-             count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if strategy is None:
-            raise TypeError("Missing 'strategy' argument")
-
-        _setter("strategy", strategy)
+        pulumi.set(__self__, "strategy", strategy)
         if count is not None:
-            _setter("count", count)
+            pulumi.set(__self__, "count", count)
 
     @property
     @pulumi.getter
@@ -251,29 +185,8 @@ class FunctionSourceDetailsArgs:
         :param pulumi.Input[str] pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
         :param pulumi.Input[str] source_type: Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
         """
-        FunctionSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            pbf_listing_id=pbf_listing_id,
-            source_type=source_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             pbf_listing_id: Optional[pulumi.Input[str]] = None,
-             source_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if pbf_listing_id is None and 'pbfListingId' in kwargs:
-            pbf_listing_id = kwargs['pbfListingId']
-        if pbf_listing_id is None:
-            raise TypeError("Missing 'pbf_listing_id' argument")
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_type is None:
-            raise TypeError("Missing 'source_type' argument")
-
-        _setter("pbf_listing_id", pbf_listing_id)
-        _setter("source_type", source_type)
+        pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
+        pulumi.set(__self__, "source_type", source_type)
 
     @property
     @pulumi.getter(name="pbfListingId")
@@ -311,21 +224,8 @@ class FunctionTraceConfigArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        FunctionTraceConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -350,29 +250,10 @@ class GetApplicationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetApplicationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -408,29 +289,10 @@ class GetFunctionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFunctionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -466,29 +328,10 @@ class GetFusionEnvironmentAdminUsersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentAdminUsersFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -524,29 +367,10 @@ class GetFusionEnvironmentDataMaskingActivitiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentDataMaskingActivitiesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -582,29 +406,10 @@ class GetFusionEnvironmentFamiliesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentFamiliesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -640,29 +445,10 @@ class GetFusionEnvironmentRefreshActivitiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentRefreshActivitiesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -698,29 +484,10 @@ class GetFusionEnvironmentScheduledActivitiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentScheduledActivitiesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -756,29 +523,10 @@ class GetFusionEnvironmentServiceAttachmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentServiceAttachmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -814,29 +562,10 @@ class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -872,29 +601,10 @@ class GetFusionEnvironmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFusionEnvironmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -933,29 +643,10 @@ class GetPbfListingTriggersFilterArgs:
         """
         :param str name: A filter to return only resources that match the service trigger source of a PBF.
         """
-        GetPbfListingTriggersFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -997,29 +688,10 @@ class GetPbfListingVersionsFilterArgs:
         """
         :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
         """
-        GetPbfListingVersionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1061,29 +733,10 @@ class GetPbfListingsFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire PBF name given.
         """
-        GetPbfListingsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

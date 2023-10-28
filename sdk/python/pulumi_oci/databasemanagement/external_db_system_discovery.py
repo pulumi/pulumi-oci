@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,41 +27,12 @@ class ExternalDbSystemDiscoveryArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]] patch_operations: (Updatable)
         """
-        ExternalDbSystemDiscoveryArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_id=agent_id,
-            compartment_id=compartment_id,
-            display_name=display_name,
-            patch_operations=patch_operations,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if agent_id is None:
-            raise TypeError("Missing 'agent_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if patch_operations is None and 'patchOperations' in kwargs:
-            patch_operations = kwargs['patchOperations']
-
-        _setter("agent_id", agent_id)
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if patch_operations is not None:
-            _setter("patch_operations", patch_operations)
+            pulumi.set(__self__, "patch_operations", patch_operations)
 
     @property
     @pulumi.getter(name="agentId")
@@ -141,85 +112,30 @@ class _ExternalDbSystemDiscoveryState:
         :param pulumi.Input[str] time_created: The date and time the external DB system discovery was created.
         :param pulumi.Input[str] time_updated: The date and time the external DB system discovery was last updated.
         """
-        _ExternalDbSystemDiscoveryState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_id=agent_id,
-            compartment_id=compartment_id,
-            discovered_components=discovered_components,
-            display_name=display_name,
-            external_db_system_discovery_id=external_db_system_discovery_id,
-            grid_home=grid_home,
-            lifecycle_details=lifecycle_details,
-            patch_operations=patch_operations,
-            resource_id=resource_id,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             discovered_components: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentArgs']]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             external_db_system_discovery_id: Optional[pulumi.Input[str]] = None,
-             grid_home: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]]] = None,
-             resource_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if discovered_components is None and 'discoveredComponents' in kwargs:
-            discovered_components = kwargs['discoveredComponents']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if external_db_system_discovery_id is None and 'externalDbSystemDiscoveryId' in kwargs:
-            external_db_system_discovery_id = kwargs['externalDbSystemDiscoveryId']
-        if grid_home is None and 'gridHome' in kwargs:
-            grid_home = kwargs['gridHome']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if patch_operations is None and 'patchOperations' in kwargs:
-            patch_operations = kwargs['patchOperations']
-        if resource_id is None and 'resourceId' in kwargs:
-            resource_id = kwargs['resourceId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if agent_id is not None:
-            _setter("agent_id", agent_id)
+            pulumi.set(__self__, "agent_id", agent_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if discovered_components is not None:
-            _setter("discovered_components", discovered_components)
+            pulumi.set(__self__, "discovered_components", discovered_components)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if external_db_system_discovery_id is not None:
-            _setter("external_db_system_discovery_id", external_db_system_discovery_id)
+            pulumi.set(__self__, "external_db_system_discovery_id", external_db_system_discovery_id)
         if grid_home is not None:
-            _setter("grid_home", grid_home)
+            pulumi.set(__self__, "grid_home", grid_home)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if patch_operations is not None:
-            _setter("patch_operations", patch_operations)
+            pulumi.set(__self__, "patch_operations", patch_operations)
         if resource_id is not None:
-            _setter("resource_id", resource_id)
+            pulumi.set(__self__, "resource_id", resource_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -426,10 +342,6 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalDbSystemDiscoveryArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

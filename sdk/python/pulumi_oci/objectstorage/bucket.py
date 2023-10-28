@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,87 +49,30 @@ class BucketArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        BucketArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            namespace=namespace,
-            access_type=access_type,
-            auto_tiering=auto_tiering,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            kms_key_id=kms_key_id,
-            metadata=metadata,
-            name=name,
-            object_events_enabled=object_events_enabled,
-            retention_rules=retention_rules,
-            storage_tier=storage_tier,
-            versioning=versioning,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             access_type: Optional[pulumi.Input[str]] = None,
-             auto_tiering: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             object_events_enabled: Optional[pulumi.Input[bool]] = None,
-             retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
-             storage_tier: Optional[pulumi.Input[str]] = None,
-             versioning: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if access_type is None and 'accessType' in kwargs:
-            access_type = kwargs['accessType']
-        if auto_tiering is None and 'autoTiering' in kwargs:
-            auto_tiering = kwargs['autoTiering']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if object_events_enabled is None and 'objectEventsEnabled' in kwargs:
-            object_events_enabled = kwargs['objectEventsEnabled']
-        if retention_rules is None and 'retentionRules' in kwargs:
-            retention_rules = kwargs['retentionRules']
-        if storage_tier is None and 'storageTier' in kwargs:
-            storage_tier = kwargs['storageTier']
-
-        _setter("compartment_id", compartment_id)
-        _setter("namespace", namespace)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "namespace", namespace)
         if access_type is not None:
-            _setter("access_type", access_type)
+            pulumi.set(__self__, "access_type", access_type)
         if auto_tiering is not None:
-            _setter("auto_tiering", auto_tiering)
+            pulumi.set(__self__, "auto_tiering", auto_tiering)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if metadata is not None:
-            _setter("metadata", metadata)
+            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if object_events_enabled is not None:
-            _setter("object_events_enabled", object_events_enabled)
+            pulumi.set(__self__, "object_events_enabled", object_events_enabled)
         if retention_rules is not None:
-            _setter("retention_rules", retention_rules)
+            pulumi.set(__self__, "retention_rules", retention_rules)
         if storage_tier is not None:
-            _setter("storage_tier", storage_tier)
+            pulumi.set(__self__, "storage_tier", storage_tier)
         if versioning is not None:
-            _setter("versioning", versioning)
+            pulumi.set(__self__, "versioning", versioning)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -346,137 +289,50 @@ class _BucketState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _BucketState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_type=access_type,
-            approximate_count=approximate_count,
-            approximate_size=approximate_size,
-            auto_tiering=auto_tiering,
-            bucket_id=bucket_id,
-            compartment_id=compartment_id,
-            created_by=created_by,
-            defined_tags=defined_tags,
-            etag=etag,
-            freeform_tags=freeform_tags,
-            is_read_only=is_read_only,
-            kms_key_id=kms_key_id,
-            metadata=metadata,
-            name=name,
-            namespace=namespace,
-            object_events_enabled=object_events_enabled,
-            object_lifecycle_policy_etag=object_lifecycle_policy_etag,
-            replication_enabled=replication_enabled,
-            retention_rules=retention_rules,
-            storage_tier=storage_tier,
-            time_created=time_created,
-            versioning=versioning,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_type: Optional[pulumi.Input[str]] = None,
-             approximate_count: Optional[pulumi.Input[str]] = None,
-             approximate_size: Optional[pulumi.Input[str]] = None,
-             auto_tiering: Optional[pulumi.Input[str]] = None,
-             bucket_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             created_by: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             etag: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_read_only: Optional[pulumi.Input[bool]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             object_events_enabled: Optional[pulumi.Input[bool]] = None,
-             object_lifecycle_policy_etag: Optional[pulumi.Input[str]] = None,
-             replication_enabled: Optional[pulumi.Input[bool]] = None,
-             retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
-             storage_tier: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             versioning: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_type is None and 'accessType' in kwargs:
-            access_type = kwargs['accessType']
-        if approximate_count is None and 'approximateCount' in kwargs:
-            approximate_count = kwargs['approximateCount']
-        if approximate_size is None and 'approximateSize' in kwargs:
-            approximate_size = kwargs['approximateSize']
-        if auto_tiering is None and 'autoTiering' in kwargs:
-            auto_tiering = kwargs['autoTiering']
-        if bucket_id is None and 'bucketId' in kwargs:
-            bucket_id = kwargs['bucketId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_read_only is None and 'isReadOnly' in kwargs:
-            is_read_only = kwargs['isReadOnly']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if object_events_enabled is None and 'objectEventsEnabled' in kwargs:
-            object_events_enabled = kwargs['objectEventsEnabled']
-        if object_lifecycle_policy_etag is None and 'objectLifecyclePolicyEtag' in kwargs:
-            object_lifecycle_policy_etag = kwargs['objectLifecyclePolicyEtag']
-        if replication_enabled is None and 'replicationEnabled' in kwargs:
-            replication_enabled = kwargs['replicationEnabled']
-        if retention_rules is None and 'retentionRules' in kwargs:
-            retention_rules = kwargs['retentionRules']
-        if storage_tier is None and 'storageTier' in kwargs:
-            storage_tier = kwargs['storageTier']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if access_type is not None:
-            _setter("access_type", access_type)
+            pulumi.set(__self__, "access_type", access_type)
         if approximate_count is not None:
-            _setter("approximate_count", approximate_count)
+            pulumi.set(__self__, "approximate_count", approximate_count)
         if approximate_size is not None:
-            _setter("approximate_size", approximate_size)
+            pulumi.set(__self__, "approximate_size", approximate_size)
         if auto_tiering is not None:
-            _setter("auto_tiering", auto_tiering)
+            pulumi.set(__self__, "auto_tiering", auto_tiering)
         if bucket_id is not None:
-            _setter("bucket_id", bucket_id)
+            pulumi.set(__self__, "bucket_id", bucket_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if created_by is not None:
-            _setter("created_by", created_by)
+            pulumi.set(__self__, "created_by", created_by)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if etag is not None:
-            _setter("etag", etag)
+            pulumi.set(__self__, "etag", etag)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_read_only is not None:
-            _setter("is_read_only", is_read_only)
+            pulumi.set(__self__, "is_read_only", is_read_only)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if metadata is not None:
-            _setter("metadata", metadata)
+            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object_events_enabled is not None:
-            _setter("object_events_enabled", object_events_enabled)
+            pulumi.set(__self__, "object_events_enabled", object_events_enabled)
         if object_lifecycle_policy_etag is not None:
-            _setter("object_lifecycle_policy_etag", object_lifecycle_policy_etag)
+            pulumi.set(__self__, "object_lifecycle_policy_etag", object_lifecycle_policy_etag)
         if replication_enabled is not None:
-            _setter("replication_enabled", replication_enabled)
+            pulumi.set(__self__, "replication_enabled", replication_enabled)
         if retention_rules is not None:
-            _setter("retention_rules", retention_rules)
+            pulumi.set(__self__, "retention_rules", retention_rules)
         if storage_tier is not None:
-            _setter("storage_tier", storage_tier)
+            pulumi.set(__self__, "storage_tier", storage_tier)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if versioning is not None:
-            _setter("versioning", versioning)
+            pulumi.set(__self__, "versioning", versioning)
 
     @property
     @pulumi.getter(name="accessType")
@@ -894,10 +750,6 @@ class Bucket(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BucketArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -116,87 +116,26 @@ class DomainsAccountRecoverySettingArgs:
                * type: complex
                * uniqueness: none
         """
-        DomainsAccountRecoverySettingArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_recovery_setting_id=account_recovery_setting_id,
-            factors=factors,
-            idcs_endpoint=idcs_endpoint,
-            lockout_duration=lockout_duration,
-            max_incorrect_attempts=max_incorrect_attempts,
-            schemas=schemas,
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            external_id=external_id,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_recovery_setting_id: Optional[pulumi.Input[str]] = None,
-             factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             lockout_duration: Optional[pulumi.Input[int]] = None,
-             max_incorrect_attempts: Optional[pulumi.Input[int]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             external_id: Optional[pulumi.Input[str]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_recovery_setting_id is None and 'accountRecoverySettingId' in kwargs:
-            account_recovery_setting_id = kwargs['accountRecoverySettingId']
-        if account_recovery_setting_id is None:
-            raise TypeError("Missing 'account_recovery_setting_id' argument")
-        if factors is None:
-            raise TypeError("Missing 'factors' argument")
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_endpoint is None:
-            raise TypeError("Missing 'idcs_endpoint' argument")
-        if lockout_duration is None and 'lockoutDuration' in kwargs:
-            lockout_duration = kwargs['lockoutDuration']
-        if lockout_duration is None:
-            raise TypeError("Missing 'lockout_duration' argument")
-        if max_incorrect_attempts is None and 'maxIncorrectAttempts' in kwargs:
-            max_incorrect_attempts = kwargs['maxIncorrectAttempts']
-        if max_incorrect_attempts is None:
-            raise TypeError("Missing 'max_incorrect_attempts' argument")
-        if schemas is None:
-            raise TypeError("Missing 'schemas' argument")
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if external_id is None and 'externalId' in kwargs:
-            external_id = kwargs['externalId']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-
-        _setter("account_recovery_setting_id", account_recovery_setting_id)
-        _setter("factors", factors)
-        _setter("idcs_endpoint", idcs_endpoint)
-        _setter("lockout_duration", lockout_duration)
-        _setter("max_incorrect_attempts", max_incorrect_attempts)
-        _setter("schemas", schemas)
+        pulumi.set(__self__, "account_recovery_setting_id", account_recovery_setting_id)
+        pulumi.set(__self__, "factors", factors)
+        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+        pulumi.set(__self__, "lockout_duration", lockout_duration)
+        pulumi.set(__self__, "max_incorrect_attempts", max_incorrect_attempts)
+        pulumi.set(__self__, "schemas", schemas)
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if external_id is not None:
-            _setter("external_id", external_id)
+            pulumi.set(__self__, "external_id", external_id)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter(name="accountRecoverySettingId")
@@ -636,133 +575,50 @@ class _DomainsAccountRecoverySettingState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _DomainsAccountRecoverySettingState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_recovery_setting_id=account_recovery_setting_id,
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            compartment_ocid=compartment_ocid,
-            delete_in_progress=delete_in_progress,
-            domain_ocid=domain_ocid,
-            external_id=external_id,
-            factors=factors,
-            idcs_created_bies=idcs_created_bies,
-            idcs_endpoint=idcs_endpoint,
-            idcs_last_modified_bies=idcs_last_modified_bies,
-            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
-            idcs_prevented_operations=idcs_prevented_operations,
-            lockout_duration=lockout_duration,
-            max_incorrect_attempts=max_incorrect_attempts,
-            metas=metas,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            schemas=schemas,
-            tags=tags,
-            tenancy_ocid=tenancy_ocid,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_recovery_setting_id: Optional[pulumi.Input[str]] = None,
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             compartment_ocid: Optional[pulumi.Input[str]] = None,
-             delete_in_progress: Optional[pulumi.Input[bool]] = None,
-             domain_ocid: Optional[pulumi.Input[str]] = None,
-             external_id: Optional[pulumi.Input[str]] = None,
-             factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingIdcsCreatedByArgs']]]] = None,
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingIdcsLastModifiedByArgs']]]] = None,
-             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
-             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             lockout_duration: Optional[pulumi.Input[int]] = None,
-             max_incorrect_attempts: Optional[pulumi.Input[int]] = None,
-             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingMetaArgs']]]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAccountRecoverySettingTagArgs']]]] = None,
-             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_recovery_setting_id is None and 'accountRecoverySettingId' in kwargs:
-            account_recovery_setting_id = kwargs['accountRecoverySettingId']
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if compartment_ocid is None and 'compartmentOcid' in kwargs:
-            compartment_ocid = kwargs['compartmentOcid']
-        if delete_in_progress is None and 'deleteInProgress' in kwargs:
-            delete_in_progress = kwargs['deleteInProgress']
-        if domain_ocid is None and 'domainOcid' in kwargs:
-            domain_ocid = kwargs['domainOcid']
-        if external_id is None and 'externalId' in kwargs:
-            external_id = kwargs['externalId']
-        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
-            idcs_created_bies = kwargs['idcsCreatedBies']
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
-            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
-            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
-            idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if lockout_duration is None and 'lockoutDuration' in kwargs:
-            lockout_duration = kwargs['lockoutDuration']
-        if max_incorrect_attempts is None and 'maxIncorrectAttempts' in kwargs:
-            max_incorrect_attempts = kwargs['maxIncorrectAttempts']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
-            tenancy_ocid = kwargs['tenancyOcid']
-
         if account_recovery_setting_id is not None:
-            _setter("account_recovery_setting_id", account_recovery_setting_id)
+            pulumi.set(__self__, "account_recovery_setting_id", account_recovery_setting_id)
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if compartment_ocid is not None:
-            _setter("compartment_ocid", compartment_ocid)
+            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            _setter("delete_in_progress", delete_in_progress)
+            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
         if domain_ocid is not None:
-            _setter("domain_ocid", domain_ocid)
+            pulumi.set(__self__, "domain_ocid", domain_ocid)
         if external_id is not None:
-            _setter("external_id", external_id)
+            pulumi.set(__self__, "external_id", external_id)
         if factors is not None:
-            _setter("factors", factors)
+            pulumi.set(__self__, "factors", factors)
         if idcs_created_bies is not None:
-            _setter("idcs_created_bies", idcs_created_bies)
+            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            _setter("idcs_endpoint", idcs_endpoint)
+            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
+            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            _setter("idcs_prevented_operations", idcs_prevented_operations)
+            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
         if lockout_duration is not None:
-            _setter("lockout_duration", lockout_duration)
+            pulumi.set(__self__, "lockout_duration", lockout_duration)
         if max_incorrect_attempts is not None:
-            _setter("max_incorrect_attempts", max_incorrect_attempts)
+            pulumi.set(__self__, "max_incorrect_attempts", max_incorrect_attempts)
         if metas is not None:
-            _setter("metas", metas)
+            pulumi.set(__self__, "metas", metas)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            _setter("schemas", schemas)
+            pulumi.set(__self__, "schemas", schemas)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if tenancy_ocid is not None:
-            _setter("tenancy_ocid", tenancy_ocid)
+            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
 
     @property
     @pulumi.getter(name="accountRecoverySettingId")
@@ -1337,10 +1193,6 @@ class DomainsAccountRecoverySetting(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DomainsAccountRecoverySettingArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

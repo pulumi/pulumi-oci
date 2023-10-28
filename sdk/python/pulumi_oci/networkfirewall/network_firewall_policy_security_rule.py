@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -38,50 +38,17 @@ class NetworkFirewallPolicySecurityRuleArgs:
         :param pulumi.Input[str] name: Name for the Security rule, must be unique within the policy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
         """
-        NetworkFirewallPolicySecurityRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            condition=condition,
-            network_firewall_policy_id=network_firewall_policy_id,
-            inspection=inspection,
-            name=name,
-            positions=positions,
-            priority_order=priority_order,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input[str]] = None,
-             condition: Optional[pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs']] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             inspection: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             positions: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]] = None,
-             priority_order: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_firewall_policy_id is None:
-            raise TypeError("Missing 'network_firewall_policy_id' argument")
-        if priority_order is None and 'priorityOrder' in kwargs:
-            priority_order = kwargs['priorityOrder']
-
-        _setter("action", action)
-        _setter("condition", condition)
-        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if inspection is not None:
-            _setter("inspection", inspection)
+            pulumi.set(__self__, "inspection", inspection)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if positions is not None:
-            _setter("positions", positions)
+            pulumi.set(__self__, "positions", positions)
         if priority_order is not None:
-            _setter("priority_order", priority_order)
+            pulumi.set(__self__, "priority_order", priority_order)
 
     @property
     @pulumi.getter
@@ -198,53 +165,22 @@ class _NetworkFirewallPolicySecurityRuleState:
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this security rule belongs to.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]] positions: (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
         """
-        _NetworkFirewallPolicySecurityRuleState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            condition=condition,
-            inspection=inspection,
-            name=name,
-            network_firewall_policy_id=network_firewall_policy_id,
-            parent_resource_id=parent_resource_id,
-            positions=positions,
-            priority_order=priority_order,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input[str]] = None,
-             condition: Optional[pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs']] = None,
-             inspection: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             parent_resource_id: Optional[pulumi.Input[str]] = None,
-             positions: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRulePositionArgs']]]] = None,
-             priority_order: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if parent_resource_id is None and 'parentResourceId' in kwargs:
-            parent_resource_id = kwargs['parentResourceId']
-        if priority_order is None and 'priorityOrder' in kwargs:
-            priority_order = kwargs['priorityOrder']
-
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if condition is not None:
-            _setter("condition", condition)
+            pulumi.set(__self__, "condition", condition)
         if inspection is not None:
-            _setter("inspection", inspection)
+            pulumi.set(__self__, "inspection", inspection)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
-            _setter("network_firewall_policy_id", network_firewall_policy_id)
+            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            _setter("parent_resource_id", parent_resource_id)
+            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         if positions is not None:
-            _setter("positions", positions)
+            pulumi.set(__self__, "positions", positions)
         if priority_order is not None:
-            _setter("priority_order", priority_order)
+            pulumi.set(__self__, "priority_order", priority_order)
 
     @property
     @pulumi.getter
@@ -462,10 +398,6 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkFirewallPolicySecurityRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -490,7 +422,6 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
             if action is None and not opts.urn:
                 raise TypeError("Missing required property 'action'")
             __props__.__dict__["action"] = action
-            condition = _utilities.configure(condition, NetworkFirewallPolicySecurityRuleConditionArgs, True)
             if condition is None and not opts.urn:
                 raise TypeError("Missing required property 'condition'")
             __props__.__dict__["condition"] = condition

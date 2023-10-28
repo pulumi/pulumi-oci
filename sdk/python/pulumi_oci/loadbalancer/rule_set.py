@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,31 +29,10 @@ class RuleSetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        RuleSetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-            load_balancer_id=load_balancer_id,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-
-        _setter("items", items)
-        _setter("load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -113,33 +92,14 @@ class _RuleSetState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _RuleSetState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-
         if items is not None:
-            _setter("items", items)
+            pulumi.set(__self__, "items", items)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -324,10 +284,6 @@ class RuleSet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            RuleSetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

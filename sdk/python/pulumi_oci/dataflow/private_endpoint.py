@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,76 +43,23 @@ class PrivateEndpointArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
         :param pulumi.Input[Sequence[pulumi.Input['PrivateEndpointScanDetailArgs']]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         """
-        PrivateEndpointArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            dns_zones=dns_zones,
-            subnet_id=subnet_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            max_host_count=max_host_count,
-            nsg_ids=nsg_ids,
-            scan_details=scan_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             max_host_count: Optional[pulumi.Input[int]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             scan_details: Optional[pulumi.Input[Sequence[pulumi.Input['PrivateEndpointScanDetailArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if dns_zones is None and 'dnsZones' in kwargs:
-            dns_zones = kwargs['dnsZones']
-        if dns_zones is None:
-            raise TypeError("Missing 'dns_zones' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if max_host_count is None and 'maxHostCount' in kwargs:
-            max_host_count = kwargs['maxHostCount']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if scan_details is None and 'scanDetails' in kwargs:
-            scan_details = kwargs['scanDetails']
-
-        _setter("compartment_id", compartment_id)
-        _setter("dns_zones", dns_zones)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "dns_zones", dns_zones)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if max_host_count is not None:
-            _setter("max_host_count", max_host_count)
+            pulumi.set(__self__, "max_host_count", max_host_count)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if scan_details is not None:
-            _setter("scan_details", scan_details)
+            pulumi.set(__self__, "scan_details", scan_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -281,107 +228,38 @@ class _PrivateEndpointState:
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
-        _PrivateEndpointState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            dns_zones=dns_zones,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            max_host_count=max_host_count,
-            nsg_ids=nsg_ids,
-            owner_principal_id=owner_principal_id,
-            owner_user_name=owner_user_name,
-            scan_details=scan_details,
-            state=state,
-            subnet_id=subnet_id,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             max_host_count: Optional[pulumi.Input[int]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             owner_principal_id: Optional[pulumi.Input[str]] = None,
-             owner_user_name: Optional[pulumi.Input[str]] = None,
-             scan_details: Optional[pulumi.Input[Sequence[pulumi.Input['PrivateEndpointScanDetailArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dns_zones is None and 'dnsZones' in kwargs:
-            dns_zones = kwargs['dnsZones']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if max_host_count is None and 'maxHostCount' in kwargs:
-            max_host_count = kwargs['maxHostCount']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
-            owner_principal_id = kwargs['ownerPrincipalId']
-        if owner_user_name is None and 'ownerUserName' in kwargs:
-            owner_user_name = kwargs['ownerUserName']
-        if scan_details is None and 'scanDetails' in kwargs:
-            scan_details = kwargs['scanDetails']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dns_zones is not None:
-            _setter("dns_zones", dns_zones)
+            pulumi.set(__self__, "dns_zones", dns_zones)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if max_host_count is not None:
-            _setter("max_host_count", max_host_count)
+            pulumi.set(__self__, "max_host_count", max_host_count)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if owner_principal_id is not None:
-            _setter("owner_principal_id", owner_principal_id)
+            pulumi.set(__self__, "owner_principal_id", owner_principal_id)
         if owner_user_name is not None:
-            _setter("owner_user_name", owner_user_name)
+            pulumi.set(__self__, "owner_user_name", owner_user_name)
         if scan_details is not None:
-            _setter("scan_details", scan_details)
+            pulumi.set(__self__, "scan_details", scan_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -647,10 +525,6 @@ class PrivateEndpoint(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            PrivateEndpointArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

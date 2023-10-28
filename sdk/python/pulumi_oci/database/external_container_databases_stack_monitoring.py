@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalContainerDatabasesStackMonitoringArgs', 'ExternalContainerDatabasesStackMonitoring']
@@ -27,36 +27,9 @@ class ExternalContainerDatabasesStackMonitoringArgs:
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         """
-        ExternalContainerDatabasesStackMonitoringArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_stack_monitoring=enable_stack_monitoring,
-            external_container_database_id=external_container_database_id,
-            external_database_connector_id=external_database_connector_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
-             external_container_database_id: Optional[pulumi.Input[str]] = None,
-             external_database_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_stack_monitoring is None and 'enableStackMonitoring' in kwargs:
-            enable_stack_monitoring = kwargs['enableStackMonitoring']
-        if enable_stack_monitoring is None:
-            raise TypeError("Missing 'enable_stack_monitoring' argument")
-        if external_container_database_id is None and 'externalContainerDatabaseId' in kwargs:
-            external_container_database_id = kwargs['externalContainerDatabaseId']
-        if external_container_database_id is None:
-            raise TypeError("Missing 'external_container_database_id' argument")
-        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
-            external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if external_database_connector_id is None:
-            raise TypeError("Missing 'external_database_connector_id' argument")
-
-        _setter("enable_stack_monitoring", enable_stack_monitoring)
-        _setter("external_container_database_id", external_container_database_id)
-        _setter("external_database_connector_id", external_database_connector_id)
+        pulumi.set(__self__, "enable_stack_monitoring", enable_stack_monitoring)
+        pulumi.set(__self__, "external_container_database_id", external_container_database_id)
+        pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
 
     @property
     @pulumi.getter(name="enableStackMonitoring")
@@ -115,33 +88,12 @@ class _ExternalContainerDatabasesStackMonitoringState:
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         """
-        _ExternalContainerDatabasesStackMonitoringState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_stack_monitoring=enable_stack_monitoring,
-            external_container_database_id=external_container_database_id,
-            external_database_connector_id=external_database_connector_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
-             external_container_database_id: Optional[pulumi.Input[str]] = None,
-             external_database_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_stack_monitoring is None and 'enableStackMonitoring' in kwargs:
-            enable_stack_monitoring = kwargs['enableStackMonitoring']
-        if external_container_database_id is None and 'externalContainerDatabaseId' in kwargs:
-            external_container_database_id = kwargs['externalContainerDatabaseId']
-        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
-            external_database_connector_id = kwargs['externalDatabaseConnectorId']
-
         if enable_stack_monitoring is not None:
-            _setter("enable_stack_monitoring", enable_stack_monitoring)
+            pulumi.set(__self__, "enable_stack_monitoring", enable_stack_monitoring)
         if external_container_database_id is not None:
-            _setter("external_container_database_id", external_container_database_id)
+            pulumi.set(__self__, "external_container_database_id", external_container_database_id)
         if external_database_connector_id is not None:
-            _setter("external_database_connector_id", external_database_connector_id)
+            pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
 
     @property
     @pulumi.getter(name="enableStackMonitoring")
@@ -261,10 +213,6 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalContainerDatabasesStackMonitoringArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

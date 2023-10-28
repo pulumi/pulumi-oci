@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,41 +31,10 @@ class OdaPrivateEndpointScanProxyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        OdaPrivateEndpointScanProxyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            oda_private_endpoint_id=oda_private_endpoint_id,
-            protocol=protocol,
-            scan_listener_infos=scan_listener_infos,
-            scan_listener_type=scan_listener_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] = None,
-             scan_listener_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
-            oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
-        if oda_private_endpoint_id is None:
-            raise TypeError("Missing 'oda_private_endpoint_id' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if scan_listener_infos is None and 'scanListenerInfos' in kwargs:
-            scan_listener_infos = kwargs['scanListenerInfos']
-        if scan_listener_infos is None:
-            raise TypeError("Missing 'scan_listener_infos' argument")
-        if scan_listener_type is None and 'scanListenerType' in kwargs:
-            scan_listener_type = kwargs['scanListenerType']
-        if scan_listener_type is None:
-            raise TypeError("Missing 'scan_listener_type' argument")
-
-        _setter("oda_private_endpoint_id", oda_private_endpoint_id)
-        _setter("protocol", protocol)
-        _setter("scan_listener_infos", scan_listener_infos)
-        _setter("scan_listener_type", scan_listener_type)
+        pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "scan_listener_infos", scan_listener_infos)
+        pulumi.set(__self__, "scan_listener_type", scan_listener_type)
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
@@ -142,47 +111,18 @@ class _OdaPrivateEndpointScanProxyState:
         :param pulumi.Input[str] state: The current state of the ODA Private Endpoint Scan Proxy.
         :param pulumi.Input[str] time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        _OdaPrivateEndpointScanProxyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            oda_private_endpoint_id=oda_private_endpoint_id,
-            protocol=protocol,
-            scan_listener_infos=scan_listener_infos,
-            scan_listener_type=scan_listener_type,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] = None,
-             scan_listener_type: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if oda_private_endpoint_id is None and 'odaPrivateEndpointId' in kwargs:
-            oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
-        if scan_listener_infos is None and 'scanListenerInfos' in kwargs:
-            scan_listener_infos = kwargs['scanListenerInfos']
-        if scan_listener_type is None and 'scanListenerType' in kwargs:
-            scan_listener_type = kwargs['scanListenerType']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if oda_private_endpoint_id is not None:
-            _setter("oda_private_endpoint_id", oda_private_endpoint_id)
+            pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if scan_listener_infos is not None:
-            _setter("scan_listener_infos", scan_listener_infos)
+            pulumi.set(__self__, "scan_listener_infos", scan_listener_infos)
         if scan_listener_type is not None:
-            _setter("scan_listener_type", scan_listener_type)
+            pulumi.set(__self__, "scan_listener_type", scan_listener_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
@@ -364,10 +304,6 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            OdaPrivateEndpointScanProxyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

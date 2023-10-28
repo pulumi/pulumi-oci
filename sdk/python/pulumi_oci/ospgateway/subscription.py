@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,46 +33,11 @@ class SubscriptionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        SubscriptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            email=email,
-            osp_home_region=osp_home_region,
-            subscription=subscription,
-            subscription_id=subscription_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             email: Optional[pulumi.Input[str]] = None,
-             osp_home_region: Optional[pulumi.Input[str]] = None,
-             subscription: Optional[pulumi.Input['SubscriptionSubscriptionArgs']] = None,
-             subscription_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if email is None:
-            raise TypeError("Missing 'email' argument")
-        if osp_home_region is None and 'ospHomeRegion' in kwargs:
-            osp_home_region = kwargs['ospHomeRegion']
-        if osp_home_region is None:
-            raise TypeError("Missing 'osp_home_region' argument")
-        if subscription is None:
-            raise TypeError("Missing 'subscription' argument")
-        if subscription_id is None and 'subscriptionId' in kwargs:
-            subscription_id = kwargs['subscriptionId']
-        if subscription_id is None:
-            raise TypeError("Missing 'subscription_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("email", email)
-        _setter("osp_home_region", osp_home_region)
-        _setter("subscription", subscription)
-        _setter("subscription_id", subscription_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "osp_home_region", osp_home_region)
+        pulumi.set(__self__, "subscription", subscription)
+        pulumi.set(__self__, "subscription_id", subscription_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -199,161 +164,56 @@ class _SubscriptionState:
         :param pulumi.Input[str] upgrade_state: (Updatable) Status of the upgrade.
         :param pulumi.Input[str] upgrade_state_details: (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        _SubscriptionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            account_type=account_type,
-            bill_to_cust_account_id=bill_to_cust_account_id,
-            billing_addresses=billing_addresses,
-            compartment_id=compartment_id,
-            currency_code=currency_code,
-            email=email,
-            gsi_org_code=gsi_org_code,
-            is_intent_to_pay=is_intent_to_pay,
-            language_code=language_code,
-            organization_id=organization_id,
-            osp_home_region=osp_home_region,
-            payment_gateways=payment_gateways,
-            payment_options=payment_options,
-            plan_type=plan_type,
-            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
-            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
-            subscription=subscription,
-            subscription_id=subscription_id,
-            subscription_plan_number=subscription_plan_number,
-            tax_infos=tax_infos,
-            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
-            time_plan_upgrade=time_plan_upgrade,
-            time_start=time_start,
-            upgrade_state=upgrade_state,
-            upgrade_state_details=upgrade_state_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             account_type: Optional[pulumi.Input[str]] = None,
-             bill_to_cust_account_id: Optional[pulumi.Input[str]] = None,
-             billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionBillingAddressArgs']]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             currency_code: Optional[pulumi.Input[str]] = None,
-             email: Optional[pulumi.Input[str]] = None,
-             gsi_org_code: Optional[pulumi.Input[str]] = None,
-             is_intent_to_pay: Optional[pulumi.Input[bool]] = None,
-             language_code: Optional[pulumi.Input[str]] = None,
-             organization_id: Optional[pulumi.Input[str]] = None,
-             osp_home_region: Optional[pulumi.Input[str]] = None,
-             payment_gateways: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayArgs']]]] = None,
-             payment_options: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentOptionArgs']]]] = None,
-             plan_type: Optional[pulumi.Input[str]] = None,
-             ship_to_cust_acct_role_id: Optional[pulumi.Input[str]] = None,
-             ship_to_cust_acct_site_id: Optional[pulumi.Input[str]] = None,
-             subscription: Optional[pulumi.Input['SubscriptionSubscriptionArgs']] = None,
-             subscription_id: Optional[pulumi.Input[str]] = None,
-             subscription_plan_number: Optional[pulumi.Input[str]] = None,
-             tax_infos: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]]] = None,
-             time_personal_to_corporate_conv: Optional[pulumi.Input[str]] = None,
-             time_plan_upgrade: Optional[pulumi.Input[str]] = None,
-             time_start: Optional[pulumi.Input[str]] = None,
-             upgrade_state: Optional[pulumi.Input[str]] = None,
-             upgrade_state_details: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if account_type is None and 'accountType' in kwargs:
-            account_type = kwargs['accountType']
-        if bill_to_cust_account_id is None and 'billToCustAccountId' in kwargs:
-            bill_to_cust_account_id = kwargs['billToCustAccountId']
-        if billing_addresses is None and 'billingAddresses' in kwargs:
-            billing_addresses = kwargs['billingAddresses']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if gsi_org_code is None and 'gsiOrgCode' in kwargs:
-            gsi_org_code = kwargs['gsiOrgCode']
-        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
-            is_intent_to_pay = kwargs['isIntentToPay']
-        if language_code is None and 'languageCode' in kwargs:
-            language_code = kwargs['languageCode']
-        if organization_id is None and 'organizationId' in kwargs:
-            organization_id = kwargs['organizationId']
-        if osp_home_region is None and 'ospHomeRegion' in kwargs:
-            osp_home_region = kwargs['ospHomeRegion']
-        if payment_gateways is None and 'paymentGateways' in kwargs:
-            payment_gateways = kwargs['paymentGateways']
-        if payment_options is None and 'paymentOptions' in kwargs:
-            payment_options = kwargs['paymentOptions']
-        if plan_type is None and 'planType' in kwargs:
-            plan_type = kwargs['planType']
-        if ship_to_cust_acct_role_id is None and 'shipToCustAcctRoleId' in kwargs:
-            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
-        if ship_to_cust_acct_site_id is None and 'shipToCustAcctSiteId' in kwargs:
-            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
-        if subscription_id is None and 'subscriptionId' in kwargs:
-            subscription_id = kwargs['subscriptionId']
-        if subscription_plan_number is None and 'subscriptionPlanNumber' in kwargs:
-            subscription_plan_number = kwargs['subscriptionPlanNumber']
-        if tax_infos is None and 'taxInfos' in kwargs:
-            tax_infos = kwargs['taxInfos']
-        if time_personal_to_corporate_conv is None and 'timePersonalToCorporateConv' in kwargs:
-            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
-        if time_plan_upgrade is None and 'timePlanUpgrade' in kwargs:
-            time_plan_upgrade = kwargs['timePlanUpgrade']
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if upgrade_state is None and 'upgradeState' in kwargs:
-            upgrade_state = kwargs['upgradeState']
-        if upgrade_state_details is None and 'upgradeStateDetails' in kwargs:
-            upgrade_state_details = kwargs['upgradeStateDetails']
-
         if account_type is not None:
-            _setter("account_type", account_type)
+            pulumi.set(__self__, "account_type", account_type)
         if bill_to_cust_account_id is not None:
-            _setter("bill_to_cust_account_id", bill_to_cust_account_id)
+            pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
         if billing_addresses is not None:
-            _setter("billing_addresses", billing_addresses)
+            pulumi.set(__self__, "billing_addresses", billing_addresses)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if currency_code is not None:
-            _setter("currency_code", currency_code)
+            pulumi.set(__self__, "currency_code", currency_code)
         if email is not None:
-            _setter("email", email)
+            pulumi.set(__self__, "email", email)
         if gsi_org_code is not None:
-            _setter("gsi_org_code", gsi_org_code)
+            pulumi.set(__self__, "gsi_org_code", gsi_org_code)
         if is_intent_to_pay is not None:
-            _setter("is_intent_to_pay", is_intent_to_pay)
+            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         if language_code is not None:
-            _setter("language_code", language_code)
+            pulumi.set(__self__, "language_code", language_code)
         if organization_id is not None:
-            _setter("organization_id", organization_id)
+            pulumi.set(__self__, "organization_id", organization_id)
         if osp_home_region is not None:
-            _setter("osp_home_region", osp_home_region)
+            pulumi.set(__self__, "osp_home_region", osp_home_region)
         if payment_gateways is not None:
-            _setter("payment_gateways", payment_gateways)
+            pulumi.set(__self__, "payment_gateways", payment_gateways)
         if payment_options is not None:
-            _setter("payment_options", payment_options)
+            pulumi.set(__self__, "payment_options", payment_options)
         if plan_type is not None:
-            _setter("plan_type", plan_type)
+            pulumi.set(__self__, "plan_type", plan_type)
         if ship_to_cust_acct_role_id is not None:
-            _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+            pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
         if ship_to_cust_acct_site_id is not None:
-            _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+            pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
         if subscription is not None:
-            _setter("subscription", subscription)
+            pulumi.set(__self__, "subscription", subscription)
         if subscription_id is not None:
-            _setter("subscription_id", subscription_id)
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if subscription_plan_number is not None:
-            _setter("subscription_plan_number", subscription_plan_number)
+            pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
         if tax_infos is not None:
-            _setter("tax_infos", tax_infos)
+            pulumi.set(__self__, "tax_infos", tax_infos)
         if time_personal_to_corporate_conv is not None:
-            _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
         if time_plan_upgrade is not None:
-            _setter("time_plan_upgrade", time_plan_upgrade)
+            pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
         if time_start is not None:
-            _setter("time_start", time_start)
+            pulumi.set(__self__, "time_start", time_start)
         if upgrade_state is not None:
-            _setter("upgrade_state", upgrade_state)
+            pulumi.set(__self__, "upgrade_state", upgrade_state)
         if upgrade_state_details is not None:
-            _setter("upgrade_state_details", upgrade_state_details)
+            pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
@@ -725,10 +585,6 @@ class Subscription(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            SubscriptionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -757,7 +613,6 @@ class Subscription(pulumi.CustomResource):
             if osp_home_region is None and not opts.urn:
                 raise TypeError("Missing required property 'osp_home_region'")
             __props__.__dict__["osp_home_region"] = osp_home_region
-            subscription = _utilities.configure(subscription, SubscriptionSubscriptionArgs, True)
             if subscription is None and not opts.urn:
                 raise TypeError("Missing required property 'subscription'")
             __props__.__dict__["subscription"] = subscription

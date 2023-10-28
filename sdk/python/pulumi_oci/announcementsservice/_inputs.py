@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -25,24 +25,9 @@ class AnnouncementSubscriptionFilterGroupsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[str] name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        AnnouncementSubscriptionFilterGroupsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            filters=filters,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             filters: Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if filters is None:
-            raise TypeError("Missing 'filters' argument")
-
-        _setter("filters", filters)
+        pulumi.set(__self__, "filters", filters)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -78,25 +63,8 @@ class AnnouncementSubscriptionFilterGroupsFilterArgs:
         :param pulumi.Input[str] type: The type of filter.
         :param pulumi.Input[str] value: The value of the filter.
         """
-        AnnouncementSubscriptionFilterGroupsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -132,25 +100,8 @@ class AnnouncementSubscriptionsFilterGroupFilterArgs:
         :param pulumi.Input[str] type: (Updatable) The type of filter.
         :param pulumi.Input[str] value: (Updatable) The value of the filter.
         """
-        AnnouncementSubscriptionsFilterGroupFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -186,29 +137,10 @@ class GetAnnouncementSubscriptionsFilterArgs:
         """
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        GetAnnouncementSubscriptionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

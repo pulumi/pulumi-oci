@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -50,60 +50,21 @@ class ExportExportOptionArgs:
         :param pulumi.Input[bool] is_anonymous_access_allowed: (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
         :param pulumi.Input[bool] require_privileged_source_port: (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
         """
-        ExportExportOptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            source=source,
-            access=access,
-            allowed_auths=allowed_auths,
-            anonymous_gid=anonymous_gid,
-            anonymous_uid=anonymous_uid,
-            identity_squash=identity_squash,
-            is_anonymous_access_allowed=is_anonymous_access_allowed,
-            require_privileged_source_port=require_privileged_source_port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             source: Optional[pulumi.Input[str]] = None,
-             access: Optional[pulumi.Input[str]] = None,
-             allowed_auths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             anonymous_gid: Optional[pulumi.Input[str]] = None,
-             anonymous_uid: Optional[pulumi.Input[str]] = None,
-             identity_squash: Optional[pulumi.Input[str]] = None,
-             is_anonymous_access_allowed: Optional[pulumi.Input[bool]] = None,
-             require_privileged_source_port: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if allowed_auths is None and 'allowedAuths' in kwargs:
-            allowed_auths = kwargs['allowedAuths']
-        if anonymous_gid is None and 'anonymousGid' in kwargs:
-            anonymous_gid = kwargs['anonymousGid']
-        if anonymous_uid is None and 'anonymousUid' in kwargs:
-            anonymous_uid = kwargs['anonymousUid']
-        if identity_squash is None and 'identitySquash' in kwargs:
-            identity_squash = kwargs['identitySquash']
-        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
-            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
-        if require_privileged_source_port is None and 'requirePrivilegedSourcePort' in kwargs:
-            require_privileged_source_port = kwargs['requirePrivilegedSourcePort']
-
-        _setter("source", source)
+        pulumi.set(__self__, "source", source)
         if access is not None:
-            _setter("access", access)
+            pulumi.set(__self__, "access", access)
         if allowed_auths is not None:
-            _setter("allowed_auths", allowed_auths)
+            pulumi.set(__self__, "allowed_auths", allowed_auths)
         if anonymous_gid is not None:
-            _setter("anonymous_gid", anonymous_gid)
+            pulumi.set(__self__, "anonymous_gid", anonymous_gid)
         if anonymous_uid is not None:
-            _setter("anonymous_uid", anonymous_uid)
+            pulumi.set(__self__, "anonymous_uid", anonymous_uid)
         if identity_squash is not None:
-            _setter("identity_squash", identity_squash)
+            pulumi.set(__self__, "identity_squash", identity_squash)
         if is_anonymous_access_allowed is not None:
-            _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+            pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
         if require_privileged_source_port is not None:
-            _setter("require_privileged_source_port", require_privileged_source_port)
+            pulumi.set(__self__, "require_privileged_source_port", require_privileged_source_port)
 
     @property
     @pulumi.getter
@@ -217,27 +178,10 @@ class FileSystemSourceDetailArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        FileSystemSourceDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent_file_system_id=parent_file_system_id,
-            source_snapshot_id=source_snapshot_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent_file_system_id: Optional[pulumi.Input[str]] = None,
-             source_snapshot_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent_file_system_id is None and 'parentFileSystemId' in kwargs:
-            parent_file_system_id = kwargs['parentFileSystemId']
-        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
-            source_snapshot_id = kwargs['sourceSnapshotId']
-
         if parent_file_system_id is not None:
-            _setter("parent_file_system_id", parent_file_system_id)
+            pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
         if source_snapshot_id is not None:
-            _setter("source_snapshot_id", source_snapshot_id)
+            pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
 
     @property
     @pulumi.getter(name="parentFileSystemId")
@@ -291,67 +235,22 @@ class FilesystemSnapshotPolicyScheduleArgs:
         :param pulumi.Input[str] schedule_prefix: (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
         :param pulumi.Input[str] time_schedule_start: (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
         """
-        FilesystemSnapshotPolicyScheduleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            period=period,
-            time_zone=time_zone,
-            day_of_month=day_of_month,
-            day_of_week=day_of_week,
-            hour_of_day=hour_of_day,
-            month=month,
-            retention_duration_in_seconds=retention_duration_in_seconds,
-            schedule_prefix=schedule_prefix,
-            time_schedule_start=time_schedule_start,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             period: Optional[pulumi.Input[str]] = None,
-             time_zone: Optional[pulumi.Input[str]] = None,
-             day_of_month: Optional[pulumi.Input[int]] = None,
-             day_of_week: Optional[pulumi.Input[str]] = None,
-             hour_of_day: Optional[pulumi.Input[int]] = None,
-             month: Optional[pulumi.Input[str]] = None,
-             retention_duration_in_seconds: Optional[pulumi.Input[str]] = None,
-             schedule_prefix: Optional[pulumi.Input[str]] = None,
-             time_schedule_start: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if period is None:
-            raise TypeError("Missing 'period' argument")
-        if time_zone is None and 'timeZone' in kwargs:
-            time_zone = kwargs['timeZone']
-        if time_zone is None:
-            raise TypeError("Missing 'time_zone' argument")
-        if day_of_month is None and 'dayOfMonth' in kwargs:
-            day_of_month = kwargs['dayOfMonth']
-        if day_of_week is None and 'dayOfWeek' in kwargs:
-            day_of_week = kwargs['dayOfWeek']
-        if hour_of_day is None and 'hourOfDay' in kwargs:
-            hour_of_day = kwargs['hourOfDay']
-        if retention_duration_in_seconds is None and 'retentionDurationInSeconds' in kwargs:
-            retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
-        if schedule_prefix is None and 'schedulePrefix' in kwargs:
-            schedule_prefix = kwargs['schedulePrefix']
-        if time_schedule_start is None and 'timeScheduleStart' in kwargs:
-            time_schedule_start = kwargs['timeScheduleStart']
-
-        _setter("period", period)
-        _setter("time_zone", time_zone)
+        pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "time_zone", time_zone)
         if day_of_month is not None:
-            _setter("day_of_month", day_of_month)
+            pulumi.set(__self__, "day_of_month", day_of_month)
         if day_of_week is not None:
-            _setter("day_of_week", day_of_week)
+            pulumi.set(__self__, "day_of_week", day_of_week)
         if hour_of_day is not None:
-            _setter("hour_of_day", hour_of_day)
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
         if month is not None:
-            _setter("month", month)
+            pulumi.set(__self__, "month", month)
         if retention_duration_in_seconds is not None:
-            _setter("retention_duration_in_seconds", retention_duration_in_seconds)
+            pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
         if schedule_prefix is not None:
-            _setter("schedule_prefix", schedule_prefix)
+            pulumi.set(__self__, "schedule_prefix", schedule_prefix)
         if time_schedule_start is not None:
-            _setter("time_schedule_start", time_schedule_start)
+            pulumi.set(__self__, "time_schedule_start", time_schedule_start)
 
     @property
     @pulumi.getter
@@ -477,46 +376,15 @@ class MountTargetKerberosArgs:
         :param pulumi.Input[bool] is_kerberos_enabled: (Updatable) Specifies whether to enable or disable Kerberos.
         :param pulumi.Input[str] key_tab_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
         """
-        MountTargetKerberosArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            kerberos_realm=kerberos_realm,
-            backup_key_tab_secret_version=backup_key_tab_secret_version,
-            current_key_tab_secret_version=current_key_tab_secret_version,
-            is_kerberos_enabled=is_kerberos_enabled,
-            key_tab_secret_id=key_tab_secret_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             kerberos_realm: Optional[pulumi.Input[str]] = None,
-             backup_key_tab_secret_version: Optional[pulumi.Input[int]] = None,
-             current_key_tab_secret_version: Optional[pulumi.Input[int]] = None,
-             is_kerberos_enabled: Optional[pulumi.Input[bool]] = None,
-             key_tab_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if kerberos_realm is None and 'kerberosRealm' in kwargs:
-            kerberos_realm = kwargs['kerberosRealm']
-        if kerberos_realm is None:
-            raise TypeError("Missing 'kerberos_realm' argument")
-        if backup_key_tab_secret_version is None and 'backupKeyTabSecretVersion' in kwargs:
-            backup_key_tab_secret_version = kwargs['backupKeyTabSecretVersion']
-        if current_key_tab_secret_version is None and 'currentKeyTabSecretVersion' in kwargs:
-            current_key_tab_secret_version = kwargs['currentKeyTabSecretVersion']
-        if is_kerberos_enabled is None and 'isKerberosEnabled' in kwargs:
-            is_kerberos_enabled = kwargs['isKerberosEnabled']
-        if key_tab_secret_id is None and 'keyTabSecretId' in kwargs:
-            key_tab_secret_id = kwargs['keyTabSecretId']
-
-        _setter("kerberos_realm", kerberos_realm)
+        pulumi.set(__self__, "kerberos_realm", kerberos_realm)
         if backup_key_tab_secret_version is not None:
-            _setter("backup_key_tab_secret_version", backup_key_tab_secret_version)
+            pulumi.set(__self__, "backup_key_tab_secret_version", backup_key_tab_secret_version)
         if current_key_tab_secret_version is not None:
-            _setter("current_key_tab_secret_version", current_key_tab_secret_version)
+            pulumi.set(__self__, "current_key_tab_secret_version", current_key_tab_secret_version)
         if is_kerberos_enabled is not None:
-            _setter("is_kerberos_enabled", is_kerberos_enabled)
+            pulumi.set(__self__, "is_kerberos_enabled", is_kerberos_enabled)
         if key_tab_secret_id is not None:
-            _setter("key_tab_secret_id", key_tab_secret_id)
+            pulumi.set(__self__, "key_tab_secret_id", key_tab_secret_id)
 
     @property
     @pulumi.getter(name="kerberosRealm")
@@ -600,63 +468,22 @@ class MountTargetLdapIdmapArgs:
         :param pulumi.Input[str] schema_type: (Updatable) Schema type of the LDAP account.
         :param pulumi.Input[str] user_search_base: (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
         """
-        MountTargetLdapIdmapArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cache_lifetime_seconds=cache_lifetime_seconds,
-            cache_refresh_interval_seconds=cache_refresh_interval_seconds,
-            group_search_base=group_search_base,
-            negative_cache_lifetime_seconds=negative_cache_lifetime_seconds,
-            outbound_connector1id=outbound_connector1id,
-            outbound_connector2id=outbound_connector2id,
-            schema_type=schema_type,
-            user_search_base=user_search_base,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cache_lifetime_seconds: Optional[pulumi.Input[int]] = None,
-             cache_refresh_interval_seconds: Optional[pulumi.Input[int]] = None,
-             group_search_base: Optional[pulumi.Input[str]] = None,
-             negative_cache_lifetime_seconds: Optional[pulumi.Input[int]] = None,
-             outbound_connector1id: Optional[pulumi.Input[str]] = None,
-             outbound_connector2id: Optional[pulumi.Input[str]] = None,
-             schema_type: Optional[pulumi.Input[str]] = None,
-             user_search_base: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cache_lifetime_seconds is None and 'cacheLifetimeSeconds' in kwargs:
-            cache_lifetime_seconds = kwargs['cacheLifetimeSeconds']
-        if cache_refresh_interval_seconds is None and 'cacheRefreshIntervalSeconds' in kwargs:
-            cache_refresh_interval_seconds = kwargs['cacheRefreshIntervalSeconds']
-        if group_search_base is None and 'groupSearchBase' in kwargs:
-            group_search_base = kwargs['groupSearchBase']
-        if negative_cache_lifetime_seconds is None and 'negativeCacheLifetimeSeconds' in kwargs:
-            negative_cache_lifetime_seconds = kwargs['negativeCacheLifetimeSeconds']
-        if outbound_connector1id is None and 'outboundConnector1id' in kwargs:
-            outbound_connector1id = kwargs['outboundConnector1id']
-        if outbound_connector2id is None and 'outboundConnector2id' in kwargs:
-            outbound_connector2id = kwargs['outboundConnector2id']
-        if schema_type is None and 'schemaType' in kwargs:
-            schema_type = kwargs['schemaType']
-        if user_search_base is None and 'userSearchBase' in kwargs:
-            user_search_base = kwargs['userSearchBase']
-
         if cache_lifetime_seconds is not None:
-            _setter("cache_lifetime_seconds", cache_lifetime_seconds)
+            pulumi.set(__self__, "cache_lifetime_seconds", cache_lifetime_seconds)
         if cache_refresh_interval_seconds is not None:
-            _setter("cache_refresh_interval_seconds", cache_refresh_interval_seconds)
+            pulumi.set(__self__, "cache_refresh_interval_seconds", cache_refresh_interval_seconds)
         if group_search_base is not None:
-            _setter("group_search_base", group_search_base)
+            pulumi.set(__self__, "group_search_base", group_search_base)
         if negative_cache_lifetime_seconds is not None:
-            _setter("negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
+            pulumi.set(__self__, "negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
         if outbound_connector1id is not None:
-            _setter("outbound_connector1id", outbound_connector1id)
+            pulumi.set(__self__, "outbound_connector1id", outbound_connector1id)
         if outbound_connector2id is not None:
-            _setter("outbound_connector2id", outbound_connector2id)
+            pulumi.set(__self__, "outbound_connector2id", outbound_connector2id)
         if schema_type is not None:
-            _setter("schema_type", schema_type)
+            pulumi.set(__self__, "schema_type", schema_type)
         if user_search_base is not None:
-            _setter("user_search_base", user_search_base)
+            pulumi.set(__self__, "user_search_base", user_search_base)
 
     @property
     @pulumi.getter(name="cacheLifetimeSeconds")
@@ -764,25 +591,8 @@ class OutboundConnectorEndpointArgs:
         :param pulumi.Input[str] hostname: Name of the DNS server.
         :param pulumi.Input[str] port: Port of the DNS server.
         """
-        OutboundConnectorEndpointArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostname=hostname,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostname: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-
-        _setter("hostname", hostname)
-        _setter("port", port)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
@@ -815,29 +625,10 @@ class GetExportSetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetExportSetsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -873,29 +664,10 @@ class GetExportsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetExportsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -931,29 +703,10 @@ class GetFileSystemsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFileSystemsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -989,29 +742,10 @@ class GetFilesystemSnapshotPoliciesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFilesystemSnapshotPoliciesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1047,29 +781,10 @@ class GetMountTargetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMountTargetsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1105,29 +820,10 @@ class GetOutboundConnectorsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOutboundConnectorsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1163,29 +859,10 @@ class GetReplicationTargetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetReplicationTargetsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1221,29 +898,10 @@ class GetReplicationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetReplicationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1282,29 +940,10 @@ class GetSnapshotsFilterArgs:
         """
         :param str name: Name of the snapshot. This value is immutable.
         """
-        GetSnapshotsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

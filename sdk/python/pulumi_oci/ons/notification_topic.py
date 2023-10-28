@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NotificationTopicArgs', 'NotificationTopic']
@@ -31,42 +31,15 @@ class NotificationTopicArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        NotificationTopicArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -165,73 +138,28 @@ class _NotificationTopicState:
         :param pulumi.Input[str] time_created: The time the topic was created.
         :param pulumi.Input[str] topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
-        _NotificationTopicState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            api_endpoint=api_endpoint,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            etag=etag,
-            freeform_tags=freeform_tags,
-            name=name,
-            short_topic_id=short_topic_id,
-            state=state,
-            time_created=time_created,
-            topic_id=topic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             api_endpoint: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             etag: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             short_topic_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if api_endpoint is None and 'apiEndpoint' in kwargs:
-            api_endpoint = kwargs['apiEndpoint']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if short_topic_id is None and 'shortTopicId' in kwargs:
-            short_topic_id = kwargs['shortTopicId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if topic_id is None and 'topicId' in kwargs:
-            topic_id = kwargs['topicId']
-
         if api_endpoint is not None:
-            _setter("api_endpoint", api_endpoint)
+            pulumi.set(__self__, "api_endpoint", api_endpoint)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if etag is not None:
-            _setter("etag", etag)
+            pulumi.set(__self__, "etag", etag)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if short_topic_id is not None:
-            _setter("short_topic_id", short_topic_id)
+            pulumi.set(__self__, "short_topic_id", short_topic_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if topic_id is not None:
-            _setter("topic_id", topic_id)
+            pulumi.set(__self__, "topic_id", topic_id)
 
     @property
     @pulumi.getter(name="apiEndpoint")
@@ -495,10 +423,6 @@ class NotificationTopic(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NotificationTopicArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

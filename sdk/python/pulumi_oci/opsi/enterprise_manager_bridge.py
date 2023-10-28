@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['EnterpriseManagerBridgeArgs', 'EnterpriseManagerBridge']
@@ -33,52 +33,15 @@ class EnterpriseManagerBridgeArgs:
         :param pulumi.Input[str] description: (Updatable) Description of Enterprise Manager Bridge
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
-        EnterpriseManagerBridgeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            object_storage_bucket_name=object_storage_bucket_name,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             object_storage_bucket_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
-            object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if object_storage_bucket_name is None:
-            raise TypeError("Missing 'object_storage_bucket_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -193,89 +156,32 @@ class _EnterpriseManagerBridgeState:
         :param pulumi.Input[str] time_created: The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
         """
-        _EnterpriseManagerBridgeState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            object_storage_bucket_name=object_storage_bucket_name,
-            object_storage_bucket_status_details=object_storage_bucket_status_details,
-            object_storage_namespace_name=object_storage_namespace_name,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             object_storage_bucket_name: Optional[pulumi.Input[str]] = None,
-             object_storage_bucket_status_details: Optional[pulumi.Input[str]] = None,
-             object_storage_namespace_name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if object_storage_bucket_name is None and 'objectStorageBucketName' in kwargs:
-            object_storage_bucket_name = kwargs['objectStorageBucketName']
-        if object_storage_bucket_status_details is None and 'objectStorageBucketStatusDetails' in kwargs:
-            object_storage_bucket_status_details = kwargs['objectStorageBucketStatusDetails']
-        if object_storage_namespace_name is None and 'objectStorageNamespaceName' in kwargs:
-            object_storage_namespace_name = kwargs['objectStorageNamespaceName']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if object_storage_bucket_name is not None:
-            _setter("object_storage_bucket_name", object_storage_bucket_name)
+            pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
         if object_storage_bucket_status_details is not None:
-            _setter("object_storage_bucket_status_details", object_storage_bucket_status_details)
+            pulumi.set(__self__, "object_storage_bucket_status_details", object_storage_bucket_status_details)
         if object_storage_namespace_name is not None:
-            _setter("object_storage_namespace_name", object_storage_namespace_name)
+            pulumi.set(__self__, "object_storage_namespace_name", object_storage_namespace_name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -543,10 +449,6 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            EnterpriseManagerBridgeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

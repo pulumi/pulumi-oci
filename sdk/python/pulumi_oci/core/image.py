@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -36,58 +36,19 @@ class ImageArgs:
         :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         """
-        ImageArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            image_source_details=image_source_details,
-            instance_id=instance_id,
-            launch_mode=launch_mode,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             image_source_details: Optional[pulumi.Input['ImageImageSourceDetailsArgs']] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             launch_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if image_source_details is None and 'imageSourceDetails' in kwargs:
-            image_source_details = kwargs['imageSourceDetails']
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if launch_mode is None and 'launchMode' in kwargs:
-            launch_mode = kwargs['launchMode']
-
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if image_source_details is not None:
-            _setter("image_source_details", image_source_details)
+            pulumi.set(__self__, "image_source_details", image_source_details)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if launch_mode is not None:
-            _setter("launch_mode", launch_mode)
+            pulumi.set(__self__, "launch_mode", launch_mode)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -220,121 +181,42 @@ class _ImageState:
         :param pulumi.Input[str] state: The current state of the image.
         :param pulumi.Input[str] time_created: The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
-        _ImageState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_features=agent_features,
-            base_image_id=base_image_id,
-            billable_size_in_gbs=billable_size_in_gbs,
-            compartment_id=compartment_id,
-            create_image_allowed=create_image_allowed,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            image_source_details=image_source_details,
-            instance_id=instance_id,
-            launch_mode=launch_mode,
-            launch_options=launch_options,
-            listing_type=listing_type,
-            operating_system=operating_system,
-            operating_system_version=operating_system_version,
-            size_in_mbs=size_in_mbs,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_features: Optional[pulumi.Input[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]] = None,
-             base_image_id: Optional[pulumi.Input[str]] = None,
-             billable_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             create_image_allowed: Optional[pulumi.Input[bool]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             image_source_details: Optional[pulumi.Input['ImageImageSourceDetailsArgs']] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             launch_mode: Optional[pulumi.Input[str]] = None,
-             launch_options: Optional[pulumi.Input[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]] = None,
-             listing_type: Optional[pulumi.Input[str]] = None,
-             operating_system: Optional[pulumi.Input[str]] = None,
-             operating_system_version: Optional[pulumi.Input[str]] = None,
-             size_in_mbs: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_features is None and 'agentFeatures' in kwargs:
-            agent_features = kwargs['agentFeatures']
-        if base_image_id is None and 'baseImageId' in kwargs:
-            base_image_id = kwargs['baseImageId']
-        if billable_size_in_gbs is None and 'billableSizeInGbs' in kwargs:
-            billable_size_in_gbs = kwargs['billableSizeInGbs']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if create_image_allowed is None and 'createImageAllowed' in kwargs:
-            create_image_allowed = kwargs['createImageAllowed']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if image_source_details is None and 'imageSourceDetails' in kwargs:
-            image_source_details = kwargs['imageSourceDetails']
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if launch_mode is None and 'launchMode' in kwargs:
-            launch_mode = kwargs['launchMode']
-        if launch_options is None and 'launchOptions' in kwargs:
-            launch_options = kwargs['launchOptions']
-        if listing_type is None and 'listingType' in kwargs:
-            listing_type = kwargs['listingType']
-        if operating_system is None and 'operatingSystem' in kwargs:
-            operating_system = kwargs['operatingSystem']
-        if operating_system_version is None and 'operatingSystemVersion' in kwargs:
-            operating_system_version = kwargs['operatingSystemVersion']
-        if size_in_mbs is None and 'sizeInMbs' in kwargs:
-            size_in_mbs = kwargs['sizeInMbs']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if agent_features is not None:
-            _setter("agent_features", agent_features)
+            pulumi.set(__self__, "agent_features", agent_features)
         if base_image_id is not None:
-            _setter("base_image_id", base_image_id)
+            pulumi.set(__self__, "base_image_id", base_image_id)
         if billable_size_in_gbs is not None:
-            _setter("billable_size_in_gbs", billable_size_in_gbs)
+            pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if create_image_allowed is not None:
-            _setter("create_image_allowed", create_image_allowed)
+            pulumi.set(__self__, "create_image_allowed", create_image_allowed)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if image_source_details is not None:
-            _setter("image_source_details", image_source_details)
+            pulumi.set(__self__, "image_source_details", image_source_details)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if launch_mode is not None:
-            _setter("launch_mode", launch_mode)
+            pulumi.set(__self__, "launch_mode", launch_mode)
         if launch_options is not None:
-            _setter("launch_options", launch_options)
+            pulumi.set(__self__, "launch_options", launch_options)
         if listing_type is not None:
-            _setter("listing_type", listing_type)
+            pulumi.set(__self__, "listing_type", listing_type)
         if operating_system is not None:
-            _setter("operating_system", operating_system)
+            pulumi.set(__self__, "operating_system", operating_system)
         if operating_system_version is not None:
-            _setter("operating_system_version", operating_system_version)
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
         if size_in_mbs is not None:
-            _setter("size_in_mbs", size_in_mbs)
+            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="agentFeatures")
@@ -776,10 +658,6 @@ class Image(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ImageArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -807,7 +685,6 @@ class Image(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            image_source_details = _utilities.configure(image_source_details, ImageImageSourceDetailsArgs, True)
             __props__.__dict__["image_source_details"] = image_source_details
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["launch_mode"] = launch_mode

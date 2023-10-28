@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -67,143 +67,44 @@ class CloudAutonomousVmClusterArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CloudAutonomousVmClusterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cloud_exadata_infrastructure_id=cloud_exadata_infrastructure_id,
-            compartment_id=compartment_id,
-            display_name=display_name,
-            subnet_id=subnet_id,
-            autonomous_data_storage_size_in_tbs=autonomous_data_storage_size_in_tbs,
-            cluster_time_zone=cluster_time_zone,
-            compute_model=compute_model,
-            cpu_core_count_per_node=cpu_core_count_per_node,
-            db_servers=db_servers,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            is_mtls_enabled_vm_cluster=is_mtls_enabled_vm_cluster,
-            license_model=license_model,
-            maintenance_window_details=maintenance_window_details,
-            memory_per_oracle_compute_unit_in_gbs=memory_per_oracle_compute_unit_in_gbs,
-            nsg_ids=nsg_ids,
-            scan_listener_port_non_tls=scan_listener_port_non_tls,
-            scan_listener_port_tls=scan_listener_port_tls,
-            time_updated=time_updated,
-            total_container_databases=total_container_databases,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
-             cluster_time_zone: Optional[pulumi.Input[str]] = None,
-             compute_model: Optional[pulumi.Input[str]] = None,
-             cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
-             db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_mtls_enabled_vm_cluster: Optional[pulumi.Input[bool]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             maintenance_window_details: Optional[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']] = None,
-             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
-             scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             total_container_databases: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cloud_exadata_infrastructure_id is None and 'cloudExadataInfrastructureId' in kwargs:
-            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
-        if cloud_exadata_infrastructure_id is None:
-            raise TypeError("Missing 'cloud_exadata_infrastructure_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if autonomous_data_storage_size_in_tbs is None and 'autonomousDataStorageSizeInTbs' in kwargs:
-            autonomous_data_storage_size_in_tbs = kwargs['autonomousDataStorageSizeInTbs']
-        if cluster_time_zone is None and 'clusterTimeZone' in kwargs:
-            cluster_time_zone = kwargs['clusterTimeZone']
-        if compute_model is None and 'computeModel' in kwargs:
-            compute_model = kwargs['computeModel']
-        if cpu_core_count_per_node is None and 'cpuCoreCountPerNode' in kwargs:
-            cpu_core_count_per_node = kwargs['cpuCoreCountPerNode']
-        if db_servers is None and 'dbServers' in kwargs:
-            db_servers = kwargs['dbServers']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_mtls_enabled_vm_cluster is None and 'isMtlsEnabledVmCluster' in kwargs:
-            is_mtls_enabled_vm_cluster = kwargs['isMtlsEnabledVmCluster']
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-        if maintenance_window_details is None and 'maintenanceWindowDetails' in kwargs:
-            maintenance_window_details = kwargs['maintenanceWindowDetails']
-        if memory_per_oracle_compute_unit_in_gbs is None and 'memoryPerOracleComputeUnitInGbs' in kwargs:
-            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if scan_listener_port_non_tls is None and 'scanListenerPortNonTls' in kwargs:
-            scan_listener_port_non_tls = kwargs['scanListenerPortNonTls']
-        if scan_listener_port_tls is None and 'scanListenerPortTls' in kwargs:
-            scan_listener_port_tls = kwargs['scanListenerPortTls']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if total_container_databases is None and 'totalContainerDatabases' in kwargs:
-            total_container_databases = kwargs['totalContainerDatabases']
-
-        _setter("cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if autonomous_data_storage_size_in_tbs is not None:
-            _setter("autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
+            pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         if cluster_time_zone is not None:
-            _setter("cluster_time_zone", cluster_time_zone)
+            pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
         if compute_model is not None:
-            _setter("compute_model", compute_model)
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count_per_node is not None:
-            _setter("cpu_core_count_per_node", cpu_core_count_per_node)
+            pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
         if db_servers is not None:
-            _setter("db_servers", db_servers)
+            pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_mtls_enabled_vm_cluster is not None:
-            _setter("is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
+            pulumi.set(__self__, "is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
         if maintenance_window_details is not None:
-            _setter("maintenance_window_details", maintenance_window_details)
+            pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         if memory_per_oracle_compute_unit_in_gbs is not None:
-            _setter("memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+            pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if scan_listener_port_non_tls is not None:
-            _setter("scan_listener_port_non_tls", scan_listener_port_non_tls)
+            pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
-            _setter("scan_listener_port_tls", scan_listener_port_tls)
+            pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if total_container_databases is not None:
-            _setter("total_container_databases", total_container_databases)
+            pulumi.set(__self__, "total_container_databases", total_container_databases)
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
@@ -582,317 +483,110 @@ class _CloudAutonomousVmClusterState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[float] total_cpus: The total number of CPUs in an Autonomous VM Cluster.
         """
-        _CloudAutonomousVmClusterState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autonomous_data_storage_percentage=autonomous_data_storage_percentage,
-            autonomous_data_storage_size_in_tbs=autonomous_data_storage_size_in_tbs,
-            availability_domain=availability_domain,
-            available_autonomous_data_storage_size_in_tbs=available_autonomous_data_storage_size_in_tbs,
-            available_container_databases=available_container_databases,
-            available_cpus=available_cpus,
-            cloud_exadata_infrastructure_id=cloud_exadata_infrastructure_id,
-            cluster_time_zone=cluster_time_zone,
-            compartment_id=compartment_id,
-            compute_model=compute_model,
-            cpu_core_count=cpu_core_count,
-            cpu_core_count_per_node=cpu_core_count_per_node,
-            cpu_percentage=cpu_percentage,
-            data_storage_size_in_gb=data_storage_size_in_gb,
-            data_storage_size_in_tbs=data_storage_size_in_tbs,
-            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
-            db_servers=db_servers,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            domain=domain,
-            freeform_tags=freeform_tags,
-            hostname=hostname,
-            is_mtls_enabled_vm_cluster=is_mtls_enabled_vm_cluster,
-            last_maintenance_run_id=last_maintenance_run_id,
-            last_update_history_entry_id=last_update_history_entry_id,
-            license_model=license_model,
-            lifecycle_details=lifecycle_details,
-            maintenance_window_details=maintenance_window_details,
-            maintenance_windows=maintenance_windows,
-            memory_per_oracle_compute_unit_in_gbs=memory_per_oracle_compute_unit_in_gbs,
-            memory_size_in_gbs=memory_size_in_gbs,
-            next_maintenance_run_id=next_maintenance_run_id,
-            node_count=node_count,
-            non_provisionable_autonomous_container_databases=non_provisionable_autonomous_container_databases,
-            nsg_ids=nsg_ids,
-            ocpu_count=ocpu_count,
-            provisionable_autonomous_container_databases=provisionable_autonomous_container_databases,
-            provisioned_autonomous_container_databases=provisioned_autonomous_container_databases,
-            provisioned_cpus=provisioned_cpus,
-            reclaimable_cpus=reclaimable_cpus,
-            reserved_cpus=reserved_cpus,
-            scan_listener_port_non_tls=scan_listener_port_non_tls,
-            scan_listener_port_tls=scan_listener_port_tls,
-            shape=shape,
-            state=state,
-            subnet_id=subnet_id,
-            time_created=time_created,
-            time_updated=time_updated,
-            total_autonomous_data_storage_in_tbs=total_autonomous_data_storage_in_tbs,
-            total_container_databases=total_container_databases,
-            total_cpus=total_cpus,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autonomous_data_storage_percentage: Optional[pulumi.Input[float]] = None,
-             autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             available_autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
-             available_container_databases: Optional[pulumi.Input[int]] = None,
-             available_cpus: Optional[pulumi.Input[float]] = None,
-             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-             cluster_time_zone: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             compute_model: Optional[pulumi.Input[str]] = None,
-             cpu_core_count: Optional[pulumi.Input[int]] = None,
-             cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
-             cpu_percentage: Optional[pulumi.Input[float]] = None,
-             data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
-             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
-             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-             db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             domain: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname: Optional[pulumi.Input[str]] = None,
-             is_mtls_enabled_vm_cluster: Optional[pulumi.Input[bool]] = None,
-             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
-             last_update_history_entry_id: Optional[pulumi.Input[str]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             maintenance_window_details: Optional[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']] = None,
-             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowArgs']]]] = None,
-             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
-             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
-             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
-             node_count: Optional[pulumi.Input[int]] = None,
-             non_provisionable_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ocpu_count: Optional[pulumi.Input[float]] = None,
-             provisionable_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
-             provisioned_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
-             provisioned_cpus: Optional[pulumi.Input[float]] = None,
-             reclaimable_cpus: Optional[pulumi.Input[float]] = None,
-             reserved_cpus: Optional[pulumi.Input[float]] = None,
-             scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
-             scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
-             total_container_databases: Optional[pulumi.Input[int]] = None,
-             total_cpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autonomous_data_storage_percentage is None and 'autonomousDataStoragePercentage' in kwargs:
-            autonomous_data_storage_percentage = kwargs['autonomousDataStoragePercentage']
-        if autonomous_data_storage_size_in_tbs is None and 'autonomousDataStorageSizeInTbs' in kwargs:
-            autonomous_data_storage_size_in_tbs = kwargs['autonomousDataStorageSizeInTbs']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if available_autonomous_data_storage_size_in_tbs is None and 'availableAutonomousDataStorageSizeInTbs' in kwargs:
-            available_autonomous_data_storage_size_in_tbs = kwargs['availableAutonomousDataStorageSizeInTbs']
-        if available_container_databases is None and 'availableContainerDatabases' in kwargs:
-            available_container_databases = kwargs['availableContainerDatabases']
-        if available_cpus is None and 'availableCpus' in kwargs:
-            available_cpus = kwargs['availableCpus']
-        if cloud_exadata_infrastructure_id is None and 'cloudExadataInfrastructureId' in kwargs:
-            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
-        if cluster_time_zone is None and 'clusterTimeZone' in kwargs:
-            cluster_time_zone = kwargs['clusterTimeZone']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compute_model is None and 'computeModel' in kwargs:
-            compute_model = kwargs['computeModel']
-        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
-            cpu_core_count = kwargs['cpuCoreCount']
-        if cpu_core_count_per_node is None and 'cpuCoreCountPerNode' in kwargs:
-            cpu_core_count_per_node = kwargs['cpuCoreCountPerNode']
-        if cpu_percentage is None and 'cpuPercentage' in kwargs:
-            cpu_percentage = kwargs['cpuPercentage']
-        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
-            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
-        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
-            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
-            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if db_servers is None and 'dbServers' in kwargs:
-            db_servers = kwargs['dbServers']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_mtls_enabled_vm_cluster is None and 'isMtlsEnabledVmCluster' in kwargs:
-            is_mtls_enabled_vm_cluster = kwargs['isMtlsEnabledVmCluster']
-        if last_maintenance_run_id is None and 'lastMaintenanceRunId' in kwargs:
-            last_maintenance_run_id = kwargs['lastMaintenanceRunId']
-        if last_update_history_entry_id is None and 'lastUpdateHistoryEntryId' in kwargs:
-            last_update_history_entry_id = kwargs['lastUpdateHistoryEntryId']
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if maintenance_window_details is None and 'maintenanceWindowDetails' in kwargs:
-            maintenance_window_details = kwargs['maintenanceWindowDetails']
-        if maintenance_windows is None and 'maintenanceWindows' in kwargs:
-            maintenance_windows = kwargs['maintenanceWindows']
-        if memory_per_oracle_compute_unit_in_gbs is None and 'memoryPerOracleComputeUnitInGbs' in kwargs:
-            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
-        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
-            memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if next_maintenance_run_id is None and 'nextMaintenanceRunId' in kwargs:
-            next_maintenance_run_id = kwargs['nextMaintenanceRunId']
-        if node_count is None and 'nodeCount' in kwargs:
-            node_count = kwargs['nodeCount']
-        if non_provisionable_autonomous_container_databases is None and 'nonProvisionableAutonomousContainerDatabases' in kwargs:
-            non_provisionable_autonomous_container_databases = kwargs['nonProvisionableAutonomousContainerDatabases']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if ocpu_count is None and 'ocpuCount' in kwargs:
-            ocpu_count = kwargs['ocpuCount']
-        if provisionable_autonomous_container_databases is None and 'provisionableAutonomousContainerDatabases' in kwargs:
-            provisionable_autonomous_container_databases = kwargs['provisionableAutonomousContainerDatabases']
-        if provisioned_autonomous_container_databases is None and 'provisionedAutonomousContainerDatabases' in kwargs:
-            provisioned_autonomous_container_databases = kwargs['provisionedAutonomousContainerDatabases']
-        if provisioned_cpus is None and 'provisionedCpus' in kwargs:
-            provisioned_cpus = kwargs['provisionedCpus']
-        if reclaimable_cpus is None and 'reclaimableCpus' in kwargs:
-            reclaimable_cpus = kwargs['reclaimableCpus']
-        if reserved_cpus is None and 'reservedCpus' in kwargs:
-            reserved_cpus = kwargs['reservedCpus']
-        if scan_listener_port_non_tls is None and 'scanListenerPortNonTls' in kwargs:
-            scan_listener_port_non_tls = kwargs['scanListenerPortNonTls']
-        if scan_listener_port_tls is None and 'scanListenerPortTls' in kwargs:
-            scan_listener_port_tls = kwargs['scanListenerPortTls']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if total_autonomous_data_storage_in_tbs is None and 'totalAutonomousDataStorageInTbs' in kwargs:
-            total_autonomous_data_storage_in_tbs = kwargs['totalAutonomousDataStorageInTbs']
-        if total_container_databases is None and 'totalContainerDatabases' in kwargs:
-            total_container_databases = kwargs['totalContainerDatabases']
-        if total_cpus is None and 'totalCpus' in kwargs:
-            total_cpus = kwargs['totalCpus']
-
         if autonomous_data_storage_percentage is not None:
-            _setter("autonomous_data_storage_percentage", autonomous_data_storage_percentage)
+            pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
         if autonomous_data_storage_size_in_tbs is not None:
-            _setter("autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
+            pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if available_autonomous_data_storage_size_in_tbs is not None:
-            _setter("available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
+            pulumi.set(__self__, "available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
         if available_container_databases is not None:
-            _setter("available_container_databases", available_container_databases)
+            pulumi.set(__self__, "available_container_databases", available_container_databases)
         if available_cpus is not None:
-            _setter("available_cpus", available_cpus)
+            pulumi.set(__self__, "available_cpus", available_cpus)
         if cloud_exadata_infrastructure_id is not None:
-            _setter("cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+            pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         if cluster_time_zone is not None:
-            _setter("cluster_time_zone", cluster_time_zone)
+            pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_model is not None:
-            _setter("compute_model", compute_model)
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
-            _setter("cpu_core_count", cpu_core_count)
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if cpu_core_count_per_node is not None:
-            _setter("cpu_core_count_per_node", cpu_core_count_per_node)
+            pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
         if cpu_percentage is not None:
-            _setter("cpu_percentage", cpu_percentage)
+            pulumi.set(__self__, "cpu_percentage", cpu_percentage)
         if data_storage_size_in_gb is not None:
-            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if data_storage_size_in_tbs is not None:
-            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
+            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
-            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_servers is not None:
-            _setter("db_servers", db_servers)
+            pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if domain is not None:
-            _setter("domain", domain)
+            pulumi.set(__self__, "domain", domain)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname is not None:
-            _setter("hostname", hostname)
+            pulumi.set(__self__, "hostname", hostname)
         if is_mtls_enabled_vm_cluster is not None:
-            _setter("is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
+            pulumi.set(__self__, "is_mtls_enabled_vm_cluster", is_mtls_enabled_vm_cluster)
         if last_maintenance_run_id is not None:
-            _setter("last_maintenance_run_id", last_maintenance_run_id)
+            pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         if last_update_history_entry_id is not None:
-            _setter("last_update_history_entry_id", last_update_history_entry_id)
+            pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_window_details is not None:
-            _setter("maintenance_window_details", maintenance_window_details)
+            pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         if maintenance_windows is not None:
-            _setter("maintenance_windows", maintenance_windows)
+            pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         if memory_per_oracle_compute_unit_in_gbs is not None:
-            _setter("memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+            pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if memory_size_in_gbs is not None:
-            _setter("memory_size_in_gbs", memory_size_in_gbs)
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if next_maintenance_run_id is not None:
-            _setter("next_maintenance_run_id", next_maintenance_run_id)
+            pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         if node_count is not None:
-            _setter("node_count", node_count)
+            pulumi.set(__self__, "node_count", node_count)
         if non_provisionable_autonomous_container_databases is not None:
-            _setter("non_provisionable_autonomous_container_databases", non_provisionable_autonomous_container_databases)
+            pulumi.set(__self__, "non_provisionable_autonomous_container_databases", non_provisionable_autonomous_container_databases)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ocpu_count is not None:
-            _setter("ocpu_count", ocpu_count)
+            pulumi.set(__self__, "ocpu_count", ocpu_count)
         if provisionable_autonomous_container_databases is not None:
-            _setter("provisionable_autonomous_container_databases", provisionable_autonomous_container_databases)
+            pulumi.set(__self__, "provisionable_autonomous_container_databases", provisionable_autonomous_container_databases)
         if provisioned_autonomous_container_databases is not None:
-            _setter("provisioned_autonomous_container_databases", provisioned_autonomous_container_databases)
+            pulumi.set(__self__, "provisioned_autonomous_container_databases", provisioned_autonomous_container_databases)
         if provisioned_cpus is not None:
-            _setter("provisioned_cpus", provisioned_cpus)
+            pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         if reclaimable_cpus is not None:
-            _setter("reclaimable_cpus", reclaimable_cpus)
+            pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         if reserved_cpus is not None:
-            _setter("reserved_cpus", reserved_cpus)
+            pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         if scan_listener_port_non_tls is not None:
-            _setter("scan_listener_port_non_tls", scan_listener_port_non_tls)
+            pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
-            _setter("scan_listener_port_tls", scan_listener_port_tls)
+            pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if shape is not None:
-            _setter("shape", shape)
+            pulumi.set(__self__, "shape", shape)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if total_autonomous_data_storage_in_tbs is not None:
-            _setter("total_autonomous_data_storage_in_tbs", total_autonomous_data_storage_in_tbs)
+            pulumi.set(__self__, "total_autonomous_data_storage_in_tbs", total_autonomous_data_storage_in_tbs)
         if total_container_databases is not None:
-            _setter("total_container_databases", total_container_databases)
+            pulumi.set(__self__, "total_container_databases", total_container_databases)
         if total_cpus is not None:
-            _setter("total_cpus", total_cpus)
+            pulumi.set(__self__, "total_cpus", total_cpus)
 
     @property
     @pulumi.getter(name="autonomousDataStoragePercentage")
@@ -1718,10 +1412,6 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            CloudAutonomousVmClusterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1776,7 +1466,6 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_mtls_enabled_vm_cluster"] = is_mtls_enabled_vm_cluster
             __props__.__dict__["license_model"] = license_model
-            maintenance_window_details = _utilities.configure(maintenance_window_details, CloudAutonomousVmClusterMaintenanceWindowDetailsArgs, True)
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids

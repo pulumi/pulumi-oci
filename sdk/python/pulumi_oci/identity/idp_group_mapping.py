@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['IdpGroupMappingArgs', 'IdpGroupMapping']
@@ -27,36 +27,9 @@ class IdpGroupMappingArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        IdpGroupMappingArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            group_id=group_id,
-            identity_provider_id=identity_provider_id,
-            idp_group_name=idp_group_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             group_id: Optional[pulumi.Input[str]] = None,
-             identity_provider_id: Optional[pulumi.Input[str]] = None,
-             idp_group_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if group_id is None:
-            raise TypeError("Missing 'group_id' argument")
-        if identity_provider_id is None and 'identityProviderId' in kwargs:
-            identity_provider_id = kwargs['identityProviderId']
-        if identity_provider_id is None:
-            raise TypeError("Missing 'identity_provider_id' argument")
-        if idp_group_name is None and 'idpGroupName' in kwargs:
-            idp_group_name = kwargs['idpGroupName']
-        if idp_group_name is None:
-            raise TypeError("Missing 'idp_group_name' argument")
-
-        _setter("group_id", group_id)
-        _setter("identity_provider_id", identity_provider_id)
-        _setter("idp_group_name", idp_group_name)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "identity_provider_id", identity_provider_id)
+        pulumi.set(__self__, "idp_group_name", idp_group_name)
 
     @property
     @pulumi.getter(name="groupId")
@@ -123,55 +96,20 @@ class _IdpGroupMappingState:
         :param pulumi.Input[str] state: The mapping's current state.
         :param pulumi.Input[str] time_created: Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
-        _IdpGroupMappingState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            group_id=group_id,
-            identity_provider_id=identity_provider_id,
-            idp_group_name=idp_group_name,
-            inactive_state=inactive_state,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             group_id: Optional[pulumi.Input[str]] = None,
-             identity_provider_id: Optional[pulumi.Input[str]] = None,
-             idp_group_name: Optional[pulumi.Input[str]] = None,
-             inactive_state: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if group_id is None and 'groupId' in kwargs:
-            group_id = kwargs['groupId']
-        if identity_provider_id is None and 'identityProviderId' in kwargs:
-            identity_provider_id = kwargs['identityProviderId']
-        if idp_group_name is None and 'idpGroupName' in kwargs:
-            idp_group_name = kwargs['idpGroupName']
-        if inactive_state is None and 'inactiveState' in kwargs:
-            inactive_state = kwargs['inactiveState']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if group_id is not None:
-            _setter("group_id", group_id)
+            pulumi.set(__self__, "group_id", group_id)
         if identity_provider_id is not None:
-            _setter("identity_provider_id", identity_provider_id)
+            pulumi.set(__self__, "identity_provider_id", identity_provider_id)
         if idp_group_name is not None:
-            _setter("idp_group_name", idp_group_name)
+            pulumi.set(__self__, "idp_group_name", idp_group_name)
         if inactive_state is not None:
-            _setter("inactive_state", inactive_state)
+            pulumi.set(__self__, "inactive_state", inactive_state)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -353,10 +291,6 @@ class IdpGroupMapping(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            IdpGroupMappingArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

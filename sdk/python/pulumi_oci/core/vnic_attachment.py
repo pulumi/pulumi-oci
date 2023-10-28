@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,41 +31,12 @@ class VnicAttachmentArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        VnicAttachmentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            create_vnic_details=create_vnic_details,
-            instance_id=instance_id,
-            display_name=display_name,
-            nic_index=nic_index,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             create_vnic_details: Optional[pulumi.Input['VnicAttachmentCreateVnicDetailsArgs']] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             nic_index: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if create_vnic_details is None:
-            raise TypeError("Missing 'create_vnic_details' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if instance_id is None:
-            raise TypeError("Missing 'instance_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if nic_index is None and 'nicIndex' in kwargs:
-            nic_index = kwargs['nicIndex']
-
-        _setter("create_vnic_details", create_vnic_details)
-        _setter("instance_id", instance_id)
+        pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+        pulumi.set(__self__, "instance_id", instance_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if nic_index is not None:
-            _setter("nic_index", nic_index)
+            pulumi.set(__self__, "nic_index", nic_index)
 
     @property
     @pulumi.getter(name="createVnicDetails")
@@ -158,85 +129,30 @@ class _VnicAttachmentState:
         :param pulumi.Input[int] vlan_tag: The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
         :param pulumi.Input[str] vnic_id: The OCID of the VNIC. Available after the attachment process is complete.
         """
-        _VnicAttachmentState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            create_vnic_details=create_vnic_details,
-            display_name=display_name,
-            instance_id=instance_id,
-            nic_index=nic_index,
-            state=state,
-            subnet_id=subnet_id,
-            time_created=time_created,
-            vlan_id=vlan_id,
-            vlan_tag=vlan_tag,
-            vnic_id=vnic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             create_vnic_details: Optional[pulumi.Input['VnicAttachmentCreateVnicDetailsArgs']] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             nic_index: Optional[pulumi.Input[int]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             vlan_id: Optional[pulumi.Input[str]] = None,
-             vlan_tag: Optional[pulumi.Input[int]] = None,
-             vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if nic_index is None and 'nicIndex' in kwargs:
-            nic_index = kwargs['nicIndex']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if vlan_id is None and 'vlanId' in kwargs:
-            vlan_id = kwargs['vlanId']
-        if vlan_tag is None and 'vlanTag' in kwargs:
-            vlan_tag = kwargs['vlanTag']
-        if vnic_id is None and 'vnicId' in kwargs:
-            vnic_id = kwargs['vnicId']
-
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if create_vnic_details is not None:
-            _setter("create_vnic_details", create_vnic_details)
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if nic_index is not None:
-            _setter("nic_index", nic_index)
+            pulumi.set(__self__, "nic_index", nic_index)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if vlan_id is not None:
-            _setter("vlan_id", vlan_id)
+            pulumi.set(__self__, "vlan_id", vlan_id)
         if vlan_tag is not None:
-            _setter("vlan_tag", vlan_tag)
+            pulumi.set(__self__, "vlan_tag", vlan_tag)
         if vnic_id is not None:
-            _setter("vnic_id", vnic_id)
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -512,10 +428,6 @@ class VnicAttachment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            VnicAttachmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -534,7 +446,6 @@ class VnicAttachment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = VnicAttachmentArgs.__new__(VnicAttachmentArgs)
 
-            create_vnic_details = _utilities.configure(create_vnic_details, VnicAttachmentCreateVnicDetailsArgs, True)
             if create_vnic_details is None and not opts.urn:
                 raise TypeError("Missing required property 'create_vnic_details'")
             __props__.__dict__["create_vnic_details"] = create_vnic_details

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -22,29 +22,10 @@ class GetMonitoredInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMonitoredInstancesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -66,20 +47,7 @@ class GetMonitoredInstancesFilterResult(dict):
 class GetMonitoredInstancesMonitoredInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult']):
-        GetMonitoredInstancesMonitoredInstanceCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -110,76 +78,15 @@ class GetMonitoredInstancesMonitoredInstanceCollectionItemResult(dict):
         :param str time_created: The time the MonitoredInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
         """
-        GetMonitoredInstancesMonitoredInstanceCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            instance_id=instance_id,
-            lifecycle_details=lifecycle_details,
-            management_agent_id=management_agent_id,
-            monitoring_state=monitoring_state,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             display_name: Optional[str] = None,
-             instance_id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             management_agent_id: Optional[str] = None,
-             monitoring_state: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if instance_id is None:
-            raise TypeError("Missing 'instance_id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if management_agent_id is None and 'managementAgentId' in kwargs:
-            management_agent_id = kwargs['managementAgentId']
-        if management_agent_id is None:
-            raise TypeError("Missing 'management_agent_id' argument")
-        if monitoring_state is None and 'monitoringState' in kwargs:
-            monitoring_state = kwargs['monitoringState']
-        if monitoring_state is None:
-            raise TypeError("Missing 'monitoring_state' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("instance_id", instance_id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("management_agent_id", management_agent_id)
-        _setter("monitoring_state", monitoring_state)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "monitoring_state", monitoring_state)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

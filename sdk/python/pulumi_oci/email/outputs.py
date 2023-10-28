@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -27,20 +27,7 @@ __all__ = [
 class GetDkimsDkimCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDkimsDkimCollectionItemResult']):
-        GetDkimsDkimCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetDkimsDkimCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -83,112 +70,21 @@ class GetDkimsDkimCollectionItemResult(dict):
         :param str time_updated: The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
         :param str txt_record_value: The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
         """
-        GetDkimsDkimCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cname_record_value=cname_record_value,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            dns_subdomain_name=dns_subdomain_name,
-            email_domain_id=email_domain_id,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            name=name,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            txt_record_value=txt_record_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cname_record_value: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             dns_subdomain_name: Optional[str] = None,
-             email_domain_id: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             txt_record_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cname_record_value is None and 'cnameRecordValue' in kwargs:
-            cname_record_value = kwargs['cnameRecordValue']
-        if cname_record_value is None:
-            raise TypeError("Missing 'cname_record_value' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if dns_subdomain_name is None and 'dnsSubdomainName' in kwargs:
-            dns_subdomain_name = kwargs['dnsSubdomainName']
-        if dns_subdomain_name is None:
-            raise TypeError("Missing 'dns_subdomain_name' argument")
-        if email_domain_id is None and 'emailDomainId' in kwargs:
-            email_domain_id = kwargs['emailDomainId']
-        if email_domain_id is None:
-            raise TypeError("Missing 'email_domain_id' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if txt_record_value is None and 'txtRecordValue' in kwargs:
-            txt_record_value = kwargs['txtRecordValue']
-        if txt_record_value is None:
-            raise TypeError("Missing 'txt_record_value' argument")
-
-        _setter("cname_record_value", cname_record_value)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("dns_subdomain_name", dns_subdomain_name)
-        _setter("email_domain_id", email_domain_id)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("name", name)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("txt_record_value", txt_record_value)
+        pulumi.set(__self__, "cname_record_value", cname_record_value)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "dns_subdomain_name", dns_subdomain_name)
+        pulumi.set(__self__, "email_domain_id", email_domain_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "txt_record_value", txt_record_value)
 
     @property
     @pulumi.getter(name="cnameRecordValue")
@@ -320,29 +216,10 @@ class GetDkimsFilterResult(dict):
         """
         :param str name: A filter to only return resources that match the given name exactly.
         """
-        GetDkimsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -367,20 +244,7 @@ class GetDkimsFilterResult(dict):
 class GetEmailDomainsEmailDomainCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult']):
-        GetEmailDomainsEmailDomainCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -415,84 +279,17 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
         """
-        GetEmailDomainsEmailDomainCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            active_dkim_id=active_dkim_id,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_spf=is_spf,
-            name=name,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             active_dkim_id: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_spf: Optional[bool] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if active_dkim_id is None and 'activeDkimId' in kwargs:
-            active_dkim_id = kwargs['activeDkimId']
-        if active_dkim_id is None:
-            raise TypeError("Missing 'active_dkim_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_spf is None and 'isSpf' in kwargs:
-            is_spf = kwargs['isSpf']
-        if is_spf is None:
-            raise TypeError("Missing 'is_spf' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("active_dkim_id", active_dkim_id)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_spf", is_spf)
-        _setter("name", name)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "active_dkim_id", active_dkim_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_spf", is_spf)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="activeDkimId")
@@ -592,29 +389,10 @@ class GetEmailDomainsFilterResult(dict):
         """
         :param str name: A filter to only return resources that match the given name exactly.
         """
-        GetEmailDomainsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -641,29 +419,10 @@ class GetSendersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSendersFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -704,74 +463,15 @@ class GetSendersSenderResult(dict):
         :param str state: The current state of a sender.
         :param str time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         """
-        GetSendersSenderResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            email_address=email_address,
-            email_domain_id=email_domain_id,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_spf=is_spf,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             email_address: Optional[str] = None,
-             email_domain_id: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_spf: Optional[bool] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if email_domain_id is None and 'emailDomainId' in kwargs:
-            email_domain_id = kwargs['emailDomainId']
-        if email_domain_id is None:
-            raise TypeError("Missing 'email_domain_id' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_spf is None and 'isSpf' in kwargs:
-            is_spf = kwargs['isSpf']
-        if is_spf is None:
-            raise TypeError("Missing 'is_spf' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("email_address", email_address)
-        _setter("email_domain_id", email_domain_id)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_spf", is_spf)
-        _setter("state", state)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "email_domain_id", email_domain_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_spf", is_spf)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -852,29 +552,10 @@ class GetSuppressionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSuppressionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -915,74 +596,15 @@ class GetSuppressionsSuppressionResult(dict):
         :param str time_created: The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         :param str time_last_suppressed: The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         """
-        GetSuppressionsSuppressionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            email_address=email_address,
-            error_detail=error_detail,
-            error_source=error_source,
-            id=id,
-            message_id=message_id,
-            reason=reason,
-            time_created=time_created,
-            time_last_suppressed=time_last_suppressed,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             email_address: Optional[str] = None,
-             error_detail: Optional[str] = None,
-             error_source: Optional[str] = None,
-             id: Optional[str] = None,
-             message_id: Optional[str] = None,
-             reason: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_last_suppressed: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-        if error_detail is None and 'errorDetail' in kwargs:
-            error_detail = kwargs['errorDetail']
-        if error_detail is None:
-            raise TypeError("Missing 'error_detail' argument")
-        if error_source is None and 'errorSource' in kwargs:
-            error_source = kwargs['errorSource']
-        if error_source is None:
-            raise TypeError("Missing 'error_source' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if message_id is None and 'messageId' in kwargs:
-            message_id = kwargs['messageId']
-        if message_id is None:
-            raise TypeError("Missing 'message_id' argument")
-        if reason is None:
-            raise TypeError("Missing 'reason' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_last_suppressed is None and 'timeLastSuppressed' in kwargs:
-            time_last_suppressed = kwargs['timeLastSuppressed']
-        if time_last_suppressed is None:
-            raise TypeError("Missing 'time_last_suppressed' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("email_address", email_address)
-        _setter("error_detail", error_detail)
-        _setter("error_source", error_source)
-        _setter("id", id)
-        _setter("message_id", message_id)
-        _setter("reason", reason)
-        _setter("time_created", time_created)
-        _setter("time_last_suppressed", time_last_suppressed)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "error_detail", error_detail)
+        pulumi.set(__self__, "error_source", error_source)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "message_id", message_id)
+        pulumi.set(__self__, "reason", reason)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_suppressed", time_last_suppressed)
 
     @property
     @pulumi.getter(name="compartmentId")

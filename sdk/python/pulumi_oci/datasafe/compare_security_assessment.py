@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['CompareSecurityAssessmentArgs', 'CompareSecurityAssessment']
@@ -25,29 +25,8 @@ class CompareSecurityAssessmentArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CompareSecurityAssessmentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            comparison_security_assessment_id=comparison_security_assessment_id,
-            security_assessment_id=security_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             comparison_security_assessment_id: Optional[pulumi.Input[str]] = None,
-             security_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if comparison_security_assessment_id is None and 'comparisonSecurityAssessmentId' in kwargs:
-            comparison_security_assessment_id = kwargs['comparisonSecurityAssessmentId']
-        if comparison_security_assessment_id is None:
-            raise TypeError("Missing 'comparison_security_assessment_id' argument")
-        if security_assessment_id is None and 'securityAssessmentId' in kwargs:
-            security_assessment_id = kwargs['securityAssessmentId']
-        if security_assessment_id is None:
-            raise TypeError("Missing 'security_assessment_id' argument")
-
-        _setter("comparison_security_assessment_id", comparison_security_assessment_id)
-        _setter("security_assessment_id", security_assessment_id)
+        pulumi.set(__self__, "comparison_security_assessment_id", comparison_security_assessment_id)
+        pulumi.set(__self__, "security_assessment_id", security_assessment_id)
 
     @property
     @pulumi.getter(name="comparisonSecurityAssessmentId")
@@ -92,27 +71,10 @@ class _CompareSecurityAssessmentState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _CompareSecurityAssessmentState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            comparison_security_assessment_id=comparison_security_assessment_id,
-            security_assessment_id=security_assessment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             comparison_security_assessment_id: Optional[pulumi.Input[str]] = None,
-             security_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if comparison_security_assessment_id is None and 'comparisonSecurityAssessmentId' in kwargs:
-            comparison_security_assessment_id = kwargs['comparisonSecurityAssessmentId']
-        if security_assessment_id is None and 'securityAssessmentId' in kwargs:
-            security_assessment_id = kwargs['securityAssessmentId']
-
         if comparison_security_assessment_id is not None:
-            _setter("comparison_security_assessment_id", comparison_security_assessment_id)
+            pulumi.set(__self__, "comparison_security_assessment_id", comparison_security_assessment_id)
         if security_assessment_id is not None:
-            _setter("security_assessment_id", security_assessment_id)
+            pulumi.set(__self__, "security_assessment_id", security_assessment_id)
 
     @property
     @pulumi.getter(name="comparisonSecurityAssessmentId")
@@ -226,10 +188,6 @@ class CompareSecurityAssessment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            CompareSecurityAssessmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

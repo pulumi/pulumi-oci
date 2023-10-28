@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -50,76 +50,25 @@ class DrgAttachmentArgs:
                This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         :param pulumi.Input[str] vcn_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
-        DrgAttachmentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            drg_id=drg_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            drg_route_table_id=drg_route_table_id,
-            export_drg_route_distribution_id=export_drg_route_distribution_id,
-            freeform_tags=freeform_tags,
-            network_details=network_details,
-            remove_export_drg_route_distribution_trigger=remove_export_drg_route_distribution_trigger,
-            route_table_id=route_table_id,
-            vcn_id=vcn_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             drg_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             drg_route_table_id: Optional[pulumi.Input[str]] = None,
-             export_drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             network_details: Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']] = None,
-             remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[bool]] = None,
-             route_table_id: Optional[pulumi.Input[str]] = None,
-             vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if drg_id is None and 'drgId' in kwargs:
-            drg_id = kwargs['drgId']
-        if drg_id is None:
-            raise TypeError("Missing 'drg_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if drg_route_table_id is None and 'drgRouteTableId' in kwargs:
-            drg_route_table_id = kwargs['drgRouteTableId']
-        if export_drg_route_distribution_id is None and 'exportDrgRouteDistributionId' in kwargs:
-            export_drg_route_distribution_id = kwargs['exportDrgRouteDistributionId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if network_details is None and 'networkDetails' in kwargs:
-            network_details = kwargs['networkDetails']
-        if remove_export_drg_route_distribution_trigger is None and 'removeExportDrgRouteDistributionTrigger' in kwargs:
-            remove_export_drg_route_distribution_trigger = kwargs['removeExportDrgRouteDistributionTrigger']
-        if route_table_id is None and 'routeTableId' in kwargs:
-            route_table_id = kwargs['routeTableId']
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-
-        _setter("drg_id", drg_id)
+        pulumi.set(__self__, "drg_id", drg_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if drg_route_table_id is not None:
-            _setter("drg_route_table_id", drg_route_table_id)
+            pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
         if export_drg_route_distribution_id is not None:
-            _setter("export_drg_route_distribution_id", export_drg_route_distribution_id)
+            pulumi.set(__self__, "export_drg_route_distribution_id", export_drg_route_distribution_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if network_details is not None:
-            _setter("network_details", network_details)
+            pulumi.set(__self__, "network_details", network_details)
         if remove_export_drg_route_distribution_trigger is not None:
-            _setter("remove_export_drg_route_distribution_trigger", remove_export_drg_route_distribution_trigger)
+            pulumi.set(__self__, "remove_export_drg_route_distribution_trigger", remove_export_drg_route_distribution_trigger)
         if route_table_id is not None:
-            _setter("route_table_id", route_table_id)
+            pulumi.set(__self__, "route_table_id", route_table_id)
         if vcn_id is not None:
-            _setter("vcn_id", vcn_id)
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="drgId")
@@ -298,97 +247,34 @@ class _DrgAttachmentState:
         :param pulumi.Input[str] time_created: The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
-        _DrgAttachmentState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            drg_id=drg_id,
-            drg_route_table_id=drg_route_table_id,
-            export_drg_route_distribution_id=export_drg_route_distribution_id,
-            freeform_tags=freeform_tags,
-            is_cross_tenancy=is_cross_tenancy,
-            network_details=network_details,
-            remove_export_drg_route_distribution_trigger=remove_export_drg_route_distribution_trigger,
-            route_table_id=route_table_id,
-            state=state,
-            time_created=time_created,
-            vcn_id=vcn_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             drg_id: Optional[pulumi.Input[str]] = None,
-             drg_route_table_id: Optional[pulumi.Input[str]] = None,
-             export_drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_cross_tenancy: Optional[pulumi.Input[bool]] = None,
-             network_details: Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']] = None,
-             remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[bool]] = None,
-             route_table_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if drg_id is None and 'drgId' in kwargs:
-            drg_id = kwargs['drgId']
-        if drg_route_table_id is None and 'drgRouteTableId' in kwargs:
-            drg_route_table_id = kwargs['drgRouteTableId']
-        if export_drg_route_distribution_id is None and 'exportDrgRouteDistributionId' in kwargs:
-            export_drg_route_distribution_id = kwargs['exportDrgRouteDistributionId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_cross_tenancy is None and 'isCrossTenancy' in kwargs:
-            is_cross_tenancy = kwargs['isCrossTenancy']
-        if network_details is None and 'networkDetails' in kwargs:
-            network_details = kwargs['networkDetails']
-        if remove_export_drg_route_distribution_trigger is None and 'removeExportDrgRouteDistributionTrigger' in kwargs:
-            remove_export_drg_route_distribution_trigger = kwargs['removeExportDrgRouteDistributionTrigger']
-        if route_table_id is None and 'routeTableId' in kwargs:
-            route_table_id = kwargs['routeTableId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if drg_id is not None:
-            _setter("drg_id", drg_id)
+            pulumi.set(__self__, "drg_id", drg_id)
         if drg_route_table_id is not None:
-            _setter("drg_route_table_id", drg_route_table_id)
+            pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
         if export_drg_route_distribution_id is not None:
-            _setter("export_drg_route_distribution_id", export_drg_route_distribution_id)
+            pulumi.set(__self__, "export_drg_route_distribution_id", export_drg_route_distribution_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cross_tenancy is not None:
-            _setter("is_cross_tenancy", is_cross_tenancy)
+            pulumi.set(__self__, "is_cross_tenancy", is_cross_tenancy)
         if network_details is not None:
-            _setter("network_details", network_details)
+            pulumi.set(__self__, "network_details", network_details)
         if remove_export_drg_route_distribution_trigger is not None:
-            _setter("remove_export_drg_route_distribution_trigger", remove_export_drg_route_distribution_trigger)
+            pulumi.set(__self__, "remove_export_drg_route_distribution_trigger", remove_export_drg_route_distribution_trigger)
         if route_table_id is not None:
-            _setter("route_table_id", route_table_id)
+            pulumi.set(__self__, "route_table_id", route_table_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if vcn_id is not None:
-            _setter("vcn_id", vcn_id)
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -672,10 +558,6 @@ class DrgAttachment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DrgAttachmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -708,7 +590,6 @@ class DrgAttachment(pulumi.CustomResource):
             __props__.__dict__["drg_route_table_id"] = drg_route_table_id
             __props__.__dict__["export_drg_route_distribution_id"] = export_drg_route_distribution_id
             __props__.__dict__["freeform_tags"] = freeform_tags
-            network_details = _utilities.configure(network_details, DrgAttachmentNetworkDetailsArgs, True)
             __props__.__dict__["network_details"] = network_details
             __props__.__dict__["remove_export_drg_route_distribution_trigger"] = remove_export_drg_route_distribution_trigger
             __props__.__dict__["route_table_id"] = route_table_id

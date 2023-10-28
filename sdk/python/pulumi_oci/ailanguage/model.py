@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,71 +37,20 @@ class ModelArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input['ModelTestStrategyArgs'] test_strategy: Possible strategy as testing and validation(optional) dataset.
         """
-        ModelArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            model_details=model_details,
-            project_id=project_id,
-            training_dataset=training_dataset,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            test_strategy=test_strategy,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             model_details: Optional[pulumi.Input['ModelModelDetailsArgs']] = None,
-             project_id: Optional[pulumi.Input[str]] = None,
-             training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             test_strategy: Optional[pulumi.Input['ModelTestStrategyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if model_details is None and 'modelDetails' in kwargs:
-            model_details = kwargs['modelDetails']
-        if model_details is None:
-            raise TypeError("Missing 'model_details' argument")
-        if project_id is None and 'projectId' in kwargs:
-            project_id = kwargs['projectId']
-        if project_id is None:
-            raise TypeError("Missing 'project_id' argument")
-        if training_dataset is None and 'trainingDataset' in kwargs:
-            training_dataset = kwargs['trainingDataset']
-        if training_dataset is None:
-            raise TypeError("Missing 'training_dataset' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if test_strategy is None and 'testStrategy' in kwargs:
-            test_strategy = kwargs['testStrategy']
-
-        _setter("compartment_id", compartment_id)
-        _setter("model_details", model_details)
-        _setter("project_id", project_id)
-        _setter("training_dataset", training_dataset)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "model_details", model_details)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "training_dataset", training_dataset)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if test_strategy is not None:
-            _setter("test_strategy", test_strategy)
+            pulumi.set(__self__, "test_strategy", test_strategy)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -250,105 +199,38 @@ class _ModelState:
         :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: Possible data set type
         :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
         """
-        _ModelState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            evaluation_results=evaluation_results,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            model_details=model_details,
-            project_id=project_id,
-            state=state,
-            system_tags=system_tags,
-            test_strategy=test_strategy,
-            time_created=time_created,
-            time_updated=time_updated,
-            training_dataset=training_dataset,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             evaluation_results: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultArgs']]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             model_details: Optional[pulumi.Input['ModelModelDetailsArgs']] = None,
-             project_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             test_strategy: Optional[pulumi.Input['ModelTestStrategyArgs']] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if evaluation_results is None and 'evaluationResults' in kwargs:
-            evaluation_results = kwargs['evaluationResults']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if model_details is None and 'modelDetails' in kwargs:
-            model_details = kwargs['modelDetails']
-        if project_id is None and 'projectId' in kwargs:
-            project_id = kwargs['projectId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if test_strategy is None and 'testStrategy' in kwargs:
-            test_strategy = kwargs['testStrategy']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if training_dataset is None and 'trainingDataset' in kwargs:
-            training_dataset = kwargs['trainingDataset']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if evaluation_results is not None:
-            _setter("evaluation_results", evaluation_results)
+            pulumi.set(__self__, "evaluation_results", evaluation_results)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if model_details is not None:
-            _setter("model_details", model_details)
+            pulumi.set(__self__, "model_details", model_details)
         if project_id is not None:
-            _setter("project_id", project_id)
+            pulumi.set(__self__, "project_id", project_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if test_strategy is not None:
-            _setter("test_strategy", test_strategy)
+            pulumi.set(__self__, "test_strategy", test_strategy)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if training_dataset is not None:
-            _setter("training_dataset", training_dataset)
+            pulumi.set(__self__, "training_dataset", training_dataset)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -734,10 +616,6 @@ class Model(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ModelArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -768,16 +646,13 @@ class Model(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            model_details = _utilities.configure(model_details, ModelModelDetailsArgs, True)
             if model_details is None and not opts.urn:
                 raise TypeError("Missing required property 'model_details'")
             __props__.__dict__["model_details"] = model_details
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
-            test_strategy = _utilities.configure(test_strategy, ModelTestStrategyArgs, True)
             __props__.__dict__["test_strategy"] = test_strategy
-            training_dataset = _utilities.configure(training_dataset, ModelTrainingDatasetArgs, True)
             if training_dataset is None and not opts.urn:
                 raise TypeError("Missing required property 'training_dataset'")
             __props__.__dict__["training_dataset"] = training_dataset

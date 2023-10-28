@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SuppressionArgs', 'Suppression']
@@ -25,29 +25,8 @@ class SuppressionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        SuppressionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            email_address=email_address,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             email_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if email_address is None:
-            raise TypeError("Missing 'email_address' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("email_address", email_address)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "email_address", email_address)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -104,61 +83,22 @@ class _SuppressionState:
         :param pulumi.Input[str] time_created: The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[str] time_last_suppressed: The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         """
-        _SuppressionState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            email_address=email_address,
-            error_detail=error_detail,
-            error_source=error_source,
-            message_id=message_id,
-            reason=reason,
-            time_created=time_created,
-            time_last_suppressed=time_last_suppressed,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             email_address: Optional[pulumi.Input[str]] = None,
-             error_detail: Optional[pulumi.Input[str]] = None,
-             error_source: Optional[pulumi.Input[str]] = None,
-             message_id: Optional[pulumi.Input[str]] = None,
-             reason: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_last_suppressed: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if email_address is None and 'emailAddress' in kwargs:
-            email_address = kwargs['emailAddress']
-        if error_detail is None and 'errorDetail' in kwargs:
-            error_detail = kwargs['errorDetail']
-        if error_source is None and 'errorSource' in kwargs:
-            error_source = kwargs['errorSource']
-        if message_id is None and 'messageId' in kwargs:
-            message_id = kwargs['messageId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_last_suppressed is None and 'timeLastSuppressed' in kwargs:
-            time_last_suppressed = kwargs['timeLastSuppressed']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if email_address is not None:
-            _setter("email_address", email_address)
+            pulumi.set(__self__, "email_address", email_address)
         if error_detail is not None:
-            _setter("error_detail", error_detail)
+            pulumi.set(__self__, "error_detail", error_detail)
         if error_source is not None:
-            _setter("error_source", error_source)
+            pulumi.set(__self__, "error_source", error_source)
         if message_id is not None:
-            _setter("message_id", message_id)
+            pulumi.set(__self__, "message_id", message_id)
         if reason is not None:
-            _setter("reason", reason)
+            pulumi.set(__self__, "reason", reason)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_last_suppressed is not None:
-            _setter("time_last_suppressed", time_last_suppressed)
+            pulumi.set(__self__, "time_last_suppressed", time_last_suppressed)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -348,10 +288,6 @@ class Suppression(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            SuppressionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

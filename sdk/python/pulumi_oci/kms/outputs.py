@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -101,31 +101,10 @@ class GeneratedKeyKeyShape(dict):
                * ECDSA: 32, 48, or 66
         :param str curve_id: Supported curve IDs for ECDSA keys.
         """
-        GeneratedKeyKeyShape._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            algorithm=algorithm,
-            length=length,
-            curve_id=curve_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             algorithm: Optional[str] = None,
-             length: Optional[int] = None,
-             curve_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if algorithm is None:
-            raise TypeError("Missing 'algorithm' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-        if curve_id is None and 'curveId' in kwargs:
-            curve_id = kwargs['curveId']
-
-        _setter("algorithm", algorithm)
-        _setter("length", length)
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "length", length)
         if curve_id is not None:
-            _setter("curve_id", curve_id)
+            pulumi.set(__self__, "curve_id", curve_id)
 
     @property
     @pulumi.getter
@@ -179,22 +158,7 @@ class KeyExternalKeyReference(dict):
         """
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
         """
-        KeyExternalKeyReference._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_id is None:
-            raise TypeError("Missing 'external_key_id' argument")
-
-        _setter("external_key_id", external_key_id)
+        pulumi.set(__self__, "external_key_id", external_key_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -233,27 +197,10 @@ class KeyExternalKeyReferenceDetail(dict):
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
         :param str external_key_version_id: Key version ID associated with the external key.
         """
-        KeyExternalKeyReferenceDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-            external_key_version_id=external_key_version_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-
         if external_key_id is not None:
-            _setter("external_key_id", external_key_id)
+            pulumi.set(__self__, "external_key_id", external_key_id)
         if external_key_version_id is not None:
-            _setter("external_key_version_id", external_key_version_id)
+            pulumi.set(__self__, "external_key_version_id", external_key_version_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -303,31 +250,10 @@ class KeyKeyShape(dict):
                * ECDSA: 32, 48, or 66
         :param str curve_id: Supported curve IDs for ECDSA keys.
         """
-        KeyKeyShape._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            algorithm=algorithm,
-            length=length,
-            curve_id=curve_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             algorithm: Optional[str] = None,
-             length: Optional[int] = None,
-             curve_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if algorithm is None:
-            raise TypeError("Missing 'algorithm' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-        if curve_id is None and 'curveId' in kwargs:
-            curve_id = kwargs['curveId']
-
-        _setter("algorithm", algorithm)
-        _setter("length", length)
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "length", length)
         if curve_id is not None:
-            _setter("curve_id", curve_id)
+            pulumi.set(__self__, "curve_id", curve_id)
 
     @property
     @pulumi.getter
@@ -381,21 +307,8 @@ class KeyReplicaDetail(dict):
         """
         :param str replication_id: ReplicationId associated with a key operation
         """
-        KeyReplicaDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-
         if replication_id is not None:
-            _setter("replication_id", replication_id)
+            pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -438,35 +351,10 @@ class KeyRestoreFromFile(dict):
         :param str restore_key_from_file_details: Key backup file content.
         :param str content_md5: (Updatable) content md5 hashed value of key's backup file
         """
-        KeyRestoreFromFile._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_length=content_length,
-            restore_key_from_file_details=restore_key_from_file_details,
-            content_md5=content_md5,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_length: Optional[str] = None,
-             restore_key_from_file_details: Optional[str] = None,
-             content_md5: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_length is None and 'contentLength' in kwargs:
-            content_length = kwargs['contentLength']
-        if content_length is None:
-            raise TypeError("Missing 'content_length' argument")
-        if restore_key_from_file_details is None and 'restoreKeyFromFileDetails' in kwargs:
-            restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
-        if restore_key_from_file_details is None:
-            raise TypeError("Missing 'restore_key_from_file_details' argument")
-        if content_md5 is None and 'contentMd5' in kwargs:
-            content_md5 = kwargs['contentMd5']
-
-        _setter("content_length", content_length)
-        _setter("restore_key_from_file_details", restore_key_from_file_details)
+        pulumi.set(__self__, "content_length", content_length)
+        pulumi.set(__self__, "restore_key_from_file_details", restore_key_from_file_details)
         if content_md5 is not None:
-            _setter("content_md5", content_md5)
+            pulumi.set(__self__, "content_md5", content_md5)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -508,36 +396,15 @@ class KeyRestoreFromObjectStore(dict):
         :param str object: (Updatable) Object containing the backup
         :param str uri: (Updatable) Pre-authenticated-request-uri of the backup
         """
-        KeyRestoreFromObjectStore._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination=destination,
-            bucket=bucket,
-            namespace=namespace,
-            object=object,
-            uri=uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination: Optional[str] = None,
-             bucket: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-
-        _setter("destination", destination)
+        pulumi.set(__self__, "destination", destination)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if uri is not None:
-            _setter("uri", uri)
+            pulumi.set(__self__, "uri", uri)
 
     @property
     @pulumi.getter
@@ -608,27 +475,10 @@ class KeyVersionExternalKeyReferenceDetail(dict):
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param str external_key_version_id: Key version ID associated with the external key.
         """
-        KeyVersionExternalKeyReferenceDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-            external_key_version_id=external_key_version_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-
         if external_key_id is not None:
-            _setter("external_key_id", external_key_id)
+            pulumi.set(__self__, "external_key_id", external_key_id)
         if external_key_version_id is not None:
-            _setter("external_key_version_id", external_key_version_id)
+            pulumi.set(__self__, "external_key_version_id", external_key_version_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -671,21 +521,8 @@ class KeyVersionReplicaDetail(dict):
         """
         :param str replication_id: ReplicationId associated with a key version operation
         """
-        KeyVersionReplicaDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-
         if replication_id is not None:
-            _setter("replication_id", replication_id)
+            pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -728,36 +565,9 @@ class VaultExternalKeyManagerMetadata(dict):
         :param 'VaultExternalKeyManagerMetadataOauthMetadataArgs' oauth_metadata: Authorization details required to get access token from IDP for accessing protected resources.
         :param str private_endpoint_id: OCID of private endpoint created by customer.
         """
-        VaultExternalKeyManagerMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_vault_endpoint_url=external_vault_endpoint_url,
-            oauth_metadata=oauth_metadata,
-            private_endpoint_id=private_endpoint_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: Optional[str] = None,
-             oauth_metadata: Optional['outputs.VaultExternalKeyManagerMetadataOauthMetadata'] = None,
-             private_endpoint_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
-            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if external_vault_endpoint_url is None:
-            raise TypeError("Missing 'external_vault_endpoint_url' argument")
-        if oauth_metadata is None and 'oauthMetadata' in kwargs:
-            oauth_metadata = kwargs['oauthMetadata']
-        if oauth_metadata is None:
-            raise TypeError("Missing 'oauth_metadata' argument")
-        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
-            private_endpoint_id = kwargs['privateEndpointId']
-        if private_endpoint_id is None:
-            raise TypeError("Missing 'private_endpoint_id' argument")
-
-        _setter("external_vault_endpoint_url", external_vault_endpoint_url)
-        _setter("oauth_metadata", oauth_metadata)
-        _setter("private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "external_vault_endpoint_url", external_vault_endpoint_url)
+        pulumi.set(__self__, "oauth_metadata", oauth_metadata)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
 
     @property
     @pulumi.getter(name="externalVaultEndpointUrl")
@@ -816,36 +626,9 @@ class VaultExternalKeyManagerMetadataOauthMetadata(dict):
         :param str client_app_secret: Secret of the client app created in IDP.
         :param str idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
         """
-        VaultExternalKeyManagerMetadataOauthMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_app_id=client_app_id,
-            client_app_secret=client_app_secret,
-            idcs_account_name_url=idcs_account_name_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_app_id: Optional[str] = None,
-             client_app_secret: Optional[str] = None,
-             idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_app_id is None and 'clientAppId' in kwargs:
-            client_app_id = kwargs['clientAppId']
-        if client_app_id is None:
-            raise TypeError("Missing 'client_app_id' argument")
-        if client_app_secret is None and 'clientAppSecret' in kwargs:
-            client_app_secret = kwargs['clientAppSecret']
-        if client_app_secret is None:
-            raise TypeError("Missing 'client_app_secret' argument")
-        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
-            idcs_account_name_url = kwargs['idcsAccountNameUrl']
-        if idcs_account_name_url is None:
-            raise TypeError("Missing 'idcs_account_name_url' argument")
-
-        _setter("client_app_id", client_app_id)
-        _setter("client_app_secret", client_app_secret)
-        _setter("idcs_account_name_url", idcs_account_name_url)
+        pulumi.set(__self__, "client_app_id", client_app_id)
+        pulumi.set(__self__, "client_app_secret", client_app_secret)
+        pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
 
     @property
     @pulumi.getter(name="clientAppId")
@@ -906,37 +689,14 @@ class VaultExternalKeyManagerMetadataSummary(dict):
         :param str private_endpoint_id: OCID of private endpoint created by customer.
         :param str vendor: Vendor of the external key manager.
         """
-        VaultExternalKeyManagerMetadataSummary._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_vault_endpoint_url=external_vault_endpoint_url,
-            oauth_metadata_summaries=oauth_metadata_summaries,
-            private_endpoint_id=private_endpoint_id,
-            vendor=vendor,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: Optional[str] = None,
-             oauth_metadata_summaries: Optional[Sequence['outputs.VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary']] = None,
-             private_endpoint_id: Optional[str] = None,
-             vendor: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
-            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if oauth_metadata_summaries is None and 'oauthMetadataSummaries' in kwargs:
-            oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
-        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
-            private_endpoint_id = kwargs['privateEndpointId']
-
         if external_vault_endpoint_url is not None:
-            _setter("external_vault_endpoint_url", external_vault_endpoint_url)
+            pulumi.set(__self__, "external_vault_endpoint_url", external_vault_endpoint_url)
         if oauth_metadata_summaries is not None:
-            _setter("oauth_metadata_summaries", oauth_metadata_summaries)
+            pulumi.set(__self__, "oauth_metadata_summaries", oauth_metadata_summaries)
         if private_endpoint_id is not None:
-            _setter("private_endpoint_id", private_endpoint_id)
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if vendor is not None:
-            _setter("vendor", vendor)
+            pulumi.set(__self__, "vendor", vendor)
 
     @property
     @pulumi.getter(name="externalVaultEndpointUrl")
@@ -999,27 +759,10 @@ class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary(dict):
         :param str client_app_id: ID of the client app created in IDP.
         :param str idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
         """
-        VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_app_id=client_app_id,
-            idcs_account_name_url=idcs_account_name_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_app_id: Optional[str] = None,
-             idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_app_id is None and 'clientAppId' in kwargs:
-            client_app_id = kwargs['clientAppId']
-        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
-            idcs_account_name_url = kwargs['idcsAccountNameUrl']
-
         if client_app_id is not None:
-            _setter("client_app_id", client_app_id)
+            pulumi.set(__self__, "client_app_id", client_app_id)
         if idcs_account_name_url is not None:
-            _setter("idcs_account_name_url", idcs_account_name_url)
+            pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
 
     @property
     @pulumi.getter(name="clientAppId")
@@ -1062,21 +805,8 @@ class VaultReplicaDetail(dict):
         """
         :param str replication_id: ReplicationId associated with a vault operation
         """
-        VaultReplicaDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-
         if replication_id is not None:
-            _setter("replication_id", replication_id)
+            pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -1119,35 +849,10 @@ class VaultRestoreFromFile(dict):
         :param str restore_vault_from_file_details: Vault backup file content
         :param str content_md5: (Updatable) content md5 hashed value of vault's backup file
         """
-        VaultRestoreFromFile._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_length=content_length,
-            restore_vault_from_file_details=restore_vault_from_file_details,
-            content_md5=content_md5,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_length: Optional[str] = None,
-             restore_vault_from_file_details: Optional[str] = None,
-             content_md5: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_length is None and 'contentLength' in kwargs:
-            content_length = kwargs['contentLength']
-        if content_length is None:
-            raise TypeError("Missing 'content_length' argument")
-        if restore_vault_from_file_details is None and 'restoreVaultFromFileDetails' in kwargs:
-            restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
-        if restore_vault_from_file_details is None:
-            raise TypeError("Missing 'restore_vault_from_file_details' argument")
-        if content_md5 is None and 'contentMd5' in kwargs:
-            content_md5 = kwargs['contentMd5']
-
-        _setter("content_length", content_length)
-        _setter("restore_vault_from_file_details", restore_vault_from_file_details)
+        pulumi.set(__self__, "content_length", content_length)
+        pulumi.set(__self__, "restore_vault_from_file_details", restore_vault_from_file_details)
         if content_md5 is not None:
-            _setter("content_md5", content_md5)
+            pulumi.set(__self__, "content_md5", content_md5)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -1189,36 +894,15 @@ class VaultRestoreFromObjectStore(dict):
         :param str object: (Updatable) Object containing the backup
         :param str uri: (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         """
-        VaultRestoreFromObjectStore._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination=destination,
-            bucket=bucket,
-            namespace=namespace,
-            object=object,
-            uri=uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination: Optional[str] = None,
-             bucket: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-
-        _setter("destination", destination)
+        pulumi.set(__self__, "destination", destination)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if uri is not None:
-            _setter("uri", uri)
+            pulumi.set(__self__, "uri", uri)
 
     @property
     @pulumi.getter
@@ -1294,107 +978,20 @@ class GetEkmsPrivateEndpointsEkmsPrivateEndpointResult(dict):
         :param str time_created: The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param str time_updated: The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
-        GetEkmsPrivateEndpointsEkmsPrivateEndpointResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_bundle=ca_bundle,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            external_key_manager_ip=external_key_manager_ip,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            port=port,
-            private_endpoint_ip=private_endpoint_ip,
-            state=state,
-            subnet_id=subnet_id,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_bundle: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             external_key_manager_ip: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             port: Optional[int] = None,
-             private_endpoint_ip: Optional[str] = None,
-             state: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_bundle is None and 'caBundle' in kwargs:
-            ca_bundle = kwargs['caBundle']
-        if ca_bundle is None:
-            raise TypeError("Missing 'ca_bundle' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if external_key_manager_ip is None and 'externalKeyManagerIp' in kwargs:
-            external_key_manager_ip = kwargs['externalKeyManagerIp']
-        if external_key_manager_ip is None:
-            raise TypeError("Missing 'external_key_manager_ip' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
-            private_endpoint_ip = kwargs['privateEndpointIp']
-        if private_endpoint_ip is None:
-            raise TypeError("Missing 'private_endpoint_ip' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("ca_bundle", ca_bundle)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("external_key_manager_ip", external_key_manager_ip)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("port", port)
-        _setter("private_endpoint_ip", private_endpoint_ip)
-        _setter("state", state)
-        _setter("subnet_id", subnet_id)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "ca_bundle", ca_bundle)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_key_manager_ip", external_key_manager_ip)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="caBundle")
@@ -1515,29 +1112,10 @@ class GetEkmsPrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetEkmsPrivateEndpointsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1562,22 +1140,7 @@ class GetKeyExternalKeyReferenceResult(dict):
         """
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         """
-        GetKeyExternalKeyReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_id is None:
-            raise TypeError("Missing 'external_key_id' argument")
-
-        _setter("external_key_id", external_key_id)
+        pulumi.set(__self__, "external_key_id", external_key_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -1597,29 +1160,8 @@ class GetKeyExternalKeyReferenceDetailResult(dict):
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param str external_key_version_id: Key version ID associated with the external key.
         """
-        GetKeyExternalKeyReferenceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-            external_key_version_id=external_key_version_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_id is None:
-            raise TypeError("Missing 'external_key_id' argument")
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-        if external_key_version_id is None:
-            raise TypeError("Missing 'external_key_version_id' argument")
-
-        _setter("external_key_id", external_key_id)
-        _setter("external_key_version_id", external_key_version_id)
+        pulumi.set(__self__, "external_key_id", external_key_id)
+        pulumi.set(__self__, "external_key_version_id", external_key_version_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -1652,32 +1194,9 @@ class GetKeyKeyShapeResult(dict):
                * RSA: 256, 384, or 512
                * ECDSA: 32, 48, or 66
         """
-        GetKeyKeyShapeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            algorithm=algorithm,
-            curve_id=curve_id,
-            length=length,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             algorithm: Optional[str] = None,
-             curve_id: Optional[str] = None,
-             length: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if algorithm is None:
-            raise TypeError("Missing 'algorithm' argument")
-        if curve_id is None and 'curveId' in kwargs:
-            curve_id = kwargs['curveId']
-        if curve_id is None:
-            raise TypeError("Missing 'curve_id' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-
-        _setter("algorithm", algorithm)
-        _setter("curve_id", curve_id)
-        _setter("length", length)
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "curve_id", curve_id)
+        pulumi.set(__self__, "length", length)
 
     @property
     @pulumi.getter
@@ -1714,22 +1233,7 @@ class GetKeyReplicaDetailResult(dict):
         """
         :param str replication_id: ReplicationId associated with a key operation
         """
-        GetKeyReplicaDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-        if replication_id is None:
-            raise TypeError("Missing 'replication_id' argument")
-
-        _setter("replication_id", replication_id)
+        pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -1751,36 +1255,9 @@ class GetKeyRestoreFromFileResult(dict):
         :param str content_md5: content md5 hashed value of key's backup file
         :param str restore_key_from_file_details: Key backup file content
         """
-        GetKeyRestoreFromFileResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_length=content_length,
-            content_md5=content_md5,
-            restore_key_from_file_details=restore_key_from_file_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_length: Optional[str] = None,
-             content_md5: Optional[str] = None,
-             restore_key_from_file_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_length is None and 'contentLength' in kwargs:
-            content_length = kwargs['contentLength']
-        if content_length is None:
-            raise TypeError("Missing 'content_length' argument")
-        if content_md5 is None and 'contentMd5' in kwargs:
-            content_md5 = kwargs['contentMd5']
-        if content_md5 is None:
-            raise TypeError("Missing 'content_md5' argument")
-        if restore_key_from_file_details is None and 'restoreKeyFromFileDetails' in kwargs:
-            restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
-        if restore_key_from_file_details is None:
-            raise TypeError("Missing 'restore_key_from_file_details' argument")
-
-        _setter("content_length", content_length)
-        _setter("content_md5", content_md5)
-        _setter("restore_key_from_file_details", restore_key_from_file_details)
+        pulumi.set(__self__, "content_length", content_length)
+        pulumi.set(__self__, "content_md5", content_md5)
+        pulumi.set(__self__, "restore_key_from_file_details", restore_key_from_file_details)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -1822,40 +1299,11 @@ class GetKeyRestoreFromObjectStoreResult(dict):
         :param str object: Object containing the backup
         :param str uri: Pre-authenticated-request-uri of the backup
         """
-        GetKeyRestoreFromObjectStoreResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            destination=destination,
-            namespace=namespace,
-            object=object,
-            uri=uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             destination: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if uri is None:
-            raise TypeError("Missing 'uri' argument")
-
-        _setter("bucket", bucket)
-        _setter("destination", destination)
-        _setter("namespace", namespace)
-        _setter("object", object)
-        _setter("uri", uri)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "uri", uri)
 
     @property
     @pulumi.getter
@@ -1907,29 +1355,8 @@ class GetKeyVersionExternalKeyReferenceDetailResult(dict):
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param str external_key_version_id: Key version ID associated with the external key.
         """
-        GetKeyVersionExternalKeyReferenceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-            external_key_version_id=external_key_version_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_id is None:
-            raise TypeError("Missing 'external_key_id' argument")
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-        if external_key_version_id is None:
-            raise TypeError("Missing 'external_key_version_id' argument")
-
-        _setter("external_key_id", external_key_id)
-        _setter("external_key_version_id", external_key_version_id)
+        pulumi.set(__self__, "external_key_id", external_key_id)
+        pulumi.set(__self__, "external_key_version_id", external_key_version_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -1955,22 +1382,7 @@ class GetKeyVersionReplicaDetailResult(dict):
         """
         :param str replication_id: ReplicationId associated with a key version operation
         """
-        GetKeyVersionReplicaDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-        if replication_id is None:
-            raise TypeError("Missing 'replication_id' argument")
-
-        _setter("replication_id", replication_id)
+        pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -1987,29 +1399,10 @@ class GetKeyVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetKeyVersionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2063,123 +1456,22 @@ class GetKeyVersionsKeyVersionResult(dict):
         :param str time_of_deletion: An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str vault_id: The OCID of the vault that contains this key version.
         """
-        GetKeyVersionsKeyVersionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            external_key_reference_details=external_key_reference_details,
-            external_key_version_id=external_key_version_id,
-            id=id,
-            is_primary=is_primary,
-            key_id=key_id,
-            key_version_id=key_version_id,
-            management_endpoint=management_endpoint,
-            public_key=public_key,
-            replica_details=replica_details,
-            restored_from_key_id=restored_from_key_id,
-            restored_from_key_version_id=restored_from_key_version_id,
-            state=state,
-            time_created=time_created,
-            time_of_deletion=time_of_deletion,
-            vault_id=vault_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             external_key_reference_details: Optional[Sequence['outputs.GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult']] = None,
-             external_key_version_id: Optional[str] = None,
-             id: Optional[str] = None,
-             is_primary: Optional[bool] = None,
-             key_id: Optional[str] = None,
-             key_version_id: Optional[str] = None,
-             management_endpoint: Optional[str] = None,
-             public_key: Optional[str] = None,
-             replica_details: Optional[Sequence['outputs.GetKeyVersionsKeyVersionReplicaDetailResult']] = None,
-             restored_from_key_id: Optional[str] = None,
-             restored_from_key_version_id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_of_deletion: Optional[str] = None,
-             vault_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if external_key_reference_details is None and 'externalKeyReferenceDetails' in kwargs:
-            external_key_reference_details = kwargs['externalKeyReferenceDetails']
-        if external_key_reference_details is None:
-            raise TypeError("Missing 'external_key_reference_details' argument")
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-        if external_key_version_id is None:
-            raise TypeError("Missing 'external_key_version_id' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_primary is None and 'isPrimary' in kwargs:
-            is_primary = kwargs['isPrimary']
-        if is_primary is None:
-            raise TypeError("Missing 'is_primary' argument")
-        if key_id is None and 'keyId' in kwargs:
-            key_id = kwargs['keyId']
-        if key_id is None:
-            raise TypeError("Missing 'key_id' argument")
-        if key_version_id is None and 'keyVersionId' in kwargs:
-            key_version_id = kwargs['keyVersionId']
-        if key_version_id is None:
-            raise TypeError("Missing 'key_version_id' argument")
-        if management_endpoint is None and 'managementEndpoint' in kwargs:
-            management_endpoint = kwargs['managementEndpoint']
-        if management_endpoint is None:
-            raise TypeError("Missing 'management_endpoint' argument")
-        if public_key is None and 'publicKey' in kwargs:
-            public_key = kwargs['publicKey']
-        if public_key is None:
-            raise TypeError("Missing 'public_key' argument")
-        if replica_details is None and 'replicaDetails' in kwargs:
-            replica_details = kwargs['replicaDetails']
-        if replica_details is None:
-            raise TypeError("Missing 'replica_details' argument")
-        if restored_from_key_id is None and 'restoredFromKeyId' in kwargs:
-            restored_from_key_id = kwargs['restoredFromKeyId']
-        if restored_from_key_id is None:
-            raise TypeError("Missing 'restored_from_key_id' argument")
-        if restored_from_key_version_id is None and 'restoredFromKeyVersionId' in kwargs:
-            restored_from_key_version_id = kwargs['restoredFromKeyVersionId']
-        if restored_from_key_version_id is None:
-            raise TypeError("Missing 'restored_from_key_version_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
-            time_of_deletion = kwargs['timeOfDeletion']
-        if time_of_deletion is None:
-            raise TypeError("Missing 'time_of_deletion' argument")
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-        if vault_id is None:
-            raise TypeError("Missing 'vault_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("external_key_reference_details", external_key_reference_details)
-        _setter("external_key_version_id", external_key_version_id)
-        _setter("id", id)
-        _setter("is_primary", is_primary)
-        _setter("key_id", key_id)
-        _setter("key_version_id", key_version_id)
-        _setter("management_endpoint", management_endpoint)
-        _setter("public_key", public_key)
-        _setter("replica_details", replica_details)
-        _setter("restored_from_key_id", restored_from_key_id)
-        _setter("restored_from_key_version_id", restored_from_key_version_id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_of_deletion", time_of_deletion)
-        _setter("vault_id", vault_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "external_key_reference_details", external_key_reference_details)
+        pulumi.set(__self__, "external_key_version_id", external_key_version_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_primary", is_primary)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_version_id", key_version_id)
+        pulumi.set(__self__, "management_endpoint", management_endpoint)
+        pulumi.set(__self__, "public_key", public_key)
+        pulumi.set(__self__, "replica_details", replica_details)
+        pulumi.set(__self__, "restored_from_key_id", restored_from_key_id)
+        pulumi.set(__self__, "restored_from_key_version_id", restored_from_key_version_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2316,29 +1608,8 @@ class GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult(dict):
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param str external_key_version_id: Key version ID associated with the external key.
         """
-        GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-            external_key_version_id=external_key_version_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_id is None:
-            raise TypeError("Missing 'external_key_id' argument")
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-        if external_key_version_id is None:
-            raise TypeError("Missing 'external_key_version_id' argument")
-
-        _setter("external_key_id", external_key_id)
-        _setter("external_key_version_id", external_key_version_id)
+        pulumi.set(__self__, "external_key_id", external_key_id)
+        pulumi.set(__self__, "external_key_version_id", external_key_version_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -2364,22 +1635,7 @@ class GetKeyVersionsKeyVersionReplicaDetailResult(dict):
         """
         :param str replication_id: ReplicationId associated with a key version operation
         """
-        GetKeyVersionsKeyVersionReplicaDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-        if replication_id is None:
-            raise TypeError("Missing 'replication_id' argument")
-
-        _setter("replication_id", replication_id)
+        pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -2396,29 +1652,10 @@ class GetKeysFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetKeysFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2479,165 +1716,28 @@ class GetKeysKeyResult(dict):
         :param str time_of_deletion: An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str vault_id: The OCID of the vault that contains this key.
         """
-        GetKeysKeyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            current_key_version=current_key_version,
-            defined_tags=defined_tags,
-            desired_state=desired_state,
-            display_name=display_name,
-            external_key_reference_details=external_key_reference_details,
-            external_key_references=external_key_references,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_primary=is_primary,
-            key_shapes=key_shapes,
-            management_endpoint=management_endpoint,
-            protection_mode=protection_mode,
-            replica_details=replica_details,
-            restore_from_files=restore_from_files,
-            restore_from_object_stores=restore_from_object_stores,
-            restore_trigger=restore_trigger,
-            restored_from_key_id=restored_from_key_id,
-            state=state,
-            time_created=time_created,
-            time_of_deletion=time_of_deletion,
-            vault_id=vault_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             current_key_version: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             desired_state: Optional[str] = None,
-             display_name: Optional[str] = None,
-             external_key_reference_details: Optional[Sequence['outputs.GetKeysKeyExternalKeyReferenceDetailResult']] = None,
-             external_key_references: Optional[Sequence['outputs.GetKeysKeyExternalKeyReferenceResult']] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_primary: Optional[bool] = None,
-             key_shapes: Optional[Sequence['outputs.GetKeysKeyKeyShapeResult']] = None,
-             management_endpoint: Optional[str] = None,
-             protection_mode: Optional[str] = None,
-             replica_details: Optional[Sequence['outputs.GetKeysKeyReplicaDetailResult']] = None,
-             restore_from_files: Optional[Sequence['outputs.GetKeysKeyRestoreFromFileResult']] = None,
-             restore_from_object_stores: Optional[Sequence['outputs.GetKeysKeyRestoreFromObjectStoreResult']] = None,
-             restore_trigger: Optional[bool] = None,
-             restored_from_key_id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_of_deletion: Optional[str] = None,
-             vault_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if current_key_version is None and 'currentKeyVersion' in kwargs:
-            current_key_version = kwargs['currentKeyVersion']
-        if current_key_version is None:
-            raise TypeError("Missing 'current_key_version' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if desired_state is None and 'desiredState' in kwargs:
-            desired_state = kwargs['desiredState']
-        if desired_state is None:
-            raise TypeError("Missing 'desired_state' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if external_key_reference_details is None and 'externalKeyReferenceDetails' in kwargs:
-            external_key_reference_details = kwargs['externalKeyReferenceDetails']
-        if external_key_reference_details is None:
-            raise TypeError("Missing 'external_key_reference_details' argument")
-        if external_key_references is None and 'externalKeyReferences' in kwargs:
-            external_key_references = kwargs['externalKeyReferences']
-        if external_key_references is None:
-            raise TypeError("Missing 'external_key_references' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_primary is None and 'isPrimary' in kwargs:
-            is_primary = kwargs['isPrimary']
-        if is_primary is None:
-            raise TypeError("Missing 'is_primary' argument")
-        if key_shapes is None and 'keyShapes' in kwargs:
-            key_shapes = kwargs['keyShapes']
-        if key_shapes is None:
-            raise TypeError("Missing 'key_shapes' argument")
-        if management_endpoint is None and 'managementEndpoint' in kwargs:
-            management_endpoint = kwargs['managementEndpoint']
-        if management_endpoint is None:
-            raise TypeError("Missing 'management_endpoint' argument")
-        if protection_mode is None and 'protectionMode' in kwargs:
-            protection_mode = kwargs['protectionMode']
-        if protection_mode is None:
-            raise TypeError("Missing 'protection_mode' argument")
-        if replica_details is None and 'replicaDetails' in kwargs:
-            replica_details = kwargs['replicaDetails']
-        if replica_details is None:
-            raise TypeError("Missing 'replica_details' argument")
-        if restore_from_files is None and 'restoreFromFiles' in kwargs:
-            restore_from_files = kwargs['restoreFromFiles']
-        if restore_from_files is None:
-            raise TypeError("Missing 'restore_from_files' argument")
-        if restore_from_object_stores is None and 'restoreFromObjectStores' in kwargs:
-            restore_from_object_stores = kwargs['restoreFromObjectStores']
-        if restore_from_object_stores is None:
-            raise TypeError("Missing 'restore_from_object_stores' argument")
-        if restore_trigger is None and 'restoreTrigger' in kwargs:
-            restore_trigger = kwargs['restoreTrigger']
-        if restore_trigger is None:
-            raise TypeError("Missing 'restore_trigger' argument")
-        if restored_from_key_id is None and 'restoredFromKeyId' in kwargs:
-            restored_from_key_id = kwargs['restoredFromKeyId']
-        if restored_from_key_id is None:
-            raise TypeError("Missing 'restored_from_key_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
-            time_of_deletion = kwargs['timeOfDeletion']
-        if time_of_deletion is None:
-            raise TypeError("Missing 'time_of_deletion' argument")
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-        if vault_id is None:
-            raise TypeError("Missing 'vault_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("current_key_version", current_key_version)
-        _setter("defined_tags", defined_tags)
-        _setter("desired_state", desired_state)
-        _setter("display_name", display_name)
-        _setter("external_key_reference_details", external_key_reference_details)
-        _setter("external_key_references", external_key_references)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_primary", is_primary)
-        _setter("key_shapes", key_shapes)
-        _setter("management_endpoint", management_endpoint)
-        _setter("protection_mode", protection_mode)
-        _setter("replica_details", replica_details)
-        _setter("restore_from_files", restore_from_files)
-        _setter("restore_from_object_stores", restore_from_object_stores)
-        _setter("restore_trigger", restore_trigger)
-        _setter("restored_from_key_id", restored_from_key_id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_of_deletion", time_of_deletion)
-        _setter("vault_id", vault_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_key_version", current_key_version)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "desired_state", desired_state)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_key_reference_details", external_key_reference_details)
+        pulumi.set(__self__, "external_key_references", external_key_references)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_primary", is_primary)
+        pulumi.set(__self__, "key_shapes", key_shapes)
+        pulumi.set(__self__, "management_endpoint", management_endpoint)
+        pulumi.set(__self__, "protection_mode", protection_mode)
+        pulumi.set(__self__, "replica_details", replica_details)
+        pulumi.set(__self__, "restore_from_files", restore_from_files)
+        pulumi.set(__self__, "restore_from_object_stores", restore_from_object_stores)
+        pulumi.set(__self__, "restore_trigger", restore_trigger)
+        pulumi.set(__self__, "restored_from_key_id", restored_from_key_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2805,22 +1905,7 @@ class GetKeysKeyExternalKeyReferenceResult(dict):
         """
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         """
-        GetKeysKeyExternalKeyReferenceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_id is None:
-            raise TypeError("Missing 'external_key_id' argument")
-
-        _setter("external_key_id", external_key_id)
+        pulumi.set(__self__, "external_key_id", external_key_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -2840,29 +1925,8 @@ class GetKeysKeyExternalKeyReferenceDetailResult(dict):
         :param str external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param str external_key_version_id: Key version ID associated with the external key.
         """
-        GetKeysKeyExternalKeyReferenceDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_key_id=external_key_id,
-            external_key_version_id=external_key_version_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_key_id: Optional[str] = None,
-             external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_key_id is None and 'externalKeyId' in kwargs:
-            external_key_id = kwargs['externalKeyId']
-        if external_key_id is None:
-            raise TypeError("Missing 'external_key_id' argument")
-        if external_key_version_id is None and 'externalKeyVersionId' in kwargs:
-            external_key_version_id = kwargs['externalKeyVersionId']
-        if external_key_version_id is None:
-            raise TypeError("Missing 'external_key_version_id' argument")
-
-        _setter("external_key_id", external_key_id)
-        _setter("external_key_version_id", external_key_version_id)
+        pulumi.set(__self__, "external_key_id", external_key_id)
+        pulumi.set(__self__, "external_key_version_id", external_key_version_id)
 
     @property
     @pulumi.getter(name="externalKeyId")
@@ -2892,32 +1956,9 @@ class GetKeysKeyKeyShapeResult(dict):
         :param str curve_id: The curve ID of the keys. (This pertains only to ECDSA keys.)
         :param int length: The length of the key in bytes, expressed as an integer. Supported values include 16, 24, or 32.
         """
-        GetKeysKeyKeyShapeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            algorithm=algorithm,
-            curve_id=curve_id,
-            length=length,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             algorithm: Optional[str] = None,
-             curve_id: Optional[str] = None,
-             length: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if algorithm is None:
-            raise TypeError("Missing 'algorithm' argument")
-        if curve_id is None and 'curveId' in kwargs:
-            curve_id = kwargs['curveId']
-        if curve_id is None:
-            raise TypeError("Missing 'curve_id' argument")
-        if length is None:
-            raise TypeError("Missing 'length' argument")
-
-        _setter("algorithm", algorithm)
-        _setter("curve_id", curve_id)
-        _setter("length", length)
+        pulumi.set(__self__, "algorithm", algorithm)
+        pulumi.set(__self__, "curve_id", curve_id)
+        pulumi.set(__self__, "length", length)
 
     @property
     @pulumi.getter
@@ -2951,22 +1992,7 @@ class GetKeysKeyReplicaDetailResult(dict):
         """
         :param str replication_id: ReplicationId associated with a key operation
         """
-        GetKeysKeyReplicaDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-        if replication_id is None:
-            raise TypeError("Missing 'replication_id' argument")
-
-        _setter("replication_id", replication_id)
+        pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -2983,36 +2009,9 @@ class GetKeysKeyRestoreFromFileResult(dict):
                  content_length: str,
                  content_md5: str,
                  restore_key_from_file_details: str):
-        GetKeysKeyRestoreFromFileResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_length=content_length,
-            content_md5=content_md5,
-            restore_key_from_file_details=restore_key_from_file_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_length: Optional[str] = None,
-             content_md5: Optional[str] = None,
-             restore_key_from_file_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_length is None and 'contentLength' in kwargs:
-            content_length = kwargs['contentLength']
-        if content_length is None:
-            raise TypeError("Missing 'content_length' argument")
-        if content_md5 is None and 'contentMd5' in kwargs:
-            content_md5 = kwargs['contentMd5']
-        if content_md5 is None:
-            raise TypeError("Missing 'content_md5' argument")
-        if restore_key_from_file_details is None and 'restoreKeyFromFileDetails' in kwargs:
-            restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
-        if restore_key_from_file_details is None:
-            raise TypeError("Missing 'restore_key_from_file_details' argument")
-
-        _setter("content_length", content_length)
-        _setter("content_md5", content_md5)
-        _setter("restore_key_from_file_details", restore_key_from_file_details)
+        pulumi.set(__self__, "content_length", content_length)
+        pulumi.set(__self__, "content_md5", content_md5)
+        pulumi.set(__self__, "restore_key_from_file_details", restore_key_from_file_details)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -3038,40 +2037,11 @@ class GetKeysKeyRestoreFromObjectStoreResult(dict):
                  namespace: str,
                  object: str,
                  uri: str):
-        GetKeysKeyRestoreFromObjectStoreResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            destination=destination,
-            namespace=namespace,
-            object=object,
-            uri=uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             destination: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if uri is None:
-            raise TypeError("Missing 'uri' argument")
-
-        _setter("bucket", bucket)
-        _setter("destination", destination)
-        _setter("namespace", namespace)
-        _setter("object", object)
-        _setter("uri", uri)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "uri", uri)
 
     @property
     @pulumi.getter
@@ -3108,25 +2078,8 @@ class GetReplicationStatusReplicaDetailResult(dict):
         :param str region: The replica region
         :param str status: Replication status associated with a replicationId
         """
-        GetReplicationStatusReplicaDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            region=region,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-
-        _setter("region", region)
-        _setter("status", status)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
@@ -3155,36 +2108,9 @@ class GetVaultExternalKeyManagerMetadataResult(dict):
         :param str external_vault_endpoint_url: URL of the vault on external key manager.
         :param str private_endpoint_id: OCID of the private endpoint.
         """
-        GetVaultExternalKeyManagerMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_vault_endpoint_url=external_vault_endpoint_url,
-            oauth_metadatas=oauth_metadatas,
-            private_endpoint_id=private_endpoint_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: Optional[str] = None,
-             oauth_metadatas: Optional[Sequence['outputs.GetVaultExternalKeyManagerMetadataOauthMetadataResult']] = None,
-             private_endpoint_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
-            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if external_vault_endpoint_url is None:
-            raise TypeError("Missing 'external_vault_endpoint_url' argument")
-        if oauth_metadatas is None and 'oauthMetadatas' in kwargs:
-            oauth_metadatas = kwargs['oauthMetadatas']
-        if oauth_metadatas is None:
-            raise TypeError("Missing 'oauth_metadatas' argument")
-        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
-            private_endpoint_id = kwargs['privateEndpointId']
-        if private_endpoint_id is None:
-            raise TypeError("Missing 'private_endpoint_id' argument")
-
-        _setter("external_vault_endpoint_url", external_vault_endpoint_url)
-        _setter("oauth_metadatas", oauth_metadatas)
-        _setter("private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "external_vault_endpoint_url", external_vault_endpoint_url)
+        pulumi.set(__self__, "oauth_metadatas", oauth_metadatas)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
 
     @property
     @pulumi.getter(name="externalVaultEndpointUrl")
@@ -3218,36 +2144,9 @@ class GetVaultExternalKeyManagerMetadataOauthMetadataResult(dict):
         :param str client_app_id: ID of the client app created in IDP.
         :param str idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
         """
-        GetVaultExternalKeyManagerMetadataOauthMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_app_id=client_app_id,
-            client_app_secret=client_app_secret,
-            idcs_account_name_url=idcs_account_name_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_app_id: Optional[str] = None,
-             client_app_secret: Optional[str] = None,
-             idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_app_id is None and 'clientAppId' in kwargs:
-            client_app_id = kwargs['clientAppId']
-        if client_app_id is None:
-            raise TypeError("Missing 'client_app_id' argument")
-        if client_app_secret is None and 'clientAppSecret' in kwargs:
-            client_app_secret = kwargs['clientAppSecret']
-        if client_app_secret is None:
-            raise TypeError("Missing 'client_app_secret' argument")
-        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
-            idcs_account_name_url = kwargs['idcsAccountNameUrl']
-        if idcs_account_name_url is None:
-            raise TypeError("Missing 'idcs_account_name_url' argument")
-
-        _setter("client_app_id", client_app_id)
-        _setter("client_app_secret", client_app_secret)
-        _setter("idcs_account_name_url", idcs_account_name_url)
+        pulumi.set(__self__, "client_app_id", client_app_id)
+        pulumi.set(__self__, "client_app_secret", client_app_secret)
+        pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
 
     @property
     @pulumi.getter(name="clientAppId")
@@ -3284,41 +2183,10 @@ class GetVaultExternalKeyManagerMetadataSummaryResult(dict):
         :param str private_endpoint_id: OCID of the private endpoint.
         :param str vendor: Vendor of the external key manager.
         """
-        GetVaultExternalKeyManagerMetadataSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_vault_endpoint_url=external_vault_endpoint_url,
-            oauth_metadata_summaries=oauth_metadata_summaries,
-            private_endpoint_id=private_endpoint_id,
-            vendor=vendor,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: Optional[str] = None,
-             oauth_metadata_summaries: Optional[Sequence['outputs.GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult']] = None,
-             private_endpoint_id: Optional[str] = None,
-             vendor: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
-            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if external_vault_endpoint_url is None:
-            raise TypeError("Missing 'external_vault_endpoint_url' argument")
-        if oauth_metadata_summaries is None and 'oauthMetadataSummaries' in kwargs:
-            oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
-        if oauth_metadata_summaries is None:
-            raise TypeError("Missing 'oauth_metadata_summaries' argument")
-        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
-            private_endpoint_id = kwargs['privateEndpointId']
-        if private_endpoint_id is None:
-            raise TypeError("Missing 'private_endpoint_id' argument")
-        if vendor is None:
-            raise TypeError("Missing 'vendor' argument")
-
-        _setter("external_vault_endpoint_url", external_vault_endpoint_url)
-        _setter("oauth_metadata_summaries", oauth_metadata_summaries)
-        _setter("private_endpoint_id", private_endpoint_id)
-        _setter("vendor", vendor)
+        pulumi.set(__self__, "external_vault_endpoint_url", external_vault_endpoint_url)
+        pulumi.set(__self__, "oauth_metadata_summaries", oauth_metadata_summaries)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "vendor", vendor)
 
     @property
     @pulumi.getter(name="externalVaultEndpointUrl")
@@ -3362,29 +2230,8 @@ class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult(dict):
         :param str client_app_id: ID of the client app created in IDP.
         :param str idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
         """
-        GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_app_id=client_app_id,
-            idcs_account_name_url=idcs_account_name_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_app_id: Optional[str] = None,
-             idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_app_id is None and 'clientAppId' in kwargs:
-            client_app_id = kwargs['clientAppId']
-        if client_app_id is None:
-            raise TypeError("Missing 'client_app_id' argument")
-        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
-            idcs_account_name_url = kwargs['idcsAccountNameUrl']
-        if idcs_account_name_url is None:
-            raise TypeError("Missing 'idcs_account_name_url' argument")
-
-        _setter("client_app_id", client_app_id)
-        _setter("idcs_account_name_url", idcs_account_name_url)
+        pulumi.set(__self__, "client_app_id", client_app_id)
+        pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
 
     @property
     @pulumi.getter(name="clientAppId")
@@ -3410,22 +2257,7 @@ class GetVaultReplicaDetailResult(dict):
         """
         :param str replication_id: ReplicationId associated with a vault operation
         """
-        GetVaultReplicaDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-        if replication_id is None:
-            raise TypeError("Missing 'replication_id' argument")
-
-        _setter("replication_id", replication_id)
+        pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -3442,29 +2274,10 @@ class GetVaultReplicasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVaultReplicasFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3495,39 +2308,10 @@ class GetVaultReplicasVaultReplicaResult(dict):
         :param str region: Region to which vault is replicated to
         :param str status: Status of the Vault
         """
-        GetVaultReplicasVaultReplicaResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            crypto_endpoint=crypto_endpoint,
-            management_endpoint=management_endpoint,
-            region=region,
-            status=status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             crypto_endpoint: Optional[str] = None,
-             management_endpoint: Optional[str] = None,
-             region: Optional[str] = None,
-             status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
-            crypto_endpoint = kwargs['cryptoEndpoint']
-        if crypto_endpoint is None:
-            raise TypeError("Missing 'crypto_endpoint' argument")
-        if management_endpoint is None and 'managementEndpoint' in kwargs:
-            management_endpoint = kwargs['managementEndpoint']
-        if management_endpoint is None:
-            raise TypeError("Missing 'management_endpoint' argument")
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-
-        _setter("crypto_endpoint", crypto_endpoint)
-        _setter("management_endpoint", management_endpoint)
-        _setter("region", region)
-        _setter("status", status)
+        pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
+        pulumi.set(__self__, "management_endpoint", management_endpoint)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
@@ -3573,36 +2357,9 @@ class GetVaultRestoreFromFileResult(dict):
         :param str content_md5: content md5 hashed value of vault's backup file
         :param str restore_vault_from_file_details: Vault backup file content
         """
-        GetVaultRestoreFromFileResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_length=content_length,
-            content_md5=content_md5,
-            restore_vault_from_file_details=restore_vault_from_file_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_length: Optional[str] = None,
-             content_md5: Optional[str] = None,
-             restore_vault_from_file_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_length is None and 'contentLength' in kwargs:
-            content_length = kwargs['contentLength']
-        if content_length is None:
-            raise TypeError("Missing 'content_length' argument")
-        if content_md5 is None and 'contentMd5' in kwargs:
-            content_md5 = kwargs['contentMd5']
-        if content_md5 is None:
-            raise TypeError("Missing 'content_md5' argument")
-        if restore_vault_from_file_details is None and 'restoreVaultFromFileDetails' in kwargs:
-            restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
-        if restore_vault_from_file_details is None:
-            raise TypeError("Missing 'restore_vault_from_file_details' argument")
-
-        _setter("content_length", content_length)
-        _setter("content_md5", content_md5)
-        _setter("restore_vault_from_file_details", restore_vault_from_file_details)
+        pulumi.set(__self__, "content_length", content_length)
+        pulumi.set(__self__, "content_md5", content_md5)
+        pulumi.set(__self__, "restore_vault_from_file_details", restore_vault_from_file_details)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -3644,40 +2401,11 @@ class GetVaultRestoreFromObjectStoreResult(dict):
         :param str object: Object containing the backup
         :param str uri: Pre-authenticated-request-uri of the backup
         """
-        GetVaultRestoreFromObjectStoreResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            destination=destination,
-            namespace=namespace,
-            object=object,
-            uri=uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             destination: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if uri is None:
-            raise TypeError("Missing 'uri' argument")
-
-        _setter("bucket", bucket)
-        _setter("destination", destination)
-        _setter("namespace", namespace)
-        _setter("object", object)
-        _setter("uri", uri)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "uri", uri)
 
     @property
     @pulumi.getter
@@ -3726,29 +2454,10 @@ class GetVaultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVaultsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3805,144 +2514,25 @@ class GetVaultsVaultResult(dict):
         :param str time_of_deletion: An optional property to indicate when to delete the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param str vault_type: The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
-        GetVaultsVaultResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            crypto_endpoint=crypto_endpoint,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            external_key_manager_metadata_summaries=external_key_manager_metadata_summaries,
-            external_key_manager_metadatas=external_key_manager_metadatas,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_primary=is_primary,
-            management_endpoint=management_endpoint,
-            replica_details=replica_details,
-            restore_from_files=restore_from_files,
-            restore_from_object_stores=restore_from_object_stores,
-            restore_trigger=restore_trigger,
-            restored_from_vault_id=restored_from_vault_id,
-            state=state,
-            time_created=time_created,
-            time_of_deletion=time_of_deletion,
-            vault_type=vault_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             crypto_endpoint: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             external_key_manager_metadata_summaries: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryResult']] = None,
-             external_key_manager_metadatas: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataResult']] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_primary: Optional[bool] = None,
-             management_endpoint: Optional[str] = None,
-             replica_details: Optional[Sequence['outputs.GetVaultsVaultReplicaDetailResult']] = None,
-             restore_from_files: Optional[Sequence['outputs.GetVaultsVaultRestoreFromFileResult']] = None,
-             restore_from_object_stores: Optional[Sequence['outputs.GetVaultsVaultRestoreFromObjectStoreResult']] = None,
-             restore_trigger: Optional[bool] = None,
-             restored_from_vault_id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_of_deletion: Optional[str] = None,
-             vault_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
-            crypto_endpoint = kwargs['cryptoEndpoint']
-        if crypto_endpoint is None:
-            raise TypeError("Missing 'crypto_endpoint' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if external_key_manager_metadata_summaries is None and 'externalKeyManagerMetadataSummaries' in kwargs:
-            external_key_manager_metadata_summaries = kwargs['externalKeyManagerMetadataSummaries']
-        if external_key_manager_metadata_summaries is None:
-            raise TypeError("Missing 'external_key_manager_metadata_summaries' argument")
-        if external_key_manager_metadatas is None and 'externalKeyManagerMetadatas' in kwargs:
-            external_key_manager_metadatas = kwargs['externalKeyManagerMetadatas']
-        if external_key_manager_metadatas is None:
-            raise TypeError("Missing 'external_key_manager_metadatas' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_primary is None and 'isPrimary' in kwargs:
-            is_primary = kwargs['isPrimary']
-        if is_primary is None:
-            raise TypeError("Missing 'is_primary' argument")
-        if management_endpoint is None and 'managementEndpoint' in kwargs:
-            management_endpoint = kwargs['managementEndpoint']
-        if management_endpoint is None:
-            raise TypeError("Missing 'management_endpoint' argument")
-        if replica_details is None and 'replicaDetails' in kwargs:
-            replica_details = kwargs['replicaDetails']
-        if replica_details is None:
-            raise TypeError("Missing 'replica_details' argument")
-        if restore_from_files is None and 'restoreFromFiles' in kwargs:
-            restore_from_files = kwargs['restoreFromFiles']
-        if restore_from_files is None:
-            raise TypeError("Missing 'restore_from_files' argument")
-        if restore_from_object_stores is None and 'restoreFromObjectStores' in kwargs:
-            restore_from_object_stores = kwargs['restoreFromObjectStores']
-        if restore_from_object_stores is None:
-            raise TypeError("Missing 'restore_from_object_stores' argument")
-        if restore_trigger is None and 'restoreTrigger' in kwargs:
-            restore_trigger = kwargs['restoreTrigger']
-        if restore_trigger is None:
-            raise TypeError("Missing 'restore_trigger' argument")
-        if restored_from_vault_id is None and 'restoredFromVaultId' in kwargs:
-            restored_from_vault_id = kwargs['restoredFromVaultId']
-        if restored_from_vault_id is None:
-            raise TypeError("Missing 'restored_from_vault_id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
-            time_of_deletion = kwargs['timeOfDeletion']
-        if time_of_deletion is None:
-            raise TypeError("Missing 'time_of_deletion' argument")
-        if vault_type is None and 'vaultType' in kwargs:
-            vault_type = kwargs['vaultType']
-        if vault_type is None:
-            raise TypeError("Missing 'vault_type' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("crypto_endpoint", crypto_endpoint)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("external_key_manager_metadata_summaries", external_key_manager_metadata_summaries)
-        _setter("external_key_manager_metadatas", external_key_manager_metadatas)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_primary", is_primary)
-        _setter("management_endpoint", management_endpoint)
-        _setter("replica_details", replica_details)
-        _setter("restore_from_files", restore_from_files)
-        _setter("restore_from_object_stores", restore_from_object_stores)
-        _setter("restore_trigger", restore_trigger)
-        _setter("restored_from_vault_id", restored_from_vault_id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_of_deletion", time_of_deletion)
-        _setter("vault_type", vault_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_key_manager_metadata_summaries", external_key_manager_metadata_summaries)
+        pulumi.set(__self__, "external_key_manager_metadatas", external_key_manager_metadatas)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_primary", is_primary)
+        pulumi.set(__self__, "management_endpoint", management_endpoint)
+        pulumi.set(__self__, "replica_details", replica_details)
+        pulumi.set(__self__, "restore_from_files", restore_from_files)
+        pulumi.set(__self__, "restore_from_object_stores", restore_from_object_stores)
+        pulumi.set(__self__, "restore_trigger", restore_trigger)
+        pulumi.set(__self__, "restored_from_vault_id", restored_from_vault_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        pulumi.set(__self__, "vault_type", vault_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4095,36 +2685,9 @@ class GetVaultsVaultExternalKeyManagerMetadataResult(dict):
         :param str external_vault_endpoint_url: URL of the vault on external key manager.
         :param str private_endpoint_id: OCID of the private endpoint.
         """
-        GetVaultsVaultExternalKeyManagerMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_vault_endpoint_url=external_vault_endpoint_url,
-            oauth_metadatas=oauth_metadatas,
-            private_endpoint_id=private_endpoint_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: Optional[str] = None,
-             oauth_metadatas: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult']] = None,
-             private_endpoint_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
-            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if external_vault_endpoint_url is None:
-            raise TypeError("Missing 'external_vault_endpoint_url' argument")
-        if oauth_metadatas is None and 'oauthMetadatas' in kwargs:
-            oauth_metadatas = kwargs['oauthMetadatas']
-        if oauth_metadatas is None:
-            raise TypeError("Missing 'oauth_metadatas' argument")
-        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
-            private_endpoint_id = kwargs['privateEndpointId']
-        if private_endpoint_id is None:
-            raise TypeError("Missing 'private_endpoint_id' argument")
-
-        _setter("external_vault_endpoint_url", external_vault_endpoint_url)
-        _setter("oauth_metadatas", oauth_metadatas)
-        _setter("private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "external_vault_endpoint_url", external_vault_endpoint_url)
+        pulumi.set(__self__, "oauth_metadatas", oauth_metadatas)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
 
     @property
     @pulumi.getter(name="externalVaultEndpointUrl")
@@ -4158,36 +2721,9 @@ class GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult(dict):
         :param str client_app_id: ID of the client app created in IDP.
         :param str idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
         """
-        GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_app_id=client_app_id,
-            client_app_secret=client_app_secret,
-            idcs_account_name_url=idcs_account_name_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_app_id: Optional[str] = None,
-             client_app_secret: Optional[str] = None,
-             idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_app_id is None and 'clientAppId' in kwargs:
-            client_app_id = kwargs['clientAppId']
-        if client_app_id is None:
-            raise TypeError("Missing 'client_app_id' argument")
-        if client_app_secret is None and 'clientAppSecret' in kwargs:
-            client_app_secret = kwargs['clientAppSecret']
-        if client_app_secret is None:
-            raise TypeError("Missing 'client_app_secret' argument")
-        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
-            idcs_account_name_url = kwargs['idcsAccountNameUrl']
-        if idcs_account_name_url is None:
-            raise TypeError("Missing 'idcs_account_name_url' argument")
-
-        _setter("client_app_id", client_app_id)
-        _setter("client_app_secret", client_app_secret)
-        _setter("idcs_account_name_url", idcs_account_name_url)
+        pulumi.set(__self__, "client_app_id", client_app_id)
+        pulumi.set(__self__, "client_app_secret", client_app_secret)
+        pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
 
     @property
     @pulumi.getter(name="clientAppId")
@@ -4224,41 +2760,10 @@ class GetVaultsVaultExternalKeyManagerMetadataSummaryResult(dict):
         :param str private_endpoint_id: OCID of the private endpoint.
         :param str vendor: Vendor of the external key manager.
         """
-        GetVaultsVaultExternalKeyManagerMetadataSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            external_vault_endpoint_url=external_vault_endpoint_url,
-            oauth_metadata_summaries=oauth_metadata_summaries,
-            private_endpoint_id=private_endpoint_id,
-            vendor=vendor,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             external_vault_endpoint_url: Optional[str] = None,
-             oauth_metadata_summaries: Optional[Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult']] = None,
-             private_endpoint_id: Optional[str] = None,
-             vendor: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if external_vault_endpoint_url is None and 'externalVaultEndpointUrl' in kwargs:
-            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
-        if external_vault_endpoint_url is None:
-            raise TypeError("Missing 'external_vault_endpoint_url' argument")
-        if oauth_metadata_summaries is None and 'oauthMetadataSummaries' in kwargs:
-            oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
-        if oauth_metadata_summaries is None:
-            raise TypeError("Missing 'oauth_metadata_summaries' argument")
-        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
-            private_endpoint_id = kwargs['privateEndpointId']
-        if private_endpoint_id is None:
-            raise TypeError("Missing 'private_endpoint_id' argument")
-        if vendor is None:
-            raise TypeError("Missing 'vendor' argument")
-
-        _setter("external_vault_endpoint_url", external_vault_endpoint_url)
-        _setter("oauth_metadata_summaries", oauth_metadata_summaries)
-        _setter("private_endpoint_id", private_endpoint_id)
-        _setter("vendor", vendor)
+        pulumi.set(__self__, "external_vault_endpoint_url", external_vault_endpoint_url)
+        pulumi.set(__self__, "oauth_metadata_summaries", oauth_metadata_summaries)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "vendor", vendor)
 
     @property
     @pulumi.getter(name="externalVaultEndpointUrl")
@@ -4302,29 +2807,8 @@ class GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult(
         :param str client_app_id: ID of the client app created in IDP.
         :param str idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
         """
-        GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            client_app_id=client_app_id,
-            idcs_account_name_url=idcs_account_name_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             client_app_id: Optional[str] = None,
-             idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if client_app_id is None and 'clientAppId' in kwargs:
-            client_app_id = kwargs['clientAppId']
-        if client_app_id is None:
-            raise TypeError("Missing 'client_app_id' argument")
-        if idcs_account_name_url is None and 'idcsAccountNameUrl' in kwargs:
-            idcs_account_name_url = kwargs['idcsAccountNameUrl']
-        if idcs_account_name_url is None:
-            raise TypeError("Missing 'idcs_account_name_url' argument")
-
-        _setter("client_app_id", client_app_id)
-        _setter("idcs_account_name_url", idcs_account_name_url)
+        pulumi.set(__self__, "client_app_id", client_app_id)
+        pulumi.set(__self__, "idcs_account_name_url", idcs_account_name_url)
 
     @property
     @pulumi.getter(name="clientAppId")
@@ -4350,22 +2834,7 @@ class GetVaultsVaultReplicaDetailResult(dict):
         """
         :param str replication_id: ReplicationId associated with a vault operation
         """
-        GetVaultsVaultReplicaDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replication_id=replication_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replication_id is None and 'replicationId' in kwargs:
-            replication_id = kwargs['replicationId']
-        if replication_id is None:
-            raise TypeError("Missing 'replication_id' argument")
-
-        _setter("replication_id", replication_id)
+        pulumi.set(__self__, "replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -4382,36 +2851,9 @@ class GetVaultsVaultRestoreFromFileResult(dict):
                  content_length: str,
                  content_md5: str,
                  restore_vault_from_file_details: str):
-        GetVaultsVaultRestoreFromFileResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_length=content_length,
-            content_md5=content_md5,
-            restore_vault_from_file_details=restore_vault_from_file_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_length: Optional[str] = None,
-             content_md5: Optional[str] = None,
-             restore_vault_from_file_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_length is None and 'contentLength' in kwargs:
-            content_length = kwargs['contentLength']
-        if content_length is None:
-            raise TypeError("Missing 'content_length' argument")
-        if content_md5 is None and 'contentMd5' in kwargs:
-            content_md5 = kwargs['contentMd5']
-        if content_md5 is None:
-            raise TypeError("Missing 'content_md5' argument")
-        if restore_vault_from_file_details is None and 'restoreVaultFromFileDetails' in kwargs:
-            restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
-        if restore_vault_from_file_details is None:
-            raise TypeError("Missing 'restore_vault_from_file_details' argument")
-
-        _setter("content_length", content_length)
-        _setter("content_md5", content_md5)
-        _setter("restore_vault_from_file_details", restore_vault_from_file_details)
+        pulumi.set(__self__, "content_length", content_length)
+        pulumi.set(__self__, "content_md5", content_md5)
+        pulumi.set(__self__, "restore_vault_from_file_details", restore_vault_from_file_details)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -4437,40 +2879,11 @@ class GetVaultsVaultRestoreFromObjectStoreResult(dict):
                  namespace: str,
                  object: str,
                  uri: str):
-        GetVaultsVaultRestoreFromObjectStoreResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            destination=destination,
-            namespace=namespace,
-            object=object,
-            uri=uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             destination: Optional[str] = None,
-             namespace: Optional[str] = None,
-             object: Optional[str] = None,
-             uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if uri is None:
-            raise TypeError("Missing 'uri' argument")
-
-        _setter("bucket", bucket)
-        _setter("destination", destination)
-        _setter("namespace", namespace)
-        _setter("object", object)
-        _setter("uri", uri)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "uri", uri)
 
     @property
     @pulumi.getter

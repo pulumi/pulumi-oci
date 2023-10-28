@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalContainerDatabaseManagementArgs', 'ExternalContainerDatabaseManagement']
@@ -27,42 +27,11 @@ class ExternalContainerDatabaseManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ExternalContainerDatabaseManagementArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_management=enable_management,
-            external_container_database_id=external_container_database_id,
-            external_database_connector_id=external_database_connector_id,
-            license_model=license_model,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_management: Optional[pulumi.Input[bool]] = None,
-             external_container_database_id: Optional[pulumi.Input[str]] = None,
-             external_database_connector_id: Optional[pulumi.Input[str]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_management is None and 'enableManagement' in kwargs:
-            enable_management = kwargs['enableManagement']
-        if enable_management is None:
-            raise TypeError("Missing 'enable_management' argument")
-        if external_container_database_id is None and 'externalContainerDatabaseId' in kwargs:
-            external_container_database_id = kwargs['externalContainerDatabaseId']
-        if external_container_database_id is None:
-            raise TypeError("Missing 'external_container_database_id' argument")
-        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
-            external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if external_database_connector_id is None:
-            raise TypeError("Missing 'external_database_connector_id' argument")
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-
-        _setter("enable_management", enable_management)
-        _setter("external_container_database_id", external_container_database_id)
-        _setter("external_database_connector_id", external_database_connector_id)
+        pulumi.set(__self__, "enable_management", enable_management)
+        pulumi.set(__self__, "external_container_database_id", external_container_database_id)
+        pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
 
     @property
     @pulumi.getter(name="enableManagement")
@@ -129,39 +98,14 @@ class _ExternalContainerDatabaseManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _ExternalContainerDatabaseManagementState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_management=enable_management,
-            external_container_database_id=external_container_database_id,
-            external_database_connector_id=external_database_connector_id,
-            license_model=license_model,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_management: Optional[pulumi.Input[bool]] = None,
-             external_container_database_id: Optional[pulumi.Input[str]] = None,
-             external_database_connector_id: Optional[pulumi.Input[str]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_management is None and 'enableManagement' in kwargs:
-            enable_management = kwargs['enableManagement']
-        if external_container_database_id is None and 'externalContainerDatabaseId' in kwargs:
-            external_container_database_id = kwargs['externalContainerDatabaseId']
-        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
-            external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-
         if enable_management is not None:
-            _setter("enable_management", enable_management)
+            pulumi.set(__self__, "enable_management", enable_management)
         if external_container_database_id is not None:
-            _setter("external_container_database_id", external_container_database_id)
+            pulumi.set(__self__, "external_container_database_id", external_container_database_id)
         if external_database_connector_id is not None:
-            _setter("external_database_connector_id", external_database_connector_id)
+            pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
 
     @property
     @pulumi.getter(name="enableManagement")
@@ -269,10 +213,6 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalContainerDatabaseManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

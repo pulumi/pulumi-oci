@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -22,19 +22,8 @@ class RedisClusterNodeCollectionArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]] items: Collection of node objects.
         """
-        RedisClusterNodeCollectionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if items is not None:
-            _setter("items", items)
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -60,33 +49,12 @@ class RedisClusterNodeCollectionItemArgs:
         :param pulumi.Input[str] private_endpoint_fqdn: The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
         :param pulumi.Input[str] private_endpoint_ip_address: The private IP address of the API endpoint to access a specific node.
         """
-        RedisClusterNodeCollectionItemArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            private_endpoint_fqdn=private_endpoint_fqdn,
-            private_endpoint_ip_address=private_endpoint_ip_address,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[pulumi.Input[str]] = None,
-             private_endpoint_fqdn: Optional[pulumi.Input[str]] = None,
-             private_endpoint_ip_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if private_endpoint_fqdn is None and 'privateEndpointFqdn' in kwargs:
-            private_endpoint_fqdn = kwargs['privateEndpointFqdn']
-        if private_endpoint_ip_address is None and 'privateEndpointIpAddress' in kwargs:
-            private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if private_endpoint_fqdn is not None:
-            _setter("private_endpoint_fqdn", private_endpoint_fqdn)
+            pulumi.set(__self__, "private_endpoint_fqdn", private_endpoint_fqdn)
         if private_endpoint_ip_address is not None:
-            _setter("private_endpoint_ip_address", private_endpoint_ip_address)
+            pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
 
     @property
     @pulumi.getter(name="displayName")
@@ -131,29 +99,10 @@ class GetRedisClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetRedisClustersFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

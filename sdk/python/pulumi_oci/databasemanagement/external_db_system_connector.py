@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,47 +33,14 @@ class ExternalDbSystemConnectorArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
         :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
         """
-        ExternalDbSystemConnectorArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connector_type=connector_type,
-            external_db_system_id=external_db_system_id,
-            agent_id=agent_id,
-            connection_infos=connection_infos,
-            display_name=display_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connector_type: Optional[pulumi.Input[str]] = None,
-             external_db_system_id: Optional[pulumi.Input[str]] = None,
-             agent_id: Optional[pulumi.Input[str]] = None,
-             connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connector_type is None and 'connectorType' in kwargs:
-            connector_type = kwargs['connectorType']
-        if connector_type is None:
-            raise TypeError("Missing 'connector_type' argument")
-        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
-            external_db_system_id = kwargs['externalDbSystemId']
-        if external_db_system_id is None:
-            raise TypeError("Missing 'external_db_system_id' argument")
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if connection_infos is None and 'connectionInfos' in kwargs:
-            connection_infos = kwargs['connectionInfos']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
-        _setter("connector_type", connector_type)
-        _setter("external_db_system_id", external_db_system_id)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "external_db_system_id", external_db_system_id)
         if agent_id is not None:
-            _setter("agent_id", agent_id)
+            pulumi.set(__self__, "agent_id", agent_id)
         if connection_infos is not None:
-            _setter("connection_infos", connection_infos)
+            pulumi.set(__self__, "connection_infos", connection_infos)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
 
     @property
     @pulumi.getter(name="connectorType")
@@ -176,91 +143,32 @@ class _ExternalDbSystemConnectorState:
         :param pulumi.Input[str] time_created: The date and time the external DB system connector was created.
         :param pulumi.Input[str] time_updated: The date and time the external DB system connector was last updated.
         """
-        _ExternalDbSystemConnectorState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_id=agent_id,
-            compartment_id=compartment_id,
-            connection_failure_message=connection_failure_message,
-            connection_infos=connection_infos,
-            connection_status=connection_status,
-            connector_type=connector_type,
-            display_name=display_name,
-            external_db_system_id=external_db_system_id,
-            lifecycle_details=lifecycle_details,
-            state=state,
-            time_connection_status_last_updated=time_connection_status_last_updated,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             connection_failure_message: Optional[pulumi.Input[str]] = None,
-             connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]] = None,
-             connection_status: Optional[pulumi.Input[str]] = None,
-             connector_type: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             external_db_system_id: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if connection_failure_message is None and 'connectionFailureMessage' in kwargs:
-            connection_failure_message = kwargs['connectionFailureMessage']
-        if connection_infos is None and 'connectionInfos' in kwargs:
-            connection_infos = kwargs['connectionInfos']
-        if connection_status is None and 'connectionStatus' in kwargs:
-            connection_status = kwargs['connectionStatus']
-        if connector_type is None and 'connectorType' in kwargs:
-            connector_type = kwargs['connectorType']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
-            external_db_system_id = kwargs['externalDbSystemId']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if time_connection_status_last_updated is None and 'timeConnectionStatusLastUpdated' in kwargs:
-            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if agent_id is not None:
-            _setter("agent_id", agent_id)
+            pulumi.set(__self__, "agent_id", agent_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_failure_message is not None:
-            _setter("connection_failure_message", connection_failure_message)
+            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
         if connection_infos is not None:
-            _setter("connection_infos", connection_infos)
+            pulumi.set(__self__, "connection_infos", connection_infos)
         if connection_status is not None:
-            _setter("connection_status", connection_status)
+            pulumi.set(__self__, "connection_status", connection_status)
         if connector_type is not None:
-            _setter("connector_type", connector_type)
+            pulumi.set(__self__, "connector_type", connector_type)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if external_db_system_id is not None:
-            _setter("external_db_system_id", external_db_system_id)
+            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_connection_status_last_updated is not None:
-            _setter("time_connection_status_last_updated", time_connection_status_last_updated)
+            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -512,10 +420,6 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalDbSystemConnectorArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

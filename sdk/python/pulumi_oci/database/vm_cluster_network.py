@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,84 +41,25 @@ class VmClusterNetworkArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         """
-        VmClusterNetworkArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            exadata_infrastructure_id=exadata_infrastructure_id,
-            scans=scans,
-            vm_networks=vm_networks,
-            action=action,
-            defined_tags=defined_tags,
-            dns=dns,
-            dr_scans=dr_scans,
-            freeform_tags=freeform_tags,
-            ntps=ntps,
-            validate_vm_cluster_network=validate_vm_cluster_network,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-             scans: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]]] = None,
-             vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]] = None,
-             action: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
-            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if exadata_infrastructure_id is None:
-            raise TypeError("Missing 'exadata_infrastructure_id' argument")
-        if scans is None:
-            raise TypeError("Missing 'scans' argument")
-        if vm_networks is None and 'vmNetworks' in kwargs:
-            vm_networks = kwargs['vmNetworks']
-        if vm_networks is None:
-            raise TypeError("Missing 'vm_networks' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if dr_scans is None and 'drScans' in kwargs:
-            dr_scans = kwargs['drScans']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if validate_vm_cluster_network is None and 'validateVmClusterNetwork' in kwargs:
-            validate_vm_cluster_network = kwargs['validateVmClusterNetwork']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("exadata_infrastructure_id", exadata_infrastructure_id)
-        _setter("scans", scans)
-        _setter("vm_networks", vm_networks)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        pulumi.set(__self__, "scans", scans)
+        pulumi.set(__self__, "vm_networks", vm_networks)
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if dns is not None:
-            _setter("dns", dns)
+            pulumi.set(__self__, "dns", dns)
         if dr_scans is not None:
-            _setter("dr_scans", dr_scans)
+            pulumi.set(__self__, "dr_scans", dr_scans)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ntps is not None:
-            _setter("ntps", ntps)
+            pulumi.set(__self__, "ntps", ntps)
         if validate_vm_cluster_network is not None:
-            _setter("validate_vm_cluster_network", validate_vm_cluster_network)
+            pulumi.set(__self__, "validate_vm_cluster_network", validate_vm_cluster_network)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -295,101 +236,38 @@ class _VmClusterNetworkState:
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: (Updatable) Details of the client and backup networks.
         """
-        _VmClusterNetworkState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dns=dns,
-            dr_scans=dr_scans,
-            exadata_infrastructure_id=exadata_infrastructure_id,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            ntps=ntps,
-            scans=scans,
-            state=state,
-            time_created=time_created,
-            validate_vm_cluster_network=validate_vm_cluster_network,
-            vm_cluster_id=vm_cluster_id,
-            vm_networks=vm_networks,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             dr_scans: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]] = None,
-             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             scans: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
-             vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dr_scans is None and 'drScans' in kwargs:
-            dr_scans = kwargs['drScans']
-        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
-            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if validate_vm_cluster_network is None and 'validateVmClusterNetwork' in kwargs:
-            validate_vm_cluster_network = kwargs['validateVmClusterNetwork']
-        if vm_cluster_id is None and 'vmClusterId' in kwargs:
-            vm_cluster_id = kwargs['vmClusterId']
-        if vm_networks is None and 'vmNetworks' in kwargs:
-            vm_networks = kwargs['vmNetworks']
-
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dns is not None:
-            _setter("dns", dns)
+            pulumi.set(__self__, "dns", dns)
         if dr_scans is not None:
-            _setter("dr_scans", dr_scans)
+            pulumi.set(__self__, "dr_scans", dr_scans)
         if exadata_infrastructure_id is not None:
-            _setter("exadata_infrastructure_id", exadata_infrastructure_id)
+            pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if ntps is not None:
-            _setter("ntps", ntps)
+            pulumi.set(__self__, "ntps", ntps)
         if scans is not None:
-            _setter("scans", scans)
+            pulumi.set(__self__, "scans", scans)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if validate_vm_cluster_network is not None:
-            _setter("validate_vm_cluster_network", validate_vm_cluster_network)
+            pulumi.set(__self__, "validate_vm_cluster_network", validate_vm_cluster_network)
         if vm_cluster_id is not None:
-            _setter("vm_cluster_id", vm_cluster_id)
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
         if vm_networks is not None:
-            _setter("vm_networks", vm_networks)
+            pulumi.set(__self__, "vm_networks", vm_networks)
 
     @property
     @pulumi.getter
@@ -745,10 +623,6 @@ class VmClusterNetwork(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            VmClusterNetworkArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

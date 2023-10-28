@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,70 +41,21 @@ class AtCustomerCccInfrastructureArgs:
         :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
-        AtCustomerCccInfrastructureArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            subnet_id=subnet_id,
-            ccc_upgrade_schedule_id=ccc_upgrade_schedule_id,
-            connection_details=connection_details,
-            connection_state=connection_state,
-            defined_tags=defined_tags,
-            description=description,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             ccc_upgrade_schedule_id: Optional[pulumi.Input[str]] = None,
-             connection_details: Optional[pulumi.Input[str]] = None,
-             connection_state: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if ccc_upgrade_schedule_id is None and 'cccUpgradeScheduleId' in kwargs:
-            ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
-        if connection_details is None and 'connectionDetails' in kwargs:
-            connection_details = kwargs['connectionDetails']
-        if connection_state is None and 'connectionState' in kwargs:
-            connection_state = kwargs['connectionState']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if ccc_upgrade_schedule_id is not None:
-            _setter("ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
+            pulumi.set(__self__, "ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
         if connection_details is not None:
-            _setter("connection_details", connection_details)
+            pulumi.set(__self__, "connection_details", connection_details)
         if connection_state is not None:
-            _setter("connection_state", connection_state)
+            pulumi.set(__self__, "connection_state", connection_state)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -269,131 +220,46 @@ class _AtCustomerCccInfrastructureState:
         :param pulumi.Input[str] time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
         """
-        _AtCustomerCccInfrastructureState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ccc_upgrade_schedule_id=ccc_upgrade_schedule_id,
-            compartment_id=compartment_id,
-            connection_details=connection_details,
-            connection_state=connection_state,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            infrastructure_inventories=infrastructure_inventories,
-            infrastructure_network_configurations=infrastructure_network_configurations,
-            lifecycle_details=lifecycle_details,
-            provisioning_fingerprint=provisioning_fingerprint,
-            provisioning_pin=provisioning_pin,
-            short_name=short_name,
-            state=state,
-            subnet_id=subnet_id,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            upgrade_informations=upgrade_informations,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ccc_upgrade_schedule_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             connection_details: Optional[pulumi.Input[str]] = None,
-             connection_state: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             infrastructure_inventories: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureInventoryArgs']]]] = None,
-             infrastructure_network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs']]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             provisioning_fingerprint: Optional[pulumi.Input[str]] = None,
-             provisioning_pin: Optional[pulumi.Input[str]] = None,
-             short_name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             upgrade_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ccc_upgrade_schedule_id is None and 'cccUpgradeScheduleId' in kwargs:
-            ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if connection_details is None and 'connectionDetails' in kwargs:
-            connection_details = kwargs['connectionDetails']
-        if connection_state is None and 'connectionState' in kwargs:
-            connection_state = kwargs['connectionState']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if infrastructure_inventories is None and 'infrastructureInventories' in kwargs:
-            infrastructure_inventories = kwargs['infrastructureInventories']
-        if infrastructure_network_configurations is None and 'infrastructureNetworkConfigurations' in kwargs:
-            infrastructure_network_configurations = kwargs['infrastructureNetworkConfigurations']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if provisioning_fingerprint is None and 'provisioningFingerprint' in kwargs:
-            provisioning_fingerprint = kwargs['provisioningFingerprint']
-        if provisioning_pin is None and 'provisioningPin' in kwargs:
-            provisioning_pin = kwargs['provisioningPin']
-        if short_name is None and 'shortName' in kwargs:
-            short_name = kwargs['shortName']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if upgrade_informations is None and 'upgradeInformations' in kwargs:
-            upgrade_informations = kwargs['upgradeInformations']
-
         if ccc_upgrade_schedule_id is not None:
-            _setter("ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
+            pulumi.set(__self__, "ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_details is not None:
-            _setter("connection_details", connection_details)
+            pulumi.set(__self__, "connection_details", connection_details)
         if connection_state is not None:
-            _setter("connection_state", connection_state)
+            pulumi.set(__self__, "connection_state", connection_state)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if infrastructure_inventories is not None:
-            _setter("infrastructure_inventories", infrastructure_inventories)
+            pulumi.set(__self__, "infrastructure_inventories", infrastructure_inventories)
         if infrastructure_network_configurations is not None:
-            _setter("infrastructure_network_configurations", infrastructure_network_configurations)
+            pulumi.set(__self__, "infrastructure_network_configurations", infrastructure_network_configurations)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if provisioning_fingerprint is not None:
-            _setter("provisioning_fingerprint", provisioning_fingerprint)
+            pulumi.set(__self__, "provisioning_fingerprint", provisioning_fingerprint)
         if provisioning_pin is not None:
-            _setter("provisioning_pin", provisioning_pin)
+            pulumi.set(__self__, "provisioning_pin", provisioning_pin)
         if short_name is not None:
-            _setter("short_name", short_name)
+            pulumi.set(__self__, "short_name", short_name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if upgrade_informations is not None:
-            _setter("upgrade_informations", upgrade_informations)
+            pulumi.set(__self__, "upgrade_informations", upgrade_informations)
 
     @property
     @pulumi.getter(name="cccUpgradeScheduleId")
@@ -759,10 +625,6 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AtCustomerCccInfrastructureArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

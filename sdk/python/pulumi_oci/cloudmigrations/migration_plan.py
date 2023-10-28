@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,64 +35,19 @@ class MigrationPlanArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]] strategies: (Updatable) List of strategies for the resources to be migrated.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]] target_environments: (Updatable) List of target environments.
         """
-        MigrationPlanArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            migration_id=migration_id,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            source_migration_plan_id=source_migration_plan_id,
-            strategies=strategies,
-            target_environments=target_environments,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             migration_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             source_migration_plan_id: Optional[pulumi.Input[str]] = None,
-             strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
-             target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if migration_id is None and 'migrationId' in kwargs:
-            migration_id = kwargs['migrationId']
-        if migration_id is None:
-            raise TypeError("Missing 'migration_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if source_migration_plan_id is None and 'sourceMigrationPlanId' in kwargs:
-            source_migration_plan_id = kwargs['sourceMigrationPlanId']
-        if target_environments is None and 'targetEnvironments' in kwargs:
-            target_environments = kwargs['targetEnvironments']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("migration_id", migration_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "migration_id", migration_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if source_migration_plan_id is not None:
-            _setter("source_migration_plan_id", source_migration_plan_id)
+            pulumi.set(__self__, "source_migration_plan_id", source_migration_plan_id)
         if strategies is not None:
-            _setter("strategies", strategies)
+            pulumi.set(__self__, "strategies", strategies)
         if target_environments is not None:
-            _setter("target_environments", target_environments)
+            pulumi.set(__self__, "target_environments", target_environments)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -229,107 +184,38 @@ class _MigrationPlanState:
         :param pulumi.Input[str] time_created: The time when the migration plan was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
         """
-        _MigrationPlanState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            calculated_limits=calculated_limits,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            migration_id=migration_id,
-            migration_plan_stats=migration_plan_stats,
-            reference_to_rms_stack=reference_to_rms_stack,
-            source_migration_plan_id=source_migration_plan_id,
-            state=state,
-            strategies=strategies,
-            system_tags=system_tags,
-            target_environments=target_environments,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             calculated_limits: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             migration_id: Optional[pulumi.Input[str]] = None,
-             migration_plan_stats: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]] = None,
-             reference_to_rms_stack: Optional[pulumi.Input[str]] = None,
-             source_migration_plan_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if calculated_limits is None and 'calculatedLimits' in kwargs:
-            calculated_limits = kwargs['calculatedLimits']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if migration_id is None and 'migrationId' in kwargs:
-            migration_id = kwargs['migrationId']
-        if migration_plan_stats is None and 'migrationPlanStats' in kwargs:
-            migration_plan_stats = kwargs['migrationPlanStats']
-        if reference_to_rms_stack is None and 'referenceToRmsStack' in kwargs:
-            reference_to_rms_stack = kwargs['referenceToRmsStack']
-        if source_migration_plan_id is None and 'sourceMigrationPlanId' in kwargs:
-            source_migration_plan_id = kwargs['sourceMigrationPlanId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_environments is None and 'targetEnvironments' in kwargs:
-            target_environments = kwargs['targetEnvironments']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if calculated_limits is not None:
-            _setter("calculated_limits", calculated_limits)
+            pulumi.set(__self__, "calculated_limits", calculated_limits)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if migration_id is not None:
-            _setter("migration_id", migration_id)
+            pulumi.set(__self__, "migration_id", migration_id)
         if migration_plan_stats is not None:
-            _setter("migration_plan_stats", migration_plan_stats)
+            pulumi.set(__self__, "migration_plan_stats", migration_plan_stats)
         if reference_to_rms_stack is not None:
-            _setter("reference_to_rms_stack", reference_to_rms_stack)
+            pulumi.set(__self__, "reference_to_rms_stack", reference_to_rms_stack)
         if source_migration_plan_id is not None:
-            _setter("source_migration_plan_id", source_migration_plan_id)
+            pulumi.set(__self__, "source_migration_plan_id", source_migration_plan_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if strategies is not None:
-            _setter("strategies", strategies)
+            pulumi.set(__self__, "strategies", strategies)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_environments is not None:
-            _setter("target_environments", target_environments)
+            pulumi.set(__self__, "target_environments", target_environments)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="calculatedLimits")
@@ -591,10 +477,6 @@ class MigrationPlan(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MigrationPlanArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

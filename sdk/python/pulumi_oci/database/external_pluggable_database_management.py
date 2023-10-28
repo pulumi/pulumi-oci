@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalPluggableDatabaseManagementArgs', 'ExternalPluggableDatabaseManagement']
@@ -25,36 +25,9 @@ class ExternalPluggableDatabaseManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ExternalPluggableDatabaseManagementArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_management=enable_management,
-            external_database_connector_id=external_database_connector_id,
-            external_pluggable_database_id=external_pluggable_database_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_management: Optional[pulumi.Input[bool]] = None,
-             external_database_connector_id: Optional[pulumi.Input[str]] = None,
-             external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_management is None and 'enableManagement' in kwargs:
-            enable_management = kwargs['enableManagement']
-        if enable_management is None:
-            raise TypeError("Missing 'enable_management' argument")
-        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
-            external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if external_database_connector_id is None:
-            raise TypeError("Missing 'external_database_connector_id' argument")
-        if external_pluggable_database_id is None and 'externalPluggableDatabaseId' in kwargs:
-            external_pluggable_database_id = kwargs['externalPluggableDatabaseId']
-        if external_pluggable_database_id is None:
-            raise TypeError("Missing 'external_pluggable_database_id' argument")
-
-        _setter("enable_management", enable_management)
-        _setter("external_database_connector_id", external_database_connector_id)
-        _setter("external_pluggable_database_id", external_pluggable_database_id)
+        pulumi.set(__self__, "enable_management", enable_management)
+        pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
+        pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
 
     @property
     @pulumi.getter(name="enableManagement")
@@ -107,33 +80,12 @@ class _ExternalPluggableDatabaseManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _ExternalPluggableDatabaseManagementState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_management=enable_management,
-            external_database_connector_id=external_database_connector_id,
-            external_pluggable_database_id=external_pluggable_database_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_management: Optional[pulumi.Input[bool]] = None,
-             external_database_connector_id: Optional[pulumi.Input[str]] = None,
-             external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_management is None and 'enableManagement' in kwargs:
-            enable_management = kwargs['enableManagement']
-        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
-            external_database_connector_id = kwargs['externalDatabaseConnectorId']
-        if external_pluggable_database_id is None and 'externalPluggableDatabaseId' in kwargs:
-            external_pluggable_database_id = kwargs['externalPluggableDatabaseId']
-
         if enable_management is not None:
-            _setter("enable_management", enable_management)
+            pulumi.set(__self__, "enable_management", enable_management)
         if external_database_connector_id is not None:
-            _setter("external_database_connector_id", external_database_connector_id)
+            pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
         if external_pluggable_database_id is not None:
-            _setter("external_pluggable_database_id", external_pluggable_database_id)
+            pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
 
     @property
     @pulumi.getter(name="enableManagement")
@@ -249,10 +201,6 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalPluggableDatabaseManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

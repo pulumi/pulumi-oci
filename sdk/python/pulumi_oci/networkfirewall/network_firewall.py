@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NetworkFirewallArgs', 'NetworkFirewall']
@@ -41,74 +41,23 @@ class NetworkFirewallArgs:
         :param pulumi.Input[str] ipv6address: IPv6 address for the Network Firewall.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
-        NetworkFirewallArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            network_firewall_policy_id=network_firewall_policy_id,
-            subnet_id=subnet_id,
-            availability_domain=availability_domain,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            ipv4address=ipv4address,
-            ipv6address=ipv6address,
-            network_security_group_ids=network_security_group_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             ipv4address: Optional[pulumi.Input[str]] = None,
-             ipv6address: Optional[pulumi.Input[str]] = None,
-             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_firewall_policy_id is None:
-            raise TypeError("Missing 'network_firewall_policy_id' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-
-        _setter("compartment_id", compartment_id)
-        _setter("network_firewall_policy_id", network_firewall_policy_id)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ipv4address is not None:
-            _setter("ipv4address", ipv4address)
+            pulumi.set(__self__, "ipv4address", ipv4address)
         if ipv6address is not None:
-            _setter("ipv6address", ipv6address)
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if network_security_group_ids is not None:
-            _setter("network_security_group_ids", network_security_group_ids)
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -275,99 +224,36 @@ class _NetworkFirewallState:
         :param pulumi.Input[str] time_created: The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
-        _NetworkFirewallState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            ipv4address=ipv4address,
-            ipv6address=ipv6address,
-            lifecycle_details=lifecycle_details,
-            network_firewall_policy_id=network_firewall_policy_id,
-            network_security_group_ids=network_security_group_ids,
-            state=state,
-            subnet_id=subnet_id,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             ipv4address: Optional[pulumi.Input[str]] = None,
-             ipv6address: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ipv4address is not None:
-            _setter("ipv4address", ipv4address)
+            pulumi.set(__self__, "ipv4address", ipv4address)
         if ipv6address is not None:
-            _setter("ipv6address", ipv6address)
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if network_firewall_policy_id is not None:
-            _setter("network_firewall_policy_id", network_firewall_policy_id)
+            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if network_security_group_ids is not None:
-            _setter("network_security_group_ids", network_security_group_ids)
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -675,10 +561,6 @@ class NetworkFirewall(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkFirewallArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

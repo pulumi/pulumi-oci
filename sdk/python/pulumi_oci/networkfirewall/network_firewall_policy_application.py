@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NetworkFirewallPolicyApplicationArgs', 'NetworkFirewallPolicyApplication']
@@ -31,44 +31,13 @@ class NetworkFirewallPolicyApplicationArgs:
         :param pulumi.Input[int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         :param pulumi.Input[str] name: Name of the application
         """
-        NetworkFirewallPolicyApplicationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            icmp_type=icmp_type,
-            network_firewall_policy_id=network_firewall_policy_id,
-            type=type,
-            icmp_code=icmp_code,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             icmp_type: Optional[pulumi.Input[int]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             icmp_code: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if icmp_type is None and 'icmpType' in kwargs:
-            icmp_type = kwargs['icmpType']
-        if icmp_type is None:
-            raise TypeError("Missing 'icmp_type' argument")
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_firewall_policy_id is None:
-            raise TypeError("Missing 'network_firewall_policy_id' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if icmp_code is None and 'icmpCode' in kwargs:
-            icmp_code = kwargs['icmpCode']
-
-        _setter("icmp_type", icmp_type)
-        _setter("network_firewall_policy_id", network_firewall_policy_id)
-        _setter("type", type)
+        pulumi.set(__self__, "icmp_type", icmp_type)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "type", type)
         if icmp_code is not None:
-            _setter("icmp_code", icmp_code)
+            pulumi.set(__self__, "icmp_code", icmp_code)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="icmpType")
@@ -157,47 +126,18 @@ class _NetworkFirewallPolicyApplicationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _NetworkFirewallPolicyApplicationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            icmp_code=icmp_code,
-            icmp_type=icmp_type,
-            name=name,
-            network_firewall_policy_id=network_firewall_policy_id,
-            parent_resource_id=parent_resource_id,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             icmp_code: Optional[pulumi.Input[int]] = None,
-             icmp_type: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             parent_resource_id: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if icmp_code is None and 'icmpCode' in kwargs:
-            icmp_code = kwargs['icmpCode']
-        if icmp_type is None and 'icmpType' in kwargs:
-            icmp_type = kwargs['icmpType']
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if parent_resource_id is None and 'parentResourceId' in kwargs:
-            parent_resource_id = kwargs['parentResourceId']
-
         if icmp_code is not None:
-            _setter("icmp_code", icmp_code)
+            pulumi.set(__self__, "icmp_code", icmp_code)
         if icmp_type is not None:
-            _setter("icmp_type", icmp_type)
+            pulumi.set(__self__, "icmp_type", icmp_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
-            _setter("network_firewall_policy_id", network_firewall_policy_id)
+            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            _setter("parent_resource_id", parent_resource_id)
+            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="icmpCode")
@@ -367,10 +307,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkFirewallPolicyApplicationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,43 +31,10 @@ class MonitoredResourcesAssociateMonitoredResourceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        MonitoredResourcesAssociateMonitoredResourceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            association_type=association_type,
-            compartment_id=compartment_id,
-            destination_resource_id=destination_resource_id,
-            source_resource_id=source_resource_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             association_type: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             destination_resource_id: Optional[pulumi.Input[str]] = None,
-             source_resource_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if association_type is None and 'associationType' in kwargs:
-            association_type = kwargs['associationType']
-        if association_type is None:
-            raise TypeError("Missing 'association_type' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if destination_resource_id is None and 'destinationResourceId' in kwargs:
-            destination_resource_id = kwargs['destinationResourceId']
-        if destination_resource_id is None:
-            raise TypeError("Missing 'destination_resource_id' argument")
-        if source_resource_id is None and 'sourceResourceId' in kwargs:
-            source_resource_id = kwargs['sourceResourceId']
-        if source_resource_id is None:
-            raise TypeError("Missing 'source_resource_id' argument")
-
-        _setter("association_type", association_type)
-        _setter("compartment_id", compartment_id)
-        _setter("destination_resource_id", destination_resource_id)
-        _setter("source_resource_id", source_resource_id)
+        pulumi.set(__self__, "association_type", association_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "destination_resource_id", destination_resource_id)
+        pulumi.set(__self__, "source_resource_id", source_resource_id)
 
     @property
     @pulumi.getter(name="associationType")
@@ -153,67 +120,24 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
         :param pulumi.Input[str] tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] time_created: The time when the association was created. An RFC3339 formatted datetime string.
         """
-        _MonitoredResourcesAssociateMonitoredResourceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            association_type=association_type,
-            category=category,
-            compartment_id=compartment_id,
-            destination_resource_details=destination_resource_details,
-            destination_resource_id=destination_resource_id,
-            source_resource_details=source_resource_details,
-            source_resource_id=source_resource_id,
-            tenant_id=tenant_id,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             association_type: Optional[pulumi.Input[str]] = None,
-             category: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             destination_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]] = None,
-             destination_resource_id: Optional[pulumi.Input[str]] = None,
-             source_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]] = None,
-             source_resource_id: Optional[pulumi.Input[str]] = None,
-             tenant_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if association_type is None and 'associationType' in kwargs:
-            association_type = kwargs['associationType']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if destination_resource_details is None and 'destinationResourceDetails' in kwargs:
-            destination_resource_details = kwargs['destinationResourceDetails']
-        if destination_resource_id is None and 'destinationResourceId' in kwargs:
-            destination_resource_id = kwargs['destinationResourceId']
-        if source_resource_details is None and 'sourceResourceDetails' in kwargs:
-            source_resource_details = kwargs['sourceResourceDetails']
-        if source_resource_id is None and 'sourceResourceId' in kwargs:
-            source_resource_id = kwargs['sourceResourceId']
-        if tenant_id is None and 'tenantId' in kwargs:
-            tenant_id = kwargs['tenantId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if association_type is not None:
-            _setter("association_type", association_type)
+            pulumi.set(__self__, "association_type", association_type)
         if category is not None:
-            _setter("category", category)
+            pulumi.set(__self__, "category", category)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if destination_resource_details is not None:
-            _setter("destination_resource_details", destination_resource_details)
+            pulumi.set(__self__, "destination_resource_details", destination_resource_details)
         if destination_resource_id is not None:
-            _setter("destination_resource_id", destination_resource_id)
+            pulumi.set(__self__, "destination_resource_id", destination_resource_id)
         if source_resource_details is not None:
-            _setter("source_resource_details", source_resource_details)
+            pulumi.set(__self__, "source_resource_details", source_resource_details)
         if source_resource_id is not None:
-            _setter("source_resource_id", source_resource_id)
+            pulumi.set(__self__, "source_resource_id", source_resource_id)
         if tenant_id is not None:
-            _setter("tenant_id", tenant_id)
+            pulumi.set(__self__, "tenant_id", tenant_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="associationType")
@@ -424,10 +348,6 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MonitoredResourcesAssociateMonitoredResourceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

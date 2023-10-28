@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,78 +43,23 @@ class GatewayArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
         :param pulumi.Input['GatewayResponseCacheDetailsArgs'] response_cache_details: (Updatable) Base Gateway response cache.
         """
-        GatewayArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            endpoint_type=endpoint_type,
-            subnet_id=subnet_id,
-            ca_bundles=ca_bundles,
-            certificate_id=certificate_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            network_security_group_ids=network_security_group_ids,
-            response_cache_details=response_cache_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             endpoint_type: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCaBundleArgs']]]] = None,
-             certificate_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             response_cache_details: Optional[pulumi.Input['GatewayResponseCacheDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if endpoint_type is None and 'endpointType' in kwargs:
-            endpoint_type = kwargs['endpointType']
-        if endpoint_type is None:
-            raise TypeError("Missing 'endpoint_type' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if ca_bundles is None and 'caBundles' in kwargs:
-            ca_bundles = kwargs['caBundles']
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if response_cache_details is None and 'responseCacheDetails' in kwargs:
-            response_cache_details = kwargs['responseCacheDetails']
-
-        _setter("compartment_id", compartment_id)
-        _setter("endpoint_type", endpoint_type)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "endpoint_type", endpoint_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if ca_bundles is not None:
-            _setter("ca_bundles", ca_bundles)
+            pulumi.set(__self__, "ca_bundles", ca_bundles)
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if network_security_group_ids is not None:
-            _setter("network_security_group_ids", network_security_group_ids)
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if response_cache_details is not None:
-            _setter("response_cache_details", response_cache_details)
+            pulumi.set(__self__, "response_cache_details", response_cache_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -283,107 +228,38 @@ class _GatewayState:
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
-        _GatewayState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_bundles=ca_bundles,
-            certificate_id=certificate_id,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            endpoint_type=endpoint_type,
-            freeform_tags=freeform_tags,
-            hostname=hostname,
-            ip_addresses=ip_addresses,
-            lifecycle_details=lifecycle_details,
-            network_security_group_ids=network_security_group_ids,
-            response_cache_details=response_cache_details,
-            state=state,
-            subnet_id=subnet_id,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_bundles: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCaBundleArgs']]]] = None,
-             certificate_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             endpoint_type: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname: Optional[pulumi.Input[str]] = None,
-             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayIpAddressArgs']]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             response_cache_details: Optional[pulumi.Input['GatewayResponseCacheDetailsArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_bundles is None and 'caBundles' in kwargs:
-            ca_bundles = kwargs['caBundles']
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if endpoint_type is None and 'endpointType' in kwargs:
-            endpoint_type = kwargs['endpointType']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if response_cache_details is None and 'responseCacheDetails' in kwargs:
-            response_cache_details = kwargs['responseCacheDetails']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if ca_bundles is not None:
-            _setter("ca_bundles", ca_bundles)
+            pulumi.set(__self__, "ca_bundles", ca_bundles)
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if endpoint_type is not None:
-            _setter("endpoint_type", endpoint_type)
+            pulumi.set(__self__, "endpoint_type", endpoint_type)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname is not None:
-            _setter("hostname", hostname)
+            pulumi.set(__self__, "hostname", hostname)
         if ip_addresses is not None:
-            _setter("ip_addresses", ip_addresses)
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if network_security_group_ids is not None:
-            _setter("network_security_group_ids", network_security_group_ids)
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if response_cache_details is not None:
-            _setter("response_cache_details", response_cache_details)
+            pulumi.set(__self__, "response_cache_details", response_cache_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="caBundles")
@@ -737,10 +613,6 @@ class Gateway(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            GatewayArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -777,7 +649,6 @@ class Gateway(pulumi.CustomResource):
             __props__.__dict__["endpoint_type"] = endpoint_type
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
-            response_cache_details = _utilities.configure(response_cache_details, GatewayResponseCacheDetailsArgs, True)
             __props__.__dict__["response_cache_details"] = response_cache_details
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")

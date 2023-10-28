@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['UiPasswordArgs', 'UiPassword']
@@ -23,22 +23,7 @@ class UiPasswordArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        UiPasswordArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-        if user_id is None:
-            raise TypeError("Missing 'user_id' argument")
-
-        _setter("user_id", user_id)
+        pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter(name="userId")
@@ -77,41 +62,16 @@ class _UiPasswordState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _UiPasswordState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            inactive_status=inactive_status,
-            password=password,
-            state=state,
-            time_created=time_created,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             inactive_status: Optional[pulumi.Input[str]] = None,
-             password: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if inactive_status is None and 'inactiveStatus' in kwargs:
-            inactive_status = kwargs['inactiveStatus']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-
         if inactive_status is not None:
-            _setter("inactive_status", inactive_status)
+            pulumi.set(__self__, "inactive_status", inactive_status)
         if password is not None:
-            _setter("password", password)
+            pulumi.set(__self__, "password", password)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if user_id is not None:
-            _setter("user_id", user_id)
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter(name="inactiveStatus")
@@ -265,10 +225,6 @@ class UiPassword(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            UiPasswordArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

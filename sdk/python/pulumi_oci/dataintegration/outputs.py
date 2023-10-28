@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -140,47 +140,20 @@ class WorkspaceApplicationDependentObjectMetadata(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        WorkspaceApplicationDependentObjectMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_version=object_version,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_version: Optional[int] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if name_path is not None:
-            _setter("name_path", name_path)
+            pulumi.set(__self__, "name_path", name_path)
         if object_version is not None:
-            _setter("object_version", object_version)
+            pulumi.set(__self__, "object_version", object_version)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -311,95 +284,34 @@ class WorkspaceApplicationMetadata(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        WorkspaceApplicationMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.WorkspaceApplicationMetadataAggregator']] = None,
-             count_statistics: Optional[Sequence['outputs.WorkspaceApplicationMetadataCountStatistic']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if aggregators is not None:
-            _setter("aggregators", aggregators)
+            pulumi.set(__self__, "aggregators", aggregators)
         if count_statistics is not None:
-            _setter("count_statistics", count_statistics)
+            pulumi.set(__self__, "count_statistics", count_statistics)
         if created_by is not None:
-            _setter("created_by", created_by)
+            pulumi.set(__self__, "created_by", created_by)
         if created_by_name is not None:
-            _setter("created_by_name", created_by_name)
+            pulumi.set(__self__, "created_by_name", created_by_name)
         if identifier_path is not None:
-            _setter("identifier_path", identifier_path)
+            pulumi.set(__self__, "identifier_path", identifier_path)
         if info_fields is not None:
-            _setter("info_fields", info_fields)
+            pulumi.set(__self__, "info_fields", info_fields)
         if is_favorite is not None:
-            _setter("is_favorite", is_favorite)
+            pulumi.set(__self__, "is_favorite", is_favorite)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if registry_version is not None:
-            _setter("registry_version", registry_version)
+            pulumi.set(__self__, "registry_version", registry_version)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if updated_by is not None:
-            _setter("updated_by", updated_by)
+            pulumi.set(__self__, "updated_by", updated_by)
         if updated_by_name is not None:
-            _setter("updated_by_name", updated_by_name)
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -529,35 +441,16 @@ class WorkspaceApplicationMetadataAggregator(dict):
         :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the object in patch.
         """
-        WorkspaceApplicationMetadataAggregator._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -624,21 +517,8 @@ class WorkspaceApplicationMetadataCountStatistic(dict):
         """
         :param Sequence['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        WorkspaceApplicationMetadataCountStatistic._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.WorkspaceApplicationMetadataCountStatisticObjectTypeCountList']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-
         if object_type_count_lists is not None:
-            _setter("object_type_count_lists", object_type_count_lists)
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -677,27 +557,10 @@ class WorkspaceApplicationMetadataCountStatisticObjectTypeCountList(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        WorkspaceApplicationMetadataCountStatisticObjectTypeCountList._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-
         if object_count is not None:
-            _setter("object_count", object_count)
+            pulumi.set(__self__, "object_count", object_count)
         if object_type is not None:
-            _setter("object_type", object_type)
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -742,25 +605,10 @@ class WorkspaceApplicationParentRef(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        WorkspaceApplicationParentRef._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-
         if parent is not None:
-            _setter("parent", parent)
+            pulumi.set(__self__, "parent", parent)
         if root_doc_id is not None:
-            _setter("root_doc_id", root_doc_id)
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -817,47 +665,20 @@ class WorkspaceApplicationPublishedObjectMetadata(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        WorkspaceApplicationPublishedObjectMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_version=object_version,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_version: Optional[int] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if name_path is not None:
-            _setter("name_path", name_path)
+            pulumi.set(__self__, "name_path", name_path)
         if object_version is not None:
-            _setter("object_version", object_version)
+            pulumi.set(__self__, "object_version", object_version)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -952,41 +773,16 @@ class WorkspaceApplicationRegistryMetadata(dict):
         :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         """
-        WorkspaceApplicationRegistryMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if is_favorite is not None:
-            _setter("is_favorite", is_favorite)
+            pulumi.set(__self__, "is_favorite", is_favorite)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if registry_version is not None:
-            _setter("registry_version", registry_version)
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -1073,45 +869,16 @@ class WorkspaceApplicationSourceApplicationInfo(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        WorkspaceApplicationSourceApplicationInfo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            application_key=application_key,
-            application_version=application_version,
-            copy_type=copy_type,
-            last_patch_key=last_patch_key,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             application_key: Optional[str] = None,
-             application_version: Optional[str] = None,
-             copy_type: Optional[str] = None,
-             last_patch_key: Optional[str] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if application_key is None and 'applicationKey' in kwargs:
-            application_key = kwargs['applicationKey']
-        if application_version is None and 'applicationVersion' in kwargs:
-            application_version = kwargs['applicationVersion']
-        if copy_type is None and 'copyType' in kwargs:
-            copy_type = kwargs['copyType']
-        if last_patch_key is None and 'lastPatchKey' in kwargs:
-            last_patch_key = kwargs['lastPatchKey']
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-
         if application_key is not None:
-            _setter("application_key", application_key)
+            pulumi.set(__self__, "application_key", application_key)
         if application_version is not None:
-            _setter("application_version", application_version)
+            pulumi.set(__self__, "application_version", application_version)
         if copy_type is not None:
-            _setter("copy_type", copy_type)
+            pulumi.set(__self__, "copy_type", copy_type)
         if last_patch_key is not None:
-            _setter("last_patch_key", last_patch_key)
+            pulumi.set(__self__, "last_patch_key", last_patch_key)
         if workspace_id is not None:
-            _setter("workspace_id", workspace_id)
+            pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
@@ -1204,57 +971,22 @@ class WorkspaceExportRequestExportedItem(dict):
         :param str object_version: Object version
         :param str time_updated_in_millis: time at which this object was last updated.
         """
-        WorkspaceExportRequestExportedItem._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_type=object_type,
-            object_version=object_version,
-            time_updated_in_millis=time_updated_in_millis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_type: Optional[str] = None,
-             object_version: Optional[str] = None,
-             time_updated_in_millis: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
-            time_updated_in_millis = kwargs['timeUpdatedInMillis']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if name_path is not None:
-            _setter("name_path", name_path)
+            pulumi.set(__self__, "name_path", name_path)
         if object_type is not None:
-            _setter("object_type", object_type)
+            pulumi.set(__self__, "object_type", object_type)
         if object_version is not None:
-            _setter("object_version", object_version)
+            pulumi.set(__self__, "object_version", object_version)
         if time_updated_in_millis is not None:
-            _setter("time_updated_in_millis", time_updated_in_millis)
+            pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -1393,95 +1125,34 @@ class WorkspaceFolderMetadata(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        WorkspaceFolderMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.WorkspaceFolderMetadataAggregator']] = None,
-             count_statistics: Optional[Sequence['outputs.WorkspaceFolderMetadataCountStatistic']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if aggregators is not None:
-            _setter("aggregators", aggregators)
+            pulumi.set(__self__, "aggregators", aggregators)
         if count_statistics is not None:
-            _setter("count_statistics", count_statistics)
+            pulumi.set(__self__, "count_statistics", count_statistics)
         if created_by is not None:
-            _setter("created_by", created_by)
+            pulumi.set(__self__, "created_by", created_by)
         if created_by_name is not None:
-            _setter("created_by_name", created_by_name)
+            pulumi.set(__self__, "created_by_name", created_by_name)
         if identifier_path is not None:
-            _setter("identifier_path", identifier_path)
+            pulumi.set(__self__, "identifier_path", identifier_path)
         if info_fields is not None:
-            _setter("info_fields", info_fields)
+            pulumi.set(__self__, "info_fields", info_fields)
         if is_favorite is not None:
-            _setter("is_favorite", is_favorite)
+            pulumi.set(__self__, "is_favorite", is_favorite)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if registry_version is not None:
-            _setter("registry_version", registry_version)
+            pulumi.set(__self__, "registry_version", registry_version)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if updated_by is not None:
-            _setter("updated_by", updated_by)
+            pulumi.set(__self__, "updated_by", updated_by)
         if updated_by_name is not None:
-            _setter("updated_by_name", updated_by_name)
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -1611,35 +1282,16 @@ class WorkspaceFolderMetadataAggregator(dict):
         :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
-        WorkspaceFolderMetadataAggregator._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -1706,21 +1358,8 @@ class WorkspaceFolderMetadataCountStatistic(dict):
         """
         :param Sequence['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        WorkspaceFolderMetadataCountStatistic._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.WorkspaceFolderMetadataCountStatisticObjectTypeCountList']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-
         if object_type_count_lists is not None:
-            _setter("object_type_count_lists", object_type_count_lists)
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -1759,27 +1398,10 @@ class WorkspaceFolderMetadataCountStatisticObjectTypeCountList(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        WorkspaceFolderMetadataCountStatisticObjectTypeCountList._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-
         if object_count is not None:
-            _setter("object_count", object_count)
+            pulumi.set(__self__, "object_count", object_count)
         if object_type is not None:
-            _setter("object_type", object_type)
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -1824,25 +1446,10 @@ class WorkspaceFolderParentRef(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        WorkspaceFolderParentRef._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-
         if parent is not None:
-            _setter("parent", parent)
+            pulumi.set(__self__, "parent", parent)
         if root_doc_id is not None:
-            _setter("root_doc_id", root_doc_id)
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -1897,41 +1504,16 @@ class WorkspaceFolderRegistryMetadata(dict):
         :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         """
-        WorkspaceFolderRegistryMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if is_favorite is not None:
-            _setter("is_favorite", is_favorite)
+            pulumi.set(__self__, "is_favorite", is_favorite)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if registry_version is not None:
-            _setter("registry_version", registry_version)
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -2006,34 +1588,11 @@ class WorkspaceImportRequestImportConflictResolution(dict):
         :param str duplicate_prefix: In case of DUPLICATE mode, prefix will be used to disambiguate the object.
         :param str duplicate_suffix: In case of DUPLICATE mode, suffix will be used to disambiguate the object.
         """
-        WorkspaceImportRequestImportConflictResolution._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            import_conflict_resolution_type=import_conflict_resolution_type,
-            duplicate_prefix=duplicate_prefix,
-            duplicate_suffix=duplicate_suffix,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             import_conflict_resolution_type: Optional[str] = None,
-             duplicate_prefix: Optional[str] = None,
-             duplicate_suffix: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if import_conflict_resolution_type is None and 'importConflictResolutionType' in kwargs:
-            import_conflict_resolution_type = kwargs['importConflictResolutionType']
-        if import_conflict_resolution_type is None:
-            raise TypeError("Missing 'import_conflict_resolution_type' argument")
-        if duplicate_prefix is None and 'duplicatePrefix' in kwargs:
-            duplicate_prefix = kwargs['duplicatePrefix']
-        if duplicate_suffix is None and 'duplicateSuffix' in kwargs:
-            duplicate_suffix = kwargs['duplicateSuffix']
-
-        _setter("import_conflict_resolution_type", import_conflict_resolution_type)
+        pulumi.set(__self__, "import_conflict_resolution_type", import_conflict_resolution_type)
         if duplicate_prefix is not None:
-            _setter("duplicate_prefix", duplicate_prefix)
+            pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
         if duplicate_suffix is not None:
-            _setter("duplicate_suffix", duplicate_suffix)
+            pulumi.set(__self__, "duplicate_suffix", duplicate_suffix)
 
     @property
     @pulumi.getter(name="importConflictResolutionType")
@@ -2116,71 +1675,26 @@ class WorkspaceImportRequestImportedObject(dict):
         :param str resolution_action: Object resolution action
         :param str time_updated_in_millis: time at which this object was last updated.
         """
-        WorkspaceImportRequestImportedObject._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            identifier=identifier,
-            name=name,
-            name_path=name_path,
-            new_key=new_key,
-            object_type=object_type,
-            object_version=object_version,
-            old_key=old_key,
-            resolution_action=resolution_action,
-            time_updated_in_millis=time_updated_in_millis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             identifier: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             new_key: Optional[str] = None,
-             object_type: Optional[str] = None,
-             object_version: Optional[str] = None,
-             old_key: Optional[str] = None,
-             resolution_action: Optional[str] = None,
-             time_updated_in_millis: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if new_key is None and 'newKey' in kwargs:
-            new_key = kwargs['newKey']
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if old_key is None and 'oldKey' in kwargs:
-            old_key = kwargs['oldKey']
-        if resolution_action is None and 'resolutionAction' in kwargs:
-            resolution_action = kwargs['resolutionAction']
-        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
-            time_updated_in_millis = kwargs['timeUpdatedInMillis']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if name_path is not None:
-            _setter("name_path", name_path)
+            pulumi.set(__self__, "name_path", name_path)
         if new_key is not None:
-            _setter("new_key", new_key)
+            pulumi.set(__self__, "new_key", new_key)
         if object_type is not None:
-            _setter("object_type", object_type)
+            pulumi.set(__self__, "object_type", object_type)
         if object_version is not None:
-            _setter("object_version", object_version)
+            pulumi.set(__self__, "object_version", object_version)
         if old_key is not None:
-            _setter("old_key", old_key)
+            pulumi.set(__self__, "old_key", old_key)
         if resolution_action is not None:
-            _setter("resolution_action", resolution_action)
+            pulumi.set(__self__, "resolution_action", resolution_action)
         if time_updated_in_millis is not None:
-            _setter("time_updated_in_millis", time_updated_in_millis)
+            pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -2335,95 +1849,34 @@ class WorkspaceProjectMetadata(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        WorkspaceProjectMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.WorkspaceProjectMetadataAggregator']] = None,
-             count_statistics: Optional[Sequence['outputs.WorkspaceProjectMetadataCountStatistic']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if aggregators is not None:
-            _setter("aggregators", aggregators)
+            pulumi.set(__self__, "aggregators", aggregators)
         if count_statistics is not None:
-            _setter("count_statistics", count_statistics)
+            pulumi.set(__self__, "count_statistics", count_statistics)
         if created_by is not None:
-            _setter("created_by", created_by)
+            pulumi.set(__self__, "created_by", created_by)
         if created_by_name is not None:
-            _setter("created_by_name", created_by_name)
+            pulumi.set(__self__, "created_by_name", created_by_name)
         if identifier_path is not None:
-            _setter("identifier_path", identifier_path)
+            pulumi.set(__self__, "identifier_path", identifier_path)
         if info_fields is not None:
-            _setter("info_fields", info_fields)
+            pulumi.set(__self__, "info_fields", info_fields)
         if is_favorite is not None:
-            _setter("is_favorite", is_favorite)
+            pulumi.set(__self__, "is_favorite", is_favorite)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if registry_version is not None:
-            _setter("registry_version", registry_version)
+            pulumi.set(__self__, "registry_version", registry_version)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if updated_by is not None:
-            _setter("updated_by", updated_by)
+            pulumi.set(__self__, "updated_by", updated_by)
         if updated_by_name is not None:
-            _setter("updated_by_name", updated_by_name)
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -2553,35 +2006,16 @@ class WorkspaceProjectMetadataAggregator(dict):
         :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
-        WorkspaceProjectMetadataAggregator._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -2648,21 +2082,8 @@ class WorkspaceProjectMetadataCountStatistic(dict):
         """
         :param Sequence['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        WorkspaceProjectMetadataCountStatistic._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.WorkspaceProjectMetadataCountStatisticObjectTypeCountList']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-
         if object_type_count_lists is not None:
-            _setter("object_type_count_lists", object_type_count_lists)
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -2701,27 +2122,10 @@ class WorkspaceProjectMetadataCountStatisticObjectTypeCountList(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        WorkspaceProjectMetadataCountStatisticObjectTypeCountList._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-
         if object_count is not None:
-            _setter("object_count", object_count)
+            pulumi.set(__self__, "object_count", object_count)
         if object_type is not None:
-            _setter("object_type", object_type)
+            pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -2766,25 +2170,10 @@ class WorkspaceProjectParentRef(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        WorkspaceProjectParentRef._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-
         if parent is not None:
-            _setter("parent", parent)
+            pulumi.set(__self__, "parent", parent)
         if root_doc_id is not None:
-            _setter("root_doc_id", root_doc_id)
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -2839,41 +2228,16 @@ class WorkspaceProjectRegistryMetadata(dict):
         :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         """
-        WorkspaceProjectRegistryMetadata._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-
         if aggregator_key is not None:
-            _setter("aggregator_key", aggregator_key)
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
         if is_favorite is not None:
-            _setter("is_favorite", is_favorite)
+            pulumi.set(__self__, "is_favorite", is_favorite)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if registry_version is not None:
-            _setter("registry_version", registry_version)
+            pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -2935,54 +2299,13 @@ class GetWorkspaceApplicationDependentObjectMetadataResult(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        GetWorkspaceApplicationDependentObjectMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_version=object_version,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_version: Optional[int] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("action", action)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("object_version", object_version)
-        _setter("type", type)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -3074,109 +2397,20 @@ class GetWorkspaceApplicationMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        GetWorkspaceApplicationMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.GetWorkspaceApplicationMetadataAggregatorResult']] = None,
-             count_statistics: Optional[Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticResult']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if aggregators is None:
-            raise TypeError("Missing 'aggregators' argument")
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if count_statistics is None:
-            raise TypeError("Missing 'count_statistics' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if created_by_name is None:
-            raise TypeError("Missing 'created_by_name' argument")
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if identifier_path is None:
-            raise TypeError("Missing 'identifier_path' argument")
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if info_fields is None:
-            raise TypeError("Missing 'info_fields' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by is None:
-            raise TypeError("Missing 'updated_by' argument")
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-        if updated_by_name is None:
-            raise TypeError("Missing 'updated_by_name' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("aggregators", aggregators)
-        _setter("count_statistics", count_statistics)
-        _setter("created_by", created_by)
-        _setter("created_by_name", created_by_name)
-        _setter("identifier_path", identifier_path)
-        _setter("info_fields", info_fields)
-        _setter("is_favorite", is_favorite)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("updated_by", updated_by)
-        _setter("updated_by_name", updated_by_name)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -3306,40 +2540,11 @@ class GetWorkspaceApplicationMetadataAggregatorResult(dict):
         :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the object in patch.
         """
-        GetWorkspaceApplicationMetadataAggregatorResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("description", description)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("type", type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -3389,22 +2594,7 @@ class GetWorkspaceApplicationMetadataCountStatisticResult(dict):
         """
         :param Sequence['GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        GetWorkspaceApplicationMetadataCountStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-        if object_type_count_lists is None:
-            raise TypeError("Missing 'object_type_count_lists' argument")
-
-        _setter("object_type_count_lists", object_type_count_lists)
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -3424,29 +2614,8 @@ class GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult(dic
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_count is None:
-            raise TypeError("Missing 'object_count' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-
-        _setter("object_count", object_count)
-        _setter("object_type", object_type)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -3474,27 +2643,8 @@ class GetWorkspaceApplicationParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        GetWorkspaceApplicationParentRefResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent is None:
-            raise TypeError("Missing 'parent' argument")
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-        if root_doc_id is None:
-            raise TypeError("Missing 'root_doc_id' argument")
-
-        _setter("parent", parent)
-        _setter("root_doc_id", root_doc_id)
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -3532,54 +2682,13 @@ class GetWorkspaceApplicationPublishedObjectMetadataResult(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        GetWorkspaceApplicationPublishedObjectMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_version=object_version,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_version: Optional[int] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("action", action)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("object_version", object_version)
-        _setter("type", type)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -3653,46 +2762,11 @@ class GetWorkspaceApplicationRegistryMetadataResult(dict):
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        GetWorkspaceApplicationRegistryMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("is_favorite", is_favorite)
-        _setter("key", key)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -3749,50 +2823,11 @@ class GetWorkspaceApplicationSourceApplicationInfoResult(dict):
         :param str last_patch_key: The last patch key for the application.
         :param str workspace_id: The workspace ID.
         """
-        GetWorkspaceApplicationSourceApplicationInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            application_key=application_key,
-            application_version=application_version,
-            copy_type=copy_type,
-            last_patch_key=last_patch_key,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             application_key: Optional[str] = None,
-             application_version: Optional[str] = None,
-             copy_type: Optional[str] = None,
-             last_patch_key: Optional[str] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if application_key is None and 'applicationKey' in kwargs:
-            application_key = kwargs['applicationKey']
-        if application_key is None:
-            raise TypeError("Missing 'application_key' argument")
-        if application_version is None and 'applicationVersion' in kwargs:
-            application_version = kwargs['applicationVersion']
-        if application_version is None:
-            raise TypeError("Missing 'application_version' argument")
-        if copy_type is None and 'copyType' in kwargs:
-            copy_type = kwargs['copyType']
-        if copy_type is None:
-            raise TypeError("Missing 'copy_type' argument")
-        if last_patch_key is None and 'lastPatchKey' in kwargs:
-            last_patch_key = kwargs['lastPatchKey']
-        if last_patch_key is None:
-            raise TypeError("Missing 'last_patch_key' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-
-        _setter("application_key", application_key)
-        _setter("application_version", application_version)
-        _setter("copy_type", copy_type)
-        _setter("last_patch_key", last_patch_key)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "application_version", application_version)
+        pulumi.set(__self__, "copy_type", copy_type)
+        pulumi.set(__self__, "last_patch_key", last_patch_key)
+        pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
@@ -3836,20 +2871,7 @@ class GetWorkspaceApplicationSourceApplicationInfoResult(dict):
 class GetWorkspaceApplicationsApplicationSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult']):
-        GetWorkspaceApplicationsApplicationSummaryCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -3913,183 +2935,32 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
         :param str time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
         :param str workspace_id: The workspace ID.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            application_version=application_version,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            dependent_object_metadatas=dependent_object_metadatas,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            identifier=identifier,
-            key=key,
-            key_map=key_map,
-            metadatas=metadatas,
-            model_type=model_type,
-            model_version=model_version,
-            name=name,
-            object_status=object_status,
-            object_version=object_version,
-            parent_reves=parent_reves,
-            published_object_metadatas=published_object_metadatas,
-            registry_metadatas=registry_metadatas,
-            source_application_infos=source_application_infos,
-            state=state,
-            time_created=time_created,
-            time_patched=time_patched,
-            time_updated=time_updated,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             application_version: Optional[int] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             dependent_object_metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult']] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             key_map: Optional[Mapping[str, Any]] = None,
-             metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult']] = None,
-             model_type: Optional[str] = None,
-             model_version: Optional[str] = None,
-             name: Optional[str] = None,
-             object_status: Optional[int] = None,
-             object_version: Optional[int] = None,
-             parent_reves: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult']] = None,
-             published_object_metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult']] = None,
-             registry_metadatas: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult']] = None,
-             source_application_infos: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult']] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_patched: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if application_version is None and 'applicationVersion' in kwargs:
-            application_version = kwargs['applicationVersion']
-        if application_version is None:
-            raise TypeError("Missing 'application_version' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if dependent_object_metadatas is None and 'dependentObjectMetadatas' in kwargs:
-            dependent_object_metadatas = kwargs['dependentObjectMetadatas']
-        if dependent_object_metadatas is None:
-            raise TypeError("Missing 'dependent_object_metadatas' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if key_map is None and 'keyMap' in kwargs:
-            key_map = kwargs['keyMap']
-        if key_map is None:
-            raise TypeError("Missing 'key_map' argument")
-        if metadatas is None:
-            raise TypeError("Missing 'metadatas' argument")
-        if model_type is None and 'modelType' in kwargs:
-            model_type = kwargs['modelType']
-        if model_type is None:
-            raise TypeError("Missing 'model_type' argument")
-        if model_version is None and 'modelVersion' in kwargs:
-            model_version = kwargs['modelVersion']
-        if model_version is None:
-            raise TypeError("Missing 'model_version' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if object_status is None and 'objectStatus' in kwargs:
-            object_status = kwargs['objectStatus']
-        if object_status is None:
-            raise TypeError("Missing 'object_status' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if parent_reves is None and 'parentReves' in kwargs:
-            parent_reves = kwargs['parentReves']
-        if parent_reves is None:
-            raise TypeError("Missing 'parent_reves' argument")
-        if published_object_metadatas is None and 'publishedObjectMetadatas' in kwargs:
-            published_object_metadatas = kwargs['publishedObjectMetadatas']
-        if published_object_metadatas is None:
-            raise TypeError("Missing 'published_object_metadatas' argument")
-        if registry_metadatas is None and 'registryMetadatas' in kwargs:
-            registry_metadatas = kwargs['registryMetadatas']
-        if registry_metadatas is None:
-            raise TypeError("Missing 'registry_metadatas' argument")
-        if source_application_infos is None and 'sourceApplicationInfos' in kwargs:
-            source_application_infos = kwargs['sourceApplicationInfos']
-        if source_application_infos is None:
-            raise TypeError("Missing 'source_application_infos' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_patched is None and 'timePatched' in kwargs:
-            time_patched = kwargs['timePatched']
-        if time_patched is None:
-            raise TypeError("Missing 'time_patched' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-
-        _setter("application_version", application_version)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("dependent_object_metadatas", dependent_object_metadatas)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("key_map", key_map)
-        _setter("metadatas", metadatas)
-        _setter("model_type", model_type)
-        _setter("model_version", model_version)
-        _setter("name", name)
-        _setter("object_status", object_status)
-        _setter("object_version", object_version)
-        _setter("parent_reves", parent_reves)
-        _setter("published_object_metadatas", published_object_metadatas)
-        _setter("registry_metadatas", registry_metadatas)
-        _setter("source_application_infos", source_application_infos)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_patched", time_patched)
-        _setter("time_updated", time_updated)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "application_version", application_version)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "dependent_object_metadatas", dependent_object_metadatas)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_map", key_map)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "published_object_metadatas", published_object_metadatas)
+        pulumi.set(__self__, "registry_metadatas", registry_metadatas)
+        pulumi.set(__self__, "source_application_infos", source_application_infos)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_patched", time_patched)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationVersion")
@@ -4316,54 +3187,13 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMet
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_version=object_version,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_version: Optional[int] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("action", action)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("object_version", object_version)
-        _setter("type", type)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -4455,109 +3285,20 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult(dic
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult']] = None,
-             count_statistics: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if aggregators is None:
-            raise TypeError("Missing 'aggregators' argument")
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if count_statistics is None:
-            raise TypeError("Missing 'count_statistics' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if created_by_name is None:
-            raise TypeError("Missing 'created_by_name' argument")
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if identifier_path is None:
-            raise TypeError("Missing 'identifier_path' argument")
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if info_fields is None:
-            raise TypeError("Missing 'info_fields' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by is None:
-            raise TypeError("Missing 'updated_by' argument")
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-        if updated_by_name is None:
-            raise TypeError("Missing 'updated_by_name' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("aggregators", aggregators)
-        _setter("count_statistics", count_statistics)
-        _setter("created_by", created_by)
-        _setter("created_by_name", created_by_name)
-        _setter("identifier_path", identifier_path)
-        _setter("info_fields", info_fields)
-        _setter("is_favorite", is_favorite)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("updated_by", updated_by)
-        _setter("updated_by_name", updated_by_name)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -4687,40 +3428,11 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator
         :param str name: Used to filter by the name of the object.
         :param str type: The type of the object in patch.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("description", description)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("type", type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -4770,22 +3482,7 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStati
         """
         :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-        if object_type_count_lists is None:
-            raise TypeError("Missing 'object_type_count_lists' argument")
-
-        _setter("object_type_count_lists", object_type_count_lists)
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -4805,29 +3502,8 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStati
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_count is None:
-            raise TypeError("Missing 'object_count' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-
-        _setter("object_count", object_count)
-        _setter("object_type", object_type)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -4855,27 +3531,8 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult(di
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent is None:
-            raise TypeError("Missing 'parent' argument")
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-        if root_doc_id is None:
-            raise TypeError("Missing 'root_doc_id' argument")
-
-        _setter("parent", parent)
-        _setter("root_doc_id", root_doc_id)
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -4913,54 +3570,13 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMet
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_version=object_version,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_version: Optional[int] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("action", action)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("object_version", object_version)
-        _setter("type", type)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -5034,46 +3650,11 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataRe
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("is_favorite", is_favorite)
-        _setter("key", key)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -5130,50 +3711,11 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationI
         :param str last_patch_key: The last patch key for the application.
         :param str workspace_id: The workspace ID.
         """
-        GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            application_key=application_key,
-            application_version=application_version,
-            copy_type=copy_type,
-            last_patch_key=last_patch_key,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             application_key: Optional[str] = None,
-             application_version: Optional[str] = None,
-             copy_type: Optional[str] = None,
-             last_patch_key: Optional[str] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if application_key is None and 'applicationKey' in kwargs:
-            application_key = kwargs['applicationKey']
-        if application_key is None:
-            raise TypeError("Missing 'application_key' argument")
-        if application_version is None and 'applicationVersion' in kwargs:
-            application_version = kwargs['applicationVersion']
-        if application_version is None:
-            raise TypeError("Missing 'application_version' argument")
-        if copy_type is None and 'copyType' in kwargs:
-            copy_type = kwargs['copyType']
-        if copy_type is None:
-            raise TypeError("Missing 'copy_type' argument")
-        if last_patch_key is None and 'lastPatchKey' in kwargs:
-            last_patch_key = kwargs['lastPatchKey']
-        if last_patch_key is None:
-            raise TypeError("Missing 'last_patch_key' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-
-        _setter("application_key", application_key)
-        _setter("application_version", application_version)
-        _setter("copy_type", copy_type)
-        _setter("last_patch_key", last_patch_key)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "application_version", application_version)
+        pulumi.set(__self__, "copy_type", copy_type)
+        pulumi.set(__self__, "last_patch_key", last_patch_key)
+        pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
@@ -5222,29 +3764,10 @@ class GetWorkspaceApplicationsFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        GetWorkspaceApplicationsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5286,65 +3809,14 @@ class GetWorkspaceExportRequestExportedItemResult(dict):
         :param str object_version: Object version
         :param str time_updated_in_millis: time at which this object was last updated.
         """
-        GetWorkspaceExportRequestExportedItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_type=object_type,
-            object_version=object_version,
-            time_updated_in_millis=time_updated_in_millis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_type: Optional[str] = None,
-             object_version: Optional[str] = None,
-             time_updated_in_millis: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
-            time_updated_in_millis = kwargs['timeUpdatedInMillis']
-        if time_updated_in_millis is None:
-            raise TypeError("Missing 'time_updated_in_millis' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("object_type", object_type)
-        _setter("object_version", object_version)
-        _setter("time_updated_in_millis", time_updated_in_millis)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -5415,20 +3887,7 @@ class GetWorkspaceExportRequestExportedItemResult(dict):
 class GetWorkspaceExportRequestsExportRequestSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult']):
-        GetWorkspaceExportRequestsExportRequestSummaryCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -5479,138 +3938,25 @@ class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult(dict):
         :param int total_exported_object_count: Number of objects that are exported.
         :param str workspace_id: The workspace ID.
         """
-        GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            are_references_included=are_references_included,
-            bucket=bucket,
-            created_by=created_by,
-            error_messages=error_messages,
-            exported_items=exported_items,
-            file_name=file_name,
-            filters=filters,
-            is_object_overwrite_enabled=is_object_overwrite_enabled,
-            key=key,
-            name=name,
-            object_keys=object_keys,
-            object_storage_region=object_storage_region,
-            object_storage_tenancy_id=object_storage_tenancy_id,
-            referenced_items=referenced_items,
-            status=status,
-            time_ended_in_millis=time_ended_in_millis,
-            time_started_in_millis=time_started_in_millis,
-            total_exported_object_count=total_exported_object_count,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             are_references_included: Optional[bool] = None,
-             bucket: Optional[str] = None,
-             created_by: Optional[str] = None,
-             error_messages: Optional[Mapping[str, Any]] = None,
-             exported_items: Optional[Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult']] = None,
-             file_name: Optional[str] = None,
-             filters: Optional[Sequence[str]] = None,
-             is_object_overwrite_enabled: Optional[bool] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             object_keys: Optional[Sequence[str]] = None,
-             object_storage_region: Optional[str] = None,
-             object_storage_tenancy_id: Optional[str] = None,
-             referenced_items: Optional[str] = None,
-             status: Optional[str] = None,
-             time_ended_in_millis: Optional[str] = None,
-             time_started_in_millis: Optional[str] = None,
-             total_exported_object_count: Optional[int] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if are_references_included is None and 'areReferencesIncluded' in kwargs:
-            are_references_included = kwargs['areReferencesIncluded']
-        if are_references_included is None:
-            raise TypeError("Missing 'are_references_included' argument")
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if error_messages is None and 'errorMessages' in kwargs:
-            error_messages = kwargs['errorMessages']
-        if error_messages is None:
-            raise TypeError("Missing 'error_messages' argument")
-        if exported_items is None and 'exportedItems' in kwargs:
-            exported_items = kwargs['exportedItems']
-        if exported_items is None:
-            raise TypeError("Missing 'exported_items' argument")
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-        if file_name is None:
-            raise TypeError("Missing 'file_name' argument")
-        if filters is None:
-            raise TypeError("Missing 'filters' argument")
-        if is_object_overwrite_enabled is None and 'isObjectOverwriteEnabled' in kwargs:
-            is_object_overwrite_enabled = kwargs['isObjectOverwriteEnabled']
-        if is_object_overwrite_enabled is None:
-            raise TypeError("Missing 'is_object_overwrite_enabled' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if object_keys is None and 'objectKeys' in kwargs:
-            object_keys = kwargs['objectKeys']
-        if object_keys is None:
-            raise TypeError("Missing 'object_keys' argument")
-        if object_storage_region is None and 'objectStorageRegion' in kwargs:
-            object_storage_region = kwargs['objectStorageRegion']
-        if object_storage_region is None:
-            raise TypeError("Missing 'object_storage_region' argument")
-        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
-            object_storage_tenancy_id = kwargs['objectStorageTenancyId']
-        if object_storage_tenancy_id is None:
-            raise TypeError("Missing 'object_storage_tenancy_id' argument")
-        if referenced_items is None and 'referencedItems' in kwargs:
-            referenced_items = kwargs['referencedItems']
-        if referenced_items is None:
-            raise TypeError("Missing 'referenced_items' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if time_ended_in_millis is None and 'timeEndedInMillis' in kwargs:
-            time_ended_in_millis = kwargs['timeEndedInMillis']
-        if time_ended_in_millis is None:
-            raise TypeError("Missing 'time_ended_in_millis' argument")
-        if time_started_in_millis is None and 'timeStartedInMillis' in kwargs:
-            time_started_in_millis = kwargs['timeStartedInMillis']
-        if time_started_in_millis is None:
-            raise TypeError("Missing 'time_started_in_millis' argument")
-        if total_exported_object_count is None and 'totalExportedObjectCount' in kwargs:
-            total_exported_object_count = kwargs['totalExportedObjectCount']
-        if total_exported_object_count is None:
-            raise TypeError("Missing 'total_exported_object_count' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-
-        _setter("are_references_included", are_references_included)
-        _setter("bucket", bucket)
-        _setter("created_by", created_by)
-        _setter("error_messages", error_messages)
-        _setter("exported_items", exported_items)
-        _setter("file_name", file_name)
-        _setter("filters", filters)
-        _setter("is_object_overwrite_enabled", is_object_overwrite_enabled)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("object_keys", object_keys)
-        _setter("object_storage_region", object_storage_region)
-        _setter("object_storage_tenancy_id", object_storage_tenancy_id)
-        _setter("referenced_items", referenced_items)
-        _setter("status", status)
-        _setter("time_ended_in_millis", time_ended_in_millis)
-        _setter("time_started_in_millis", time_started_in_millis)
-        _setter("total_exported_object_count", total_exported_object_count)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "are_references_included", are_references_included)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "error_messages", error_messages)
+        pulumi.set(__self__, "exported_items", exported_items)
+        pulumi.set(__self__, "file_name", file_name)
+        pulumi.set(__self__, "filters", filters)
+        pulumi.set(__self__, "is_object_overwrite_enabled", is_object_overwrite_enabled)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_keys", object_keys)
+        pulumi.set(__self__, "object_storage_region", object_storage_region)
+        pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+        pulumi.set(__self__, "referenced_items", referenced_items)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
+        pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
+        pulumi.set(__self__, "total_exported_object_count", total_exported_object_count)
+        pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="areReferencesIncluded")
@@ -5786,65 +4132,14 @@ class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemRe
         :param str object_version: Object version
         :param str time_updated_in_millis: time at which this object was last updated.
         """
-        GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            identifier=identifier,
-            key=key,
-            name=name,
-            name_path=name_path,
-            object_type=object_type,
-            object_version=object_version,
-            time_updated_in_millis=time_updated_in_millis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             object_type: Optional[str] = None,
-             object_version: Optional[str] = None,
-             time_updated_in_millis: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
-            time_updated_in_millis = kwargs['timeUpdatedInMillis']
-        if time_updated_in_millis is None:
-            raise TypeError("Missing 'time_updated_in_millis' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("object_type", object_type)
-        _setter("object_version", object_version)
-        _setter("time_updated_in_millis", time_updated_in_millis)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -5920,29 +4215,10 @@ class GetWorkspaceExportRequestsFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        GetWorkspaceExportRequestsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5996,109 +4272,20 @@ class GetWorkspaceFolderMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        GetWorkspaceFolderMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.GetWorkspaceFolderMetadataAggregatorResult']] = None,
-             count_statistics: Optional[Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticResult']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if aggregators is None:
-            raise TypeError("Missing 'aggregators' argument")
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if count_statistics is None:
-            raise TypeError("Missing 'count_statistics' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if created_by_name is None:
-            raise TypeError("Missing 'created_by_name' argument")
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if identifier_path is None:
-            raise TypeError("Missing 'identifier_path' argument")
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if info_fields is None:
-            raise TypeError("Missing 'info_fields' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by is None:
-            raise TypeError("Missing 'updated_by' argument")
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-        if updated_by_name is None:
-            raise TypeError("Missing 'updated_by_name' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("aggregators", aggregators)
-        _setter("count_statistics", count_statistics)
-        _setter("created_by", created_by)
-        _setter("created_by_name", created_by_name)
-        _setter("identifier_path", identifier_path)
-        _setter("info_fields", info_fields)
-        _setter("is_favorite", is_favorite)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("updated_by", updated_by)
-        _setter("updated_by_name", updated_by_name)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -6228,40 +4415,11 @@ class GetWorkspaceFolderMetadataAggregatorResult(dict):
         :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
-        GetWorkspaceFolderMetadataAggregatorResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("description", description)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("type", type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -6311,22 +4469,7 @@ class GetWorkspaceFolderMetadataCountStatisticResult(dict):
         """
         :param Sequence['GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        GetWorkspaceFolderMetadataCountStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-        if object_type_count_lists is None:
-            raise TypeError("Missing 'object_type_count_lists' argument")
-
-        _setter("object_type_count_lists", object_type_count_lists)
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -6346,29 +4489,8 @@ class GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_count is None:
-            raise TypeError("Missing 'object_count' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-
-        _setter("object_count", object_count)
-        _setter("object_type", object_type)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -6396,27 +4518,8 @@ class GetWorkspaceFolderParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        GetWorkspaceFolderParentRefResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent is None:
-            raise TypeError("Missing 'parent' argument")
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-        if root_doc_id is None:
-            raise TypeError("Missing 'root_doc_id' argument")
-
-        _setter("parent", parent)
-        _setter("root_doc_id", root_doc_id)
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -6450,46 +4553,11 @@ class GetWorkspaceFolderRegistryMetadataResult(dict):
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        GetWorkspaceFolderRegistryMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("is_favorite", is_favorite)
-        _setter("key", key)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -6541,29 +4609,10 @@ class GetWorkspaceFoldersFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        GetWorkspaceFoldersFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6588,20 +4637,7 @@ class GetWorkspaceFoldersFilterResult(dict):
 class GetWorkspaceFoldersFolderSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult']):
-        GetWorkspaceFoldersFolderSummaryCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -6642,110 +4678,21 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemResult(dict):
         :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs'] parent_reves: A reference to the object's parent.
         :param str workspace_id: The workspace ID.
         """
-        GetWorkspaceFoldersFolderSummaryCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            category_name=category_name,
-            description=description,
-            folder_key=folder_key,
-            identifier=identifier,
-            key=key,
-            key_map=key_map,
-            metadatas=metadatas,
-            model_type=model_type,
-            model_version=model_version,
-            name=name,
-            object_status=object_status,
-            object_version=object_version,
-            parent_reves=parent_reves,
-            registry_metadata=registry_metadata,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             category_name: Optional[str] = None,
-             description: Optional[str] = None,
-             folder_key: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             key_map: Optional[Mapping[str, Any]] = None,
-             metadatas: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult']] = None,
-             model_type: Optional[str] = None,
-             model_version: Optional[str] = None,
-             name: Optional[str] = None,
-             object_status: Optional[int] = None,
-             object_version: Optional[int] = None,
-             parent_reves: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult']] = None,
-             registry_metadata: Optional['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult'] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if category_name is None and 'categoryName' in kwargs:
-            category_name = kwargs['categoryName']
-        if category_name is None:
-            raise TypeError("Missing 'category_name' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if folder_key is None and 'folderKey' in kwargs:
-            folder_key = kwargs['folderKey']
-        if folder_key is None:
-            raise TypeError("Missing 'folder_key' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if key_map is None and 'keyMap' in kwargs:
-            key_map = kwargs['keyMap']
-        if key_map is None:
-            raise TypeError("Missing 'key_map' argument")
-        if metadatas is None:
-            raise TypeError("Missing 'metadatas' argument")
-        if model_type is None and 'modelType' in kwargs:
-            model_type = kwargs['modelType']
-        if model_type is None:
-            raise TypeError("Missing 'model_type' argument")
-        if model_version is None and 'modelVersion' in kwargs:
-            model_version = kwargs['modelVersion']
-        if model_version is None:
-            raise TypeError("Missing 'model_version' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if object_status is None and 'objectStatus' in kwargs:
-            object_status = kwargs['objectStatus']
-        if object_status is None:
-            raise TypeError("Missing 'object_status' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if parent_reves is None and 'parentReves' in kwargs:
-            parent_reves = kwargs['parentReves']
-        if parent_reves is None:
-            raise TypeError("Missing 'parent_reves' argument")
-        if registry_metadata is None and 'registryMetadata' in kwargs:
-            registry_metadata = kwargs['registryMetadata']
-        if registry_metadata is None:
-            raise TypeError("Missing 'registry_metadata' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-
-        _setter("category_name", category_name)
-        _setter("description", description)
-        _setter("folder_key", folder_key)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("key_map", key_map)
-        _setter("metadatas", metadatas)
-        _setter("model_type", model_type)
-        _setter("model_version", model_version)
-        _setter("name", name)
-        _setter("object_status", object_status)
-        _setter("object_version", object_version)
-        _setter("parent_reves", parent_reves)
-        _setter("registry_metadata", registry_metadata)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "category_name", category_name)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "folder_key", folder_key)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_map", key_map)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "registry_metadata", registry_metadata)
+        pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="categoryName")
@@ -6895,109 +4842,20 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult']] = None,
-             count_statistics: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if aggregators is None:
-            raise TypeError("Missing 'aggregators' argument")
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if count_statistics is None:
-            raise TypeError("Missing 'count_statistics' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if created_by_name is None:
-            raise TypeError("Missing 'created_by_name' argument")
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if identifier_path is None:
-            raise TypeError("Missing 'identifier_path' argument")
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if info_fields is None:
-            raise TypeError("Missing 'info_fields' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by is None:
-            raise TypeError("Missing 'updated_by' argument")
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-        if updated_by_name is None:
-            raise TypeError("Missing 'updated_by_name' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("aggregators", aggregators)
-        _setter("count_statistics", count_statistics)
-        _setter("created_by", created_by)
-        _setter("created_by_name", created_by_name)
-        _setter("identifier_path", identifier_path)
-        _setter("info_fields", info_fields)
-        _setter("is_favorite", is_favorite)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("updated_by", updated_by)
-        _setter("updated_by_name", updated_by_name)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -7127,40 +4985,11 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult(dic
         :param str name: Used to filter by the name of the object.
         :param str type: The type of the aggregator.
         """
-        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("description", description)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("type", type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -7210,22 +5039,7 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult
         """
         :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-        if object_type_count_lists is None:
-            raise TypeError("Missing 'object_type_count_lists' argument")
-
-        _setter("object_type_count_lists", object_type_count_lists)
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -7245,29 +5059,8 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObject
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_count is None:
-            raise TypeError("Missing 'object_count' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-
-        _setter("object_count", object_count)
-        _setter("object_type", object_type)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -7295,27 +5088,8 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent is None:
-            raise TypeError("Missing 'parent' argument")
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-        if root_doc_id is None:
-            raise TypeError("Missing 'root_doc_id' argument")
-
-        _setter("parent", parent)
-        _setter("root_doc_id", root_doc_id)
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -7349,46 +5123,11 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult(dict)
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("is_favorite", is_favorite)
-        _setter("key", key)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -7442,36 +5181,9 @@ class GetWorkspaceImportRequestImportConflictResolutionResult(dict):
         :param str duplicate_suffix: In case of DUPLICATE mode, suffix will be used to disambiguate the object.
         :param str import_conflict_resolution_type: Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
         """
-        GetWorkspaceImportRequestImportConflictResolutionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            duplicate_prefix=duplicate_prefix,
-            duplicate_suffix=duplicate_suffix,
-            import_conflict_resolution_type=import_conflict_resolution_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             duplicate_prefix: Optional[str] = None,
-             duplicate_suffix: Optional[str] = None,
-             import_conflict_resolution_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if duplicate_prefix is None and 'duplicatePrefix' in kwargs:
-            duplicate_prefix = kwargs['duplicatePrefix']
-        if duplicate_prefix is None:
-            raise TypeError("Missing 'duplicate_prefix' argument")
-        if duplicate_suffix is None and 'duplicateSuffix' in kwargs:
-            duplicate_suffix = kwargs['duplicateSuffix']
-        if duplicate_suffix is None:
-            raise TypeError("Missing 'duplicate_suffix' argument")
-        if import_conflict_resolution_type is None and 'importConflictResolutionType' in kwargs:
-            import_conflict_resolution_type = kwargs['importConflictResolutionType']
-        if import_conflict_resolution_type is None:
-            raise TypeError("Missing 'import_conflict_resolution_type' argument")
-
-        _setter("duplicate_prefix", duplicate_prefix)
-        _setter("duplicate_suffix", duplicate_suffix)
-        _setter("import_conflict_resolution_type", import_conflict_resolution_type)
+        pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
+        pulumi.set(__self__, "duplicate_suffix", duplicate_suffix)
+        pulumi.set(__self__, "import_conflict_resolution_type", import_conflict_resolution_type)
 
     @property
     @pulumi.getter(name="duplicatePrefix")
@@ -7523,81 +5235,16 @@ class GetWorkspaceImportRequestImportedObjectResult(dict):
         :param str resolution_action: Object resolution action
         :param str time_updated_in_millis: time at which this object was last updated.
         """
-        GetWorkspaceImportRequestImportedObjectResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            identifier=identifier,
-            name=name,
-            name_path=name_path,
-            new_key=new_key,
-            object_type=object_type,
-            object_version=object_version,
-            old_key=old_key,
-            resolution_action=resolution_action,
-            time_updated_in_millis=time_updated_in_millis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             identifier: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             new_key: Optional[str] = None,
-             object_type: Optional[str] = None,
-             object_version: Optional[str] = None,
-             old_key: Optional[str] = None,
-             resolution_action: Optional[str] = None,
-             time_updated_in_millis: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if new_key is None and 'newKey' in kwargs:
-            new_key = kwargs['newKey']
-        if new_key is None:
-            raise TypeError("Missing 'new_key' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if old_key is None and 'oldKey' in kwargs:
-            old_key = kwargs['oldKey']
-        if old_key is None:
-            raise TypeError("Missing 'old_key' argument")
-        if resolution_action is None and 'resolutionAction' in kwargs:
-            resolution_action = kwargs['resolutionAction']
-        if resolution_action is None:
-            raise TypeError("Missing 'resolution_action' argument")
-        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
-            time_updated_in_millis = kwargs['timeUpdatedInMillis']
-        if time_updated_in_millis is None:
-            raise TypeError("Missing 'time_updated_in_millis' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("identifier", identifier)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("new_key", new_key)
-        _setter("object_type", object_type)
-        _setter("object_version", object_version)
-        _setter("old_key", old_key)
-        _setter("resolution_action", resolution_action)
-        _setter("time_updated_in_millis", time_updated_in_millis)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "new_key", new_key)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "old_key", old_key)
+        pulumi.set(__self__, "resolution_action", resolution_action)
+        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -7689,29 +5336,10 @@ class GetWorkspaceImportRequestsFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        GetWorkspaceImportRequestsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -7736,20 +5364,7 @@ class GetWorkspaceImportRequestsFilterResult(dict):
 class GetWorkspaceImportRequestsImportRequestSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult']):
-        GetWorkspaceImportRequestsImportRequestSummaryCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -7794,119 +5409,22 @@ class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult(dict):
         :param int total_imported_object_count: Number of objects that are imported.
         :param str workspace_id: The workspace ID.
         """
-        GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            created_by=created_by,
-            error_messages=error_messages,
-            file_name=file_name,
-            import_conflict_resolution=import_conflict_resolution,
-            imported_objects=imported_objects,
-            key=key,
-            name=name,
-            object_key_for_import=object_key_for_import,
-            object_storage_region=object_storage_region,
-            object_storage_tenancy_id=object_storage_tenancy_id,
-            status=status,
-            time_ended_in_millis=time_ended_in_millis,
-            time_started_in_millis=time_started_in_millis,
-            total_imported_object_count=total_imported_object_count,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[str] = None,
-             created_by: Optional[str] = None,
-             error_messages: Optional[Mapping[str, Any]] = None,
-             file_name: Optional[str] = None,
-             import_conflict_resolution: Optional['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult'] = None,
-             imported_objects: Optional[Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult']] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             object_key_for_import: Optional[str] = None,
-             object_storage_region: Optional[str] = None,
-             object_storage_tenancy_id: Optional[str] = None,
-             status: Optional[str] = None,
-             time_ended_in_millis: Optional[str] = None,
-             time_started_in_millis: Optional[str] = None,
-             total_imported_object_count: Optional[int] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if error_messages is None and 'errorMessages' in kwargs:
-            error_messages = kwargs['errorMessages']
-        if error_messages is None:
-            raise TypeError("Missing 'error_messages' argument")
-        if file_name is None and 'fileName' in kwargs:
-            file_name = kwargs['fileName']
-        if file_name is None:
-            raise TypeError("Missing 'file_name' argument")
-        if import_conflict_resolution is None and 'importConflictResolution' in kwargs:
-            import_conflict_resolution = kwargs['importConflictResolution']
-        if import_conflict_resolution is None:
-            raise TypeError("Missing 'import_conflict_resolution' argument")
-        if imported_objects is None and 'importedObjects' in kwargs:
-            imported_objects = kwargs['importedObjects']
-        if imported_objects is None:
-            raise TypeError("Missing 'imported_objects' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if object_key_for_import is None and 'objectKeyForImport' in kwargs:
-            object_key_for_import = kwargs['objectKeyForImport']
-        if object_key_for_import is None:
-            raise TypeError("Missing 'object_key_for_import' argument")
-        if object_storage_region is None and 'objectStorageRegion' in kwargs:
-            object_storage_region = kwargs['objectStorageRegion']
-        if object_storage_region is None:
-            raise TypeError("Missing 'object_storage_region' argument")
-        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
-            object_storage_tenancy_id = kwargs['objectStorageTenancyId']
-        if object_storage_tenancy_id is None:
-            raise TypeError("Missing 'object_storage_tenancy_id' argument")
-        if status is None:
-            raise TypeError("Missing 'status' argument")
-        if time_ended_in_millis is None and 'timeEndedInMillis' in kwargs:
-            time_ended_in_millis = kwargs['timeEndedInMillis']
-        if time_ended_in_millis is None:
-            raise TypeError("Missing 'time_ended_in_millis' argument")
-        if time_started_in_millis is None and 'timeStartedInMillis' in kwargs:
-            time_started_in_millis = kwargs['timeStartedInMillis']
-        if time_started_in_millis is None:
-            raise TypeError("Missing 'time_started_in_millis' argument")
-        if total_imported_object_count is None and 'totalImportedObjectCount' in kwargs:
-            total_imported_object_count = kwargs['totalImportedObjectCount']
-        if total_imported_object_count is None:
-            raise TypeError("Missing 'total_imported_object_count' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-
-        _setter("bucket", bucket)
-        _setter("created_by", created_by)
-        _setter("error_messages", error_messages)
-        _setter("file_name", file_name)
-        _setter("import_conflict_resolution", import_conflict_resolution)
-        _setter("imported_objects", imported_objects)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("object_key_for_import", object_key_for_import)
-        _setter("object_storage_region", object_storage_region)
-        _setter("object_storage_tenancy_id", object_storage_tenancy_id)
-        _setter("status", status)
-        _setter("time_ended_in_millis", time_ended_in_millis)
-        _setter("time_started_in_millis", time_started_in_millis)
-        _setter("total_imported_object_count", total_imported_object_count)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "error_messages", error_messages)
+        pulumi.set(__self__, "file_name", file_name)
+        pulumi.set(__self__, "import_conflict_resolution", import_conflict_resolution)
+        pulumi.set(__self__, "imported_objects", imported_objects)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_key_for_import", object_key_for_import)
+        pulumi.set(__self__, "object_storage_region", object_storage_region)
+        pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
+        pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
+        pulumi.set(__self__, "total_imported_object_count", total_imported_object_count)
+        pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter
@@ -8048,36 +5566,9 @@ class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflict
         :param str duplicate_suffix: In case of DUPLICATE mode, suffix will be used to disambiguate the object.
         :param str import_conflict_resolution_type: Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
         """
-        GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            duplicate_prefix=duplicate_prefix,
-            duplicate_suffix=duplicate_suffix,
-            import_conflict_resolution_type=import_conflict_resolution_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             duplicate_prefix: Optional[str] = None,
-             duplicate_suffix: Optional[str] = None,
-             import_conflict_resolution_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if duplicate_prefix is None and 'duplicatePrefix' in kwargs:
-            duplicate_prefix = kwargs['duplicatePrefix']
-        if duplicate_prefix is None:
-            raise TypeError("Missing 'duplicate_prefix' argument")
-        if duplicate_suffix is None and 'duplicateSuffix' in kwargs:
-            duplicate_suffix = kwargs['duplicateSuffix']
-        if duplicate_suffix is None:
-            raise TypeError("Missing 'duplicate_suffix' argument")
-        if import_conflict_resolution_type is None and 'importConflictResolutionType' in kwargs:
-            import_conflict_resolution_type = kwargs['importConflictResolutionType']
-        if import_conflict_resolution_type is None:
-            raise TypeError("Missing 'import_conflict_resolution_type' argument")
-
-        _setter("duplicate_prefix", duplicate_prefix)
-        _setter("duplicate_suffix", duplicate_suffix)
-        _setter("import_conflict_resolution_type", import_conflict_resolution_type)
+        pulumi.set(__self__, "duplicate_prefix", duplicate_prefix)
+        pulumi.set(__self__, "duplicate_suffix", duplicate_suffix)
+        pulumi.set(__self__, "import_conflict_resolution_type", import_conflict_resolution_type)
 
     @property
     @pulumi.getter(name="duplicatePrefix")
@@ -8129,81 +5620,16 @@ class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject
         :param str resolution_action: Object resolution action
         :param str time_updated_in_millis: time at which this object was last updated.
         """
-        GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            identifier=identifier,
-            name=name,
-            name_path=name_path,
-            new_key=new_key,
-            object_type=object_type,
-            object_version=object_version,
-            old_key=old_key,
-            resolution_action=resolution_action,
-            time_updated_in_millis=time_updated_in_millis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             identifier: Optional[str] = None,
-             name: Optional[str] = None,
-             name_path: Optional[str] = None,
-             new_key: Optional[str] = None,
-             object_type: Optional[str] = None,
-             object_version: Optional[str] = None,
-             old_key: Optional[str] = None,
-             resolution_action: Optional[str] = None,
-             time_updated_in_millis: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if name_path is None and 'namePath' in kwargs:
-            name_path = kwargs['namePath']
-        if name_path is None:
-            raise TypeError("Missing 'name_path' argument")
-        if new_key is None and 'newKey' in kwargs:
-            new_key = kwargs['newKey']
-        if new_key is None:
-            raise TypeError("Missing 'new_key' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if old_key is None and 'oldKey' in kwargs:
-            old_key = kwargs['oldKey']
-        if old_key is None:
-            raise TypeError("Missing 'old_key' argument")
-        if resolution_action is None and 'resolutionAction' in kwargs:
-            resolution_action = kwargs['resolutionAction']
-        if resolution_action is None:
-            raise TypeError("Missing 'resolution_action' argument")
-        if time_updated_in_millis is None and 'timeUpdatedInMillis' in kwargs:
-            time_updated_in_millis = kwargs['timeUpdatedInMillis']
-        if time_updated_in_millis is None:
-            raise TypeError("Missing 'time_updated_in_millis' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("identifier", identifier)
-        _setter("name", name)
-        _setter("name_path", name_path)
-        _setter("new_key", new_key)
-        _setter("object_type", object_type)
-        _setter("object_version", object_version)
-        _setter("old_key", old_key)
-        _setter("resolution_action", resolution_action)
-        _setter("time_updated_in_millis", time_updated_in_millis)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "name_path", name_path)
+        pulumi.set(__self__, "new_key", new_key)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "old_key", old_key)
+        pulumi.set(__self__, "resolution_action", resolution_action)
+        pulumi.set(__self__, "time_updated_in_millis", time_updated_in_millis)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -8319,109 +5745,20 @@ class GetWorkspaceProjectMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        GetWorkspaceProjectMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.GetWorkspaceProjectMetadataAggregatorResult']] = None,
-             count_statistics: Optional[Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticResult']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if aggregators is None:
-            raise TypeError("Missing 'aggregators' argument")
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if count_statistics is None:
-            raise TypeError("Missing 'count_statistics' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if created_by_name is None:
-            raise TypeError("Missing 'created_by_name' argument")
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if identifier_path is None:
-            raise TypeError("Missing 'identifier_path' argument")
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if info_fields is None:
-            raise TypeError("Missing 'info_fields' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by is None:
-            raise TypeError("Missing 'updated_by' argument")
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-        if updated_by_name is None:
-            raise TypeError("Missing 'updated_by_name' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("aggregators", aggregators)
-        _setter("count_statistics", count_statistics)
-        _setter("created_by", created_by)
-        _setter("created_by_name", created_by_name)
-        _setter("identifier_path", identifier_path)
-        _setter("info_fields", info_fields)
-        _setter("is_favorite", is_favorite)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("updated_by", updated_by)
-        _setter("updated_by_name", updated_by_name)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -8551,40 +5888,11 @@ class GetWorkspaceProjectMetadataAggregatorResult(dict):
         :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
-        GetWorkspaceProjectMetadataAggregatorResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("description", description)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("type", type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -8634,22 +5942,7 @@ class GetWorkspaceProjectMetadataCountStatisticResult(dict):
         """
         :param Sequence['GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        GetWorkspaceProjectMetadataCountStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-        if object_type_count_lists is None:
-            raise TypeError("Missing 'object_type_count_lists' argument")
-
-        _setter("object_type_count_lists", object_type_count_lists)
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -8669,29 +5962,8 @@ class GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_count is None:
-            raise TypeError("Missing 'object_count' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-
-        _setter("object_count", object_count)
-        _setter("object_type", object_type)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -8719,27 +5991,8 @@ class GetWorkspaceProjectParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        GetWorkspaceProjectParentRefResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent is None:
-            raise TypeError("Missing 'parent' argument")
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-        if root_doc_id is None:
-            raise TypeError("Missing 'root_doc_id' argument")
-
-        _setter("parent", parent)
-        _setter("root_doc_id", root_doc_id)
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -8773,46 +6026,11 @@ class GetWorkspaceProjectRegistryMetadataResult(dict):
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        GetWorkspaceProjectRegistryMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("is_favorite", is_favorite)
-        _setter("key", key)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -8864,29 +6082,10 @@ class GetWorkspaceProjectsFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        GetWorkspaceProjectsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -8911,20 +6110,7 @@ class GetWorkspaceProjectsFilterResult(dict):
 class GetWorkspaceProjectsProjectSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult']):
-        GetWorkspaceProjectsProjectSummaryCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -8963,103 +6149,20 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemResult(dict):
         :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs'] parent_reves: A reference to the object's parent.
         :param str workspace_id: The workspace ID.
         """
-        GetWorkspaceProjectsProjectSummaryCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            key_map=key_map,
-            metadatas=metadatas,
-            model_type=model_type,
-            model_version=model_version,
-            name=name,
-            object_status=object_status,
-            object_version=object_version,
-            parent_reves=parent_reves,
-            project_key=project_key,
-            registry_metadata=registry_metadata,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             key_map: Optional[Mapping[str, Any]] = None,
-             metadatas: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult']] = None,
-             model_type: Optional[str] = None,
-             model_version: Optional[str] = None,
-             name: Optional[str] = None,
-             object_status: Optional[int] = None,
-             object_version: Optional[int] = None,
-             parent_reves: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult']] = None,
-             project_key: Optional[str] = None,
-             registry_metadata: Optional['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult'] = None,
-             workspace_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if key_map is None and 'keyMap' in kwargs:
-            key_map = kwargs['keyMap']
-        if key_map is None:
-            raise TypeError("Missing 'key_map' argument")
-        if metadatas is None:
-            raise TypeError("Missing 'metadatas' argument")
-        if model_type is None and 'modelType' in kwargs:
-            model_type = kwargs['modelType']
-        if model_type is None:
-            raise TypeError("Missing 'model_type' argument")
-        if model_version is None and 'modelVersion' in kwargs:
-            model_version = kwargs['modelVersion']
-        if model_version is None:
-            raise TypeError("Missing 'model_version' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if object_status is None and 'objectStatus' in kwargs:
-            object_status = kwargs['objectStatus']
-        if object_status is None:
-            raise TypeError("Missing 'object_status' argument")
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if object_version is None:
-            raise TypeError("Missing 'object_version' argument")
-        if parent_reves is None and 'parentReves' in kwargs:
-            parent_reves = kwargs['parentReves']
-        if parent_reves is None:
-            raise TypeError("Missing 'parent_reves' argument")
-        if project_key is None and 'projectKey' in kwargs:
-            project_key = kwargs['projectKey']
-        if project_key is None:
-            raise TypeError("Missing 'project_key' argument")
-        if registry_metadata is None and 'registryMetadata' in kwargs:
-            registry_metadata = kwargs['registryMetadata']
-        if registry_metadata is None:
-            raise TypeError("Missing 'registry_metadata' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-
-        _setter("description", description)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("key_map", key_map)
-        _setter("metadatas", metadatas)
-        _setter("model_type", model_type)
-        _setter("model_version", model_version)
-        _setter("name", name)
-        _setter("object_status", object_status)
-        _setter("object_version", object_version)
-        _setter("parent_reves", parent_reves)
-        _setter("project_key", project_key)
-        _setter("registry_metadata", registry_metadata)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_map", key_map)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "project_key", project_key)
+        pulumi.set(__self__, "registry_metadata", registry_metadata)
+        pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter
@@ -9201,109 +6304,20 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            aggregators=aggregators,
-            count_statistics=count_statistics,
-            created_by=created_by,
-            created_by_name=created_by_name,
-            identifier_path=identifier_path,
-            info_fields=info_fields,
-            is_favorite=is_favorite,
-            labels=labels,
-            registry_version=registry_version,
-            time_created=time_created,
-            time_updated=time_updated,
-            updated_by=updated_by,
-            updated_by_name=updated_by_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             aggregators: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult']] = None,
-             count_statistics: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult']] = None,
-             created_by: Optional[str] = None,
-             created_by_name: Optional[str] = None,
-             identifier_path: Optional[str] = None,
-             info_fields: Optional[Mapping[str, Any]] = None,
-             is_favorite: Optional[bool] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             updated_by: Optional[str] = None,
-             updated_by_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if aggregators is None:
-            raise TypeError("Missing 'aggregators' argument")
-        if count_statistics is None and 'countStatistics' in kwargs:
-            count_statistics = kwargs['countStatistics']
-        if count_statistics is None:
-            raise TypeError("Missing 'count_statistics' argument")
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if created_by is None:
-            raise TypeError("Missing 'created_by' argument")
-        if created_by_name is None and 'createdByName' in kwargs:
-            created_by_name = kwargs['createdByName']
-        if created_by_name is None:
-            raise TypeError("Missing 'created_by_name' argument")
-        if identifier_path is None and 'identifierPath' in kwargs:
-            identifier_path = kwargs['identifierPath']
-        if identifier_path is None:
-            raise TypeError("Missing 'identifier_path' argument")
-        if info_fields is None and 'infoFields' in kwargs:
-            info_fields = kwargs['infoFields']
-        if info_fields is None:
-            raise TypeError("Missing 'info_fields' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if updated_by is None and 'updatedBy' in kwargs:
-            updated_by = kwargs['updatedBy']
-        if updated_by is None:
-            raise TypeError("Missing 'updated_by' argument")
-        if updated_by_name is None and 'updatedByName' in kwargs:
-            updated_by_name = kwargs['updatedByName']
-        if updated_by_name is None:
-            raise TypeError("Missing 'updated_by_name' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("aggregators", aggregators)
-        _setter("count_statistics", count_statistics)
-        _setter("created_by", created_by)
-        _setter("created_by_name", created_by_name)
-        _setter("identifier_path", identifier_path)
-        _setter("info_fields", info_fields)
-        _setter("is_favorite", is_favorite)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("updated_by", updated_by)
-        _setter("updated_by_name", updated_by_name)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -9433,40 +6447,11 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult(d
         :param str name: Used to filter by the name of the object.
         :param str type: The type of the aggregator.
         """
-        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            identifier=identifier,
-            key=key,
-            name=name,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             identifier: Optional[str] = None,
-             key: Optional[str] = None,
-             name: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("description", description)
-        _setter("identifier", identifier)
-        _setter("key", key)
-        _setter("name", name)
-        _setter("type", type)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -9516,22 +6501,7 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResu
         """
         :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_type_count_lists=object_type_count_lists,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_type_count_lists: Optional[Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_type_count_lists is None and 'objectTypeCountLists' in kwargs:
-            object_type_count_lists = kwargs['objectTypeCountLists']
-        if object_type_count_lists is None:
-            raise TypeError("Missing 'object_type_count_lists' argument")
-
-        _setter("object_type_count_lists", object_type_count_lists)
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -9551,29 +6521,8 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObje
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            object_count=object_count,
-            object_type=object_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             object_count: Optional[str] = None,
-             object_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if object_count is None and 'objectCount' in kwargs:
-            object_count = kwargs['objectCount']
-        if object_count is None:
-            raise TypeError("Missing 'object_count' argument")
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if object_type is None:
-            raise TypeError("Missing 'object_type' argument")
-
-        _setter("object_count", object_count)
-        _setter("object_type", object_type)
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -9601,27 +6550,8 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            parent=parent,
-            root_doc_id=root_doc_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             parent: Optional[str] = None,
-             root_doc_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if parent is None:
-            raise TypeError("Missing 'parent' argument")
-        if root_doc_id is None and 'rootDocId' in kwargs:
-            root_doc_id = kwargs['rootDocId']
-        if root_doc_id is None:
-            raise TypeError("Missing 'root_doc_id' argument")
-
-        _setter("parent", parent)
-        _setter("root_doc_id", root_doc_id)
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -9655,46 +6585,11 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult(dic
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregator_key=aggregator_key,
-            is_favorite=is_favorite,
-            key=key,
-            labels=labels,
-            registry_version=registry_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregator_key: Optional[str] = None,
-             is_favorite: Optional[bool] = None,
-             key: Optional[str] = None,
-             labels: Optional[Sequence[str]] = None,
-             registry_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregator_key is None and 'aggregatorKey' in kwargs:
-            aggregator_key = kwargs['aggregatorKey']
-        if aggregator_key is None:
-            raise TypeError("Missing 'aggregator_key' argument")
-        if is_favorite is None and 'isFavorite' in kwargs:
-            is_favorite = kwargs['isFavorite']
-        if is_favorite is None:
-            raise TypeError("Missing 'is_favorite' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if labels is None:
-            raise TypeError("Missing 'labels' argument")
-        if registry_version is None and 'registryVersion' in kwargs:
-            registry_version = kwargs['registryVersion']
-        if registry_version is None:
-            raise TypeError("Missing 'registry_version' argument")
-
-        _setter("aggregator_key", aggregator_key)
-        _setter("is_favorite", is_favorite)
-        _setter("key", key)
-        _setter("labels", labels)
-        _setter("registry_version", registry_version)
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -9746,29 +6641,10 @@ class GetWorkspacesFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        GetWorkspacesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -9835,170 +6711,29 @@ class GetWorkspacesWorkspaceResult(dict):
         :param str time_updated: The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str vcn_id: The OCID of the VCN the subnet is in.
         """
-        GetWorkspacesWorkspaceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            dns_server_ip=dns_server_ip,
-            dns_server_zone=dns_server_zone,
-            endpoint_compartment_id=endpoint_compartment_id,
-            endpoint_id=endpoint_id,
-            endpoint_name=endpoint_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_force_operation=is_force_operation,
-            is_private_network_enabled=is_private_network_enabled,
-            quiesce_timeout=quiesce_timeout,
-            registry_compartment_id=registry_compartment_id,
-            registry_id=registry_id,
-            registry_name=registry_name,
-            state=state,
-            state_message=state_message,
-            subnet_id=subnet_id,
-            time_created=time_created,
-            time_updated=time_updated,
-            vcn_id=vcn_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             dns_server_ip: Optional[str] = None,
-             dns_server_zone: Optional[str] = None,
-             endpoint_compartment_id: Optional[str] = None,
-             endpoint_id: Optional[str] = None,
-             endpoint_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_force_operation: Optional[bool] = None,
-             is_private_network_enabled: Optional[bool] = None,
-             quiesce_timeout: Optional[int] = None,
-             registry_compartment_id: Optional[str] = None,
-             registry_id: Optional[str] = None,
-             registry_name: Optional[str] = None,
-             state: Optional[str] = None,
-             state_message: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             vcn_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if dns_server_ip is None and 'dnsServerIp' in kwargs:
-            dns_server_ip = kwargs['dnsServerIp']
-        if dns_server_ip is None:
-            raise TypeError("Missing 'dns_server_ip' argument")
-        if dns_server_zone is None and 'dnsServerZone' in kwargs:
-            dns_server_zone = kwargs['dnsServerZone']
-        if dns_server_zone is None:
-            raise TypeError("Missing 'dns_server_zone' argument")
-        if endpoint_compartment_id is None and 'endpointCompartmentId' in kwargs:
-            endpoint_compartment_id = kwargs['endpointCompartmentId']
-        if endpoint_compartment_id is None:
-            raise TypeError("Missing 'endpoint_compartment_id' argument")
-        if endpoint_id is None and 'endpointId' in kwargs:
-            endpoint_id = kwargs['endpointId']
-        if endpoint_id is None:
-            raise TypeError("Missing 'endpoint_id' argument")
-        if endpoint_name is None and 'endpointName' in kwargs:
-            endpoint_name = kwargs['endpointName']
-        if endpoint_name is None:
-            raise TypeError("Missing 'endpoint_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_force_operation is None and 'isForceOperation' in kwargs:
-            is_force_operation = kwargs['isForceOperation']
-        if is_force_operation is None:
-            raise TypeError("Missing 'is_force_operation' argument")
-        if is_private_network_enabled is None and 'isPrivateNetworkEnabled' in kwargs:
-            is_private_network_enabled = kwargs['isPrivateNetworkEnabled']
-        if is_private_network_enabled is None:
-            raise TypeError("Missing 'is_private_network_enabled' argument")
-        if quiesce_timeout is None and 'quiesceTimeout' in kwargs:
-            quiesce_timeout = kwargs['quiesceTimeout']
-        if quiesce_timeout is None:
-            raise TypeError("Missing 'quiesce_timeout' argument")
-        if registry_compartment_id is None and 'registryCompartmentId' in kwargs:
-            registry_compartment_id = kwargs['registryCompartmentId']
-        if registry_compartment_id is None:
-            raise TypeError("Missing 'registry_compartment_id' argument")
-        if registry_id is None and 'registryId' in kwargs:
-            registry_id = kwargs['registryId']
-        if registry_id is None:
-            raise TypeError("Missing 'registry_id' argument")
-        if registry_name is None and 'registryName' in kwargs:
-            registry_name = kwargs['registryName']
-        if registry_name is None:
-            raise TypeError("Missing 'registry_name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if state_message is None and 'stateMessage' in kwargs:
-            state_message = kwargs['stateMessage']
-        if state_message is None:
-            raise TypeError("Missing 'state_message' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-        if vcn_id is None:
-            raise TypeError("Missing 'vcn_id' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("dns_server_ip", dns_server_ip)
-        _setter("dns_server_zone", dns_server_zone)
-        _setter("endpoint_compartment_id", endpoint_compartment_id)
-        _setter("endpoint_id", endpoint_id)
-        _setter("endpoint_name", endpoint_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_force_operation", is_force_operation)
-        _setter("is_private_network_enabled", is_private_network_enabled)
-        _setter("quiesce_timeout", quiesce_timeout)
-        _setter("registry_compartment_id", registry_compartment_id)
-        _setter("registry_id", registry_id)
-        _setter("registry_name", registry_name)
-        _setter("state", state)
-        _setter("state_message", state_message)
-        _setter("subnet_id", subnet_id)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("vcn_id", vcn_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dns_server_ip", dns_server_ip)
+        pulumi.set(__self__, "dns_server_zone", dns_server_zone)
+        pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
+        pulumi.set(__self__, "endpoint_id", endpoint_id)
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_force_operation", is_force_operation)
+        pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
+        pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
+        pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
+        pulumi.set(__self__, "registry_id", registry_id)
+        pulumi.set(__self__, "registry_name", registry_name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "state_message", state_message)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")

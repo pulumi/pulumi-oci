@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,67 +37,22 @@ class MysqlConfigurationArgs:
         :param pulumi.Input[str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: User-defined service variables.
         """
-        MysqlConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            shape_name=shape_name,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            init_variables=init_variables,
-            parent_configuration_id=parent_configuration_id,
-            variables=variables,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             shape_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             init_variables: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']] = None,
-             parent_configuration_id: Optional[pulumi.Input[str]] = None,
-             variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if shape_name is None and 'shapeName' in kwargs:
-            shape_name = kwargs['shapeName']
-        if shape_name is None:
-            raise TypeError("Missing 'shape_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if init_variables is None and 'initVariables' in kwargs:
-            init_variables = kwargs['initVariables']
-        if parent_configuration_id is None and 'parentConfigurationId' in kwargs:
-            parent_configuration_id = kwargs['parentConfigurationId']
-
-        _setter("compartment_id", compartment_id)
-        _setter("shape_name", shape_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "shape_name", shape_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if init_variables is not None:
-            _setter("init_variables", init_variables)
+            pulumi.set(__self__, "init_variables", init_variables)
         if parent_configuration_id is not None:
-            _setter("parent_configuration_id", parent_configuration_id)
+            pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
         if variables is not None:
-            _setter("variables", variables)
+            pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -240,85 +195,32 @@ class _MysqlConfigurationState:
         :param pulumi.Input[str] type: The Configuration type, DEFAULT or CUSTOM.
         :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: User-defined service variables.
         """
-        _MysqlConfigurationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            init_variables=init_variables,
-            parent_configuration_id=parent_configuration_id,
-            shape_name=shape_name,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-            variables=variables,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             init_variables: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']] = None,
-             parent_configuration_id: Optional[pulumi.Input[str]] = None,
-             shape_name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if init_variables is None and 'initVariables' in kwargs:
-            init_variables = kwargs['initVariables']
-        if parent_configuration_id is None and 'parentConfigurationId' in kwargs:
-            parent_configuration_id = kwargs['parentConfigurationId']
-        if shape_name is None and 'shapeName' in kwargs:
-            shape_name = kwargs['shapeName']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if init_variables is not None:
-            _setter("init_variables", init_variables)
+            pulumi.set(__self__, "init_variables", init_variables)
         if parent_configuration_id is not None:
-            _setter("parent_configuration_id", parent_configuration_id)
+            pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
         if shape_name is not None:
-            _setter("shape_name", shape_name)
+            pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if variables is not None:
-            _setter("variables", variables)
+            pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -754,10 +656,6 @@ class MysqlConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MysqlConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -788,13 +686,11 @@ class MysqlConfiguration(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            init_variables = _utilities.configure(init_variables, MysqlConfigurationInitVariablesArgs, True)
             __props__.__dict__["init_variables"] = init_variables
             __props__.__dict__["parent_configuration_id"] = parent_configuration_id
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
-            variables = _utilities.configure(variables, MysqlConfigurationVariablesArgs, True)
             __props__.__dict__["variables"] = variables
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

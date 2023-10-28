@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,33 +25,10 @@ class OsnArgs:
         :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
         :param pulumi.Input['OsnOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         """
-        OsnArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            blockchain_platform_id=blockchain_platform_id,
-            ocpu_allocation_param=ocpu_allocation_param,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[pulumi.Input[str]] = None,
-             blockchain_platform_id: Optional[pulumi.Input[str]] = None,
-             ocpu_allocation_param: Optional[pulumi.Input['OsnOcpuAllocationParamArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ad is None:
-            raise TypeError("Missing 'ad' argument")
-        if blockchain_platform_id is None and 'blockchainPlatformId' in kwargs:
-            blockchain_platform_id = kwargs['blockchainPlatformId']
-        if blockchain_platform_id is None:
-            raise TypeError("Missing 'blockchain_platform_id' argument")
-        if ocpu_allocation_param is None and 'ocpuAllocationParam' in kwargs:
-            ocpu_allocation_param = kwargs['ocpuAllocationParam']
-
-        _setter("ad", ad)
-        _setter("blockchain_platform_id", blockchain_platform_id)
+        pulumi.set(__self__, "ad", ad)
+        pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
         if ocpu_allocation_param is not None:
-            _setter("ocpu_allocation_param", ocpu_allocation_param)
+            pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
 
     @property
     @pulumi.getter
@@ -106,41 +83,16 @@ class _OsnState:
         :param pulumi.Input[str] osn_key: OSN identifier
         :param pulumi.Input[str] state: The current state of the OSN.
         """
-        _OsnState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            blockchain_platform_id=blockchain_platform_id,
-            ocpu_allocation_param=ocpu_allocation_param,
-            osn_key=osn_key,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[pulumi.Input[str]] = None,
-             blockchain_platform_id: Optional[pulumi.Input[str]] = None,
-             ocpu_allocation_param: Optional[pulumi.Input['OsnOcpuAllocationParamArgs']] = None,
-             osn_key: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if blockchain_platform_id is None and 'blockchainPlatformId' in kwargs:
-            blockchain_platform_id = kwargs['blockchainPlatformId']
-        if ocpu_allocation_param is None and 'ocpuAllocationParam' in kwargs:
-            ocpu_allocation_param = kwargs['ocpuAllocationParam']
-        if osn_key is None and 'osnKey' in kwargs:
-            osn_key = kwargs['osnKey']
-
         if ad is not None:
-            _setter("ad", ad)
+            pulumi.set(__self__, "ad", ad)
         if blockchain_platform_id is not None:
-            _setter("blockchain_platform_id", blockchain_platform_id)
+            pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
         if ocpu_allocation_param is not None:
-            _setter("ocpu_allocation_param", ocpu_allocation_param)
+            pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
         if osn_key is not None:
-            _setter("osn_key", osn_key)
+            pulumi.set(__self__, "osn_key", osn_key)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -288,10 +240,6 @@ class Osn(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            OsnArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -315,7 +263,6 @@ class Osn(pulumi.CustomResource):
             if blockchain_platform_id is None and not opts.urn:
                 raise TypeError("Missing required property 'blockchain_platform_id'")
             __props__.__dict__["blockchain_platform_id"] = blockchain_platform_id
-            ocpu_allocation_param = _utilities.configure(ocpu_allocation_param, OsnOcpuAllocationParamArgs, True)
             __props__.__dict__["ocpu_allocation_param"] = ocpu_allocation_param
             __props__.__dict__["osn_key"] = None
             __props__.__dict__["state"] = None

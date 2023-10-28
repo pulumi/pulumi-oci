@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,43 +33,14 @@ class IndexArgs:
         :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
         :param pulumi.Input[str] name: Index name.
         """
-        IndexArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            keys=keys,
-            table_name_or_id=table_name_or_id,
-            compartment_id=compartment_id,
-            is_if_not_exists=is_if_not_exists,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             keys: Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]] = None,
-             table_name_or_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             is_if_not_exists: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if keys is None:
-            raise TypeError("Missing 'keys' argument")
-        if table_name_or_id is None and 'tableNameOrId' in kwargs:
-            table_name_or_id = kwargs['tableNameOrId']
-        if table_name_or_id is None:
-            raise TypeError("Missing 'table_name_or_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if is_if_not_exists is None and 'isIfNotExists' in kwargs:
-            is_if_not_exists = kwargs['isIfNotExists']
-
-        _setter("keys", keys)
-        _setter("table_name_or_id", table_name_or_id)
+        pulumi.set(__self__, "keys", keys)
+        pulumi.set(__self__, "table_name_or_id", table_name_or_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if is_if_not_exists is not None:
-            _setter("is_if_not_exists", is_if_not_exists)
+            pulumi.set(__self__, "is_if_not_exists", is_if_not_exists)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -164,63 +135,24 @@ class _IndexState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _IndexState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            is_if_not_exists=is_if_not_exists,
-            keys=keys,
-            lifecycle_details=lifecycle_details,
-            name=name,
-            state=state,
-            table_id=table_id,
-            table_name=table_name,
-            table_name_or_id=table_name_or_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             is_if_not_exists: Optional[pulumi.Input[bool]] = None,
-             keys: Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             table_id: Optional[pulumi.Input[str]] = None,
-             table_name: Optional[pulumi.Input[str]] = None,
-             table_name_or_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if is_if_not_exists is None and 'isIfNotExists' in kwargs:
-            is_if_not_exists = kwargs['isIfNotExists']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if table_id is None and 'tableId' in kwargs:
-            table_id = kwargs['tableId']
-        if table_name is None and 'tableName' in kwargs:
-            table_name = kwargs['tableName']
-        if table_name_or_id is None and 'tableNameOrId' in kwargs:
-            table_name_or_id = kwargs['tableNameOrId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if is_if_not_exists is not None:
-            _setter("is_if_not_exists", is_if_not_exists)
+            pulumi.set(__self__, "is_if_not_exists", is_if_not_exists)
         if keys is not None:
-            _setter("keys", keys)
+            pulumi.set(__self__, "keys", keys)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if table_id is not None:
-            _setter("table_id", table_id)
+            pulumi.set(__self__, "table_id", table_id)
         if table_name is not None:
-            _setter("table_name", table_name)
+            pulumi.set(__self__, "table_name", table_name)
         if table_name_or_id is not None:
-            _setter("table_name_or_id", table_name_or_id)
+            pulumi.set(__self__, "table_name_or_id", table_name_or_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -434,10 +366,6 @@ class Index(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            IndexArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -27,29 +27,10 @@ class GetPathAnalyzerTestsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetPathAnalyzerTestsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -107,70 +88,25 @@ class PathAnalysiDestinationEndpointArgs:
         :param pulumi.Input[str] vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
         :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
         """
-        PathAnalysiDestinationEndpointArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            address=address,
-            instance_id=instance_id,
-            listener_id=listener_id,
-            load_balancer_id=load_balancer_id,
-            network_load_balancer_id=network_load_balancer_id,
-            state=state,
-            subnet_id=subnet_id,
-            vlan_id=vlan_id,
-            vnic_id=vnic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             address: Optional[pulumi.Input[str]] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             listener_id: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             vlan_id: Optional[pulumi.Input[str]] = None,
-             vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if listener_id is None and 'listenerId' in kwargs:
-            listener_id = kwargs['listenerId']
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
-            network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vlan_id is None and 'vlanId' in kwargs:
-            vlan_id = kwargs['vlanId']
-        if vnic_id is None and 'vnicId' in kwargs:
-            vnic_id = kwargs['vnicId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if address is not None:
-            _setter("address", address)
+            pulumi.set(__self__, "address", address)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if listener_id is not None:
-            _setter("listener_id", listener_id)
+            pulumi.set(__self__, "listener_id", listener_id)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
-            _setter("network_load_balancer_id", network_load_balancer_id)
+            pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
-            _setter("vlan_id", vlan_id)
+            pulumi.set(__self__, "vlan_id", vlan_id)
         if vnic_id is not None:
-            _setter("vnic_id", vnic_id)
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @property
     @pulumi.getter
@@ -313,44 +249,15 @@ class PathAnalysiProtocolParametersArgs:
         :param pulumi.Input[int] icmp_type: The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
         :param pulumi.Input[int] source_port: The source port to use in a `PathAnalyzerTest` resource.
         """
-        PathAnalysiProtocolParametersArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            destination_port=destination_port,
-            icmp_code=icmp_code,
-            icmp_type=icmp_type,
-            source_port=source_port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             destination_port: Optional[pulumi.Input[int]] = None,
-             icmp_code: Optional[pulumi.Input[int]] = None,
-             icmp_type: Optional[pulumi.Input[int]] = None,
-             source_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if destination_port is None and 'destinationPort' in kwargs:
-            destination_port = kwargs['destinationPort']
-        if icmp_code is None and 'icmpCode' in kwargs:
-            icmp_code = kwargs['icmpCode']
-        if icmp_type is None and 'icmpType' in kwargs:
-            icmp_type = kwargs['icmpType']
-        if source_port is None and 'sourcePort' in kwargs:
-            source_port = kwargs['sourcePort']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if destination_port is not None:
-            _setter("destination_port", destination_port)
+            pulumi.set(__self__, "destination_port", destination_port)
         if icmp_code is not None:
-            _setter("icmp_code", icmp_code)
+            pulumi.set(__self__, "icmp_code", icmp_code)
         if icmp_type is not None:
-            _setter("icmp_type", icmp_type)
+            pulumi.set(__self__, "icmp_type", icmp_type)
         if source_port is not None:
-            _setter("source_port", source_port)
+            pulumi.set(__self__, "source_port", source_port)
 
     @property
     @pulumi.getter
@@ -424,21 +331,8 @@ class PathAnalysiQueryOptionsArgs:
         """
         :param pulumi.Input[bool] is_bi_directional_analysis: If true, a path analysis is done for both the forward and reverse routes.
         """
-        PathAnalysiQueryOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_bi_directional_analysis=is_bi_directional_analysis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_bi_directional_analysis: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_bi_directional_analysis is None and 'isBiDirectionalAnalysis' in kwargs:
-            is_bi_directional_analysis = kwargs['isBiDirectionalAnalysis']
-
         if is_bi_directional_analysis is not None:
-            _setter("is_bi_directional_analysis", is_bi_directional_analysis)
+            pulumi.set(__self__, "is_bi_directional_analysis", is_bi_directional_analysis)
 
     @property
     @pulumi.getter(name="isBiDirectionalAnalysis")
@@ -481,70 +375,25 @@ class PathAnalysiSourceEndpointArgs:
         :param pulumi.Input[str] vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
         :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
         """
-        PathAnalysiSourceEndpointArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            address=address,
-            instance_id=instance_id,
-            listener_id=listener_id,
-            load_balancer_id=load_balancer_id,
-            network_load_balancer_id=network_load_balancer_id,
-            state=state,
-            subnet_id=subnet_id,
-            vlan_id=vlan_id,
-            vnic_id=vnic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             address: Optional[pulumi.Input[str]] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             listener_id: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             vlan_id: Optional[pulumi.Input[str]] = None,
-             vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if listener_id is None and 'listenerId' in kwargs:
-            listener_id = kwargs['listenerId']
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
-            network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vlan_id is None and 'vlanId' in kwargs:
-            vlan_id = kwargs['vlanId']
-        if vnic_id is None and 'vnicId' in kwargs:
-            vnic_id = kwargs['vnicId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if address is not None:
-            _setter("address", address)
+            pulumi.set(__self__, "address", address)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if listener_id is not None:
-            _setter("listener_id", listener_id)
+            pulumi.set(__self__, "listener_id", listener_id)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
-            _setter("network_load_balancer_id", network_load_balancer_id)
+            pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
-            _setter("vlan_id", vlan_id)
+            pulumi.set(__self__, "vlan_id", vlan_id)
         if vnic_id is not None:
-            _setter("vnic_id", vnic_id)
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @property
     @pulumi.getter
@@ -697,70 +546,25 @@ class PathAnalyzerTestDestinationEndpointArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        PathAnalyzerTestDestinationEndpointArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            address=address,
-            instance_id=instance_id,
-            listener_id=listener_id,
-            load_balancer_id=load_balancer_id,
-            network_load_balancer_id=network_load_balancer_id,
-            state=state,
-            subnet_id=subnet_id,
-            vlan_id=vlan_id,
-            vnic_id=vnic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             address: Optional[pulumi.Input[str]] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             listener_id: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             vlan_id: Optional[pulumi.Input[str]] = None,
-             vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if listener_id is None and 'listenerId' in kwargs:
-            listener_id = kwargs['listenerId']
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
-            network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vlan_id is None and 'vlanId' in kwargs:
-            vlan_id = kwargs['vlanId']
-        if vnic_id is None and 'vnicId' in kwargs:
-            vnic_id = kwargs['vnicId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if address is not None:
-            _setter("address", address)
+            pulumi.set(__self__, "address", address)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if listener_id is not None:
-            _setter("listener_id", listener_id)
+            pulumi.set(__self__, "listener_id", listener_id)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
-            _setter("network_load_balancer_id", network_load_balancer_id)
+            pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
-            _setter("vlan_id", vlan_id)
+            pulumi.set(__self__, "vlan_id", vlan_id)
         if vnic_id is not None:
-            _setter("vnic_id", vnic_id)
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @property
     @pulumi.getter
@@ -902,44 +706,15 @@ class PathAnalyzerTestProtocolParametersArgs:
         :param pulumi.Input[int] icmp_type: (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
         :param pulumi.Input[int] source_port: (Updatable) The source port to use in a `PathAnalyzerTest` resource.
         """
-        PathAnalyzerTestProtocolParametersArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            destination_port=destination_port,
-            icmp_code=icmp_code,
-            icmp_type=icmp_type,
-            source_port=source_port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             destination_port: Optional[pulumi.Input[int]] = None,
-             icmp_code: Optional[pulumi.Input[int]] = None,
-             icmp_type: Optional[pulumi.Input[int]] = None,
-             source_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if destination_port is None and 'destinationPort' in kwargs:
-            destination_port = kwargs['destinationPort']
-        if icmp_code is None and 'icmpCode' in kwargs:
-            icmp_code = kwargs['icmpCode']
-        if icmp_type is None and 'icmpType' in kwargs:
-            icmp_type = kwargs['icmpType']
-        if source_port is None and 'sourcePort' in kwargs:
-            source_port = kwargs['sourcePort']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if destination_port is not None:
-            _setter("destination_port", destination_port)
+            pulumi.set(__self__, "destination_port", destination_port)
         if icmp_code is not None:
-            _setter("icmp_code", icmp_code)
+            pulumi.set(__self__, "icmp_code", icmp_code)
         if icmp_type is not None:
-            _setter("icmp_type", icmp_type)
+            pulumi.set(__self__, "icmp_type", icmp_type)
         if source_port is not None:
-            _setter("source_port", source_port)
+            pulumi.set(__self__, "source_port", source_port)
 
     @property
     @pulumi.getter
@@ -1009,21 +784,8 @@ class PathAnalyzerTestQueryOptionsArgs:
         """
         :param pulumi.Input[bool] is_bi_directional_analysis: (Updatable) If true, a path analysis is done for both the forward and reverse routes.
         """
-        PathAnalyzerTestQueryOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_bi_directional_analysis=is_bi_directional_analysis,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_bi_directional_analysis: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_bi_directional_analysis is None and 'isBiDirectionalAnalysis' in kwargs:
-            is_bi_directional_analysis = kwargs['isBiDirectionalAnalysis']
-
         if is_bi_directional_analysis is not None:
-            _setter("is_bi_directional_analysis", is_bi_directional_analysis)
+            pulumi.set(__self__, "is_bi_directional_analysis", is_bi_directional_analysis)
 
     @property
     @pulumi.getter(name="isBiDirectionalAnalysis")
@@ -1067,70 +829,25 @@ class PathAnalyzerTestSourceEndpointArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        PathAnalyzerTestSourceEndpointArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            address=address,
-            instance_id=instance_id,
-            listener_id=listener_id,
-            load_balancer_id=load_balancer_id,
-            network_load_balancer_id=network_load_balancer_id,
-            state=state,
-            subnet_id=subnet_id,
-            vlan_id=vlan_id,
-            vnic_id=vnic_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             address: Optional[pulumi.Input[str]] = None,
-             instance_id: Optional[pulumi.Input[str]] = None,
-             listener_id: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             vlan_id: Optional[pulumi.Input[str]] = None,
-             vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if instance_id is None and 'instanceId' in kwargs:
-            instance_id = kwargs['instanceId']
-        if listener_id is None and 'listenerId' in kwargs:
-            listener_id = kwargs['listenerId']
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
-            network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vlan_id is None and 'vlanId' in kwargs:
-            vlan_id = kwargs['vlanId']
-        if vnic_id is None and 'vnicId' in kwargs:
-            vnic_id = kwargs['vnicId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if address is not None:
-            _setter("address", address)
+            pulumi.set(__self__, "address", address)
         if instance_id is not None:
-            _setter("instance_id", instance_id)
+            pulumi.set(__self__, "instance_id", instance_id)
         if listener_id is not None:
-            _setter("listener_id", listener_id)
+            pulumi.set(__self__, "listener_id", listener_id)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if network_load_balancer_id is not None:
-            _setter("network_load_balancer_id", network_load_balancer_id)
+            pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
-            _setter("vlan_id", vlan_id)
+            pulumi.set(__self__, "vlan_id", vlan_id)
         if vnic_id is not None:
-            _setter("vnic_id", vnic_id)
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @property
     @pulumi.getter

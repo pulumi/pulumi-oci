@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -21,25 +21,10 @@ class DiscoveryJobsResultArgs:
         The set of arguments for constructing a DiscoveryJobsResult resource.
         :param pulumi.Input[str] discovery_job_id: The OCID of the discovery job.
         """
-        DiscoveryJobsResultArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            discovery_job_id=discovery_job_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             discovery_job_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if discovery_job_id is None and 'discoveryJobId' in kwargs:
-            discovery_job_id = kwargs['discoveryJobId']
-        if discovery_job_id is None:
-            raise TypeError("Missing 'discovery_job_id' argument")
-
         if discovery_job_id is not None:
             warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-        _setter("discovery_job_id", discovery_job_id)
+        pulumi.set(__self__, "discovery_job_id", discovery_job_id)
 
     @property
     @pulumi.getter(name="discoveryJobId")
@@ -103,140 +88,55 @@ class _DiscoveryJobsResultState:
         :param pulumi.Input[str] sensitive_columnkey: The unique key that identifies the sensitive column represented by the discovery result.
         :param pulumi.Input[str] sensitive_type_id: The OCID of the sensitive type associated with the sensitive column.
         """
-        _DiscoveryJobsResultState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app_defined_child_column_keys=app_defined_child_column_keys,
-            app_name=app_name,
-            column_name=column_name,
-            data_type=data_type,
-            db_defined_child_column_keys=db_defined_child_column_keys,
-            discovery_job_id=discovery_job_id,
-            discovery_type=discovery_type,
-            estimated_data_value_count=estimated_data_value_count,
-            is_result_applied=is_result_applied,
-            key=key,
-            modified_attributes=modified_attributes,
-            object=object,
-            object_type=object_type,
-            parent_column_keys=parent_column_keys,
-            planned_action=planned_action,
-            relation_type=relation_type,
-            sample_data_values=sample_data_values,
-            schema_name=schema_name,
-            sensitive_columnkey=sensitive_columnkey,
-            sensitive_type_id=sensitive_type_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             app_name: Optional[pulumi.Input[str]] = None,
-             column_name: Optional[pulumi.Input[str]] = None,
-             data_type: Optional[pulumi.Input[str]] = None,
-             db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             discovery_job_id: Optional[pulumi.Input[str]] = None,
-             discovery_type: Optional[pulumi.Input[str]] = None,
-             estimated_data_value_count: Optional[pulumi.Input[str]] = None,
-             is_result_applied: Optional[pulumi.Input[bool]] = None,
-             key: Optional[pulumi.Input[str]] = None,
-             modified_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultModifiedAttributeArgs']]]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             object_type: Optional[pulumi.Input[str]] = None,
-             parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             planned_action: Optional[pulumi.Input[str]] = None,
-             relation_type: Optional[pulumi.Input[str]] = None,
-             sample_data_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             schema_name: Optional[pulumi.Input[str]] = None,
-             sensitive_columnkey: Optional[pulumi.Input[str]] = None,
-             sensitive_type_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
-            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
-        if app_name is None and 'appName' in kwargs:
-            app_name = kwargs['appName']
-        if column_name is None and 'columnName' in kwargs:
-            column_name = kwargs['columnName']
-        if data_type is None and 'dataType' in kwargs:
-            data_type = kwargs['dataType']
-        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
-            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
-        if discovery_job_id is None and 'discoveryJobId' in kwargs:
-            discovery_job_id = kwargs['discoveryJobId']
-        if discovery_type is None and 'discoveryType' in kwargs:
-            discovery_type = kwargs['discoveryType']
-        if estimated_data_value_count is None and 'estimatedDataValueCount' in kwargs:
-            estimated_data_value_count = kwargs['estimatedDataValueCount']
-        if is_result_applied is None and 'isResultApplied' in kwargs:
-            is_result_applied = kwargs['isResultApplied']
-        if modified_attributes is None and 'modifiedAttributes' in kwargs:
-            modified_attributes = kwargs['modifiedAttributes']
-        if object_type is None and 'objectType' in kwargs:
-            object_type = kwargs['objectType']
-        if parent_column_keys is None and 'parentColumnKeys' in kwargs:
-            parent_column_keys = kwargs['parentColumnKeys']
-        if planned_action is None and 'plannedAction' in kwargs:
-            planned_action = kwargs['plannedAction']
-        if relation_type is None and 'relationType' in kwargs:
-            relation_type = kwargs['relationType']
-        if sample_data_values is None and 'sampleDataValues' in kwargs:
-            sample_data_values = kwargs['sampleDataValues']
-        if schema_name is None and 'schemaName' in kwargs:
-            schema_name = kwargs['schemaName']
-        if sensitive_columnkey is None and 'sensitiveColumnkey' in kwargs:
-            sensitive_columnkey = kwargs['sensitiveColumnkey']
-        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
-            sensitive_type_id = kwargs['sensitiveTypeId']
-
         if app_defined_child_column_keys is not None:
-            _setter("app_defined_child_column_keys", app_defined_child_column_keys)
+            pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
         if app_name is not None:
-            _setter("app_name", app_name)
+            pulumi.set(__self__, "app_name", app_name)
         if column_name is not None:
-            _setter("column_name", column_name)
+            pulumi.set(__self__, "column_name", column_name)
         if data_type is not None:
-            _setter("data_type", data_type)
+            pulumi.set(__self__, "data_type", data_type)
         if db_defined_child_column_keys is not None:
-            _setter("db_defined_child_column_keys", db_defined_child_column_keys)
+            pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
         if discovery_job_id is not None:
             warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
         if discovery_job_id is not None:
-            _setter("discovery_job_id", discovery_job_id)
+            pulumi.set(__self__, "discovery_job_id", discovery_job_id)
         if discovery_type is not None:
             warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
         if discovery_type is not None:
-            _setter("discovery_type", discovery_type)
+            pulumi.set(__self__, "discovery_type", discovery_type)
         if estimated_data_value_count is not None:
-            _setter("estimated_data_value_count", estimated_data_value_count)
+            pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
         if is_result_applied is not None:
-            _setter("is_result_applied", is_result_applied)
+            pulumi.set(__self__, "is_result_applied", is_result_applied)
         if key is not None:
             warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if modified_attributes is not None:
-            _setter("modified_attributes", modified_attributes)
+            pulumi.set(__self__, "modified_attributes", modified_attributes)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if object_type is not None:
-            _setter("object_type", object_type)
+            pulumi.set(__self__, "object_type", object_type)
         if parent_column_keys is not None:
-            _setter("parent_column_keys", parent_column_keys)
+            pulumi.set(__self__, "parent_column_keys", parent_column_keys)
         if planned_action is not None:
-            _setter("planned_action", planned_action)
+            pulumi.set(__self__, "planned_action", planned_action)
         if relation_type is not None:
-            _setter("relation_type", relation_type)
+            pulumi.set(__self__, "relation_type", relation_type)
         if sample_data_values is not None:
-            _setter("sample_data_values", sample_data_values)
+            pulumi.set(__self__, "sample_data_values", sample_data_values)
         if schema_name is not None:
-            _setter("schema_name", schema_name)
+            pulumi.set(__self__, "schema_name", schema_name)
         if sensitive_columnkey is not None:
-            _setter("sensitive_columnkey", sensitive_columnkey)
+            pulumi.set(__self__, "sensitive_columnkey", sensitive_columnkey)
         if sensitive_type_id is not None:
-            _setter("sensitive_type_id", sensitive_type_id)
+            pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -559,10 +459,6 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DiscoveryJobsResultArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

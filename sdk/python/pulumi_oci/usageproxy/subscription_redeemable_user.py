@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,40 +31,11 @@ class SubscriptionRedeemableUserArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        SubscriptionRedeemableUserArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-            subscription_id=subscription_id,
-            tenancy_id=tenancy_id,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]] = None,
-             subscription_id: Optional[pulumi.Input[str]] = None,
-             tenancy_id: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-        if subscription_id is None and 'subscriptionId' in kwargs:
-            subscription_id = kwargs['subscriptionId']
-        if subscription_id is None:
-            raise TypeError("Missing 'subscription_id' argument")
-        if tenancy_id is None and 'tenancyId' in kwargs:
-            tenancy_id = kwargs['tenancyId']
-        if tenancy_id is None:
-            raise TypeError("Missing 'tenancy_id' argument")
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-
-        _setter("items", items)
-        _setter("subscription_id", subscription_id)
-        _setter("tenancy_id", tenancy_id)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
         if user_id is not None:
-            _setter("user_id", user_id)
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter
@@ -137,37 +108,14 @@ class _SubscriptionRedeemableUserState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _SubscriptionRedeemableUserState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-            subscription_id=subscription_id,
-            tenancy_id=tenancy_id,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]] = None,
-             subscription_id: Optional[pulumi.Input[str]] = None,
-             tenancy_id: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subscription_id is None and 'subscriptionId' in kwargs:
-            subscription_id = kwargs['subscriptionId']
-        if tenancy_id is None and 'tenancyId' in kwargs:
-            tenancy_id = kwargs['tenancyId']
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-
         if items is not None:
-            _setter("items", items)
+            pulumi.set(__self__, "items", items)
         if subscription_id is not None:
-            _setter("subscription_id", subscription_id)
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if tenancy_id is not None:
-            _setter("tenancy_id", tenancy_id)
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
         if user_id is not None:
-            _setter("user_id", user_id)
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter
@@ -319,10 +267,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            SubscriptionRedeemableUserArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

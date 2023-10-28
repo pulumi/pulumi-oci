@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,68 +41,21 @@ class ModelDeploymentArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ModelDeploymentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            model_deployment_configuration_details=model_deployment_configuration_details,
-            project_id=project_id,
-            category_log_details=category_log_details,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             model_deployment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] = None,
-             project_id: Optional[pulumi.Input[str]] = None,
-             category_log_details: Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if model_deployment_configuration_details is None and 'modelDeploymentConfigurationDetails' in kwargs:
-            model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
-        if model_deployment_configuration_details is None:
-            raise TypeError("Missing 'model_deployment_configuration_details' argument")
-        if project_id is None and 'projectId' in kwargs:
-            project_id = kwargs['projectId']
-        if project_id is None:
-            raise TypeError("Missing 'project_id' argument")
-        if category_log_details is None and 'categoryLogDetails' in kwargs:
-            category_log_details = kwargs['categoryLogDetails']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
-        _setter("model_deployment_configuration_details", model_deployment_configuration_details)
-        _setter("project_id", project_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
+        pulumi.set(__self__, "project_id", project_id)
         if category_log_details is not None:
-            _setter("category_log_details", category_log_details)
+            pulumi.set(__self__, "category_log_details", category_log_details)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -253,89 +206,32 @@ class _ModelDeploymentState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        _ModelDeploymentState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            category_log_details=category_log_details,
-            compartment_id=compartment_id,
-            created_by=created_by,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            model_deployment_configuration_details=model_deployment_configuration_details,
-            model_deployment_url=model_deployment_url,
-            project_id=project_id,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             category_log_details: Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsArgs']] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             created_by: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             model_deployment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] = None,
-             model_deployment_url: Optional[pulumi.Input[str]] = None,
-             project_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if category_log_details is None and 'categoryLogDetails' in kwargs:
-            category_log_details = kwargs['categoryLogDetails']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if created_by is None and 'createdBy' in kwargs:
-            created_by = kwargs['createdBy']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if model_deployment_configuration_details is None and 'modelDeploymentConfigurationDetails' in kwargs:
-            model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
-        if model_deployment_url is None and 'modelDeploymentUrl' in kwargs:
-            model_deployment_url = kwargs['modelDeploymentUrl']
-        if project_id is None and 'projectId' in kwargs:
-            project_id = kwargs['projectId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if category_log_details is not None:
-            _setter("category_log_details", category_log_details)
+            pulumi.set(__self__, "category_log_details", category_log_details)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if created_by is not None:
-            _setter("created_by", created_by)
+            pulumi.set(__self__, "created_by", created_by)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if model_deployment_configuration_details is not None:
-            _setter("model_deployment_configuration_details", model_deployment_configuration_details)
+            pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
         if model_deployment_url is not None:
-            _setter("model_deployment_url", model_deployment_url)
+            pulumi.set(__self__, "model_deployment_url", model_deployment_url)
         if project_id is not None:
-            _setter("project_id", project_id)
+            pulumi.set(__self__, "project_id", project_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="categoryLogDetails")
@@ -685,10 +581,6 @@ class ModelDeployment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ModelDeploymentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -712,7 +604,6 @@ class ModelDeployment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ModelDeploymentArgs.__new__(ModelDeploymentArgs)
 
-            category_log_details = _utilities.configure(category_log_details, ModelDeploymentCategoryLogDetailsArgs, True)
             __props__.__dict__["category_log_details"] = category_log_details
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -721,7 +612,6 @@ class ModelDeployment(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            model_deployment_configuration_details = _utilities.configure(model_deployment_configuration_details, ModelDeploymentModelDeploymentConfigurationDetailsArgs, True)
             if model_deployment_configuration_details is None and not opts.urn:
                 raise TypeError("Missing required property 'model_deployment_configuration_details'")
             __props__.__dict__["model_deployment_configuration_details"] = model_deployment_configuration_details

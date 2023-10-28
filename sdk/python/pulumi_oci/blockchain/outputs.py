@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -62,23 +62,10 @@ class BlockchainPlatformComponentDetail(dict):
         :param Sequence['BlockchainPlatformComponentDetailOsnArgs'] osns: List of OSNs
         :param Sequence['BlockchainPlatformComponentDetailPeerArgs'] peers: List of Peers
         """
-        BlockchainPlatformComponentDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            osns=osns,
-            peers=peers,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             osns: Optional[Sequence['outputs.BlockchainPlatformComponentDetailOsn']] = None,
-             peers: Optional[Sequence['outputs.BlockchainPlatformComponentDetailPeer']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if osns is not None:
-            _setter("osns", osns)
+            pulumi.set(__self__, "osns", osns)
         if peers is not None:
-            _setter("peers", peers)
+            pulumi.set(__self__, "peers", peers)
 
     @property
     @pulumi.getter
@@ -129,35 +116,14 @@ class BlockchainPlatformComponentDetailOsn(dict):
         :param str osn_key: OSN identifier
         :param str state: The current state of the Platform Instance.
         """
-        BlockchainPlatformComponentDetailOsn._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            ocpu_allocation_params=ocpu_allocation_params,
-            osn_key=osn_key,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             ocpu_allocation_params: Optional[Sequence['outputs.BlockchainPlatformComponentDetailOsnOcpuAllocationParam']] = None,
-             osn_key: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
-            ocpu_allocation_params = kwargs['ocpuAllocationParams']
-        if osn_key is None and 'osnKey' in kwargs:
-            osn_key = kwargs['osnKey']
-
         if ad is not None:
-            _setter("ad", ad)
+            pulumi.set(__self__, "ad", ad)
         if ocpu_allocation_params is not None:
-            _setter("ocpu_allocation_params", ocpu_allocation_params)
+            pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
         if osn_key is not None:
-            _setter("osn_key", osn_key)
+            pulumi.set(__self__, "osn_key", osn_key)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -216,21 +182,8 @@ class BlockchainPlatformComponentDetailOsnOcpuAllocationParam(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        BlockchainPlatformComponentDetailOsnOcpuAllocationParam._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-
         if ocpu_allocation_number is not None:
-            _setter("ocpu_allocation_number", ocpu_allocation_number)
+            pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -279,47 +232,20 @@ class BlockchainPlatformComponentDetailPeer(dict):
         :param str role: Peer role
         :param str state: The current state of the Platform Instance.
         """
-        BlockchainPlatformComponentDetailPeer._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            alias=alias,
-            host=host,
-            ocpu_allocation_params=ocpu_allocation_params,
-            peer_key=peer_key,
-            role=role,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             alias: Optional[str] = None,
-             host: Optional[str] = None,
-             ocpu_allocation_params: Optional[Sequence['outputs.BlockchainPlatformComponentDetailPeerOcpuAllocationParam']] = None,
-             peer_key: Optional[str] = None,
-             role: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
-            ocpu_allocation_params = kwargs['ocpuAllocationParams']
-        if peer_key is None and 'peerKey' in kwargs:
-            peer_key = kwargs['peerKey']
-
         if ad is not None:
-            _setter("ad", ad)
+            pulumi.set(__self__, "ad", ad)
         if alias is not None:
-            _setter("alias", alias)
+            pulumi.set(__self__, "alias", alias)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if ocpu_allocation_params is not None:
-            _setter("ocpu_allocation_params", ocpu_allocation_params)
+            pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
         if peer_key is not None:
-            _setter("peer_key", peer_key)
+            pulumi.set(__self__, "peer_key", peer_key)
         if role is not None:
-            _setter("role", role)
+            pulumi.set(__self__, "role", role)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -402,21 +328,8 @@ class BlockchainPlatformComponentDetailPeerOcpuAllocationParam(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        BlockchainPlatformComponentDetailPeerOcpuAllocationParam._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-
         if ocpu_allocation_number is not None:
-            _setter("ocpu_allocation_number", ocpu_allocation_number)
+            pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -457,31 +370,12 @@ class BlockchainPlatformHostOcpuUtilizationInfo(dict):
         :param float ocpu_capacity_number: Number of total OCPU capacity on the host
         :param float ocpu_utilization_number: Number of OCPU utilized
         """
-        BlockchainPlatformHostOcpuUtilizationInfo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            ocpu_capacity_number=ocpu_capacity_number,
-            ocpu_utilization_number=ocpu_utilization_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             ocpu_capacity_number: Optional[float] = None,
-             ocpu_utilization_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_capacity_number is None and 'ocpuCapacityNumber' in kwargs:
-            ocpu_capacity_number = kwargs['ocpuCapacityNumber']
-        if ocpu_utilization_number is None and 'ocpuUtilizationNumber' in kwargs:
-            ocpu_utilization_number = kwargs['ocpuUtilizationNumber']
-
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if ocpu_capacity_number is not None:
-            _setter("ocpu_capacity_number", ocpu_capacity_number)
+            pulumi.set(__self__, "ocpu_capacity_number", ocpu_capacity_number)
         if ocpu_utilization_number is not None:
-            _setter("ocpu_utilization_number", ocpu_utilization_number)
+            pulumi.set(__self__, "ocpu_utilization_number", ocpu_utilization_number)
 
     @property
     @pulumi.getter
@@ -540,33 +434,12 @@ class BlockchainPlatformReplicas(dict):
         :param int console_count: Number of console replicas
         :param int proxy_count: Number of REST proxy replicas
         """
-        BlockchainPlatformReplicas._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_count=ca_count,
-            console_count=console_count,
-            proxy_count=proxy_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_count: Optional[int] = None,
-             console_count: Optional[int] = None,
-             proxy_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_count is None and 'caCount' in kwargs:
-            ca_count = kwargs['caCount']
-        if console_count is None and 'consoleCount' in kwargs:
-            console_count = kwargs['consoleCount']
-        if proxy_count is None and 'proxyCount' in kwargs:
-            proxy_count = kwargs['proxyCount']
-
         if ca_count is not None:
-            _setter("ca_count", ca_count)
+            pulumi.set(__self__, "ca_count", ca_count)
         if console_count is not None:
-            _setter("console_count", console_count)
+            pulumi.set(__self__, "console_count", console_count)
         if proxy_count is not None:
-            _setter("proxy_count", proxy_count)
+            pulumi.set(__self__, "proxy_count", proxy_count)
 
     @property
     @pulumi.getter(name="caCount")
@@ -621,22 +494,7 @@ class OsnOcpuAllocationParam(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        OsnOcpuAllocationParam._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -675,22 +533,7 @@ class PeerOcpuAllocationParam(dict):
         """
         :param float ocpu_allocation_number: (Updatable) Number of OCPU allocation
         """
-        PeerOcpuAllocationParam._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -710,25 +553,8 @@ class GetBlockchainPlatformComponentDetailResult(dict):
         :param Sequence['GetBlockchainPlatformComponentDetailOsnArgs'] osns: List of OSNs
         :param Sequence['GetBlockchainPlatformComponentDetailPeerArgs'] peers: List of Peers
         """
-        GetBlockchainPlatformComponentDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            osns=osns,
-            peers=peers,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             osns: Optional[Sequence['outputs.GetBlockchainPlatformComponentDetailOsnResult']] = None,
-             peers: Optional[Sequence['outputs.GetBlockchainPlatformComponentDetailPeerResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if osns is None:
-            raise TypeError("Missing 'osns' argument")
-        if peers is None:
-            raise TypeError("Missing 'peers' argument")
-
-        _setter("osns", osns)
-        _setter("peers", peers)
+        pulumi.set(__self__, "osns", osns)
+        pulumi.set(__self__, "peers", peers)
 
     @property
     @pulumi.getter
@@ -760,39 +586,10 @@ class GetBlockchainPlatformComponentDetailOsnResult(dict):
         :param str osn_key: OSN identifier
         :param str state: The current state of the Platform Instance.
         """
-        GetBlockchainPlatformComponentDetailOsnResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            ocpu_allocation_params=ocpu_allocation_params,
-            osn_key=osn_key,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             ocpu_allocation_params: Optional[Sequence['outputs.GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult']] = None,
-             osn_key: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ad is None:
-            raise TypeError("Missing 'ad' argument")
-        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
-            ocpu_allocation_params = kwargs['ocpuAllocationParams']
-        if ocpu_allocation_params is None:
-            raise TypeError("Missing 'ocpu_allocation_params' argument")
-        if osn_key is None and 'osnKey' in kwargs:
-            osn_key = kwargs['osnKey']
-        if osn_key is None:
-            raise TypeError("Missing 'osn_key' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ad", ad)
-        _setter("ocpu_allocation_params", ocpu_allocation_params)
-        _setter("osn_key", osn_key)
-        _setter("state", state)
+        pulumi.set(__self__, "ad", ad)
+        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+        pulumi.set(__self__, "osn_key", osn_key)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -834,22 +631,7 @@ class GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -879,54 +661,13 @@ class GetBlockchainPlatformComponentDetailPeerResult(dict):
         :param str role: Peer role
         :param str state: The current state of the Platform Instance.
         """
-        GetBlockchainPlatformComponentDetailPeerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            alias=alias,
-            host=host,
-            ocpu_allocation_params=ocpu_allocation_params,
-            peer_key=peer_key,
-            role=role,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             alias: Optional[str] = None,
-             host: Optional[str] = None,
-             ocpu_allocation_params: Optional[Sequence['outputs.GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamResult']] = None,
-             peer_key: Optional[str] = None,
-             role: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ad is None:
-            raise TypeError("Missing 'ad' argument")
-        if alias is None:
-            raise TypeError("Missing 'alias' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
-            ocpu_allocation_params = kwargs['ocpuAllocationParams']
-        if ocpu_allocation_params is None:
-            raise TypeError("Missing 'ocpu_allocation_params' argument")
-        if peer_key is None and 'peerKey' in kwargs:
-            peer_key = kwargs['peerKey']
-        if peer_key is None:
-            raise TypeError("Missing 'peer_key' argument")
-        if role is None:
-            raise TypeError("Missing 'role' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ad", ad)
-        _setter("alias", alias)
-        _setter("host", host)
-        _setter("ocpu_allocation_params", ocpu_allocation_params)
-        _setter("peer_key", peer_key)
-        _setter("role", role)
-        _setter("state", state)
+        pulumi.set(__self__, "ad", ad)
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+        pulumi.set(__self__, "peer_key", peer_key)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -992,22 +733,7 @@ class GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -1029,34 +755,9 @@ class GetBlockchainPlatformHostOcpuUtilizationInfoResult(dict):
         :param float ocpu_capacity_number: Number of total OCPU capacity on the host
         :param float ocpu_utilization_number: Number of OCPU utilized
         """
-        GetBlockchainPlatformHostOcpuUtilizationInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            ocpu_capacity_number=ocpu_capacity_number,
-            ocpu_utilization_number=ocpu_utilization_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             ocpu_capacity_number: Optional[float] = None,
-             ocpu_utilization_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if ocpu_capacity_number is None and 'ocpuCapacityNumber' in kwargs:
-            ocpu_capacity_number = kwargs['ocpuCapacityNumber']
-        if ocpu_capacity_number is None:
-            raise TypeError("Missing 'ocpu_capacity_number' argument")
-        if ocpu_utilization_number is None and 'ocpuUtilizationNumber' in kwargs:
-            ocpu_utilization_number = kwargs['ocpuUtilizationNumber']
-        if ocpu_utilization_number is None:
-            raise TypeError("Missing 'ocpu_utilization_number' argument")
-
-        _setter("host", host)
-        _setter("ocpu_capacity_number", ocpu_capacity_number)
-        _setter("ocpu_utilization_number", ocpu_utilization_number)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "ocpu_capacity_number", ocpu_capacity_number)
+        pulumi.set(__self__, "ocpu_utilization_number", ocpu_utilization_number)
 
     @property
     @pulumi.getter
@@ -1090,20 +791,7 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionResult(dict):
         """
         :param Sequence['GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs'] items: Collection of PatchSummary
         """
-        GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -1121,20 +809,7 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult(di
         """
         :param Sequence['GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs'] items: Collection of PatchSummary
         """
-        GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -1158,41 +833,10 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResul
         :param str service_version: patch service version
         :param str time_patch_due: patch due date for customer initiated patching
         """
-        GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            patch_info_url=patch_info_url,
-            service_version=service_version,
-            time_patch_due=time_patch_due,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             patch_info_url: Optional[str] = None,
-             service_version: Optional[str] = None,
-             time_patch_due: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if patch_info_url is None and 'patchInfoUrl' in kwargs:
-            patch_info_url = kwargs['patchInfoUrl']
-        if patch_info_url is None:
-            raise TypeError("Missing 'patch_info_url' argument")
-        if service_version is None and 'serviceVersion' in kwargs:
-            service_version = kwargs['serviceVersion']
-        if service_version is None:
-            raise TypeError("Missing 'service_version' argument")
-        if time_patch_due is None and 'timePatchDue' in kwargs:
-            time_patch_due = kwargs['timePatchDue']
-        if time_patch_due is None:
-            raise TypeError("Missing 'time_patch_due' argument")
-
-        _setter("id", id)
-        _setter("patch_info_url", patch_info_url)
-        _setter("service_version", service_version)
-        _setter("time_patch_due", time_patch_due)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "patch_info_url", patch_info_url)
+        pulumi.set(__self__, "service_version", service_version)
+        pulumi.set(__self__, "time_patch_due", time_patch_due)
 
     @property
     @pulumi.getter
@@ -1233,29 +877,10 @@ class GetBlockchainPlatformPatchesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetBlockchainPlatformPatchesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1284,36 +909,9 @@ class GetBlockchainPlatformReplicaResult(dict):
         :param int console_count: Number of console replicas
         :param int proxy_count: Number of REST proxy replicas
         """
-        GetBlockchainPlatformReplicaResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_count=ca_count,
-            console_count=console_count,
-            proxy_count=proxy_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_count: Optional[int] = None,
-             console_count: Optional[int] = None,
-             proxy_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_count is None and 'caCount' in kwargs:
-            ca_count = kwargs['caCount']
-        if ca_count is None:
-            raise TypeError("Missing 'ca_count' argument")
-        if console_count is None and 'consoleCount' in kwargs:
-            console_count = kwargs['consoleCount']
-        if console_count is None:
-            raise TypeError("Missing 'console_count' argument")
-        if proxy_count is None and 'proxyCount' in kwargs:
-            proxy_count = kwargs['proxyCount']
-        if proxy_count is None:
-            raise TypeError("Missing 'proxy_count' argument")
-
-        _setter("ca_count", ca_count)
-        _setter("console_count", console_count)
-        _setter("proxy_count", proxy_count)
+        pulumi.set(__self__, "ca_count", ca_count)
+        pulumi.set(__self__, "console_count", console_count)
+        pulumi.set(__self__, "proxy_count", proxy_count)
 
     @property
     @pulumi.getter(name="caCount")
@@ -1344,20 +942,7 @@ class GetBlockchainPlatformReplicaResult(dict):
 class GetBlockchainPlatformsBlockchainPlatformCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemResult']):
-        GetBlockchainPlatformsBlockchainPlatformCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -1423,203 +1008,34 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
         :param str time_updated: The time the Platform Instance was updated. An RFC3339 formatted datetime string
         :param int total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_cert_archive_text=ca_cert_archive_text,
-            compartment_id=compartment_id,
-            component_details=component_details,
-            compute_shape=compute_shape,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            federated_user_id=federated_user_id,
-            freeform_tags=freeform_tags,
-            host_ocpu_utilization_infos=host_ocpu_utilization_infos,
-            id=id,
-            idcs_access_token=idcs_access_token,
-            is_byol=is_byol,
-            is_multi_ad=is_multi_ad,
-            lifecycle_details=lifecycle_details,
-            load_balancer_shape=load_balancer_shape,
-            platform_role=platform_role,
-            platform_shape_type=platform_shape_type,
-            platform_version=platform_version,
-            replicas=replicas,
-            service_endpoint=service_endpoint,
-            service_version=service_version,
-            state=state,
-            storage_size_in_tbs=storage_size_in_tbs,
-            storage_used_in_tbs=storage_used_in_tbs,
-            time_created=time_created,
-            time_updated=time_updated,
-            total_ocpu_capacity=total_ocpu_capacity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_cert_archive_text: Optional[str] = None,
-             compartment_id: Optional[str] = None,
-             component_details: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResult']] = None,
-             compute_shape: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             federated_user_id: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             host_ocpu_utilization_infos: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoResult']] = None,
-             id: Optional[str] = None,
-             idcs_access_token: Optional[str] = None,
-             is_byol: Optional[bool] = None,
-             is_multi_ad: Optional[bool] = None,
-             lifecycle_details: Optional[str] = None,
-             load_balancer_shape: Optional[str] = None,
-             platform_role: Optional[str] = None,
-             platform_shape_type: Optional[str] = None,
-             platform_version: Optional[str] = None,
-             replicas: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaResult']] = None,
-             service_endpoint: Optional[str] = None,
-             service_version: Optional[str] = None,
-             state: Optional[str] = None,
-             storage_size_in_tbs: Optional[float] = None,
-             storage_used_in_tbs: Optional[float] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             total_ocpu_capacity: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_cert_archive_text is None and 'caCertArchiveText' in kwargs:
-            ca_cert_archive_text = kwargs['caCertArchiveText']
-        if ca_cert_archive_text is None:
-            raise TypeError("Missing 'ca_cert_archive_text' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if component_details is None and 'componentDetails' in kwargs:
-            component_details = kwargs['componentDetails']
-        if component_details is None:
-            raise TypeError("Missing 'component_details' argument")
-        if compute_shape is None and 'computeShape' in kwargs:
-            compute_shape = kwargs['computeShape']
-        if compute_shape is None:
-            raise TypeError("Missing 'compute_shape' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if federated_user_id is None and 'federatedUserId' in kwargs:
-            federated_user_id = kwargs['federatedUserId']
-        if federated_user_id is None:
-            raise TypeError("Missing 'federated_user_id' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if host_ocpu_utilization_infos is None and 'hostOcpuUtilizationInfos' in kwargs:
-            host_ocpu_utilization_infos = kwargs['hostOcpuUtilizationInfos']
-        if host_ocpu_utilization_infos is None:
-            raise TypeError("Missing 'host_ocpu_utilization_infos' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if idcs_access_token is None:
-            raise TypeError("Missing 'idcs_access_token' argument")
-        if is_byol is None and 'isByol' in kwargs:
-            is_byol = kwargs['isByol']
-        if is_byol is None:
-            raise TypeError("Missing 'is_byol' argument")
-        if is_multi_ad is None and 'isMultiAd' in kwargs:
-            is_multi_ad = kwargs['isMultiAd']
-        if is_multi_ad is None:
-            raise TypeError("Missing 'is_multi_ad' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if load_balancer_shape is None and 'loadBalancerShape' in kwargs:
-            load_balancer_shape = kwargs['loadBalancerShape']
-        if load_balancer_shape is None:
-            raise TypeError("Missing 'load_balancer_shape' argument")
-        if platform_role is None and 'platformRole' in kwargs:
-            platform_role = kwargs['platformRole']
-        if platform_role is None:
-            raise TypeError("Missing 'platform_role' argument")
-        if platform_shape_type is None and 'platformShapeType' in kwargs:
-            platform_shape_type = kwargs['platformShapeType']
-        if platform_shape_type is None:
-            raise TypeError("Missing 'platform_shape_type' argument")
-        if platform_version is None and 'platformVersion' in kwargs:
-            platform_version = kwargs['platformVersion']
-        if platform_version is None:
-            raise TypeError("Missing 'platform_version' argument")
-        if replicas is None:
-            raise TypeError("Missing 'replicas' argument")
-        if service_endpoint is None and 'serviceEndpoint' in kwargs:
-            service_endpoint = kwargs['serviceEndpoint']
-        if service_endpoint is None:
-            raise TypeError("Missing 'service_endpoint' argument")
-        if service_version is None and 'serviceVersion' in kwargs:
-            service_version = kwargs['serviceVersion']
-        if service_version is None:
-            raise TypeError("Missing 'service_version' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if storage_size_in_tbs is None and 'storageSizeInTbs' in kwargs:
-            storage_size_in_tbs = kwargs['storageSizeInTbs']
-        if storage_size_in_tbs is None:
-            raise TypeError("Missing 'storage_size_in_tbs' argument")
-        if storage_used_in_tbs is None and 'storageUsedInTbs' in kwargs:
-            storage_used_in_tbs = kwargs['storageUsedInTbs']
-        if storage_used_in_tbs is None:
-            raise TypeError("Missing 'storage_used_in_tbs' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if total_ocpu_capacity is None and 'totalOcpuCapacity' in kwargs:
-            total_ocpu_capacity = kwargs['totalOcpuCapacity']
-        if total_ocpu_capacity is None:
-            raise TypeError("Missing 'total_ocpu_capacity' argument")
-
-        _setter("ca_cert_archive_text", ca_cert_archive_text)
-        _setter("compartment_id", compartment_id)
-        _setter("component_details", component_details)
-        _setter("compute_shape", compute_shape)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("federated_user_id", federated_user_id)
-        _setter("freeform_tags", freeform_tags)
-        _setter("host_ocpu_utilization_infos", host_ocpu_utilization_infos)
-        _setter("id", id)
-        _setter("idcs_access_token", idcs_access_token)
-        _setter("is_byol", is_byol)
-        _setter("is_multi_ad", is_multi_ad)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("load_balancer_shape", load_balancer_shape)
-        _setter("platform_role", platform_role)
-        _setter("platform_shape_type", platform_shape_type)
-        _setter("platform_version", platform_version)
-        _setter("replicas", replicas)
-        _setter("service_endpoint", service_endpoint)
-        _setter("service_version", service_version)
-        _setter("state", state)
-        _setter("storage_size_in_tbs", storage_size_in_tbs)
-        _setter("storage_used_in_tbs", storage_used_in_tbs)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
-        _setter("total_ocpu_capacity", total_ocpu_capacity)
+        pulumi.set(__self__, "ca_cert_archive_text", ca_cert_archive_text)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_details", component_details)
+        pulumi.set(__self__, "compute_shape", compute_shape)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "federated_user_id", federated_user_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host_ocpu_utilization_infos", host_ocpu_utilization_infos)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "is_byol", is_byol)
+        pulumi.set(__self__, "is_multi_ad", is_multi_ad)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "load_balancer_shape", load_balancer_shape)
+        pulumi.set(__self__, "platform_role", platform_role)
+        pulumi.set(__self__, "platform_shape_type", platform_shape_type)
+        pulumi.set(__self__, "platform_version", platform_version)
+        pulumi.set(__self__, "replicas", replicas)
+        pulumi.set(__self__, "service_endpoint", service_endpoint)
+        pulumi.set(__self__, "service_version", service_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_size_in_tbs", storage_size_in_tbs)
+        pulumi.set(__self__, "storage_used_in_tbs", storage_used_in_tbs)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_ocpu_capacity", total_ocpu_capacity)
 
     @property
     @pulumi.getter(name="caCertArchiveText")
@@ -1846,25 +1262,8 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResul
         :param Sequence['GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs'] osns: List of OSNs
         :param Sequence['GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs'] peers: List of Peers
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            osns=osns,
-            peers=peers,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             osns: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnResult']] = None,
-             peers: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if osns is None:
-            raise TypeError("Missing 'osns' argument")
-        if peers is None:
-            raise TypeError("Missing 'peers' argument")
-
-        _setter("osns", osns)
-        _setter("peers", peers)
+        pulumi.set(__self__, "osns", osns)
+        pulumi.set(__self__, "peers", peers)
 
     @property
     @pulumi.getter
@@ -1896,39 +1295,10 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnRe
         :param str osn_key: OSN identifier
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            ocpu_allocation_params=ocpu_allocation_params,
-            osn_key=osn_key,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             ocpu_allocation_params: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamResult']] = None,
-             osn_key: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ad is None:
-            raise TypeError("Missing 'ad' argument")
-        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
-            ocpu_allocation_params = kwargs['ocpuAllocationParams']
-        if ocpu_allocation_params is None:
-            raise TypeError("Missing 'ocpu_allocation_params' argument")
-        if osn_key is None and 'osnKey' in kwargs:
-            osn_key = kwargs['osnKey']
-        if osn_key is None:
-            raise TypeError("Missing 'osn_key' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ad", ad)
-        _setter("ocpu_allocation_params", ocpu_allocation_params)
-        _setter("osn_key", osn_key)
-        _setter("state", state)
+        pulumi.set(__self__, "ad", ad)
+        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+        pulumi.set(__self__, "osn_key", osn_key)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -1970,22 +1340,7 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOc
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -2015,54 +1370,13 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerR
         :param str role: Peer role
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            alias=alias,
-            host=host,
-            ocpu_allocation_params=ocpu_allocation_params,
-            peer_key=peer_key,
-            role=role,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             alias: Optional[str] = None,
-             host: Optional[str] = None,
-             ocpu_allocation_params: Optional[Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamResult']] = None,
-             peer_key: Optional[str] = None,
-             role: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ad is None:
-            raise TypeError("Missing 'ad' argument")
-        if alias is None:
-            raise TypeError("Missing 'alias' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
-            ocpu_allocation_params = kwargs['ocpuAllocationParams']
-        if ocpu_allocation_params is None:
-            raise TypeError("Missing 'ocpu_allocation_params' argument")
-        if peer_key is None and 'peerKey' in kwargs:
-            peer_key = kwargs['peerKey']
-        if peer_key is None:
-            raise TypeError("Missing 'peer_key' argument")
-        if role is None:
-            raise TypeError("Missing 'role' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ad", ad)
-        _setter("alias", alias)
-        _setter("host", host)
-        _setter("ocpu_allocation_params", ocpu_allocation_params)
-        _setter("peer_key", peer_key)
-        _setter("role", role)
-        _setter("state", state)
+        pulumi.set(__self__, "ad", ad)
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+        pulumi.set(__self__, "peer_key", peer_key)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -2128,22 +1442,7 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerO
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -2165,34 +1464,9 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationI
         :param float ocpu_capacity_number: Number of total OCPU capacity on the host
         :param float ocpu_utilization_number: Number of OCPU utilized
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            ocpu_capacity_number=ocpu_capacity_number,
-            ocpu_utilization_number=ocpu_utilization_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             ocpu_capacity_number: Optional[float] = None,
-             ocpu_utilization_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if ocpu_capacity_number is None and 'ocpuCapacityNumber' in kwargs:
-            ocpu_capacity_number = kwargs['ocpuCapacityNumber']
-        if ocpu_capacity_number is None:
-            raise TypeError("Missing 'ocpu_capacity_number' argument")
-        if ocpu_utilization_number is None and 'ocpuUtilizationNumber' in kwargs:
-            ocpu_utilization_number = kwargs['ocpuUtilizationNumber']
-        if ocpu_utilization_number is None:
-            raise TypeError("Missing 'ocpu_utilization_number' argument")
-
-        _setter("host", host)
-        _setter("ocpu_capacity_number", ocpu_capacity_number)
-        _setter("ocpu_utilization_number", ocpu_utilization_number)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "ocpu_capacity_number", ocpu_capacity_number)
+        pulumi.set(__self__, "ocpu_utilization_number", ocpu_utilization_number)
 
     @property
     @pulumi.getter
@@ -2230,36 +1504,9 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaResult(dict):
         :param int console_count: Number of console replicas
         :param int proxy_count: Number of REST proxy replicas
         """
-        GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_count=ca_count,
-            console_count=console_count,
-            proxy_count=proxy_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_count: Optional[int] = None,
-             console_count: Optional[int] = None,
-             proxy_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_count is None and 'caCount' in kwargs:
-            ca_count = kwargs['caCount']
-        if ca_count is None:
-            raise TypeError("Missing 'ca_count' argument")
-        if console_count is None and 'consoleCount' in kwargs:
-            console_count = kwargs['consoleCount']
-        if console_count is None:
-            raise TypeError("Missing 'console_count' argument")
-        if proxy_count is None and 'proxyCount' in kwargs:
-            proxy_count = kwargs['proxyCount']
-        if proxy_count is None:
-            raise TypeError("Missing 'proxy_count' argument")
-
-        _setter("ca_count", ca_count)
-        _setter("console_count", console_count)
-        _setter("proxy_count", proxy_count)
+        pulumi.set(__self__, "ca_count", ca_count)
+        pulumi.set(__self__, "console_count", console_count)
+        pulumi.set(__self__, "proxy_count", proxy_count)
 
     @property
     @pulumi.getter(name="caCount")
@@ -2292,29 +1539,10 @@ class GetBlockchainPlatformsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetBlockchainPlatformsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2339,22 +1567,7 @@ class GetOsnOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetOsnOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -2371,29 +1584,10 @@ class GetOsnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOsnsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2415,20 +1609,7 @@ class GetOsnsFilterResult(dict):
 class GetOsnsOsnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOsnsOsnCollectionItemResult']):
-        GetOsnsOsnCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetOsnsOsnCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -2451,46 +1632,11 @@ class GetOsnsOsnCollectionItemResult(dict):
         :param str osn_key: OSN identifier
         :param str state: The current state of the OSN.
         """
-        GetOsnsOsnCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            blockchain_platform_id=blockchain_platform_id,
-            ocpu_allocation_param=ocpu_allocation_param,
-            osn_key=osn_key,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             blockchain_platform_id: Optional[str] = None,
-             ocpu_allocation_param: Optional['outputs.GetOsnsOsnCollectionItemOcpuAllocationParamResult'] = None,
-             osn_key: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ad is None:
-            raise TypeError("Missing 'ad' argument")
-        if blockchain_platform_id is None and 'blockchainPlatformId' in kwargs:
-            blockchain_platform_id = kwargs['blockchainPlatformId']
-        if blockchain_platform_id is None:
-            raise TypeError("Missing 'blockchain_platform_id' argument")
-        if ocpu_allocation_param is None and 'ocpuAllocationParam' in kwargs:
-            ocpu_allocation_param = kwargs['ocpuAllocationParam']
-        if ocpu_allocation_param is None:
-            raise TypeError("Missing 'ocpu_allocation_param' argument")
-        if osn_key is None and 'osnKey' in kwargs:
-            osn_key = kwargs['osnKey']
-        if osn_key is None:
-            raise TypeError("Missing 'osn_key' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ad", ad)
-        _setter("blockchain_platform_id", blockchain_platform_id)
-        _setter("ocpu_allocation_param", ocpu_allocation_param)
-        _setter("osn_key", osn_key)
-        _setter("state", state)
+        pulumi.set(__self__, "ad", ad)
+        pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
+        pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
+        pulumi.set(__self__, "osn_key", osn_key)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -2540,22 +1686,7 @@ class GetOsnsOsnCollectionItemOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetOsnsOsnCollectionItemOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -2573,22 +1704,7 @@ class GetPeerOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetPeerOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -2605,29 +1721,10 @@ class GetPeersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetPeersFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2649,20 +1746,7 @@ class GetPeersFilterResult(dict):
 class GetPeersPeerCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetPeersPeerCollectionItemResult']):
-        GetPeersPeerCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetPeersPeerCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -2691,61 +1775,14 @@ class GetPeersPeerCollectionItemResult(dict):
         :param str role: Peer role
         :param str state: The current state of the peer.
         """
-        GetPeersPeerCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ad=ad,
-            alias=alias,
-            blockchain_platform_id=blockchain_platform_id,
-            host=host,
-            ocpu_allocation_param=ocpu_allocation_param,
-            peer_key=peer_key,
-            role=role,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ad: Optional[str] = None,
-             alias: Optional[str] = None,
-             blockchain_platform_id: Optional[str] = None,
-             host: Optional[str] = None,
-             ocpu_allocation_param: Optional['outputs.GetPeersPeerCollectionItemOcpuAllocationParamResult'] = None,
-             peer_key: Optional[str] = None,
-             role: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ad is None:
-            raise TypeError("Missing 'ad' argument")
-        if alias is None:
-            raise TypeError("Missing 'alias' argument")
-        if blockchain_platform_id is None and 'blockchainPlatformId' in kwargs:
-            blockchain_platform_id = kwargs['blockchainPlatformId']
-        if blockchain_platform_id is None:
-            raise TypeError("Missing 'blockchain_platform_id' argument")
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if ocpu_allocation_param is None and 'ocpuAllocationParam' in kwargs:
-            ocpu_allocation_param = kwargs['ocpuAllocationParam']
-        if ocpu_allocation_param is None:
-            raise TypeError("Missing 'ocpu_allocation_param' argument")
-        if peer_key is None and 'peerKey' in kwargs:
-            peer_key = kwargs['peerKey']
-        if peer_key is None:
-            raise TypeError("Missing 'peer_key' argument")
-        if role is None:
-            raise TypeError("Missing 'role' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ad", ad)
-        _setter("alias", alias)
-        _setter("blockchain_platform_id", blockchain_platform_id)
-        _setter("host", host)
-        _setter("ocpu_allocation_param", ocpu_allocation_param)
-        _setter("peer_key", peer_key)
-        _setter("role", role)
-        _setter("state", state)
+        pulumi.set(__self__, "ad", ad)
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
+        pulumi.set(__self__, "peer_key", peer_key)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -2819,22 +1856,7 @@ class GetPeersPeerCollectionItemOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        GetPeersPeerCollectionItemOcpuAllocationParamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ocpu_allocation_number=ocpu_allocation_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
-            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
-        if ocpu_allocation_number is None:
-            raise TypeError("Missing 'ocpu_allocation_number' argument")
-
-        _setter("ocpu_allocation_number", ocpu_allocation_number)
+        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")

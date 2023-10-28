@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,61 +43,20 @@ class DetectorRecipeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        DetectorRecipeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            defined_tags=defined_tags,
-            description=description,
-            detector=detector,
-            detector_rules=detector_rules,
-            freeform_tags=freeform_tags,
-            source_detector_recipe_id=source_detector_recipe_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             detector: Optional[pulumi.Input[str]] = None,
-             detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if detector_rules is None and 'detectorRules' in kwargs:
-            detector_rules = kwargs['detectorRules']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if source_detector_recipe_id is None and 'sourceDetectorRecipeId' in kwargs:
-            source_detector_recipe_id = kwargs['sourceDetectorRecipeId']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if detector is not None:
-            _setter("detector", detector)
+            pulumi.set(__self__, "detector", detector)
         if detector_rules is not None:
-            _setter("detector_rules", detector_rules)
+            pulumi.set(__self__, "detector_rules", detector_rules)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if source_detector_recipe_id is not None:
-            _setter("source_detector_recipe_id", source_detector_recipe_id)
+            pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -248,97 +207,36 @@ class _DetectorRecipeState:
         :param pulumi.Input[str] time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        _DetectorRecipeState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            detector=detector,
-            detector_rules=detector_rules,
-            display_name=display_name,
-            effective_detector_rules=effective_detector_rules,
-            freeform_tags=freeform_tags,
-            owner=owner,
-            source_detector_recipe_id=source_detector_recipe_id,
-            state=state,
-            system_tags=system_tags,
-            target_ids=target_ids,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             detector: Optional[pulumi.Input[str]] = None,
-             detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             effective_detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleArgs']]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             owner: Optional[pulumi.Input[str]] = None,
-             source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if detector_rules is None and 'detectorRules' in kwargs:
-            detector_rules = kwargs['detectorRules']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if effective_detector_rules is None and 'effectiveDetectorRules' in kwargs:
-            effective_detector_rules = kwargs['effectiveDetectorRules']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if source_detector_recipe_id is None and 'sourceDetectorRecipeId' in kwargs:
-            source_detector_recipe_id = kwargs['sourceDetectorRecipeId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_ids is None and 'targetIds' in kwargs:
-            target_ids = kwargs['targetIds']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if detector is not None:
-            _setter("detector", detector)
+            pulumi.set(__self__, "detector", detector)
         if detector_rules is not None:
-            _setter("detector_rules", detector_rules)
+            pulumi.set(__self__, "detector_rules", detector_rules)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if effective_detector_rules is not None:
-            _setter("effective_detector_rules", effective_detector_rules)
+            pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if owner is not None:
-            _setter("owner", owner)
+            pulumi.set(__self__, "owner", owner)
         if source_detector_recipe_id is not None:
-            _setter("source_detector_recipe_id", source_detector_recipe_id)
+            pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_ids is not None:
-            _setter("target_ids", target_ids)
+            pulumi.set(__self__, "target_ids", target_ids)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -604,10 +502,6 @@ class DetectorRecipe(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DetectorRecipeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

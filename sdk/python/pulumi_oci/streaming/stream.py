@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['StreamArgs', 'Stream']
@@ -35,54 +35,19 @@ class StreamArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        StreamArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            partitions=partitions,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            name=name,
-            retention_in_hours=retention_in_hours,
-            stream_pool_id=stream_pool_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             partitions: Optional[pulumi.Input[int]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             retention_in_hours: Optional[pulumi.Input[int]] = None,
-             stream_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if partitions is None:
-            raise TypeError("Missing 'partitions' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if retention_in_hours is None and 'retentionInHours' in kwargs:
-            retention_in_hours = kwargs['retentionInHours']
-        if stream_pool_id is None and 'streamPoolId' in kwargs:
-            stream_pool_id = kwargs['streamPoolId']
-
-        _setter("partitions", partitions)
+        pulumi.set(__self__, "partitions", partitions)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if retention_in_hours is not None:
-            _setter("retention_in_hours", retention_in_hours)
+            pulumi.set(__self__, "retention_in_hours", retention_in_hours)
         if stream_pool_id is not None:
-            _setter("stream_pool_id", stream_pool_id)
+            pulumi.set(__self__, "stream_pool_id", stream_pool_id)
 
     @property
     @pulumi.getter
@@ -205,75 +170,28 @@ class _StreamState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
-        _StreamState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            lifecycle_state_details=lifecycle_state_details,
-            messages_endpoint=messages_endpoint,
-            name=name,
-            partitions=partitions,
-            retention_in_hours=retention_in_hours,
-            state=state,
-            stream_pool_id=stream_pool_id,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_state_details: Optional[pulumi.Input[str]] = None,
-             messages_endpoint: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             partitions: Optional[pulumi.Input[int]] = None,
-             retention_in_hours: Optional[pulumi.Input[int]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             stream_pool_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
-            lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if messages_endpoint is None and 'messagesEndpoint' in kwargs:
-            messages_endpoint = kwargs['messagesEndpoint']
-        if retention_in_hours is None and 'retentionInHours' in kwargs:
-            retention_in_hours = kwargs['retentionInHours']
-        if stream_pool_id is None and 'streamPoolId' in kwargs:
-            stream_pool_id = kwargs['streamPoolId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_state_details is not None:
-            _setter("lifecycle_state_details", lifecycle_state_details)
+            pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
         if messages_endpoint is not None:
-            _setter("messages_endpoint", messages_endpoint)
+            pulumi.set(__self__, "messages_endpoint", messages_endpoint)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if partitions is not None:
-            _setter("partitions", partitions)
+            pulumi.set(__self__, "partitions", partitions)
         if retention_in_hours is not None:
-            _setter("retention_in_hours", retention_in_hours)
+            pulumi.set(__self__, "retention_in_hours", retention_in_hours)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if stream_pool_id is not None:
-            _setter("stream_pool_id", stream_pool_id)
+            pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -523,10 +441,6 @@ class Stream(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            StreamArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

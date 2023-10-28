@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,34 +29,11 @@ class MonitoredResourcesListMemberArgs:
         :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[int] limit_level: The field which determines the depth of hierarchy while searching for members.
         """
-        MonitoredResourcesListMemberArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            monitored_resource_id=monitored_resource_id,
-            destination_resource_id=destination_resource_id,
-            limit_level=limit_level,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             monitored_resource_id: Optional[pulumi.Input[str]] = None,
-             destination_resource_id: Optional[pulumi.Input[str]] = None,
-             limit_level: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if monitored_resource_id is None and 'monitoredResourceId' in kwargs:
-            monitored_resource_id = kwargs['monitoredResourceId']
-        if monitored_resource_id is None:
-            raise TypeError("Missing 'monitored_resource_id' argument")
-        if destination_resource_id is None and 'destinationResourceId' in kwargs:
-            destination_resource_id = kwargs['destinationResourceId']
-        if limit_level is None and 'limitLevel' in kwargs:
-            limit_level = kwargs['limitLevel']
-
-        _setter("monitored_resource_id", monitored_resource_id)
+        pulumi.set(__self__, "monitored_resource_id", monitored_resource_id)
         if destination_resource_id is not None:
-            _setter("destination_resource_id", destination_resource_id)
+            pulumi.set(__self__, "destination_resource_id", destination_resource_id)
         if limit_level is not None:
-            _setter("limit_level", limit_level)
+            pulumi.set(__self__, "limit_level", limit_level)
 
     @property
     @pulumi.getter(name="monitoredResourceId")
@@ -117,37 +94,14 @@ class _MonitoredResourcesListMemberState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _MonitoredResourcesListMemberState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_resource_id=destination_resource_id,
-            items=items,
-            limit_level=limit_level,
-            monitored_resource_id=monitored_resource_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_resource_id: Optional[pulumi.Input[str]] = None,
-             items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]] = None,
-             limit_level: Optional[pulumi.Input[int]] = None,
-             monitored_resource_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_resource_id is None and 'destinationResourceId' in kwargs:
-            destination_resource_id = kwargs['destinationResourceId']
-        if limit_level is None and 'limitLevel' in kwargs:
-            limit_level = kwargs['limitLevel']
-        if monitored_resource_id is None and 'monitoredResourceId' in kwargs:
-            monitored_resource_id = kwargs['monitoredResourceId']
-
         if destination_resource_id is not None:
-            _setter("destination_resource_id", destination_resource_id)
+            pulumi.set(__self__, "destination_resource_id", destination_resource_id)
         if items is not None:
-            _setter("items", items)
+            pulumi.set(__self__, "items", items)
         if limit_level is not None:
-            _setter("limit_level", limit_level)
+            pulumi.set(__self__, "limit_level", limit_level)
         if monitored_resource_id is not None:
-            _setter("monitored_resource_id", monitored_resource_id)
+            pulumi.set(__self__, "monitored_resource_id", monitored_resource_id)
 
     @property
     @pulumi.getter(name="destinationResourceId")
@@ -287,10 +241,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MonitoredResourcesListMemberArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,67 +41,22 @@ class OdaInstanceArgs:
         :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
         """
-        OdaInstanceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            shape_name=shape_name,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            identity_domain=identity_domain,
-            is_role_based_access=is_role_based_access,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             shape_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             identity_domain: Optional[pulumi.Input[str]] = None,
-             is_role_based_access: Optional[pulumi.Input[bool]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if shape_name is None and 'shapeName' in kwargs:
-            shape_name = kwargs['shapeName']
-        if shape_name is None:
-            raise TypeError("Missing 'shape_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if identity_domain is None and 'identityDomain' in kwargs:
-            identity_domain = kwargs['identityDomain']
-        if is_role_based_access is None and 'isRoleBasedAccess' in kwargs:
-            is_role_based_access = kwargs['isRoleBasedAccess']
-
-        _setter("compartment_id", compartment_id)
-        _setter("shape_name", shape_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "shape_name", shape_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if identity_domain is not None:
-            _setter("identity_domain", identity_domain)
+            pulumi.set(__self__, "identity_domain", identity_domain)
         if is_role_based_access is not None:
-            _setter("is_role_based_access", is_role_based_access)
+            pulumi.set(__self__, "is_role_based_access", is_role_based_access)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -270,143 +225,50 @@ class _OdaInstanceState:
         :param pulumi.Input[str] time_updated: When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[str] web_app_url: URL for the Digital Assistant web application that's associated with the instance.
         """
-        _OdaInstanceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attachment_ids=attachment_ids,
-            attachment_types=attachment_types,
-            compartment_id=compartment_id,
-            connector_url=connector_url,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            identity_app_console_url=identity_app_console_url,
-            identity_app_guid=identity_app_guid,
-            identity_domain=identity_domain,
-            imported_package_ids=imported_package_ids,
-            imported_package_names=imported_package_names,
-            is_role_based_access=is_role_based_access,
-            lifecycle_sub_state=lifecycle_sub_state,
-            restricted_operations=restricted_operations,
-            shape_name=shape_name,
-            state=state,
-            state_message=state_message,
-            time_created=time_created,
-            time_updated=time_updated,
-            web_app_url=web_app_url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attachment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attachment_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             connector_url: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             identity_app_console_url: Optional[pulumi.Input[str]] = None,
-             identity_app_guid: Optional[pulumi.Input[str]] = None,
-             identity_domain: Optional[pulumi.Input[str]] = None,
-             imported_package_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             imported_package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             is_role_based_access: Optional[pulumi.Input[bool]] = None,
-             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
-             restricted_operations: Optional[pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]] = None,
-             shape_name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             state_message: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             web_app_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attachment_ids is None and 'attachmentIds' in kwargs:
-            attachment_ids = kwargs['attachmentIds']
-        if attachment_types is None and 'attachmentTypes' in kwargs:
-            attachment_types = kwargs['attachmentTypes']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if connector_url is None and 'connectorUrl' in kwargs:
-            connector_url = kwargs['connectorUrl']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if identity_app_console_url is None and 'identityAppConsoleUrl' in kwargs:
-            identity_app_console_url = kwargs['identityAppConsoleUrl']
-        if identity_app_guid is None and 'identityAppGuid' in kwargs:
-            identity_app_guid = kwargs['identityAppGuid']
-        if identity_domain is None and 'identityDomain' in kwargs:
-            identity_domain = kwargs['identityDomain']
-        if imported_package_ids is None and 'importedPackageIds' in kwargs:
-            imported_package_ids = kwargs['importedPackageIds']
-        if imported_package_names is None and 'importedPackageNames' in kwargs:
-            imported_package_names = kwargs['importedPackageNames']
-        if is_role_based_access is None and 'isRoleBasedAccess' in kwargs:
-            is_role_based_access = kwargs['isRoleBasedAccess']
-        if lifecycle_sub_state is None and 'lifecycleSubState' in kwargs:
-            lifecycle_sub_state = kwargs['lifecycleSubState']
-        if restricted_operations is None and 'restrictedOperations' in kwargs:
-            restricted_operations = kwargs['restrictedOperations']
-        if shape_name is None and 'shapeName' in kwargs:
-            shape_name = kwargs['shapeName']
-        if state_message is None and 'stateMessage' in kwargs:
-            state_message = kwargs['stateMessage']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if web_app_url is None and 'webAppUrl' in kwargs:
-            web_app_url = kwargs['webAppUrl']
-
         if attachment_ids is not None:
-            _setter("attachment_ids", attachment_ids)
+            pulumi.set(__self__, "attachment_ids", attachment_ids)
         if attachment_types is not None:
-            _setter("attachment_types", attachment_types)
+            pulumi.set(__self__, "attachment_types", attachment_types)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if connector_url is not None:
-            _setter("connector_url", connector_url)
+            pulumi.set(__self__, "connector_url", connector_url)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if identity_app_console_url is not None:
-            _setter("identity_app_console_url", identity_app_console_url)
+            pulumi.set(__self__, "identity_app_console_url", identity_app_console_url)
         if identity_app_guid is not None:
-            _setter("identity_app_guid", identity_app_guid)
+            pulumi.set(__self__, "identity_app_guid", identity_app_guid)
         if identity_domain is not None:
-            _setter("identity_domain", identity_domain)
+            pulumi.set(__self__, "identity_domain", identity_domain)
         if imported_package_ids is not None:
-            _setter("imported_package_ids", imported_package_ids)
+            pulumi.set(__self__, "imported_package_ids", imported_package_ids)
         if imported_package_names is not None:
-            _setter("imported_package_names", imported_package_names)
+            pulumi.set(__self__, "imported_package_names", imported_package_names)
         if is_role_based_access is not None:
-            _setter("is_role_based_access", is_role_based_access)
+            pulumi.set(__self__, "is_role_based_access", is_role_based_access)
         if lifecycle_sub_state is not None:
-            _setter("lifecycle_sub_state", lifecycle_sub_state)
+            pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         if restricted_operations is not None:
-            _setter("restricted_operations", restricted_operations)
+            pulumi.set(__self__, "restricted_operations", restricted_operations)
         if shape_name is not None:
-            _setter("shape_name", shape_name)
+            pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_message is not None:
-            _setter("state_message", state_message)
+            pulumi.set(__self__, "state_message", state_message)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if web_app_url is not None:
-            _setter("web_app_url", web_app_url)
+            pulumi.set(__self__, "web_app_url", web_app_url)
 
     @property
     @pulumi.getter(name="attachmentIds")
@@ -798,10 +660,6 @@ class OdaInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            OdaInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

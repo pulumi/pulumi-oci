@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -142,87 +142,30 @@ class DomainsGrantArgs:
                * type: complex
                * uniqueness: none
         """
-        DomainsGrantArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            grant_mechanism=grant_mechanism,
-            grantee=grantee,
-            idcs_endpoint=idcs_endpoint,
-            schemas=schemas,
-            app=app,
-            app_entitlement_collection=app_entitlement_collection,
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            entitlement=entitlement,
-            granted_attribute_values_json=granted_attribute_values_json,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             grant_mechanism: Optional[pulumi.Input[str]] = None,
-             grantee: Optional[pulumi.Input['DomainsGrantGranteeArgs']] = None,
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             app: Optional[pulumi.Input['DomainsGrantAppArgs']] = None,
-             app_entitlement_collection: Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']] = None,
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             entitlement: Optional[pulumi.Input['DomainsGrantEntitlementArgs']] = None,
-             granted_attribute_values_json: Optional[pulumi.Input[str]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if grant_mechanism is None and 'grantMechanism' in kwargs:
-            grant_mechanism = kwargs['grantMechanism']
-        if grant_mechanism is None:
-            raise TypeError("Missing 'grant_mechanism' argument")
-        if grantee is None:
-            raise TypeError("Missing 'grantee' argument")
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_endpoint is None:
-            raise TypeError("Missing 'idcs_endpoint' argument")
-        if schemas is None:
-            raise TypeError("Missing 'schemas' argument")
-        if app_entitlement_collection is None and 'appEntitlementCollection' in kwargs:
-            app_entitlement_collection = kwargs['appEntitlementCollection']
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if granted_attribute_values_json is None and 'grantedAttributeValuesJson' in kwargs:
-            granted_attribute_values_json = kwargs['grantedAttributeValuesJson']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-
-        _setter("grant_mechanism", grant_mechanism)
-        _setter("grantee", grantee)
-        _setter("idcs_endpoint", idcs_endpoint)
-        _setter("schemas", schemas)
+        pulumi.set(__self__, "grant_mechanism", grant_mechanism)
+        pulumi.set(__self__, "grantee", grantee)
+        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+        pulumi.set(__self__, "schemas", schemas)
         if app is not None:
-            _setter("app", app)
+            pulumi.set(__self__, "app", app)
         if app_entitlement_collection is not None:
-            _setter("app_entitlement_collection", app_entitlement_collection)
+            pulumi.set(__self__, "app_entitlement_collection", app_entitlement_collection)
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if entitlement is not None:
-            _setter("entitlement", entitlement)
+            pulumi.set(__self__, "entitlement", entitlement)
         if granted_attribute_values_json is not None:
-            _setter("granted_attribute_values_json", granted_attribute_values_json)
+            pulumi.set(__self__, "granted_attribute_values_json", granted_attribute_values_json)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter(name="grantMechanism")
@@ -760,151 +703,58 @@ class _DomainsGrantState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _DomainsGrantState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            app=app,
-            app_entitlement_collection=app_entitlement_collection,
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            compartment_ocid=compartment_ocid,
-            composite_key=composite_key,
-            delete_in_progress=delete_in_progress,
-            domain_ocid=domain_ocid,
-            entitlement=entitlement,
-            grant_mechanism=grant_mechanism,
-            granted_attribute_values_json=granted_attribute_values_json,
-            grantee=grantee,
-            grantors=grantors,
-            idcs_created_bies=idcs_created_bies,
-            idcs_endpoint=idcs_endpoint,
-            idcs_last_modified_bies=idcs_last_modified_bies,
-            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
-            idcs_prevented_operations=idcs_prevented_operations,
-            is_fulfilled=is_fulfilled,
-            metas=metas,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            schemas=schemas,
-            tags=tags,
-            tenancy_ocid=tenancy_ocid,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             app: Optional[pulumi.Input['DomainsGrantAppArgs']] = None,
-             app_entitlement_collection: Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']] = None,
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             compartment_ocid: Optional[pulumi.Input[str]] = None,
-             composite_key: Optional[pulumi.Input[str]] = None,
-             delete_in_progress: Optional[pulumi.Input[bool]] = None,
-             domain_ocid: Optional[pulumi.Input[str]] = None,
-             entitlement: Optional[pulumi.Input['DomainsGrantEntitlementArgs']] = None,
-             grant_mechanism: Optional[pulumi.Input[str]] = None,
-             granted_attribute_values_json: Optional[pulumi.Input[str]] = None,
-             grantee: Optional[pulumi.Input['DomainsGrantGranteeArgs']] = None,
-             grantors: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]] = None,
-             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]] = None,
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]] = None,
-             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
-             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             is_fulfilled: Optional[pulumi.Input[bool]] = None,
-             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
-             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if app_entitlement_collection is None and 'appEntitlementCollection' in kwargs:
-            app_entitlement_collection = kwargs['appEntitlementCollection']
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if compartment_ocid is None and 'compartmentOcid' in kwargs:
-            compartment_ocid = kwargs['compartmentOcid']
-        if composite_key is None and 'compositeKey' in kwargs:
-            composite_key = kwargs['compositeKey']
-        if delete_in_progress is None and 'deleteInProgress' in kwargs:
-            delete_in_progress = kwargs['deleteInProgress']
-        if domain_ocid is None and 'domainOcid' in kwargs:
-            domain_ocid = kwargs['domainOcid']
-        if grant_mechanism is None and 'grantMechanism' in kwargs:
-            grant_mechanism = kwargs['grantMechanism']
-        if granted_attribute_values_json is None and 'grantedAttributeValuesJson' in kwargs:
-            granted_attribute_values_json = kwargs['grantedAttributeValuesJson']
-        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
-            idcs_created_bies = kwargs['idcsCreatedBies']
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
-            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
-            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
-            idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if is_fulfilled is None and 'isFulfilled' in kwargs:
-            is_fulfilled = kwargs['isFulfilled']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
-            tenancy_ocid = kwargs['tenancyOcid']
-
         if app is not None:
-            _setter("app", app)
+            pulumi.set(__self__, "app", app)
         if app_entitlement_collection is not None:
-            _setter("app_entitlement_collection", app_entitlement_collection)
+            pulumi.set(__self__, "app_entitlement_collection", app_entitlement_collection)
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if compartment_ocid is not None:
-            _setter("compartment_ocid", compartment_ocid)
+            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
         if composite_key is not None:
-            _setter("composite_key", composite_key)
+            pulumi.set(__self__, "composite_key", composite_key)
         if delete_in_progress is not None:
-            _setter("delete_in_progress", delete_in_progress)
+            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
         if domain_ocid is not None:
-            _setter("domain_ocid", domain_ocid)
+            pulumi.set(__self__, "domain_ocid", domain_ocid)
         if entitlement is not None:
-            _setter("entitlement", entitlement)
+            pulumi.set(__self__, "entitlement", entitlement)
         if grant_mechanism is not None:
-            _setter("grant_mechanism", grant_mechanism)
+            pulumi.set(__self__, "grant_mechanism", grant_mechanism)
         if granted_attribute_values_json is not None:
-            _setter("granted_attribute_values_json", granted_attribute_values_json)
+            pulumi.set(__self__, "granted_attribute_values_json", granted_attribute_values_json)
         if grantee is not None:
-            _setter("grantee", grantee)
+            pulumi.set(__self__, "grantee", grantee)
         if grantors is not None:
-            _setter("grantors", grantors)
+            pulumi.set(__self__, "grantors", grantors)
         if idcs_created_bies is not None:
-            _setter("idcs_created_bies", idcs_created_bies)
+            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            _setter("idcs_endpoint", idcs_endpoint)
+            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
+            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            _setter("idcs_prevented_operations", idcs_prevented_operations)
+            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
         if is_fulfilled is not None:
-            _setter("is_fulfilled", is_fulfilled)
+            pulumi.set(__self__, "is_fulfilled", is_fulfilled)
         if metas is not None:
-            _setter("metas", metas)
+            pulumi.set(__self__, "metas", metas)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            _setter("schemas", schemas)
+            pulumi.set(__self__, "schemas", schemas)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if tenancy_ocid is not None:
-            _setter("tenancy_ocid", tenancy_ocid)
+            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
 
     @property
     @pulumi.getter
@@ -1607,10 +1457,6 @@ class DomainsGrant(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DomainsGrantArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1639,20 +1485,16 @@ class DomainsGrant(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DomainsGrantArgs.__new__(DomainsGrantArgs)
 
-            app = _utilities.configure(app, DomainsGrantAppArgs, True)
             __props__.__dict__["app"] = app
-            app_entitlement_collection = _utilities.configure(app_entitlement_collection, DomainsGrantAppEntitlementCollectionArgs, True)
             __props__.__dict__["app_entitlement_collection"] = app_entitlement_collection
             __props__.__dict__["attribute_sets"] = attribute_sets
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["authorization"] = authorization
-            entitlement = _utilities.configure(entitlement, DomainsGrantEntitlementArgs, True)
             __props__.__dict__["entitlement"] = entitlement
             if grant_mechanism is None and not opts.urn:
                 raise TypeError("Missing required property 'grant_mechanism'")
             __props__.__dict__["grant_mechanism"] = grant_mechanism
             __props__.__dict__["granted_attribute_values_json"] = granted_attribute_values_json
-            grantee = _utilities.configure(grantee, DomainsGrantGranteeArgs, True)
             if grantee is None and not opts.urn:
                 raise TypeError("Missing required property 'grantee'")
             __props__.__dict__["grantee"] = grantee

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AgentDependencyArgs', 'AgentDependency']
@@ -43,79 +43,22 @@ class AgentDependencyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AgentDependencyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            compartment_id=compartment_id,
-            dependency_name=dependency_name,
-            display_name=display_name,
-            namespace=namespace,
-            object=object,
-            defined_tags=defined_tags,
-            dependency_version=dependency_version,
-            description=description,
-            freeform_tags=freeform_tags,
-            system_tags=system_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             dependency_name: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             dependency_version: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if dependency_name is None and 'dependencyName' in kwargs:
-            dependency_name = kwargs['dependencyName']
-        if dependency_name is None:
-            raise TypeError("Missing 'dependency_name' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if dependency_version is None and 'dependencyVersion' in kwargs:
-            dependency_version = kwargs['dependencyVersion']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-
-        _setter("bucket", bucket)
-        _setter("compartment_id", compartment_id)
-        _setter("dependency_name", dependency_name)
-        _setter("display_name", display_name)
-        _setter("namespace", namespace)
-        _setter("object", object)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "dependency_name", dependency_name)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if dependency_version is not None:
-            _setter("dependency_version", dependency_version)
+            pulumi.set(__self__, "dependency_version", dependency_version)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @property
     @pulumi.getter
@@ -296,99 +239,38 @@ class _AgentDependencyState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The time when the AgentDependency was created. An RFC3339 formatted datetime string.
         """
-        _AgentDependencyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            checksum=checksum,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            dependency_name=dependency_name,
-            dependency_version=dependency_version,
-            description=description,
-            display_name=display_name,
-            e_tag=e_tag,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            namespace=namespace,
-            object=object,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[pulumi.Input[str]] = None,
-             checksum: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             dependency_name: Optional[pulumi.Input[str]] = None,
-             dependency_version: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             e_tag: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if dependency_name is None and 'dependencyName' in kwargs:
-            dependency_name = kwargs['dependencyName']
-        if dependency_version is None and 'dependencyVersion' in kwargs:
-            dependency_version = kwargs['dependencyVersion']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if e_tag is None and 'eTag' in kwargs:
-            e_tag = kwargs['eTag']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if checksum is not None:
-            _setter("checksum", checksum)
+            pulumi.set(__self__, "checksum", checksum)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if dependency_name is not None:
-            _setter("dependency_name", dependency_name)
+            pulumi.set(__self__, "dependency_name", dependency_name)
         if dependency_version is not None:
-            _setter("dependency_version", dependency_version)
+            pulumi.set(__self__, "dependency_version", dependency_version)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if e_tag is not None:
-            _setter("e_tag", e_tag)
+            pulumi.set(__self__, "e_tag", e_tag)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
@@ -712,10 +594,6 @@ class AgentDependency(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AgentDependencyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

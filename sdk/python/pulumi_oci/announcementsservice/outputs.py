@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -32,24 +32,9 @@ class AnnouncementSubscriptionFilterGroups(dict):
         :param Sequence['AnnouncementSubscriptionFilterGroupsFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        AnnouncementSubscriptionFilterGroups._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            filters=filters,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             filters: Optional[Sequence['outputs.AnnouncementSubscriptionFilterGroupsFilter']] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if filters is None:
-            raise TypeError("Missing 'filters' argument")
-
-        _setter("filters", filters)
+        pulumi.set(__self__, "filters", filters)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -77,25 +62,8 @@ class AnnouncementSubscriptionFilterGroupsFilter(dict):
         :param str type: The type of filter.
         :param str value: The value of the filter.
         """
-        AnnouncementSubscriptionFilterGroupsFilter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -123,25 +91,8 @@ class AnnouncementSubscriptionsFilterGroupFilter(dict):
         :param str type: (Updatable) The type of filter.
         :param str value: (Updatable) The value of the filter.
         """
-        AnnouncementSubscriptionsFilterGroupFilter._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -169,25 +120,8 @@ class GetAnnouncementSubscriptionFilterGroupResult(dict):
         :param Sequence['GetAnnouncementSubscriptionFilterGroupFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        GetAnnouncementSubscriptionFilterGroupResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            filters=filters,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             filters: Optional[Sequence['outputs.GetAnnouncementSubscriptionFilterGroupFilterResult']] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if filters is None:
-            raise TypeError("Missing 'filters' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("filters", filters)
-        _setter("name", name)
+        pulumi.set(__self__, "filters", filters)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -215,25 +149,8 @@ class GetAnnouncementSubscriptionFilterGroupFilterResult(dict):
         :param str type: The type of filter.
         :param str value: The value of the filter.
         """
-        GetAnnouncementSubscriptionFilterGroupFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -256,20 +173,7 @@ class GetAnnouncementSubscriptionFilterGroupFilterResult(dict):
 class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult']):
-        GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -312,114 +216,21 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
         :param str time_created: The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param str time_updated: The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
-        GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            filter_groups=filter_groups,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_details=lifecycle_details,
-            ons_topic_id=ons_topic_id,
-            preferred_language=preferred_language,
-            preferred_time_zone=preferred_time_zone,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             display_name: Optional[str] = None,
-             filter_groups: Optional[Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupResult']] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_details: Optional[str] = None,
-             ons_topic_id: Optional[str] = None,
-             preferred_language: Optional[str] = None,
-             preferred_time_zone: Optional[str] = None,
-             state: Optional[str] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if filter_groups is None and 'filterGroups' in kwargs:
-            filter_groups = kwargs['filterGroups']
-        if filter_groups is None:
-            raise TypeError("Missing 'filter_groups' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_details is None:
-            raise TypeError("Missing 'lifecycle_details' argument")
-        if ons_topic_id is None and 'onsTopicId' in kwargs:
-            ons_topic_id = kwargs['onsTopicId']
-        if ons_topic_id is None:
-            raise TypeError("Missing 'ons_topic_id' argument")
-        if preferred_language is None and 'preferredLanguage' in kwargs:
-            preferred_language = kwargs['preferredLanguage']
-        if preferred_language is None:
-            raise TypeError("Missing 'preferred_language' argument")
-        if preferred_time_zone is None and 'preferredTimeZone' in kwargs:
-            preferred_time_zone = kwargs['preferredTimeZone']
-        if preferred_time_zone is None:
-            raise TypeError("Missing 'preferred_time_zone' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("display_name", display_name)
-        _setter("filter_groups", filter_groups)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_details", lifecycle_details)
-        _setter("ons_topic_id", ons_topic_id)
-        _setter("preferred_language", preferred_language)
-        _setter("preferred_time_zone", preferred_time_zone)
-        _setter("state", state)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "filter_groups", filter_groups)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        pulumi.set(__self__, "preferred_language", preferred_language)
+        pulumi.set(__self__, "preferred_time_zone", preferred_time_zone)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -551,25 +362,8 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
         :param Sequence['GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs'] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            filters=filters,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             filters: Optional[Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult']] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if filters is None:
-            raise TypeError("Missing 'filters' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("filters", filters)
-        _setter("name", name)
+        pulumi.set(__self__, "filters", filters)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -597,25 +391,8 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
         :param str type: The type of filter.
         :param str value: The value of the filter.
         """
-        GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("type", type)
-        _setter("value", value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -643,29 +420,10 @@ class GetAnnouncementSubscriptionsFilterResult(dict):
         """
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        GetAnnouncementSubscriptionsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

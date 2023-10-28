@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -49,85 +49,16 @@ class GetCommitmentAggregatedsComputedUsageAggregatedResult(dict):
         :param str time_end: Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
         :param str time_start: Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
         """
-        GetCommitmentAggregatedsComputedUsageAggregatedResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            aggregated_computed_usages=aggregated_computed_usages,
-            currency_code=currency_code,
-            parent_products=parent_products,
-            parent_subscribed_service_id=parent_subscribed_service_id,
-            plan_number=plan_number,
-            pricing_model=pricing_model,
-            rate_card_id=rate_card_id,
-            subscription_id=subscription_id,
-            time_end=time_end,
-            time_start=time_start,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             aggregated_computed_usages: Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult']] = None,
-             currency_code: Optional[str] = None,
-             parent_products: Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult']] = None,
-             parent_subscribed_service_id: Optional[str] = None,
-             plan_number: Optional[str] = None,
-             pricing_model: Optional[str] = None,
-             rate_card_id: Optional[str] = None,
-             subscription_id: Optional[str] = None,
-             time_end: Optional[str] = None,
-             time_start: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if aggregated_computed_usages is None and 'aggregatedComputedUsages' in kwargs:
-            aggregated_computed_usages = kwargs['aggregatedComputedUsages']
-        if aggregated_computed_usages is None:
-            raise TypeError("Missing 'aggregated_computed_usages' argument")
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if parent_products is None and 'parentProducts' in kwargs:
-            parent_products = kwargs['parentProducts']
-        if parent_products is None:
-            raise TypeError("Missing 'parent_products' argument")
-        if parent_subscribed_service_id is None and 'parentSubscribedServiceId' in kwargs:
-            parent_subscribed_service_id = kwargs['parentSubscribedServiceId']
-        if parent_subscribed_service_id is None:
-            raise TypeError("Missing 'parent_subscribed_service_id' argument")
-        if plan_number is None and 'planNumber' in kwargs:
-            plan_number = kwargs['planNumber']
-        if plan_number is None:
-            raise TypeError("Missing 'plan_number' argument")
-        if pricing_model is None and 'pricingModel' in kwargs:
-            pricing_model = kwargs['pricingModel']
-        if pricing_model is None:
-            raise TypeError("Missing 'pricing_model' argument")
-        if rate_card_id is None and 'rateCardId' in kwargs:
-            rate_card_id = kwargs['rateCardId']
-        if rate_card_id is None:
-            raise TypeError("Missing 'rate_card_id' argument")
-        if subscription_id is None and 'subscriptionId' in kwargs:
-            subscription_id = kwargs['subscriptionId']
-        if subscription_id is None:
-            raise TypeError("Missing 'subscription_id' argument")
-        if time_end is None and 'timeEnd' in kwargs:
-            time_end = kwargs['timeEnd']
-        if time_end is None:
-            raise TypeError("Missing 'time_end' argument")
-        if time_start is None and 'timeStart' in kwargs:
-            time_start = kwargs['timeStart']
-        if time_start is None:
-            raise TypeError("Missing 'time_start' argument")
-
-        _setter("aggregated_computed_usages", aggregated_computed_usages)
-        _setter("currency_code", currency_code)
-        _setter("parent_products", parent_products)
-        _setter("parent_subscribed_service_id", parent_subscribed_service_id)
-        _setter("plan_number", plan_number)
-        _setter("pricing_model", pricing_model)
-        _setter("rate_card_id", rate_card_id)
-        _setter("subscription_id", subscription_id)
-        _setter("time_end", time_end)
-        _setter("time_start", time_start)
+        pulumi.set(__self__, "aggregated_computed_usages", aggregated_computed_usages)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "parent_products", parent_products)
+        pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
+        pulumi.set(__self__, "plan_number", plan_number)
+        pulumi.set(__self__, "pricing_model", pricing_model)
+        pulumi.set(__self__, "rate_card_id", rate_card_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
 
     @property
     @pulumi.getter(name="aggregatedComputedUsages")
@@ -231,63 +162,14 @@ class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResu
         :param str time_metered_on: Metered Service date , expressed in RFC 3339 timestamp format.
         :param str type: Usage compute type in SPM.
         """
-        GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cost=cost,
-            cost_unrounded=cost_unrounded,
-            data_center=data_center,
-            net_unit_price=net_unit_price,
-            products=products,
-            quantity=quantity,
-            time_metered_on=time_metered_on,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cost: Optional[str] = None,
-             cost_unrounded: Optional[str] = None,
-             data_center: Optional[str] = None,
-             net_unit_price: Optional[str] = None,
-             products: Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult']] = None,
-             quantity: Optional[str] = None,
-             time_metered_on: Optional[str] = None,
-             type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cost is None:
-            raise TypeError("Missing 'cost' argument")
-        if cost_unrounded is None and 'costUnrounded' in kwargs:
-            cost_unrounded = kwargs['costUnrounded']
-        if cost_unrounded is None:
-            raise TypeError("Missing 'cost_unrounded' argument")
-        if data_center is None and 'dataCenter' in kwargs:
-            data_center = kwargs['dataCenter']
-        if data_center is None:
-            raise TypeError("Missing 'data_center' argument")
-        if net_unit_price is None and 'netUnitPrice' in kwargs:
-            net_unit_price = kwargs['netUnitPrice']
-        if net_unit_price is None:
-            raise TypeError("Missing 'net_unit_price' argument")
-        if products is None:
-            raise TypeError("Missing 'products' argument")
-        if quantity is None:
-            raise TypeError("Missing 'quantity' argument")
-        if time_metered_on is None and 'timeMeteredOn' in kwargs:
-            time_metered_on = kwargs['timeMeteredOn']
-        if time_metered_on is None:
-            raise TypeError("Missing 'time_metered_on' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("cost", cost)
-        _setter("cost_unrounded", cost_unrounded)
-        _setter("data_center", data_center)
-        _setter("net_unit_price", net_unit_price)
-        _setter("products", products)
-        _setter("quantity", quantity)
-        _setter("time_metered_on", time_metered_on)
-        _setter("type", type)
+        pulumi.set(__self__, "cost", cost)
+        pulumi.set(__self__, "cost_unrounded", cost_unrounded)
+        pulumi.set(__self__, "data_center", data_center)
+        pulumi.set(__self__, "net_unit_price", net_unit_price)
+        pulumi.set(__self__, "products", products)
+        pulumi.set(__self__, "quantity", quantity)
+        pulumi.set(__self__, "time_metered_on", time_metered_on)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -373,62 +255,13 @@ class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProd
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Measure
         """
-        GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_category=billing_category,
-            name=name,
-            part_number=part_number,
-            product_category=product_category,
-            provisioning_group=provisioning_group,
-            ucm_rate_card_part_type=ucm_rate_card_part_type,
-            unit_of_measure=unit_of_measure,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_category: Optional[str] = None,
-             name: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product_category: Optional[str] = None,
-             provisioning_group: Optional[str] = None,
-             ucm_rate_card_part_type: Optional[str] = None,
-             unit_of_measure: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_category is None and 'billingCategory' in kwargs:
-            billing_category = kwargs['billingCategory']
-        if billing_category is None:
-            raise TypeError("Missing 'billing_category' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product_category is None and 'productCategory' in kwargs:
-            product_category = kwargs['productCategory']
-        if product_category is None:
-            raise TypeError("Missing 'product_category' argument")
-        if provisioning_group is None and 'provisioningGroup' in kwargs:
-            provisioning_group = kwargs['provisioningGroup']
-        if provisioning_group is None:
-            raise TypeError("Missing 'provisioning_group' argument")
-        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
-            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
-        if ucm_rate_card_part_type is None:
-            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
-        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
-            unit_of_measure = kwargs['unitOfMeasure']
-        if unit_of_measure is None:
-            raise TypeError("Missing 'unit_of_measure' argument")
-
-        _setter("billing_category", billing_category)
-        _setter("name", name)
-        _setter("part_number", part_number)
-        _setter("product_category", product_category)
-        _setter("provisioning_group", provisioning_group)
-        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
-        _setter("unit_of_measure", unit_of_measure)
+        pulumi.set(__self__, "billing_category", billing_category)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product_category", product_category)
+        pulumi.set(__self__, "provisioning_group", provisioning_group)
+        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -506,62 +339,13 @@ class GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Measure
         """
-        GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_category=billing_category,
-            name=name,
-            part_number=part_number,
-            product_category=product_category,
-            provisioning_group=provisioning_group,
-            ucm_rate_card_part_type=ucm_rate_card_part_type,
-            unit_of_measure=unit_of_measure,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_category: Optional[str] = None,
-             name: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product_category: Optional[str] = None,
-             provisioning_group: Optional[str] = None,
-             ucm_rate_card_part_type: Optional[str] = None,
-             unit_of_measure: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_category is None and 'billingCategory' in kwargs:
-            billing_category = kwargs['billingCategory']
-        if billing_category is None:
-            raise TypeError("Missing 'billing_category' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product_category is None and 'productCategory' in kwargs:
-            product_category = kwargs['productCategory']
-        if product_category is None:
-            raise TypeError("Missing 'product_category' argument")
-        if provisioning_group is None and 'provisioningGroup' in kwargs:
-            provisioning_group = kwargs['provisioningGroup']
-        if provisioning_group is None:
-            raise TypeError("Missing 'provisioning_group' argument")
-        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
-            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
-        if ucm_rate_card_part_type is None:
-            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
-        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
-            unit_of_measure = kwargs['unitOfMeasure']
-        if unit_of_measure is None:
-            raise TypeError("Missing 'unit_of_measure' argument")
-
-        _setter("billing_category", billing_category)
-        _setter("name", name)
-        _setter("part_number", part_number)
-        _setter("product_category", product_category)
-        _setter("provisioning_group", provisioning_group)
-        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
-        _setter("unit_of_measure", unit_of_measure)
+        pulumi.set(__self__, "billing_category", billing_category)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product_category", product_category)
+        pulumi.set(__self__, "provisioning_group", provisioning_group)
+        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -629,29 +413,10 @@ class GetCommitmentAggregatedsFilterResult(dict):
         """
         :param str name: Product name
         """
-        GetCommitmentAggregatedsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -691,62 +456,13 @@ class GetComputedUsageParentProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        GetComputedUsageParentProductResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_category=billing_category,
-            name=name,
-            part_number=part_number,
-            product_category=product_category,
-            provisioning_group=provisioning_group,
-            ucm_rate_card_part_type=ucm_rate_card_part_type,
-            unit_of_measure=unit_of_measure,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_category: Optional[str] = None,
-             name: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product_category: Optional[str] = None,
-             provisioning_group: Optional[str] = None,
-             ucm_rate_card_part_type: Optional[str] = None,
-             unit_of_measure: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_category is None and 'billingCategory' in kwargs:
-            billing_category = kwargs['billingCategory']
-        if billing_category is None:
-            raise TypeError("Missing 'billing_category' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product_category is None and 'productCategory' in kwargs:
-            product_category = kwargs['productCategory']
-        if product_category is None:
-            raise TypeError("Missing 'product_category' argument")
-        if provisioning_group is None and 'provisioningGroup' in kwargs:
-            provisioning_group = kwargs['provisioningGroup']
-        if provisioning_group is None:
-            raise TypeError("Missing 'provisioning_group' argument")
-        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
-            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
-        if ucm_rate_card_part_type is None:
-            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
-        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
-            unit_of_measure = kwargs['unitOfMeasure']
-        if unit_of_measure is None:
-            raise TypeError("Missing 'unit_of_measure' argument")
-
-        _setter("billing_category", billing_category)
-        _setter("name", name)
-        _setter("part_number", part_number)
-        _setter("product_category", product_category)
-        _setter("provisioning_group", provisioning_group)
-        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
-        _setter("unit_of_measure", unit_of_measure)
+        pulumi.set(__self__, "billing_category", billing_category)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product_category", product_category)
+        pulumi.set(__self__, "provisioning_group", provisioning_group)
+        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -824,62 +540,13 @@ class GetComputedUsageProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        GetComputedUsageProductResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_category=billing_category,
-            name=name,
-            part_number=part_number,
-            product_category=product_category,
-            provisioning_group=provisioning_group,
-            ucm_rate_card_part_type=ucm_rate_card_part_type,
-            unit_of_measure=unit_of_measure,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_category: Optional[str] = None,
-             name: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product_category: Optional[str] = None,
-             provisioning_group: Optional[str] = None,
-             ucm_rate_card_part_type: Optional[str] = None,
-             unit_of_measure: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_category is None and 'billingCategory' in kwargs:
-            billing_category = kwargs['billingCategory']
-        if billing_category is None:
-            raise TypeError("Missing 'billing_category' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product_category is None and 'productCategory' in kwargs:
-            product_category = kwargs['productCategory']
-        if product_category is None:
-            raise TypeError("Missing 'product_category' argument")
-        if provisioning_group is None and 'provisioningGroup' in kwargs:
-            provisioning_group = kwargs['provisioningGroup']
-        if provisioning_group is None:
-            raise TypeError("Missing 'provisioning_group' argument")
-        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
-            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
-        if ucm_rate_card_part_type is None:
-            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
-        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
-            unit_of_measure = kwargs['unitOfMeasure']
-        if unit_of_measure is None:
-            raise TypeError("Missing 'unit_of_measure' argument")
-
-        _setter("billing_category", billing_category)
-        _setter("name", name)
-        _setter("part_number", part_number)
-        _setter("product_category", product_category)
-        _setter("provisioning_group", provisioning_group)
-        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
-        _setter("unit_of_measure", unit_of_measure)
+        pulumi.set(__self__, "billing_category", billing_category)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product_category", product_category)
+        pulumi.set(__self__, "provisioning_group", provisioning_group)
+        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -994,187 +661,32 @@ class GetComputedUsagesComputedUsageResult(dict):
         :param str unit_of_measure: Unit of Messure
         :param str usage_number: SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
         """
-        GetComputedUsagesComputedUsageResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            commitment_service_id=commitment_service_id,
-            compute_source=compute_source,
-            computed_usage_id=computed_usage_id,
-            cost=cost,
-            cost_rounded=cost_rounded,
-            currency_code=currency_code,
-            data_center=data_center,
-            id=id,
-            is_invoiced=is_invoiced,
-            mqs_message_id=mqs_message_id,
-            net_unit_price=net_unit_price,
-            original_usage_number=original_usage_number,
-            parent_products=parent_products,
-            parent_subscribed_service_id=parent_subscribed_service_id,
-            plan_number=plan_number,
-            products=products,
-            quantity=quantity,
-            rate_card_id=rate_card_id,
-            rate_card_tierd_id=rate_card_tierd_id,
-            time_created=time_created,
-            time_metered_on=time_metered_on,
-            time_of_arrival=time_of_arrival,
-            time_updated=time_updated,
-            type=type,
-            unit_of_measure=unit_of_measure,
-            usage_number=usage_number,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             commitment_service_id: Optional[str] = None,
-             compute_source: Optional[str] = None,
-             computed_usage_id: Optional[str] = None,
-             cost: Optional[str] = None,
-             cost_rounded: Optional[str] = None,
-             currency_code: Optional[str] = None,
-             data_center: Optional[str] = None,
-             id: Optional[str] = None,
-             is_invoiced: Optional[bool] = None,
-             mqs_message_id: Optional[str] = None,
-             net_unit_price: Optional[str] = None,
-             original_usage_number: Optional[str] = None,
-             parent_products: Optional[Sequence['outputs.GetComputedUsagesComputedUsageParentProductResult']] = None,
-             parent_subscribed_service_id: Optional[str] = None,
-             plan_number: Optional[str] = None,
-             products: Optional[Sequence['outputs.GetComputedUsagesComputedUsageProductResult']] = None,
-             quantity: Optional[str] = None,
-             rate_card_id: Optional[str] = None,
-             rate_card_tierd_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_metered_on: Optional[str] = None,
-             time_of_arrival: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             type: Optional[str] = None,
-             unit_of_measure: Optional[str] = None,
-             usage_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if commitment_service_id is None and 'commitmentServiceId' in kwargs:
-            commitment_service_id = kwargs['commitmentServiceId']
-        if commitment_service_id is None:
-            raise TypeError("Missing 'commitment_service_id' argument")
-        if compute_source is None and 'computeSource' in kwargs:
-            compute_source = kwargs['computeSource']
-        if compute_source is None:
-            raise TypeError("Missing 'compute_source' argument")
-        if computed_usage_id is None and 'computedUsageId' in kwargs:
-            computed_usage_id = kwargs['computedUsageId']
-        if computed_usage_id is None:
-            raise TypeError("Missing 'computed_usage_id' argument")
-        if cost is None:
-            raise TypeError("Missing 'cost' argument")
-        if cost_rounded is None and 'costRounded' in kwargs:
-            cost_rounded = kwargs['costRounded']
-        if cost_rounded is None:
-            raise TypeError("Missing 'cost_rounded' argument")
-        if currency_code is None and 'currencyCode' in kwargs:
-            currency_code = kwargs['currencyCode']
-        if currency_code is None:
-            raise TypeError("Missing 'currency_code' argument")
-        if data_center is None and 'dataCenter' in kwargs:
-            data_center = kwargs['dataCenter']
-        if data_center is None:
-            raise TypeError("Missing 'data_center' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_invoiced is None and 'isInvoiced' in kwargs:
-            is_invoiced = kwargs['isInvoiced']
-        if is_invoiced is None:
-            raise TypeError("Missing 'is_invoiced' argument")
-        if mqs_message_id is None and 'mqsMessageId' in kwargs:
-            mqs_message_id = kwargs['mqsMessageId']
-        if mqs_message_id is None:
-            raise TypeError("Missing 'mqs_message_id' argument")
-        if net_unit_price is None and 'netUnitPrice' in kwargs:
-            net_unit_price = kwargs['netUnitPrice']
-        if net_unit_price is None:
-            raise TypeError("Missing 'net_unit_price' argument")
-        if original_usage_number is None and 'originalUsageNumber' in kwargs:
-            original_usage_number = kwargs['originalUsageNumber']
-        if original_usage_number is None:
-            raise TypeError("Missing 'original_usage_number' argument")
-        if parent_products is None and 'parentProducts' in kwargs:
-            parent_products = kwargs['parentProducts']
-        if parent_products is None:
-            raise TypeError("Missing 'parent_products' argument")
-        if parent_subscribed_service_id is None and 'parentSubscribedServiceId' in kwargs:
-            parent_subscribed_service_id = kwargs['parentSubscribedServiceId']
-        if parent_subscribed_service_id is None:
-            raise TypeError("Missing 'parent_subscribed_service_id' argument")
-        if plan_number is None and 'planNumber' in kwargs:
-            plan_number = kwargs['planNumber']
-        if plan_number is None:
-            raise TypeError("Missing 'plan_number' argument")
-        if products is None:
-            raise TypeError("Missing 'products' argument")
-        if quantity is None:
-            raise TypeError("Missing 'quantity' argument")
-        if rate_card_id is None and 'rateCardId' in kwargs:
-            rate_card_id = kwargs['rateCardId']
-        if rate_card_id is None:
-            raise TypeError("Missing 'rate_card_id' argument")
-        if rate_card_tierd_id is None and 'rateCardTierdId' in kwargs:
-            rate_card_tierd_id = kwargs['rateCardTierdId']
-        if rate_card_tierd_id is None:
-            raise TypeError("Missing 'rate_card_tierd_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_metered_on is None and 'timeMeteredOn' in kwargs:
-            time_metered_on = kwargs['timeMeteredOn']
-        if time_metered_on is None:
-            raise TypeError("Missing 'time_metered_on' argument")
-        if time_of_arrival is None and 'timeOfArrival' in kwargs:
-            time_of_arrival = kwargs['timeOfArrival']
-        if time_of_arrival is None:
-            raise TypeError("Missing 'time_of_arrival' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
-            unit_of_measure = kwargs['unitOfMeasure']
-        if unit_of_measure is None:
-            raise TypeError("Missing 'unit_of_measure' argument")
-        if usage_number is None and 'usageNumber' in kwargs:
-            usage_number = kwargs['usageNumber']
-        if usage_number is None:
-            raise TypeError("Missing 'usage_number' argument")
-
-        _setter("commitment_service_id", commitment_service_id)
-        _setter("compute_source", compute_source)
-        _setter("computed_usage_id", computed_usage_id)
-        _setter("cost", cost)
-        _setter("cost_rounded", cost_rounded)
-        _setter("currency_code", currency_code)
-        _setter("data_center", data_center)
-        _setter("id", id)
-        _setter("is_invoiced", is_invoiced)
-        _setter("mqs_message_id", mqs_message_id)
-        _setter("net_unit_price", net_unit_price)
-        _setter("original_usage_number", original_usage_number)
-        _setter("parent_products", parent_products)
-        _setter("parent_subscribed_service_id", parent_subscribed_service_id)
-        _setter("plan_number", plan_number)
-        _setter("products", products)
-        _setter("quantity", quantity)
-        _setter("rate_card_id", rate_card_id)
-        _setter("rate_card_tierd_id", rate_card_tierd_id)
-        _setter("time_created", time_created)
-        _setter("time_metered_on", time_metered_on)
-        _setter("time_of_arrival", time_of_arrival)
-        _setter("time_updated", time_updated)
-        _setter("type", type)
-        _setter("unit_of_measure", unit_of_measure)
-        _setter("usage_number", usage_number)
+        pulumi.set(__self__, "commitment_service_id", commitment_service_id)
+        pulumi.set(__self__, "compute_source", compute_source)
+        pulumi.set(__self__, "computed_usage_id", computed_usage_id)
+        pulumi.set(__self__, "cost", cost)
+        pulumi.set(__self__, "cost_rounded", cost_rounded)
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "data_center", data_center)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_invoiced", is_invoiced)
+        pulumi.set(__self__, "mqs_message_id", mqs_message_id)
+        pulumi.set(__self__, "net_unit_price", net_unit_price)
+        pulumi.set(__self__, "original_usage_number", original_usage_number)
+        pulumi.set(__self__, "parent_products", parent_products)
+        pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
+        pulumi.set(__self__, "plan_number", plan_number)
+        pulumi.set(__self__, "products", products)
+        pulumi.set(__self__, "quantity", quantity)
+        pulumi.set(__self__, "rate_card_id", rate_card_id)
+        pulumi.set(__self__, "rate_card_tierd_id", rate_card_tierd_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_metered_on", time_metered_on)
+        pulumi.set(__self__, "time_of_arrival", time_of_arrival)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        pulumi.set(__self__, "usage_number", usage_number)
 
     @property
     @pulumi.getter(name="commitmentServiceId")
@@ -1401,62 +913,13 @@ class GetComputedUsagesComputedUsageParentProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        GetComputedUsagesComputedUsageParentProductResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_category=billing_category,
-            name=name,
-            part_number=part_number,
-            product_category=product_category,
-            provisioning_group=provisioning_group,
-            ucm_rate_card_part_type=ucm_rate_card_part_type,
-            unit_of_measure=unit_of_measure,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_category: Optional[str] = None,
-             name: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product_category: Optional[str] = None,
-             provisioning_group: Optional[str] = None,
-             ucm_rate_card_part_type: Optional[str] = None,
-             unit_of_measure: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_category is None and 'billingCategory' in kwargs:
-            billing_category = kwargs['billingCategory']
-        if billing_category is None:
-            raise TypeError("Missing 'billing_category' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product_category is None and 'productCategory' in kwargs:
-            product_category = kwargs['productCategory']
-        if product_category is None:
-            raise TypeError("Missing 'product_category' argument")
-        if provisioning_group is None and 'provisioningGroup' in kwargs:
-            provisioning_group = kwargs['provisioningGroup']
-        if provisioning_group is None:
-            raise TypeError("Missing 'provisioning_group' argument")
-        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
-            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
-        if ucm_rate_card_part_type is None:
-            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
-        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
-            unit_of_measure = kwargs['unitOfMeasure']
-        if unit_of_measure is None:
-            raise TypeError("Missing 'unit_of_measure' argument")
-
-        _setter("billing_category", billing_category)
-        _setter("name", name)
-        _setter("part_number", part_number)
-        _setter("product_category", product_category)
-        _setter("provisioning_group", provisioning_group)
-        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
-        _setter("unit_of_measure", unit_of_measure)
+        pulumi.set(__self__, "billing_category", billing_category)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product_category", product_category)
+        pulumi.set(__self__, "provisioning_group", provisioning_group)
+        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -1534,62 +997,13 @@ class GetComputedUsagesComputedUsageProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        GetComputedUsagesComputedUsageProductResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_category=billing_category,
-            name=name,
-            part_number=part_number,
-            product_category=product_category,
-            provisioning_group=provisioning_group,
-            ucm_rate_card_part_type=ucm_rate_card_part_type,
-            unit_of_measure=unit_of_measure,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_category: Optional[str] = None,
-             name: Optional[str] = None,
-             part_number: Optional[str] = None,
-             product_category: Optional[str] = None,
-             provisioning_group: Optional[str] = None,
-             ucm_rate_card_part_type: Optional[str] = None,
-             unit_of_measure: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_category is None and 'billingCategory' in kwargs:
-            billing_category = kwargs['billingCategory']
-        if billing_category is None:
-            raise TypeError("Missing 'billing_category' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if part_number is None and 'partNumber' in kwargs:
-            part_number = kwargs['partNumber']
-        if part_number is None:
-            raise TypeError("Missing 'part_number' argument")
-        if product_category is None and 'productCategory' in kwargs:
-            product_category = kwargs['productCategory']
-        if product_category is None:
-            raise TypeError("Missing 'product_category' argument")
-        if provisioning_group is None and 'provisioningGroup' in kwargs:
-            provisioning_group = kwargs['provisioningGroup']
-        if provisioning_group is None:
-            raise TypeError("Missing 'provisioning_group' argument")
-        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
-            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
-        if ucm_rate_card_part_type is None:
-            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
-        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
-            unit_of_measure = kwargs['unitOfMeasure']
-        if unit_of_measure is None:
-            raise TypeError("Missing 'unit_of_measure' argument")
-
-        _setter("billing_category", billing_category)
-        _setter("name", name)
-        _setter("part_number", part_number)
-        _setter("product_category", product_category)
-        _setter("provisioning_group", provisioning_group)
-        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
-        _setter("unit_of_measure", unit_of_measure)
+        pulumi.set(__self__, "billing_category", billing_category)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "part_number", part_number)
+        pulumi.set(__self__, "product_category", product_category)
+        pulumi.set(__self__, "provisioning_group", provisioning_group)
+        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -1657,29 +1071,10 @@ class GetComputedUsagesFilterResult(dict):
         """
         :param str name: Product name
         """
-        GetComputedUsagesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

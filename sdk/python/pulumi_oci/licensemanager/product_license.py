@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,65 +39,18 @@ class ProductLicenseArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ProductLicenseArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            is_vendor_oracle=is_vendor_oracle,
-            license_unit=license_unit,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            images=images,
-            vendor_name=vendor_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             is_vendor_oracle: Optional[pulumi.Input[bool]] = None,
-             license_unit: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             images: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
-             vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if is_vendor_oracle is None and 'isVendorOracle' in kwargs:
-            is_vendor_oracle = kwargs['isVendorOracle']
-        if is_vendor_oracle is None:
-            raise TypeError("Missing 'is_vendor_oracle' argument")
-        if license_unit is None and 'licenseUnit' in kwargs:
-            license_unit = kwargs['licenseUnit']
-        if license_unit is None:
-            raise TypeError("Missing 'license_unit' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if vendor_name is None and 'vendorName' in kwargs:
-            vendor_name = kwargs['vendorName']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("is_vendor_oracle", is_vendor_oracle)
-        _setter("license_unit", license_unit)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_vendor_oracle", is_vendor_oracle)
+        pulumi.set(__self__, "license_unit", license_unit)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if images is not None:
-            _setter("images", images)
+            pulumi.set(__self__, "images", images)
         if vendor_name is not None:
-            _setter("vendor_name", vendor_name)
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -250,129 +203,46 @@ class _ProductLicenseState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _ProductLicenseState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            active_license_record_count=active_license_record_count,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            images=images,
-            is_over_subscribed=is_over_subscribed,
-            is_unlimited=is_unlimited,
-            is_vendor_oracle=is_vendor_oracle,
-            license_unit=license_unit,
-            state=state,
-            status=status,
-            status_description=status_description,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            total_active_license_unit_count=total_active_license_unit_count,
-            total_license_record_count=total_license_record_count,
-            total_license_units_consumed=total_license_units_consumed,
-            vendor_name=vendor_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             active_license_record_count: Optional[pulumi.Input[int]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             images: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
-             is_over_subscribed: Optional[pulumi.Input[bool]] = None,
-             is_unlimited: Optional[pulumi.Input[bool]] = None,
-             is_vendor_oracle: Optional[pulumi.Input[bool]] = None,
-             license_unit: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             status_description: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             total_active_license_unit_count: Optional[pulumi.Input[int]] = None,
-             total_license_record_count: Optional[pulumi.Input[int]] = None,
-             total_license_units_consumed: Optional[pulumi.Input[float]] = None,
-             vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if active_license_record_count is None and 'activeLicenseRecordCount' in kwargs:
-            active_license_record_count = kwargs['activeLicenseRecordCount']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_over_subscribed is None and 'isOverSubscribed' in kwargs:
-            is_over_subscribed = kwargs['isOverSubscribed']
-        if is_unlimited is None and 'isUnlimited' in kwargs:
-            is_unlimited = kwargs['isUnlimited']
-        if is_vendor_oracle is None and 'isVendorOracle' in kwargs:
-            is_vendor_oracle = kwargs['isVendorOracle']
-        if license_unit is None and 'licenseUnit' in kwargs:
-            license_unit = kwargs['licenseUnit']
-        if status_description is None and 'statusDescription' in kwargs:
-            status_description = kwargs['statusDescription']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if total_active_license_unit_count is None and 'totalActiveLicenseUnitCount' in kwargs:
-            total_active_license_unit_count = kwargs['totalActiveLicenseUnitCount']
-        if total_license_record_count is None and 'totalLicenseRecordCount' in kwargs:
-            total_license_record_count = kwargs['totalLicenseRecordCount']
-        if total_license_units_consumed is None and 'totalLicenseUnitsConsumed' in kwargs:
-            total_license_units_consumed = kwargs['totalLicenseUnitsConsumed']
-        if vendor_name is None and 'vendorName' in kwargs:
-            vendor_name = kwargs['vendorName']
-
         if active_license_record_count is not None:
-            _setter("active_license_record_count", active_license_record_count)
+            pulumi.set(__self__, "active_license_record_count", active_license_record_count)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if images is not None:
-            _setter("images", images)
+            pulumi.set(__self__, "images", images)
         if is_over_subscribed is not None:
-            _setter("is_over_subscribed", is_over_subscribed)
+            pulumi.set(__self__, "is_over_subscribed", is_over_subscribed)
         if is_unlimited is not None:
-            _setter("is_unlimited", is_unlimited)
+            pulumi.set(__self__, "is_unlimited", is_unlimited)
         if is_vendor_oracle is not None:
-            _setter("is_vendor_oracle", is_vendor_oracle)
+            pulumi.set(__self__, "is_vendor_oracle", is_vendor_oracle)
         if license_unit is not None:
-            _setter("license_unit", license_unit)
+            pulumi.set(__self__, "license_unit", license_unit)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if status_description is not None:
-            _setter("status_description", status_description)
+            pulumi.set(__self__, "status_description", status_description)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if total_active_license_unit_count is not None:
-            _setter("total_active_license_unit_count", total_active_license_unit_count)
+            pulumi.set(__self__, "total_active_license_unit_count", total_active_license_unit_count)
         if total_license_record_count is not None:
-            _setter("total_license_record_count", total_license_record_count)
+            pulumi.set(__self__, "total_license_record_count", total_license_record_count)
         if total_license_units_consumed is not None:
-            _setter("total_license_units_consumed", total_license_units_consumed)
+            pulumi.set(__self__, "total_license_units_consumed", total_license_units_consumed)
         if vendor_name is not None:
-            _setter("vendor_name", vendor_name)
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="activeLicenseRecordCount")
@@ -738,10 +608,6 @@ class ProductLicense(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ProductLicenseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BdsInstanceMetastoreConfigArgs', 'BdsInstanceMetastoreConfig']
@@ -35,62 +35,15 @@ class BdsInstanceMetastoreConfigArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the metastore configuration
         """
-        BdsInstanceMetastoreConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bds_api_key_id=bds_api_key_id,
-            bds_api_key_passphrase=bds_api_key_passphrase,
-            bds_instance_id=bds_instance_id,
-            cluster_admin_password=cluster_admin_password,
-            metastore_id=metastore_id,
-            activate_trigger=activate_trigger,
-            display_name=display_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bds_api_key_id: Optional[pulumi.Input[str]] = None,
-             bds_api_key_passphrase: Optional[pulumi.Input[str]] = None,
-             bds_instance_id: Optional[pulumi.Input[str]] = None,
-             cluster_admin_password: Optional[pulumi.Input[str]] = None,
-             metastore_id: Optional[pulumi.Input[str]] = None,
-             activate_trigger: Optional[pulumi.Input[int]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bds_api_key_id is None and 'bdsApiKeyId' in kwargs:
-            bds_api_key_id = kwargs['bdsApiKeyId']
-        if bds_api_key_id is None:
-            raise TypeError("Missing 'bds_api_key_id' argument")
-        if bds_api_key_passphrase is None and 'bdsApiKeyPassphrase' in kwargs:
-            bds_api_key_passphrase = kwargs['bdsApiKeyPassphrase']
-        if bds_api_key_passphrase is None:
-            raise TypeError("Missing 'bds_api_key_passphrase' argument")
-        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
-            bds_instance_id = kwargs['bdsInstanceId']
-        if bds_instance_id is None:
-            raise TypeError("Missing 'bds_instance_id' argument")
-        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
-            cluster_admin_password = kwargs['clusterAdminPassword']
-        if cluster_admin_password is None:
-            raise TypeError("Missing 'cluster_admin_password' argument")
-        if metastore_id is None and 'metastoreId' in kwargs:
-            metastore_id = kwargs['metastoreId']
-        if metastore_id is None:
-            raise TypeError("Missing 'metastore_id' argument")
-        if activate_trigger is None and 'activateTrigger' in kwargs:
-            activate_trigger = kwargs['activateTrigger']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
-        _setter("bds_api_key_id", bds_api_key_id)
-        _setter("bds_api_key_passphrase", bds_api_key_passphrase)
-        _setter("bds_instance_id", bds_instance_id)
-        _setter("cluster_admin_password", cluster_admin_password)
-        _setter("metastore_id", metastore_id)
+        pulumi.set(__self__, "bds_api_key_id", bds_api_key_id)
+        pulumi.set(__self__, "bds_api_key_passphrase", bds_api_key_passphrase)
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+        pulumi.set(__self__, "metastore_id", metastore_id)
         if activate_trigger is not None:
-            _setter("activate_trigger", activate_trigger)
+            pulumi.set(__self__, "activate_trigger", activate_trigger)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
 
     @property
     @pulumi.getter(name="bdsApiKeyId")
@@ -213,79 +166,28 @@ class _BdsInstanceMetastoreConfigState:
         :param pulumi.Input[str] time_created: The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
-        _BdsInstanceMetastoreConfigState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            activate_trigger=activate_trigger,
-            bds_api_key_id=bds_api_key_id,
-            bds_api_key_passphrase=bds_api_key_passphrase,
-            bds_instance_id=bds_instance_id,
-            cluster_admin_password=cluster_admin_password,
-            display_name=display_name,
-            metastore_id=metastore_id,
-            metastore_type=metastore_type,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             activate_trigger: Optional[pulumi.Input[int]] = None,
-             bds_api_key_id: Optional[pulumi.Input[str]] = None,
-             bds_api_key_passphrase: Optional[pulumi.Input[str]] = None,
-             bds_instance_id: Optional[pulumi.Input[str]] = None,
-             cluster_admin_password: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             metastore_id: Optional[pulumi.Input[str]] = None,
-             metastore_type: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if activate_trigger is None and 'activateTrigger' in kwargs:
-            activate_trigger = kwargs['activateTrigger']
-        if bds_api_key_id is None and 'bdsApiKeyId' in kwargs:
-            bds_api_key_id = kwargs['bdsApiKeyId']
-        if bds_api_key_passphrase is None and 'bdsApiKeyPassphrase' in kwargs:
-            bds_api_key_passphrase = kwargs['bdsApiKeyPassphrase']
-        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
-            bds_instance_id = kwargs['bdsInstanceId']
-        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
-            cluster_admin_password = kwargs['clusterAdminPassword']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if metastore_id is None and 'metastoreId' in kwargs:
-            metastore_id = kwargs['metastoreId']
-        if metastore_type is None and 'metastoreType' in kwargs:
-            metastore_type = kwargs['metastoreType']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if activate_trigger is not None:
-            _setter("activate_trigger", activate_trigger)
+            pulumi.set(__self__, "activate_trigger", activate_trigger)
         if bds_api_key_id is not None:
-            _setter("bds_api_key_id", bds_api_key_id)
+            pulumi.set(__self__, "bds_api_key_id", bds_api_key_id)
         if bds_api_key_passphrase is not None:
-            _setter("bds_api_key_passphrase", bds_api_key_passphrase)
+            pulumi.set(__self__, "bds_api_key_passphrase", bds_api_key_passphrase)
         if bds_instance_id is not None:
-            _setter("bds_instance_id", bds_instance_id)
+            pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         if cluster_admin_password is not None:
-            _setter("cluster_admin_password", cluster_admin_password)
+            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if metastore_id is not None:
-            _setter("metastore_id", metastore_id)
+            pulumi.set(__self__, "metastore_id", metastore_id)
         if metastore_type is not None:
-            _setter("metastore_type", metastore_type)
+            pulumi.set(__self__, "metastore_type", metastore_type)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="activateTrigger")
@@ -523,10 +425,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BdsInstanceMetastoreConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

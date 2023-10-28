@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,59 +37,16 @@ class StreamPackagingConfigArgs:
         :param pulumi.Input['StreamPackagingConfigEncryptionArgs'] encryption: The encryption used by the stream packaging configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
-        StreamPackagingConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            distribution_channel_id=distribution_channel_id,
-            segment_time_in_seconds=segment_time_in_seconds,
-            stream_packaging_format=stream_packaging_format,
-            defined_tags=defined_tags,
-            encryption=encryption,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[pulumi.Input[str]] = None,
-             distribution_channel_id: Optional[pulumi.Input[str]] = None,
-             segment_time_in_seconds: Optional[pulumi.Input[int]] = None,
-             stream_packaging_format: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             encryption: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
-            distribution_channel_id = kwargs['distributionChannelId']
-        if distribution_channel_id is None:
-            raise TypeError("Missing 'distribution_channel_id' argument")
-        if segment_time_in_seconds is None and 'segmentTimeInSeconds' in kwargs:
-            segment_time_in_seconds = kwargs['segmentTimeInSeconds']
-        if segment_time_in_seconds is None:
-            raise TypeError("Missing 'segment_time_in_seconds' argument")
-        if stream_packaging_format is None and 'streamPackagingFormat' in kwargs:
-            stream_packaging_format = kwargs['streamPackagingFormat']
-        if stream_packaging_format is None:
-            raise TypeError("Missing 'stream_packaging_format' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("display_name", display_name)
-        _setter("distribution_channel_id", distribution_channel_id)
-        _setter("segment_time_in_seconds", segment_time_in_seconds)
-        _setter("stream_packaging_format", stream_packaging_format)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
+        pulumi.set(__self__, "segment_time_in_seconds", segment_time_in_seconds)
+        pulumi.set(__self__, "stream_packaging_format", stream_packaging_format)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if encryption is not None:
-            _setter("encryption", encryption)
+            pulumi.set(__self__, "encryption", encryption)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="displayName")
@@ -214,83 +171,30 @@ class _StreamPackagingConfigState:
         :param pulumi.Input[str] time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
         """
-        _StreamPackagingConfigState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            distribution_channel_id=distribution_channel_id,
-            encryption=encryption,
-            freeform_tags=freeform_tags,
-            segment_time_in_seconds=segment_time_in_seconds,
-            state=state,
-            stream_packaging_format=stream_packaging_format,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             distribution_channel_id: Optional[pulumi.Input[str]] = None,
-             encryption: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             segment_time_in_seconds: Optional[pulumi.Input[int]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             stream_packaging_format: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
-            distribution_channel_id = kwargs['distributionChannelId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if segment_time_in_seconds is None and 'segmentTimeInSeconds' in kwargs:
-            segment_time_in_seconds = kwargs['segmentTimeInSeconds']
-        if stream_packaging_format is None and 'streamPackagingFormat' in kwargs:
-            stream_packaging_format = kwargs['streamPackagingFormat']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if distribution_channel_id is not None:
-            _setter("distribution_channel_id", distribution_channel_id)
+            pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
         if encryption is not None:
-            _setter("encryption", encryption)
+            pulumi.set(__self__, "encryption", encryption)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if segment_time_in_seconds is not None:
-            _setter("segment_time_in_seconds", segment_time_in_seconds)
+            pulumi.set(__self__, "segment_time_in_seconds", segment_time_in_seconds)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if stream_packaging_format is not None:
-            _setter("stream_packaging_format", stream_packaging_format)
+            pulumi.set(__self__, "stream_packaging_format", stream_packaging_format)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -556,10 +460,6 @@ class StreamPackagingConfig(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            StreamPackagingConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -588,7 +488,6 @@ class StreamPackagingConfig(pulumi.CustomResource):
             if distribution_channel_id is None and not opts.urn:
                 raise TypeError("Missing required property 'distribution_channel_id'")
             __props__.__dict__["distribution_channel_id"] = distribution_channel_id
-            encryption = _utilities.configure(encryption, StreamPackagingConfigEncryptionArgs, True)
             __props__.__dict__["encryption"] = encryption
             __props__.__dict__["freeform_tags"] = freeform_tags
             if segment_time_in_seconds is None and not opts.urn:

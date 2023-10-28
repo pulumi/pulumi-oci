@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,112 +49,27 @@ class SqlEndpointArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, Any]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
-        SqlEndpointArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            driver_shape=driver_shape,
-            executor_shape=executor_shape,
-            max_executor_count=max_executor_count,
-            metastore_id=metastore_id,
-            min_executor_count=min_executor_count,
-            network_configuration=network_configuration,
-            sql_endpoint_version=sql_endpoint_version,
-            defined_tags=defined_tags,
-            description=description,
-            driver_shape_config=driver_shape_config,
-            executor_shape_config=executor_shape_config,
-            freeform_tags=freeform_tags,
-            spark_advanced_configurations=spark_advanced_configurations,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             driver_shape: Optional[pulumi.Input[str]] = None,
-             executor_shape: Optional[pulumi.Input[str]] = None,
-             max_executor_count: Optional[pulumi.Input[int]] = None,
-             metastore_id: Optional[pulumi.Input[str]] = None,
-             min_executor_count: Optional[pulumi.Input[int]] = None,
-             network_configuration: Optional[pulumi.Input['SqlEndpointNetworkConfigurationArgs']] = None,
-             sql_endpoint_version: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             driver_shape_config: Optional[pulumi.Input['SqlEndpointDriverShapeConfigArgs']] = None,
-             executor_shape_config: Optional[pulumi.Input['SqlEndpointExecutorShapeConfigArgs']] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             spark_advanced_configurations: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if driver_shape is None and 'driverShape' in kwargs:
-            driver_shape = kwargs['driverShape']
-        if driver_shape is None:
-            raise TypeError("Missing 'driver_shape' argument")
-        if executor_shape is None and 'executorShape' in kwargs:
-            executor_shape = kwargs['executorShape']
-        if executor_shape is None:
-            raise TypeError("Missing 'executor_shape' argument")
-        if max_executor_count is None and 'maxExecutorCount' in kwargs:
-            max_executor_count = kwargs['maxExecutorCount']
-        if max_executor_count is None:
-            raise TypeError("Missing 'max_executor_count' argument")
-        if metastore_id is None and 'metastoreId' in kwargs:
-            metastore_id = kwargs['metastoreId']
-        if metastore_id is None:
-            raise TypeError("Missing 'metastore_id' argument")
-        if min_executor_count is None and 'minExecutorCount' in kwargs:
-            min_executor_count = kwargs['minExecutorCount']
-        if min_executor_count is None:
-            raise TypeError("Missing 'min_executor_count' argument")
-        if network_configuration is None and 'networkConfiguration' in kwargs:
-            network_configuration = kwargs['networkConfiguration']
-        if network_configuration is None:
-            raise TypeError("Missing 'network_configuration' argument")
-        if sql_endpoint_version is None and 'sqlEndpointVersion' in kwargs:
-            sql_endpoint_version = kwargs['sqlEndpointVersion']
-        if sql_endpoint_version is None:
-            raise TypeError("Missing 'sql_endpoint_version' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
-            driver_shape_config = kwargs['driverShapeConfig']
-        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
-            executor_shape_config = kwargs['executorShapeConfig']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if spark_advanced_configurations is None and 'sparkAdvancedConfigurations' in kwargs:
-            spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("driver_shape", driver_shape)
-        _setter("executor_shape", executor_shape)
-        _setter("max_executor_count", max_executor_count)
-        _setter("metastore_id", metastore_id)
-        _setter("min_executor_count", min_executor_count)
-        _setter("network_configuration", network_configuration)
-        _setter("sql_endpoint_version", sql_endpoint_version)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "driver_shape", driver_shape)
+        pulumi.set(__self__, "executor_shape", executor_shape)
+        pulumi.set(__self__, "max_executor_count", max_executor_count)
+        pulumi.set(__self__, "metastore_id", metastore_id)
+        pulumi.set(__self__, "min_executor_count", min_executor_count)
+        pulumi.set(__self__, "network_configuration", network_configuration)
+        pulumi.set(__self__, "sql_endpoint_version", sql_endpoint_version)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if driver_shape_config is not None:
-            _setter("driver_shape_config", driver_shape_config)
+            pulumi.set(__self__, "driver_shape_config", driver_shape_config)
         if executor_shape_config is not None:
-            _setter("executor_shape_config", executor_shape_config)
+            pulumi.set(__self__, "executor_shape_config", executor_shape_config)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if spark_advanced_configurations is not None:
-            _setter("spark_advanced_configurations", spark_advanced_configurations)
+            pulumi.set(__self__, "spark_advanced_configurations", spark_advanced_configurations)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -395,155 +310,54 @@ class _SqlEndpointState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _SqlEndpointState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            driver_shape=driver_shape,
-            driver_shape_config=driver_shape_config,
-            executor_shape=executor_shape,
-            executor_shape_config=executor_shape_config,
-            freeform_tags=freeform_tags,
-            jdbc_endpoint_url=jdbc_endpoint_url,
-            lake_id=lake_id,
-            last_accepted_request_token=last_accepted_request_token,
-            max_executor_count=max_executor_count,
-            metastore_id=metastore_id,
-            min_executor_count=min_executor_count,
-            network_configuration=network_configuration,
-            spark_advanced_configurations=spark_advanced_configurations,
-            sql_endpoint_version=sql_endpoint_version,
-            state=state,
-            state_message=state_message,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            warehouse_bucket_uri=warehouse_bucket_uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             driver_shape: Optional[pulumi.Input[str]] = None,
-             driver_shape_config: Optional[pulumi.Input['SqlEndpointDriverShapeConfigArgs']] = None,
-             executor_shape: Optional[pulumi.Input[str]] = None,
-             executor_shape_config: Optional[pulumi.Input['SqlEndpointExecutorShapeConfigArgs']] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             jdbc_endpoint_url: Optional[pulumi.Input[str]] = None,
-             lake_id: Optional[pulumi.Input[str]] = None,
-             last_accepted_request_token: Optional[pulumi.Input[str]] = None,
-             max_executor_count: Optional[pulumi.Input[int]] = None,
-             metastore_id: Optional[pulumi.Input[str]] = None,
-             min_executor_count: Optional[pulumi.Input[int]] = None,
-             network_configuration: Optional[pulumi.Input['SqlEndpointNetworkConfigurationArgs']] = None,
-             spark_advanced_configurations: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             sql_endpoint_version: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             state_message: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if driver_shape is None and 'driverShape' in kwargs:
-            driver_shape = kwargs['driverShape']
-        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
-            driver_shape_config = kwargs['driverShapeConfig']
-        if executor_shape is None and 'executorShape' in kwargs:
-            executor_shape = kwargs['executorShape']
-        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
-            executor_shape_config = kwargs['executorShapeConfig']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if jdbc_endpoint_url is None and 'jdbcEndpointUrl' in kwargs:
-            jdbc_endpoint_url = kwargs['jdbcEndpointUrl']
-        if lake_id is None and 'lakeId' in kwargs:
-            lake_id = kwargs['lakeId']
-        if last_accepted_request_token is None and 'lastAcceptedRequestToken' in kwargs:
-            last_accepted_request_token = kwargs['lastAcceptedRequestToken']
-        if max_executor_count is None and 'maxExecutorCount' in kwargs:
-            max_executor_count = kwargs['maxExecutorCount']
-        if metastore_id is None and 'metastoreId' in kwargs:
-            metastore_id = kwargs['metastoreId']
-        if min_executor_count is None and 'minExecutorCount' in kwargs:
-            min_executor_count = kwargs['minExecutorCount']
-        if network_configuration is None and 'networkConfiguration' in kwargs:
-            network_configuration = kwargs['networkConfiguration']
-        if spark_advanced_configurations is None and 'sparkAdvancedConfigurations' in kwargs:
-            spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
-        if sql_endpoint_version is None and 'sqlEndpointVersion' in kwargs:
-            sql_endpoint_version = kwargs['sqlEndpointVersion']
-        if state_message is None and 'stateMessage' in kwargs:
-            state_message = kwargs['stateMessage']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
-            warehouse_bucket_uri = kwargs['warehouseBucketUri']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if driver_shape is not None:
-            _setter("driver_shape", driver_shape)
+            pulumi.set(__self__, "driver_shape", driver_shape)
         if driver_shape_config is not None:
-            _setter("driver_shape_config", driver_shape_config)
+            pulumi.set(__self__, "driver_shape_config", driver_shape_config)
         if executor_shape is not None:
-            _setter("executor_shape", executor_shape)
+            pulumi.set(__self__, "executor_shape", executor_shape)
         if executor_shape_config is not None:
-            _setter("executor_shape_config", executor_shape_config)
+            pulumi.set(__self__, "executor_shape_config", executor_shape_config)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if jdbc_endpoint_url is not None:
-            _setter("jdbc_endpoint_url", jdbc_endpoint_url)
+            pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
         if lake_id is not None:
-            _setter("lake_id", lake_id)
+            pulumi.set(__self__, "lake_id", lake_id)
         if last_accepted_request_token is not None:
-            _setter("last_accepted_request_token", last_accepted_request_token)
+            pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
         if max_executor_count is not None:
-            _setter("max_executor_count", max_executor_count)
+            pulumi.set(__self__, "max_executor_count", max_executor_count)
         if metastore_id is not None:
-            _setter("metastore_id", metastore_id)
+            pulumi.set(__self__, "metastore_id", metastore_id)
         if min_executor_count is not None:
-            _setter("min_executor_count", min_executor_count)
+            pulumi.set(__self__, "min_executor_count", min_executor_count)
         if network_configuration is not None:
-            _setter("network_configuration", network_configuration)
+            pulumi.set(__self__, "network_configuration", network_configuration)
         if spark_advanced_configurations is not None:
-            _setter("spark_advanced_configurations", spark_advanced_configurations)
+            pulumi.set(__self__, "spark_advanced_configurations", spark_advanced_configurations)
         if sql_endpoint_version is not None:
-            _setter("sql_endpoint_version", sql_endpoint_version)
+            pulumi.set(__self__, "sql_endpoint_version", sql_endpoint_version)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_message is not None:
-            _setter("state_message", state_message)
+            pulumi.set(__self__, "state_message", state_message)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if warehouse_bucket_uri is not None:
-            _setter("warehouse_bucket_uri", warehouse_bucket_uri)
+            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -925,10 +739,6 @@ class SqlEndpoint(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            SqlEndpointArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -969,12 +779,10 @@ class SqlEndpoint(pulumi.CustomResource):
             if driver_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'driver_shape'")
             __props__.__dict__["driver_shape"] = driver_shape
-            driver_shape_config = _utilities.configure(driver_shape_config, SqlEndpointDriverShapeConfigArgs, True)
             __props__.__dict__["driver_shape_config"] = driver_shape_config
             if executor_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'executor_shape'")
             __props__.__dict__["executor_shape"] = executor_shape
-            executor_shape_config = _utilities.configure(executor_shape_config, SqlEndpointExecutorShapeConfigArgs, True)
             __props__.__dict__["executor_shape_config"] = executor_shape_config
             __props__.__dict__["freeform_tags"] = freeform_tags
             if max_executor_count is None and not opts.urn:
@@ -986,7 +794,6 @@ class SqlEndpoint(pulumi.CustomResource):
             if min_executor_count is None and not opts.urn:
                 raise TypeError("Missing required property 'min_executor_count'")
             __props__.__dict__["min_executor_count"] = min_executor_count
-            network_configuration = _utilities.configure(network_configuration, SqlEndpointNetworkConfigurationArgs, True)
             if network_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration

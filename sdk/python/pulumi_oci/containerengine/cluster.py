@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,84 +47,27 @@ class ClusterArgs:
         :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[str] type: (Updatable) Type of cluster
         """
-        ClusterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            kubernetes_version=kubernetes_version,
-            vcn_id=vcn_id,
-            cluster_pod_network_options=cluster_pod_network_options,
-            defined_tags=defined_tags,
-            endpoint_config=endpoint_config,
-            freeform_tags=freeform_tags,
-            image_policy_config=image_policy_config,
-            kms_key_id=kms_key_id,
-            name=name,
-            options=options,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             kubernetes_version: Optional[pulumi.Input[str]] = None,
-             vcn_id: Optional[pulumi.Input[str]] = None,
-             cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             endpoint_config: Optional[pulumi.Input['ClusterEndpointConfigArgs']] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             image_policy_config: Optional[pulumi.Input['ClusterImagePolicyConfigArgs']] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
-            kubernetes_version = kwargs['kubernetesVersion']
-        if kubernetes_version is None:
-            raise TypeError("Missing 'kubernetes_version' argument")
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-        if vcn_id is None:
-            raise TypeError("Missing 'vcn_id' argument")
-        if cluster_pod_network_options is None and 'clusterPodNetworkOptions' in kwargs:
-            cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if endpoint_config is None and 'endpointConfig' in kwargs:
-            endpoint_config = kwargs['endpointConfig']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
-            image_policy_config = kwargs['imagePolicyConfig']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-
-        _setter("compartment_id", compartment_id)
-        _setter("kubernetes_version", kubernetes_version)
-        _setter("vcn_id", vcn_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        pulumi.set(__self__, "vcn_id", vcn_id)
         if cluster_pod_network_options is not None:
-            _setter("cluster_pod_network_options", cluster_pod_network_options)
+            pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if endpoint_config is not None:
-            _setter("endpoint_config", endpoint_config)
+            pulumi.set(__self__, "endpoint_config", endpoint_config)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if image_policy_config is not None:
-            _setter("image_policy_config", image_policy_config)
+            pulumi.set(__self__, "image_policy_config", image_policy_config)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if options is not None:
-            _setter("options", options)
+            pulumi.set(__self__, "options", options)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -319,105 +262,40 @@ class _ClusterState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _ClusterState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            available_kubernetes_upgrades=available_kubernetes_upgrades,
-            cluster_pod_network_options=cluster_pod_network_options,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            endpoint_config=endpoint_config,
-            endpoints=endpoints,
-            freeform_tags=freeform_tags,
-            image_policy_config=image_policy_config,
-            kms_key_id=kms_key_id,
-            kubernetes_version=kubernetes_version,
-            lifecycle_details=lifecycle_details,
-            metadatas=metadatas,
-            name=name,
-            options=options,
-            state=state,
-            type=type,
-            vcn_id=vcn_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             available_kubernetes_upgrades: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             endpoint_config: Optional[pulumi.Input['ClusterEndpointConfigArgs']] = None,
-             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterEndpointArgs']]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             image_policy_config: Optional[pulumi.Input['ClusterImagePolicyConfigArgs']] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             kubernetes_version: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterMetadataArgs']]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if available_kubernetes_upgrades is None and 'availableKubernetesUpgrades' in kwargs:
-            available_kubernetes_upgrades = kwargs['availableKubernetesUpgrades']
-        if cluster_pod_network_options is None and 'clusterPodNetworkOptions' in kwargs:
-            cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if endpoint_config is None and 'endpointConfig' in kwargs:
-            endpoint_config = kwargs['endpointConfig']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
-            image_policy_config = kwargs['imagePolicyConfig']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
-            kubernetes_version = kwargs['kubernetesVersion']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-
         if available_kubernetes_upgrades is not None:
-            _setter("available_kubernetes_upgrades", available_kubernetes_upgrades)
+            pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
         if cluster_pod_network_options is not None:
-            _setter("cluster_pod_network_options", cluster_pod_network_options)
+            pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if endpoint_config is not None:
-            _setter("endpoint_config", endpoint_config)
+            pulumi.set(__self__, "endpoint_config", endpoint_config)
         if endpoints is not None:
-            _setter("endpoints", endpoints)
+            pulumi.set(__self__, "endpoints", endpoints)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if image_policy_config is not None:
-            _setter("image_policy_config", image_policy_config)
+            pulumi.set(__self__, "image_policy_config", image_policy_config)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kubernetes_version is not None:
-            _setter("kubernetes_version", kubernetes_version)
+            pulumi.set(__self__, "kubernetes_version", kubernetes_version)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if metadatas is not None:
-            _setter("metadatas", metadatas)
+            pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if options is not None:
-            _setter("options", options)
+            pulumi.set(__self__, "options", options)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if vcn_id is not None:
-            _setter("vcn_id", vcn_id)
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availableKubernetesUpgrades")
@@ -707,10 +585,6 @@ class Cluster(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ClusterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -742,17 +616,14 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
-            endpoint_config = _utilities.configure(endpoint_config, ClusterEndpointConfigArgs, True)
             __props__.__dict__["endpoint_config"] = endpoint_config
             __props__.__dict__["freeform_tags"] = freeform_tags
-            image_policy_config = _utilities.configure(image_policy_config, ClusterImagePolicyConfigArgs, True)
             __props__.__dict__["image_policy_config"] = image_policy_config
             __props__.__dict__["kms_key_id"] = kms_key_id
             if kubernetes_version is None and not opts.urn:
                 raise TypeError("Missing required property 'kubernetes_version'")
             __props__.__dict__["kubernetes_version"] = kubernetes_version
             __props__.__dict__["name"] = name
-            options = _utilities.configure(options, ClusterOptionsArgs, True)
             __props__.__dict__["options"] = options
             __props__.__dict__["type"] = type
             if vcn_id is None and not opts.urn:

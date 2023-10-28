@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -57,88 +57,27 @@ class MountTargetArgs:
         :param pulumi.Input['MountTargetLdapIdmapArgs'] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         """
-        MountTargetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            subnet_id=subnet_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            idmap_type=idmap_type,
-            ip_address=ip_address,
-            kerberos=kerberos,
-            ldap_idmap=ldap_idmap,
-            nsg_ids=nsg_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             idmap_type: Optional[pulumi.Input[str]] = None,
-             ip_address: Optional[pulumi.Input[str]] = None,
-             kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
-             ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if idmap_type is None and 'idmapType' in kwargs:
-            idmap_type = kwargs['idmapType']
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if ldap_idmap is None and 'ldapIdmap' in kwargs:
-            ldap_idmap = kwargs['ldapIdmap']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-
-        _setter("availability_domain", availability_domain)
-        _setter("compartment_id", compartment_id)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if idmap_type is not None:
-            _setter("idmap_type", idmap_type)
+            pulumi.set(__self__, "idmap_type", idmap_type)
         if ip_address is not None:
-            _setter("ip_address", ip_address)
+            pulumi.set(__self__, "ip_address", ip_address)
         if kerberos is not None:
-            _setter("kerberos", kerberos)
+            pulumi.set(__self__, "kerberos", kerberos)
         if ldap_idmap is not None:
-            _setter("ldap_idmap", ldap_idmap)
+            pulumi.set(__self__, "ldap_idmap", ldap_idmap)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -353,113 +292,40 @@ class _MountTargetState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        _MountTargetState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            export_set_id=export_set_id,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            idmap_type=idmap_type,
-            ip_address=ip_address,
-            kerberos=kerberos,
-            ldap_idmap=ldap_idmap,
-            lifecycle_details=lifecycle_details,
-            nsg_ids=nsg_ids,
-            private_ip_ids=private_ip_ids,
-            state=state,
-            subnet_id=subnet_id,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             export_set_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             idmap_type: Optional[pulumi.Input[str]] = None,
-             ip_address: Optional[pulumi.Input[str]] = None,
-             kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
-             ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if export_set_id is None and 'exportSetId' in kwargs:
-            export_set_id = kwargs['exportSetId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if idmap_type is None and 'idmapType' in kwargs:
-            idmap_type = kwargs['idmapType']
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if ldap_idmap is None and 'ldapIdmap' in kwargs:
-            ldap_idmap = kwargs['ldapIdmap']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_ip_ids is None and 'privateIpIds' in kwargs:
-            private_ip_ids = kwargs['privateIpIds']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if export_set_id is not None:
-            _setter("export_set_id", export_set_id)
+            pulumi.set(__self__, "export_set_id", export_set_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if idmap_type is not None:
-            _setter("idmap_type", idmap_type)
+            pulumi.set(__self__, "idmap_type", idmap_type)
         if ip_address is not None:
-            _setter("ip_address", ip_address)
+            pulumi.set(__self__, "ip_address", ip_address)
         if kerberos is not None:
-            _setter("kerberos", kerberos)
+            pulumi.set(__self__, "kerberos", kerberos)
         if ldap_idmap is not None:
-            _setter("ldap_idmap", ldap_idmap)
+            pulumi.set(__self__, "ldap_idmap", ldap_idmap)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip_ids is not None:
-            _setter("private_ip_ids", private_ip_ids)
+            pulumi.set(__self__, "private_ip_ids", private_ip_ids)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -911,10 +777,6 @@ class MountTarget(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MountTargetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -953,9 +815,7 @@ class MountTarget(pulumi.CustomResource):
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["idmap_type"] = idmap_type
             __props__.__dict__["ip_address"] = ip_address
-            kerberos = _utilities.configure(kerberos, MountTargetKerberosArgs, True)
             __props__.__dict__["kerberos"] = kerberos
-            ldap_idmap = _utilities.configure(ldap_idmap, MountTargetLdapIdmapArgs, True)
             __props__.__dict__["ldap_idmap"] = ldap_idmap
             __props__.__dict__["nsg_ids"] = nsg_ids
             if subnet_id is None and not opts.urn:

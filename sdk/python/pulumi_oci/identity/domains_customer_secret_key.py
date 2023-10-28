@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -125,85 +125,32 @@ class DomainsCustomerSecretKeyArgs:
                * type: complex
                * uniqueness: none
         """
-        DomainsCustomerSecretKeyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idcs_endpoint=idcs_endpoint,
-            schemas=schemas,
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            description=description,
-            display_name=display_name,
-            expires_on=expires_on,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            status=status,
-            tags=tags,
-            urnietfparamsscimschemasoracleidcsextensionself_change_user=urnietfparamsscimschemasoracleidcsextensionself_change_user,
-            user=user,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             expires_on: Optional[pulumi.Input[str]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCustomerSecretKeyTagArgs']]]] = None,
-             urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
-             user: Optional[pulumi.Input['DomainsCustomerSecretKeyUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_endpoint is None:
-            raise TypeError("Missing 'idcs_endpoint' argument")
-        if schemas is None:
-            raise TypeError("Missing 'schemas' argument")
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if expires_on is None and 'expiresOn' in kwargs:
-            expires_on = kwargs['expiresOn']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if urnietfparamsscimschemasoracleidcsextensionself_change_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
-            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
-
-        _setter("idcs_endpoint", idcs_endpoint)
-        _setter("schemas", schemas)
+        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+        pulumi.set(__self__, "schemas", schemas)
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if expires_on is not None:
-            _setter("expires_on", expires_on)
+            pulumi.set(__self__, "expires_on", expires_on)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if urnietfparamsscimschemasoracleidcsextensionself_change_user is not None:
-            _setter("urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
+            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
         if user is not None:
-            _setter("user", user)
+            pulumi.set(__self__, "user", user)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -676,141 +623,54 @@ class _DomainsCustomerSecretKeyState:
                * type: complex
                * uniqueness: none
         """
-        _DomainsCustomerSecretKeyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            access_key=access_key,
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            compartment_ocid=compartment_ocid,
-            delete_in_progress=delete_in_progress,
-            description=description,
-            display_name=display_name,
-            domain_ocid=domain_ocid,
-            expires_on=expires_on,
-            idcs_created_bies=idcs_created_bies,
-            idcs_endpoint=idcs_endpoint,
-            idcs_last_modified_bies=idcs_last_modified_bies,
-            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
-            idcs_prevented_operations=idcs_prevented_operations,
-            metas=metas,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            schemas=schemas,
-            status=status,
-            tags=tags,
-            tenancy_ocid=tenancy_ocid,
-            urnietfparamsscimschemasoracleidcsextensionself_change_user=urnietfparamsscimschemasoracleidcsextensionself_change_user,
-            user=user,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             access_key: Optional[pulumi.Input[str]] = None,
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             compartment_ocid: Optional[pulumi.Input[str]] = None,
-             delete_in_progress: Optional[pulumi.Input[bool]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             domain_ocid: Optional[pulumi.Input[str]] = None,
-             expires_on: Optional[pulumi.Input[str]] = None,
-             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCustomerSecretKeyIdcsCreatedByArgs']]]] = None,
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCustomerSecretKeyIdcsLastModifiedByArgs']]]] = None,
-             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
-             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCustomerSecretKeyMetaArgs']]]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             status: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCustomerSecretKeyTagArgs']]]] = None,
-             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
-             user: Optional[pulumi.Input['DomainsCustomerSecretKeyUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if access_key is None and 'accessKey' in kwargs:
-            access_key = kwargs['accessKey']
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if compartment_ocid is None and 'compartmentOcid' in kwargs:
-            compartment_ocid = kwargs['compartmentOcid']
-        if delete_in_progress is None and 'deleteInProgress' in kwargs:
-            delete_in_progress = kwargs['deleteInProgress']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if domain_ocid is None and 'domainOcid' in kwargs:
-            domain_ocid = kwargs['domainOcid']
-        if expires_on is None and 'expiresOn' in kwargs:
-            expires_on = kwargs['expiresOn']
-        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
-            idcs_created_bies = kwargs['idcsCreatedBies']
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
-            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
-            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
-            idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
-            tenancy_ocid = kwargs['tenancyOcid']
-        if urnietfparamsscimschemasoracleidcsextensionself_change_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
-            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
-
         if access_key is not None:
-            _setter("access_key", access_key)
+            pulumi.set(__self__, "access_key", access_key)
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if compartment_ocid is not None:
-            _setter("compartment_ocid", compartment_ocid)
+            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            _setter("delete_in_progress", delete_in_progress)
+            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if domain_ocid is not None:
-            _setter("domain_ocid", domain_ocid)
+            pulumi.set(__self__, "domain_ocid", domain_ocid)
         if expires_on is not None:
-            _setter("expires_on", expires_on)
+            pulumi.set(__self__, "expires_on", expires_on)
         if idcs_created_bies is not None:
-            _setter("idcs_created_bies", idcs_created_bies)
+            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            _setter("idcs_endpoint", idcs_endpoint)
+            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
+            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            _setter("idcs_prevented_operations", idcs_prevented_operations)
+            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
         if metas is not None:
-            _setter("metas", metas)
+            pulumi.set(__self__, "metas", metas)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            _setter("schemas", schemas)
+            pulumi.set(__self__, "schemas", schemas)
         if status is not None:
-            _setter("status", status)
+            pulumi.set(__self__, "status", status)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if tenancy_ocid is not None:
-            _setter("tenancy_ocid", tenancy_ocid)
+            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
         if urnietfparamsscimschemasoracleidcsextensionself_change_user is not None:
-            _setter("urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
+            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
         if user is not None:
-            _setter("user", user)
+            pulumi.set(__self__, "user", user)
 
     @property
     @pulumi.getter(name="accessKey")
@@ -1428,10 +1288,6 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DomainsCustomerSecretKeyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1476,9 +1332,7 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
             __props__.__dict__["schemas"] = schemas
             __props__.__dict__["status"] = status
             __props__.__dict__["tags"] = tags
-            urnietfparamsscimschemasoracleidcsextensionself_change_user = _utilities.configure(urnietfparamsscimschemasoracleidcsextensionself_change_user, DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs, True)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionself_change_user"] = urnietfparamsscimschemasoracleidcsextensionself_change_user
-            user = _utilities.configure(user, DomainsCustomerSecretKeyUserArgs, True)
             __props__.__dict__["user"] = user
             __props__.__dict__["access_key"] = None
             __props__.__dict__["compartment_ocid"] = None

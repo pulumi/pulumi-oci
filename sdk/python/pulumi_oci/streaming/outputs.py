@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -56,28 +56,9 @@ class StreamPoolCustomEncryptionKey(dict):
         :param str kms_key_id: (Updatable) Custom Encryption Key (Master Key) ocid.
         :param str key_state: Life cycle State of the custom key
         """
-        StreamPoolCustomEncryptionKey._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            kms_key_id=kms_key_id,
-            key_state=key_state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             kms_key_id: Optional[str] = None,
-             key_state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_id is None:
-            raise TypeError("Missing 'kms_key_id' argument")
-        if key_state is None and 'keyState' in kwargs:
-            key_state = kwargs['keyState']
-
-        _setter("kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         if key_state is not None:
-            _setter("key_state", key_state)
+            pulumi.set(__self__, "key_state", key_state)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -132,39 +113,14 @@ class StreamPoolKafkaSettings(dict):
         :param int log_retention_hours: (Updatable) The number of hours to keep a log file before deleting it (in hours).
         :param int num_partitions: (Updatable) The default number of log partitions per topic.
         """
-        StreamPoolKafkaSettings._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auto_create_topics_enable=auto_create_topics_enable,
-            bootstrap_servers=bootstrap_servers,
-            log_retention_hours=log_retention_hours,
-            num_partitions=num_partitions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auto_create_topics_enable: Optional[bool] = None,
-             bootstrap_servers: Optional[str] = None,
-             log_retention_hours: Optional[int] = None,
-             num_partitions: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
-            auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
-            bootstrap_servers = kwargs['bootstrapServers']
-        if log_retention_hours is None and 'logRetentionHours' in kwargs:
-            log_retention_hours = kwargs['logRetentionHours']
-        if num_partitions is None and 'numPartitions' in kwargs:
-            num_partitions = kwargs['numPartitions']
-
         if auto_create_topics_enable is not None:
-            _setter("auto_create_topics_enable", auto_create_topics_enable)
+            pulumi.set(__self__, "auto_create_topics_enable", auto_create_topics_enable)
         if bootstrap_servers is not None:
-            _setter("bootstrap_servers", bootstrap_servers)
+            pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
         if log_retention_hours is not None:
-            _setter("log_retention_hours", log_retention_hours)
+            pulumi.set(__self__, "log_retention_hours", log_retention_hours)
         if num_partitions is not None:
-            _setter("num_partitions", num_partitions)
+            pulumi.set(__self__, "num_partitions", num_partitions)
 
     @property
     @pulumi.getter(name="autoCreateTopicsEnable")
@@ -235,33 +191,12 @@ class StreamPoolPrivateEndpointSettings(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        StreamPoolPrivateEndpointSettings._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            nsg_ids=nsg_ids,
-            private_endpoint_ip=private_endpoint_ip,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             nsg_ids: Optional[Sequence[str]] = None,
-             private_endpoint_ip: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
-            private_endpoint_ip = kwargs['privateEndpointIp']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
-            _setter("private_endpoint_ip", private_endpoint_ip)
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -313,65 +248,14 @@ class GetConnectHarnessesConnectHarnessResult(dict):
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
-        GetConnectHarnessesConnectHarnessResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_state_details=lifecycle_state_details,
-            name=name,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_state_details: Optional[str] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
-            lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if lifecycle_state_details is None:
-            raise TypeError("Missing 'lifecycle_state_details' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_state_details", lifecycle_state_details)
-        _setter("name", name)
-        _setter("state", state)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -447,29 +331,10 @@ class GetConnectHarnessesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        GetConnectHarnessesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -499,29 +364,8 @@ class GetStreamPoolCustomEncryptionKeyResult(dict):
         :param str key_state: Life cycle State of the custom key
         :param str kms_key_id: Custom Encryption Key (Master Key) ocid.
         """
-        GetStreamPoolCustomEncryptionKeyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key_state=key_state,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key_state: Optional[str] = None,
-             kms_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key_state is None and 'keyState' in kwargs:
-            key_state = kwargs['keyState']
-        if key_state is None:
-            raise TypeError("Missing 'key_state' argument")
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_id is None:
-            raise TypeError("Missing 'kms_key_id' argument")
-
-        _setter("key_state", key_state)
-        _setter("kms_key_id", kms_key_id)
+        pulumi.set(__self__, "key_state", key_state)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="keyState")
@@ -553,43 +397,10 @@ class GetStreamPoolKafkaSettingResult(dict):
         :param int log_retention_hours: The number of hours to keep a log file before deleting it (in hours).
         :param int num_partitions: The default number of log partitions per topic.
         """
-        GetStreamPoolKafkaSettingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auto_create_topics_enable=auto_create_topics_enable,
-            bootstrap_servers=bootstrap_servers,
-            log_retention_hours=log_retention_hours,
-            num_partitions=num_partitions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auto_create_topics_enable: Optional[bool] = None,
-             bootstrap_servers: Optional[str] = None,
-             log_retention_hours: Optional[int] = None,
-             num_partitions: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
-            auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if auto_create_topics_enable is None:
-            raise TypeError("Missing 'auto_create_topics_enable' argument")
-        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
-            bootstrap_servers = kwargs['bootstrapServers']
-        if bootstrap_servers is None:
-            raise TypeError("Missing 'bootstrap_servers' argument")
-        if log_retention_hours is None and 'logRetentionHours' in kwargs:
-            log_retention_hours = kwargs['logRetentionHours']
-        if log_retention_hours is None:
-            raise TypeError("Missing 'log_retention_hours' argument")
-        if num_partitions is None and 'numPartitions' in kwargs:
-            num_partitions = kwargs['numPartitions']
-        if num_partitions is None:
-            raise TypeError("Missing 'num_partitions' argument")
-
-        _setter("auto_create_topics_enable", auto_create_topics_enable)
-        _setter("bootstrap_servers", bootstrap_servers)
-        _setter("log_retention_hours", log_retention_hours)
-        _setter("num_partitions", num_partitions)
+        pulumi.set(__self__, "auto_create_topics_enable", auto_create_topics_enable)
+        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+        pulumi.set(__self__, "log_retention_hours", log_retention_hours)
+        pulumi.set(__self__, "num_partitions", num_partitions)
 
     @property
     @pulumi.getter(name="autoCreateTopicsEnable")
@@ -635,36 +446,9 @@ class GetStreamPoolPrivateEndpointSettingResult(dict):
         :param str private_endpoint_ip: The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
         :param str subnet_id: The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
         """
-        GetStreamPoolPrivateEndpointSettingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            nsg_ids=nsg_ids,
-            private_endpoint_ip=private_endpoint_ip,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             nsg_ids: Optional[Sequence[str]] = None,
-             private_endpoint_ip: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if nsg_ids is None:
-            raise TypeError("Missing 'nsg_ids' argument")
-        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
-            private_endpoint_ip = kwargs['privateEndpointIp']
-        if private_endpoint_ip is None:
-            raise TypeError("Missing 'private_endpoint_ip' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-
-        _setter("nsg_ids", nsg_ids)
-        _setter("private_endpoint_ip", private_endpoint_ip)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -700,29 +484,10 @@ class GetStreamPoolsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        GetStreamPoolsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -774,100 +539,19 @@ class GetStreamPoolsStreamPoolResult(dict):
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
-        GetStreamPoolsStreamPoolResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            custom_encryption_keys=custom_encryption_keys,
-            defined_tags=defined_tags,
-            endpoint_fqdn=endpoint_fqdn,
-            freeform_tags=freeform_tags,
-            id=id,
-            is_private=is_private,
-            kafka_settings=kafka_settings,
-            lifecycle_state_details=lifecycle_state_details,
-            name=name,
-            private_endpoint_settings=private_endpoint_settings,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             custom_encryption_keys: Optional[Sequence['outputs.GetStreamPoolsStreamPoolCustomEncryptionKeyResult']] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             endpoint_fqdn: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             is_private: Optional[bool] = None,
-             kafka_settings: Optional[Sequence['outputs.GetStreamPoolsStreamPoolKafkaSettingResult']] = None,
-             lifecycle_state_details: Optional[str] = None,
-             name: Optional[str] = None,
-             private_endpoint_settings: Optional[Sequence['outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult']] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if custom_encryption_keys is None and 'customEncryptionKeys' in kwargs:
-            custom_encryption_keys = kwargs['customEncryptionKeys']
-        if custom_encryption_keys is None:
-            raise TypeError("Missing 'custom_encryption_keys' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if endpoint_fqdn is None and 'endpointFqdn' in kwargs:
-            endpoint_fqdn = kwargs['endpointFqdn']
-        if endpoint_fqdn is None:
-            raise TypeError("Missing 'endpoint_fqdn' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if is_private is None and 'isPrivate' in kwargs:
-            is_private = kwargs['isPrivate']
-        if is_private is None:
-            raise TypeError("Missing 'is_private' argument")
-        if kafka_settings is None and 'kafkaSettings' in kwargs:
-            kafka_settings = kwargs['kafkaSettings']
-        if kafka_settings is None:
-            raise TypeError("Missing 'kafka_settings' argument")
-        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
-            lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if lifecycle_state_details is None:
-            raise TypeError("Missing 'lifecycle_state_details' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if private_endpoint_settings is None and 'privateEndpointSettings' in kwargs:
-            private_endpoint_settings = kwargs['privateEndpointSettings']
-        if private_endpoint_settings is None:
-            raise TypeError("Missing 'private_endpoint_settings' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("custom_encryption_keys", custom_encryption_keys)
-        _setter("defined_tags", defined_tags)
-        _setter("endpoint_fqdn", endpoint_fqdn)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("is_private", is_private)
-        _setter("kafka_settings", kafka_settings)
-        _setter("lifecycle_state_details", lifecycle_state_details)
-        _setter("name", name)
-        _setter("private_endpoint_settings", private_endpoint_settings)
-        _setter("state", state)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "custom_encryption_keys", custom_encryption_keys)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_private", is_private)
+        pulumi.set(__self__, "kafka_settings", kafka_settings)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -983,29 +667,8 @@ class GetStreamPoolsStreamPoolCustomEncryptionKeyResult(dict):
         :param str key_state: Life cycle State of the custom key
         :param str kms_key_id: Custom Encryption Key (Master Key) ocid.
         """
-        GetStreamPoolsStreamPoolCustomEncryptionKeyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key_state=key_state,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key_state: Optional[str] = None,
-             kms_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key_state is None and 'keyState' in kwargs:
-            key_state = kwargs['keyState']
-        if key_state is None:
-            raise TypeError("Missing 'key_state' argument")
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_id is None:
-            raise TypeError("Missing 'kms_key_id' argument")
-
-        _setter("key_state", key_state)
-        _setter("kms_key_id", kms_key_id)
+        pulumi.set(__self__, "key_state", key_state)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="keyState")
@@ -1037,43 +700,10 @@ class GetStreamPoolsStreamPoolKafkaSettingResult(dict):
         :param int log_retention_hours: The number of hours to keep a log file before deleting it (in hours).
         :param int num_partitions: The default number of log partitions per topic.
         """
-        GetStreamPoolsStreamPoolKafkaSettingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auto_create_topics_enable=auto_create_topics_enable,
-            bootstrap_servers=bootstrap_servers,
-            log_retention_hours=log_retention_hours,
-            num_partitions=num_partitions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auto_create_topics_enable: Optional[bool] = None,
-             bootstrap_servers: Optional[str] = None,
-             log_retention_hours: Optional[int] = None,
-             num_partitions: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
-            auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if auto_create_topics_enable is None:
-            raise TypeError("Missing 'auto_create_topics_enable' argument")
-        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
-            bootstrap_servers = kwargs['bootstrapServers']
-        if bootstrap_servers is None:
-            raise TypeError("Missing 'bootstrap_servers' argument")
-        if log_retention_hours is None and 'logRetentionHours' in kwargs:
-            log_retention_hours = kwargs['logRetentionHours']
-        if log_retention_hours is None:
-            raise TypeError("Missing 'log_retention_hours' argument")
-        if num_partitions is None and 'numPartitions' in kwargs:
-            num_partitions = kwargs['numPartitions']
-        if num_partitions is None:
-            raise TypeError("Missing 'num_partitions' argument")
-
-        _setter("auto_create_topics_enable", auto_create_topics_enable)
-        _setter("bootstrap_servers", bootstrap_servers)
-        _setter("log_retention_hours", log_retention_hours)
-        _setter("num_partitions", num_partitions)
+        pulumi.set(__self__, "auto_create_topics_enable", auto_create_topics_enable)
+        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+        pulumi.set(__self__, "log_retention_hours", log_retention_hours)
+        pulumi.set(__self__, "num_partitions", num_partitions)
 
     @property
     @pulumi.getter(name="autoCreateTopicsEnable")
@@ -1119,36 +749,9 @@ class GetStreamPoolsStreamPoolPrivateEndpointSettingResult(dict):
         :param str private_endpoint_ip: The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
         :param str subnet_id: The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
         """
-        GetStreamPoolsStreamPoolPrivateEndpointSettingResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            nsg_ids=nsg_ids,
-            private_endpoint_ip=private_endpoint_ip,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             nsg_ids: Optional[Sequence[str]] = None,
-             private_endpoint_ip: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if nsg_ids is None:
-            raise TypeError("Missing 'nsg_ids' argument")
-        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
-            private_endpoint_ip = kwargs['privateEndpointIp']
-        if private_endpoint_ip is None:
-            raise TypeError("Missing 'private_endpoint_ip' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-
-        _setter("nsg_ids", nsg_ids)
-        _setter("private_endpoint_ip", private_endpoint_ip)
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -1184,29 +787,10 @@ class GetStreamsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        GetStreamsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1256,91 +840,18 @@ class GetStreamsStreamResult(dict):
         :param str stream_pool_id: The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
         :param str time_created: The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
-        GetStreamsStreamResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            id=id,
-            lifecycle_state_details=lifecycle_state_details,
-            messages_endpoint=messages_endpoint,
-            name=name,
-            partitions=partitions,
-            retention_in_hours=retention_in_hours,
-            state=state,
-            stream_pool_id=stream_pool_id,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             lifecycle_state_details: Optional[str] = None,
-             messages_endpoint: Optional[str] = None,
-             name: Optional[str] = None,
-             partitions: Optional[int] = None,
-             retention_in_hours: Optional[int] = None,
-             state: Optional[str] = None,
-             stream_pool_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lifecycle_state_details is None and 'lifecycleStateDetails' in kwargs:
-            lifecycle_state_details = kwargs['lifecycleStateDetails']
-        if lifecycle_state_details is None:
-            raise TypeError("Missing 'lifecycle_state_details' argument")
-        if messages_endpoint is None and 'messagesEndpoint' in kwargs:
-            messages_endpoint = kwargs['messagesEndpoint']
-        if messages_endpoint is None:
-            raise TypeError("Missing 'messages_endpoint' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if partitions is None:
-            raise TypeError("Missing 'partitions' argument")
-        if retention_in_hours is None and 'retentionInHours' in kwargs:
-            retention_in_hours = kwargs['retentionInHours']
-        if retention_in_hours is None:
-            raise TypeError("Missing 'retention_in_hours' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if stream_pool_id is None and 'streamPoolId' in kwargs:
-            stream_pool_id = kwargs['streamPoolId']
-        if stream_pool_id is None:
-            raise TypeError("Missing 'stream_pool_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("lifecycle_state_details", lifecycle_state_details)
-        _setter("messages_endpoint", messages_endpoint)
-        _setter("name", name)
-        _setter("partitions", partitions)
-        _setter("retention_in_hours", retention_in_hours)
-        _setter("state", state)
-        _setter("stream_pool_id", stream_pool_id)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "messages_endpoint", messages_endpoint)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "partitions", partitions)
+        pulumi.set(__self__, "retention_in_hours", retention_in_hours)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stream_pool_id", stream_pool_id)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")

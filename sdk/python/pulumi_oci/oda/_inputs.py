@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -27,27 +27,10 @@ class OdaInstanceRestrictedOperationArgs:
         :param pulumi.Input[str] operation_name: Name of the restricted operation.
         :param pulumi.Input[str] restricting_service: Name of the service restricting the operation.
         """
-        OdaInstanceRestrictedOperationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            operation_name=operation_name,
-            restricting_service=restricting_service,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             operation_name: Optional[pulumi.Input[str]] = None,
-             restricting_service: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if operation_name is None and 'operationName' in kwargs:
-            operation_name = kwargs['operationName']
-        if restricting_service is None and 'restrictingService' in kwargs:
-            restricting_service = kwargs['restrictingService']
-
         if operation_name is not None:
-            _setter("operation_name", operation_name)
+            pulumi.set(__self__, "operation_name", operation_name)
         if restricting_service is not None:
-            _setter("restricting_service", restricting_service)
+            pulumi.set(__self__, "restricting_service", restricting_service)
 
     @property
     @pulumi.getter(name="operationName")
@@ -85,33 +68,12 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
         :param pulumi.Input[str] scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
         :param pulumi.Input[int] scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
         """
-        OdaPrivateEndpointScanProxyScanListenerInfoArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            scan_listener_fqdn=scan_listener_fqdn,
-            scan_listener_ip=scan_listener_ip,
-            scan_listener_port=scan_listener_port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             scan_listener_fqdn: Optional[pulumi.Input[str]] = None,
-             scan_listener_ip: Optional[pulumi.Input[str]] = None,
-             scan_listener_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if scan_listener_fqdn is None and 'scanListenerFqdn' in kwargs:
-            scan_listener_fqdn = kwargs['scanListenerFqdn']
-        if scan_listener_ip is None and 'scanListenerIp' in kwargs:
-            scan_listener_ip = kwargs['scanListenerIp']
-        if scan_listener_port is None and 'scanListenerPort' in kwargs:
-            scan_listener_port = kwargs['scanListenerPort']
-
         if scan_listener_fqdn is not None:
-            _setter("scan_listener_fqdn", scan_listener_fqdn)
+            pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
         if scan_listener_ip is not None:
-            _setter("scan_listener_ip", scan_listener_ip)
+            pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
         if scan_listener_port is not None:
-            _setter("scan_listener_port", scan_listener_port)
+            pulumi.set(__self__, "scan_listener_port", scan_listener_port)
 
     @property
     @pulumi.getter(name="scanListenerFqdn")
@@ -156,29 +118,10 @@ class GetOdaInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOdaInstancesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -214,29 +157,10 @@ class GetOdaPrivateEndpointAttachmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOdaPrivateEndpointAttachmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -272,29 +196,10 @@ class GetOdaPrivateEndpointScanProxiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOdaPrivateEndpointScanProxiesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -330,29 +235,10 @@ class GetOdaPrivateEndpointsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetOdaPrivateEndpointsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

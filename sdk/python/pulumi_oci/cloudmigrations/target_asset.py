@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,60 +33,15 @@ class TargetAssetArgs:
         :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
         :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
         """
-        TargetAssetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_excluded_from_execution=is_excluded_from_execution,
-            migration_plan_id=migration_plan_id,
-            preferred_shape_type=preferred_shape_type,
-            type=type,
-            user_spec=user_spec,
-            block_volumes_performance=block_volumes_performance,
-            ms_license=ms_license,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_excluded_from_execution: Optional[pulumi.Input[bool]] = None,
-             migration_plan_id: Optional[pulumi.Input[str]] = None,
-             preferred_shape_type: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None,
-             block_volumes_performance: Optional[pulumi.Input[int]] = None,
-             ms_license: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_excluded_from_execution is None and 'isExcludedFromExecution' in kwargs:
-            is_excluded_from_execution = kwargs['isExcludedFromExecution']
-        if is_excluded_from_execution is None:
-            raise TypeError("Missing 'is_excluded_from_execution' argument")
-        if migration_plan_id is None and 'migrationPlanId' in kwargs:
-            migration_plan_id = kwargs['migrationPlanId']
-        if migration_plan_id is None:
-            raise TypeError("Missing 'migration_plan_id' argument")
-        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
-            preferred_shape_type = kwargs['preferredShapeType']
-        if preferred_shape_type is None:
-            raise TypeError("Missing 'preferred_shape_type' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if user_spec is None and 'userSpec' in kwargs:
-            user_spec = kwargs['userSpec']
-        if user_spec is None:
-            raise TypeError("Missing 'user_spec' argument")
-        if block_volumes_performance is None and 'blockVolumesPerformance' in kwargs:
-            block_volumes_performance = kwargs['blockVolumesPerformance']
-        if ms_license is None and 'msLicense' in kwargs:
-            ms_license = kwargs['msLicense']
-
-        _setter("is_excluded_from_execution", is_excluded_from_execution)
-        _setter("migration_plan_id", migration_plan_id)
-        _setter("preferred_shape_type", preferred_shape_type)
-        _setter("type", type)
-        _setter("user_spec", user_spec)
+        pulumi.set(__self__, "is_excluded_from_execution", is_excluded_from_execution)
+        pulumi.set(__self__, "migration_plan_id", migration_plan_id)
+        pulumi.set(__self__, "preferred_shape_type", preferred_shape_type)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "user_spec", user_spec)
         if block_volumes_performance is not None:
-            _setter("block_volumes_performance", block_volumes_performance)
+            pulumi.set(__self__, "block_volumes_performance", block_volumes_performance)
         if ms_license is not None:
-            _setter("ms_license", ms_license)
+            pulumi.set(__self__, "ms_license", ms_license)
 
     @property
     @pulumi.getter(name="isExcludedFromExecution")
@@ -219,131 +174,46 @@ class _TargetAssetState:
         :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input['TargetAssetUserSpecArgs'] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
-        _TargetAssetState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            block_volumes_performance=block_volumes_performance,
-            compartment_id=compartment_id,
-            compatibility_messages=compatibility_messages,
-            created_resource_id=created_resource_id,
-            display_name=display_name,
-            estimated_costs=estimated_costs,
-            is_excluded_from_execution=is_excluded_from_execution,
-            lifecycle_details=lifecycle_details,
-            migration_assets=migration_assets,
-            migration_plan_id=migration_plan_id,
-            ms_license=ms_license,
-            preferred_shape_type=preferred_shape_type,
-            recommended_specs=recommended_specs,
-            state=state,
-            test_specs=test_specs,
-            time_assessed=time_assessed,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-            user_spec=user_spec,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             block_volumes_performance: Optional[pulumi.Input[int]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             compatibility_messages: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]] = None,
-             created_resource_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             estimated_costs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]] = None,
-             is_excluded_from_execution: Optional[pulumi.Input[bool]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             migration_assets: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]] = None,
-             migration_plan_id: Optional[pulumi.Input[str]] = None,
-             ms_license: Optional[pulumi.Input[str]] = None,
-             preferred_shape_type: Optional[pulumi.Input[str]] = None,
-             recommended_specs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             test_specs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]] = None,
-             time_assessed: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if block_volumes_performance is None and 'blockVolumesPerformance' in kwargs:
-            block_volumes_performance = kwargs['blockVolumesPerformance']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compatibility_messages is None and 'compatibilityMessages' in kwargs:
-            compatibility_messages = kwargs['compatibilityMessages']
-        if created_resource_id is None and 'createdResourceId' in kwargs:
-            created_resource_id = kwargs['createdResourceId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if estimated_costs is None and 'estimatedCosts' in kwargs:
-            estimated_costs = kwargs['estimatedCosts']
-        if is_excluded_from_execution is None and 'isExcludedFromExecution' in kwargs:
-            is_excluded_from_execution = kwargs['isExcludedFromExecution']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if migration_assets is None and 'migrationAssets' in kwargs:
-            migration_assets = kwargs['migrationAssets']
-        if migration_plan_id is None and 'migrationPlanId' in kwargs:
-            migration_plan_id = kwargs['migrationPlanId']
-        if ms_license is None and 'msLicense' in kwargs:
-            ms_license = kwargs['msLicense']
-        if preferred_shape_type is None and 'preferredShapeType' in kwargs:
-            preferred_shape_type = kwargs['preferredShapeType']
-        if recommended_specs is None and 'recommendedSpecs' in kwargs:
-            recommended_specs = kwargs['recommendedSpecs']
-        if test_specs is None and 'testSpecs' in kwargs:
-            test_specs = kwargs['testSpecs']
-        if time_assessed is None and 'timeAssessed' in kwargs:
-            time_assessed = kwargs['timeAssessed']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if user_spec is None and 'userSpec' in kwargs:
-            user_spec = kwargs['userSpec']
-
         if block_volumes_performance is not None:
-            _setter("block_volumes_performance", block_volumes_performance)
+            pulumi.set(__self__, "block_volumes_performance", block_volumes_performance)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if compatibility_messages is not None:
-            _setter("compatibility_messages", compatibility_messages)
+            pulumi.set(__self__, "compatibility_messages", compatibility_messages)
         if created_resource_id is not None:
-            _setter("created_resource_id", created_resource_id)
+            pulumi.set(__self__, "created_resource_id", created_resource_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if estimated_costs is not None:
-            _setter("estimated_costs", estimated_costs)
+            pulumi.set(__self__, "estimated_costs", estimated_costs)
         if is_excluded_from_execution is not None:
-            _setter("is_excluded_from_execution", is_excluded_from_execution)
+            pulumi.set(__self__, "is_excluded_from_execution", is_excluded_from_execution)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if migration_assets is not None:
-            _setter("migration_assets", migration_assets)
+            pulumi.set(__self__, "migration_assets", migration_assets)
         if migration_plan_id is not None:
-            _setter("migration_plan_id", migration_plan_id)
+            pulumi.set(__self__, "migration_plan_id", migration_plan_id)
         if ms_license is not None:
-            _setter("ms_license", ms_license)
+            pulumi.set(__self__, "ms_license", ms_license)
         if preferred_shape_type is not None:
-            _setter("preferred_shape_type", preferred_shape_type)
+            pulumi.set(__self__, "preferred_shape_type", preferred_shape_type)
         if recommended_specs is not None:
-            _setter("recommended_specs", recommended_specs)
+            pulumi.set(__self__, "recommended_specs", recommended_specs)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if test_specs is not None:
-            _setter("test_specs", test_specs)
+            pulumi.set(__self__, "test_specs", test_specs)
         if time_assessed is not None:
-            _setter("time_assessed", time_assessed)
+            pulumi.set(__self__, "time_assessed", time_assessed)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if user_spec is not None:
-            _setter("user_spec", user_spec)
+            pulumi.set(__self__, "user_spec", user_spec)
 
     @property
     @pulumi.getter(name="blockVolumesPerformance")
@@ -813,10 +683,6 @@ class TargetAsset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            TargetAssetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -852,7 +718,6 @@ class TargetAsset(pulumi.CustomResource):
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
-            user_spec = _utilities.configure(user_spec, TargetAssetUserSpecArgs, True)
             if user_spec is None and not opts.urn:
                 raise TypeError("Missing required property 'user_spec'")
             __props__.__dict__["user_spec"] = user_spec

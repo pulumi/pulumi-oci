@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -56,29 +56,8 @@ class AnalyticsInstanceCapacity(dict):
         :param str capacity_type: The capacity model to use.
         :param int capacity_value: (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
         """
-        AnalyticsInstanceCapacity._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            capacity_type=capacity_type,
-            capacity_value=capacity_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             capacity_type: Optional[str] = None,
-             capacity_value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if capacity_type is None and 'capacityType' in kwargs:
-            capacity_type = kwargs['capacityType']
-        if capacity_type is None:
-            raise TypeError("Missing 'capacity_type' argument")
-        if capacity_value is None and 'capacityValue' in kwargs:
-            capacity_value = kwargs['capacityValue']
-        if capacity_value is None:
-            raise TypeError("Missing 'capacity_value' argument")
-
-        _setter("capacity_type", capacity_type)
-        _setter("capacity_value", capacity_value)
+        pulumi.set(__self__, "capacity_type", capacity_type)
+        pulumi.set(__self__, "capacity_value", capacity_value)
 
     @property
     @pulumi.getter(name="capacityType")
@@ -145,58 +124,19 @@ class AnalyticsInstanceNetworkEndpointDetails(dict):
         :param Sequence[str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
         :param Sequence['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
-        AnalyticsInstanceNetworkEndpointDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_endpoint_type=network_endpoint_type,
-            network_security_group_ids=network_security_group_ids,
-            subnet_id=subnet_id,
-            vcn_id=vcn_id,
-            whitelisted_ips=whitelisted_ips,
-            whitelisted_services=whitelisted_services,
-            whitelisted_vcns=whitelisted_vcns,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_endpoint_type: Optional[str] = None,
-             network_security_group_ids: Optional[Sequence[str]] = None,
-             subnet_id: Optional[str] = None,
-             vcn_id: Optional[str] = None,
-             whitelisted_ips: Optional[Sequence[str]] = None,
-             whitelisted_services: Optional[Sequence[str]] = None,
-             whitelisted_vcns: Optional[Sequence['outputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_endpoint_type is None and 'networkEndpointType' in kwargs:
-            network_endpoint_type = kwargs['networkEndpointType']
-        if network_endpoint_type is None:
-            raise TypeError("Missing 'network_endpoint_type' argument")
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
-            whitelisted_ips = kwargs['whitelistedIps']
-        if whitelisted_services is None and 'whitelistedServices' in kwargs:
-            whitelisted_services = kwargs['whitelistedServices']
-        if whitelisted_vcns is None and 'whitelistedVcns' in kwargs:
-            whitelisted_vcns = kwargs['whitelistedVcns']
-
-        _setter("network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if network_security_group_ids is not None:
-            _setter("network_security_group_ids", network_security_group_ids)
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vcn_id is not None:
-            _setter("vcn_id", vcn_id)
+            pulumi.set(__self__, "vcn_id", vcn_id)
         if whitelisted_ips is not None:
-            _setter("whitelisted_ips", whitelisted_ips)
+            pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
         if whitelisted_services is not None:
-            _setter("whitelisted_services", whitelisted_services)
+            pulumi.set(__self__, "whitelisted_services", whitelisted_services)
         if whitelisted_vcns is not None:
-            _setter("whitelisted_vcns", whitelisted_vcns)
+            pulumi.set(__self__, "whitelisted_vcns", whitelisted_vcns)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -281,25 +221,10 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn(dict):
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
-        AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            whitelisted_ips=whitelisted_ips,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             whitelisted_ips: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
-            whitelisted_ips = kwargs['whitelistedIps']
-
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if whitelisted_ips is not None:
-            _setter("whitelisted_ips", whitelisted_ips)
+            pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter
@@ -344,26 +269,9 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(dict):
         :param str dns_zone: (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
         :param str description: (Updatable) Description of private source scan host zone.
         """
-        AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dns_zone=dns_zone,
-            description=description,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dns_zone: Optional[str] = None,
-             description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dns_zone is None and 'dnsZone' in kwargs:
-            dns_zone = kwargs['dnsZone']
-        if dns_zone is None:
-            raise TypeError("Missing 'dns_zone' argument")
-
-        _setter("dns_zone", dns_zone)
+        pulumi.set(__self__, "dns_zone", dns_zone)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
 
     @property
     @pulumi.getter(name="dnsZone")
@@ -412,33 +320,10 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost(dict):
         :param int scan_port: (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
         :param str description: (Updatable) Description of private source scan host zone.
         """
-        AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            scan_hostname=scan_hostname,
-            scan_port=scan_port,
-            description=description,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             scan_hostname: Optional[str] = None,
-             scan_port: Optional[int] = None,
-             description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if scan_hostname is None and 'scanHostname' in kwargs:
-            scan_hostname = kwargs['scanHostname']
-        if scan_hostname is None:
-            raise TypeError("Missing 'scan_hostname' argument")
-        if scan_port is None and 'scanPort' in kwargs:
-            scan_port = kwargs['scanPort']
-        if scan_port is None:
-            raise TypeError("Missing 'scan_port' argument")
-
-        _setter("scan_hostname", scan_hostname)
-        _setter("scan_port", scan_port)
+        pulumi.set(__self__, "scan_hostname", scan_hostname)
+        pulumi.set(__self__, "scan_port", scan_port)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
 
     @property
     @pulumi.getter(name="scanHostname")
@@ -474,29 +359,8 @@ class GetAnalyticsInstanceCapacityResult(dict):
         :param str capacity_type: The capacity model to use.
         :param int capacity_value: The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
         """
-        GetAnalyticsInstanceCapacityResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            capacity_type=capacity_type,
-            capacity_value=capacity_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             capacity_type: Optional[str] = None,
-             capacity_value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if capacity_type is None and 'capacityType' in kwargs:
-            capacity_type = kwargs['capacityType']
-        if capacity_type is None:
-            raise TypeError("Missing 'capacity_type' argument")
-        if capacity_value is None and 'capacityValue' in kwargs:
-            capacity_value = kwargs['capacityValue']
-        if capacity_value is None:
-            raise TypeError("Missing 'capacity_value' argument")
-
-        _setter("capacity_type", capacity_type)
-        _setter("capacity_value", capacity_value)
+        pulumi.set(__self__, "capacity_type", capacity_type)
+        pulumi.set(__self__, "capacity_value", capacity_value)
 
     @property
     @pulumi.getter(name="capacityType")
@@ -534,64 +398,13 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
         :param Sequence[str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
         :param Sequence['GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
-        GetAnalyticsInstanceNetworkEndpointDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_endpoint_type=network_endpoint_type,
-            network_security_group_ids=network_security_group_ids,
-            subnet_id=subnet_id,
-            vcn_id=vcn_id,
-            whitelisted_ips=whitelisted_ips,
-            whitelisted_services=whitelisted_services,
-            whitelisted_vcns=whitelisted_vcns,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_endpoint_type: Optional[str] = None,
-             network_security_group_ids: Optional[Sequence[str]] = None,
-             subnet_id: Optional[str] = None,
-             vcn_id: Optional[str] = None,
-             whitelisted_ips: Optional[Sequence[str]] = None,
-             whitelisted_services: Optional[Sequence[str]] = None,
-             whitelisted_vcns: Optional[Sequence['outputs.GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_endpoint_type is None and 'networkEndpointType' in kwargs:
-            network_endpoint_type = kwargs['networkEndpointType']
-        if network_endpoint_type is None:
-            raise TypeError("Missing 'network_endpoint_type' argument")
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if network_security_group_ids is None:
-            raise TypeError("Missing 'network_security_group_ids' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-        if vcn_id is None:
-            raise TypeError("Missing 'vcn_id' argument")
-        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
-            whitelisted_ips = kwargs['whitelistedIps']
-        if whitelisted_ips is None:
-            raise TypeError("Missing 'whitelisted_ips' argument")
-        if whitelisted_services is None and 'whitelistedServices' in kwargs:
-            whitelisted_services = kwargs['whitelistedServices']
-        if whitelisted_services is None:
-            raise TypeError("Missing 'whitelisted_services' argument")
-        if whitelisted_vcns is None and 'whitelistedVcns' in kwargs:
-            whitelisted_vcns = kwargs['whitelistedVcns']
-        if whitelisted_vcns is None:
-            raise TypeError("Missing 'whitelisted_vcns' argument")
-
-        _setter("network_endpoint_type", network_endpoint_type)
-        _setter("network_security_group_ids", network_security_group_ids)
-        _setter("subnet_id", subnet_id)
-        _setter("vcn_id", vcn_id)
-        _setter("whitelisted_ips", whitelisted_ips)
-        _setter("whitelisted_services", whitelisted_services)
-        _setter("whitelisted_vcns", whitelisted_vcns)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+        pulumi.set(__self__, "whitelisted_services", whitelisted_services)
+        pulumi.set(__self__, "whitelisted_vcns", whitelisted_vcns)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -659,27 +472,8 @@ class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult(dict):
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
-        GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            whitelisted_ips=whitelisted_ips,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             whitelisted_ips: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
-            whitelisted_ips = kwargs['whitelistedIps']
-        if whitelisted_ips is None:
-            raise TypeError("Missing 'whitelisted_ips' argument")
-
-        _setter("id", id)
-        _setter("whitelisted_ips", whitelisted_ips)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter
@@ -707,27 +501,8 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult(dict):
         :param str description: Description of private source scan host zone.
         :param str dns_zone: Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
         """
-        GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            dns_zone=dns_zone,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             dns_zone: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if dns_zone is None and 'dnsZone' in kwargs:
-            dns_zone = kwargs['dnsZone']
-        if dns_zone is None:
-            raise TypeError("Missing 'dns_zone' argument")
-
-        _setter("description", description)
-        _setter("dns_zone", dns_zone)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "dns_zone", dns_zone)
 
     @property
     @pulumi.getter
@@ -757,34 +532,9 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
         :param str scan_hostname: Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
         :param int scan_port: Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
         """
-        GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            scan_hostname=scan_hostname,
-            scan_port=scan_port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[str] = None,
-             scan_hostname: Optional[str] = None,
-             scan_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if scan_hostname is None and 'scanHostname' in kwargs:
-            scan_hostname = kwargs['scanHostname']
-        if scan_hostname is None:
-            raise TypeError("Missing 'scan_hostname' argument")
-        if scan_port is None and 'scanPort' in kwargs:
-            scan_port = kwargs['scanPort']
-        if scan_port is None:
-            raise TypeError("Missing 'scan_port' argument")
-
-        _setter("description", description)
-        _setter("scan_hostname", scan_hostname)
-        _setter("scan_port", scan_port)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "scan_hostname", scan_hostname)
+        pulumi.set(__self__, "scan_port", scan_port)
 
     @property
     @pulumi.getter
@@ -849,124 +599,23 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         :param str time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
-        GetAnalyticsInstancesAnalyticsInstanceResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            capacities=capacities,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            email_notification=email_notification,
-            feature_set=feature_set,
-            freeform_tags=freeform_tags,
-            id=id,
-            idcs_access_token=idcs_access_token,
-            kms_key_id=kms_key_id,
-            license_type=license_type,
-            name=name,
-            network_endpoint_details=network_endpoint_details,
-            service_url=service_url,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             capacities: Optional[Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceCapacityResult']] = None,
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             description: Optional[str] = None,
-             email_notification: Optional[str] = None,
-             feature_set: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             idcs_access_token: Optional[str] = None,
-             kms_key_id: Optional[str] = None,
-             license_type: Optional[str] = None,
-             name: Optional[str] = None,
-             network_endpoint_details: Optional[Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult']] = None,
-             service_url: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if capacities is None:
-            raise TypeError("Missing 'capacities' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if email_notification is None and 'emailNotification' in kwargs:
-            email_notification = kwargs['emailNotification']
-        if email_notification is None:
-            raise TypeError("Missing 'email_notification' argument")
-        if feature_set is None and 'featureSet' in kwargs:
-            feature_set = kwargs['featureSet']
-        if feature_set is None:
-            raise TypeError("Missing 'feature_set' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if idcs_access_token is None:
-            raise TypeError("Missing 'idcs_access_token' argument")
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_id is None:
-            raise TypeError("Missing 'kms_key_id' argument")
-        if license_type is None and 'licenseType' in kwargs:
-            license_type = kwargs['licenseType']
-        if license_type is None:
-            raise TypeError("Missing 'license_type' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if network_endpoint_details is None and 'networkEndpointDetails' in kwargs:
-            network_endpoint_details = kwargs['networkEndpointDetails']
-        if network_endpoint_details is None:
-            raise TypeError("Missing 'network_endpoint_details' argument")
-        if service_url is None and 'serviceUrl' in kwargs:
-            service_url = kwargs['serviceUrl']
-        if service_url is None:
-            raise TypeError("Missing 'service_url' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("capacities", capacities)
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("description", description)
-        _setter("email_notification", email_notification)
-        _setter("feature_set", feature_set)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("idcs_access_token", idcs_access_token)
-        _setter("kms_key_id", kms_key_id)
-        _setter("license_type", license_type)
-        _setter("name", name)
-        _setter("network_endpoint_details", network_endpoint_details)
-        _setter("service_url", service_url)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "email_notification", email_notification)
+        pulumi.set(__self__, "feature_set", feature_set)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        pulumi.set(__self__, "service_url", service_url)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -1111,29 +760,8 @@ class GetAnalyticsInstancesAnalyticsInstanceCapacityResult(dict):
         :param str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.
         :param int capacity_value: The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
         """
-        GetAnalyticsInstancesAnalyticsInstanceCapacityResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            capacity_type=capacity_type,
-            capacity_value=capacity_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             capacity_type: Optional[str] = None,
-             capacity_value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if capacity_type is None and 'capacityType' in kwargs:
-            capacity_type = kwargs['capacityType']
-        if capacity_type is None:
-            raise TypeError("Missing 'capacity_type' argument")
-        if capacity_value is None and 'capacityValue' in kwargs:
-            capacity_value = kwargs['capacityValue']
-        if capacity_value is None:
-            raise TypeError("Missing 'capacity_value' argument")
-
-        _setter("capacity_type", capacity_type)
-        _setter("capacity_value", capacity_value)
+        pulumi.set(__self__, "capacity_type", capacity_type)
+        pulumi.set(__self__, "capacity_value", capacity_value)
 
     @property
     @pulumi.getter(name="capacityType")
@@ -1171,64 +799,13 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
         :param Sequence[str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
-        GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_endpoint_type=network_endpoint_type,
-            network_security_group_ids=network_security_group_ids,
-            subnet_id=subnet_id,
-            vcn_id=vcn_id,
-            whitelisted_ips=whitelisted_ips,
-            whitelisted_services=whitelisted_services,
-            whitelisted_vcns=whitelisted_vcns,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_endpoint_type: Optional[str] = None,
-             network_security_group_ids: Optional[Sequence[str]] = None,
-             subnet_id: Optional[str] = None,
-             vcn_id: Optional[str] = None,
-             whitelisted_ips: Optional[Sequence[str]] = None,
-             whitelisted_services: Optional[Sequence[str]] = None,
-             whitelisted_vcns: Optional[Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_endpoint_type is None and 'networkEndpointType' in kwargs:
-            network_endpoint_type = kwargs['networkEndpointType']
-        if network_endpoint_type is None:
-            raise TypeError("Missing 'network_endpoint_type' argument")
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if network_security_group_ids is None:
-            raise TypeError("Missing 'network_security_group_ids' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if vcn_id is None and 'vcnId' in kwargs:
-            vcn_id = kwargs['vcnId']
-        if vcn_id is None:
-            raise TypeError("Missing 'vcn_id' argument")
-        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
-            whitelisted_ips = kwargs['whitelistedIps']
-        if whitelisted_ips is None:
-            raise TypeError("Missing 'whitelisted_ips' argument")
-        if whitelisted_services is None and 'whitelistedServices' in kwargs:
-            whitelisted_services = kwargs['whitelistedServices']
-        if whitelisted_services is None:
-            raise TypeError("Missing 'whitelisted_services' argument")
-        if whitelisted_vcns is None and 'whitelistedVcns' in kwargs:
-            whitelisted_vcns = kwargs['whitelistedVcns']
-        if whitelisted_vcns is None:
-            raise TypeError("Missing 'whitelisted_vcns' argument")
-
-        _setter("network_endpoint_type", network_endpoint_type)
-        _setter("network_security_group_ids", network_security_group_ids)
-        _setter("subnet_id", subnet_id)
-        _setter("vcn_id", vcn_id)
-        _setter("whitelisted_ips", whitelisted_ips)
-        _setter("whitelisted_services", whitelisted_services)
-        _setter("whitelisted_vcns", whitelisted_vcns)
+        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+        pulumi.set(__self__, "whitelisted_services", whitelisted_services)
+        pulumi.set(__self__, "whitelisted_vcns", whitelisted_vcns)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -1296,27 +873,8 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnR
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
-        GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            whitelisted_ips=whitelisted_ips,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             whitelisted_ips: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
-            whitelisted_ips = kwargs['whitelistedIps']
-        if whitelisted_ips is None:
-            raise TypeError("Missing 'whitelisted_ips' argument")
-
-        _setter("id", id)
-        _setter("whitelisted_ips", whitelisted_ips)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter
@@ -1344,29 +902,10 @@ class GetAnalyticsInstancesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        GetAnalyticsInstancesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

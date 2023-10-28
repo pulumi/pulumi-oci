@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,37 +31,12 @@ class LogAnalyticsImportCustomContentArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_overwrite: A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
         """
-        LogAnalyticsImportCustomContentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            import_custom_content_file=import_custom_content_file,
-            namespace=namespace,
-            expect=expect,
-            is_overwrite=is_overwrite,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             import_custom_content_file: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             expect: Optional[pulumi.Input[str]] = None,
-             is_overwrite: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if import_custom_content_file is None and 'importCustomContentFile' in kwargs:
-            import_custom_content_file = kwargs['importCustomContentFile']
-        if import_custom_content_file is None:
-            raise TypeError("Missing 'import_custom_content_file' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if is_overwrite is None and 'isOverwrite' in kwargs:
-            is_overwrite = kwargs['isOverwrite']
-
-        _setter("import_custom_content_file", import_custom_content_file)
-        _setter("namespace", namespace)
+        pulumi.set(__self__, "import_custom_content_file", import_custom_content_file)
+        pulumi.set(__self__, "namespace", namespace)
         if expect is not None:
-            _setter("expect", expect)
+            pulumi.set(__self__, "expect", expect)
         if is_overwrite is not None:
-            _setter("is_overwrite", is_overwrite)
+            pulumi.set(__self__, "is_overwrite", is_overwrite)
 
     @property
     @pulumi.getter(name="importCustomContentFile")
@@ -144,65 +119,24 @@ class _LogAnalyticsImportCustomContentState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] parser_names: The parser names.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] source_names: The source names.
         """
-        _LogAnalyticsImportCustomContentState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            change_lists=change_lists,
-            content_name=content_name,
-            expect=expect,
-            field_names=field_names,
-            import_custom_content_file=import_custom_content_file,
-            is_overwrite=is_overwrite,
-            namespace=namespace,
-            parser_names=parser_names,
-            source_names=source_names,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             change_lists: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]] = None,
-             content_name: Optional[pulumi.Input[str]] = None,
-             expect: Optional[pulumi.Input[str]] = None,
-             field_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             import_custom_content_file: Optional[pulumi.Input[str]] = None,
-             is_overwrite: Optional[pulumi.Input[bool]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             source_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if change_lists is None and 'changeLists' in kwargs:
-            change_lists = kwargs['changeLists']
-        if content_name is None and 'contentName' in kwargs:
-            content_name = kwargs['contentName']
-        if field_names is None and 'fieldNames' in kwargs:
-            field_names = kwargs['fieldNames']
-        if import_custom_content_file is None and 'importCustomContentFile' in kwargs:
-            import_custom_content_file = kwargs['importCustomContentFile']
-        if is_overwrite is None and 'isOverwrite' in kwargs:
-            is_overwrite = kwargs['isOverwrite']
-        if parser_names is None and 'parserNames' in kwargs:
-            parser_names = kwargs['parserNames']
-        if source_names is None and 'sourceNames' in kwargs:
-            source_names = kwargs['sourceNames']
-
         if change_lists is not None:
-            _setter("change_lists", change_lists)
+            pulumi.set(__self__, "change_lists", change_lists)
         if content_name is not None:
-            _setter("content_name", content_name)
+            pulumi.set(__self__, "content_name", content_name)
         if expect is not None:
-            _setter("expect", expect)
+            pulumi.set(__self__, "expect", expect)
         if field_names is not None:
-            _setter("field_names", field_names)
+            pulumi.set(__self__, "field_names", field_names)
         if import_custom_content_file is not None:
-            _setter("import_custom_content_file", import_custom_content_file)
+            pulumi.set(__self__, "import_custom_content_file", import_custom_content_file)
         if is_overwrite is not None:
-            _setter("is_overwrite", is_overwrite)
+            pulumi.set(__self__, "is_overwrite", is_overwrite)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if parser_names is not None:
-            _setter("parser_names", parser_names)
+            pulumi.set(__self__, "parser_names", parser_names)
         if source_names is not None:
-            _setter("source_names", source_names)
+            pulumi.set(__self__, "source_names", source_names)
 
     @property
     @pulumi.getter(name="changeLists")
@@ -398,10 +332,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            LogAnalyticsImportCustomContentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

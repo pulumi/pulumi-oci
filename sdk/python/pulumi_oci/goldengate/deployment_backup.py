@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DeploymentBackupArgs', 'DeploymentBackup']
@@ -37,63 +37,16 @@ class DeploymentBackupArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
-        DeploymentBackupArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bucket=bucket,
-            compartment_id=compartment_id,
-            deployment_id=deployment_id,
-            display_name=display_name,
-            namespace=namespace,
-            object=object,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bucket: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             deployment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bucket is None:
-            raise TypeError("Missing 'bucket' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if deployment_id is None and 'deploymentId' in kwargs:
-            deployment_id = kwargs['deploymentId']
-        if deployment_id is None:
-            raise TypeError("Missing 'deployment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if namespace is None:
-            raise TypeError("Missing 'namespace' argument")
-        if object is None:
-            raise TypeError("Missing 'object' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("bucket", bucket)
-        _setter("compartment_id", compartment_id)
-        _setter("deployment_id", deployment_id)
-        _setter("display_name", display_name)
-        _setter("namespace", namespace)
-        _setter("object", object)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter
@@ -244,121 +197,44 @@ class _DeploymentBackupState:
         :param pulumi.Input[str] time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        _DeploymentBackupState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backup_type=backup_type,
-            bucket=bucket,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            deployment_id=deployment_id,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_automatic=is_automatic,
-            lifecycle_details=lifecycle_details,
-            namespace=namespace,
-            object=object,
-            ogg_version=ogg_version,
-            size_in_bytes=size_in_bytes,
-            state=state,
-            system_tags=system_tags,
-            time_backup_finished=time_backup_finished,
-            time_created=time_created,
-            time_of_backup=time_of_backup,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backup_type: Optional[pulumi.Input[str]] = None,
-             bucket: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             deployment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_automatic: Optional[pulumi.Input[bool]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             namespace: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             ogg_version: Optional[pulumi.Input[str]] = None,
-             size_in_bytes: Optional[pulumi.Input[float]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_backup_finished: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_of_backup: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backup_type is None and 'backupType' in kwargs:
-            backup_type = kwargs['backupType']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if deployment_id is None and 'deploymentId' in kwargs:
-            deployment_id = kwargs['deploymentId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_automatic is None and 'isAutomatic' in kwargs:
-            is_automatic = kwargs['isAutomatic']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if ogg_version is None and 'oggVersion' in kwargs:
-            ogg_version = kwargs['oggVersion']
-        if size_in_bytes is None and 'sizeInBytes' in kwargs:
-            size_in_bytes = kwargs['sizeInBytes']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_backup_finished is None and 'timeBackupFinished' in kwargs:
-            time_backup_finished = kwargs['timeBackupFinished']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_of_backup is None and 'timeOfBackup' in kwargs:
-            time_of_backup = kwargs['timeOfBackup']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if backup_type is not None:
-            _setter("backup_type", backup_type)
+            pulumi.set(__self__, "backup_type", backup_type)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_id is not None:
-            _setter("deployment_id", deployment_id)
+            pulumi.set(__self__, "deployment_id", deployment_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_automatic is not None:
-            _setter("is_automatic", is_automatic)
+            pulumi.set(__self__, "is_automatic", is_automatic)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if namespace is not None:
-            _setter("namespace", namespace)
+            pulumi.set(__self__, "namespace", namespace)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
         if ogg_version is not None:
-            _setter("ogg_version", ogg_version)
+            pulumi.set(__self__, "ogg_version", ogg_version)
         if size_in_bytes is not None:
-            _setter("size_in_bytes", size_in_bytes)
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_backup_finished is not None:
-            _setter("time_backup_finished", time_backup_finished)
+            pulumi.set(__self__, "time_backup_finished", time_backup_finished)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_of_backup is not None:
-            _setter("time_of_backup", time_of_backup)
+            pulumi.set(__self__, "time_of_backup", time_of_backup)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupType")
@@ -706,10 +582,6 @@ class DeploymentBackup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DeploymentBackupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

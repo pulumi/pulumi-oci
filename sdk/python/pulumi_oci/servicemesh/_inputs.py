@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -53,30 +53,9 @@ class AccessPolicyRuleArgs:
         :param pulumi.Input['AccessPolicyRuleDestinationArgs'] destination: (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
         :param pulumi.Input['AccessPolicyRuleSourceArgs'] source: (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
         """
-        AccessPolicyRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            destination=destination,
-            source=source,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input[str]] = None,
-             destination: Optional[pulumi.Input['AccessPolicyRuleDestinationArgs']] = None,
-             source: Optional[pulumi.Input['AccessPolicyRuleSourceArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-
-        _setter("action", action)
-        _setter("destination", destination)
-        _setter("source", source)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "source", source)
 
     @property
     @pulumi.getter
@@ -138,50 +117,19 @@ class AccessPolicyRuleDestinationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AccessPolicyRuleDestinationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ingress_gateway_id: Optional[pulumi.Input[str]] = None,
-             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ports: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             virtual_service_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if hostnames is not None:
-            _setter("hostnames", hostnames)
+            pulumi.set(__self__, "hostnames", hostnames)
         if ingress_gateway_id is not None:
-            _setter("ingress_gateway_id", ingress_gateway_id)
+            pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
         if ip_addresses is not None:
-            _setter("ip_addresses", ip_addresses)
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
         if ports is not None:
-            _setter("ports", ports)
+            pulumi.set(__self__, "ports", ports)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if virtual_service_id is not None:
-            _setter("virtual_service_id", virtual_service_id)
+            pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -295,50 +243,19 @@ class AccessPolicyRuleSourceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AccessPolicyRuleSourceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            hostnames=hostnames,
-            ingress_gateway_id=ingress_gateway_id,
-            ip_addresses=ip_addresses,
-            ports=ports,
-            protocol=protocol,
-            virtual_service_id=virtual_service_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ingress_gateway_id: Optional[pulumi.Input[str]] = None,
-             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ports: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             virtual_service_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ingress_gateway_id is None and 'ingressGatewayId' in kwargs:
-            ingress_gateway_id = kwargs['ingressGatewayId']
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if hostnames is not None:
-            _setter("hostnames", hostnames)
+            pulumi.set(__self__, "hostnames", hostnames)
         if ingress_gateway_id is not None:
-            _setter("ingress_gateway_id", ingress_gateway_id)
+            pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
         if ip_addresses is not None:
-            _setter("ip_addresses", ip_addresses)
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
         if ports is not None:
-            _setter("ports", ports)
+            pulumi.set(__self__, "ports", ports)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if virtual_service_id is not None:
-            _setter("virtual_service_id", virtual_service_id)
+            pulumi.set(__self__, "virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -436,21 +353,8 @@ class IngressGatewayAccessLoggingArgs:
         """
         :param pulumi.Input[bool] is_enabled: (Updatable) Determines if the logging configuration is enabled.
         """
-        IngressGatewayAccessLoggingArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -480,29 +384,10 @@ class IngressGatewayHostArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
         """
-        IngressGatewayHostArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            listeners=listeners,
-            name=name,
-            hostnames=hostnames,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             listeners: Optional[pulumi.Input[Sequence[pulumi.Input['IngressGatewayHostListenerArgs']]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if listeners is None:
-            raise TypeError("Missing 'listeners' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("listeners", listeners)
-        _setter("name", name)
+        pulumi.set(__self__, "listeners", listeners)
+        pulumi.set(__self__, "name", name)
         if hostnames is not None:
-            _setter("hostnames", hostnames)
+            pulumi.set(__self__, "hostnames", hostnames)
 
     @property
     @pulumi.getter
@@ -556,29 +441,10 @@ class IngressGatewayHostListenerArgs:
         :param pulumi.Input[str] protocol: (Updatable) Type of protocol used.
         :param pulumi.Input['IngressGatewayHostListenerTlsArgs'] tls: (Updatable) TLS enforcement config for the ingress listener.
         """
-        IngressGatewayHostListenerArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            protocol=protocol,
-            tls=tls,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             tls: Optional[pulumi.Input['IngressGatewayHostListenerTlsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-
-        _setter("port", port)
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
         if tls is not None:
-            _setter("tls", tls)
+            pulumi.set(__self__, "tls", tls)
 
     @property
     @pulumi.getter
@@ -628,32 +494,11 @@ class IngressGatewayHostListenerTlsArgs:
         :param pulumi.Input['IngressGatewayHostListenerTlsClientValidationArgs'] client_validation: (Updatable) Resource representing the TLS configuration used for validating client certificates.
         :param pulumi.Input['IngressGatewayHostListenerTlsServerCertificateArgs'] server_certificate: (Updatable) Resource representing the location of the TLS certificate.
         """
-        IngressGatewayHostListenerTlsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            mode=mode,
-            client_validation=client_validation,
-            server_certificate=server_certificate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             mode: Optional[pulumi.Input[str]] = None,
-             client_validation: Optional[pulumi.Input['IngressGatewayHostListenerTlsClientValidationArgs']] = None,
-             server_certificate: Optional[pulumi.Input['IngressGatewayHostListenerTlsServerCertificateArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-        if client_validation is None and 'clientValidation' in kwargs:
-            client_validation = kwargs['clientValidation']
-        if server_certificate is None and 'serverCertificate' in kwargs:
-            server_certificate = kwargs['serverCertificate']
-
-        _setter("mode", mode)
+        pulumi.set(__self__, "mode", mode)
         if client_validation is not None:
-            _setter("client_validation", client_validation)
+            pulumi.set(__self__, "client_validation", client_validation)
         if server_certificate is not None:
-            _setter("server_certificate", server_certificate)
+            pulumi.set(__self__, "server_certificate", server_certificate)
 
     @property
     @pulumi.getter
@@ -701,27 +546,10 @@ class IngressGatewayHostListenerTlsClientValidationArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subject_alternate_names: (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
         :param pulumi.Input['IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs'] trusted_ca_bundle: (Updatable) Resource representing the CA bundle.
         """
-        IngressGatewayHostListenerTlsClientValidationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subject_alternate_names=subject_alternate_names,
-            trusted_ca_bundle=trusted_ca_bundle,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subject_alternate_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             trusted_ca_bundle: Optional[pulumi.Input['IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subject_alternate_names is None and 'subjectAlternateNames' in kwargs:
-            subject_alternate_names = kwargs['subjectAlternateNames']
-        if trusted_ca_bundle is None and 'trustedCaBundle' in kwargs:
-            trusted_ca_bundle = kwargs['trustedCaBundle']
-
         if subject_alternate_names is not None:
-            _setter("subject_alternate_names", subject_alternate_names)
+            pulumi.set(__self__, "subject_alternate_names", subject_alternate_names)
         if trusted_ca_bundle is not None:
-            _setter("trusted_ca_bundle", trusted_ca_bundle)
+            pulumi.set(__self__, "trusted_ca_bundle", trusted_ca_bundle)
 
     @property
     @pulumi.getter(name="subjectAlternateNames")
@@ -759,32 +587,11 @@ class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs:
         :param pulumi.Input[str] ca_bundle_id: (Updatable) The OCID of the CA Bundle resource.
         :param pulumi.Input[str] secret_name: (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         """
-        IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            ca_bundle_id=ca_bundle_id,
-            secret_name=secret_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             ca_bundle_id: Optional[pulumi.Input[str]] = None,
-             secret_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ca_bundle_id is None and 'caBundleId' in kwargs:
-            ca_bundle_id = kwargs['caBundleId']
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if ca_bundle_id is not None:
-            _setter("ca_bundle_id", ca_bundle_id)
+            pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
         if secret_name is not None:
-            _setter("secret_name", secret_name)
+            pulumi.set(__self__, "secret_name", secret_name)
 
     @property
     @pulumi.getter
@@ -834,32 +641,11 @@ class IngressGatewayHostListenerTlsServerCertificateArgs:
         :param pulumi.Input[str] certificate_id: (Updatable) The OCID of the leaf certificate resource.
         :param pulumi.Input[str] secret_name: (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         """
-        IngressGatewayHostListenerTlsServerCertificateArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            certificate_id=certificate_id,
-            secret_name=secret_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             certificate_id: Optional[pulumi.Input[str]] = None,
-             secret_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if secret_name is None and 'secretName' in kwargs:
-            secret_name = kwargs['secretName']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if secret_name is not None:
-            _setter("secret_name", secret_name)
+            pulumi.set(__self__, "secret_name", secret_name)
 
     @property
     @pulumi.getter
@@ -907,27 +693,10 @@ class IngressGatewayMtlsArgs:
         :param pulumi.Input[str] certificate_id: (Updatable) The OCID of the leaf certificate resource.
         :param pulumi.Input[int] maximum_validity: (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        IngressGatewayMtlsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_id: Optional[pulumi.Input[str]] = None,
-             maximum_validity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if maximum_validity is not None:
-            _setter("maximum_validity", maximum_validity)
+            pulumi.set(__self__, "maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -981,65 +750,22 @@ class IngressGatewayRouteTableRouteRuleArgs:
         :param pulumi.Input[str] path_type: (Updatable) Match type for the route
         :param pulumi.Input[str] request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        IngressGatewayRouteTableRouteRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            type=type,
-            ingress_gateway_host=ingress_gateway_host,
-            is_grpc=is_grpc,
-            is_host_rewrite_enabled=is_host_rewrite_enabled,
-            is_path_rewrite_enabled=is_path_rewrite_enabled,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[pulumi.Input[Sequence[pulumi.Input['IngressGatewayRouteTableRouteRuleDestinationArgs']]]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             ingress_gateway_host: Optional[pulumi.Input['IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs']] = None,
-             is_grpc: Optional[pulumi.Input[bool]] = None,
-             is_host_rewrite_enabled: Optional[pulumi.Input[bool]] = None,
-             is_path_rewrite_enabled: Optional[pulumi.Input[bool]] = None,
-             path: Optional[pulumi.Input[str]] = None,
-             path_type: Optional[pulumi.Input[str]] = None,
-             request_timeout_in_ms: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ingress_gateway_host is None and 'ingressGatewayHost' in kwargs:
-            ingress_gateway_host = kwargs['ingressGatewayHost']
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if is_host_rewrite_enabled is None and 'isHostRewriteEnabled' in kwargs:
-            is_host_rewrite_enabled = kwargs['isHostRewriteEnabled']
-        if is_path_rewrite_enabled is None and 'isPathRewriteEnabled' in kwargs:
-            is_path_rewrite_enabled = kwargs['isPathRewriteEnabled']
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-
-        _setter("destinations", destinations)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "type", type)
         if ingress_gateway_host is not None:
-            _setter("ingress_gateway_host", ingress_gateway_host)
+            pulumi.set(__self__, "ingress_gateway_host", ingress_gateway_host)
         if is_grpc is not None:
-            _setter("is_grpc", is_grpc)
+            pulumi.set(__self__, "is_grpc", is_grpc)
         if is_host_rewrite_enabled is not None:
-            _setter("is_host_rewrite_enabled", is_host_rewrite_enabled)
+            pulumi.set(__self__, "is_host_rewrite_enabled", is_host_rewrite_enabled)
         if is_path_rewrite_enabled is not None:
-            _setter("is_path_rewrite_enabled", is_path_rewrite_enabled)
+            pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
         if path is not None:
-            _setter("path", path)
+            pulumi.set(__self__, "path", path)
         if path_type is not None:
-            _setter("path_type", path_type)
+            pulumi.set(__self__, "path_type", path_type)
         if request_timeout_in_ms is not None:
-            _setter("request_timeout_in_ms", request_timeout_in_ms)
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1165,30 +891,11 @@ class IngressGatewayRouteTableRouteRuleDestinationArgs:
         :param pulumi.Input[int] port: (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         :param pulumi.Input[int] weight: (Updatable) Weight of traffic target.
         """
-        IngressGatewayRouteTableRouteRuleDestinationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            virtual_service_id=virtual_service_id,
-            port=port,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             virtual_service_id: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if virtual_service_id is None and 'virtualServiceId' in kwargs:
-            virtual_service_id = kwargs['virtualServiceId']
-        if virtual_service_id is None:
-            raise TypeError("Missing 'virtual_service_id' argument")
-
-        _setter("virtual_service_id", virtual_service_id)
+        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if weight is not None:
-            _setter("weight", weight)
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter(name="virtualServiceId")
@@ -1236,24 +943,9 @@ class IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs:
         :param pulumi.Input[str] name: (Updatable) Name of the ingress gateway host that this route should apply to.
         :param pulumi.Input[int] port: (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         """
-        IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
@@ -1287,20 +979,7 @@ class MeshCertificateAuthorityArgs:
         """
         :param pulumi.Input[str] id: The OCID of the certificate authority resource.
         """
-        MeshCertificateAuthorityArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("id", id)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -1326,20 +1005,7 @@ class MeshMtlsArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        MeshMtlsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            minimum=minimum,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             minimum: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if minimum is None:
-            raise TypeError("Missing 'minimum' argument")
-
-        _setter("minimum", minimum)
+        pulumi.set(__self__, "minimum", minimum)
 
     @property
     @pulumi.getter
@@ -1365,21 +1031,8 @@ class VirtualDeploymentAccessLoggingArgs:
         """
         :param pulumi.Input[bool] is_enabled: (Updatable) Determines if the logging configuration is enabled.
         """
-        VirtualDeploymentAccessLoggingArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1407,37 +1060,12 @@ class VirtualDeploymentListenerArgs:
         :param pulumi.Input[str] idle_timeout_in_ms: (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
         :param pulumi.Input[str] request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        VirtualDeploymentListenerArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            port=port,
-            protocol=protocol,
-            idle_timeout_in_ms=idle_timeout_in_ms,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             port: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             idle_timeout_in_ms: Optional[pulumi.Input[str]] = None,
-             request_timeout_in_ms: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if idle_timeout_in_ms is None and 'idleTimeoutInMs' in kwargs:
-            idle_timeout_in_ms = kwargs['idleTimeoutInMs']
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-
-        _setter("port", port)
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
         if idle_timeout_in_ms is not None:
-            _setter("idle_timeout_in_ms", idle_timeout_in_ms)
+            pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
         if request_timeout_in_ms is not None:
-            _setter("request_timeout_in_ms", request_timeout_in_ms)
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1497,24 +1125,9 @@ class VirtualDeploymentServiceDiscoveryArgs:
         :param pulumi.Input[str] type: (Updatable) Type of service discovery.
         :param pulumi.Input[str] hostname: (Updatable) The hostname of the virtual deployments.
         """
-        VirtualDeploymentServiceDiscoveryArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            hostname=hostname,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             hostname: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if hostname is not None:
-            _setter("hostname", hostname)
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1548,20 +1161,7 @@ class VirtualServiceDefaultRoutingPolicyArgs:
         """
         :param pulumi.Input[str] type: (Updatable) Type of the virtual service routing policy.
         """
-        VirtualServiceDefaultRoutingPolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -1587,32 +1187,11 @@ class VirtualServiceMtlsArgs:
         :param pulumi.Input[str] certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param pulumi.Input[int] maximum_validity: (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        VirtualServiceMtlsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            mode=mode,
-            certificate_id=certificate_id,
-            maximum_validity=maximum_validity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             mode: Optional[pulumi.Input[str]] = None,
-             certificate_id: Optional[pulumi.Input[str]] = None,
-             maximum_validity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if mode is None:
-            raise TypeError("Missing 'mode' argument")
-        if certificate_id is None and 'certificateId' in kwargs:
-            certificate_id = kwargs['certificateId']
-        if maximum_validity is None and 'maximumValidity' in kwargs:
-            maximum_validity = kwargs['maximumValidity']
-
-        _setter("mode", mode)
+        pulumi.set(__self__, "mode", mode)
         if certificate_id is not None:
-            _setter("certificate_id", certificate_id)
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if maximum_validity is not None:
-            _setter("maximum_validity", maximum_validity)
+            pulumi.set(__self__, "maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter
@@ -1668,47 +1247,16 @@ class VirtualServiceRouteTableRouteRuleArgs:
         :param pulumi.Input[str] path_type: (Updatable) Match type for the route
         :param pulumi.Input[str] request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        VirtualServiceRouteTableRouteRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destinations=destinations,
-            type=type,
-            is_grpc=is_grpc,
-            path=path,
-            path_type=path_type,
-            request_timeout_in_ms=request_timeout_in_ms,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destinations: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleDestinationArgs']]]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             is_grpc: Optional[pulumi.Input[bool]] = None,
-             path: Optional[pulumi.Input[str]] = None,
-             path_type: Optional[pulumi.Input[str]] = None,
-             request_timeout_in_ms: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destinations is None:
-            raise TypeError("Missing 'destinations' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if is_grpc is None and 'isGrpc' in kwargs:
-            is_grpc = kwargs['isGrpc']
-        if path_type is None and 'pathType' in kwargs:
-            path_type = kwargs['pathType']
-        if request_timeout_in_ms is None and 'requestTimeoutInMs' in kwargs:
-            request_timeout_in_ms = kwargs['requestTimeoutInMs']
-
-        _setter("destinations", destinations)
-        _setter("type", type)
+        pulumi.set(__self__, "destinations", destinations)
+        pulumi.set(__self__, "type", type)
         if is_grpc is not None:
-            _setter("is_grpc", is_grpc)
+            pulumi.set(__self__, "is_grpc", is_grpc)
         if path is not None:
-            _setter("path", path)
+            pulumi.set(__self__, "path", path)
         if path_type is not None:
-            _setter("path_type", path_type)
+            pulumi.set(__self__, "path_type", path_type)
         if request_timeout_in_ms is not None:
-            _setter("request_timeout_in_ms", request_timeout_in_ms)
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1794,31 +1342,10 @@ class VirtualServiceRouteTableRouteRuleDestinationArgs:
         :param pulumi.Input[int] weight: (Updatable) Weight of traffic target.
         :param pulumi.Input[int] port: (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
         """
-        VirtualServiceRouteTableRouteRuleDestinationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            virtual_deployment_id=virtual_deployment_id,
-            weight=weight,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             virtual_deployment_id: Optional[pulumi.Input[str]] = None,
-             weight: Optional[pulumi.Input[int]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if virtual_deployment_id is None and 'virtualDeploymentId' in kwargs:
-            virtual_deployment_id = kwargs['virtualDeploymentId']
-        if virtual_deployment_id is None:
-            raise TypeError("Missing 'virtual_deployment_id' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("virtual_deployment_id", virtual_deployment_id)
-        _setter("weight", weight)
+        pulumi.set(__self__, "virtual_deployment_id", virtual_deployment_id)
+        pulumi.set(__self__, "weight", weight)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="virtualDeploymentId")
@@ -1866,29 +1393,10 @@ class GetAccessPoliciesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetAccessPoliciesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1930,29 +1438,10 @@ class GetIngressGatewayRouteTablesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetIngressGatewayRouteTablesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1994,29 +1483,10 @@ class GetIngressGatewaysFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetIngressGatewaysFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2055,29 +1525,10 @@ class GetMeshesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetMeshesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2116,29 +1567,10 @@ class GetVirtualDeploymentsFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetVirtualDeploymentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2180,29 +1612,10 @@ class GetVirtualServiceRouteTablesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetVirtualServiceRouteTablesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -2244,29 +1657,10 @@ class GetVirtualServicesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        GetVirtualServicesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

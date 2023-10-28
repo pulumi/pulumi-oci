@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['MaskDataArgs', 'MaskData']
@@ -19,29 +19,8 @@ class MaskDataArgs:
         """
         The set of arguments for constructing a MaskData resource.
         """
-        MaskDataArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            masking_policy_id=masking_policy_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             masking_policy_id: Optional[pulumi.Input[str]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
-            masking_policy_id = kwargs['maskingPolicyId']
-        if masking_policy_id is None:
-            raise TypeError("Missing 'masking_policy_id' argument")
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if target_id is None:
-            raise TypeError("Missing 'target_id' argument")
-
-        _setter("masking_policy_id", masking_policy_id)
-        _setter("target_id", target_id)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="maskingPolicyId")
@@ -70,27 +49,10 @@ class _MaskDataState:
         """
         Input properties used for looking up and filtering MaskData resources.
         """
-        _MaskDataState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            masking_policy_id=masking_policy_id,
-            target_id=target_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             masking_policy_id: Optional[pulumi.Input[str]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
-            masking_policy_id = kwargs['maskingPolicyId']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-
         if masking_policy_id is not None:
-            _setter("masking_policy_id", masking_policy_id)
+            pulumi.set(__self__, "masking_policy_id", masking_policy_id)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="maskingPolicyId")
@@ -142,10 +104,6 @@ class MaskData(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MaskDataArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

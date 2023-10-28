@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AnnouncementSubscriptionsActionsChangeCompartmentArgs', 'AnnouncementSubscriptionsActionsChangeCompartment']
@@ -25,29 +25,8 @@ class AnnouncementSubscriptionsActionsChangeCompartmentArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AnnouncementSubscriptionsActionsChangeCompartmentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            announcement_subscription_id=announcement_subscription_id,
-            compartment_id=compartment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             announcement_subscription_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if announcement_subscription_id is None and 'announcementSubscriptionId' in kwargs:
-            announcement_subscription_id = kwargs['announcementSubscriptionId']
-        if announcement_subscription_id is None:
-            raise TypeError("Missing 'announcement_subscription_id' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-
-        _setter("announcement_subscription_id", announcement_subscription_id)
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
 
     @property
     @pulumi.getter(name="announcementSubscriptionId")
@@ -92,27 +71,10 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _AnnouncementSubscriptionsActionsChangeCompartmentState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            announcement_subscription_id=announcement_subscription_id,
-            compartment_id=compartment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             announcement_subscription_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if announcement_subscription_id is None and 'announcementSubscriptionId' in kwargs:
-            announcement_subscription_id = kwargs['announcementSubscriptionId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-
         if announcement_subscription_id is not None:
-            _setter("announcement_subscription_id", announcement_subscription_id)
+            pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
 
     @property
     @pulumi.getter(name="announcementSubscriptionId")
@@ -228,10 +190,6 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AnnouncementSubscriptionsActionsChangeCompartmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

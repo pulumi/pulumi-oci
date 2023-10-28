@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DiscoveryModArgs', 'DiscoveryMod']
@@ -45,89 +45,28 @@ class DiscoveryModArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        DiscoveryModArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            sensitive_data_model_id=sensitive_data_model_id,
-            defined_tags=defined_tags,
-            discovery_type=discovery_type,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_app_defined_relation_discovery_enabled=is_app_defined_relation_discovery_enabled,
-            is_include_all_schemas=is_include_all_schemas,
-            is_include_all_sensitive_types=is_include_all_sensitive_types,
-            is_sample_data_collection_enabled=is_sample_data_collection_enabled,
-            schemas_for_discoveries=schemas_for_discoveries,
-            sensitive_type_ids_for_discoveries=sensitive_type_ids_for_discoveries,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             discovery_type: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[bool]] = None,
-             is_include_all_schemas: Optional[pulumi.Input[bool]] = None,
-             is_include_all_sensitive_types: Optional[pulumi.Input[bool]] = None,
-             is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
-             schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_data_model_id is None:
-            raise TypeError("Missing 'sensitive_data_model_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if discovery_type is None and 'discoveryType' in kwargs:
-            discovery_type = kwargs['discoveryType']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_app_defined_relation_discovery_enabled is None and 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
-            is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
-        if is_include_all_schemas is None and 'isIncludeAllSchemas' in kwargs:
-            is_include_all_schemas = kwargs['isIncludeAllSchemas']
-        if is_include_all_sensitive_types is None and 'isIncludeAllSensitiveTypes' in kwargs:
-            is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
-        if is_sample_data_collection_enabled is None and 'isSampleDataCollectionEnabled' in kwargs:
-            is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
-        if schemas_for_discoveries is None and 'schemasForDiscoveries' in kwargs:
-            schemas_for_discoveries = kwargs['schemasForDiscoveries']
-        if sensitive_type_ids_for_discoveries is None and 'sensitiveTypeIdsForDiscoveries' in kwargs:
-            sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
-
-        _setter("compartment_id", compartment_id)
-        _setter("sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if discovery_type is not None:
-            _setter("discovery_type", discovery_type)
+            pulumi.set(__self__, "discovery_type", discovery_type)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_app_defined_relation_discovery_enabled is not None:
-            _setter("is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
+            pulumi.set(__self__, "is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
         if is_include_all_schemas is not None:
-            _setter("is_include_all_schemas", is_include_all_schemas)
+            pulumi.set(__self__, "is_include_all_schemas", is_include_all_schemas)
         if is_include_all_sensitive_types is not None:
-            _setter("is_include_all_sensitive_types", is_include_all_sensitive_types)
+            pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
         if is_sample_data_collection_enabled is not None:
-            _setter("is_sample_data_collection_enabled", is_sample_data_collection_enabled)
+            pulumi.set(__self__, "is_sample_data_collection_enabled", is_sample_data_collection_enabled)
         if schemas_for_discoveries is not None:
-            _setter("schemas_for_discoveries", schemas_for_discoveries)
+            pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
         if sensitive_type_ids_for_discoveries is not None:
-            _setter("sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
+            pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -334,151 +273,52 @@ class _DiscoveryModState:
         :param pulumi.Input[str] total_objects_scanned: The total number of objects (tables and editioning views) scanned by the discovery job.
         :param pulumi.Input[str] total_schemas_scanned: The total number of schemas scanned by the discovery job.
         """
-        _DiscoveryModState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            discovery_type=discovery_type,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_app_defined_relation_discovery_enabled=is_app_defined_relation_discovery_enabled,
-            is_include_all_schemas=is_include_all_schemas,
-            is_include_all_sensitive_types=is_include_all_sensitive_types,
-            is_sample_data_collection_enabled=is_sample_data_collection_enabled,
-            schemas_for_discoveries=schemas_for_discoveries,
-            sensitive_data_model_id=sensitive_data_model_id,
-            sensitive_type_ids_for_discoveries=sensitive_type_ids_for_discoveries,
-            state=state,
-            system_tags=system_tags,
-            target_id=target_id,
-            time_finished=time_finished,
-            time_started=time_started,
-            total_columns_scanned=total_columns_scanned,
-            total_deleted_sensitive_columns=total_deleted_sensitive_columns,
-            total_modified_sensitive_columns=total_modified_sensitive_columns,
-            total_new_sensitive_columns=total_new_sensitive_columns,
-            total_objects_scanned=total_objects_scanned,
-            total_schemas_scanned=total_schemas_scanned,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             discovery_type: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[bool]] = None,
-             is_include_all_schemas: Optional[pulumi.Input[bool]] = None,
-             is_include_all_sensitive_types: Optional[pulumi.Input[bool]] = None,
-             is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
-             schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
-             sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             time_finished: Optional[pulumi.Input[str]] = None,
-             time_started: Optional[pulumi.Input[str]] = None,
-             total_columns_scanned: Optional[pulumi.Input[str]] = None,
-             total_deleted_sensitive_columns: Optional[pulumi.Input[str]] = None,
-             total_modified_sensitive_columns: Optional[pulumi.Input[str]] = None,
-             total_new_sensitive_columns: Optional[pulumi.Input[str]] = None,
-             total_objects_scanned: Optional[pulumi.Input[str]] = None,
-             total_schemas_scanned: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if discovery_type is None and 'discoveryType' in kwargs:
-            discovery_type = kwargs['discoveryType']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_app_defined_relation_discovery_enabled is None and 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
-            is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
-        if is_include_all_schemas is None and 'isIncludeAllSchemas' in kwargs:
-            is_include_all_schemas = kwargs['isIncludeAllSchemas']
-        if is_include_all_sensitive_types is None and 'isIncludeAllSensitiveTypes' in kwargs:
-            is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
-        if is_sample_data_collection_enabled is None and 'isSampleDataCollectionEnabled' in kwargs:
-            is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
-        if schemas_for_discoveries is None and 'schemasForDiscoveries' in kwargs:
-            schemas_for_discoveries = kwargs['schemasForDiscoveries']
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if sensitive_type_ids_for_discoveries is None and 'sensitiveTypeIdsForDiscoveries' in kwargs:
-            sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-        if time_finished is None and 'timeFinished' in kwargs:
-            time_finished = kwargs['timeFinished']
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if total_columns_scanned is None and 'totalColumnsScanned' in kwargs:
-            total_columns_scanned = kwargs['totalColumnsScanned']
-        if total_deleted_sensitive_columns is None and 'totalDeletedSensitiveColumns' in kwargs:
-            total_deleted_sensitive_columns = kwargs['totalDeletedSensitiveColumns']
-        if total_modified_sensitive_columns is None and 'totalModifiedSensitiveColumns' in kwargs:
-            total_modified_sensitive_columns = kwargs['totalModifiedSensitiveColumns']
-        if total_new_sensitive_columns is None and 'totalNewSensitiveColumns' in kwargs:
-            total_new_sensitive_columns = kwargs['totalNewSensitiveColumns']
-        if total_objects_scanned is None and 'totalObjectsScanned' in kwargs:
-            total_objects_scanned = kwargs['totalObjectsScanned']
-        if total_schemas_scanned is None and 'totalSchemasScanned' in kwargs:
-            total_schemas_scanned = kwargs['totalSchemasScanned']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if discovery_type is not None:
-            _setter("discovery_type", discovery_type)
+            pulumi.set(__self__, "discovery_type", discovery_type)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_app_defined_relation_discovery_enabled is not None:
-            _setter("is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
+            pulumi.set(__self__, "is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
         if is_include_all_schemas is not None:
-            _setter("is_include_all_schemas", is_include_all_schemas)
+            pulumi.set(__self__, "is_include_all_schemas", is_include_all_schemas)
         if is_include_all_sensitive_types is not None:
-            _setter("is_include_all_sensitive_types", is_include_all_sensitive_types)
+            pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
         if is_sample_data_collection_enabled is not None:
-            _setter("is_sample_data_collection_enabled", is_sample_data_collection_enabled)
+            pulumi.set(__self__, "is_sample_data_collection_enabled", is_sample_data_collection_enabled)
         if schemas_for_discoveries is not None:
-            _setter("schemas_for_discoveries", schemas_for_discoveries)
+            pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
         if sensitive_data_model_id is not None:
-            _setter("sensitive_data_model_id", sensitive_data_model_id)
+            pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
         if sensitive_type_ids_for_discoveries is not None:
-            _setter("sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
+            pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if time_finished is not None:
-            _setter("time_finished", time_finished)
+            pulumi.set(__self__, "time_finished", time_finished)
         if time_started is not None:
-            _setter("time_started", time_started)
+            pulumi.set(__self__, "time_started", time_started)
         if total_columns_scanned is not None:
-            _setter("total_columns_scanned", total_columns_scanned)
+            pulumi.set(__self__, "total_columns_scanned", total_columns_scanned)
         if total_deleted_sensitive_columns is not None:
-            _setter("total_deleted_sensitive_columns", total_deleted_sensitive_columns)
+            pulumi.set(__self__, "total_deleted_sensitive_columns", total_deleted_sensitive_columns)
         if total_modified_sensitive_columns is not None:
-            _setter("total_modified_sensitive_columns", total_modified_sensitive_columns)
+            pulumi.set(__self__, "total_modified_sensitive_columns", total_modified_sensitive_columns)
         if total_new_sensitive_columns is not None:
-            _setter("total_new_sensitive_columns", total_new_sensitive_columns)
+            pulumi.set(__self__, "total_new_sensitive_columns", total_new_sensitive_columns)
         if total_objects_scanned is not None:
-            _setter("total_objects_scanned", total_objects_scanned)
+            pulumi.set(__self__, "total_objects_scanned", total_objects_scanned)
         if total_schemas_scanned is not None:
-            _setter("total_schemas_scanned", total_schemas_scanned)
+            pulumi.set(__self__, "total_schemas_scanned", total_schemas_scanned)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -898,10 +738,6 @@ class DiscoveryMod(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DiscoveryModArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

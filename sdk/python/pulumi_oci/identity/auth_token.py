@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AuthTokenArgs', 'AuthToken']
@@ -25,27 +25,8 @@ class AuthTokenArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        AuthTokenArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-        if user_id is None:
-            raise TypeError("Missing 'user_id' argument")
-
-        _setter("description", description)
-        _setter("user_id", user_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter
@@ -100,51 +81,20 @@ class _AuthTokenState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _AuthTokenState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            inactive_state=inactive_state,
-            state=state,
-            time_created=time_created,
-            time_expires=time_expires,
-            token=token,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             inactive_state: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_expires: Optional[pulumi.Input[str]] = None,
-             token: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if inactive_state is None and 'inactiveState' in kwargs:
-            inactive_state = kwargs['inactiveState']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_expires is None and 'timeExpires' in kwargs:
-            time_expires = kwargs['timeExpires']
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if inactive_state is not None:
-            _setter("inactive_state", inactive_state)
+            pulumi.set(__self__, "inactive_state", inactive_state)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_expires is not None:
-            _setter("time_expires", time_expires)
+            pulumi.set(__self__, "time_expires", time_expires)
         if token is not None:
-            _setter("token", token)
+            pulumi.set(__self__, "token", token)
         if user_id is not None:
-            _setter("user_id", user_id)
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter
@@ -334,10 +284,6 @@ class AuthToken(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AuthTokenArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

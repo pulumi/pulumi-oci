@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -42,70 +42,23 @@ class WorkspaceFolderArgs:
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
-        WorkspaceFolderArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            identifier=identifier,
-            registry_metadata=registry_metadata,
-            workspace_id=workspace_id,
-            category_name=category_name,
-            description=description,
-            folder_key=folder_key,
-            key=key,
-            model_version=model_version,
-            name=name,
-            object_status=object_status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             identifier: Optional[pulumi.Input[str]] = None,
-             registry_metadata: Optional[pulumi.Input['WorkspaceFolderRegistryMetadataArgs']] = None,
-             workspace_id: Optional[pulumi.Input[str]] = None,
-             category_name: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             folder_key: Optional[pulumi.Input[str]] = None,
-             key: Optional[pulumi.Input[str]] = None,
-             model_version: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             object_status: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if identifier is None:
-            raise TypeError("Missing 'identifier' argument")
-        if registry_metadata is None and 'registryMetadata' in kwargs:
-            registry_metadata = kwargs['registryMetadata']
-        if registry_metadata is None:
-            raise TypeError("Missing 'registry_metadata' argument")
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-        if workspace_id is None:
-            raise TypeError("Missing 'workspace_id' argument")
-        if category_name is None and 'categoryName' in kwargs:
-            category_name = kwargs['categoryName']
-        if folder_key is None and 'folderKey' in kwargs:
-            folder_key = kwargs['folderKey']
-        if model_version is None and 'modelVersion' in kwargs:
-            model_version = kwargs['modelVersion']
-        if object_status is None and 'objectStatus' in kwargs:
-            object_status = kwargs['objectStatus']
-
-        _setter("identifier", identifier)
-        _setter("registry_metadata", registry_metadata)
-        _setter("workspace_id", workspace_id)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "registry_metadata", registry_metadata)
+        pulumi.set(__self__, "workspace_id", workspace_id)
         if category_name is not None:
-            _setter("category_name", category_name)
+            pulumi.set(__self__, "category_name", category_name)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if folder_key is not None:
-            _setter("folder_key", folder_key)
+            pulumi.set(__self__, "folder_key", folder_key)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if model_version is not None:
-            _setter("model_version", model_version)
+            pulumi.set(__self__, "model_version", model_version)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if object_status is not None:
-            _setter("object_status", object_status)
+            pulumi.set(__self__, "object_status", object_status)
 
     @property
     @pulumi.getter
@@ -268,95 +221,36 @@ class _WorkspaceFolderState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _WorkspaceFolderState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            category_name=category_name,
-            description=description,
-            folder_key=folder_key,
-            identifier=identifier,
-            key=key,
-            key_map=key_map,
-            metadatas=metadatas,
-            model_type=model_type,
-            model_version=model_version,
-            name=name,
-            object_status=object_status,
-            object_version=object_version,
-            parent_reves=parent_reves,
-            registry_metadata=registry_metadata,
-            workspace_id=workspace_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             category_name: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             folder_key: Optional[pulumi.Input[str]] = None,
-             identifier: Optional[pulumi.Input[str]] = None,
-             key: Optional[pulumi.Input[str]] = None,
-             key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataArgs']]]] = None,
-             model_type: Optional[pulumi.Input[str]] = None,
-             model_version: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             object_status: Optional[pulumi.Input[int]] = None,
-             object_version: Optional[pulumi.Input[int]] = None,
-             parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderParentRefArgs']]]] = None,
-             registry_metadata: Optional[pulumi.Input['WorkspaceFolderRegistryMetadataArgs']] = None,
-             workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if category_name is None and 'categoryName' in kwargs:
-            category_name = kwargs['categoryName']
-        if folder_key is None and 'folderKey' in kwargs:
-            folder_key = kwargs['folderKey']
-        if key_map is None and 'keyMap' in kwargs:
-            key_map = kwargs['keyMap']
-        if model_type is None and 'modelType' in kwargs:
-            model_type = kwargs['modelType']
-        if model_version is None and 'modelVersion' in kwargs:
-            model_version = kwargs['modelVersion']
-        if object_status is None and 'objectStatus' in kwargs:
-            object_status = kwargs['objectStatus']
-        if object_version is None and 'objectVersion' in kwargs:
-            object_version = kwargs['objectVersion']
-        if parent_reves is None and 'parentReves' in kwargs:
-            parent_reves = kwargs['parentReves']
-        if registry_metadata is None and 'registryMetadata' in kwargs:
-            registry_metadata = kwargs['registryMetadata']
-        if workspace_id is None and 'workspaceId' in kwargs:
-            workspace_id = kwargs['workspaceId']
-
         if category_name is not None:
-            _setter("category_name", category_name)
+            pulumi.set(__self__, "category_name", category_name)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if folder_key is not None:
-            _setter("folder_key", folder_key)
+            pulumi.set(__self__, "folder_key", folder_key)
         if identifier is not None:
-            _setter("identifier", identifier)
+            pulumi.set(__self__, "identifier", identifier)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if key_map is not None:
-            _setter("key_map", key_map)
+            pulumi.set(__self__, "key_map", key_map)
         if metadatas is not None:
-            _setter("metadatas", metadatas)
+            pulumi.set(__self__, "metadatas", metadatas)
         if model_type is not None:
-            _setter("model_type", model_type)
+            pulumi.set(__self__, "model_type", model_type)
         if model_version is not None:
-            _setter("model_version", model_version)
+            pulumi.set(__self__, "model_version", model_version)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if object_status is not None:
-            _setter("object_status", object_status)
+            pulumi.set(__self__, "object_status", object_status)
         if object_version is not None:
-            _setter("object_version", object_version)
+            pulumi.set(__self__, "object_version", object_version)
         if parent_reves is not None:
-            _setter("parent_reves", parent_reves)
+            pulumi.set(__self__, "parent_reves", parent_reves)
         if registry_metadata is not None:
-            _setter("registry_metadata", registry_metadata)
+            pulumi.set(__self__, "registry_metadata", registry_metadata)
         if workspace_id is not None:
-            _setter("workspace_id", workspace_id)
+            pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="categoryName")
@@ -662,10 +556,6 @@ class WorkspaceFolder(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            WorkspaceFolderArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -700,7 +590,6 @@ class WorkspaceFolder(pulumi.CustomResource):
             __props__.__dict__["model_version"] = model_version
             __props__.__dict__["name"] = name
             __props__.__dict__["object_status"] = object_status
-            registry_metadata = _utilities.configure(registry_metadata, WorkspaceFolderRegistryMetadataArgs, True)
             if registry_metadata is None and not opts.urn:
                 raise TypeError("Missing required property 'registry_metadata'")
             __props__.__dict__["registry_metadata"] = registry_metadata

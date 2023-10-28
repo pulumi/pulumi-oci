@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ApiKeyArgs', 'ApiKey']
@@ -25,29 +25,8 @@ class ApiKeyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ApiKeyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key_value=key_value,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key_value: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key_value is None and 'keyValue' in kwargs:
-            key_value = kwargs['keyValue']
-        if key_value is None:
-            raise TypeError("Missing 'key_value' argument")
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-        if user_id is None:
-            raise TypeError("Missing 'user_id' argument")
-
-        _setter("key_value", key_value)
-        _setter("user_id", user_id)
+        pulumi.set(__self__, "key_value", key_value)
+        pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter(name="keyValue")
@@ -100,47 +79,18 @@ class _ApiKeyState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _ApiKeyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            fingerprint=fingerprint,
-            inactive_status=inactive_status,
-            key_value=key_value,
-            state=state,
-            time_created=time_created,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             fingerprint: Optional[pulumi.Input[str]] = None,
-             inactive_status: Optional[pulumi.Input[str]] = None,
-             key_value: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if inactive_status is None and 'inactiveStatus' in kwargs:
-            inactive_status = kwargs['inactiveStatus']
-        if key_value is None and 'keyValue' in kwargs:
-            key_value = kwargs['keyValue']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-
         if fingerprint is not None:
-            _setter("fingerprint", fingerprint)
+            pulumi.set(__self__, "fingerprint", fingerprint)
         if inactive_status is not None:
-            _setter("inactive_status", inactive_status)
+            pulumi.set(__self__, "inactive_status", inactive_status)
         if key_value is not None:
-            _setter("key_value", key_value)
+            pulumi.set(__self__, "key_value", key_value)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if user_id is not None:
-            _setter("user_id", user_id)
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter
@@ -322,10 +272,6 @@ class ApiKey(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ApiKeyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

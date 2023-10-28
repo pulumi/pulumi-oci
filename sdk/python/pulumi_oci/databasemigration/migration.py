@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -58,137 +58,42 @@ class MigrationArgs:
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
         :param pulumi.Input['MigrationVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         """
-        MigrationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            source_database_connection_id=source_database_connection_id,
-            target_database_connection_id=target_database_connection_id,
-            type=type,
-            advisor_settings=advisor_settings,
-            agent_id=agent_id,
-            csv_text=csv_text,
-            data_transfer_medium_details=data_transfer_medium_details,
-            data_transfer_medium_details_v2=data_transfer_medium_details_v2,
-            datapump_settings=datapump_settings,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dump_transfer_details=dump_transfer_details,
-            exclude_objects=exclude_objects,
-            freeform_tags=freeform_tags,
-            golden_gate_details=golden_gate_details,
-            golden_gate_service_details=golden_gate_service_details,
-            include_objects=include_objects,
-            source_container_database_connection_id=source_container_database_connection_id,
-            vault_details=vault_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             source_database_connection_id: Optional[pulumi.Input[str]] = None,
-             target_database_connection_id: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
-             agent_id: Optional[pulumi.Input[str]] = None,
-             csv_text: Optional[pulumi.Input[str]] = None,
-             data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
-             data_transfer_medium_details_v2: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']] = None,
-             datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dump_transfer_details: Optional[pulumi.Input['MigrationDumpTransferDetailsArgs']] = None,
-             exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             golden_gate_details: Optional[pulumi.Input['MigrationGoldenGateDetailsArgs']] = None,
-             golden_gate_service_details: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']] = None,
-             include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
-             source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
-             vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if source_database_connection_id is None and 'sourceDatabaseConnectionId' in kwargs:
-            source_database_connection_id = kwargs['sourceDatabaseConnectionId']
-        if source_database_connection_id is None:
-            raise TypeError("Missing 'source_database_connection_id' argument")
-        if target_database_connection_id is None and 'targetDatabaseConnectionId' in kwargs:
-            target_database_connection_id = kwargs['targetDatabaseConnectionId']
-        if target_database_connection_id is None:
-            raise TypeError("Missing 'target_database_connection_id' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if advisor_settings is None and 'advisorSettings' in kwargs:
-            advisor_settings = kwargs['advisorSettings']
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if csv_text is None and 'csvText' in kwargs:
-            csv_text = kwargs['csvText']
-        if data_transfer_medium_details is None and 'dataTransferMediumDetails' in kwargs:
-            data_transfer_medium_details = kwargs['dataTransferMediumDetails']
-        if data_transfer_medium_details_v2 is None and 'dataTransferMediumDetailsV2' in kwargs:
-            data_transfer_medium_details_v2 = kwargs['dataTransferMediumDetailsV2']
-        if datapump_settings is None and 'datapumpSettings' in kwargs:
-            datapump_settings = kwargs['datapumpSettings']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dump_transfer_details is None and 'dumpTransferDetails' in kwargs:
-            dump_transfer_details = kwargs['dumpTransferDetails']
-        if exclude_objects is None and 'excludeObjects' in kwargs:
-            exclude_objects = kwargs['excludeObjects']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if golden_gate_details is None and 'goldenGateDetails' in kwargs:
-            golden_gate_details = kwargs['goldenGateDetails']
-        if golden_gate_service_details is None and 'goldenGateServiceDetails' in kwargs:
-            golden_gate_service_details = kwargs['goldenGateServiceDetails']
-        if include_objects is None and 'includeObjects' in kwargs:
-            include_objects = kwargs['includeObjects']
-        if source_container_database_connection_id is None and 'sourceContainerDatabaseConnectionId' in kwargs:
-            source_container_database_connection_id = kwargs['sourceContainerDatabaseConnectionId']
-        if vault_details is None and 'vaultDetails' in kwargs:
-            vault_details = kwargs['vaultDetails']
-
-        _setter("compartment_id", compartment_id)
-        _setter("source_database_connection_id", source_database_connection_id)
-        _setter("target_database_connection_id", target_database_connection_id)
-        _setter("type", type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
+        pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
+        pulumi.set(__self__, "type", type)
         if advisor_settings is not None:
-            _setter("advisor_settings", advisor_settings)
+            pulumi.set(__self__, "advisor_settings", advisor_settings)
         if agent_id is not None:
-            _setter("agent_id", agent_id)
+            pulumi.set(__self__, "agent_id", agent_id)
         if csv_text is not None:
-            _setter("csv_text", csv_text)
+            pulumi.set(__self__, "csv_text", csv_text)
         if data_transfer_medium_details is not None:
-            _setter("data_transfer_medium_details", data_transfer_medium_details)
+            pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
         if data_transfer_medium_details_v2 is not None:
-            _setter("data_transfer_medium_details_v2", data_transfer_medium_details_v2)
+            pulumi.set(__self__, "data_transfer_medium_details_v2", data_transfer_medium_details_v2)
         if datapump_settings is not None:
-            _setter("datapump_settings", datapump_settings)
+            pulumi.set(__self__, "datapump_settings", datapump_settings)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dump_transfer_details is not None:
-            _setter("dump_transfer_details", dump_transfer_details)
+            pulumi.set(__self__, "dump_transfer_details", dump_transfer_details)
         if exclude_objects is not None:
-            _setter("exclude_objects", exclude_objects)
+            pulumi.set(__self__, "exclude_objects", exclude_objects)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if golden_gate_details is not None:
-            _setter("golden_gate_details", golden_gate_details)
+            pulumi.set(__self__, "golden_gate_details", golden_gate_details)
         if golden_gate_service_details is not None:
-            _setter("golden_gate_service_details", golden_gate_service_details)
+            pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
         if include_objects is not None:
-            _setter("include_objects", include_objects)
+            pulumi.set(__self__, "include_objects", include_objects)
         if source_container_database_connection_id is not None:
-            _setter("source_container_database_connection_id", source_container_database_connection_id)
+            pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
         if vault_details is not None:
-            _setter("vault_details", vault_details)
+            pulumi.set(__self__, "vault_details", vault_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -491,185 +396,64 @@ class _MigrationState:
         :param pulumi.Input['MigrationVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         :param pulumi.Input[str] wait_after: Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
         """
-        _MigrationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            advisor_settings=advisor_settings,
-            agent_id=agent_id,
-            compartment_id=compartment_id,
-            credentials_secret_id=credentials_secret_id,
-            csv_text=csv_text,
-            data_transfer_medium_details=data_transfer_medium_details,
-            data_transfer_medium_details_v2=data_transfer_medium_details_v2,
-            datapump_settings=datapump_settings,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dump_transfer_details=dump_transfer_details,
-            exclude_objects=exclude_objects,
-            executing_job_id=executing_job_id,
-            freeform_tags=freeform_tags,
-            golden_gate_details=golden_gate_details,
-            golden_gate_service_details=golden_gate_service_details,
-            include_objects=include_objects,
-            lifecycle_details=lifecycle_details,
-            source_container_database_connection_id=source_container_database_connection_id,
-            source_database_connection_id=source_database_connection_id,
-            state=state,
-            system_tags=system_tags,
-            target_database_connection_id=target_database_connection_id,
-            time_created=time_created,
-            time_last_migration=time_last_migration,
-            time_updated=time_updated,
-            type=type,
-            vault_details=vault_details,
-            wait_after=wait_after,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
-             agent_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             credentials_secret_id: Optional[pulumi.Input[str]] = None,
-             csv_text: Optional[pulumi.Input[str]] = None,
-             data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
-             data_transfer_medium_details_v2: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']] = None,
-             datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dump_transfer_details: Optional[pulumi.Input['MigrationDumpTransferDetailsArgs']] = None,
-             exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
-             executing_job_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             golden_gate_details: Optional[pulumi.Input['MigrationGoldenGateDetailsArgs']] = None,
-             golden_gate_service_details: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']] = None,
-             include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
-             source_database_connection_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             target_database_connection_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_last_migration: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
-             wait_after: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if advisor_settings is None and 'advisorSettings' in kwargs:
-            advisor_settings = kwargs['advisorSettings']
-        if agent_id is None and 'agentId' in kwargs:
-            agent_id = kwargs['agentId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if credentials_secret_id is None and 'credentialsSecretId' in kwargs:
-            credentials_secret_id = kwargs['credentialsSecretId']
-        if csv_text is None and 'csvText' in kwargs:
-            csv_text = kwargs['csvText']
-        if data_transfer_medium_details is None and 'dataTransferMediumDetails' in kwargs:
-            data_transfer_medium_details = kwargs['dataTransferMediumDetails']
-        if data_transfer_medium_details_v2 is None and 'dataTransferMediumDetailsV2' in kwargs:
-            data_transfer_medium_details_v2 = kwargs['dataTransferMediumDetailsV2']
-        if datapump_settings is None and 'datapumpSettings' in kwargs:
-            datapump_settings = kwargs['datapumpSettings']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dump_transfer_details is None and 'dumpTransferDetails' in kwargs:
-            dump_transfer_details = kwargs['dumpTransferDetails']
-        if exclude_objects is None and 'excludeObjects' in kwargs:
-            exclude_objects = kwargs['excludeObjects']
-        if executing_job_id is None and 'executingJobId' in kwargs:
-            executing_job_id = kwargs['executingJobId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if golden_gate_details is None and 'goldenGateDetails' in kwargs:
-            golden_gate_details = kwargs['goldenGateDetails']
-        if golden_gate_service_details is None and 'goldenGateServiceDetails' in kwargs:
-            golden_gate_service_details = kwargs['goldenGateServiceDetails']
-        if include_objects is None and 'includeObjects' in kwargs:
-            include_objects = kwargs['includeObjects']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if source_container_database_connection_id is None and 'sourceContainerDatabaseConnectionId' in kwargs:
-            source_container_database_connection_id = kwargs['sourceContainerDatabaseConnectionId']
-        if source_database_connection_id is None and 'sourceDatabaseConnectionId' in kwargs:
-            source_database_connection_id = kwargs['sourceDatabaseConnectionId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if target_database_connection_id is None and 'targetDatabaseConnectionId' in kwargs:
-            target_database_connection_id = kwargs['targetDatabaseConnectionId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_last_migration is None and 'timeLastMigration' in kwargs:
-            time_last_migration = kwargs['timeLastMigration']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if vault_details is None and 'vaultDetails' in kwargs:
-            vault_details = kwargs['vaultDetails']
-        if wait_after is None and 'waitAfter' in kwargs:
-            wait_after = kwargs['waitAfter']
-
         if advisor_settings is not None:
-            _setter("advisor_settings", advisor_settings)
+            pulumi.set(__self__, "advisor_settings", advisor_settings)
         if agent_id is not None:
-            _setter("agent_id", agent_id)
+            pulumi.set(__self__, "agent_id", agent_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if credentials_secret_id is not None:
-            _setter("credentials_secret_id", credentials_secret_id)
+            pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
         if csv_text is not None:
-            _setter("csv_text", csv_text)
+            pulumi.set(__self__, "csv_text", csv_text)
         if data_transfer_medium_details is not None:
-            _setter("data_transfer_medium_details", data_transfer_medium_details)
+            pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
         if data_transfer_medium_details_v2 is not None:
-            _setter("data_transfer_medium_details_v2", data_transfer_medium_details_v2)
+            pulumi.set(__self__, "data_transfer_medium_details_v2", data_transfer_medium_details_v2)
         if datapump_settings is not None:
-            _setter("datapump_settings", datapump_settings)
+            pulumi.set(__self__, "datapump_settings", datapump_settings)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dump_transfer_details is not None:
-            _setter("dump_transfer_details", dump_transfer_details)
+            pulumi.set(__self__, "dump_transfer_details", dump_transfer_details)
         if exclude_objects is not None:
-            _setter("exclude_objects", exclude_objects)
+            pulumi.set(__self__, "exclude_objects", exclude_objects)
         if executing_job_id is not None:
-            _setter("executing_job_id", executing_job_id)
+            pulumi.set(__self__, "executing_job_id", executing_job_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if golden_gate_details is not None:
-            _setter("golden_gate_details", golden_gate_details)
+            pulumi.set(__self__, "golden_gate_details", golden_gate_details)
         if golden_gate_service_details is not None:
-            _setter("golden_gate_service_details", golden_gate_service_details)
+            pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
         if include_objects is not None:
-            _setter("include_objects", include_objects)
+            pulumi.set(__self__, "include_objects", include_objects)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if source_container_database_connection_id is not None:
-            _setter("source_container_database_connection_id", source_container_database_connection_id)
+            pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
         if source_database_connection_id is not None:
-            _setter("source_database_connection_id", source_database_connection_id)
+            pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_database_connection_id is not None:
-            _setter("target_database_connection_id", target_database_connection_id)
+            pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_last_migration is not None:
-            _setter("time_last_migration", time_last_migration)
+            pulumi.set(__self__, "time_last_migration", time_last_migration)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if vault_details is not None:
-            _setter("vault_details", vault_details)
+            pulumi.set(__self__, "vault_details", vault_details)
         if wait_after is not None:
-            _setter("wait_after", wait_after)
+            pulumi.set(__self__, "wait_after", wait_after)
 
     @property
     @pulumi.getter(name="advisorSettings")
@@ -1421,10 +1205,6 @@ class Migration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            MigrationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1459,28 +1239,21 @@ class Migration(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MigrationArgs.__new__(MigrationArgs)
 
-            advisor_settings = _utilities.configure(advisor_settings, MigrationAdvisorSettingsArgs, True)
             __props__.__dict__["advisor_settings"] = advisor_settings
             __props__.__dict__["agent_id"] = agent_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["csv_text"] = csv_text
-            data_transfer_medium_details = _utilities.configure(data_transfer_medium_details, MigrationDataTransferMediumDetailsArgs, True)
             __props__.__dict__["data_transfer_medium_details"] = data_transfer_medium_details
-            data_transfer_medium_details_v2 = _utilities.configure(data_transfer_medium_details_v2, MigrationDataTransferMediumDetailsV2Args, True)
             __props__.__dict__["data_transfer_medium_details_v2"] = data_transfer_medium_details_v2
-            datapump_settings = _utilities.configure(datapump_settings, MigrationDatapumpSettingsArgs, True)
             __props__.__dict__["datapump_settings"] = datapump_settings
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
-            dump_transfer_details = _utilities.configure(dump_transfer_details, MigrationDumpTransferDetailsArgs, True)
             __props__.__dict__["dump_transfer_details"] = dump_transfer_details
             __props__.__dict__["exclude_objects"] = exclude_objects
             __props__.__dict__["freeform_tags"] = freeform_tags
-            golden_gate_details = _utilities.configure(golden_gate_details, MigrationGoldenGateDetailsArgs, True)
             __props__.__dict__["golden_gate_details"] = golden_gate_details
-            golden_gate_service_details = _utilities.configure(golden_gate_service_details, MigrationGoldenGateServiceDetailsArgs, True)
             __props__.__dict__["golden_gate_service_details"] = golden_gate_service_details
             __props__.__dict__["include_objects"] = include_objects
             __props__.__dict__["source_container_database_connection_id"] = source_container_database_connection_id
@@ -1493,7 +1266,6 @@ class Migration(pulumi.CustomResource):
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
-            vault_details = _utilities.configure(vault_details, MigrationVaultDetailsArgs, True)
             __props__.__dict__["vault_details"] = vault_details
             __props__.__dict__["credentials_secret_id"] = None
             __props__.__dict__["executing_job_id"] = None

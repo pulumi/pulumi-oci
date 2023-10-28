@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,46 +35,17 @@ class UserArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        UserArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            description=description,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            email=email,
-            freeform_tags=freeform_tags,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             description: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             email: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("description", description)
+        pulumi.set(__self__, "description", description)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if email is not None:
-            _setter("email", email)
+            pulumi.set(__self__, "email", email)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -198,101 +169,38 @@ class _UserState:
         :param pulumi.Input[str] state: The user's current state.
         :param pulumi.Input[str] time_created: Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
-        _UserState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            capabilities=capabilities,
-            compartment_id=compartment_id,
-            db_user_name=db_user_name,
-            defined_tags=defined_tags,
-            description=description,
-            email=email,
-            email_verified=email_verified,
-            external_identifier=external_identifier,
-            freeform_tags=freeform_tags,
-            identity_provider_id=identity_provider_id,
-            inactive_state=inactive_state,
-            last_successful_login_time=last_successful_login_time,
-            name=name,
-            previous_successful_login_time=previous_successful_login_time,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['UserCapabilityArgs']]]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             db_user_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             email: Optional[pulumi.Input[str]] = None,
-             email_verified: Optional[pulumi.Input[bool]] = None,
-             external_identifier: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             identity_provider_id: Optional[pulumi.Input[str]] = None,
-             inactive_state: Optional[pulumi.Input[str]] = None,
-             last_successful_login_time: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             previous_successful_login_time: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if db_user_name is None and 'dbUserName' in kwargs:
-            db_user_name = kwargs['dbUserName']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if email_verified is None and 'emailVerified' in kwargs:
-            email_verified = kwargs['emailVerified']
-        if external_identifier is None and 'externalIdentifier' in kwargs:
-            external_identifier = kwargs['externalIdentifier']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if identity_provider_id is None and 'identityProviderId' in kwargs:
-            identity_provider_id = kwargs['identityProviderId']
-        if inactive_state is None and 'inactiveState' in kwargs:
-            inactive_state = kwargs['inactiveState']
-        if last_successful_login_time is None and 'lastSuccessfulLoginTime' in kwargs:
-            last_successful_login_time = kwargs['lastSuccessfulLoginTime']
-        if previous_successful_login_time is None and 'previousSuccessfulLoginTime' in kwargs:
-            previous_successful_login_time = kwargs['previousSuccessfulLoginTime']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if capabilities is not None:
-            _setter("capabilities", capabilities)
+            pulumi.set(__self__, "capabilities", capabilities)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if db_user_name is not None:
-            _setter("db_user_name", db_user_name)
+            pulumi.set(__self__, "db_user_name", db_user_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if email is not None:
-            _setter("email", email)
+            pulumi.set(__self__, "email", email)
         if email_verified is not None:
-            _setter("email_verified", email_verified)
+            pulumi.set(__self__, "email_verified", email_verified)
         if external_identifier is not None:
-            _setter("external_identifier", external_identifier)
+            pulumi.set(__self__, "external_identifier", external_identifier)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if identity_provider_id is not None:
-            _setter("identity_provider_id", identity_provider_id)
+            pulumi.set(__self__, "identity_provider_id", identity_provider_id)
         if inactive_state is not None:
-            _setter("inactive_state", inactive_state)
+            pulumi.set(__self__, "inactive_state", inactive_state)
         if last_successful_login_time is not None:
-            _setter("last_successful_login_time", last_successful_login_time)
+            pulumi.set(__self__, "last_successful_login_time", last_successful_login_time)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if previous_successful_login_time is not None:
-            _setter("previous_successful_login_time", previous_successful_login_time)
+            pulumi.set(__self__, "previous_successful_login_time", previous_successful_login_time)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
@@ -657,10 +565,6 @@ class User(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            UserArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

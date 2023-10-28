@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -27,28 +27,9 @@ class StreamPoolCustomEncryptionKeyArgs:
         :param pulumi.Input[str] kms_key_id: (Updatable) Custom Encryption Key (Master Key) ocid.
         :param pulumi.Input[str] key_state: Life cycle State of the custom key
         """
-        StreamPoolCustomEncryptionKeyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            kms_key_id=kms_key_id,
-            key_state=key_state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             key_state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_id is None:
-            raise TypeError("Missing 'kms_key_id' argument")
-        if key_state is None and 'keyState' in kwargs:
-            key_state = kwargs['keyState']
-
-        _setter("kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         if key_state is not None:
-            _setter("key_state", key_state)
+            pulumi.set(__self__, "key_state", key_state)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -88,39 +69,14 @@ class StreamPoolKafkaSettingsArgs:
         :param pulumi.Input[int] log_retention_hours: (Updatable) The number of hours to keep a log file before deleting it (in hours).
         :param pulumi.Input[int] num_partitions: (Updatable) The default number of log partitions per topic.
         """
-        StreamPoolKafkaSettingsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auto_create_topics_enable=auto_create_topics_enable,
-            bootstrap_servers=bootstrap_servers,
-            log_retention_hours=log_retention_hours,
-            num_partitions=num_partitions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auto_create_topics_enable: Optional[pulumi.Input[bool]] = None,
-             bootstrap_servers: Optional[pulumi.Input[str]] = None,
-             log_retention_hours: Optional[pulumi.Input[int]] = None,
-             num_partitions: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auto_create_topics_enable is None and 'autoCreateTopicsEnable' in kwargs:
-            auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
-        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
-            bootstrap_servers = kwargs['bootstrapServers']
-        if log_retention_hours is None and 'logRetentionHours' in kwargs:
-            log_retention_hours = kwargs['logRetentionHours']
-        if num_partitions is None and 'numPartitions' in kwargs:
-            num_partitions = kwargs['numPartitions']
-
         if auto_create_topics_enable is not None:
-            _setter("auto_create_topics_enable", auto_create_topics_enable)
+            pulumi.set(__self__, "auto_create_topics_enable", auto_create_topics_enable)
         if bootstrap_servers is not None:
-            _setter("bootstrap_servers", bootstrap_servers)
+            pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
         if log_retention_hours is not None:
-            _setter("log_retention_hours", log_retention_hours)
+            pulumi.set(__self__, "log_retention_hours", log_retention_hours)
         if num_partitions is not None:
-            _setter("num_partitions", num_partitions)
+            pulumi.set(__self__, "num_partitions", num_partitions)
 
     @property
     @pulumi.getter(name="autoCreateTopicsEnable")
@@ -186,33 +142,12 @@ class StreamPoolPrivateEndpointSettingsArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        StreamPoolPrivateEndpointSettingsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            nsg_ids=nsg_ids,
-            private_endpoint_ip=private_endpoint_ip,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_endpoint_ip: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
-            private_endpoint_ip = kwargs['privateEndpointIp']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
-            _setter("private_endpoint_ip", private_endpoint_ip)
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -264,29 +199,10 @@ class GetConnectHarnessesFilterArgs:
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        GetConnectHarnessesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -328,29 +244,10 @@ class GetStreamPoolsFilterArgs:
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        GetStreamPoolsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -392,29 +289,10 @@ class GetStreamsFilterArgs:
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        GetStreamsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

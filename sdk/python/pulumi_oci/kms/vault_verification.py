@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['VaultVerificationArgs', 'VaultVerification']
@@ -22,29 +22,8 @@ class VaultVerificationArgs:
                replica will be deleted from old region, and created to updated region.
         :param pulumi.Input[str] vault_id: The OCID of the primary vault to create replica from.
         """
-        VaultVerificationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replica_region=replica_region,
-            vault_id=vault_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replica_region: Optional[pulumi.Input[str]] = None,
-             vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replica_region is None and 'replicaRegion' in kwargs:
-            replica_region = kwargs['replicaRegion']
-        if replica_region is None:
-            raise TypeError("Missing 'replica_region' argument")
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-        if vault_id is None:
-            raise TypeError("Missing 'vault_id' argument")
-
-        _setter("replica_region", replica_region)
-        _setter("vault_id", vault_id)
+        pulumi.set(__self__, "replica_region", replica_region)
+        pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="replicaRegion")
@@ -83,27 +62,10 @@ class _VaultVerificationState:
                replica will be deleted from old region, and created to updated region.
         :param pulumi.Input[str] vault_id: The OCID of the primary vault to create replica from.
         """
-        _VaultVerificationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            replica_region=replica_region,
-            vault_id=vault_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             replica_region: Optional[pulumi.Input[str]] = None,
-             vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if replica_region is None and 'replicaRegion' in kwargs:
-            replica_region = kwargs['replicaRegion']
-        if vault_id is None and 'vaultId' in kwargs:
-            vault_id = kwargs['vaultId']
-
         if replica_region is not None:
-            _setter("replica_region", replica_region)
+            pulumi.set(__self__, "replica_region", replica_region)
         if vault_id is not None:
-            _setter("vault_id", vault_id)
+            pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="replicaRegion")
@@ -201,10 +163,6 @@ class VaultVerification(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            VaultVerificationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

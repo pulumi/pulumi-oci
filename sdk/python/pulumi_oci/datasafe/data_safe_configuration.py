@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,28 +27,9 @@ class DataSafeConfigurationArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
         """
-        DataSafeConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-            compartment_id=compartment_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if is_enabled is None:
-            raise TypeError("Missing 'is_enabled' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-
-        _setter("is_enabled", is_enabled)
+        pulumi.set(__self__, "is_enabled", is_enabled)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -107,65 +88,24 @@ class _DataSafeConfigurationState:
         :param pulumi.Input[str] time_enabled: The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] url: The URL of the Data Safe service.
         """
-        _DataSafeConfigurationState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            data_safe_nat_gateway_ip_address=data_safe_nat_gateway_ip_address,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            global_settings=global_settings,
-            is_enabled=is_enabled,
-            state=state,
-            time_enabled=time_enabled,
-            url=url,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             data_safe_nat_gateway_ip_address: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             global_settings: Optional[pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]] = None,
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_enabled: Optional[pulumi.Input[str]] = None,
-             url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if data_safe_nat_gateway_ip_address is None and 'dataSafeNatGatewayIpAddress' in kwargs:
-            data_safe_nat_gateway_ip_address = kwargs['dataSafeNatGatewayIpAddress']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if global_settings is None and 'globalSettings' in kwargs:
-            global_settings = kwargs['globalSettings']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if time_enabled is None and 'timeEnabled' in kwargs:
-            time_enabled = kwargs['timeEnabled']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if data_safe_nat_gateway_ip_address is not None:
-            _setter("data_safe_nat_gateway_ip_address", data_safe_nat_gateway_ip_address)
+            pulumi.set(__self__, "data_safe_nat_gateway_ip_address", data_safe_nat_gateway_ip_address)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if global_settings is not None:
-            _setter("global_settings", global_settings)
+            pulumi.set(__self__, "global_settings", global_settings)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_enabled is not None:
-            _setter("time_enabled", time_enabled)
+            pulumi.set(__self__, "time_enabled", time_enabled)
         if url is not None:
-            _setter("url", url)
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -353,10 +293,6 @@ class DataSafeConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DataSafeConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

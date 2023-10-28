@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,90 +47,25 @@ class DatasetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        DatasetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            annotation_format=annotation_format,
-            compartment_id=compartment_id,
-            dataset_format_details=dataset_format_details,
-            dataset_source_details=dataset_source_details,
-            label_set=label_set,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            initial_import_dataset_configuration=initial_import_dataset_configuration,
-            initial_record_generation_configuration=initial_record_generation_configuration,
-            labeling_instructions=labeling_instructions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             annotation_format: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             dataset_format_details: Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']] = None,
-             dataset_source_details: Optional[pulumi.Input['DatasetDatasetSourceDetailsArgs']] = None,
-             label_set: Optional[pulumi.Input['DatasetLabelSetArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
-             initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
-             labeling_instructions: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if annotation_format is None and 'annotationFormat' in kwargs:
-            annotation_format = kwargs['annotationFormat']
-        if annotation_format is None:
-            raise TypeError("Missing 'annotation_format' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if dataset_format_details is None and 'datasetFormatDetails' in kwargs:
-            dataset_format_details = kwargs['datasetFormatDetails']
-        if dataset_format_details is None:
-            raise TypeError("Missing 'dataset_format_details' argument")
-        if dataset_source_details is None and 'datasetSourceDetails' in kwargs:
-            dataset_source_details = kwargs['datasetSourceDetails']
-        if dataset_source_details is None:
-            raise TypeError("Missing 'dataset_source_details' argument")
-        if label_set is None and 'labelSet' in kwargs:
-            label_set = kwargs['labelSet']
-        if label_set is None:
-            raise TypeError("Missing 'label_set' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if initial_import_dataset_configuration is None and 'initialImportDatasetConfiguration' in kwargs:
-            initial_import_dataset_configuration = kwargs['initialImportDatasetConfiguration']
-        if initial_record_generation_configuration is None and 'initialRecordGenerationConfiguration' in kwargs:
-            initial_record_generation_configuration = kwargs['initialRecordGenerationConfiguration']
-        if labeling_instructions is None and 'labelingInstructions' in kwargs:
-            labeling_instructions = kwargs['labelingInstructions']
-
-        _setter("annotation_format", annotation_format)
-        _setter("compartment_id", compartment_id)
-        _setter("dataset_format_details", dataset_format_details)
-        _setter("dataset_source_details", dataset_source_details)
-        _setter("label_set", label_set)
+        pulumi.set(__self__, "annotation_format", annotation_format)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "dataset_format_details", dataset_format_details)
+        pulumi.set(__self__, "dataset_source_details", dataset_source_details)
+        pulumi.set(__self__, "label_set", label_set)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if initial_import_dataset_configuration is not None:
-            _setter("initial_import_dataset_configuration", initial_import_dataset_configuration)
+            pulumi.set(__self__, "initial_import_dataset_configuration", initial_import_dataset_configuration)
         if initial_record_generation_configuration is not None:
-            _setter("initial_record_generation_configuration", initial_record_generation_configuration)
+            pulumi.set(__self__, "initial_record_generation_configuration", initial_record_generation_configuration)
         if labeling_instructions is not None:
-            _setter("labeling_instructions", labeling_instructions)
+            pulumi.set(__self__, "labeling_instructions", labeling_instructions)
 
     @property
     @pulumi.getter(name="annotationFormat")
@@ -327,119 +262,42 @@ class _DatasetState:
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         """
-        _DatasetState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            additional_properties=additional_properties,
-            annotation_format=annotation_format,
-            compartment_id=compartment_id,
-            dataset_format_details=dataset_format_details,
-            dataset_source_details=dataset_source_details,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            initial_import_dataset_configuration=initial_import_dataset_configuration,
-            initial_record_generation_configuration=initial_record_generation_configuration,
-            label_set=label_set,
-            labeling_instructions=labeling_instructions,
-            lifecycle_details=lifecycle_details,
-            lifecycle_substate=lifecycle_substate,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             additional_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             annotation_format: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             dataset_format_details: Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']] = None,
-             dataset_source_details: Optional[pulumi.Input['DatasetDatasetSourceDetailsArgs']] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
-             initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
-             label_set: Optional[pulumi.Input['DatasetLabelSetArgs']] = None,
-             labeling_instructions: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             lifecycle_substate: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if additional_properties is None and 'additionalProperties' in kwargs:
-            additional_properties = kwargs['additionalProperties']
-        if annotation_format is None and 'annotationFormat' in kwargs:
-            annotation_format = kwargs['annotationFormat']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if dataset_format_details is None and 'datasetFormatDetails' in kwargs:
-            dataset_format_details = kwargs['datasetFormatDetails']
-        if dataset_source_details is None and 'datasetSourceDetails' in kwargs:
-            dataset_source_details = kwargs['datasetSourceDetails']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if initial_import_dataset_configuration is None and 'initialImportDatasetConfiguration' in kwargs:
-            initial_import_dataset_configuration = kwargs['initialImportDatasetConfiguration']
-        if initial_record_generation_configuration is None and 'initialRecordGenerationConfiguration' in kwargs:
-            initial_record_generation_configuration = kwargs['initialRecordGenerationConfiguration']
-        if label_set is None and 'labelSet' in kwargs:
-            label_set = kwargs['labelSet']
-        if labeling_instructions is None and 'labelingInstructions' in kwargs:
-            labeling_instructions = kwargs['labelingInstructions']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if lifecycle_substate is None and 'lifecycleSubstate' in kwargs:
-            lifecycle_substate = kwargs['lifecycleSubstate']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if additional_properties is not None:
-            _setter("additional_properties", additional_properties)
+            pulumi.set(__self__, "additional_properties", additional_properties)
         if annotation_format is not None:
-            _setter("annotation_format", annotation_format)
+            pulumi.set(__self__, "annotation_format", annotation_format)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if dataset_format_details is not None:
-            _setter("dataset_format_details", dataset_format_details)
+            pulumi.set(__self__, "dataset_format_details", dataset_format_details)
         if dataset_source_details is not None:
-            _setter("dataset_source_details", dataset_source_details)
+            pulumi.set(__self__, "dataset_source_details", dataset_source_details)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if initial_import_dataset_configuration is not None:
-            _setter("initial_import_dataset_configuration", initial_import_dataset_configuration)
+            pulumi.set(__self__, "initial_import_dataset_configuration", initial_import_dataset_configuration)
         if initial_record_generation_configuration is not None:
-            _setter("initial_record_generation_configuration", initial_record_generation_configuration)
+            pulumi.set(__self__, "initial_record_generation_configuration", initial_record_generation_configuration)
         if label_set is not None:
-            _setter("label_set", label_set)
+            pulumi.set(__self__, "label_set", label_set)
         if labeling_instructions is not None:
-            _setter("labeling_instructions", labeling_instructions)
+            pulumi.set(__self__, "labeling_instructions", labeling_instructions)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if lifecycle_substate is not None:
-            _setter("lifecycle_substate", lifecycle_substate)
+            pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="additionalProperties")
@@ -843,10 +701,6 @@ class Dataset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DatasetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -879,11 +733,9 @@ class Dataset(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            dataset_format_details = _utilities.configure(dataset_format_details, DatasetDatasetFormatDetailsArgs, True)
             if dataset_format_details is None and not opts.urn:
                 raise TypeError("Missing required property 'dataset_format_details'")
             __props__.__dict__["dataset_format_details"] = dataset_format_details
-            dataset_source_details = _utilities.configure(dataset_source_details, DatasetDatasetSourceDetailsArgs, True)
             if dataset_source_details is None and not opts.urn:
                 raise TypeError("Missing required property 'dataset_source_details'")
             __props__.__dict__["dataset_source_details"] = dataset_source_details
@@ -891,11 +743,8 @@ class Dataset(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            initial_import_dataset_configuration = _utilities.configure(initial_import_dataset_configuration, DatasetInitialImportDatasetConfigurationArgs, True)
             __props__.__dict__["initial_import_dataset_configuration"] = initial_import_dataset_configuration
-            initial_record_generation_configuration = _utilities.configure(initial_record_generation_configuration, DatasetInitialRecordGenerationConfigurationArgs, True)
             __props__.__dict__["initial_record_generation_configuration"] = initial_record_generation_configuration
-            label_set = _utilities.configure(label_set, DatasetLabelSetArgs, True)
             if label_set is None and not opts.urn:
                 raise TypeError("Missing required property 'label_set'")
             __props__.__dict__["label_set"] = label_set

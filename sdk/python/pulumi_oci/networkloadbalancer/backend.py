@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BackendArgs', 'Backend']
@@ -41,72 +41,23 @@ class BackendArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        BackendArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            network_load_balancer_id=network_load_balancer_id,
-            port=port,
-            ip_address=ip_address,
-            is_backup=is_backup,
-            is_drain=is_drain,
-            is_offline=is_offline,
-            name=name,
-            target_id=target_id,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[pulumi.Input[str]] = None,
-             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             ip_address: Optional[pulumi.Input[str]] = None,
-             is_backup: Optional[pulumi.Input[bool]] = None,
-             is_drain: Optional[pulumi.Input[bool]] = None,
-             is_offline: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if backend_set_name is None:
-            raise TypeError("Missing 'backend_set_name' argument")
-        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
-            network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if network_load_balancer_id is None:
-            raise TypeError("Missing 'network_load_balancer_id' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if is_backup is None and 'isBackup' in kwargs:
-            is_backup = kwargs['isBackup']
-        if is_drain is None and 'isDrain' in kwargs:
-            is_drain = kwargs['isDrain']
-        if is_offline is None and 'isOffline' in kwargs:
-            is_offline = kwargs['isOffline']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-
-        _setter("backend_set_name", backend_set_name)
-        _setter("network_load_balancer_id", network_load_balancer_id)
-        _setter("port", port)
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
+        pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
+        pulumi.set(__self__, "port", port)
         if ip_address is not None:
-            _setter("ip_address", ip_address)
+            pulumi.set(__self__, "ip_address", ip_address)
         if is_backup is not None:
-            _setter("is_backup", is_backup)
+            pulumi.set(__self__, "is_backup", is_backup)
         if is_drain is not None:
-            _setter("is_drain", is_drain)
+            pulumi.set(__self__, "is_drain", is_drain)
         if is_offline is not None:
-            _setter("is_offline", is_offline)
+            pulumi.set(__self__, "is_offline", is_offline)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if weight is not None:
-            _setter("weight", weight)
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -263,69 +214,26 @@ class _BackendState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _BackendState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            ip_address=ip_address,
-            is_backup=is_backup,
-            is_drain=is_drain,
-            is_offline=is_offline,
-            name=name,
-            network_load_balancer_id=network_load_balancer_id,
-            port=port,
-            target_id=target_id,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[pulumi.Input[str]] = None,
-             ip_address: Optional[pulumi.Input[str]] = None,
-             is_backup: Optional[pulumi.Input[bool]] = None,
-             is_drain: Optional[pulumi.Input[bool]] = None,
-             is_offline: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             target_id: Optional[pulumi.Input[str]] = None,
-             weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if is_backup is None and 'isBackup' in kwargs:
-            is_backup = kwargs['isBackup']
-        if is_drain is None and 'isDrain' in kwargs:
-            is_drain = kwargs['isDrain']
-        if is_offline is None and 'isOffline' in kwargs:
-            is_offline = kwargs['isOffline']
-        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
-            network_load_balancer_id = kwargs['networkLoadBalancerId']
-        if target_id is None and 'targetId' in kwargs:
-            target_id = kwargs['targetId']
-
         if backend_set_name is not None:
-            _setter("backend_set_name", backend_set_name)
+            pulumi.set(__self__, "backend_set_name", backend_set_name)
         if ip_address is not None:
-            _setter("ip_address", ip_address)
+            pulumi.set(__self__, "ip_address", ip_address)
         if is_backup is not None:
-            _setter("is_backup", is_backup)
+            pulumi.set(__self__, "is_backup", is_backup)
         if is_drain is not None:
-            _setter("is_drain", is_drain)
+            pulumi.set(__self__, "is_drain", is_drain)
         if is_offline is not None:
-            _setter("is_offline", is_offline)
+            pulumi.set(__self__, "is_offline", is_offline)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_load_balancer_id is not None:
-            _setter("network_load_balancer_id", network_load_balancer_id)
+            pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if target_id is not None:
-            _setter("target_id", target_id)
+            pulumi.set(__self__, "target_id", target_id)
         if weight is not None:
-            _setter("weight", weight)
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -563,10 +471,6 @@ class Backend(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BackendArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -285,28 +285,9 @@ class BootVolumeAutotunePolicyArgs:
         :param pulumi.Input[str] autotune_type: (Updatable) This specifies the type of autotunes supported by OCI.
         :param pulumi.Input[str] max_vpus_per_gb: (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
-        BootVolumeAutotunePolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autotune_type=autotune_type,
-            max_vpus_per_gb=max_vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autotune_type: Optional[pulumi.Input[str]] = None,
-             max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autotune_type is None and 'autotuneType' in kwargs:
-            autotune_type = kwargs['autotuneType']
-        if autotune_type is None:
-            raise TypeError("Missing 'autotune_type' argument")
-        if max_vpus_per_gb is None and 'maxVpusPerGb' in kwargs:
-            max_vpus_per_gb = kwargs['maxVpusPerGb']
-
-        _setter("autotune_type", autotune_type)
+        pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
-            _setter("max_vpus_per_gb", max_vpus_per_gb)
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
 
     @property
     @pulumi.getter(name="autotuneType")
@@ -343,33 +324,10 @@ class BootVolumeBackupSourceDetailsArgs:
         :param pulumi.Input[str] region: The region of the volume backup source.
         :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         """
-        BootVolumeBackupSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            boot_volume_backup_id=boot_volume_backup_id,
-            region=region,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             boot_volume_backup_id: Optional[pulumi.Input[str]] = None,
-             region: Optional[pulumi.Input[str]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if boot_volume_backup_id is None and 'bootVolumeBackupId' in kwargs:
-            boot_volume_backup_id = kwargs['bootVolumeBackupId']
-        if boot_volume_backup_id is None:
-            raise TypeError("Missing 'boot_volume_backup_id' argument")
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-
-        _setter("boot_volume_backup_id", boot_volume_backup_id)
-        _setter("region", region)
+        pulumi.set(__self__, "boot_volume_backup_id", boot_volume_backup_id)
+        pulumi.set(__self__, "region", region)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="bootVolumeBackupId")
@@ -416,34 +374,11 @@ class BootVolumeBootVolumeReplicaArgs:
         :param pulumi.Input[str] boot_volume_replica_id: The boot volume replica's Oracle ID (OCID).
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
-        BootVolumeBootVolumeReplicaArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            boot_volume_replica_id=boot_volume_replica_id,
-            display_name=display_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             boot_volume_replica_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if boot_volume_replica_id is None and 'bootVolumeReplicaId' in kwargs:
-            boot_volume_replica_id = kwargs['bootVolumeReplicaId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
-        _setter("availability_domain", availability_domain)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if boot_volume_replica_id is not None:
-            _setter("boot_volume_replica_id", boot_volume_replica_id)
+            pulumi.set(__self__, "boot_volume_replica_id", boot_volume_replica_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -491,25 +426,8 @@ class BootVolumeSourceDetailsArgs:
         :param pulumi.Input[str] id: The OCID of the boot volume replica.
         :param pulumi.Input[str] type: The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
         """
-        BootVolumeSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("id", id)
-        _setter("type", type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -570,77 +488,28 @@ class CaptureFilterFlowLogCaptureFilterRuleArgs:
         :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
-        CaptureFilterFlowLogCaptureFilterRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_cidr=destination_cidr,
-            flow_log_type=flow_log_type,
-            icmp_options=icmp_options,
-            is_enabled=is_enabled,
-            priority=priority,
-            protocol=protocol,
-            rule_action=rule_action,
-            sampling_rate=sampling_rate,
-            source_cidr=source_cidr,
-            tcp_options=tcp_options,
-            udp_options=udp_options,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_cidr: Optional[pulumi.Input[str]] = None,
-             flow_log_type: Optional[pulumi.Input[str]] = None,
-             icmp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs']] = None,
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             priority: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             rule_action: Optional[pulumi.Input[str]] = None,
-             sampling_rate: Optional[pulumi.Input[int]] = None,
-             source_cidr: Optional[pulumi.Input[str]] = None,
-             tcp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']] = None,
-             udp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_cidr is None and 'destinationCidr' in kwargs:
-            destination_cidr = kwargs['destinationCidr']
-        if flow_log_type is None and 'flowLogType' in kwargs:
-            flow_log_type = kwargs['flowLogType']
-        if icmp_options is None and 'icmpOptions' in kwargs:
-            icmp_options = kwargs['icmpOptions']
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if rule_action is None and 'ruleAction' in kwargs:
-            rule_action = kwargs['ruleAction']
-        if sampling_rate is None and 'samplingRate' in kwargs:
-            sampling_rate = kwargs['samplingRate']
-        if source_cidr is None and 'sourceCidr' in kwargs:
-            source_cidr = kwargs['sourceCidr']
-        if tcp_options is None and 'tcpOptions' in kwargs:
-            tcp_options = kwargs['tcpOptions']
-        if udp_options is None and 'udpOptions' in kwargs:
-            udp_options = kwargs['udpOptions']
-
         if destination_cidr is not None:
-            _setter("destination_cidr", destination_cidr)
+            pulumi.set(__self__, "destination_cidr", destination_cidr)
         if flow_log_type is not None:
-            _setter("flow_log_type", flow_log_type)
+            pulumi.set(__self__, "flow_log_type", flow_log_type)
         if icmp_options is not None:
-            _setter("icmp_options", icmp_options)
+            pulumi.set(__self__, "icmp_options", icmp_options)
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if priority is not None:
-            _setter("priority", priority)
+            pulumi.set(__self__, "priority", priority)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if rule_action is not None:
-            _setter("rule_action", rule_action)
+            pulumi.set(__self__, "rule_action", rule_action)
         if sampling_rate is not None:
-            _setter("sampling_rate", sampling_rate)
+            pulumi.set(__self__, "sampling_rate", sampling_rate)
         if source_cidr is not None:
-            _setter("source_cidr", source_cidr)
+            pulumi.set(__self__, "source_cidr", source_cidr)
         if tcp_options is not None:
-            _setter("tcp_options", tcp_options)
+            pulumi.set(__self__, "tcp_options", tcp_options)
         if udp_options is not None:
-            _setter("udp_options", udp_options)
+            pulumi.set(__self__, "udp_options", udp_options)
 
     @property
     @pulumi.getter(name="destinationCidr")
@@ -791,24 +660,9 @@ class CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs:
         :param pulumi.Input[int] type: (Updatable) The ICMP type.
         :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
         """
-        CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            code=code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[int]] = None,
-             code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
 
     @property
     @pulumi.getter
@@ -844,27 +698,10 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs:
         :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
         :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_port_range=destination_port_range,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']] = None,
-             source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_port_range is None and 'destinationPortRange' in kwargs:
-            destination_port_range = kwargs['destinationPortRange']
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if destination_port_range is not None:
-            _setter("destination_port_range", destination_port_range)
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter(name="destinationPortRange")
@@ -904,25 +741,8 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -966,25 +786,8 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -1024,27 +827,10 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs:
         :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
         :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_port_range=destination_port_range,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']] = None,
-             source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_port_range is None and 'destinationPortRange' in kwargs:
-            destination_port_range = kwargs['destinationPortRange']
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if destination_port_range is not None:
-            _setter("destination_port_range", destination_port_range)
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter(name="destinationPortRange")
@@ -1084,25 +870,8 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -1146,25 +915,8 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -1223,62 +975,21 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
         :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
-        CaptureFilterVtapCaptureFilterRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            traffic_direction=traffic_direction,
-            destination_cidr=destination_cidr,
-            icmp_options=icmp_options,
-            protocol=protocol,
-            rule_action=rule_action,
-            source_cidr=source_cidr,
-            tcp_options=tcp_options,
-            udp_options=udp_options,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             traffic_direction: Optional[pulumi.Input[str]] = None,
-             destination_cidr: Optional[pulumi.Input[str]] = None,
-             icmp_options: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs']] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             rule_action: Optional[pulumi.Input[str]] = None,
-             source_cidr: Optional[pulumi.Input[str]] = None,
-             tcp_options: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs']] = None,
-             udp_options: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if traffic_direction is None and 'trafficDirection' in kwargs:
-            traffic_direction = kwargs['trafficDirection']
-        if traffic_direction is None:
-            raise TypeError("Missing 'traffic_direction' argument")
-        if destination_cidr is None and 'destinationCidr' in kwargs:
-            destination_cidr = kwargs['destinationCidr']
-        if icmp_options is None and 'icmpOptions' in kwargs:
-            icmp_options = kwargs['icmpOptions']
-        if rule_action is None and 'ruleAction' in kwargs:
-            rule_action = kwargs['ruleAction']
-        if source_cidr is None and 'sourceCidr' in kwargs:
-            source_cidr = kwargs['sourceCidr']
-        if tcp_options is None and 'tcpOptions' in kwargs:
-            tcp_options = kwargs['tcpOptions']
-        if udp_options is None and 'udpOptions' in kwargs:
-            udp_options = kwargs['udpOptions']
-
-        _setter("traffic_direction", traffic_direction)
+        pulumi.set(__self__, "traffic_direction", traffic_direction)
         if destination_cidr is not None:
-            _setter("destination_cidr", destination_cidr)
+            pulumi.set(__self__, "destination_cidr", destination_cidr)
         if icmp_options is not None:
-            _setter("icmp_options", icmp_options)
+            pulumi.set(__self__, "icmp_options", icmp_options)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if rule_action is not None:
-            _setter("rule_action", rule_action)
+            pulumi.set(__self__, "rule_action", rule_action)
         if source_cidr is not None:
-            _setter("source_cidr", source_cidr)
+            pulumi.set(__self__, "source_cidr", source_cidr)
         if tcp_options is not None:
-            _setter("tcp_options", tcp_options)
+            pulumi.set(__self__, "tcp_options", tcp_options)
         if udp_options is not None:
-            _setter("udp_options", udp_options)
+            pulumi.set(__self__, "udp_options", udp_options)
 
     @property
     @pulumi.getter(name="trafficDirection")
@@ -1393,24 +1104,9 @@ class CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs:
         :param pulumi.Input[int] type: (Updatable) The ICMP type.
         :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
         """
-        CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            code=code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[int]] = None,
-             code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
 
     @property
     @pulumi.getter
@@ -1446,27 +1142,10 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs:
         :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
         :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_port_range=destination_port_range,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']] = None,
-             source_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_port_range is None and 'destinationPortRange' in kwargs:
-            destination_port_range = kwargs['destinationPortRange']
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if destination_port_range is not None:
-            _setter("destination_port_range", destination_port_range)
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter(name="destinationPortRange")
@@ -1506,25 +1185,8 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -1568,25 +1230,8 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -1626,27 +1271,10 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs:
         :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
         :param pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_port_range=destination_port_range,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']] = None,
-             source_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_port_range is None and 'destinationPortRange' in kwargs:
-            destination_port_range = kwargs['destinationPortRange']
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if destination_port_range is not None:
-            _setter("destination_port_range", destination_port_range)
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter(name="destinationPortRange")
@@ -1686,25 +1314,8 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -1748,25 +1359,8 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -1806,28 +1400,9 @@ class ClusterNetworkClusterConfigurationArgs:
         :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs.
         """
-        ClusterNetworkClusterConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hpc_island_id=hpc_island_id,
-            network_block_ids=network_block_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hpc_island_id: Optional[pulumi.Input[str]] = None,
-             network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hpc_island_id is None and 'hpcIslandId' in kwargs:
-            hpc_island_id = kwargs['hpcIslandId']
-        if hpc_island_id is None:
-            raise TypeError("Missing 'hpc_island_id' argument")
-        if network_block_ids is None and 'networkBlockIds' in kwargs:
-            network_block_ids = kwargs['networkBlockIds']
-
-        _setter("hpc_island_id", hpc_island_id)
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         if network_block_ids is not None:
-            _setter("network_block_ids", network_block_ids)
+            pulumi.set(__self__, "network_block_ids", network_block_ids)
 
     @property
     @pulumi.getter(name="hpcIslandId")
@@ -1883,89 +1458,30 @@ class ClusterNetworkInstancePoolArgs:
         :param pulumi.Input[str] state: The current state of the cluster network.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
-        ClusterNetworkInstancePoolArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            instance_configuration_id=instance_configuration_id,
-            size=size,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            instance_display_name_formatter=instance_display_name_formatter,
-            instance_hostname_formatter=instance_hostname_formatter,
-            load_balancers=load_balancers,
-            placement_configurations=placement_configurations,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             instance_configuration_id: Optional[pulumi.Input[str]] = None,
-             size: Optional[pulumi.Input[int]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
-             instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
-             load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]]] = None,
-             placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
-            instance_configuration_id = kwargs['instanceConfigurationId']
-        if instance_configuration_id is None:
-            raise TypeError("Missing 'instance_configuration_id' argument")
-        if size is None:
-            raise TypeError("Missing 'size' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if instance_display_name_formatter is None and 'instanceDisplayNameFormatter' in kwargs:
-            instance_display_name_formatter = kwargs['instanceDisplayNameFormatter']
-        if instance_hostname_formatter is None and 'instanceHostnameFormatter' in kwargs:
-            instance_hostname_formatter = kwargs['instanceHostnameFormatter']
-        if load_balancers is None and 'loadBalancers' in kwargs:
-            load_balancers = kwargs['loadBalancers']
-        if placement_configurations is None and 'placementConfigurations' in kwargs:
-            placement_configurations = kwargs['placementConfigurations']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
-        _setter("instance_configuration_id", instance_configuration_id)
-        _setter("size", size)
+        pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        pulumi.set(__self__, "size", size)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if instance_display_name_formatter is not None:
-            _setter("instance_display_name_formatter", instance_display_name_formatter)
+            pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
         if instance_hostname_formatter is not None:
-            _setter("instance_hostname_formatter", instance_hostname_formatter)
+            pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
-            _setter("load_balancers", load_balancers)
+            pulumi.set(__self__, "load_balancers", load_balancers)
         if placement_configurations is not None:
-            _setter("placement_configurations", placement_configurations)
+            pulumi.set(__self__, "placement_configurations", placement_configurations)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="instanceConfigurationId")
@@ -2137,51 +1653,20 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
         :param pulumi.Input[str] state: The current state of the cluster network.
         :param pulumi.Input[str] vnic_selection: Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
         """
-        ClusterNetworkInstancePoolLoadBalancerArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            id=id,
-            instance_pool_id=instance_pool_id,
-            load_balancer_id=load_balancer_id,
-            port=port,
-            state=state,
-            vnic_selection=vnic_selection,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[pulumi.Input[str]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             instance_pool_id: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             vnic_selection: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if instance_pool_id is None and 'instancePoolId' in kwargs:
-            instance_pool_id = kwargs['instancePoolId']
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if vnic_selection is None and 'vnicSelection' in kwargs:
-            vnic_selection = kwargs['vnicSelection']
-
         if backend_set_name is not None:
-            _setter("backend_set_name", backend_set_name)
+            pulumi.set(__self__, "backend_set_name", backend_set_name)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if instance_pool_id is not None:
-            _setter("instance_pool_id", instance_pool_id)
+            pulumi.set(__self__, "instance_pool_id", instance_pool_id)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if vnic_selection is not None:
-            _setter("vnic_selection", vnic_selection)
+            pulumi.set(__self__, "vnic_selection", vnic_selection)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -2283,45 +1768,16 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
-        ClusterNetworkInstancePoolPlacementConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            fault_domains=fault_domains,
-            primary_subnet_id=primary_subnet_id,
-            primary_vnic_subnets=primary_vnic_subnets,
-            secondary_vnic_subnets=secondary_vnic_subnets,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             primary_subnet_id: Optional[pulumi.Input[str]] = None,
-             primary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]] = None,
-             secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if fault_domains is None and 'faultDomains' in kwargs:
-            fault_domains = kwargs['faultDomains']
-        if primary_subnet_id is None and 'primarySubnetId' in kwargs:
-            primary_subnet_id = kwargs['primarySubnetId']
-        if primary_vnic_subnets is None and 'primaryVnicSubnets' in kwargs:
-            primary_vnic_subnets = kwargs['primaryVnicSubnets']
-        if secondary_vnic_subnets is None and 'secondaryVnicSubnets' in kwargs:
-            secondary_vnic_subnets = kwargs['secondaryVnicSubnets']
-
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if fault_domains is not None:
-            _setter("fault_domains", fault_domains)
+            pulumi.set(__self__, "fault_domains", fault_domains)
         if primary_subnet_id is not None:
-            _setter("primary_subnet_id", primary_subnet_id)
+            pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         if primary_vnic_subnets is not None:
-            _setter("primary_vnic_subnets", primary_vnic_subnets)
+            pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
         if secondary_vnic_subnets is not None:
-            _setter("secondary_vnic_subnets", secondary_vnic_subnets)
+            pulumi.set(__self__, "secondary_vnic_subnets", secondary_vnic_subnets)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2399,33 +1855,12 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            is_assign_ipv6ip=is_assign_ipv6ip,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if is_assign_ipv6ip is None and 'isAssignIpv6ip' in kwargs:
-            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
-            _setter("is_assign_ipv6ip", is_assign_ipv6ip)
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
@@ -2475,21 +1910,8 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addre
         """
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -2521,39 +1943,14 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            is_assign_ipv6ip=is_assign_ipv6ip,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if is_assign_ipv6ip is None and 'isAssignIpv6ip' in kwargs:
-            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
-            _setter("is_assign_ipv6ip", is_assign_ipv6ip)
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2615,21 +2012,8 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6add
         """
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -2658,46 +2042,15 @@ class ClusterNetworkPlacementConfigurationArgs:
         :param pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
-        ClusterNetworkPlacementConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            placement_constraint=placement_constraint,
-            primary_subnet_id=primary_subnet_id,
-            primary_vnic_subnets=primary_vnic_subnets,
-            secondary_vnic_subnets=secondary_vnic_subnets,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             placement_constraint: Optional[pulumi.Input[str]] = None,
-             primary_subnet_id: Optional[pulumi.Input[str]] = None,
-             primary_vnic_subnets: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
-             secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if placement_constraint is None and 'placementConstraint' in kwargs:
-            placement_constraint = kwargs['placementConstraint']
-        if primary_subnet_id is None and 'primarySubnetId' in kwargs:
-            primary_subnet_id = kwargs['primarySubnetId']
-        if primary_vnic_subnets is None and 'primaryVnicSubnets' in kwargs:
-            primary_vnic_subnets = kwargs['primaryVnicSubnets']
-        if secondary_vnic_subnets is None and 'secondaryVnicSubnets' in kwargs:
-            secondary_vnic_subnets = kwargs['secondaryVnicSubnets']
-
-        _setter("availability_domain", availability_domain)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if placement_constraint is not None:
-            _setter("placement_constraint", placement_constraint)
+            pulumi.set(__self__, "placement_constraint", placement_constraint)
         if primary_subnet_id is not None:
-            _setter("primary_subnet_id", primary_subnet_id)
+            pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         if primary_vnic_subnets is not None:
-            _setter("primary_vnic_subnets", primary_vnic_subnets)
+            pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
         if secondary_vnic_subnets is not None:
-            _setter("secondary_vnic_subnets", secondary_vnic_subnets)
+            pulumi.set(__self__, "secondary_vnic_subnets", secondary_vnic_subnets)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2772,34 +2125,11 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
-        ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subnet_id=subnet_id,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            is_assign_ipv6ip=is_assign_ipv6ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if is_assign_ipv6ip is None and 'isAssignIpv6ip' in kwargs:
-            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
-
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
-            _setter("is_assign_ipv6ip", is_assign_ipv6ip)
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -2849,21 +2179,8 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subne
         """
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -2895,40 +2212,13 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[bool] is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
-        ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subnet_id=subnet_id,
-            display_name=display_name,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            is_assign_ipv6ip=is_assign_ipv6ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if is_assign_ipv6ip is None and 'isAssignIpv6ip' in kwargs:
-            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
-
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
-            _setter("is_assign_ipv6ip", is_assign_ipv6ip)
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -2990,21 +2280,8 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subn
         """
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -3036,46 +2313,15 @@ class ComputeCapacityReportShapeAvailabilityArgs:
                If you do not specify a fault domain, the capacity report includes information about all fault domains.
         :param pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs'] instance_shape_config: The shape configuration for a shape in a capacity report.
         """
-        ComputeCapacityReportShapeAvailabilityArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            instance_shape=instance_shape,
-            availability_status=availability_status,
-            available_count=available_count,
-            fault_domain=fault_domain,
-            instance_shape_config=instance_shape_config,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             instance_shape: Optional[pulumi.Input[str]] = None,
-             availability_status: Optional[pulumi.Input[str]] = None,
-             available_count: Optional[pulumi.Input[str]] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             instance_shape_config: Optional[pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if instance_shape is None and 'instanceShape' in kwargs:
-            instance_shape = kwargs['instanceShape']
-        if instance_shape is None:
-            raise TypeError("Missing 'instance_shape' argument")
-        if availability_status is None and 'availabilityStatus' in kwargs:
-            availability_status = kwargs['availabilityStatus']
-        if available_count is None and 'availableCount' in kwargs:
-            available_count = kwargs['availableCount']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if instance_shape_config is None and 'instanceShapeConfig' in kwargs:
-            instance_shape_config = kwargs['instanceShapeConfig']
-
-        _setter("instance_shape", instance_shape)
+        pulumi.set(__self__, "instance_shape", instance_shape)
         if availability_status is not None:
-            _setter("availability_status", availability_status)
+            pulumi.set(__self__, "availability_status", availability_status)
         if available_count is not None:
-            _setter("available_count", available_count)
+            pulumi.set(__self__, "available_count", available_count)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if instance_shape_config is not None:
-            _setter("instance_shape_config", instance_shape_config)
+            pulumi.set(__self__, "instance_shape_config", instance_shape_config)
 
     @property
     @pulumi.getter(name="instanceShape")
@@ -3155,29 +2401,12 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            memory_in_gbs=memory_in_gbs,
-            nvmes=nvmes,
-            ocpus=ocpus,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             memory_in_gbs: Optional[pulumi.Input[float]] = None,
-             nvmes: Optional[pulumi.Input[int]] = None,
-             ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
-            memory_in_gbs = kwargs['memoryInGbs']
-
         if memory_in_gbs is not None:
-            _setter("memory_in_gbs", memory_in_gbs)
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
-            _setter("nvmes", nvmes)
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
-            _setter("ocpus", ocpus)
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3249,53 +2478,16 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
                For more information about customizing the resources that are allocated to flexible shapes, see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
         :param pulumi.Input[str] used_count: The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
-        ComputeCapacityReservationInstanceReservationConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            instance_shape=instance_shape,
-            reserved_count=reserved_count,
-            cluster_config=cluster_config,
-            fault_domain=fault_domain,
-            instance_shape_config=instance_shape_config,
-            used_count=used_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             instance_shape: Optional[pulumi.Input[str]] = None,
-             reserved_count: Optional[pulumi.Input[str]] = None,
-             cluster_config: Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs']] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             instance_shape_config: Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs']] = None,
-             used_count: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if instance_shape is None and 'instanceShape' in kwargs:
-            instance_shape = kwargs['instanceShape']
-        if instance_shape is None:
-            raise TypeError("Missing 'instance_shape' argument")
-        if reserved_count is None and 'reservedCount' in kwargs:
-            reserved_count = kwargs['reservedCount']
-        if reserved_count is None:
-            raise TypeError("Missing 'reserved_count' argument")
-        if cluster_config is None and 'clusterConfig' in kwargs:
-            cluster_config = kwargs['clusterConfig']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if instance_shape_config is None and 'instanceShapeConfig' in kwargs:
-            instance_shape_config = kwargs['instanceShapeConfig']
-        if used_count is None and 'usedCount' in kwargs:
-            used_count = kwargs['usedCount']
-
-        _setter("instance_shape", instance_shape)
-        _setter("reserved_count", reserved_count)
+        pulumi.set(__self__, "instance_shape", instance_shape)
+        pulumi.set(__self__, "reserved_count", reserved_count)
         if cluster_config is not None:
-            _setter("cluster_config", cluster_config)
+            pulumi.set(__self__, "cluster_config", cluster_config)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if instance_shape_config is not None:
-            _setter("instance_shape_config", instance_shape_config)
+            pulumi.set(__self__, "instance_shape_config", instance_shape_config)
         if used_count is not None:
-            _setter("used_count", used_count)
+            pulumi.set(__self__, "used_count", used_count)
 
     @property
     @pulumi.getter(name="instanceShape")
@@ -3391,28 +2583,9 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
         :param pulumi.Input[str] hpc_island_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: (Updatable) The list of OCIDs of the network blocks.
         """
-        ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hpc_island_id=hpc_island_id,
-            network_block_ids=network_block_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hpc_island_id: Optional[pulumi.Input[str]] = None,
-             network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hpc_island_id is None and 'hpcIslandId' in kwargs:
-            hpc_island_id = kwargs['hpcIslandId']
-        if hpc_island_id is None:
-            raise TypeError("Missing 'hpc_island_id' argument")
-        if network_block_ids is None and 'networkBlockIds' in kwargs:
-            network_block_ids = kwargs['networkBlockIds']
-
-        _setter("hpc_island_id", hpc_island_id)
+        pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         if network_block_ids is not None:
-            _setter("network_block_ids", network_block_ids)
+            pulumi.set(__self__, "network_block_ids", network_block_ids)
 
     @property
     @pulumi.getter(name="hpcIslandId")
@@ -3448,25 +2621,10 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
         :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
-        ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            memory_in_gbs=memory_in_gbs,
-            ocpus=ocpus,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             memory_in_gbs: Optional[pulumi.Input[float]] = None,
-             ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
-            memory_in_gbs = kwargs['memoryInGbs']
-
         if memory_in_gbs is not None:
-            _setter("memory_in_gbs", memory_in_gbs)
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            _setter("ocpus", ocpus)
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3510,38 +2668,13 @@ class CrossConnectGroupMacsecPropertiesArgs:
         :param pulumi.Input[bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         :param pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         """
-        CrossConnectGroupMacsecPropertiesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            state=state,
-            encryption_cipher=encryption_cipher,
-            is_unprotected_traffic_allowed=is_unprotected_traffic_allowed,
-            primary_key=primary_key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             state: Optional[pulumi.Input[str]] = None,
-             encryption_cipher: Optional[pulumi.Input[str]] = None,
-             is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
-             primary_key: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if encryption_cipher is None and 'encryptionCipher' in kwargs:
-            encryption_cipher = kwargs['encryptionCipher']
-        if is_unprotected_traffic_allowed is None and 'isUnprotectedTrafficAllowed' in kwargs:
-            is_unprotected_traffic_allowed = kwargs['isUnprotectedTrafficAllowed']
-        if primary_key is None and 'primaryKey' in kwargs:
-            primary_key = kwargs['primaryKey']
-
-        _setter("state", state)
+        pulumi.set(__self__, "state", state)
         if encryption_cipher is not None:
-            _setter("encryption_cipher", encryption_cipher)
+            pulumi.set(__self__, "encryption_cipher", encryption_cipher)
         if is_unprotected_traffic_allowed is not None:
-            _setter("is_unprotected_traffic_allowed", is_unprotected_traffic_allowed)
+            pulumi.set(__self__, "is_unprotected_traffic_allowed", is_unprotected_traffic_allowed)
         if primary_key is not None:
-            _setter("primary_key", primary_key)
+            pulumi.set(__self__, "primary_key", primary_key)
 
     @property
     @pulumi.getter
@@ -3613,41 +2746,12 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
         :param pulumi.Input[str] connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param pulumi.Input[str] connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
-        CrossConnectGroupMacsecPropertiesPrimaryKeyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connectivity_association_key_secret_id=connectivity_association_key_secret_id,
-            connectivity_association_name_secret_id=connectivity_association_name_secret_id,
-            connectivity_association_key_secret_version=connectivity_association_key_secret_version,
-            connectivity_association_name_secret_version=connectivity_association_name_secret_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connectivity_association_key_secret_id: Optional[pulumi.Input[str]] = None,
-             connectivity_association_name_secret_id: Optional[pulumi.Input[str]] = None,
-             connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
-             connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connectivity_association_key_secret_id is None and 'connectivityAssociationKeySecretId' in kwargs:
-            connectivity_association_key_secret_id = kwargs['connectivityAssociationKeySecretId']
-        if connectivity_association_key_secret_id is None:
-            raise TypeError("Missing 'connectivity_association_key_secret_id' argument")
-        if connectivity_association_name_secret_id is None and 'connectivityAssociationNameSecretId' in kwargs:
-            connectivity_association_name_secret_id = kwargs['connectivityAssociationNameSecretId']
-        if connectivity_association_name_secret_id is None:
-            raise TypeError("Missing 'connectivity_association_name_secret_id' argument")
-        if connectivity_association_key_secret_version is None and 'connectivityAssociationKeySecretVersion' in kwargs:
-            connectivity_association_key_secret_version = kwargs['connectivityAssociationKeySecretVersion']
-        if connectivity_association_name_secret_version is None and 'connectivityAssociationNameSecretVersion' in kwargs:
-            connectivity_association_name_secret_version = kwargs['connectivityAssociationNameSecretVersion']
-
-        _setter("connectivity_association_key_secret_id", connectivity_association_key_secret_id)
-        _setter("connectivity_association_name_secret_id", connectivity_association_name_secret_id)
+        pulumi.set(__self__, "connectivity_association_key_secret_id", connectivity_association_key_secret_id)
+        pulumi.set(__self__, "connectivity_association_name_secret_id", connectivity_association_name_secret_id)
         if connectivity_association_key_secret_version is not None:
-            _setter("connectivity_association_key_secret_version", connectivity_association_key_secret_version)
+            pulumi.set(__self__, "connectivity_association_key_secret_version", connectivity_association_key_secret_version)
         if connectivity_association_name_secret_version is not None:
-            _setter("connectivity_association_name_secret_version", connectivity_association_name_secret_version)
+            pulumi.set(__self__, "connectivity_association_name_secret_version", connectivity_association_name_secret_version)
 
     @property
     @pulumi.getter(name="connectivityAssociationKeySecretId")
@@ -3715,38 +2819,13 @@ class CrossConnectMacsecPropertiesArgs:
         :param pulumi.Input[bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         :param pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
         """
-        CrossConnectMacsecPropertiesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            state=state,
-            encryption_cipher=encryption_cipher,
-            is_unprotected_traffic_allowed=is_unprotected_traffic_allowed,
-            primary_key=primary_key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             state: Optional[pulumi.Input[str]] = None,
-             encryption_cipher: Optional[pulumi.Input[str]] = None,
-             is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
-             primary_key: Optional[pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if encryption_cipher is None and 'encryptionCipher' in kwargs:
-            encryption_cipher = kwargs['encryptionCipher']
-        if is_unprotected_traffic_allowed is None and 'isUnprotectedTrafficAllowed' in kwargs:
-            is_unprotected_traffic_allowed = kwargs['isUnprotectedTrafficAllowed']
-        if primary_key is None and 'primaryKey' in kwargs:
-            primary_key = kwargs['primaryKey']
-
-        _setter("state", state)
+        pulumi.set(__self__, "state", state)
         if encryption_cipher is not None:
-            _setter("encryption_cipher", encryption_cipher)
+            pulumi.set(__self__, "encryption_cipher", encryption_cipher)
         if is_unprotected_traffic_allowed is not None:
-            _setter("is_unprotected_traffic_allowed", is_unprotected_traffic_allowed)
+            pulumi.set(__self__, "is_unprotected_traffic_allowed", is_unprotected_traffic_allowed)
         if primary_key is not None:
-            _setter("primary_key", primary_key)
+            pulumi.set(__self__, "primary_key", primary_key)
 
     @property
     @pulumi.getter
@@ -3814,41 +2893,12 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
         :param pulumi.Input[str] connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param pulumi.Input[str] connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
-        CrossConnectMacsecPropertiesPrimaryKeyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connectivity_association_key_secret_id=connectivity_association_key_secret_id,
-            connectivity_association_name_secret_id=connectivity_association_name_secret_id,
-            connectivity_association_key_secret_version=connectivity_association_key_secret_version,
-            connectivity_association_name_secret_version=connectivity_association_name_secret_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connectivity_association_key_secret_id: Optional[pulumi.Input[str]] = None,
-             connectivity_association_name_secret_id: Optional[pulumi.Input[str]] = None,
-             connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
-             connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connectivity_association_key_secret_id is None and 'connectivityAssociationKeySecretId' in kwargs:
-            connectivity_association_key_secret_id = kwargs['connectivityAssociationKeySecretId']
-        if connectivity_association_key_secret_id is None:
-            raise TypeError("Missing 'connectivity_association_key_secret_id' argument")
-        if connectivity_association_name_secret_id is None and 'connectivityAssociationNameSecretId' in kwargs:
-            connectivity_association_name_secret_id = kwargs['connectivityAssociationNameSecretId']
-        if connectivity_association_name_secret_id is None:
-            raise TypeError("Missing 'connectivity_association_name_secret_id' argument")
-        if connectivity_association_key_secret_version is None and 'connectivityAssociationKeySecretVersion' in kwargs:
-            connectivity_association_key_secret_version = kwargs['connectivityAssociationKeySecretVersion']
-        if connectivity_association_name_secret_version is None and 'connectivityAssociationNameSecretVersion' in kwargs:
-            connectivity_association_name_secret_version = kwargs['connectivityAssociationNameSecretVersion']
-
-        _setter("connectivity_association_key_secret_id", connectivity_association_key_secret_id)
-        _setter("connectivity_association_name_secret_id", connectivity_association_name_secret_id)
+        pulumi.set(__self__, "connectivity_association_key_secret_id", connectivity_association_key_secret_id)
+        pulumi.set(__self__, "connectivity_association_name_secret_id", connectivity_association_name_secret_id)
         if connectivity_association_key_secret_version is not None:
-            _setter("connectivity_association_key_secret_version", connectivity_association_key_secret_version)
+            pulumi.set(__self__, "connectivity_association_key_secret_version", connectivity_association_key_secret_version)
         if connectivity_association_name_secret_version is not None:
-            _setter("connectivity_association_name_secret_version", connectivity_association_name_secret_version)
+            pulumi.set(__self__, "connectivity_association_name_secret_version", connectivity_association_name_secret_version)
 
     @property
     @pulumi.getter(name="connectivityAssociationKeySecretId")
@@ -3910,38 +2960,13 @@ class DefaultDhcpOptionsOptionArgs:
                  custom_dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  search_domain_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  server_type: Optional[pulumi.Input[str]] = None):
-        DefaultDhcpOptionsOptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            custom_dns_servers=custom_dns_servers,
-            search_domain_names=search_domain_names,
-            server_type=server_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             custom_dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             search_domain_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             server_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if custom_dns_servers is None and 'customDnsServers' in kwargs:
-            custom_dns_servers = kwargs['customDnsServers']
-        if search_domain_names is None and 'searchDomainNames' in kwargs:
-            search_domain_names = kwargs['searchDomainNames']
-        if server_type is None and 'serverType' in kwargs:
-            server_type = kwargs['serverType']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if custom_dns_servers is not None:
-            _setter("custom_dns_servers", custom_dns_servers)
+            pulumi.set(__self__, "custom_dns_servers", custom_dns_servers)
         if search_domain_names is not None:
-            _setter("search_domain_names", search_domain_names)
+            pulumi.set(__self__, "search_domain_names", search_domain_names)
         if server_type is not None:
-            _setter("server_type", server_type)
+            pulumi.set(__self__, "server_type", server_type)
 
     @property
     @pulumi.getter
@@ -3989,51 +3014,20 @@ class DefaultRouteTableRouteRuleArgs:
                  destination: Optional[pulumi.Input[str]] = None,
                  destination_type: Optional[pulumi.Input[str]] = None,
                  route_type: Optional[pulumi.Input[str]] = None):
-        DefaultRouteTableRouteRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_entity_id=network_entity_id,
-            cidr_block=cidr_block,
-            description=description,
-            destination=destination,
-            destination_type=destination_type,
-            route_type=route_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_entity_id: Optional[pulumi.Input[str]] = None,
-             cidr_block: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             destination: Optional[pulumi.Input[str]] = None,
-             destination_type: Optional[pulumi.Input[str]] = None,
-             route_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_entity_id is None and 'networkEntityId' in kwargs:
-            network_entity_id = kwargs['networkEntityId']
-        if network_entity_id is None:
-            raise TypeError("Missing 'network_entity_id' argument")
-        if cidr_block is None and 'cidrBlock' in kwargs:
-            cidr_block = kwargs['cidrBlock']
-        if destination_type is None and 'destinationType' in kwargs:
-            destination_type = kwargs['destinationType']
-        if route_type is None and 'routeType' in kwargs:
-            route_type = kwargs['routeType']
-
-        _setter("network_entity_id", network_entity_id)
+        pulumi.set(__self__, "network_entity_id", network_entity_id)
         if cidr_block is not None:
             warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
             pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
         if cidr_block is not None:
-            _setter("cidr_block", cidr_block)
+            pulumi.set(__self__, "cidr_block", cidr_block)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if destination is not None:
-            _setter("destination", destination)
+            pulumi.set(__self__, "destination", destination)
         if destination_type is not None:
-            _setter("destination_type", destination_type)
+            pulumi.set(__self__, "destination_type", destination_type)
         if route_type is not None:
-            _setter("route_type", route_type)
+            pulumi.set(__self__, "route_type", route_type)
 
     @property
     @pulumi.getter(name="networkEntityId")
@@ -4104,57 +3098,20 @@ class DefaultSecurityListEgressSecurityRuleArgs:
                  stateless: Optional[pulumi.Input[bool]] = None,
                  tcp_options: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleTcpOptionsArgs']] = None,
                  udp_options: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleUdpOptionsArgs']] = None):
-        DefaultSecurityListEgressSecurityRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination=destination,
-            protocol=protocol,
-            description=description,
-            destination_type=destination_type,
-            icmp_options=icmp_options,
-            stateless=stateless,
-            tcp_options=tcp_options,
-            udp_options=udp_options,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination: Optional[pulumi.Input[str]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             destination_type: Optional[pulumi.Input[str]] = None,
-             icmp_options: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs']] = None,
-             stateless: Optional[pulumi.Input[bool]] = None,
-             tcp_options: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleTcpOptionsArgs']] = None,
-             udp_options: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if destination_type is None and 'destinationType' in kwargs:
-            destination_type = kwargs['destinationType']
-        if icmp_options is None and 'icmpOptions' in kwargs:
-            icmp_options = kwargs['icmpOptions']
-        if tcp_options is None and 'tcpOptions' in kwargs:
-            tcp_options = kwargs['tcpOptions']
-        if udp_options is None and 'udpOptions' in kwargs:
-            udp_options = kwargs['udpOptions']
-
-        _setter("destination", destination)
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "protocol", protocol)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if destination_type is not None:
-            _setter("destination_type", destination_type)
+            pulumi.set(__self__, "destination_type", destination_type)
         if icmp_options is not None:
-            _setter("icmp_options", icmp_options)
+            pulumi.set(__self__, "icmp_options", icmp_options)
         if stateless is not None:
-            _setter("stateless", stateless)
+            pulumi.set(__self__, "stateless", stateless)
         if tcp_options is not None:
-            _setter("tcp_options", tcp_options)
+            pulumi.set(__self__, "tcp_options", tcp_options)
         if udp_options is not None:
-            _setter("udp_options", udp_options)
+            pulumi.set(__self__, "udp_options", udp_options)
 
     @property
     @pulumi.getter
@@ -4234,24 +3191,9 @@ class DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[int],
                  code: Optional[pulumi.Input[int]] = None):
-        DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            code=code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[int]] = None,
-             code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
 
     @property
     @pulumi.getter
@@ -4278,29 +3220,12 @@ class DefaultSecurityListEgressSecurityRuleTcpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None):
-        DefaultSecurityListEgressSecurityRuleTcpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -4335,25 +3260,8 @@ class DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -4380,29 +3288,12 @@ class DefaultSecurityListEgressSecurityRuleUdpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None):
-        DefaultSecurityListEgressSecurityRuleUdpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -4437,25 +3328,8 @@ class DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -4487,57 +3361,20 @@ class DefaultSecurityListIngressSecurityRuleArgs:
                  stateless: Optional[pulumi.Input[bool]] = None,
                  tcp_options: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleTcpOptionsArgs']] = None,
                  udp_options: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleUdpOptionsArgs']] = None):
-        DefaultSecurityListIngressSecurityRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            protocol=protocol,
-            source=source,
-            description=description,
-            icmp_options=icmp_options,
-            source_type=source_type,
-            stateless=stateless,
-            tcp_options=tcp_options,
-            udp_options=udp_options,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             protocol: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             icmp_options: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleIcmpOptionsArgs']] = None,
-             source_type: Optional[pulumi.Input[str]] = None,
-             stateless: Optional[pulumi.Input[bool]] = None,
-             tcp_options: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleTcpOptionsArgs']] = None,
-             udp_options: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if icmp_options is None and 'icmpOptions' in kwargs:
-            icmp_options = kwargs['icmpOptions']
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if tcp_options is None and 'tcpOptions' in kwargs:
-            tcp_options = kwargs['tcpOptions']
-        if udp_options is None and 'udpOptions' in kwargs:
-            udp_options = kwargs['udpOptions']
-
-        _setter("protocol", protocol)
-        _setter("source", source)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "source", source)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if icmp_options is not None:
-            _setter("icmp_options", icmp_options)
+            pulumi.set(__self__, "icmp_options", icmp_options)
         if source_type is not None:
-            _setter("source_type", source_type)
+            pulumi.set(__self__, "source_type", source_type)
         if stateless is not None:
-            _setter("stateless", stateless)
+            pulumi.set(__self__, "stateless", stateless)
         if tcp_options is not None:
-            _setter("tcp_options", tcp_options)
+            pulumi.set(__self__, "tcp_options", tcp_options)
         if udp_options is not None:
-            _setter("udp_options", udp_options)
+            pulumi.set(__self__, "udp_options", udp_options)
 
     @property
     @pulumi.getter
@@ -4617,24 +3454,9 @@ class DefaultSecurityListIngressSecurityRuleIcmpOptionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[int],
                  code: Optional[pulumi.Input[int]] = None):
-        DefaultSecurityListIngressSecurityRuleIcmpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            code=code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[int]] = None,
-             code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
 
     @property
     @pulumi.getter
@@ -4661,29 +3483,12 @@ class DefaultSecurityListIngressSecurityRuleTcpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None):
-        DefaultSecurityListIngressSecurityRuleTcpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -4718,25 +3523,8 @@ class DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -4763,29 +3551,12 @@ class DefaultSecurityListIngressSecurityRuleUdpOptionsArgs:
                  max: Optional[pulumi.Input[int]] = None,
                  min: Optional[pulumi.Input[int]] = None,
                  source_port_range: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None):
-        DefaultSecurityListIngressSecurityRuleUdpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -4820,25 +3591,8 @@ class DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs:
     def __init__(__self__, *,
                  max: pulumi.Input[int],
                  min: pulumi.Input[int]):
-        DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -4879,38 +3633,13 @@ class DhcpOptionsOptionArgs:
                * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
                * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
         """
-        DhcpOptionsOptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            custom_dns_servers=custom_dns_servers,
-            search_domain_names=search_domain_names,
-            server_type=server_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             custom_dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             search_domain_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             server_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if custom_dns_servers is None and 'customDnsServers' in kwargs:
-            custom_dns_servers = kwargs['customDnsServers']
-        if search_domain_names is None and 'searchDomainNames' in kwargs:
-            search_domain_names = kwargs['searchDomainNames']
-        if server_type is None and 'serverType' in kwargs:
-            server_type = kwargs['serverType']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if custom_dns_servers is not None:
-            _setter("custom_dns_servers", custom_dns_servers)
+            pulumi.set(__self__, "custom_dns_servers", custom_dns_servers)
         if search_domain_names is not None:
-            _setter("search_domain_names", search_domain_names)
+            pulumi.set(__self__, "search_domain_names", search_domain_names)
         if server_type is not None:
-            _setter("server_type", server_type)
+            pulumi.set(__self__, "server_type", server_type)
 
     @property
     @pulumi.getter
@@ -4985,37 +3714,12 @@ class DrgAttachmentManagementNetworkDetailsArgs:
                * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
                * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
-        DrgAttachmentManagementNetworkDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            type=type,
-            ipsec_connection_id=ipsec_connection_id,
-            route_table_id=route_table_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             ipsec_connection_id: Optional[pulumi.Input[str]] = None,
-             route_table_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ipsec_connection_id is None and 'ipsecConnectionId' in kwargs:
-            ipsec_connection_id = kwargs['ipsecConnectionId']
-        if route_table_id is None and 'routeTableId' in kwargs:
-            route_table_id = kwargs['routeTableId']
-
-        _setter("id", id)
-        _setter("type", type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
         if ipsec_connection_id is not None:
-            _setter("ipsec_connection_id", ipsec_connection_id)
+            pulumi.set(__self__, "ipsec_connection_id", ipsec_connection_id)
         if route_table_id is not None:
-            _setter("route_table_id", route_table_id)
+            pulumi.set(__self__, "route_table_id", route_table_id)
 
     @property
     @pulumi.getter
@@ -5096,58 +3800,21 @@ class DrgAttachmentNetworkDetailsArgs:
         :param pulumi.Input[bool] transport_only_mode: Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
         :param pulumi.Input[str] vcn_route_type: (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
         """
-        DrgAttachmentNetworkDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            id=id,
-            ids=ids,
-            ipsec_connection_id=ipsec_connection_id,
-            route_table_id=route_table_id,
-            transport_attachment_id=transport_attachment_id,
-            transport_only_mode=transport_only_mode,
-            vcn_route_type=vcn_route_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ipsec_connection_id: Optional[pulumi.Input[str]] = None,
-             route_table_id: Optional[pulumi.Input[str]] = None,
-             transport_attachment_id: Optional[pulumi.Input[str]] = None,
-             transport_only_mode: Optional[pulumi.Input[bool]] = None,
-             vcn_route_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if ipsec_connection_id is None and 'ipsecConnectionId' in kwargs:
-            ipsec_connection_id = kwargs['ipsecConnectionId']
-        if route_table_id is None and 'routeTableId' in kwargs:
-            route_table_id = kwargs['routeTableId']
-        if transport_attachment_id is None and 'transportAttachmentId' in kwargs:
-            transport_attachment_id = kwargs['transportAttachmentId']
-        if transport_only_mode is None and 'transportOnlyMode' in kwargs:
-            transport_only_mode = kwargs['transportOnlyMode']
-        if vcn_route_type is None and 'vcnRouteType' in kwargs:
-            vcn_route_type = kwargs['vcnRouteType']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if ids is not None:
-            _setter("ids", ids)
+            pulumi.set(__self__, "ids", ids)
         if ipsec_connection_id is not None:
-            _setter("ipsec_connection_id", ipsec_connection_id)
+            pulumi.set(__self__, "ipsec_connection_id", ipsec_connection_id)
         if route_table_id is not None:
-            _setter("route_table_id", route_table_id)
+            pulumi.set(__self__, "route_table_id", route_table_id)
         if transport_attachment_id is not None:
-            _setter("transport_attachment_id", transport_attachment_id)
+            pulumi.set(__self__, "transport_attachment_id", transport_attachment_id)
         if transport_only_mode is not None:
-            _setter("transport_only_mode", transport_only_mode)
+            pulumi.set(__self__, "transport_only_mode", transport_only_mode)
         if vcn_route_type is not None:
-            _setter("vcn_route_type", vcn_route_type)
+            pulumi.set(__self__, "vcn_route_type", vcn_route_type)
 
     @property
     @pulumi.getter
@@ -5258,19 +3925,8 @@ class DrgAttachmentsListDrgAllAttachmentArgs:
         """
         :param pulumi.Input[str] id: The Oracle-assigned ID of the DRG attachment
         """
-        DrgAttachmentsListDrgAllAttachmentArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -5298,37 +3954,14 @@ class DrgDefaultDrgRouteTableArgs:
         :param pulumi.Input[str] vcn: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
         :param pulumi.Input[str] virtual_circuit: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on creation.
         """
-        DrgDefaultDrgRouteTableArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipsec_tunnel=ipsec_tunnel,
-            remote_peering_connection=remote_peering_connection,
-            vcn=vcn,
-            virtual_circuit=virtual_circuit,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipsec_tunnel: Optional[pulumi.Input[str]] = None,
-             remote_peering_connection: Optional[pulumi.Input[str]] = None,
-             vcn: Optional[pulumi.Input[str]] = None,
-             virtual_circuit: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipsec_tunnel is None and 'ipsecTunnel' in kwargs:
-            ipsec_tunnel = kwargs['ipsecTunnel']
-        if remote_peering_connection is None and 'remotePeeringConnection' in kwargs:
-            remote_peering_connection = kwargs['remotePeeringConnection']
-        if virtual_circuit is None and 'virtualCircuit' in kwargs:
-            virtual_circuit = kwargs['virtualCircuit']
-
         if ipsec_tunnel is not None:
-            _setter("ipsec_tunnel", ipsec_tunnel)
+            pulumi.set(__self__, "ipsec_tunnel", ipsec_tunnel)
         if remote_peering_connection is not None:
-            _setter("remote_peering_connection", remote_peering_connection)
+            pulumi.set(__self__, "remote_peering_connection", remote_peering_connection)
         if vcn is not None:
-            _setter("vcn", vcn)
+            pulumi.set(__self__, "vcn", vcn)
         if virtual_circuit is not None:
-            _setter("virtual_circuit", virtual_circuit)
+            pulumi.set(__self__, "virtual_circuit", virtual_circuit)
 
     @property
     @pulumi.getter(name="ipsecTunnel")
@@ -5390,33 +4023,12 @@ class DrgRouteDistributionStatementMatchCriteriaArgs:
         :param pulumi.Input[str] drg_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
         :param pulumi.Input[str] match_type: (Updatable) The type of the match criteria for a route distribution statement.
         """
-        DrgRouteDistributionStatementMatchCriteriaArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attachment_type=attachment_type,
-            drg_attachment_id=drg_attachment_id,
-            match_type=match_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attachment_type: Optional[pulumi.Input[str]] = None,
-             drg_attachment_id: Optional[pulumi.Input[str]] = None,
-             match_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attachment_type is None and 'attachmentType' in kwargs:
-            attachment_type = kwargs['attachmentType']
-        if drg_attachment_id is None and 'drgAttachmentId' in kwargs:
-            drg_attachment_id = kwargs['drgAttachmentId']
-        if match_type is None and 'matchType' in kwargs:
-            match_type = kwargs['matchType']
-
         if attachment_type is not None:
-            _setter("attachment_type", attachment_type)
+            pulumi.set(__self__, "attachment_type", attachment_type)
         if drg_attachment_id is not None:
-            _setter("drg_attachment_id", drg_attachment_id)
+            pulumi.set(__self__, "drg_attachment_id", drg_attachment_id)
         if match_type is not None:
-            _setter("match_type", match_type)
+            pulumi.set(__self__, "match_type", match_type)
 
     @property
     @pulumi.getter(name="attachmentType")
@@ -5464,27 +4076,10 @@ class ImageAgentFeatureArgs:
         :param pulumi.Input[bool] is_management_supported: This attribute is not used.
         :param pulumi.Input[bool] is_monitoring_supported: This attribute is not used.
         """
-        ImageAgentFeatureArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_management_supported=is_management_supported,
-            is_monitoring_supported=is_monitoring_supported,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_management_supported: Optional[pulumi.Input[bool]] = None,
-             is_monitoring_supported: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_management_supported is None and 'isManagementSupported' in kwargs:
-            is_management_supported = kwargs['isManagementSupported']
-        if is_monitoring_supported is None and 'isMonitoringSupported' in kwargs:
-            is_monitoring_supported = kwargs['isMonitoringSupported']
-
         if is_management_supported is not None:
-            _setter("is_management_supported", is_management_supported)
+            pulumi.set(__self__, "is_management_supported", is_management_supported)
         if is_monitoring_supported is not None:
-            _setter("is_monitoring_supported", is_monitoring_supported)
+            pulumi.set(__self__, "is_monitoring_supported", is_monitoring_supported)
 
     @property
     @pulumi.getter(name="isManagementSupported")
@@ -5532,64 +4127,21 @@ class ImageImageSourceDetailsArgs:
         :param pulumi.Input[str] source_image_type: The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
         :param pulumi.Input[str] source_uri: The Object Storage URL for the image.
         """
-        ImageImageSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            source_type=source_type,
-            bucket_name=bucket_name,
-            namespace_name=namespace_name,
-            object_name=object_name,
-            operating_system=operating_system,
-            operating_system_version=operating_system_version,
-            source_image_type=source_image_type,
-            source_uri=source_uri,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             source_type: Optional[pulumi.Input[str]] = None,
-             bucket_name: Optional[pulumi.Input[str]] = None,
-             namespace_name: Optional[pulumi.Input[str]] = None,
-             object_name: Optional[pulumi.Input[str]] = None,
-             operating_system: Optional[pulumi.Input[str]] = None,
-             operating_system_version: Optional[pulumi.Input[str]] = None,
-             source_image_type: Optional[pulumi.Input[str]] = None,
-             source_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_type is None:
-            raise TypeError("Missing 'source_type' argument")
-        if bucket_name is None and 'bucketName' in kwargs:
-            bucket_name = kwargs['bucketName']
-        if namespace_name is None and 'namespaceName' in kwargs:
-            namespace_name = kwargs['namespaceName']
-        if object_name is None and 'objectName' in kwargs:
-            object_name = kwargs['objectName']
-        if operating_system is None and 'operatingSystem' in kwargs:
-            operating_system = kwargs['operatingSystem']
-        if operating_system_version is None and 'operatingSystemVersion' in kwargs:
-            operating_system_version = kwargs['operatingSystemVersion']
-        if source_image_type is None and 'sourceImageType' in kwargs:
-            source_image_type = kwargs['sourceImageType']
-        if source_uri is None and 'sourceUri' in kwargs:
-            source_uri = kwargs['sourceUri']
-
-        _setter("source_type", source_type)
+        pulumi.set(__self__, "source_type", source_type)
         if bucket_name is not None:
-            _setter("bucket_name", bucket_name)
+            pulumi.set(__self__, "bucket_name", bucket_name)
         if namespace_name is not None:
-            _setter("namespace_name", namespace_name)
+            pulumi.set(__self__, "namespace_name", namespace_name)
         if object_name is not None:
-            _setter("object_name", object_name)
+            pulumi.set(__self__, "object_name", object_name)
         if operating_system is not None:
-            _setter("operating_system", operating_system)
+            pulumi.set(__self__, "operating_system", operating_system)
         if operating_system_version is not None:
-            _setter("operating_system_version", operating_system_version)
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
         if source_image_type is not None:
-            _setter("source_image_type", source_image_type)
+            pulumi.set(__self__, "source_image_type", source_image_type)
         if source_uri is not None:
-            _setter("source_uri", source_uri)
+            pulumi.set(__self__, "source_uri", source_uri)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -5705,49 +4257,18 @@ class ImageLaunchOptionArgs:
         :param pulumi.Input[str] network_type: Emulation type for the physical network interface card (NIC).
         :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
         """
-        ImageLaunchOptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            boot_volume_type=boot_volume_type,
-            firmware=firmware,
-            is_consistent_volume_naming_enabled=is_consistent_volume_naming_enabled,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            network_type=network_type,
-            remote_data_volume_type=remote_data_volume_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             boot_volume_type: Optional[pulumi.Input[str]] = None,
-             firmware: Optional[pulumi.Input[str]] = None,
-             is_consistent_volume_naming_enabled: Optional[pulumi.Input[bool]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             network_type: Optional[pulumi.Input[str]] = None,
-             remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if boot_volume_type is None and 'bootVolumeType' in kwargs:
-            boot_volume_type = kwargs['bootVolumeType']
-        if is_consistent_volume_naming_enabled is None and 'isConsistentVolumeNamingEnabled' in kwargs:
-            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if network_type is None and 'networkType' in kwargs:
-            network_type = kwargs['networkType']
-        if remote_data_volume_type is None and 'remoteDataVolumeType' in kwargs:
-            remote_data_volume_type = kwargs['remoteDataVolumeType']
-
         if boot_volume_type is not None:
-            _setter("boot_volume_type", boot_volume_type)
+            pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
-            _setter("firmware", firmware)
+            pulumi.set(__self__, "firmware", firmware)
         if is_consistent_volume_naming_enabled is not None:
-            _setter("is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+            pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if network_type is not None:
-            _setter("network_type", network_type)
+            pulumi.set(__self__, "network_type", network_type)
         if remote_data_volume_type is not None:
-            _setter("remote_data_volume_type", remote_data_volume_type)
+            pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
 
     @property
     @pulumi.getter(name="bootVolumeType")
@@ -5849,39 +4370,14 @@ class InstanceAgentConfigArgs:
                * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgs']]] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
-        InstanceAgentConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            are_all_plugins_disabled=are_all_plugins_disabled,
-            is_management_disabled=is_management_disabled,
-            is_monitoring_disabled=is_monitoring_disabled,
-            plugins_configs=plugins_configs,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: Optional[pulumi.Input[bool]] = None,
-             is_management_disabled: Optional[pulumi.Input[bool]] = None,
-             is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
-             plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
-            are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
-            is_management_disabled = kwargs['isManagementDisabled']
-        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
-            is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if plugins_configs is None and 'pluginsConfigs' in kwargs:
-            plugins_configs = kwargs['pluginsConfigs']
-
         if are_all_plugins_disabled is not None:
-            _setter("are_all_plugins_disabled", are_all_plugins_disabled)
+            pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
-            _setter("is_management_disabled", is_management_disabled)
+            pulumi.set(__self__, "is_management_disabled", is_management_disabled)
         if is_monitoring_disabled is not None:
-            _setter("is_monitoring_disabled", is_monitoring_disabled)
+            pulumi.set(__self__, "is_monitoring_disabled", is_monitoring_disabled)
         if plugins_configs is not None:
-            _setter("plugins_configs", plugins_configs)
+            pulumi.set(__self__, "plugins_configs", plugins_configs)
 
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
@@ -5957,27 +4453,8 @@ class InstanceAgentConfigPluginsConfigArgs:
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[str] name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        InstanceAgentConfigPluginsConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            desired_state=desired_state,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             desired_state: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if desired_state is None and 'desiredState' in kwargs:
-            desired_state = kwargs['desiredState']
-        if desired_state is None:
-            raise TypeError("Missing 'desired_state' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("desired_state", desired_state)
-        _setter("name", name)
+        pulumi.set(__self__, "desired_state", desired_state)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="desiredState")
@@ -6015,27 +4492,10 @@ class InstanceAvailabilityConfigArgs:
         :param pulumi.Input[bool] is_live_migration_preferred: (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param pulumi.Input[str] recovery_action: (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
-        InstanceAvailabilityConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_live_migration_preferred=is_live_migration_preferred,
-            recovery_action=recovery_action,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
-             recovery_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_live_migration_preferred is None and 'isLiveMigrationPreferred' in kwargs:
-            is_live_migration_preferred = kwargs['isLiveMigrationPreferred']
-        if recovery_action is None and 'recoveryAction' in kwargs:
-            recovery_action = kwargs['recoveryAction']
-
         if is_live_migration_preferred is not None:
-            _setter("is_live_migration_preferred", is_live_migration_preferred)
+            pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
-            _setter("recovery_action", recovery_action)
+            pulumi.set(__self__, "recovery_action", recovery_action)
 
     @property
     @pulumi.getter(name="isLiveMigrationPreferred")
@@ -6079,44 +4539,15 @@ class InstanceConfigurationInstanceDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]] options: Multiple Compute Instance Configuration instance details.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]] secondary_vnics: Secondary VNIC parameters.
         """
-        InstanceConfigurationInstanceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            instance_type=instance_type,
-            block_volumes=block_volumes,
-            launch_details=launch_details,
-            options=options,
-            secondary_vnics=secondary_vnics,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             instance_type: Optional[pulumi.Input[str]] = None,
-             block_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgs']]]] = None,
-             launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs']] = None,
-             options: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]] = None,
-             secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if instance_type is None and 'instanceType' in kwargs:
-            instance_type = kwargs['instanceType']
-        if instance_type is None:
-            raise TypeError("Missing 'instance_type' argument")
-        if block_volumes is None and 'blockVolumes' in kwargs:
-            block_volumes = kwargs['blockVolumes']
-        if launch_details is None and 'launchDetails' in kwargs:
-            launch_details = kwargs['launchDetails']
-        if secondary_vnics is None and 'secondaryVnics' in kwargs:
-            secondary_vnics = kwargs['secondaryVnics']
-
-        _setter("instance_type", instance_type)
+        pulumi.set(__self__, "instance_type", instance_type)
         if block_volumes is not None:
-            _setter("block_volumes", block_volumes)
+            pulumi.set(__self__, "block_volumes", block_volumes)
         if launch_details is not None:
-            _setter("launch_details", launch_details)
+            pulumi.set(__self__, "launch_details", launch_details)
         if options is not None:
-            _setter("options", options)
+            pulumi.set(__self__, "options", options)
         if secondary_vnics is not None:
-            _setter("secondary_vnics", secondary_vnics)
+            pulumi.set(__self__, "secondary_vnics", secondary_vnics)
 
     @property
     @pulumi.getter(name="instanceType")
@@ -6192,33 +4623,12 @@ class InstanceConfigurationInstanceDetailsBlockVolumeArgs:
         :param pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs'] create_details: Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
         :param pulumi.Input[str] volume_id: The OCID of the volume.
         """
-        InstanceConfigurationInstanceDetailsBlockVolumeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attach_details=attach_details,
-            create_details=create_details,
-            volume_id=volume_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attach_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs']] = None,
-             create_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs']] = None,
-             volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attach_details is None and 'attachDetails' in kwargs:
-            attach_details = kwargs['attachDetails']
-        if create_details is None and 'createDetails' in kwargs:
-            create_details = kwargs['createDetails']
-        if volume_id is None and 'volumeId' in kwargs:
-            volume_id = kwargs['volumeId']
-
         if attach_details is not None:
-            _setter("attach_details", attach_details)
+            pulumi.set(__self__, "attach_details", attach_details)
         if create_details is not None:
-            _setter("create_details", create_details)
+            pulumi.set(__self__, "create_details", create_details)
         if volume_id is not None:
-            _setter("volume_id", volume_id)
+            pulumi.set(__self__, "volume_id", volume_id)
 
     @property
     @pulumi.getter(name="attachDetails")
@@ -6276,54 +4686,19 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         """
-        InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            device=device,
-            display_name=display_name,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            is_read_only=is_read_only,
-            is_shareable=is_shareable,
-            use_chap=use_chap,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             device: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             is_read_only: Optional[pulumi.Input[bool]] = None,
-             is_shareable: Optional[pulumi.Input[bool]] = None,
-             use_chap: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if is_read_only is None and 'isReadOnly' in kwargs:
-            is_read_only = kwargs['isReadOnly']
-        if is_shareable is None and 'isShareable' in kwargs:
-            is_shareable = kwargs['isShareable']
-        if use_chap is None and 'useChap' in kwargs:
-            use_chap = kwargs['useChap']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if device is not None:
-            _setter("device", device)
+            pulumi.set(__self__, "device", device)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if is_read_only is not None:
-            _setter("is_read_only", is_read_only)
+            pulumi.set(__self__, "is_read_only", is_read_only)
         if is_shareable is not None:
-            _setter("is_shareable", is_shareable)
+            pulumi.set(__self__, "is_shareable", is_shareable)
         if use_chap is not None:
-            _setter("use_chap", use_chap)
+            pulumi.set(__self__, "use_chap", use_chap)
 
     @property
     @pulumi.getter
@@ -6442,93 +4817,32 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
                
                Allowed values:
         """
-        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autotune_policies=autotune_policies,
-            availability_domain=availability_domain,
-            backup_policy_id=backup_policy_id,
-            block_volume_replicas=block_volume_replicas,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_auto_tune_enabled=is_auto_tune_enabled,
-            kms_key_id=kms_key_id,
-            size_in_gbs=size_in_gbs,
-            source_details=source_details,
-            vpus_per_gb=vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs']]]] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             backup_policy_id: Optional[pulumi.Input[str]] = None,
-             block_volume_replicas: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs']] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_auto_tune_enabled: Optional[pulumi.Input[bool]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             size_in_gbs: Optional[pulumi.Input[str]] = None,
-             source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
-             vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autotune_policies is None and 'autotunePolicies' in kwargs:
-            autotune_policies = kwargs['autotunePolicies']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if backup_policy_id is None and 'backupPolicyId' in kwargs:
-            backup_policy_id = kwargs['backupPolicyId']
-        if block_volume_replicas is None and 'blockVolumeReplicas' in kwargs:
-            block_volume_replicas = kwargs['blockVolumeReplicas']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_auto_tune_enabled is None and 'isAutoTuneEnabled' in kwargs:
-            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if size_in_gbs is None and 'sizeInGbs' in kwargs:
-            size_in_gbs = kwargs['sizeInGbs']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if vpus_per_gb is None and 'vpusPerGb' in kwargs:
-            vpus_per_gb = kwargs['vpusPerGb']
-
         if autotune_policies is not None:
-            _setter("autotune_policies", autotune_policies)
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy_id is not None:
-            _setter("backup_policy_id", backup_policy_id)
+            pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         if block_volume_replicas is not None:
-            _setter("block_volume_replicas", block_volume_replicas)
+            pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
-            _setter("is_auto_tune_enabled", is_auto_tune_enabled)
+            pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
-            _setter("size_in_gbs", size_in_gbs)
+            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if vpus_per_gb is not None:
-            _setter("vpus_per_gb", vpus_per_gb)
+            pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
 
     @property
     @pulumi.getter(name="autotunePolicies")
@@ -6695,28 +5009,9 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy
         :param pulumi.Input[str] autotune_type: This specifies the type of autotunes supported by OCI.
         :param pulumi.Input[str] max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
-        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autotune_type=autotune_type,
-            max_vpus_per_gb=max_vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autotune_type: Optional[pulumi.Input[str]] = None,
-             max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autotune_type is None and 'autotuneType' in kwargs:
-            autotune_type = kwargs['autotuneType']
-        if autotune_type is None:
-            raise TypeError("Missing 'autotune_type' argument")
-        if max_vpus_per_gb is None and 'maxVpusPerGb' in kwargs:
-            max_vpus_per_gb = kwargs['maxVpusPerGb']
-
-        _setter("autotune_type", autotune_type)
+        pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
-            _setter("max_vpus_per_gb", max_vpus_per_gb)
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
 
     @property
     @pulumi.getter(name="autotuneType")
@@ -6752,28 +5047,9 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
-        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            display_name=display_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
-        _setter("availability_domain", availability_domain)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -6809,24 +5085,9 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsA
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[str] id: The OCID of the volume backup.
         """
-        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -6961,155 +5222,54 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_config=agent_config,
-            availability_config=availability_config,
-            availability_domain=availability_domain,
-            capacity_reservation_id=capacity_reservation_id,
-            compartment_id=compartment_id,
-            create_vnic_details=create_vnic_details,
-            dedicated_vm_host_id=dedicated_vm_host_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            extended_metadata=extended_metadata,
-            fault_domain=fault_domain,
-            freeform_tags=freeform_tags,
-            instance_options=instance_options,
-            ipxe_script=ipxe_script,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            launch_mode=launch_mode,
-            launch_options=launch_options,
-            metadata=metadata,
-            platform_config=platform_config,
-            preemptible_instance_config=preemptible_instance_config,
-            preferred_maintenance_action=preferred_maintenance_action,
-            shape=shape,
-            shape_config=shape_config,
-            source_details=source_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs']] = None,
-             availability_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs']] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs']] = None,
-             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             instance_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs']] = None,
-             ipxe_script: Optional[pulumi.Input[str]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             launch_mode: Optional[pulumi.Input[str]] = None,
-             launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs']] = None,
-             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             platform_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs']] = None,
-             preemptible_instance_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs']] = None,
-             preferred_maintenance_action: Optional[pulumi.Input[str]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             shape_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs']] = None,
-             source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_config is None and 'agentConfig' in kwargs:
-            agent_config = kwargs['agentConfig']
-        if availability_config is None and 'availabilityConfig' in kwargs:
-            availability_config = kwargs['availabilityConfig']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
-            capacity_reservation_id = kwargs['capacityReservationId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
-            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if extended_metadata is None and 'extendedMetadata' in kwargs:
-            extended_metadata = kwargs['extendedMetadata']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if instance_options is None and 'instanceOptions' in kwargs:
-            instance_options = kwargs['instanceOptions']
-        if ipxe_script is None and 'ipxeScript' in kwargs:
-            ipxe_script = kwargs['ipxeScript']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if launch_mode is None and 'launchMode' in kwargs:
-            launch_mode = kwargs['launchMode']
-        if launch_options is None and 'launchOptions' in kwargs:
-            launch_options = kwargs['launchOptions']
-        if platform_config is None and 'platformConfig' in kwargs:
-            platform_config = kwargs['platformConfig']
-        if preemptible_instance_config is None and 'preemptibleInstanceConfig' in kwargs:
-            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
-        if preferred_maintenance_action is None and 'preferredMaintenanceAction' in kwargs:
-            preferred_maintenance_action = kwargs['preferredMaintenanceAction']
-        if shape_config is None and 'shapeConfig' in kwargs:
-            shape_config = kwargs['shapeConfig']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-
         if agent_config is not None:
-            _setter("agent_config", agent_config)
+            pulumi.set(__self__, "agent_config", agent_config)
         if availability_config is not None:
-            _setter("availability_config", availability_config)
+            pulumi.set(__self__, "availability_config", availability_config)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if capacity_reservation_id is not None:
-            _setter("capacity_reservation_id", capacity_reservation_id)
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if create_vnic_details is not None:
-            _setter("create_vnic_details", create_vnic_details)
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
+            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if extended_metadata is not None:
-            _setter("extended_metadata", extended_metadata)
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if instance_options is not None:
-            _setter("instance_options", instance_options)
+            pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
-            _setter("ipxe_script", ipxe_script)
+            pulumi.set(__self__, "ipxe_script", ipxe_script)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_mode is not None:
-            _setter("launch_mode", launch_mode)
+            pulumi.set(__self__, "launch_mode", launch_mode)
         if launch_options is not None:
-            _setter("launch_options", launch_options)
+            pulumi.set(__self__, "launch_options", launch_options)
         if metadata is not None:
-            _setter("metadata", metadata)
+            pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
-            _setter("platform_config", platform_config)
+            pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
-            _setter("preemptible_instance_config", preemptible_instance_config)
+            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preferred_maintenance_action is not None:
-            _setter("preferred_maintenance_action", preferred_maintenance_action)
+            pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
         if shape is not None:
-            _setter("shape", shape)
+            pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
-            _setter("shape_config", shape_config)
+            pulumi.set(__self__, "shape_config", shape_config)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
 
     @property
     @pulumi.getter(name="agentConfig")
@@ -7480,39 +5640,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
                * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs']]] plugins_configs: The configuration of plugins associated with this instance.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            are_all_plugins_disabled=are_all_plugins_disabled,
-            is_management_disabled=is_management_disabled,
-            is_monitoring_disabled=is_monitoring_disabled,
-            plugins_configs=plugins_configs,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: Optional[pulumi.Input[bool]] = None,
-             is_management_disabled: Optional[pulumi.Input[bool]] = None,
-             is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
-             plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
-            are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
-            is_management_disabled = kwargs['isManagementDisabled']
-        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
-            is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if plugins_configs is None and 'pluginsConfigs' in kwargs:
-            plugins_configs = kwargs['pluginsConfigs']
-
         if are_all_plugins_disabled is not None:
-            _setter("are_all_plugins_disabled", are_all_plugins_disabled)
+            pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
-            _setter("is_management_disabled", is_management_disabled)
+            pulumi.set(__self__, "is_management_disabled", is_management_disabled)
         if is_monitoring_disabled is not None:
-            _setter("is_monitoring_disabled", is_monitoring_disabled)
+            pulumi.set(__self__, "is_monitoring_disabled", is_monitoring_disabled)
         if plugins_configs is not None:
-            _setter("plugins_configs", plugins_configs)
+            pulumi.set(__self__, "plugins_configs", plugins_configs)
 
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
@@ -7588,25 +5723,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigA
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[str] name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            desired_state=desired_state,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             desired_state: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if desired_state is None and 'desiredState' in kwargs:
-            desired_state = kwargs['desiredState']
-
         if desired_state is not None:
-            _setter("desired_state", desired_state)
+            pulumi.set(__self__, "desired_state", desired_state)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="desiredState")
@@ -7644,27 +5764,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs:
         :param pulumi.Input[bool] is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param pulumi.Input[str] recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_live_migration_preferred=is_live_migration_preferred,
-            recovery_action=recovery_action,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
-             recovery_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_live_migration_preferred is None and 'isLiveMigrationPreferred' in kwargs:
-            is_live_migration_preferred = kwargs['isLiveMigrationPreferred']
-        if recovery_action is None and 'recoveryAction' in kwargs:
-            recovery_action = kwargs['recoveryAction']
-
         if is_live_migration_preferred is not None:
-            _setter("is_live_migration_preferred", is_live_migration_preferred)
+            pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
-            _setter("recovery_action", recovery_action)
+            pulumi.set(__self__, "recovery_action", recovery_action)
 
     @property
     @pulumi.getter(name="isLiveMigrationPreferred")
@@ -7720,87 +5823,30 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assign_ipv6ip=assign_ipv6ip,
-            assign_private_dns_record=assign_private_dns_record,
-            assign_public_ip=assign_public_ip,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            nsg_ids=nsg_ids,
-            private_ip=private_ip,
-            skip_source_dest_check=skip_source_dest_check,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
-             assign_public_ip: Optional[pulumi.Input[bool]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_ip: Optional[pulumi.Input[str]] = None,
-             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assign_ipv6ip is None and 'assignIpv6ip' in kwargs:
-            assign_ipv6ip = kwargs['assignIpv6ip']
-        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
-            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if assign_public_ip is None and 'assignPublicIp' in kwargs:
-            assign_public_ip = kwargs['assignPublicIp']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
-            skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if assign_ipv6ip is not None:
-            _setter("assign_ipv6ip", assign_ipv6ip)
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
-            _setter("assign_private_dns_record", assign_private_dns_record)
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            _setter("assign_public_ip", assign_public_ip)
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
         if skip_source_dest_check is not None:
-            _setter("skip_source_dest_check", skip_source_dest_check)
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="assignIpv6ip")
@@ -7956,25 +6002,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
         :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6address=ipv6address,
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6address: Optional[pulumi.Input[str]] = None,
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6address is not None:
-            _setter("ipv6address", ipv6address)
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter
@@ -8008,21 +6039,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs:
         """
         :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            are_legacy_imds_endpoints_disabled=are_legacy_imds_endpoints_disabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
-            are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
-
         if are_legacy_imds_endpoints_disabled is not None:
-            _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
+            pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
@@ -8054,49 +6072,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
         :param pulumi.Input[str] network_type: Emulation type for the physical network interface card (NIC).
         :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            boot_volume_type=boot_volume_type,
-            firmware=firmware,
-            is_consistent_volume_naming_enabled=is_consistent_volume_naming_enabled,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            network_type=network_type,
-            remote_data_volume_type=remote_data_volume_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             boot_volume_type: Optional[pulumi.Input[str]] = None,
-             firmware: Optional[pulumi.Input[str]] = None,
-             is_consistent_volume_naming_enabled: Optional[pulumi.Input[bool]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             network_type: Optional[pulumi.Input[str]] = None,
-             remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if boot_volume_type is None and 'bootVolumeType' in kwargs:
-            boot_volume_type = kwargs['bootVolumeType']
-        if is_consistent_volume_naming_enabled is None and 'isConsistentVolumeNamingEnabled' in kwargs:
-            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if network_type is None and 'networkType' in kwargs:
-            network_type = kwargs['networkType']
-        if remote_data_volume_type is None and 'remoteDataVolumeType' in kwargs:
-            remote_data_volume_type = kwargs['remoteDataVolumeType']
-
         if boot_volume_type is not None:
-            _setter("boot_volume_type", boot_volume_type)
+            pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
-            _setter("firmware", firmware)
+            pulumi.set(__self__, "firmware", firmware)
         if is_consistent_volume_naming_enabled is not None:
-            _setter("is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+            pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if network_type is not None:
-            _setter("network_type", network_type)
+            pulumi.set(__self__, "network_type", network_type)
         if remote_data_volume_type is not None:
-            _setter("remote_data_volume_type", remote_data_volume_type)
+            pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
 
     @property
     @pulumi.getter(name="bootVolumeType")
@@ -8204,86 +6191,29 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
                
                If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            are_virtual_instructions_enabled=are_virtual_instructions_enabled,
-            config_map=config_map,
-            is_access_control_service_enabled=is_access_control_service_enabled,
-            is_input_output_memory_management_unit_enabled=is_input_output_memory_management_unit_enabled,
-            is_measured_boot_enabled=is_measured_boot_enabled,
-            is_memory_encryption_enabled=is_memory_encryption_enabled,
-            is_secure_boot_enabled=is_secure_boot_enabled,
-            is_symmetric_multi_threading_enabled=is_symmetric_multi_threading_enabled,
-            is_trusted_platform_module_enabled=is_trusted_platform_module_enabled,
-            numa_nodes_per_socket=numa_nodes_per_socket,
-            percentage_of_cores_enabled=percentage_of_cores_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             are_virtual_instructions_enabled: Optional[pulumi.Input[bool]] = None,
-             config_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_access_control_service_enabled: Optional[pulumi.Input[bool]] = None,
-             is_input_output_memory_management_unit_enabled: Optional[pulumi.Input[bool]] = None,
-             is_measured_boot_enabled: Optional[pulumi.Input[bool]] = None,
-             is_memory_encryption_enabled: Optional[pulumi.Input[bool]] = None,
-             is_secure_boot_enabled: Optional[pulumi.Input[bool]] = None,
-             is_symmetric_multi_threading_enabled: Optional[pulumi.Input[bool]] = None,
-             is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
-             numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
-             percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if are_virtual_instructions_enabled is None and 'areVirtualInstructionsEnabled' in kwargs:
-            are_virtual_instructions_enabled = kwargs['areVirtualInstructionsEnabled']
-        if config_map is None and 'configMap' in kwargs:
-            config_map = kwargs['configMap']
-        if is_access_control_service_enabled is None and 'isAccessControlServiceEnabled' in kwargs:
-            is_access_control_service_enabled = kwargs['isAccessControlServiceEnabled']
-        if is_input_output_memory_management_unit_enabled is None and 'isInputOutputMemoryManagementUnitEnabled' in kwargs:
-            is_input_output_memory_management_unit_enabled = kwargs['isInputOutputMemoryManagementUnitEnabled']
-        if is_measured_boot_enabled is None and 'isMeasuredBootEnabled' in kwargs:
-            is_measured_boot_enabled = kwargs['isMeasuredBootEnabled']
-        if is_memory_encryption_enabled is None and 'isMemoryEncryptionEnabled' in kwargs:
-            is_memory_encryption_enabled = kwargs['isMemoryEncryptionEnabled']
-        if is_secure_boot_enabled is None and 'isSecureBootEnabled' in kwargs:
-            is_secure_boot_enabled = kwargs['isSecureBootEnabled']
-        if is_symmetric_multi_threading_enabled is None and 'isSymmetricMultiThreadingEnabled' in kwargs:
-            is_symmetric_multi_threading_enabled = kwargs['isSymmetricMultiThreadingEnabled']
-        if is_trusted_platform_module_enabled is None and 'isTrustedPlatformModuleEnabled' in kwargs:
-            is_trusted_platform_module_enabled = kwargs['isTrustedPlatformModuleEnabled']
-        if numa_nodes_per_socket is None and 'numaNodesPerSocket' in kwargs:
-            numa_nodes_per_socket = kwargs['numaNodesPerSocket']
-        if percentage_of_cores_enabled is None and 'percentageOfCoresEnabled' in kwargs:
-            percentage_of_cores_enabled = kwargs['percentageOfCoresEnabled']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
-            _setter("are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+            pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
         if config_map is not None:
-            _setter("config_map", config_map)
+            pulumi.set(__self__, "config_map", config_map)
         if is_access_control_service_enabled is not None:
-            _setter("is_access_control_service_enabled", is_access_control_service_enabled)
+            pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         if is_input_output_memory_management_unit_enabled is not None:
-            _setter("is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
+            pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         if is_measured_boot_enabled is not None:
-            _setter("is_measured_boot_enabled", is_measured_boot_enabled)
+            pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         if is_memory_encryption_enabled is not None:
-            _setter("is_memory_encryption_enabled", is_memory_encryption_enabled)
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if is_secure_boot_enabled is not None:
-            _setter("is_secure_boot_enabled", is_secure_boot_enabled)
+            pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         if is_symmetric_multi_threading_enabled is not None:
-            _setter("is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
+            pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         if is_trusted_platform_module_enabled is not None:
-            _setter("is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
+            pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         if numa_nodes_per_socket is not None:
-            _setter("numa_nodes_per_socket", numa_nodes_per_socket)
+            pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
         if percentage_of_cores_enabled is not None:
-            _setter("percentage_of_cores_enabled", percentage_of_cores_enabled)
+            pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
 
     @property
     @pulumi.getter
@@ -8441,21 +6371,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig
         """
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            preemption_action=preemption_action,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if preemption_action is None and 'preemptionAction' in kwargs:
-            preemption_action = kwargs['preemptionAction']
-
         if preemption_action is not None:
-            _setter("preemption_action", preemption_action)
+            pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
@@ -8479,26 +6396,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            preserve_boot_volume=preserve_boot_volume,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
-            preserve_boot_volume = kwargs['preserveBootVolume']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if preserve_boot_volume is not None:
-            _setter("preserve_boot_volume", preserve_boot_volume)
+            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
 
     @property
     @pulumi.getter
@@ -8542,39 +6442,16 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
         :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance.
         :param pulumi.Input[int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            baseline_ocpu_utilization=baseline_ocpu_utilization,
-            memory_in_gbs=memory_in_gbs,
-            nvmes=nvmes,
-            ocpus=ocpus,
-            vcpus=vcpus,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
-             memory_in_gbs: Optional[pulumi.Input[float]] = None,
-             nvmes: Optional[pulumi.Input[int]] = None,
-             ocpus: Optional[pulumi.Input[float]] = None,
-             vcpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
-            baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
-            memory_in_gbs = kwargs['memoryInGbs']
-
         if baseline_ocpu_utilization is not None:
-            _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
-            _setter("memory_in_gbs", memory_in_gbs)
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
-            _setter("nvmes", nvmes)
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
-            _setter("ocpus", ocpus)
+            pulumi.set(__self__, "ocpus", ocpus)
         if vcpus is not None:
-            _setter("vcpus", vcpus)
+            pulumi.set(__self__, "vcpus", vcpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -8660,58 +6537,19 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
         :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            source_type=source_type,
-            boot_volume_id=boot_volume_id,
-            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
-            boot_volume_vpus_per_gb=boot_volume_vpus_per_gb,
-            image_id=image_id,
-            instance_source_image_filter_details=instance_source_image_filter_details,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             source_type: Optional[pulumi.Input[str]] = None,
-             boot_volume_id: Optional[pulumi.Input[str]] = None,
-             boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             image_id: Optional[pulumi.Input[str]] = None,
-             instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_type is None:
-            raise TypeError("Missing 'source_type' argument")
-        if boot_volume_id is None and 'bootVolumeId' in kwargs:
-            boot_volume_id = kwargs['bootVolumeId']
-        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
-            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
-            boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if image_id is None and 'imageId' in kwargs:
-            image_id = kwargs['imageId']
-        if instance_source_image_filter_details is None and 'instanceSourceImageFilterDetails' in kwargs:
-            instance_source_image_filter_details = kwargs['instanceSourceImageFilterDetails']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-
-        _setter("source_type", source_type)
+        pulumi.set(__self__, "source_type", source_type)
         if boot_volume_id is not None:
-            _setter("boot_volume_id", boot_volume_id)
+            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         if boot_volume_size_in_gbs is not None:
-            _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if boot_volume_vpus_per_gb is not None:
-            _setter("boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
-            _setter("image_id", image_id)
+            pulumi.set(__self__, "image_id", image_id)
         if instance_source_image_filter_details is not None:
-            _setter("instance_source_image_filter_details", instance_source_image_filter_details)
+            pulumi.set(__self__, "instance_source_image_filter_details", instance_source_image_filter_details)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -8813,39 +6651,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
         :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
         :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
         """
-        InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags_filter=defined_tags_filter,
-            operating_system=operating_system,
-            operating_system_version=operating_system_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             operating_system: Optional[pulumi.Input[str]] = None,
-             operating_system_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags_filter is None and 'definedTagsFilter' in kwargs:
-            defined_tags_filter = kwargs['definedTagsFilter']
-        if operating_system is None and 'operatingSystem' in kwargs:
-            operating_system = kwargs['operatingSystem']
-        if operating_system_version is None and 'operatingSystemVersion' in kwargs:
-            operating_system_version = kwargs['operatingSystemVersion']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags_filter is not None:
-            _setter("defined_tags_filter", defined_tags_filter)
+            pulumi.set(__self__, "defined_tags_filter", defined_tags_filter)
         if operating_system is not None:
-            _setter("operating_system", operating_system)
+            pulumi.set(__self__, "operating_system", operating_system)
         if operating_system_version is not None:
-            _setter("operating_system_version", operating_system_version)
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8909,33 +6722,12 @@ class InstanceConfigurationInstanceDetailsOptionArgs:
                See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]] secondary_vnics: Secondary VNIC parameters.
         """
-        InstanceConfigurationInstanceDetailsOptionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            block_volumes=block_volumes,
-            launch_details=launch_details,
-            secondary_vnics=secondary_vnics,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             block_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]] = None,
-             launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']] = None,
-             secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if block_volumes is None and 'blockVolumes' in kwargs:
-            block_volumes = kwargs['blockVolumes']
-        if launch_details is None and 'launchDetails' in kwargs:
-            launch_details = kwargs['launchDetails']
-        if secondary_vnics is None and 'secondaryVnics' in kwargs:
-            secondary_vnics = kwargs['secondaryVnics']
-
         if block_volumes is not None:
-            _setter("block_volumes", block_volumes)
+            pulumi.set(__self__, "block_volumes", block_volumes)
         if launch_details is not None:
-            _setter("launch_details", launch_details)
+            pulumi.set(__self__, "launch_details", launch_details)
         if secondary_vnics is not None:
-            _setter("secondary_vnics", secondary_vnics)
+            pulumi.set(__self__, "secondary_vnics", secondary_vnics)
 
     @property
     @pulumi.getter(name="blockVolumes")
@@ -8987,33 +6779,12 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs:
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs'] create_details: Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
         :param pulumi.Input[str] volume_id: The OCID of the volume.
         """
-        InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attach_details=attach_details,
-            create_details=create_details,
-            volume_id=volume_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attach_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']] = None,
-             create_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']] = None,
-             volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attach_details is None and 'attachDetails' in kwargs:
-            attach_details = kwargs['attachDetails']
-        if create_details is None and 'createDetails' in kwargs:
-            create_details = kwargs['createDetails']
-        if volume_id is None and 'volumeId' in kwargs:
-            volume_id = kwargs['volumeId']
-
         if attach_details is not None:
-            _setter("attach_details", attach_details)
+            pulumi.set(__self__, "attach_details", attach_details)
         if create_details is not None:
-            _setter("create_details", create_details)
+            pulumi.set(__self__, "create_details", create_details)
         if volume_id is not None:
-            _setter("volume_id", volume_id)
+            pulumi.set(__self__, "volume_id", volume_id)
 
     @property
     @pulumi.getter(name="attachDetails")
@@ -9071,54 +6842,19 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         """
-        InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            device=device,
-            display_name=display_name,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            is_read_only=is_read_only,
-            is_shareable=is_shareable,
-            use_chap=use_chap,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             device: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             is_read_only: Optional[pulumi.Input[bool]] = None,
-             is_shareable: Optional[pulumi.Input[bool]] = None,
-             use_chap: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if is_read_only is None and 'isReadOnly' in kwargs:
-            is_read_only = kwargs['isReadOnly']
-        if is_shareable is None and 'isShareable' in kwargs:
-            is_shareable = kwargs['isShareable']
-        if use_chap is None and 'useChap' in kwargs:
-            use_chap = kwargs['useChap']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if device is not None:
-            _setter("device", device)
+            pulumi.set(__self__, "device", device)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if is_read_only is not None:
-            _setter("is_read_only", is_read_only)
+            pulumi.set(__self__, "is_read_only", is_read_only)
         if is_shareable is not None:
-            _setter("is_shareable", is_shareable)
+            pulumi.set(__self__, "is_shareable", is_shareable)
         if use_chap is not None:
-            _setter("use_chap", use_chap)
+            pulumi.set(__self__, "use_chap", use_chap)
 
     @property
     @pulumi.getter
@@ -9237,93 +6973,32 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
                
                Allowed values:
         """
-        InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autotune_policies=autotune_policies,
-            availability_domain=availability_domain,
-            backup_policy_id=backup_policy_id,
-            block_volume_replicas=block_volume_replicas,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_auto_tune_enabled=is_auto_tune_enabled,
-            kms_key_id=kms_key_id,
-            size_in_gbs=size_in_gbs,
-            source_details=source_details,
-            vpus_per_gb=vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]]] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             backup_policy_id: Optional[pulumi.Input[str]] = None,
-             block_volume_replicas: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs']] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_auto_tune_enabled: Optional[pulumi.Input[bool]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             size_in_gbs: Optional[pulumi.Input[str]] = None,
-             source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
-             vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autotune_policies is None and 'autotunePolicies' in kwargs:
-            autotune_policies = kwargs['autotunePolicies']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if backup_policy_id is None and 'backupPolicyId' in kwargs:
-            backup_policy_id = kwargs['backupPolicyId']
-        if block_volume_replicas is None and 'blockVolumeReplicas' in kwargs:
-            block_volume_replicas = kwargs['blockVolumeReplicas']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_auto_tune_enabled is None and 'isAutoTuneEnabled' in kwargs:
-            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if size_in_gbs is None and 'sizeInGbs' in kwargs:
-            size_in_gbs = kwargs['sizeInGbs']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if vpus_per_gb is None and 'vpusPerGb' in kwargs:
-            vpus_per_gb = kwargs['vpusPerGb']
-
         if autotune_policies is not None:
-            _setter("autotune_policies", autotune_policies)
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy_id is not None:
-            _setter("backup_policy_id", backup_policy_id)
+            pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         if block_volume_replicas is not None:
-            _setter("block_volume_replicas", block_volume_replicas)
+            pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
-            _setter("is_auto_tune_enabled", is_auto_tune_enabled)
+            pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
-            _setter("size_in_gbs", size_in_gbs)
+            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if vpus_per_gb is not None:
-            _setter("vpus_per_gb", vpus_per_gb)
+            pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
 
     @property
     @pulumi.getter(name="autotunePolicies")
@@ -9490,28 +7165,9 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotune
         :param pulumi.Input[str] autotune_type: This specifies the type of autotunes supported by OCI.
         :param pulumi.Input[str] max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
-        InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autotune_type=autotune_type,
-            max_vpus_per_gb=max_vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autotune_type: Optional[pulumi.Input[str]] = None,
-             max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autotune_type is None and 'autotuneType' in kwargs:
-            autotune_type = kwargs['autotuneType']
-        if autotune_type is None:
-            raise TypeError("Missing 'autotune_type' argument")
-        if max_vpus_per_gb is None and 'maxVpusPerGb' in kwargs:
-            max_vpus_per_gb = kwargs['maxVpusPerGb']
-
-        _setter("autotune_type", autotune_type)
+        pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
-            _setter("max_vpus_per_gb", max_vpus_per_gb)
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
 
     @property
     @pulumi.getter(name="autotuneType")
@@ -9547,28 +7203,9 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVol
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
-        InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            display_name=display_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
-        _setter("availability_domain", availability_domain)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -9604,24 +7241,9 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[str] id: The OCID of the volume backup.
         """
-        InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -9756,155 +7378,54 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
                
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_config=agent_config,
-            availability_config=availability_config,
-            availability_domain=availability_domain,
-            capacity_reservation_id=capacity_reservation_id,
-            compartment_id=compartment_id,
-            create_vnic_details=create_vnic_details,
-            dedicated_vm_host_id=dedicated_vm_host_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            extended_metadata=extended_metadata,
-            fault_domain=fault_domain,
-            freeform_tags=freeform_tags,
-            instance_options=instance_options,
-            ipxe_script=ipxe_script,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            launch_mode=launch_mode,
-            launch_options=launch_options,
-            metadata=metadata,
-            platform_config=platform_config,
-            preemptible_instance_config=preemptible_instance_config,
-            preferred_maintenance_action=preferred_maintenance_action,
-            shape=shape,
-            shape_config=shape_config,
-            source_details=source_details,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs']] = None,
-             availability_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs']] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs']] = None,
-             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             instance_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs']] = None,
-             ipxe_script: Optional[pulumi.Input[str]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             launch_mode: Optional[pulumi.Input[str]] = None,
-             launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']] = None,
-             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             platform_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']] = None,
-             preemptible_instance_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']] = None,
-             preferred_maintenance_action: Optional[pulumi.Input[str]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             shape_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']] = None,
-             source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_config is None and 'agentConfig' in kwargs:
-            agent_config = kwargs['agentConfig']
-        if availability_config is None and 'availabilityConfig' in kwargs:
-            availability_config = kwargs['availabilityConfig']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
-            capacity_reservation_id = kwargs['capacityReservationId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
-            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if extended_metadata is None and 'extendedMetadata' in kwargs:
-            extended_metadata = kwargs['extendedMetadata']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if instance_options is None and 'instanceOptions' in kwargs:
-            instance_options = kwargs['instanceOptions']
-        if ipxe_script is None and 'ipxeScript' in kwargs:
-            ipxe_script = kwargs['ipxeScript']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if launch_mode is None and 'launchMode' in kwargs:
-            launch_mode = kwargs['launchMode']
-        if launch_options is None and 'launchOptions' in kwargs:
-            launch_options = kwargs['launchOptions']
-        if platform_config is None and 'platformConfig' in kwargs:
-            platform_config = kwargs['platformConfig']
-        if preemptible_instance_config is None and 'preemptibleInstanceConfig' in kwargs:
-            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
-        if preferred_maintenance_action is None and 'preferredMaintenanceAction' in kwargs:
-            preferred_maintenance_action = kwargs['preferredMaintenanceAction']
-        if shape_config is None and 'shapeConfig' in kwargs:
-            shape_config = kwargs['shapeConfig']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-
         if agent_config is not None:
-            _setter("agent_config", agent_config)
+            pulumi.set(__self__, "agent_config", agent_config)
         if availability_config is not None:
-            _setter("availability_config", availability_config)
+            pulumi.set(__self__, "availability_config", availability_config)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if capacity_reservation_id is not None:
-            _setter("capacity_reservation_id", capacity_reservation_id)
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if create_vnic_details is not None:
-            _setter("create_vnic_details", create_vnic_details)
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
+            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if extended_metadata is not None:
-            _setter("extended_metadata", extended_metadata)
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if instance_options is not None:
-            _setter("instance_options", instance_options)
+            pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
-            _setter("ipxe_script", ipxe_script)
+            pulumi.set(__self__, "ipxe_script", ipxe_script)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_mode is not None:
-            _setter("launch_mode", launch_mode)
+            pulumi.set(__self__, "launch_mode", launch_mode)
         if launch_options is not None:
-            _setter("launch_options", launch_options)
+            pulumi.set(__self__, "launch_options", launch_options)
         if metadata is not None:
-            _setter("metadata", metadata)
+            pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
-            _setter("platform_config", platform_config)
+            pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
-            _setter("preemptible_instance_config", preemptible_instance_config)
+            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preferred_maintenance_action is not None:
-            _setter("preferred_maintenance_action", preferred_maintenance_action)
+            pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
         if shape is not None:
-            _setter("shape", shape)
+            pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
-            _setter("shape_config", shape_config)
+            pulumi.set(__self__, "shape_config", shape_config)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
 
     @property
     @pulumi.getter(name="agentConfig")
@@ -10275,39 +7796,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
                * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]] plugins_configs: The configuration of plugins associated with this instance.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            are_all_plugins_disabled=are_all_plugins_disabled,
-            is_management_disabled=is_management_disabled,
-            is_monitoring_disabled=is_monitoring_disabled,
-            plugins_configs=plugins_configs,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             are_all_plugins_disabled: Optional[pulumi.Input[bool]] = None,
-             is_management_disabled: Optional[pulumi.Input[bool]] = None,
-             is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
-             plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if are_all_plugins_disabled is None and 'areAllPluginsDisabled' in kwargs:
-            are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
-        if is_management_disabled is None and 'isManagementDisabled' in kwargs:
-            is_management_disabled = kwargs['isManagementDisabled']
-        if is_monitoring_disabled is None and 'isMonitoringDisabled' in kwargs:
-            is_monitoring_disabled = kwargs['isMonitoringDisabled']
-        if plugins_configs is None and 'pluginsConfigs' in kwargs:
-            plugins_configs = kwargs['pluginsConfigs']
-
         if are_all_plugins_disabled is not None:
-            _setter("are_all_plugins_disabled", are_all_plugins_disabled)
+            pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
-            _setter("is_management_disabled", is_management_disabled)
+            pulumi.set(__self__, "is_management_disabled", is_management_disabled)
         if is_monitoring_disabled is not None:
-            _setter("is_monitoring_disabled", is_monitoring_disabled)
+            pulumi.set(__self__, "is_monitoring_disabled", is_monitoring_disabled)
         if plugins_configs is not None:
-            _setter("plugins_configs", plugins_configs)
+            pulumi.set(__self__, "plugins_configs", plugins_configs)
 
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
@@ -10383,25 +7879,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[str] name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            desired_state=desired_state,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             desired_state: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if desired_state is None and 'desiredState' in kwargs:
-            desired_state = kwargs['desiredState']
-
         if desired_state is not None:
-            _setter("desired_state", desired_state)
+            pulumi.set(__self__, "desired_state", desired_state)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="desiredState")
@@ -10439,27 +7920,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigA
         :param pulumi.Input[bool] is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param pulumi.Input[str] recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_live_migration_preferred=is_live_migration_preferred,
-            recovery_action=recovery_action,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
-             recovery_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_live_migration_preferred is None and 'isLiveMigrationPreferred' in kwargs:
-            is_live_migration_preferred = kwargs['isLiveMigrationPreferred']
-        if recovery_action is None and 'recoveryAction' in kwargs:
-            recovery_action = kwargs['recoveryAction']
-
         if is_live_migration_preferred is not None:
-            _setter("is_live_migration_preferred", is_live_migration_preferred)
+            pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
-            _setter("recovery_action", recovery_action)
+            pulumi.set(__self__, "recovery_action", recovery_action)
 
     @property
     @pulumi.getter(name="isLiveMigrationPreferred")
@@ -10515,87 +7979,30 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assign_ipv6ip=assign_ipv6ip,
-            assign_private_dns_record=assign_private_dns_record,
-            assign_public_ip=assign_public_ip,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            nsg_ids=nsg_ids,
-            private_ip=private_ip,
-            skip_source_dest_check=skip_source_dest_check,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
-             assign_public_ip: Optional[pulumi.Input[bool]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_ip: Optional[pulumi.Input[str]] = None,
-             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assign_ipv6ip is None and 'assignIpv6ip' in kwargs:
-            assign_ipv6ip = kwargs['assignIpv6ip']
-        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
-            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if assign_public_ip is None and 'assignPublicIp' in kwargs:
-            assign_public_ip = kwargs['assignPublicIp']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
-            skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if assign_ipv6ip is not None:
-            _setter("assign_ipv6ip", assign_ipv6ip)
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
-            _setter("assign_private_dns_record", assign_private_dns_record)
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            _setter("assign_public_ip", assign_public_ip)
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
         if skip_source_dest_check is not None:
-            _setter("skip_source_dest_check", skip_source_dest_check)
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="assignIpv6ip")
@@ -10751,25 +8158,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
         :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6address=ipv6address,
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6address: Optional[pulumi.Input[str]] = None,
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6address is not None:
-            _setter("ipv6address", ipv6address)
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter
@@ -10803,21 +8195,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs
         """
         :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            are_legacy_imds_endpoints_disabled=are_legacy_imds_endpoints_disabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
-            are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
-
         if are_legacy_imds_endpoints_disabled is not None:
-            _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
+            pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
@@ -10849,49 +8228,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
         :param pulumi.Input[str] network_type: Emulation type for the physical network interface card (NIC).
         :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            boot_volume_type=boot_volume_type,
-            firmware=firmware,
-            is_consistent_volume_naming_enabled=is_consistent_volume_naming_enabled,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            network_type=network_type,
-            remote_data_volume_type=remote_data_volume_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             boot_volume_type: Optional[pulumi.Input[str]] = None,
-             firmware: Optional[pulumi.Input[str]] = None,
-             is_consistent_volume_naming_enabled: Optional[pulumi.Input[bool]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             network_type: Optional[pulumi.Input[str]] = None,
-             remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if boot_volume_type is None and 'bootVolumeType' in kwargs:
-            boot_volume_type = kwargs['bootVolumeType']
-        if is_consistent_volume_naming_enabled is None and 'isConsistentVolumeNamingEnabled' in kwargs:
-            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if network_type is None and 'networkType' in kwargs:
-            network_type = kwargs['networkType']
-        if remote_data_volume_type is None and 'remoteDataVolumeType' in kwargs:
-            remote_data_volume_type = kwargs['remoteDataVolumeType']
-
         if boot_volume_type is not None:
-            _setter("boot_volume_type", boot_volume_type)
+            pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
-            _setter("firmware", firmware)
+            pulumi.set(__self__, "firmware", firmware)
         if is_consistent_volume_naming_enabled is not None:
-            _setter("is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+            pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if network_type is not None:
-            _setter("network_type", network_type)
+            pulumi.set(__self__, "network_type", network_type)
         if remote_data_volume_type is not None:
-            _setter("remote_data_volume_type", remote_data_volume_type)
+            pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
 
     @property
     @pulumi.getter(name="bootVolumeType")
@@ -10997,80 +8345,27 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
                
                If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            are_virtual_instructions_enabled=are_virtual_instructions_enabled,
-            is_access_control_service_enabled=is_access_control_service_enabled,
-            is_input_output_memory_management_unit_enabled=is_input_output_memory_management_unit_enabled,
-            is_measured_boot_enabled=is_measured_boot_enabled,
-            is_memory_encryption_enabled=is_memory_encryption_enabled,
-            is_secure_boot_enabled=is_secure_boot_enabled,
-            is_symmetric_multi_threading_enabled=is_symmetric_multi_threading_enabled,
-            is_trusted_platform_module_enabled=is_trusted_platform_module_enabled,
-            numa_nodes_per_socket=numa_nodes_per_socket,
-            percentage_of_cores_enabled=percentage_of_cores_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             are_virtual_instructions_enabled: Optional[pulumi.Input[bool]] = None,
-             is_access_control_service_enabled: Optional[pulumi.Input[bool]] = None,
-             is_input_output_memory_management_unit_enabled: Optional[pulumi.Input[bool]] = None,
-             is_measured_boot_enabled: Optional[pulumi.Input[bool]] = None,
-             is_memory_encryption_enabled: Optional[pulumi.Input[bool]] = None,
-             is_secure_boot_enabled: Optional[pulumi.Input[bool]] = None,
-             is_symmetric_multi_threading_enabled: Optional[pulumi.Input[bool]] = None,
-             is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
-             numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
-             percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if are_virtual_instructions_enabled is None and 'areVirtualInstructionsEnabled' in kwargs:
-            are_virtual_instructions_enabled = kwargs['areVirtualInstructionsEnabled']
-        if is_access_control_service_enabled is None and 'isAccessControlServiceEnabled' in kwargs:
-            is_access_control_service_enabled = kwargs['isAccessControlServiceEnabled']
-        if is_input_output_memory_management_unit_enabled is None and 'isInputOutputMemoryManagementUnitEnabled' in kwargs:
-            is_input_output_memory_management_unit_enabled = kwargs['isInputOutputMemoryManagementUnitEnabled']
-        if is_measured_boot_enabled is None and 'isMeasuredBootEnabled' in kwargs:
-            is_measured_boot_enabled = kwargs['isMeasuredBootEnabled']
-        if is_memory_encryption_enabled is None and 'isMemoryEncryptionEnabled' in kwargs:
-            is_memory_encryption_enabled = kwargs['isMemoryEncryptionEnabled']
-        if is_secure_boot_enabled is None and 'isSecureBootEnabled' in kwargs:
-            is_secure_boot_enabled = kwargs['isSecureBootEnabled']
-        if is_symmetric_multi_threading_enabled is None and 'isSymmetricMultiThreadingEnabled' in kwargs:
-            is_symmetric_multi_threading_enabled = kwargs['isSymmetricMultiThreadingEnabled']
-        if is_trusted_platform_module_enabled is None and 'isTrustedPlatformModuleEnabled' in kwargs:
-            is_trusted_platform_module_enabled = kwargs['isTrustedPlatformModuleEnabled']
-        if numa_nodes_per_socket is None and 'numaNodesPerSocket' in kwargs:
-            numa_nodes_per_socket = kwargs['numaNodesPerSocket']
-        if percentage_of_cores_enabled is None and 'percentageOfCoresEnabled' in kwargs:
-            percentage_of_cores_enabled = kwargs['percentageOfCoresEnabled']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
-            _setter("are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+            pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
         if is_access_control_service_enabled is not None:
-            _setter("is_access_control_service_enabled", is_access_control_service_enabled)
+            pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         if is_input_output_memory_management_unit_enabled is not None:
-            _setter("is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
+            pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         if is_measured_boot_enabled is not None:
-            _setter("is_measured_boot_enabled", is_measured_boot_enabled)
+            pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         if is_memory_encryption_enabled is not None:
-            _setter("is_memory_encryption_enabled", is_memory_encryption_enabled)
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if is_secure_boot_enabled is not None:
-            _setter("is_secure_boot_enabled", is_secure_boot_enabled)
+            pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         if is_symmetric_multi_threading_enabled is not None:
-            _setter("is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
+            pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         if is_trusted_platform_module_enabled is not None:
-            _setter("is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
+            pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         if numa_nodes_per_socket is not None:
-            _setter("numa_nodes_per_socket", numa_nodes_per_socket)
+            pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
         if percentage_of_cores_enabled is not None:
-            _setter("percentage_of_cores_enabled", percentage_of_cores_enabled)
+            pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
 
     @property
     @pulumi.getter
@@ -11216,21 +8511,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstance
         """
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            preemption_action=preemption_action,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if preemption_action is None and 'preemptionAction' in kwargs:
-            preemption_action = kwargs['preemptionAction']
-
         if preemption_action is not None:
-            _setter("preemption_action", preemption_action)
+            pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
@@ -11254,26 +8536,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstance
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            preserve_boot_volume=preserve_boot_volume,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
-            preserve_boot_volume = kwargs['preserveBootVolume']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if preserve_boot_volume is not None:
-            _setter("preserve_boot_volume", preserve_boot_volume)
+            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
 
     @property
     @pulumi.getter
@@ -11317,39 +8582,16 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
         :param pulumi.Input[float] ocpus: The total number of OCPUs available to the instance.
         :param pulumi.Input[int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            baseline_ocpu_utilization=baseline_ocpu_utilization,
-            memory_in_gbs=memory_in_gbs,
-            nvmes=nvmes,
-            ocpus=ocpus,
-            vcpus=vcpus,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
-             memory_in_gbs: Optional[pulumi.Input[float]] = None,
-             nvmes: Optional[pulumi.Input[int]] = None,
-             ocpus: Optional[pulumi.Input[float]] = None,
-             vcpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
-            baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
-            memory_in_gbs = kwargs['memoryInGbs']
-
         if baseline_ocpu_utilization is not None:
-            _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
-            _setter("memory_in_gbs", memory_in_gbs)
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
-            _setter("nvmes", nvmes)
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
-            _setter("ocpus", ocpus)
+            pulumi.set(__self__, "ocpus", ocpus)
         if vcpus is not None:
-            _setter("vcpus", vcpus)
+            pulumi.set(__self__, "vcpus", vcpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -11435,58 +8677,19 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs'] instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
         :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            source_type=source_type,
-            boot_volume_id=boot_volume_id,
-            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
-            boot_volume_vpus_per_gb=boot_volume_vpus_per_gb,
-            image_id=image_id,
-            instance_source_image_filter_details=instance_source_image_filter_details,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             source_type: Optional[pulumi.Input[str]] = None,
-             boot_volume_id: Optional[pulumi.Input[str]] = None,
-             boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             image_id: Optional[pulumi.Input[str]] = None,
-             instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_type is None:
-            raise TypeError("Missing 'source_type' argument")
-        if boot_volume_id is None and 'bootVolumeId' in kwargs:
-            boot_volume_id = kwargs['bootVolumeId']
-        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
-            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
-            boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if image_id is None and 'imageId' in kwargs:
-            image_id = kwargs['imageId']
-        if instance_source_image_filter_details is None and 'instanceSourceImageFilterDetails' in kwargs:
-            instance_source_image_filter_details = kwargs['instanceSourceImageFilterDetails']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-
-        _setter("source_type", source_type)
+        pulumi.set(__self__, "source_type", source_type)
         if boot_volume_id is not None:
-            _setter("boot_volume_id", boot_volume_id)
+            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         if boot_volume_size_in_gbs is not None:
-            _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if boot_volume_vpus_per_gb is not None:
-            _setter("boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
-            _setter("image_id", image_id)
+            pulumi.set(__self__, "image_id", image_id)
         if instance_source_image_filter_details is not None:
-            _setter("instance_source_image_filter_details", instance_source_image_filter_details)
+            pulumi.set(__self__, "instance_source_image_filter_details", instance_source_image_filter_details)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -11588,39 +8791,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
         :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
         :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
         """
-        InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags_filter=defined_tags_filter,
-            operating_system=operating_system,
-            operating_system_version=operating_system_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             operating_system: Optional[pulumi.Input[str]] = None,
-             operating_system_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags_filter is None and 'definedTagsFilter' in kwargs:
-            defined_tags_filter = kwargs['definedTagsFilter']
-        if operating_system is None and 'operatingSystem' in kwargs:
-            operating_system = kwargs['operatingSystem']
-        if operating_system_version is None and 'operatingSystemVersion' in kwargs:
-            operating_system_version = kwargs['operatingSystemVersion']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags_filter is not None:
-            _setter("defined_tags_filter", defined_tags_filter)
+            pulumi.set(__self__, "defined_tags_filter", defined_tags_filter)
         if operating_system is not None:
-            _setter("operating_system", operating_system)
+            pulumi.set(__self__, "operating_system", operating_system)
         if operating_system_version is not None:
-            _setter("operating_system_version", operating_system_version)
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -11682,33 +8860,12 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
-        InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            create_vnic_details=create_vnic_details,
-            display_name=display_name,
-            nic_index=nic_index,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             nic_index: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if nic_index is None and 'nicIndex' in kwargs:
-            nic_index = kwargs['nicIndex']
-
         if create_vnic_details is not None:
-            _setter("create_vnic_details", create_vnic_details)
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if nic_index is not None:
-            _setter("nic_index", nic_index)
+            pulumi.set(__self__, "nic_index", nic_index)
 
     @property
     @pulumi.getter(name="createVnicDetails")
@@ -11776,87 +8933,30 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
-        InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assign_ipv6ip=assign_ipv6ip,
-            assign_private_dns_record=assign_private_dns_record,
-            assign_public_ip=assign_public_ip,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            nsg_ids=nsg_ids,
-            private_ip=private_ip,
-            skip_source_dest_check=skip_source_dest_check,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
-             assign_public_ip: Optional[pulumi.Input[bool]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_ip: Optional[pulumi.Input[str]] = None,
-             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assign_ipv6ip is None and 'assignIpv6ip' in kwargs:
-            assign_ipv6ip = kwargs['assignIpv6ip']
-        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
-            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if assign_public_ip is None and 'assignPublicIp' in kwargs:
-            assign_public_ip = kwargs['assignPublicIp']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
-            skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if assign_ipv6ip is not None:
-            _setter("assign_ipv6ip", assign_ipv6ip)
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
-            _setter("assign_private_dns_record", assign_private_dns_record)
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            _setter("assign_public_ip", assign_public_ip)
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
         if skip_source_dest_check is not None:
-            _setter("skip_source_dest_check", skip_source_dest_check)
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="assignIpv6ip")
@@ -12012,25 +9112,10 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
         :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6address=ipv6address,
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6address: Optional[pulumi.Input[str]] = None,
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6address is not None:
-            _setter("ipv6address", ipv6address)
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter
@@ -12068,33 +9153,12 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicArgs:
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
-        InstanceConfigurationInstanceDetailsSecondaryVnicArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            create_vnic_details=create_vnic_details,
-            display_name=display_name,
-            nic_index=nic_index,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs']] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             nic_index: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if nic_index is None and 'nicIndex' in kwargs:
-            nic_index = kwargs['nicIndex']
-
         if create_vnic_details is not None:
-            _setter("create_vnic_details", create_vnic_details)
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if nic_index is not None:
-            _setter("nic_index", nic_index)
+            pulumi.set(__self__, "nic_index", nic_index)
 
     @property
     @pulumi.getter(name="createVnicDetails")
@@ -12162,87 +9226,30 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
         :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
-        InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assign_ipv6ip=assign_ipv6ip,
-            assign_private_dns_record=assign_private_dns_record,
-            assign_public_ip=assign_public_ip,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            nsg_ids=nsg_ids,
-            private_ip=private_ip,
-            skip_source_dest_check=skip_source_dest_check,
-            subnet_id=subnet_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
-             assign_public_ip: Optional[pulumi.Input[bool]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_ip: Optional[pulumi.Input[str]] = None,
-             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assign_ipv6ip is None and 'assignIpv6ip' in kwargs:
-            assign_ipv6ip = kwargs['assignIpv6ip']
-        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
-            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if assign_public_ip is None and 'assignPublicIp' in kwargs:
-            assign_public_ip = kwargs['assignPublicIp']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
-            skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-
         if assign_ipv6ip is not None:
-            _setter("assign_ipv6ip", assign_ipv6ip)
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
-            _setter("assign_private_dns_record", assign_private_dns_record)
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            _setter("assign_public_ip", assign_public_ip)
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
         if skip_source_dest_check is not None:
-            _setter("skip_source_dest_check", skip_source_dest_check)
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="assignIpv6ip")
@@ -12398,25 +9405,10 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
         :param pulumi.Input[str] ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
         :param pulumi.Input[str] ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6address=ipv6address,
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6address: Optional[pulumi.Input[str]] = None,
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6address is not None:
-            _setter("ipv6address", ipv6address)
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter
@@ -12495,93 +9487,32 @@ class InstanceCreateVnicDetailsArgs:
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
-        InstanceCreateVnicDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assign_ipv6ip=assign_ipv6ip,
-            assign_private_dns_record=assign_private_dns_record,
-            assign_public_ip=assign_public_ip,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            nsg_ids=nsg_ids,
-            private_ip=private_ip,
-            skip_source_dest_check=skip_source_dest_check,
-            subnet_id=subnet_id,
-            vlan_id=vlan_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
-             assign_public_ip: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_ip: Optional[pulumi.Input[str]] = None,
-             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             vlan_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assign_ipv6ip is None and 'assignIpv6ip' in kwargs:
-            assign_ipv6ip = kwargs['assignIpv6ip']
-        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
-            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if assign_public_ip is None and 'assignPublicIp' in kwargs:
-            assign_public_ip = kwargs['assignPublicIp']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
-            skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vlan_id is None and 'vlanId' in kwargs:
-            vlan_id = kwargs['vlanId']
-
         if assign_ipv6ip is not None:
-            _setter("assign_ipv6ip", assign_ipv6ip)
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
-            _setter("assign_private_dns_record", assign_private_dns_record)
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            _setter("assign_public_ip", assign_public_ip)
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
         if skip_source_dest_check is not None:
-            _setter("skip_source_dest_check", skip_source_dest_check)
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
-            _setter("vlan_id", vlan_id)
+            pulumi.set(__self__, "vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="assignIpv6ip")
@@ -12766,25 +9697,10 @@ class InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6address: Optional[pulumi.Input[str]] = None,
                  ipv6subnet_cidr: Optional[pulumi.Input[str]] = None):
-        InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6address=ipv6address,
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6address: Optional[pulumi.Input[str]] = None,
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6address is not None:
-            _setter("ipv6address", ipv6address)
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter
@@ -12812,21 +9728,8 @@ class InstanceInstanceOptionsArgs:
         """
         :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         """
-        InstanceInstanceOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            are_legacy_imds_endpoints_disabled=are_legacy_imds_endpoints_disabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if are_legacy_imds_endpoints_disabled is None and 'areLegacyImdsEndpointsDisabled' in kwargs:
-            are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
-
         if are_legacy_imds_endpoints_disabled is not None:
-            _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
+            pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
@@ -12858,49 +9761,18 @@ class InstanceLaunchOptionsArgs:
         :param pulumi.Input[str] network_type: (Updatable) Emulation type for the physical network interface card (NIC).
         :param pulumi.Input[str] remote_data_volume_type: Emulation type for volume.
         """
-        InstanceLaunchOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            boot_volume_type=boot_volume_type,
-            firmware=firmware,
-            is_consistent_volume_naming_enabled=is_consistent_volume_naming_enabled,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            network_type=network_type,
-            remote_data_volume_type=remote_data_volume_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             boot_volume_type: Optional[pulumi.Input[str]] = None,
-             firmware: Optional[pulumi.Input[str]] = None,
-             is_consistent_volume_naming_enabled: Optional[pulumi.Input[bool]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             network_type: Optional[pulumi.Input[str]] = None,
-             remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if boot_volume_type is None and 'bootVolumeType' in kwargs:
-            boot_volume_type = kwargs['bootVolumeType']
-        if is_consistent_volume_naming_enabled is None and 'isConsistentVolumeNamingEnabled' in kwargs:
-            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if network_type is None and 'networkType' in kwargs:
-            network_type = kwargs['networkType']
-        if remote_data_volume_type is None and 'remoteDataVolumeType' in kwargs:
-            remote_data_volume_type = kwargs['remoteDataVolumeType']
-
         if boot_volume_type is not None:
-            _setter("boot_volume_type", boot_volume_type)
+            pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         if firmware is not None:
-            _setter("firmware", firmware)
+            pulumi.set(__self__, "firmware", firmware)
         if is_consistent_volume_naming_enabled is not None:
-            _setter("is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
+            pulumi.set(__self__, "is_consistent_volume_naming_enabled", is_consistent_volume_naming_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if network_type is not None:
-            _setter("network_type", network_type)
+            pulumi.set(__self__, "network_type", network_type)
         if remote_data_volume_type is not None:
-            _setter("remote_data_volume_type", remote_data_volume_type)
+            pulumi.set(__self__, "remote_data_volume_type", remote_data_volume_type)
 
     @property
     @pulumi.getter(name="bootVolumeType")
@@ -13008,86 +9880,29 @@ class InstancePlatformConfigArgs:
                
                If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
-        InstancePlatformConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            are_virtual_instructions_enabled=are_virtual_instructions_enabled,
-            config_map=config_map,
-            is_access_control_service_enabled=is_access_control_service_enabled,
-            is_input_output_memory_management_unit_enabled=is_input_output_memory_management_unit_enabled,
-            is_measured_boot_enabled=is_measured_boot_enabled,
-            is_memory_encryption_enabled=is_memory_encryption_enabled,
-            is_secure_boot_enabled=is_secure_boot_enabled,
-            is_symmetric_multi_threading_enabled=is_symmetric_multi_threading_enabled,
-            is_trusted_platform_module_enabled=is_trusted_platform_module_enabled,
-            numa_nodes_per_socket=numa_nodes_per_socket,
-            percentage_of_cores_enabled=percentage_of_cores_enabled,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             are_virtual_instructions_enabled: Optional[pulumi.Input[bool]] = None,
-             config_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_access_control_service_enabled: Optional[pulumi.Input[bool]] = None,
-             is_input_output_memory_management_unit_enabled: Optional[pulumi.Input[bool]] = None,
-             is_measured_boot_enabled: Optional[pulumi.Input[bool]] = None,
-             is_memory_encryption_enabled: Optional[pulumi.Input[bool]] = None,
-             is_secure_boot_enabled: Optional[pulumi.Input[bool]] = None,
-             is_symmetric_multi_threading_enabled: Optional[pulumi.Input[bool]] = None,
-             is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
-             numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
-             percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if are_virtual_instructions_enabled is None and 'areVirtualInstructionsEnabled' in kwargs:
-            are_virtual_instructions_enabled = kwargs['areVirtualInstructionsEnabled']
-        if config_map is None and 'configMap' in kwargs:
-            config_map = kwargs['configMap']
-        if is_access_control_service_enabled is None and 'isAccessControlServiceEnabled' in kwargs:
-            is_access_control_service_enabled = kwargs['isAccessControlServiceEnabled']
-        if is_input_output_memory_management_unit_enabled is None and 'isInputOutputMemoryManagementUnitEnabled' in kwargs:
-            is_input_output_memory_management_unit_enabled = kwargs['isInputOutputMemoryManagementUnitEnabled']
-        if is_measured_boot_enabled is None and 'isMeasuredBootEnabled' in kwargs:
-            is_measured_boot_enabled = kwargs['isMeasuredBootEnabled']
-        if is_memory_encryption_enabled is None and 'isMemoryEncryptionEnabled' in kwargs:
-            is_memory_encryption_enabled = kwargs['isMemoryEncryptionEnabled']
-        if is_secure_boot_enabled is None and 'isSecureBootEnabled' in kwargs:
-            is_secure_boot_enabled = kwargs['isSecureBootEnabled']
-        if is_symmetric_multi_threading_enabled is None and 'isSymmetricMultiThreadingEnabled' in kwargs:
-            is_symmetric_multi_threading_enabled = kwargs['isSymmetricMultiThreadingEnabled']
-        if is_trusted_platform_module_enabled is None and 'isTrustedPlatformModuleEnabled' in kwargs:
-            is_trusted_platform_module_enabled = kwargs['isTrustedPlatformModuleEnabled']
-        if numa_nodes_per_socket is None and 'numaNodesPerSocket' in kwargs:
-            numa_nodes_per_socket = kwargs['numaNodesPerSocket']
-        if percentage_of_cores_enabled is None and 'percentageOfCoresEnabled' in kwargs:
-            percentage_of_cores_enabled = kwargs['percentageOfCoresEnabled']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
-            _setter("are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+            pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
         if config_map is not None:
-            _setter("config_map", config_map)
+            pulumi.set(__self__, "config_map", config_map)
         if is_access_control_service_enabled is not None:
-            _setter("is_access_control_service_enabled", is_access_control_service_enabled)
+            pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
         if is_input_output_memory_management_unit_enabled is not None:
-            _setter("is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
+            pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         if is_measured_boot_enabled is not None:
-            _setter("is_measured_boot_enabled", is_measured_boot_enabled)
+            pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         if is_memory_encryption_enabled is not None:
-            _setter("is_memory_encryption_enabled", is_memory_encryption_enabled)
+            pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if is_secure_boot_enabled is not None:
-            _setter("is_secure_boot_enabled", is_secure_boot_enabled)
+            pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
         if is_symmetric_multi_threading_enabled is not None:
-            _setter("is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
+            pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         if is_trusted_platform_module_enabled is not None:
-            _setter("is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
+            pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         if numa_nodes_per_socket is not None:
-            _setter("numa_nodes_per_socket", numa_nodes_per_socket)
+            pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
         if percentage_of_cores_enabled is not None:
-            _setter("percentage_of_cores_enabled", percentage_of_cores_enabled)
+            pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
 
     @property
     @pulumi.getter
@@ -13253,43 +10068,16 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
         :param pulumi.Input[str] load_balancer_id: The OCID of the load balancer attached to the instance pool.
         :param pulumi.Input[str] state: The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
         """
-        InstancePoolInstanceLoadBalancerBackendArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_health_status=backend_health_status,
-            backend_name=backend_name,
-            backend_set_name=backend_set_name,
-            load_balancer_id=load_balancer_id,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_health_status: Optional[pulumi.Input[str]] = None,
-             backend_name: Optional[pulumi.Input[str]] = None,
-             backend_set_name: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_health_status is None and 'backendHealthStatus' in kwargs:
-            backend_health_status = kwargs['backendHealthStatus']
-        if backend_name is None and 'backendName' in kwargs:
-            backend_name = kwargs['backendName']
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-
         if backend_health_status is not None:
-            _setter("backend_health_status", backend_health_status)
+            pulumi.set(__self__, "backend_health_status", backend_health_status)
         if backend_name is not None:
-            _setter("backend_name", backend_name)
+            pulumi.set(__self__, "backend_name", backend_name)
         if backend_set_name is not None:
-            _setter("backend_set_name", backend_set_name)
+            pulumi.set(__self__, "backend_set_name", backend_set_name)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="backendHealthStatus")
@@ -13375,55 +10163,16 @@ class InstancePoolLoadBalancerArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        InstancePoolLoadBalancerArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            load_balancer_id=load_balancer_id,
-            port=port,
-            vnic_selection=vnic_selection,
-            id=id,
-            instance_pool_id=instance_pool_id,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             vnic_selection: Optional[pulumi.Input[str]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             instance_pool_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if backend_set_name is None:
-            raise TypeError("Missing 'backend_set_name' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if vnic_selection is None and 'vnicSelection' in kwargs:
-            vnic_selection = kwargs['vnicSelection']
-        if vnic_selection is None:
-            raise TypeError("Missing 'vnic_selection' argument")
-        if instance_pool_id is None and 'instancePoolId' in kwargs:
-            instance_pool_id = kwargs['instancePoolId']
-
-        _setter("backend_set_name", backend_set_name)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("port", port)
-        _setter("vnic_selection", vnic_selection)
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "vnic_selection", vnic_selection)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if instance_pool_id is not None:
-            _setter("instance_pool_id", instance_pool_id)
+            pulumi.set(__self__, "instance_pool_id", instance_pool_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -13537,46 +10286,15 @@ class InstancePoolPlacementConfigurationArgs:
         :param pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs'] primary_vnic_subnets: (Updatable) Details about the IPv6 primary subnet.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
         """
-        InstancePoolPlacementConfigurationArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            fault_domains=fault_domains,
-            primary_subnet_id=primary_subnet_id,
-            primary_vnic_subnets=primary_vnic_subnets,
-            secondary_vnic_subnets=secondary_vnic_subnets,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             primary_subnet_id: Optional[pulumi.Input[str]] = None,
-             primary_vnic_subnets: Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
-             secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if fault_domains is None and 'faultDomains' in kwargs:
-            fault_domains = kwargs['faultDomains']
-        if primary_subnet_id is None and 'primarySubnetId' in kwargs:
-            primary_subnet_id = kwargs['primarySubnetId']
-        if primary_vnic_subnets is None and 'primaryVnicSubnets' in kwargs:
-            primary_vnic_subnets = kwargs['primaryVnicSubnets']
-        if secondary_vnic_subnets is None and 'secondaryVnicSubnets' in kwargs:
-            secondary_vnic_subnets = kwargs['secondaryVnicSubnets']
-
-        _setter("availability_domain", availability_domain)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if fault_domains is not None:
-            _setter("fault_domains", fault_domains)
+            pulumi.set(__self__, "fault_domains", fault_domains)
         if primary_subnet_id is not None:
-            _setter("primary_subnet_id", primary_subnet_id)
+            pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         if primary_vnic_subnets is not None:
-            _setter("primary_vnic_subnets", primary_vnic_subnets)
+            pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
         if secondary_vnic_subnets is not None:
-            _setter("secondary_vnic_subnets", secondary_vnic_subnets)
+            pulumi.set(__self__, "secondary_vnic_subnets", secondary_vnic_subnets)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -13658,34 +10376,11 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[bool] is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
-        InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subnet_id=subnet_id,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            is_assign_ipv6ip=is_assign_ipv6ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if is_assign_ipv6ip is None and 'isAssignIpv6ip' in kwargs:
-            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
-
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
-            _setter("is_assign_ipv6ip", is_assign_ipv6ip)
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -13731,21 +10426,8 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetC
         """
         :param pulumi.Input[str] ipv6subnet_cidr: (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -13773,40 +10455,13 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[bool] is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
-        InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            subnet_id=subnet_id,
-            display_name=display_name,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            is_assign_ipv6ip=is_assign_ipv6ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if is_assign_ipv6ip is None and 'isAssignIpv6ip' in kwargs:
-            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
-
-        _setter("subnet_id", subnet_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
-            _setter("is_assign_ipv6ip", is_assign_ipv6ip)
+            pulumi.set(__self__, "is_assign_ipv6ip", is_assign_ipv6ip)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -13864,21 +10519,8 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnet
         """
         :param pulumi.Input[str] ipv6subnet_cidr: (Updatable) Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         """
-        InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6subnet_cidr=ipv6subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6subnet_cidr is None and 'ipv6subnetCidr' in kwargs:
-            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
-
         if ipv6subnet_cidr is not None:
-            _setter("ipv6subnet_cidr", ipv6subnet_cidr)
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
@@ -13900,22 +10542,7 @@ class InstancePreemptibleInstanceConfigArgs:
         """
         :param pulumi.Input['InstancePreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: The action to run when the preemptible instance is interrupted for eviction.
         """
-        InstancePreemptibleInstanceConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            preemption_action=preemption_action,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             preemption_action: Optional[pulumi.Input['InstancePreemptibleInstanceConfigPreemptionActionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if preemption_action is None and 'preemptionAction' in kwargs:
-            preemption_action = kwargs['preemptionAction']
-        if preemption_action is None:
-            raise TypeError("Missing 'preemption_action' argument")
-
-        _setter("preemption_action", preemption_action)
+        pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
@@ -13939,26 +10566,9 @@ class InstancePreemptibleInstanceConfigPreemptionActionArgs:
         :param pulumi.Input[str] type: The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
-        InstancePreemptibleInstanceConfigPreemptionActionArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            preserve_boot_volume=preserve_boot_volume,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
-            preserve_boot_volume = kwargs['preserveBootVolume']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if preserve_boot_volume is not None:
-            _setter("preserve_boot_volume", preserve_boot_volume)
+            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
 
     @property
     @pulumi.getter
@@ -14018,85 +10628,32 @@ class InstanceShapeConfigArgs:
         :param pulumi.Input[str] processor_description: A short description of the instance's processor (CPU).
         :param pulumi.Input[int] vcpus: (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
-        InstanceShapeConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            baseline_ocpu_utilization=baseline_ocpu_utilization,
-            gpu_description=gpu_description,
-            gpus=gpus,
-            local_disk_description=local_disk_description,
-            local_disks=local_disks,
-            local_disks_total_size_in_gbs=local_disks_total_size_in_gbs,
-            max_vnic_attachments=max_vnic_attachments,
-            memory_in_gbs=memory_in_gbs,
-            networking_bandwidth_in_gbps=networking_bandwidth_in_gbps,
-            nvmes=nvmes,
-            ocpus=ocpus,
-            processor_description=processor_description,
-            vcpus=vcpus,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
-             gpu_description: Optional[pulumi.Input[str]] = None,
-             gpus: Optional[pulumi.Input[int]] = None,
-             local_disk_description: Optional[pulumi.Input[str]] = None,
-             local_disks: Optional[pulumi.Input[int]] = None,
-             local_disks_total_size_in_gbs: Optional[pulumi.Input[float]] = None,
-             max_vnic_attachments: Optional[pulumi.Input[int]] = None,
-             memory_in_gbs: Optional[pulumi.Input[float]] = None,
-             networking_bandwidth_in_gbps: Optional[pulumi.Input[float]] = None,
-             nvmes: Optional[pulumi.Input[int]] = None,
-             ocpus: Optional[pulumi.Input[float]] = None,
-             processor_description: Optional[pulumi.Input[str]] = None,
-             vcpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if baseline_ocpu_utilization is None and 'baselineOcpuUtilization' in kwargs:
-            baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
-        if gpu_description is None and 'gpuDescription' in kwargs:
-            gpu_description = kwargs['gpuDescription']
-        if local_disk_description is None and 'localDiskDescription' in kwargs:
-            local_disk_description = kwargs['localDiskDescription']
-        if local_disks is None and 'localDisks' in kwargs:
-            local_disks = kwargs['localDisks']
-        if local_disks_total_size_in_gbs is None and 'localDisksTotalSizeInGbs' in kwargs:
-            local_disks_total_size_in_gbs = kwargs['localDisksTotalSizeInGbs']
-        if max_vnic_attachments is None and 'maxVnicAttachments' in kwargs:
-            max_vnic_attachments = kwargs['maxVnicAttachments']
-        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
-            memory_in_gbs = kwargs['memoryInGbs']
-        if networking_bandwidth_in_gbps is None and 'networkingBandwidthInGbps' in kwargs:
-            networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
-        if processor_description is None and 'processorDescription' in kwargs:
-            processor_description = kwargs['processorDescription']
-
         if baseline_ocpu_utilization is not None:
-            _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
+            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if gpu_description is not None:
-            _setter("gpu_description", gpu_description)
+            pulumi.set(__self__, "gpu_description", gpu_description)
         if gpus is not None:
-            _setter("gpus", gpus)
+            pulumi.set(__self__, "gpus", gpus)
         if local_disk_description is not None:
-            _setter("local_disk_description", local_disk_description)
+            pulumi.set(__self__, "local_disk_description", local_disk_description)
         if local_disks is not None:
-            _setter("local_disks", local_disks)
+            pulumi.set(__self__, "local_disks", local_disks)
         if local_disks_total_size_in_gbs is not None:
-            _setter("local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
+            pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
         if max_vnic_attachments is not None:
-            _setter("max_vnic_attachments", max_vnic_attachments)
+            pulumi.set(__self__, "max_vnic_attachments", max_vnic_attachments)
         if memory_in_gbs is not None:
-            _setter("memory_in_gbs", memory_in_gbs)
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if networking_bandwidth_in_gbps is not None:
-            _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+            pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
         if nvmes is not None:
-            _setter("nvmes", nvmes)
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
-            _setter("ocpus", ocpus)
+            pulumi.set(__self__, "ocpus", ocpus)
         if processor_description is not None:
-            _setter("processor_description", processor_description)
+            pulumi.set(__self__, "processor_description", processor_description)
         if vcpus is not None:
-            _setter("vcpus", vcpus)
+            pulumi.set(__self__, "vcpus", vcpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -14276,52 +10833,17 @@ class InstanceSourceDetailsArgs:
         :param pulumi.Input[str] kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         """
-        InstanceSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            source_type=source_type,
-            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
-            boot_volume_vpus_per_gb=boot_volume_vpus_per_gb,
-            instance_source_image_filter_details=instance_source_image_filter_details,
-            kms_key_id=kms_key_id,
-            source_id=source_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             source_type: Optional[pulumi.Input[str]] = None,
-             boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             instance_source_image_filter_details: Optional[pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             source_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_type is None:
-            raise TypeError("Missing 'source_type' argument")
-        if boot_volume_size_in_gbs is None and 'bootVolumeSizeInGbs' in kwargs:
-            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
-        if boot_volume_vpus_per_gb is None and 'bootVolumeVpusPerGb' in kwargs:
-            boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
-        if instance_source_image_filter_details is None and 'instanceSourceImageFilterDetails' in kwargs:
-            instance_source_image_filter_details = kwargs['instanceSourceImageFilterDetails']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if source_id is None and 'sourceId' in kwargs:
-            source_id = kwargs['sourceId']
-
-        _setter("source_type", source_type)
+        pulumi.set(__self__, "source_type", source_type)
         if boot_volume_size_in_gbs is not None:
-            _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if boot_volume_vpus_per_gb is not None:
-            _setter("boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if instance_source_image_filter_details is not None:
-            _setter("instance_source_image_filter_details", instance_source_image_filter_details)
+            pulumi.set(__self__, "instance_source_image_filter_details", instance_source_image_filter_details)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if source_id is not None:
-            _setter("source_id", source_id)
+            pulumi.set(__self__, "source_id", source_id)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -14411,40 +10933,13 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
         :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
         :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
         """
-        InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags_filter=defined_tags_filter,
-            operating_system=operating_system,
-            operating_system_version=operating_system_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             operating_system: Optional[pulumi.Input[str]] = None,
-             operating_system_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags_filter is None and 'definedTagsFilter' in kwargs:
-            defined_tags_filter = kwargs['definedTagsFilter']
-        if operating_system is None and 'operatingSystem' in kwargs:
-            operating_system = kwargs['operatingSystem']
-        if operating_system_version is None and 'operatingSystemVersion' in kwargs:
-            operating_system_version = kwargs['operatingSystemVersion']
-
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags_filter is not None:
-            _setter("defined_tags_filter", defined_tags_filter)
+            pulumi.set(__self__, "defined_tags_filter", defined_tags_filter)
         if operating_system is not None:
-            _setter("operating_system", operating_system)
+            pulumi.set(__self__, "operating_system", operating_system)
         if operating_system_version is not None:
-            _setter("operating_system_version", operating_system_version)
+            pulumi.set(__self__, "operating_system_version", operating_system_version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -14532,51 +11027,18 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
                
                Example: `10.0.0.4/31`
         """
-        IpsecConnectionTunnelManagementBgpSessionInfoArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bgp_ipv6state=bgp_ipv6state,
-            bgp_state=bgp_state,
-            customer_bgp_asn=customer_bgp_asn,
-            customer_interface_ip=customer_interface_ip,
-            oracle_bgp_asn=oracle_bgp_asn,
-            oracle_interface_ip=oracle_interface_ip,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bgp_ipv6state: Optional[pulumi.Input[str]] = None,
-             bgp_state: Optional[pulumi.Input[str]] = None,
-             customer_bgp_asn: Optional[pulumi.Input[str]] = None,
-             customer_interface_ip: Optional[pulumi.Input[str]] = None,
-             oracle_bgp_asn: Optional[pulumi.Input[str]] = None,
-             oracle_interface_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bgp_ipv6state is None and 'bgpIpv6state' in kwargs:
-            bgp_ipv6state = kwargs['bgpIpv6state']
-        if bgp_state is None and 'bgpState' in kwargs:
-            bgp_state = kwargs['bgpState']
-        if customer_bgp_asn is None and 'customerBgpAsn' in kwargs:
-            customer_bgp_asn = kwargs['customerBgpAsn']
-        if customer_interface_ip is None and 'customerInterfaceIp' in kwargs:
-            customer_interface_ip = kwargs['customerInterfaceIp']
-        if oracle_bgp_asn is None and 'oracleBgpAsn' in kwargs:
-            oracle_bgp_asn = kwargs['oracleBgpAsn']
-        if oracle_interface_ip is None and 'oracleInterfaceIp' in kwargs:
-            oracle_interface_ip = kwargs['oracleInterfaceIp']
-
         if bgp_ipv6state is not None:
-            _setter("bgp_ipv6state", bgp_ipv6state)
+            pulumi.set(__self__, "bgp_ipv6state", bgp_ipv6state)
         if bgp_state is not None:
-            _setter("bgp_state", bgp_state)
+            pulumi.set(__self__, "bgp_state", bgp_state)
         if customer_bgp_asn is not None:
-            _setter("customer_bgp_asn", customer_bgp_asn)
+            pulumi.set(__self__, "customer_bgp_asn", customer_bgp_asn)
         if customer_interface_ip is not None:
-            _setter("customer_interface_ip", customer_interface_ip)
+            pulumi.set(__self__, "customer_interface_ip", customer_interface_ip)
         if oracle_bgp_asn is not None:
-            _setter("oracle_bgp_asn", oracle_bgp_asn)
+            pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
         if oracle_interface_ip is not None:
-            _setter("oracle_interface_ip", oracle_interface_ip)
+            pulumi.set(__self__, "oracle_interface_ip", oracle_interface_ip)
 
     @property
     @pulumi.getter(name="bgpIpv6state")
@@ -14676,27 +11138,10 @@ class IpsecConnectionTunnelManagementDpdConfigArgs:
     def __init__(__self__, *,
                  dpd_mode: Optional[pulumi.Input[str]] = None,
                  dpd_timeout_in_sec: Optional[pulumi.Input[int]] = None):
-        IpsecConnectionTunnelManagementDpdConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dpd_mode=dpd_mode,
-            dpd_timeout_in_sec=dpd_timeout_in_sec,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dpd_mode: Optional[pulumi.Input[str]] = None,
-             dpd_timeout_in_sec: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dpd_mode is None and 'dpdMode' in kwargs:
-            dpd_mode = kwargs['dpdMode']
-        if dpd_timeout_in_sec is None and 'dpdTimeoutInSec' in kwargs:
-            dpd_timeout_in_sec = kwargs['dpdTimeoutInSec']
-
         if dpd_mode is not None:
-            _setter("dpd_mode", dpd_mode)
+            pulumi.set(__self__, "dpd_mode", dpd_mode)
         if dpd_timeout_in_sec is not None:
-            _setter("dpd_timeout_in_sec", dpd_timeout_in_sec)
+            pulumi.set(__self__, "dpd_timeout_in_sec", dpd_timeout_in_sec)
 
     @property
     @pulumi.getter(name="dpdMode")
@@ -14726,27 +11171,10 @@ class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cpe_traffic_selectors: Lists IPv4 or IPv6-enabled subnets in your on-premises network.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] oracle_traffic_selectors: Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
         """
-        IpsecConnectionTunnelManagementEncryptionDomainConfigArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cpe_traffic_selectors=cpe_traffic_selectors,
-            oracle_traffic_selectors=oracle_traffic_selectors,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cpe_traffic_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             oracle_traffic_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cpe_traffic_selectors is None and 'cpeTrafficSelectors' in kwargs:
-            cpe_traffic_selectors = kwargs['cpeTrafficSelectors']
-        if oracle_traffic_selectors is None and 'oracleTrafficSelectors' in kwargs:
-            oracle_traffic_selectors = kwargs['oracleTrafficSelectors']
-
         if cpe_traffic_selectors is not None:
-            _setter("cpe_traffic_selectors", cpe_traffic_selectors)
+            pulumi.set(__self__, "cpe_traffic_selectors", cpe_traffic_selectors)
         if oracle_traffic_selectors is not None:
-            _setter("oracle_traffic_selectors", oracle_traffic_selectors)
+            pulumi.set(__self__, "oracle_traffic_selectors", oracle_traffic_selectors)
 
     @property
     @pulumi.getter(name="cpeTrafficSelectors")
@@ -14787,79 +11215,28 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
                  negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  remaining_lifetime: Optional[pulumi.Input[str]] = None,
                  remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None):
-        IpsecConnectionTunnelManagementPhaseOneDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            custom_authentication_algorithm=custom_authentication_algorithm,
-            custom_dh_group=custom_dh_group,
-            custom_encryption_algorithm=custom_encryption_algorithm,
-            is_custom_phase_one_config=is_custom_phase_one_config,
-            is_ike_established=is_ike_established,
-            lifetime=lifetime,
-            negotiated_authentication_algorithm=negotiated_authentication_algorithm,
-            negotiated_dh_group=negotiated_dh_group,
-            negotiated_encryption_algorithm=negotiated_encryption_algorithm,
-            remaining_lifetime=remaining_lifetime,
-            remaining_lifetime_last_retrieved=remaining_lifetime_last_retrieved,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             custom_authentication_algorithm: Optional[pulumi.Input[str]] = None,
-             custom_dh_group: Optional[pulumi.Input[str]] = None,
-             custom_encryption_algorithm: Optional[pulumi.Input[str]] = None,
-             is_custom_phase_one_config: Optional[pulumi.Input[bool]] = None,
-             is_ike_established: Optional[pulumi.Input[bool]] = None,
-             lifetime: Optional[pulumi.Input[int]] = None,
-             negotiated_authentication_algorithm: Optional[pulumi.Input[str]] = None,
-             negotiated_dh_group: Optional[pulumi.Input[str]] = None,
-             negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
-             remaining_lifetime: Optional[pulumi.Input[str]] = None,
-             remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if custom_authentication_algorithm is None and 'customAuthenticationAlgorithm' in kwargs:
-            custom_authentication_algorithm = kwargs['customAuthenticationAlgorithm']
-        if custom_dh_group is None and 'customDhGroup' in kwargs:
-            custom_dh_group = kwargs['customDhGroup']
-        if custom_encryption_algorithm is None and 'customEncryptionAlgorithm' in kwargs:
-            custom_encryption_algorithm = kwargs['customEncryptionAlgorithm']
-        if is_custom_phase_one_config is None and 'isCustomPhaseOneConfig' in kwargs:
-            is_custom_phase_one_config = kwargs['isCustomPhaseOneConfig']
-        if is_ike_established is None and 'isIkeEstablished' in kwargs:
-            is_ike_established = kwargs['isIkeEstablished']
-        if negotiated_authentication_algorithm is None and 'negotiatedAuthenticationAlgorithm' in kwargs:
-            negotiated_authentication_algorithm = kwargs['negotiatedAuthenticationAlgorithm']
-        if negotiated_dh_group is None and 'negotiatedDhGroup' in kwargs:
-            negotiated_dh_group = kwargs['negotiatedDhGroup']
-        if negotiated_encryption_algorithm is None and 'negotiatedEncryptionAlgorithm' in kwargs:
-            negotiated_encryption_algorithm = kwargs['negotiatedEncryptionAlgorithm']
-        if remaining_lifetime is None and 'remainingLifetime' in kwargs:
-            remaining_lifetime = kwargs['remainingLifetime']
-        if remaining_lifetime_last_retrieved is None and 'remainingLifetimeLastRetrieved' in kwargs:
-            remaining_lifetime_last_retrieved = kwargs['remainingLifetimeLastRetrieved']
-
         if custom_authentication_algorithm is not None:
-            _setter("custom_authentication_algorithm", custom_authentication_algorithm)
+            pulumi.set(__self__, "custom_authentication_algorithm", custom_authentication_algorithm)
         if custom_dh_group is not None:
-            _setter("custom_dh_group", custom_dh_group)
+            pulumi.set(__self__, "custom_dh_group", custom_dh_group)
         if custom_encryption_algorithm is not None:
-            _setter("custom_encryption_algorithm", custom_encryption_algorithm)
+            pulumi.set(__self__, "custom_encryption_algorithm", custom_encryption_algorithm)
         if is_custom_phase_one_config is not None:
-            _setter("is_custom_phase_one_config", is_custom_phase_one_config)
+            pulumi.set(__self__, "is_custom_phase_one_config", is_custom_phase_one_config)
         if is_ike_established is not None:
-            _setter("is_ike_established", is_ike_established)
+            pulumi.set(__self__, "is_ike_established", is_ike_established)
         if lifetime is not None:
-            _setter("lifetime", lifetime)
+            pulumi.set(__self__, "lifetime", lifetime)
         if negotiated_authentication_algorithm is not None:
-            _setter("negotiated_authentication_algorithm", negotiated_authentication_algorithm)
+            pulumi.set(__self__, "negotiated_authentication_algorithm", negotiated_authentication_algorithm)
         if negotiated_dh_group is not None:
-            _setter("negotiated_dh_group", negotiated_dh_group)
+            pulumi.set(__self__, "negotiated_dh_group", negotiated_dh_group)
         if negotiated_encryption_algorithm is not None:
-            _setter("negotiated_encryption_algorithm", negotiated_encryption_algorithm)
+            pulumi.set(__self__, "negotiated_encryption_algorithm", negotiated_encryption_algorithm)
         if remaining_lifetime is not None:
-            _setter("remaining_lifetime", remaining_lifetime)
+            pulumi.set(__self__, "remaining_lifetime", remaining_lifetime)
         if remaining_lifetime_last_retrieved is not None:
-            _setter("remaining_lifetime_last_retrieved", remaining_lifetime_last_retrieved)
+            pulumi.set(__self__, "remaining_lifetime_last_retrieved", remaining_lifetime_last_retrieved)
 
     @property
     @pulumi.getter(name="customAuthenticationAlgorithm")
@@ -14976,85 +11353,30 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
                  negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  remaining_lifetime: Optional[pulumi.Input[str]] = None,
                  remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None):
-        IpsecConnectionTunnelManagementPhaseTwoDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            custom_authentication_algorithm=custom_authentication_algorithm,
-            custom_encryption_algorithm=custom_encryption_algorithm,
-            dh_group=dh_group,
-            is_custom_phase_two_config=is_custom_phase_two_config,
-            is_esp_established=is_esp_established,
-            is_pfs_enabled=is_pfs_enabled,
-            lifetime=lifetime,
-            negotiated_authentication_algorithm=negotiated_authentication_algorithm,
-            negotiated_dh_group=negotiated_dh_group,
-            negotiated_encryption_algorithm=negotiated_encryption_algorithm,
-            remaining_lifetime=remaining_lifetime,
-            remaining_lifetime_last_retrieved=remaining_lifetime_last_retrieved,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             custom_authentication_algorithm: Optional[pulumi.Input[str]] = None,
-             custom_encryption_algorithm: Optional[pulumi.Input[str]] = None,
-             dh_group: Optional[pulumi.Input[str]] = None,
-             is_custom_phase_two_config: Optional[pulumi.Input[bool]] = None,
-             is_esp_established: Optional[pulumi.Input[bool]] = None,
-             is_pfs_enabled: Optional[pulumi.Input[bool]] = None,
-             lifetime: Optional[pulumi.Input[int]] = None,
-             negotiated_authentication_algorithm: Optional[pulumi.Input[str]] = None,
-             negotiated_dh_group: Optional[pulumi.Input[str]] = None,
-             negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
-             remaining_lifetime: Optional[pulumi.Input[str]] = None,
-             remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if custom_authentication_algorithm is None and 'customAuthenticationAlgorithm' in kwargs:
-            custom_authentication_algorithm = kwargs['customAuthenticationAlgorithm']
-        if custom_encryption_algorithm is None and 'customEncryptionAlgorithm' in kwargs:
-            custom_encryption_algorithm = kwargs['customEncryptionAlgorithm']
-        if dh_group is None and 'dhGroup' in kwargs:
-            dh_group = kwargs['dhGroup']
-        if is_custom_phase_two_config is None and 'isCustomPhaseTwoConfig' in kwargs:
-            is_custom_phase_two_config = kwargs['isCustomPhaseTwoConfig']
-        if is_esp_established is None and 'isEspEstablished' in kwargs:
-            is_esp_established = kwargs['isEspEstablished']
-        if is_pfs_enabled is None and 'isPfsEnabled' in kwargs:
-            is_pfs_enabled = kwargs['isPfsEnabled']
-        if negotiated_authentication_algorithm is None and 'negotiatedAuthenticationAlgorithm' in kwargs:
-            negotiated_authentication_algorithm = kwargs['negotiatedAuthenticationAlgorithm']
-        if negotiated_dh_group is None and 'negotiatedDhGroup' in kwargs:
-            negotiated_dh_group = kwargs['negotiatedDhGroup']
-        if negotiated_encryption_algorithm is None and 'negotiatedEncryptionAlgorithm' in kwargs:
-            negotiated_encryption_algorithm = kwargs['negotiatedEncryptionAlgorithm']
-        if remaining_lifetime is None and 'remainingLifetime' in kwargs:
-            remaining_lifetime = kwargs['remainingLifetime']
-        if remaining_lifetime_last_retrieved is None and 'remainingLifetimeLastRetrieved' in kwargs:
-            remaining_lifetime_last_retrieved = kwargs['remainingLifetimeLastRetrieved']
-
         if custom_authentication_algorithm is not None:
-            _setter("custom_authentication_algorithm", custom_authentication_algorithm)
+            pulumi.set(__self__, "custom_authentication_algorithm", custom_authentication_algorithm)
         if custom_encryption_algorithm is not None:
-            _setter("custom_encryption_algorithm", custom_encryption_algorithm)
+            pulumi.set(__self__, "custom_encryption_algorithm", custom_encryption_algorithm)
         if dh_group is not None:
-            _setter("dh_group", dh_group)
+            pulumi.set(__self__, "dh_group", dh_group)
         if is_custom_phase_two_config is not None:
-            _setter("is_custom_phase_two_config", is_custom_phase_two_config)
+            pulumi.set(__self__, "is_custom_phase_two_config", is_custom_phase_two_config)
         if is_esp_established is not None:
-            _setter("is_esp_established", is_esp_established)
+            pulumi.set(__self__, "is_esp_established", is_esp_established)
         if is_pfs_enabled is not None:
-            _setter("is_pfs_enabled", is_pfs_enabled)
+            pulumi.set(__self__, "is_pfs_enabled", is_pfs_enabled)
         if lifetime is not None:
-            _setter("lifetime", lifetime)
+            pulumi.set(__self__, "lifetime", lifetime)
         if negotiated_authentication_algorithm is not None:
-            _setter("negotiated_authentication_algorithm", negotiated_authentication_algorithm)
+            pulumi.set(__self__, "negotiated_authentication_algorithm", negotiated_authentication_algorithm)
         if negotiated_dh_group is not None:
-            _setter("negotiated_dh_group", negotiated_dh_group)
+            pulumi.set(__self__, "negotiated_dh_group", negotiated_dh_group)
         if negotiated_encryption_algorithm is not None:
-            _setter("negotiated_encryption_algorithm", negotiated_encryption_algorithm)
+            pulumi.set(__self__, "negotiated_encryption_algorithm", negotiated_encryption_algorithm)
         if remaining_lifetime is not None:
-            _setter("remaining_lifetime", remaining_lifetime)
+            pulumi.set(__self__, "remaining_lifetime", remaining_lifetime)
         if remaining_lifetime_last_retrieved is not None:
-            _setter("remaining_lifetime_last_retrieved", remaining_lifetime_last_retrieved)
+            pulumi.set(__self__, "remaining_lifetime_last_retrieved", remaining_lifetime_last_retrieved)
 
     @property
     @pulumi.getter(name="customAuthenticationAlgorithm")
@@ -15174,24 +11496,9 @@ class NetworkSecurityGroupSecurityRuleIcmpOptionsArgs:
         :param pulumi.Input[int] type: The ICMP type.
         :param pulumi.Input[int] code: The ICMP code (optional).
         """
-        NetworkSecurityGroupSecurityRuleIcmpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            code=code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[int]] = None,
-             code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
 
     @property
     @pulumi.getter
@@ -15223,27 +11530,10 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsArgs:
     def __init__(__self__, *,
                  destination_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs']] = None,
                  source_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs']] = None):
-        NetworkSecurityGroupSecurityRuleTcpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_port_range=destination_port_range,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs']] = None,
-             source_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_port_range is None and 'destinationPortRange' in kwargs:
-            destination_port_range = kwargs['destinationPortRange']
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if destination_port_range is not None:
-            _setter("destination_port_range", destination_port_range)
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter(name="destinationPortRange")
@@ -15277,25 +11567,8 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -15339,25 +11612,8 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -15393,27 +11649,10 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsArgs:
     def __init__(__self__, *,
                  destination_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs']] = None,
                  source_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs']] = None):
-        NetworkSecurityGroupSecurityRuleUdpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination_port_range=destination_port_range,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs']] = None,
-             source_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination_port_range is None and 'destinationPortRange' in kwargs:
-            destination_port_range = kwargs['destinationPortRange']
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if destination_port_range is not None:
-            _setter("destination_port_range", destination_port_range)
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter(name="destinationPortRange")
@@ -15447,25 +11686,8 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -15509,25 +11731,8 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -15585,51 +11790,20 @@ class RouteTableRouteRuleArgs:
         :param pulumi.Input[str] destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
         :param pulumi.Input[str] route_type: (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
         """
-        RouteTableRouteRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_entity_id=network_entity_id,
-            cidr_block=cidr_block,
-            description=description,
-            destination=destination,
-            destination_type=destination_type,
-            route_type=route_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_entity_id: Optional[pulumi.Input[str]] = None,
-             cidr_block: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             destination: Optional[pulumi.Input[str]] = None,
-             destination_type: Optional[pulumi.Input[str]] = None,
-             route_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_entity_id is None and 'networkEntityId' in kwargs:
-            network_entity_id = kwargs['networkEntityId']
-        if network_entity_id is None:
-            raise TypeError("Missing 'network_entity_id' argument")
-        if cidr_block is None and 'cidrBlock' in kwargs:
-            cidr_block = kwargs['cidrBlock']
-        if destination_type is None and 'destinationType' in kwargs:
-            destination_type = kwargs['destinationType']
-        if route_type is None and 'routeType' in kwargs:
-            route_type = kwargs['routeType']
-
-        _setter("network_entity_id", network_entity_id)
+        pulumi.set(__self__, "network_entity_id", network_entity_id)
         if cidr_block is not None:
             warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
             pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
         if cidr_block is not None:
-            _setter("cidr_block", cidr_block)
+            pulumi.set(__self__, "cidr_block", cidr_block)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if destination is not None:
-            _setter("destination", destination)
+            pulumi.set(__self__, "destination", destination)
         if destination_type is not None:
-            _setter("destination_type", destination_type)
+            pulumi.set(__self__, "destination_type", destination_type)
         if route_type is not None:
-            _setter("route_type", route_type)
+            pulumi.set(__self__, "route_type", route_type)
 
     @property
     @pulumi.getter(name="networkEntityId")
@@ -15748,57 +11922,20 @@ class SecurityListEgressSecurityRuleArgs:
         :param pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
-        SecurityListEgressSecurityRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            destination=destination,
-            protocol=protocol,
-            description=description,
-            destination_type=destination_type,
-            icmp_options=icmp_options,
-            stateless=stateless,
-            tcp_options=tcp_options,
-            udp_options=udp_options,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             destination: Optional[pulumi.Input[str]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             destination_type: Optional[pulumi.Input[str]] = None,
-             icmp_options: Optional[pulumi.Input['SecurityListEgressSecurityRuleIcmpOptionsArgs']] = None,
-             stateless: Optional[pulumi.Input[bool]] = None,
-             tcp_options: Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsArgs']] = None,
-             udp_options: Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if destination is None:
-            raise TypeError("Missing 'destination' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if destination_type is None and 'destinationType' in kwargs:
-            destination_type = kwargs['destinationType']
-        if icmp_options is None and 'icmpOptions' in kwargs:
-            icmp_options = kwargs['icmpOptions']
-        if tcp_options is None and 'tcpOptions' in kwargs:
-            tcp_options = kwargs['tcpOptions']
-        if udp_options is None and 'udpOptions' in kwargs:
-            udp_options = kwargs['udpOptions']
-
-        _setter("destination", destination)
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "destination", destination)
+        pulumi.set(__self__, "protocol", protocol)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if destination_type is not None:
-            _setter("destination_type", destination_type)
+            pulumi.set(__self__, "destination_type", destination_type)
         if icmp_options is not None:
-            _setter("icmp_options", icmp_options)
+            pulumi.set(__self__, "icmp_options", icmp_options)
         if stateless is not None:
-            _setter("stateless", stateless)
+            pulumi.set(__self__, "stateless", stateless)
         if tcp_options is not None:
-            _setter("tcp_options", tcp_options)
+            pulumi.set(__self__, "tcp_options", tcp_options)
         if udp_options is not None:
-            _setter("udp_options", udp_options)
+            pulumi.set(__self__, "udp_options", udp_options)
 
     @property
     @pulumi.getter
@@ -15916,24 +12053,9 @@ class SecurityListEgressSecurityRuleIcmpOptionsArgs:
         :param pulumi.Input[int] type: (Updatable) The ICMP type.
         :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
         """
-        SecurityListEgressSecurityRuleIcmpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            code=code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[int]] = None,
-             code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
 
     @property
     @pulumi.getter
@@ -15971,29 +12093,12 @@ class SecurityListEgressSecurityRuleTcpOptionsArgs:
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         :param pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        SecurityListEgressSecurityRuleTcpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -16041,25 +12146,8 @@ class SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs:
         :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
-        SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -16097,29 +12185,12 @@ class SecurityListEgressSecurityRuleUdpOptionsArgs:
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         :param pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        SecurityListEgressSecurityRuleUdpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -16167,25 +12238,8 @@ class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs:
         :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
-        SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -16241,57 +12295,20 @@ class SecurityListIngressSecurityRuleArgs:
         :param pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
-        SecurityListIngressSecurityRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            protocol=protocol,
-            source=source,
-            description=description,
-            icmp_options=icmp_options,
-            source_type=source_type,
-            stateless=stateless,
-            tcp_options=tcp_options,
-            udp_options=udp_options,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             protocol: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             icmp_options: Optional[pulumi.Input['SecurityListIngressSecurityRuleIcmpOptionsArgs']] = None,
-             source_type: Optional[pulumi.Input[str]] = None,
-             stateless: Optional[pulumi.Input[bool]] = None,
-             tcp_options: Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsArgs']] = None,
-             udp_options: Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if source is None:
-            raise TypeError("Missing 'source' argument")
-        if icmp_options is None and 'icmpOptions' in kwargs:
-            icmp_options = kwargs['icmpOptions']
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if tcp_options is None and 'tcpOptions' in kwargs:
-            tcp_options = kwargs['tcpOptions']
-        if udp_options is None and 'udpOptions' in kwargs:
-            udp_options = kwargs['udpOptions']
-
-        _setter("protocol", protocol)
-        _setter("source", source)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "source", source)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if icmp_options is not None:
-            _setter("icmp_options", icmp_options)
+            pulumi.set(__self__, "icmp_options", icmp_options)
         if source_type is not None:
-            _setter("source_type", source_type)
+            pulumi.set(__self__, "source_type", source_type)
         if stateless is not None:
-            _setter("stateless", stateless)
+            pulumi.set(__self__, "stateless", stateless)
         if tcp_options is not None:
-            _setter("tcp_options", tcp_options)
+            pulumi.set(__self__, "tcp_options", tcp_options)
         if udp_options is not None:
-            _setter("udp_options", udp_options)
+            pulumi.set(__self__, "udp_options", udp_options)
 
     @property
     @pulumi.getter
@@ -16407,24 +12424,9 @@ class SecurityListIngressSecurityRuleIcmpOptionsArgs:
         :param pulumi.Input[int] type: (Updatable) The ICMP type.
         :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
         """
-        SecurityListIngressSecurityRuleIcmpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            code=code,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[int]] = None,
-             code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if code is not None:
-            _setter("code", code)
+            pulumi.set(__self__, "code", code)
 
     @property
     @pulumi.getter
@@ -16462,29 +12464,12 @@ class SecurityListIngressSecurityRuleTcpOptionsArgs:
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         :param pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        SecurityListIngressSecurityRuleTcpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -16532,25 +12517,8 @@ class SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs:
         :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
-        SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -16588,29 +12556,12 @@ class SecurityListIngressSecurityRuleUdpOptionsArgs:
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         :param pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
         """
-        SecurityListIngressSecurityRuleUdpOptionsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-            source_port_range=source_port_range,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             source_port_range: Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if source_port_range is None and 'sourcePortRange' in kwargs:
-            source_port_range = kwargs['sourcePortRange']
-
         if max is not None:
-            _setter("max", max)
+            pulumi.set(__self__, "max", max)
         if min is not None:
-            _setter("min", min)
+            pulumi.set(__self__, "min", min)
         if source_port_range is not None:
-            _setter("source_port_range", source_port_range)
+            pulumi.set(__self__, "source_port_range", source_port_range)
 
     @property
     @pulumi.getter
@@ -16658,25 +12609,8 @@ class SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs:
         :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
         :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
-        SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            max=max,
-            min=min,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             max: Optional[pulumi.Input[int]] = None,
-             min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if max is None:
-            raise TypeError("Missing 'max' argument")
-        if min is None:
-            raise TypeError("Missing 'min' argument")
-
-        _setter("max", max)
-        _setter("min", min)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
@@ -16712,28 +12646,9 @@ class ServiceGatewayServiceArgs:
         :param pulumi.Input[str] service_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/).
         :param pulumi.Input[str] service_name: The name of the service.
         """
-        ServiceGatewayServiceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            service_id=service_id,
-            service_name=service_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             service_id: Optional[pulumi.Input[str]] = None,
-             service_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if service_id is None and 'serviceId' in kwargs:
-            service_id = kwargs['serviceId']
-        if service_id is None:
-            raise TypeError("Missing 'service_id' argument")
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-
-        _setter("service_id", service_id)
+        pulumi.set(__self__, "service_id", service_id)
         if service_name is not None:
-            _setter("service_name", service_name)
+            pulumi.set(__self__, "service_name", service_name)
 
     @property
     @pulumi.getter(name="serviceId")
@@ -16769,29 +12684,8 @@ class VcnByoipv6cidrDetailArgs:
         :param pulumi.Input[str] byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
         :param pulumi.Input[str] ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
         """
-        VcnByoipv6cidrDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            byoipv6range_id=byoipv6range_id,
-            ipv6cidr_block=ipv6cidr_block,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             byoipv6range_id: Optional[pulumi.Input[str]] = None,
-             ipv6cidr_block: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if byoipv6range_id is None and 'byoipv6rangeId' in kwargs:
-            byoipv6range_id = kwargs['byoipv6rangeId']
-        if byoipv6range_id is None:
-            raise TypeError("Missing 'byoipv6range_id' argument")
-        if ipv6cidr_block is None and 'ipv6cidrBlock' in kwargs:
-            ipv6cidr_block = kwargs['ipv6cidrBlock']
-        if ipv6cidr_block is None:
-            raise TypeError("Missing 'ipv6cidr_block' argument")
-
-        _setter("byoipv6range_id", byoipv6range_id)
-        _setter("ipv6cidr_block", ipv6cidr_block)
+        pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
+        pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
 
     @property
     @pulumi.getter(name="byoipv6rangeId")
@@ -16857,55 +12751,20 @@ class VirtualCircuitCrossConnectMappingArgs:
                Example: `2001:db8::2/64`
         :param pulumi.Input[int] vlan: (Updatable) The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
         """
-        VirtualCircuitCrossConnectMappingArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bgp_md5auth_key=bgp_md5auth_key,
-            cross_connect_or_cross_connect_group_id=cross_connect_or_cross_connect_group_id,
-            customer_bgp_peering_ip=customer_bgp_peering_ip,
-            customer_bgp_peering_ipv6=customer_bgp_peering_ipv6,
-            oracle_bgp_peering_ip=oracle_bgp_peering_ip,
-            oracle_bgp_peering_ipv6=oracle_bgp_peering_ipv6,
-            vlan=vlan,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bgp_md5auth_key: Optional[pulumi.Input[str]] = None,
-             cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             customer_bgp_peering_ip: Optional[pulumi.Input[str]] = None,
-             customer_bgp_peering_ipv6: Optional[pulumi.Input[str]] = None,
-             oracle_bgp_peering_ip: Optional[pulumi.Input[str]] = None,
-             oracle_bgp_peering_ipv6: Optional[pulumi.Input[str]] = None,
-             vlan: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bgp_md5auth_key is None and 'bgpMd5authKey' in kwargs:
-            bgp_md5auth_key = kwargs['bgpMd5authKey']
-        if cross_connect_or_cross_connect_group_id is None and 'crossConnectOrCrossConnectGroupId' in kwargs:
-            cross_connect_or_cross_connect_group_id = kwargs['crossConnectOrCrossConnectGroupId']
-        if customer_bgp_peering_ip is None and 'customerBgpPeeringIp' in kwargs:
-            customer_bgp_peering_ip = kwargs['customerBgpPeeringIp']
-        if customer_bgp_peering_ipv6 is None and 'customerBgpPeeringIpv6' in kwargs:
-            customer_bgp_peering_ipv6 = kwargs['customerBgpPeeringIpv6']
-        if oracle_bgp_peering_ip is None and 'oracleBgpPeeringIp' in kwargs:
-            oracle_bgp_peering_ip = kwargs['oracleBgpPeeringIp']
-        if oracle_bgp_peering_ipv6 is None and 'oracleBgpPeeringIpv6' in kwargs:
-            oracle_bgp_peering_ipv6 = kwargs['oracleBgpPeeringIpv6']
-
         if bgp_md5auth_key is not None:
-            _setter("bgp_md5auth_key", bgp_md5auth_key)
+            pulumi.set(__self__, "bgp_md5auth_key", bgp_md5auth_key)
         if cross_connect_or_cross_connect_group_id is not None:
-            _setter("cross_connect_or_cross_connect_group_id", cross_connect_or_cross_connect_group_id)
+            pulumi.set(__self__, "cross_connect_or_cross_connect_group_id", cross_connect_or_cross_connect_group_id)
         if customer_bgp_peering_ip is not None:
-            _setter("customer_bgp_peering_ip", customer_bgp_peering_ip)
+            pulumi.set(__self__, "customer_bgp_peering_ip", customer_bgp_peering_ip)
         if customer_bgp_peering_ipv6 is not None:
-            _setter("customer_bgp_peering_ipv6", customer_bgp_peering_ipv6)
+            pulumi.set(__self__, "customer_bgp_peering_ipv6", customer_bgp_peering_ipv6)
         if oracle_bgp_peering_ip is not None:
-            _setter("oracle_bgp_peering_ip", oracle_bgp_peering_ip)
+            pulumi.set(__self__, "oracle_bgp_peering_ip", oracle_bgp_peering_ip)
         if oracle_bgp_peering_ipv6 is not None:
-            _setter("oracle_bgp_peering_ipv6", oracle_bgp_peering_ipv6)
+            pulumi.set(__self__, "oracle_bgp_peering_ipv6", oracle_bgp_peering_ipv6)
         if vlan is not None:
-            _setter("vlan", vlan)
+            pulumi.set(__self__, "vlan", vlan)
 
     @property
     @pulumi.getter(name="bgpMd5authKey")
@@ -17019,22 +12878,7 @@ class VirtualCircuitPublicPrefixArgs:
         """
         :param pulumi.Input[str] cidr_block: (Updatable) An individual public IP prefix (CIDR) to add to the public virtual circuit. All prefix sizes are allowed.
         """
-        VirtualCircuitPublicPrefixArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cidr_block=cidr_block,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cidr_block: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cidr_block is None and 'cidrBlock' in kwargs:
-            cidr_block = kwargs['cidrBlock']
-        if cidr_block is None:
-            raise TypeError("Missing 'cidr_block' argument")
-
-        _setter("cidr_block", cidr_block)
+        pulumi.set(__self__, "cidr_block", cidr_block)
 
     @property
     @pulumi.getter(name="cidrBlock")
@@ -17054,29 +12898,8 @@ class VirtualNetworkByoipv6cidrDetailArgs:
     def __init__(__self__, *,
                  byoipv6range_id: pulumi.Input[str],
                  ipv6cidr_block: pulumi.Input[str]):
-        VirtualNetworkByoipv6cidrDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            byoipv6range_id=byoipv6range_id,
-            ipv6cidr_block=ipv6cidr_block,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             byoipv6range_id: Optional[pulumi.Input[str]] = None,
-             ipv6cidr_block: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if byoipv6range_id is None and 'byoipv6rangeId' in kwargs:
-            byoipv6range_id = kwargs['byoipv6rangeId']
-        if byoipv6range_id is None:
-            raise TypeError("Missing 'byoipv6range_id' argument")
-        if ipv6cidr_block is None and 'ipv6cidrBlock' in kwargs:
-            ipv6cidr_block = kwargs['ipv6cidrBlock']
-        if ipv6cidr_block is None:
-            raise TypeError("Missing 'ipv6cidr_block' argument")
-
-        _setter("byoipv6range_id", byoipv6range_id)
-        _setter("ipv6cidr_block", ipv6cidr_block)
+        pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
+        pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
 
     @property
     @pulumi.getter(name="byoipv6rangeId")
@@ -17160,93 +12983,32 @@ class VnicAttachmentCreateVnicDetailsArgs:
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
-        VnicAttachmentCreateVnicDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            assign_ipv6ip=assign_ipv6ip,
-            assign_private_dns_record=assign_private_dns_record,
-            assign_public_ip=assign_public_ip,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            ipv6address_ipv6subnet_cidr_pair_details=ipv6address_ipv6subnet_cidr_pair_details,
-            nsg_ids=nsg_ids,
-            private_ip=private_ip,
-            skip_source_dest_check=skip_source_dest_check,
-            subnet_id=subnet_id,
-            vlan_id=vlan_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
-             assign_public_ip: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_ip: Optional[pulumi.Input[str]] = None,
-             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             vlan_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if assign_ipv6ip is None and 'assignIpv6ip' in kwargs:
-            assign_ipv6ip = kwargs['assignIpv6ip']
-        if assign_private_dns_record is None and 'assignPrivateDnsRecord' in kwargs:
-            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
-        if assign_public_ip is None and 'assignPublicIp' in kwargs:
-            assign_public_ip = kwargs['assignPublicIp']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if ipv6address_ipv6subnet_cidr_pair_details is None and 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
-            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
-        if nsg_ids is None and 'nsgIds' in kwargs:
-            nsg_ids = kwargs['nsgIds']
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
-            skip_source_dest_check = kwargs['skipSourceDestCheck']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if vlan_id is None and 'vlanId' in kwargs:
-            vlan_id = kwargs['vlanId']
-
         if assign_ipv6ip is not None:
-            _setter("assign_ipv6ip", assign_ipv6ip)
+            pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
-            _setter("assign_private_dns_record", assign_private_dns_record)
+            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            _setter("assign_public_ip", assign_public_ip)
+            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
-            _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if nsg_ids is not None:
-            _setter("nsg_ids", nsg_ids)
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
         if skip_source_dest_check is not None:
-            _setter("skip_source_dest_check", skip_source_dest_check)
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
-            _setter("vlan_id", vlan_id)
+            pulumi.set(__self__, "vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="assignIpv6ip")
@@ -17442,27 +13204,10 @@ class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
                  ipv6_address: Optional[pulumi.Input[str]] = None,
                  ipv6_subnet_cidr: Optional[pulumi.Input[str]] = None):
-        VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv6_address=ipv6_address,
-            ipv6_subnet_cidr=ipv6_subnet_cidr,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv6_address: Optional[pulumi.Input[str]] = None,
-             ipv6_subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ipv6_address is None and 'ipv6Address' in kwargs:
-            ipv6_address = kwargs['ipv6Address']
-        if ipv6_subnet_cidr is None and 'ipv6SubnetCidr' in kwargs:
-            ipv6_subnet_cidr = kwargs['ipv6SubnetCidr']
-
         if ipv6_address is not None:
-            _setter("ipv6_address", ipv6_address)
+            pulumi.set(__self__, "ipv6_address", ipv6_address)
         if ipv6_subnet_cidr is not None:
-            _setter("ipv6_subnet_cidr", ipv6_subnet_cidr)
+            pulumi.set(__self__, "ipv6_subnet_cidr", ipv6_subnet_cidr)
 
     @property
     @pulumi.getter(name="ipv6Address")
@@ -17494,27 +13239,12 @@ class VolumeAttachmentMultipathDeviceArgs:
         :param pulumi.Input[str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         :param pulumi.Input[int] port: The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
         """
-        VolumeAttachmentMultipathDeviceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ipv4=ipv4,
-            iqn=iqn,
-            port=port,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ipv4: Optional[pulumi.Input[str]] = None,
-             iqn: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if ipv4 is not None:
-            _setter("ipv4", ipv4)
+            pulumi.set(__self__, "ipv4", ipv4)
         if iqn is not None:
-            _setter("iqn", iqn)
+            pulumi.set(__self__, "iqn", iqn)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
@@ -17562,28 +13292,9 @@ class VolumeAutotunePolicyArgs:
         :param pulumi.Input[str] autotune_type: (Updatable) This specifies the type of autotunes supported by OCI.
         :param pulumi.Input[str] max_vpus_per_gb: (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
-        VolumeAutotunePolicyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            autotune_type=autotune_type,
-            max_vpus_per_gb=max_vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             autotune_type: Optional[pulumi.Input[str]] = None,
-             max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if autotune_type is None and 'autotuneType' in kwargs:
-            autotune_type = kwargs['autotuneType']
-        if autotune_type is None:
-            raise TypeError("Missing 'autotune_type' argument")
-        if max_vpus_per_gb is None and 'maxVpusPerGb' in kwargs:
-            max_vpus_per_gb = kwargs['maxVpusPerGb']
-
-        _setter("autotune_type", autotune_type)
+        pulumi.set(__self__, "autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
-            _setter("max_vpus_per_gb", max_vpus_per_gb)
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
 
     @property
     @pulumi.getter(name="autotuneType")
@@ -17650,74 +13361,23 @@ class VolumeBackupPolicyScheduleArgs:
         :param pulumi.Input[str] time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
         """
-        VolumeBackupPolicyScheduleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backup_type=backup_type,
-            period=period,
-            retention_seconds=retention_seconds,
-            day_of_month=day_of_month,
-            day_of_week=day_of_week,
-            hour_of_day=hour_of_day,
-            month=month,
-            offset_seconds=offset_seconds,
-            offset_type=offset_type,
-            time_zone=time_zone,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backup_type: Optional[pulumi.Input[str]] = None,
-             period: Optional[pulumi.Input[str]] = None,
-             retention_seconds: Optional[pulumi.Input[int]] = None,
-             day_of_month: Optional[pulumi.Input[int]] = None,
-             day_of_week: Optional[pulumi.Input[str]] = None,
-             hour_of_day: Optional[pulumi.Input[int]] = None,
-             month: Optional[pulumi.Input[str]] = None,
-             offset_seconds: Optional[pulumi.Input[int]] = None,
-             offset_type: Optional[pulumi.Input[str]] = None,
-             time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backup_type is None and 'backupType' in kwargs:
-            backup_type = kwargs['backupType']
-        if backup_type is None:
-            raise TypeError("Missing 'backup_type' argument")
-        if period is None:
-            raise TypeError("Missing 'period' argument")
-        if retention_seconds is None and 'retentionSeconds' in kwargs:
-            retention_seconds = kwargs['retentionSeconds']
-        if retention_seconds is None:
-            raise TypeError("Missing 'retention_seconds' argument")
-        if day_of_month is None and 'dayOfMonth' in kwargs:
-            day_of_month = kwargs['dayOfMonth']
-        if day_of_week is None and 'dayOfWeek' in kwargs:
-            day_of_week = kwargs['dayOfWeek']
-        if hour_of_day is None and 'hourOfDay' in kwargs:
-            hour_of_day = kwargs['hourOfDay']
-        if offset_seconds is None and 'offsetSeconds' in kwargs:
-            offset_seconds = kwargs['offsetSeconds']
-        if offset_type is None and 'offsetType' in kwargs:
-            offset_type = kwargs['offsetType']
-        if time_zone is None and 'timeZone' in kwargs:
-            time_zone = kwargs['timeZone']
-
-        _setter("backup_type", backup_type)
-        _setter("period", period)
-        _setter("retention_seconds", retention_seconds)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "retention_seconds", retention_seconds)
         if day_of_month is not None:
-            _setter("day_of_month", day_of_month)
+            pulumi.set(__self__, "day_of_month", day_of_month)
         if day_of_week is not None:
-            _setter("day_of_week", day_of_week)
+            pulumi.set(__self__, "day_of_week", day_of_week)
         if hour_of_day is not None:
-            _setter("hour_of_day", hour_of_day)
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
         if month is not None:
-            _setter("month", month)
+            pulumi.set(__self__, "month", month)
         if offset_seconds is not None:
-            _setter("offset_seconds", offset_seconds)
+            pulumi.set(__self__, "offset_seconds", offset_seconds)
         if offset_type is not None:
-            _setter("offset_type", offset_type)
+            pulumi.set(__self__, "offset_type", offset_type)
         if time_zone is not None:
-            _setter("time_zone", time_zone)
+            pulumi.set(__self__, "time_zone", time_zone)
 
     @property
     @pulumi.getter(name="backupType")
@@ -17870,33 +13530,10 @@ class VolumeBackupSourceDetailsArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         """
-        VolumeBackupSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            region=region,
-            volume_backup_id=volume_backup_id,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             region: Optional[pulumi.Input[str]] = None,
-             volume_backup_id: Optional[pulumi.Input[str]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if volume_backup_id is None and 'volumeBackupId' in kwargs:
-            volume_backup_id = kwargs['volumeBackupId']
-        if volume_backup_id is None:
-            raise TypeError("Missing 'volume_backup_id' argument")
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-
-        _setter("region", region)
-        _setter("volume_backup_id", volume_backup_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "volume_backup_id", volume_backup_id)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
@@ -17950,34 +13587,11 @@ class VolumeBlockVolumeReplicaArgs:
         :param pulumi.Input[str] block_volume_replica_id: The block volume replica's Oracle ID (OCID).
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
-        VolumeBlockVolumeReplicaArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            block_volume_replica_id=block_volume_replica_id,
-            display_name=display_name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             block_volume_replica_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if block_volume_replica_id is None and 'blockVolumeReplicaId' in kwargs:
-            block_volume_replica_id = kwargs['blockVolumeReplicaId']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-
-        _setter("availability_domain", availability_domain)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if block_volume_replica_id is not None:
-            _setter("block_volume_replica_id", block_volume_replica_id)
+            pulumi.set(__self__, "block_volume_replica_id", block_volume_replica_id)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -18032,33 +13646,10 @@ class VolumeGroupBackupSourceDetailsArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         """
-        VolumeGroupBackupSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            region=region,
-            volume_group_backup_id=volume_group_backup_id,
-            kms_key_id=kms_key_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             region: Optional[pulumi.Input[str]] = None,
-             volume_group_backup_id: Optional[pulumi.Input[str]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if region is None:
-            raise TypeError("Missing 'region' argument")
-        if volume_group_backup_id is None and 'volumeGroupBackupId' in kwargs:
-            volume_group_backup_id = kwargs['volumeGroupBackupId']
-        if volume_group_backup_id is None:
-            raise TypeError("Missing 'volume_group_backup_id' argument")
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-
-        _setter("region", region)
-        _setter("volume_group_backup_id", volume_group_backup_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
@@ -18117,44 +13708,15 @@ class VolumeGroupSourceDetailsArgs:
         :param pulumi.Input[str] volume_group_replica_id: The OCID of the volume group replica.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
-        VolumeGroupSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            type=type,
-            volume_group_backup_id=volume_group_backup_id,
-            volume_group_id=volume_group_id,
-            volume_group_replica_id=volume_group_replica_id,
-            volume_ids=volume_ids,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             type: Optional[pulumi.Input[str]] = None,
-             volume_group_backup_id: Optional[pulumi.Input[str]] = None,
-             volume_group_id: Optional[pulumi.Input[str]] = None,
-             volume_group_replica_id: Optional[pulumi.Input[str]] = None,
-             volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if volume_group_backup_id is None and 'volumeGroupBackupId' in kwargs:
-            volume_group_backup_id = kwargs['volumeGroupBackupId']
-        if volume_group_id is None and 'volumeGroupId' in kwargs:
-            volume_group_id = kwargs['volumeGroupId']
-        if volume_group_replica_id is None and 'volumeGroupReplicaId' in kwargs:
-            volume_group_replica_id = kwargs['volumeGroupReplicaId']
-        if volume_ids is None and 'volumeIds' in kwargs:
-            volume_ids = kwargs['volumeIds']
-
-        _setter("type", type)
+        pulumi.set(__self__, "type", type)
         if volume_group_backup_id is not None:
-            _setter("volume_group_backup_id", volume_group_backup_id)
+            pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
         if volume_group_id is not None:
-            _setter("volume_group_id", volume_group_id)
+            pulumi.set(__self__, "volume_group_id", volume_group_id)
         if volume_group_replica_id is not None:
-            _setter("volume_group_replica_id", volume_group_replica_id)
+            pulumi.set(__self__, "volume_group_replica_id", volume_group_replica_id)
         if volume_ids is not None:
-            _setter("volume_ids", volume_ids)
+            pulumi.set(__self__, "volume_ids", volume_ids)
 
     @property
     @pulumi.getter
@@ -18232,34 +13794,11 @@ class VolumeGroupVolumeGroupReplicaArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] volume_group_replica_id: The OCID of the volume group replica.
         """
-        VolumeGroupVolumeGroupReplicaArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            display_name=display_name,
-            volume_group_replica_id=volume_group_replica_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             volume_group_replica_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if volume_group_replica_id is None and 'volumeGroupReplicaId' in kwargs:
-            volume_group_replica_id = kwargs['volumeGroupReplicaId']
-
-        _setter("availability_domain", availability_domain)
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if volume_group_replica_id is not None:
-            _setter("volume_group_replica_id", volume_group_replica_id)
+            pulumi.set(__self__, "volume_group_replica_id", volume_group_replica_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -18311,25 +13850,8 @@ class VolumeSourceDetailsArgs:
         :param pulumi.Input[str] id: The OCID of the block volume replica.
         :param pulumi.Input[str] type: The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
         """
-        VolumeSourceDetailsArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("id", id)
-        _setter("type", type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -18362,29 +13884,10 @@ class GetAppCatalogListingResourceVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAppCatalogListingResourceVersionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18420,29 +13923,10 @@ class GetAppCatalogListingsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAppCatalogListingsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18478,29 +13962,10 @@ class GetAppCatalogSubscriptionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetAppCatalogSubscriptionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18536,29 +14001,10 @@ class GetBlockVolumeReplicasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetBlockVolumeReplicasFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18594,29 +14040,10 @@ class GetBootVolumeAttachmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetBootVolumeAttachmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18652,29 +14079,10 @@ class GetBootVolumeBackupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetBootVolumeBackupsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18710,29 +14118,10 @@ class GetBootVolumeReplicasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetBootVolumeReplicasFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18768,29 +14157,10 @@ class GetBootVolumesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetBootVolumesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18826,29 +14196,10 @@ class GetByoipAllocatedRangesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetByoipAllocatedRangesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18884,29 +14235,10 @@ class GetByoipRangesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetByoipRangesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -18942,29 +14274,10 @@ class GetCaptureFiltersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetCaptureFiltersFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19000,29 +14313,10 @@ class GetClusterNetworkInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetClusterNetworkInstancesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19058,29 +14352,10 @@ class GetClusterNetworksFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetClusterNetworksFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19116,29 +14391,10 @@ class GetComputeCapacityReservationInstanceShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetComputeCapacityReservationInstanceShapesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19174,29 +14430,10 @@ class GetComputeCapacityReservationInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetComputeCapacityReservationInstancesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19232,29 +14469,10 @@ class GetComputeCapacityReservationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetComputeCapacityReservationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19290,29 +14508,10 @@ class GetComputeClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetComputeClustersFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19348,29 +14547,10 @@ class GetComputeGlobalImageCapabilitySchemasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetComputeGlobalImageCapabilitySchemasFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19410,29 +14590,10 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs:
         :param str name: The name of the compute global image capability schema version
         :param Sequence[str] values: the list of values for the enum
         """
-        GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19477,29 +14638,10 @@ class GetComputeImageCapabilitySchemasFilterArgs:
         """
         :param Sequence[str] values: the list of values for the enum
         """
-        GetComputeImageCapabilitySchemasFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19538,29 +14680,10 @@ class GetConsoleHistoriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetConsoleHistoriesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19596,29 +14719,10 @@ class GetCpeDeviceShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetCpeDeviceShapesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19654,29 +14758,10 @@ class GetCpesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetCpesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19712,29 +14797,10 @@ class GetCrossConnectGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetCrossConnectGroupsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19773,29 +14839,10 @@ class GetCrossConnectLocationsFilterArgs:
         """
         :param str name: The name of the location.  Example: `CyrusOne, Chandler, AZ`
         """
-        GetCrossConnectLocationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19837,29 +14884,10 @@ class GetCrossConnectPortSpeedShapeFilterArgs:
         """
         :param str name: The name of the port speed shape.  Example: `10 Gbps`
         """
-        GetCrossConnectPortSpeedShapeFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19898,29 +14926,10 @@ class GetCrossConnectsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetCrossConnectsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -19956,29 +14965,10 @@ class GetDedicatedVmHostInstanceShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDedicatedVmHostInstanceShapesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20014,29 +15004,10 @@ class GetDedicatedVmHostInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDedicatedVmHostInstancesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20072,29 +15043,10 @@ class GetDedicatedVmHostShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDedicatedVmHostShapesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20130,29 +15082,10 @@ class GetDedicatedVmHostsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDedicatedVmHostsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20188,29 +15121,10 @@ class GetDhcpOptionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDhcpOptionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20246,29 +15160,10 @@ class GetDrgAttachmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDrgAttachmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20304,29 +15199,10 @@ class GetDrgRouteDistributionStatementsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDrgRouteDistributionStatementsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20362,29 +15238,10 @@ class GetDrgRouteDistributionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDrgRouteDistributionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20420,29 +15277,10 @@ class GetDrgRouteTableRouteRulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDrgRouteTableRouteRulesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20478,29 +15316,10 @@ class GetDrgRouteTablesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDrgRouteTablesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20536,29 +15355,10 @@ class GetDrgsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetDrgsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20594,29 +15394,10 @@ class GetFastConnectProviderServicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetFastConnectProviderServicesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20652,29 +15433,10 @@ class GetImageShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetImageShapesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20710,29 +15472,10 @@ class GetImagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetImagesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20771,29 +15514,10 @@ class GetInstanceConfigurationsFilterArgs:
         """
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        GetInstanceConfigurationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20832,29 +15556,10 @@ class GetInstanceConsoleConnectionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetInstanceConsoleConnectionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20893,29 +15598,10 @@ class GetInstanceDevicesFilterArgs:
         """
         :param str name: A filter to return only devices that match the given name exactly.
         """
-        GetInstanceDevicesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -20954,29 +15640,10 @@ class GetInstancePoolInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetInstancePoolInstancesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21012,29 +15679,10 @@ class GetInstancePoolsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetInstancePoolsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21073,29 +15721,10 @@ class GetInstancesFilterArgs:
         """
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        GetInstancesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21134,29 +15763,10 @@ class GetInternetGatewaysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetInternetGatewaysFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21192,29 +15802,10 @@ class GetIpsecConfigFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetIpsecConfigFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21250,29 +15841,10 @@ class GetIpsecConnectionTunnelRoutesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetIpsecConnectionTunnelRoutesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21308,29 +15880,10 @@ class GetIpsecConnectionTunnelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetIpsecConnectionTunnelsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21366,29 +15919,10 @@ class GetIpsecConnectionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetIpsecConnectionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21424,29 +15958,10 @@ class GetIpsecStatusFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetIpsecStatusFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21482,29 +15997,10 @@ class GetIpv6sFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetIpv6sFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21540,29 +16036,10 @@ class GetListingResourceVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetListingResourceVersionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21598,29 +16075,10 @@ class GetLocalPeeringGatewaysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetLocalPeeringGatewaysFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21656,29 +16114,10 @@ class GetNatGatewaysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetNatGatewaysFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21714,29 +16153,10 @@ class GetNetworkSecurityGroupSecurityRulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetNetworkSecurityGroupSecurityRulesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21772,29 +16192,10 @@ class GetNetworkSecurityGroupVnicsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetNetworkSecurityGroupVnicsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21830,29 +16231,10 @@ class GetNetworkSecurityGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetNetworkSecurityGroupsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21891,29 +16273,10 @@ class GetPeerRegionForRemotePeeringsFilterArgs:
         """
         :param str name: The region's name.  Example: `us-phoenix-1`
         """
-        GetPeerRegionForRemotePeeringsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -21952,29 +16315,10 @@ class GetPrivateIpsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetPrivateIpsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22010,29 +16354,10 @@ class GetPublicIpPoolsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetPublicIpPoolsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22068,29 +16393,10 @@ class GetPublicIpsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetPublicIpsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22126,29 +16432,10 @@ class GetRemotePeeringConnectionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetRemotePeeringConnectionsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22184,29 +16471,10 @@ class GetRouteTablesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetRouteTablesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22242,29 +16510,10 @@ class GetSecurityListsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSecurityListsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22300,29 +16549,10 @@ class GetServiceGatewaysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetServiceGatewaysFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22361,29 +16591,10 @@ class GetServicesFilterArgs:
         """
         :param str name: Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
         """
-        GetServicesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22422,29 +16633,10 @@ class GetShapeFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetShapeFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22483,29 +16675,10 @@ class GetShapesFilterArgs:
         """
         :param str name: The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
-        GetShapesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22544,29 +16717,10 @@ class GetSubnetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetSubnetsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22602,29 +16756,10 @@ class GetTunnelSecurityAssociationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetTunnelSecurityAssociationsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22660,29 +16795,10 @@ class GetVcnsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVcnsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22718,29 +16834,10 @@ class GetVirtualCircuitAssociatedTunnelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVirtualCircuitAssociatedTunnelsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22779,29 +16876,10 @@ class GetVirtualCircuitBandwidthShapesFilterArgs:
         """
         :param str name: The name of the bandwidth shape.  Example: `10 Gbps`
         """
-        GetVirtualCircuitBandwidthShapesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22840,29 +16918,10 @@ class GetVirtualCircuitPublicPrefixesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVirtualCircuitPublicPrefixesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22898,29 +16957,10 @@ class GetVirtualCircuitsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVirtualCircuitsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -22956,29 +16996,10 @@ class GetVirtualNetworksFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVirtualNetworksFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23014,29 +17035,10 @@ class GetVlansFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVlansFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23072,29 +17074,10 @@ class GetVnicAttachmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVnicAttachmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23130,29 +17113,10 @@ class GetVolumeAttachmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumeAttachmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23188,29 +17152,10 @@ class GetVolumeBackupPoliciesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumeBackupPoliciesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23246,29 +17191,10 @@ class GetVolumeBackupPolicyAssignmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumeBackupPolicyAssignmentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23304,29 +17230,10 @@ class GetVolumeBackupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumeBackupsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23362,29 +17269,10 @@ class GetVolumeGroupBackupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumeGroupBackupsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23420,29 +17308,10 @@ class GetVolumeGroupReplicasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumeGroupReplicasFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23478,29 +17347,10 @@ class GetVolumeGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumeGroupsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23536,29 +17386,10 @@ class GetVolumesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVolumesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -23594,29 +17425,10 @@ class GetVtapsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetVtapsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

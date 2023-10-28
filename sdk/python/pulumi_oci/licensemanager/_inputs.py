@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -30,43 +30,14 @@ class ProductLicenseImageArgs:
         :param pulumi.Input[str] listing_name: The listing name associated with the product license.
         :param pulumi.Input[str] publisher: The image publisher.
         """
-        ProductLicenseImageArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            listing_id=listing_id,
-            package_version=package_version,
-            id=id,
-            listing_name=listing_name,
-            publisher=publisher,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             listing_id: Optional[pulumi.Input[str]] = None,
-             package_version: Optional[pulumi.Input[str]] = None,
-             id: Optional[pulumi.Input[str]] = None,
-             listing_name: Optional[pulumi.Input[str]] = None,
-             publisher: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if listing_id is None and 'listingId' in kwargs:
-            listing_id = kwargs['listingId']
-        if listing_id is None:
-            raise TypeError("Missing 'listing_id' argument")
-        if package_version is None and 'packageVersion' in kwargs:
-            package_version = kwargs['packageVersion']
-        if package_version is None:
-            raise TypeError("Missing 'package_version' argument")
-        if listing_name is None and 'listingName' in kwargs:
-            listing_name = kwargs['listingName']
-
-        _setter("listing_id", listing_id)
-        _setter("package_version", package_version)
+        pulumi.set(__self__, "listing_id", listing_id)
+        pulumi.set(__self__, "package_version", package_version)
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
         if listing_name is not None:
-            _setter("listing_name", listing_name)
+            pulumi.set(__self__, "listing_name", listing_name)
         if publisher is not None:
-            _setter("publisher", publisher)
+            pulumi.set(__self__, "publisher", publisher)
 
     @property
     @pulumi.getter(name="listingId")
@@ -135,29 +106,10 @@ class GetLicenseRecordsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetLicenseRecordsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -193,29 +145,10 @@ class GetProductLicensesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetProductLicensesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

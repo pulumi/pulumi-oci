@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['PublicIpPoolCapacityArgs', 'PublicIpPoolCapacity']
@@ -26,36 +26,9 @@ class PublicIpPoolCapacityArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
-        PublicIpPoolCapacityArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            byoip_id=byoip_id,
-            cidr_block=cidr_block,
-            public_ip_pool_id=public_ip_pool_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             byoip_id: Optional[pulumi.Input[str]] = None,
-             cidr_block: Optional[pulumi.Input[str]] = None,
-             public_ip_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if byoip_id is None and 'byoipId' in kwargs:
-            byoip_id = kwargs['byoipId']
-        if byoip_id is None:
-            raise TypeError("Missing 'byoip_id' argument")
-        if cidr_block is None and 'cidrBlock' in kwargs:
-            cidr_block = kwargs['cidrBlock']
-        if cidr_block is None:
-            raise TypeError("Missing 'cidr_block' argument")
-        if public_ip_pool_id is None and 'publicIpPoolId' in kwargs:
-            public_ip_pool_id = kwargs['publicIpPoolId']
-        if public_ip_pool_id is None:
-            raise TypeError("Missing 'public_ip_pool_id' argument")
-
-        _setter("byoip_id", byoip_id)
-        _setter("cidr_block", cidr_block)
-        _setter("public_ip_pool_id", public_ip_pool_id)
+        pulumi.set(__self__, "byoip_id", byoip_id)
+        pulumi.set(__self__, "cidr_block", cidr_block)
+        pulumi.set(__self__, "public_ip_pool_id", public_ip_pool_id)
 
     @property
     @pulumi.getter(name="byoipId")
@@ -112,33 +85,12 @@ class _PublicIpPoolCapacityState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
-        _PublicIpPoolCapacityState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            byoip_id=byoip_id,
-            cidr_block=cidr_block,
-            public_ip_pool_id=public_ip_pool_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             byoip_id: Optional[pulumi.Input[str]] = None,
-             cidr_block: Optional[pulumi.Input[str]] = None,
-             public_ip_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if byoip_id is None and 'byoipId' in kwargs:
-            byoip_id = kwargs['byoipId']
-        if cidr_block is None and 'cidrBlock' in kwargs:
-            cidr_block = kwargs['cidrBlock']
-        if public_ip_pool_id is None and 'publicIpPoolId' in kwargs:
-            public_ip_pool_id = kwargs['publicIpPoolId']
-
         if byoip_id is not None:
-            _setter("byoip_id", byoip_id)
+            pulumi.set(__self__, "byoip_id", byoip_id)
         if cidr_block is not None:
-            _setter("cidr_block", cidr_block)
+            pulumi.set(__self__, "cidr_block", cidr_block)
         if public_ip_pool_id is not None:
-            _setter("public_ip_pool_id", public_ip_pool_id)
+            pulumi.set(__self__, "public_ip_pool_id", public_ip_pool_id)
 
     @property
     @pulumi.getter(name="byoipId")
@@ -256,10 +208,6 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            PublicIpPoolCapacityArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

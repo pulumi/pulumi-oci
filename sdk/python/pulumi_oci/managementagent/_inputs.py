@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -30,27 +30,12 @@ class ManagementAgentManagementAgentPropertyArgs:
         :param pulumi.Input[str] units: Unit for the property
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values: Values of the property
         """
-        ManagementAgentManagementAgentPropertyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            units=units,
-            values=values,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[pulumi.Input[str]] = None,
-             units: Optional[pulumi.Input[str]] = None,
-             values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if units is not None:
-            _setter("units", units)
+            pulumi.set(__self__, "units", units)
         if values is not None:
-            _setter("values", values)
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
@@ -108,57 +93,20 @@ class ManagementAgentPluginListArgs:
         :param pulumi.Input[str] plugin_status_message: Status message of the Plugin
         :param pulumi.Input[str] plugin_version: Plugin Version
         """
-        ManagementAgentPluginListArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            is_enabled=is_enabled,
-            plugin_display_name=plugin_display_name,
-            plugin_id=plugin_id,
-            plugin_name=plugin_name,
-            plugin_status=plugin_status,
-            plugin_status_message=plugin_status_message,
-            plugin_version=plugin_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             is_enabled: Optional[pulumi.Input[bool]] = None,
-             plugin_display_name: Optional[pulumi.Input[str]] = None,
-             plugin_id: Optional[pulumi.Input[str]] = None,
-             plugin_name: Optional[pulumi.Input[str]] = None,
-             plugin_status: Optional[pulumi.Input[str]] = None,
-             plugin_status_message: Optional[pulumi.Input[str]] = None,
-             plugin_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if is_enabled is None and 'isEnabled' in kwargs:
-            is_enabled = kwargs['isEnabled']
-        if plugin_display_name is None and 'pluginDisplayName' in kwargs:
-            plugin_display_name = kwargs['pluginDisplayName']
-        if plugin_id is None and 'pluginId' in kwargs:
-            plugin_id = kwargs['pluginId']
-        if plugin_name is None and 'pluginName' in kwargs:
-            plugin_name = kwargs['pluginName']
-        if plugin_status is None and 'pluginStatus' in kwargs:
-            plugin_status = kwargs['pluginStatus']
-        if plugin_status_message is None and 'pluginStatusMessage' in kwargs:
-            plugin_status_message = kwargs['pluginStatusMessage']
-        if plugin_version is None and 'pluginVersion' in kwargs:
-            plugin_version = kwargs['pluginVersion']
-
         if is_enabled is not None:
-            _setter("is_enabled", is_enabled)
+            pulumi.set(__self__, "is_enabled", is_enabled)
         if plugin_display_name is not None:
-            _setter("plugin_display_name", plugin_display_name)
+            pulumi.set(__self__, "plugin_display_name", plugin_display_name)
         if plugin_id is not None:
-            _setter("plugin_id", plugin_id)
+            pulumi.set(__self__, "plugin_id", plugin_id)
         if plugin_name is not None:
-            _setter("plugin_name", plugin_name)
+            pulumi.set(__self__, "plugin_name", plugin_name)
         if plugin_status is not None:
-            _setter("plugin_status", plugin_status)
+            pulumi.set(__self__, "plugin_status", plugin_status)
         if plugin_status_message is not None:
-            _setter("plugin_status_message", plugin_status_message)
+            pulumi.set(__self__, "plugin_status_message", plugin_status_message)
         if plugin_version is not None:
-            _setter("plugin_version", plugin_version)
+            pulumi.set(__self__, "plugin_version", plugin_version)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -251,29 +199,10 @@ class GetManagementAgentAvailableHistoriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetManagementAgentAvailableHistoriesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -312,29 +241,10 @@ class GetManagementAgentImagesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire platform name given.
         """
-        GetManagementAgentImagesFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -373,29 +283,10 @@ class GetManagementAgentInstallKeysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetManagementAgentInstallKeysFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -434,29 +325,10 @@ class GetManagementAgentPluginsFilterArgs:
         """
         :param str name: Management Agent Plugin Name
         """
-        GetManagementAgentPluginsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -499,29 +371,10 @@ class GetManagementAgentsFilterArgs:
         :param str name: Name of the property
         :param Sequence[str] values: Values of the property
         """
-        GetManagementAgentsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,61 +35,22 @@ class VolumeBackupArgs:
         :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         :param pulumi.Input[str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
-        VolumeBackupArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            kms_key_id=kms_key_id,
-            source_details=source_details,
-            type=type,
-            volume_id=volume_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             source_details: Optional[pulumi.Input['VolumeBackupSourceDetailsArgs']] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if volume_id is None and 'volumeId' in kwargs:
-            volume_id = kwargs['volumeId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if volume_id is not None:
-            _setter("volume_id", volume_id)
+            pulumi.set(__self__, "volume_id", volume_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -232,131 +193,50 @@ class _VolumeBackupState:
         :param pulumi.Input[str] unique_size_in_mbs: The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         :param pulumi.Input[str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
-        _VolumeBackupState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            expiration_time=expiration_time,
-            freeform_tags=freeform_tags,
-            kms_key_id=kms_key_id,
-            size_in_gbs=size_in_gbs,
-            size_in_mbs=size_in_mbs,
-            source_details=source_details,
-            source_type=source_type,
-            source_volume_backup_id=source_volume_backup_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_request_received=time_request_received,
-            type=type,
-            unique_size_in_gbs=unique_size_in_gbs,
-            unique_size_in_mbs=unique_size_in_mbs,
-            volume_id=volume_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             expiration_time: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             size_in_gbs: Optional[pulumi.Input[str]] = None,
-             size_in_mbs: Optional[pulumi.Input[str]] = None,
-             source_details: Optional[pulumi.Input['VolumeBackupSourceDetailsArgs']] = None,
-             source_type: Optional[pulumi.Input[str]] = None,
-             source_volume_backup_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_request_received: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             unique_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             unique_size_in_mbs: Optional[pulumi.Input[str]] = None,
-             volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if expiration_time is None and 'expirationTime' in kwargs:
-            expiration_time = kwargs['expirationTime']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if size_in_gbs is None and 'sizeInGbs' in kwargs:
-            size_in_gbs = kwargs['sizeInGbs']
-        if size_in_mbs is None and 'sizeInMbs' in kwargs:
-            size_in_mbs = kwargs['sizeInMbs']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if source_type is None and 'sourceType' in kwargs:
-            source_type = kwargs['sourceType']
-        if source_volume_backup_id is None and 'sourceVolumeBackupId' in kwargs:
-            source_volume_backup_id = kwargs['sourceVolumeBackupId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_request_received is None and 'timeRequestReceived' in kwargs:
-            time_request_received = kwargs['timeRequestReceived']
-        if unique_size_in_gbs is None and 'uniqueSizeInGbs' in kwargs:
-            unique_size_in_gbs = kwargs['uniqueSizeInGbs']
-        if unique_size_in_mbs is None and 'uniqueSizeInMbs' in kwargs:
-            unique_size_in_mbs = kwargs['uniqueSizeInMbs']
-        if volume_id is None and 'volumeId' in kwargs:
-            volume_id = kwargs['volumeId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if expiration_time is not None:
-            _setter("expiration_time", expiration_time)
+            pulumi.set(__self__, "expiration_time", expiration_time)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
-            _setter("size_in_gbs", size_in_gbs)
+            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         if size_in_mbs is not None:
             warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
             pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
         if size_in_mbs is not None:
-            _setter("size_in_mbs", size_in_mbs)
+            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if source_type is not None:
-            _setter("source_type", source_type)
+            pulumi.set(__self__, "source_type", source_type)
         if source_volume_backup_id is not None:
-            _setter("source_volume_backup_id", source_volume_backup_id)
+            pulumi.set(__self__, "source_volume_backup_id", source_volume_backup_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_request_received is not None:
-            _setter("time_request_received", time_request_received)
+            pulumi.set(__self__, "time_request_received", time_request_received)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
         if unique_size_in_gbs is not None:
-            _setter("unique_size_in_gbs", unique_size_in_gbs)
+            pulumi.set(__self__, "unique_size_in_gbs", unique_size_in_gbs)
         if unique_size_in_mbs is not None:
             warnings.warn("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""", DeprecationWarning)
             pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
         if unique_size_in_mbs is not None:
-            _setter("unique_size_in_mbs", unique_size_in_mbs)
+            pulumi.set(__self__, "unique_size_in_mbs", unique_size_in_mbs)
         if volume_id is not None:
-            _setter("volume_id", volume_id)
+            pulumi.set(__self__, "volume_id", volume_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -708,10 +588,6 @@ class VolumeBackup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            VolumeBackupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -739,7 +615,6 @@ class VolumeBackup(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["kms_key_id"] = kms_key_id
-            source_details = _utilities.configure(source_details, VolumeBackupSourceDetailsArgs, True)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["type"] = type
             __props__.__dict__["volume_id"] = volume_id

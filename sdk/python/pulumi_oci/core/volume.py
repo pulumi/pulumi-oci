@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -51,119 +51,42 @@ class VolumeArgs:
                
                Allowed values:
         """
-        VolumeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            autotune_policies=autotune_policies,
-            backup_policy_id=backup_policy_id,
-            block_volume_replicas=block_volume_replicas,
-            block_volume_replicas_deletion=block_volume_replicas_deletion,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_auto_tune_enabled=is_auto_tune_enabled,
-            kms_key_id=kms_key_id,
-            size_in_gbs=size_in_gbs,
-            size_in_mbs=size_in_mbs,
-            source_details=source_details,
-            volume_backup_id=volume_backup_id,
-            vpus_per_gb=vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]]] = None,
-             backup_policy_id: Optional[pulumi.Input[str]] = None,
-             block_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]]] = None,
-             block_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_auto_tune_enabled: Optional[pulumi.Input[bool]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             size_in_gbs: Optional[pulumi.Input[str]] = None,
-             size_in_mbs: Optional[pulumi.Input[str]] = None,
-             source_details: Optional[pulumi.Input['VolumeSourceDetailsArgs']] = None,
-             volume_backup_id: Optional[pulumi.Input[str]] = None,
-             vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if autotune_policies is None and 'autotunePolicies' in kwargs:
-            autotune_policies = kwargs['autotunePolicies']
-        if backup_policy_id is None and 'backupPolicyId' in kwargs:
-            backup_policy_id = kwargs['backupPolicyId']
-        if block_volume_replicas is None and 'blockVolumeReplicas' in kwargs:
-            block_volume_replicas = kwargs['blockVolumeReplicas']
-        if block_volume_replicas_deletion is None and 'blockVolumeReplicasDeletion' in kwargs:
-            block_volume_replicas_deletion = kwargs['blockVolumeReplicasDeletion']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_auto_tune_enabled is None and 'isAutoTuneEnabled' in kwargs:
-            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if size_in_gbs is None and 'sizeInGbs' in kwargs:
-            size_in_gbs = kwargs['sizeInGbs']
-        if size_in_mbs is None and 'sizeInMbs' in kwargs:
-            size_in_mbs = kwargs['sizeInMbs']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if volume_backup_id is None and 'volumeBackupId' in kwargs:
-            volume_backup_id = kwargs['volumeBackupId']
-        if vpus_per_gb is None and 'vpusPerGb' in kwargs:
-            vpus_per_gb = kwargs['vpusPerGb']
-
-        _setter("availability_domain", availability_domain)
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if autotune_policies is not None:
-            _setter("autotune_policies", autotune_policies)
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
         if backup_policy_id is not None:
             warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
             pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
         if backup_policy_id is not None:
-            _setter("backup_policy_id", backup_policy_id)
+            pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         if block_volume_replicas is not None:
-            _setter("block_volume_replicas", block_volume_replicas)
+            pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
         if block_volume_replicas_deletion is not None:
-            _setter("block_volume_replicas_deletion", block_volume_replicas_deletion)
+            pulumi.set(__self__, "block_volume_replicas_deletion", block_volume_replicas_deletion)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
-            _setter("is_auto_tune_enabled", is_auto_tune_enabled)
+            pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
-            _setter("size_in_gbs", size_in_gbs)
+            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         if size_in_mbs is not None:
             warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
             pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
         if size_in_mbs is not None:
-            _setter("size_in_mbs", size_in_mbs)
+            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if volume_backup_id is not None:
-            _setter("volume_backup_id", volume_backup_id)
+            pulumi.set(__self__, "volume_backup_id", volume_backup_id)
         if vpus_per_gb is not None:
-            _setter("vpus_per_gb", vpus_per_gb)
+            pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -410,151 +333,56 @@ class _VolumeState:
                
                Allowed values:
         """
-        _VolumeState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            auto_tuned_vpus_per_gb=auto_tuned_vpus_per_gb,
-            autotune_policies=autotune_policies,
-            availability_domain=availability_domain,
-            backup_policy_id=backup_policy_id,
-            block_volume_replicas=block_volume_replicas,
-            block_volume_replicas_deletion=block_volume_replicas_deletion,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            is_auto_tune_enabled=is_auto_tune_enabled,
-            is_hydrated=is_hydrated,
-            kms_key_id=kms_key_id,
-            size_in_gbs=size_in_gbs,
-            size_in_mbs=size_in_mbs,
-            source_details=source_details,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            volume_backup_id=volume_backup_id,
-            volume_group_id=volume_group_id,
-            vpus_per_gb=vpus_per_gb,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             auto_tuned_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]]] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             backup_policy_id: Optional[pulumi.Input[str]] = None,
-             block_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]]] = None,
-             block_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_auto_tune_enabled: Optional[pulumi.Input[bool]] = None,
-             is_hydrated: Optional[pulumi.Input[bool]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             size_in_gbs: Optional[pulumi.Input[str]] = None,
-             size_in_mbs: Optional[pulumi.Input[str]] = None,
-             source_details: Optional[pulumi.Input['VolumeSourceDetailsArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             volume_backup_id: Optional[pulumi.Input[str]] = None,
-             volume_group_id: Optional[pulumi.Input[str]] = None,
-             vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if auto_tuned_vpus_per_gb is None and 'autoTunedVpusPerGb' in kwargs:
-            auto_tuned_vpus_per_gb = kwargs['autoTunedVpusPerGb']
-        if autotune_policies is None and 'autotunePolicies' in kwargs:
-            autotune_policies = kwargs['autotunePolicies']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if backup_policy_id is None and 'backupPolicyId' in kwargs:
-            backup_policy_id = kwargs['backupPolicyId']
-        if block_volume_replicas is None and 'blockVolumeReplicas' in kwargs:
-            block_volume_replicas = kwargs['blockVolumeReplicas']
-        if block_volume_replicas_deletion is None and 'blockVolumeReplicasDeletion' in kwargs:
-            block_volume_replicas_deletion = kwargs['blockVolumeReplicasDeletion']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_auto_tune_enabled is None and 'isAutoTuneEnabled' in kwargs:
-            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
-        if is_hydrated is None and 'isHydrated' in kwargs:
-            is_hydrated = kwargs['isHydrated']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if size_in_gbs is None and 'sizeInGbs' in kwargs:
-            size_in_gbs = kwargs['sizeInGbs']
-        if size_in_mbs is None and 'sizeInMbs' in kwargs:
-            size_in_mbs = kwargs['sizeInMbs']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if volume_backup_id is None and 'volumeBackupId' in kwargs:
-            volume_backup_id = kwargs['volumeBackupId']
-        if volume_group_id is None and 'volumeGroupId' in kwargs:
-            volume_group_id = kwargs['volumeGroupId']
-        if vpus_per_gb is None and 'vpusPerGb' in kwargs:
-            vpus_per_gb = kwargs['vpusPerGb']
-
         if auto_tuned_vpus_per_gb is not None:
-            _setter("auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
+            pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
         if autotune_policies is not None:
-            _setter("autotune_policies", autotune_policies)
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy_id is not None:
             warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
             pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
         if backup_policy_id is not None:
-            _setter("backup_policy_id", backup_policy_id)
+            pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         if block_volume_replicas is not None:
-            _setter("block_volume_replicas", block_volume_replicas)
+            pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
         if block_volume_replicas_deletion is not None:
-            _setter("block_volume_replicas_deletion", block_volume_replicas_deletion)
+            pulumi.set(__self__, "block_volume_replicas_deletion", block_volume_replicas_deletion)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_tune_enabled is not None:
-            _setter("is_auto_tune_enabled", is_auto_tune_enabled)
+            pulumi.set(__self__, "is_auto_tune_enabled", is_auto_tune_enabled)
         if is_hydrated is not None:
-            _setter("is_hydrated", is_hydrated)
+            pulumi.set(__self__, "is_hydrated", is_hydrated)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if size_in_gbs is not None:
-            _setter("size_in_gbs", size_in_gbs)
+            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         if size_in_mbs is not None:
             warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
             pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
         if size_in_mbs is not None:
-            _setter("size_in_mbs", size_in_mbs)
+            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if volume_backup_id is not None:
-            _setter("volume_backup_id", volume_backup_id)
+            pulumi.set(__self__, "volume_backup_id", volume_backup_id)
         if volume_group_id is not None:
-            _setter("volume_group_id", volume_group_id)
+            pulumi.set(__self__, "volume_group_id", volume_group_id)
         if vpus_per_gb is not None:
-            _setter("vpus_per_gb", vpus_per_gb)
+            pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
 
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
@@ -1006,10 +834,6 @@ class Volume(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            VolumeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1057,7 +881,6 @@ class Volume(pulumi.CustomResource):
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["size_in_gbs"] = size_in_gbs
             __props__.__dict__["size_in_mbs"] = size_in_mbs
-            source_details = _utilities.configure(source_details, VolumeSourceDetailsArgs, True)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["volume_backup_id"] = volume_backup_id
             __props__.__dict__["vpus_per_gb"] = vpus_per_gb

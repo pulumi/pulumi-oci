@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -63,33 +63,12 @@ class PrivateApplicationLogo(dict):
         :param str display_name: (Updatable) The name of the private application.
         :param str mime_type: The MIME type of the uploaded data.
         """
-        PrivateApplicationLogo._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_url=content_url,
-            display_name=display_name,
-            mime_type=mime_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_url: Optional[str] = None,
-             display_name: Optional[str] = None,
-             mime_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_url is None and 'contentUrl' in kwargs:
-            content_url = kwargs['contentUrl']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if mime_type is None and 'mimeType' in kwargs:
-            mime_type = kwargs['mimeType']
-
         if content_url is not None:
-            _setter("content_url", content_url)
+            pulumi.set(__self__, "content_url", content_url)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if mime_type is not None:
-            _setter("mime_type", mime_type)
+            pulumi.set(__self__, "mime_type", mime_type)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -145,33 +124,10 @@ class PrivateApplicationPackageDetails(dict):
         :param str package_type: The package's type.
         :param str version: The package version.
         """
-        PrivateApplicationPackageDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            package_type=package_type,
-            version=version,
-            zip_file_base64encoded=zip_file_base64encoded,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             package_type: Optional[str] = None,
-             version: Optional[str] = None,
-             zip_file_base64encoded: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if package_type is None and 'packageType' in kwargs:
-            package_type = kwargs['packageType']
-        if package_type is None:
-            raise TypeError("Missing 'package_type' argument")
-        if version is None:
-            raise TypeError("Missing 'version' argument")
-        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
-            zip_file_base64encoded = kwargs['zipFileBase64encoded']
-
-        _setter("package_type", package_type)
-        _setter("version", version)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "version", version)
         if zip_file_base64encoded is not None:
-            _setter("zip_file_base64encoded", zip_file_base64encoded)
+            pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
 
     @property
     @pulumi.getter(name="packageType")
@@ -206,36 +162,9 @@ class GetPrivateApplicationLogoResult(dict):
         :param str display_name: The name used to refer to the uploaded data.
         :param str mime_type: The MIME type of the uploaded data.
         """
-        GetPrivateApplicationLogoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_url=content_url,
-            display_name=display_name,
-            mime_type=mime_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_url: Optional[str] = None,
-             display_name: Optional[str] = None,
-             mime_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_url is None and 'contentUrl' in kwargs:
-            content_url = kwargs['contentUrl']
-        if content_url is None:
-            raise TypeError("Missing 'content_url' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if mime_type is None and 'mimeType' in kwargs:
-            mime_type = kwargs['mimeType']
-        if mime_type is None:
-            raise TypeError("Missing 'mime_type' argument")
-
-        _setter("content_url", content_url)
-        _setter("display_name", display_name)
-        _setter("mime_type", mime_type)
+        pulumi.set(__self__, "content_url", content_url)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "mime_type", mime_type)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -271,34 +200,9 @@ class GetPrivateApplicationPackageDetailResult(dict):
         """
         :param str package_type: Type of packages within this private application.
         """
-        GetPrivateApplicationPackageDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            package_type=package_type,
-            version=version,
-            zip_file_base64encoded=zip_file_base64encoded,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             package_type: Optional[str] = None,
-             version: Optional[str] = None,
-             zip_file_base64encoded: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if package_type is None and 'packageType' in kwargs:
-            package_type = kwargs['packageType']
-        if package_type is None:
-            raise TypeError("Missing 'package_type' argument")
-        if version is None:
-            raise TypeError("Missing 'version' argument")
-        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
-            zip_file_base64encoded = kwargs['zipFileBase64encoded']
-        if zip_file_base64encoded is None:
-            raise TypeError("Missing 'zip_file_base64encoded' argument")
-
-        _setter("package_type", package_type)
-        _setter("version", version)
-        _setter("zip_file_base64encoded", zip_file_base64encoded)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
 
     @property
     @pulumi.getter(name="packageType")
@@ -325,29 +229,10 @@ class GetPrivateApplicationPackagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetPrivateApplicationPackagesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -369,20 +254,7 @@ class GetPrivateApplicationPackagesFilterResult(dict):
 class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult']):
-        GetPrivateApplicationPackagesPrivateApplicationPackageCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -409,67 +281,14 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
         :param str time_created: The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
         :param str version: The package version.
         """
-        GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_url=content_url,
-            display_name=display_name,
-            id=id,
-            mime_type=mime_type,
-            package_type=package_type,
-            private_application_id=private_application_id,
-            time_created=time_created,
-            version=version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_url: Optional[str] = None,
-             display_name: Optional[str] = None,
-             id: Optional[str] = None,
-             mime_type: Optional[str] = None,
-             package_type: Optional[str] = None,
-             private_application_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_url is None and 'contentUrl' in kwargs:
-            content_url = kwargs['contentUrl']
-        if content_url is None:
-            raise TypeError("Missing 'content_url' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if mime_type is None and 'mimeType' in kwargs:
-            mime_type = kwargs['mimeType']
-        if mime_type is None:
-            raise TypeError("Missing 'mime_type' argument")
-        if package_type is None and 'packageType' in kwargs:
-            package_type = kwargs['packageType']
-        if package_type is None:
-            raise TypeError("Missing 'package_type' argument")
-        if private_application_id is None and 'privateApplicationId' in kwargs:
-            private_application_id = kwargs['privateApplicationId']
-        if private_application_id is None:
-            raise TypeError("Missing 'private_application_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if version is None:
-            raise TypeError("Missing 'version' argument")
-
-        _setter("content_url", content_url)
-        _setter("display_name", display_name)
-        _setter("id", id)
-        _setter("mime_type", mime_type)
-        _setter("package_type", package_type)
-        _setter("private_application_id", private_application_id)
-        _setter("time_created", time_created)
-        _setter("version", version)
+        pulumi.set(__self__, "content_url", content_url)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "mime_type", mime_type)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "private_application_id", private_application_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -536,29 +355,10 @@ class GetPrivateApplicationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetPrivateApplicationsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -580,20 +380,7 @@ class GetPrivateApplicationsFilterResult(dict):
 class GetPrivateApplicationsPrivateApplicationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult']):
-        GetPrivateApplicationsPrivateApplicationCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -632,107 +419,20 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
         :param str time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param str time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
-        GetPrivateApplicationsPrivateApplicationCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            logo_file_base64encoded=logo_file_base64encoded,
-            logos=logos,
-            long_description=long_description,
-            package_details=package_details,
-            package_type=package_type,
-            short_description=short_description,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             logo_file_base64encoded: Optional[str] = None,
-             logos: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult']] = None,
-             long_description: Optional[str] = None,
-             package_details: Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult']] = None,
-             package_type: Optional[str] = None,
-             short_description: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if logo_file_base64encoded is None and 'logoFileBase64encoded' in kwargs:
-            logo_file_base64encoded = kwargs['logoFileBase64encoded']
-        if logo_file_base64encoded is None:
-            raise TypeError("Missing 'logo_file_base64encoded' argument")
-        if logos is None:
-            raise TypeError("Missing 'logos' argument")
-        if long_description is None and 'longDescription' in kwargs:
-            long_description = kwargs['longDescription']
-        if long_description is None:
-            raise TypeError("Missing 'long_description' argument")
-        if package_details is None and 'packageDetails' in kwargs:
-            package_details = kwargs['packageDetails']
-        if package_details is None:
-            raise TypeError("Missing 'package_details' argument")
-        if package_type is None and 'packageType' in kwargs:
-            package_type = kwargs['packageType']
-        if package_type is None:
-            raise TypeError("Missing 'package_type' argument")
-        if short_description is None and 'shortDescription' in kwargs:
-            short_description = kwargs['shortDescription']
-        if short_description is None:
-            raise TypeError("Missing 'short_description' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("logo_file_base64encoded", logo_file_base64encoded)
-        _setter("logos", logos)
-        _setter("long_description", long_description)
-        _setter("package_details", package_details)
-        _setter("package_type", package_type)
-        _setter("short_description", short_description)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "logo_file_base64encoded", logo_file_base64encoded)
+        pulumi.set(__self__, "logos", logos)
+        pulumi.set(__self__, "long_description", long_description)
+        pulumi.set(__self__, "package_details", package_details)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "short_description", short_description)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -852,36 +552,9 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult(dict):
         :param str display_name: Exact match name filter.
         :param str mime_type: The MIME type of the uploaded data.
         """
-        GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            content_url=content_url,
-            display_name=display_name,
-            mime_type=mime_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             content_url: Optional[str] = None,
-             display_name: Optional[str] = None,
-             mime_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if content_url is None and 'contentUrl' in kwargs:
-            content_url = kwargs['contentUrl']
-        if content_url is None:
-            raise TypeError("Missing 'content_url' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if mime_type is None and 'mimeType' in kwargs:
-            mime_type = kwargs['mimeType']
-        if mime_type is None:
-            raise TypeError("Missing 'mime_type' argument")
-
-        _setter("content_url", content_url)
-        _setter("display_name", display_name)
-        _setter("mime_type", mime_type)
+        pulumi.set(__self__, "content_url", content_url)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "mime_type", mime_type)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -917,34 +590,9 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult(
         """
         :param str package_type: Type of packages within this private application.
         """
-        GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            package_type=package_type,
-            version=version,
-            zip_file_base64encoded=zip_file_base64encoded,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             package_type: Optional[str] = None,
-             version: Optional[str] = None,
-             zip_file_base64encoded: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if package_type is None and 'packageType' in kwargs:
-            package_type = kwargs['packageType']
-        if package_type is None:
-            raise TypeError("Missing 'package_type' argument")
-        if version is None:
-            raise TypeError("Missing 'version' argument")
-        if zip_file_base64encoded is None and 'zipFileBase64encoded' in kwargs:
-            zip_file_base64encoded = kwargs['zipFileBase64encoded']
-        if zip_file_base64encoded is None:
-            raise TypeError("Missing 'zip_file_base64encoded' argument")
-
-        _setter("package_type", package_type)
-        _setter("version", version)
-        _setter("zip_file_base64encoded", zip_file_base64encoded)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
 
     @property
     @pulumi.getter(name="packageType")
@@ -971,29 +619,10 @@ class GetServiceCatalogAssociationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetServiceCatalogAssociationsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1015,20 +644,7 @@ class GetServiceCatalogAssociationsFilterResult(dict):
 class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult']):
-        GetServiceCatalogAssociationsServiceCatalogAssociationCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -1051,48 +667,11 @@ class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult
         :param str service_catalog_id: The unique identifier for the service catalog.
         :param str time_created: Timestamp of when the resource was associated with service catalog.
         """
-        GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            entity_id=entity_id,
-            entity_type=entity_type,
-            id=id,
-            service_catalog_id=service_catalog_id,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             entity_id: Optional[str] = None,
-             entity_type: Optional[str] = None,
-             id: Optional[str] = None,
-             service_catalog_id: Optional[str] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if entity_id is None and 'entityId' in kwargs:
-            entity_id = kwargs['entityId']
-        if entity_id is None:
-            raise TypeError("Missing 'entity_id' argument")
-        if entity_type is None and 'entityType' in kwargs:
-            entity_type = kwargs['entityType']
-        if entity_type is None:
-            raise TypeError("Missing 'entity_type' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if service_catalog_id is None and 'serviceCatalogId' in kwargs:
-            service_catalog_id = kwargs['serviceCatalogId']
-        if service_catalog_id is None:
-            raise TypeError("Missing 'service_catalog_id' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("entity_id", entity_id)
-        _setter("entity_type", entity_type)
-        _setter("id", id)
-        _setter("service_catalog_id", service_catalog_id)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "entity_id", entity_id)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "service_catalog_id", service_catalog_id)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="entityId")
@@ -1141,29 +720,10 @@ class GetServiceCatalogsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetServiceCatalogsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -1185,20 +745,7 @@ class GetServiceCatalogsFilterResult(dict):
 class GetServiceCatalogsServiceCatalogCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult']):
-        GetServiceCatalogsServiceCatalogCollectionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            items=items,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             items: Optional[Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-
-        _setter("items", items)
+        pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
@@ -1227,67 +774,14 @@ class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
         :param str time_created: The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param str time_updated: The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
-        GetServiceCatalogsServiceCatalogCollectionItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            state=state,
-            time_created=time_created,
-            time_updated=time_updated,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             state: Optional[str] = None,
-             time_created: Optional[str] = None,
-             time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if time_updated is None:
-            raise TypeError("Missing 'time_updated' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("state", state)
-        _setter("time_created", time_created)
-        _setter("time_updated", time_updated)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

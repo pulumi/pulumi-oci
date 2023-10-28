@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -55,112 +55,33 @@ class BlockchainPlatformArgs:
         :param pulumi.Input[float] storage_size_in_tbs: Storage size in TBs
         :param pulumi.Input[int] total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
-        BlockchainPlatformArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            compute_shape=compute_shape,
-            display_name=display_name,
-            idcs_access_token=idcs_access_token,
-            platform_role=platform_role,
-            ca_cert_archive_text=ca_cert_archive_text,
-            defined_tags=defined_tags,
-            description=description,
-            federated_user_id=federated_user_id,
-            freeform_tags=freeform_tags,
-            is_byol=is_byol,
-            load_balancer_shape=load_balancer_shape,
-            platform_version=platform_version,
-            replicas=replicas,
-            storage_size_in_tbs=storage_size_in_tbs,
-            total_ocpu_capacity=total_ocpu_capacity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             compute_shape: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             idcs_access_token: Optional[pulumi.Input[str]] = None,
-             platform_role: Optional[pulumi.Input[str]] = None,
-             ca_cert_archive_text: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             federated_user_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_byol: Optional[pulumi.Input[bool]] = None,
-             load_balancer_shape: Optional[pulumi.Input[str]] = None,
-             platform_version: Optional[pulumi.Input[str]] = None,
-             replicas: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']] = None,
-             storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
-             total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if compute_shape is None and 'computeShape' in kwargs:
-            compute_shape = kwargs['computeShape']
-        if compute_shape is None:
-            raise TypeError("Missing 'compute_shape' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if idcs_access_token is None:
-            raise TypeError("Missing 'idcs_access_token' argument")
-        if platform_role is None and 'platformRole' in kwargs:
-            platform_role = kwargs['platformRole']
-        if platform_role is None:
-            raise TypeError("Missing 'platform_role' argument")
-        if ca_cert_archive_text is None and 'caCertArchiveText' in kwargs:
-            ca_cert_archive_text = kwargs['caCertArchiveText']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if federated_user_id is None and 'federatedUserId' in kwargs:
-            federated_user_id = kwargs['federatedUserId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_byol is None and 'isByol' in kwargs:
-            is_byol = kwargs['isByol']
-        if load_balancer_shape is None and 'loadBalancerShape' in kwargs:
-            load_balancer_shape = kwargs['loadBalancerShape']
-        if platform_version is None and 'platformVersion' in kwargs:
-            platform_version = kwargs['platformVersion']
-        if storage_size_in_tbs is None and 'storageSizeInTbs' in kwargs:
-            storage_size_in_tbs = kwargs['storageSizeInTbs']
-        if total_ocpu_capacity is None and 'totalOcpuCapacity' in kwargs:
-            total_ocpu_capacity = kwargs['totalOcpuCapacity']
-
-        _setter("compartment_id", compartment_id)
-        _setter("compute_shape", compute_shape)
-        _setter("display_name", display_name)
-        _setter("idcs_access_token", idcs_access_token)
-        _setter("platform_role", platform_role)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_shape", compute_shape)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "platform_role", platform_role)
         if ca_cert_archive_text is not None:
-            _setter("ca_cert_archive_text", ca_cert_archive_text)
+            pulumi.set(__self__, "ca_cert_archive_text", ca_cert_archive_text)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if federated_user_id is not None:
-            _setter("federated_user_id", federated_user_id)
+            pulumi.set(__self__, "federated_user_id", federated_user_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_byol is not None:
-            _setter("is_byol", is_byol)
+            pulumi.set(__self__, "is_byol", is_byol)
         if load_balancer_shape is not None:
-            _setter("load_balancer_shape", load_balancer_shape)
+            pulumi.set(__self__, "load_balancer_shape", load_balancer_shape)
         if platform_version is not None:
-            _setter("platform_version", platform_version)
+            pulumi.set(__self__, "platform_version", platform_version)
         if replicas is not None:
-            _setter("replicas", replicas)
+            pulumi.set(__self__, "replicas", replicas)
         if storage_size_in_tbs is not None:
-            _setter("storage_size_in_tbs", storage_size_in_tbs)
+            pulumi.set(__self__, "storage_size_in_tbs", storage_size_in_tbs)
         if total_ocpu_capacity is not None:
-            _setter("total_ocpu_capacity", total_ocpu_capacity)
+            pulumi.set(__self__, "total_ocpu_capacity", total_ocpu_capacity)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -423,171 +344,60 @@ class _BlockchainPlatformState:
         :param pulumi.Input[str] time_updated: The time the Platform Instance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[int] total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
-        _BlockchainPlatformState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_cert_archive_text=ca_cert_archive_text,
-            compartment_id=compartment_id,
-            component_details=component_details,
-            compute_shape=compute_shape,
-            defined_tags=defined_tags,
-            description=description,
-            display_name=display_name,
-            federated_user_id=federated_user_id,
-            freeform_tags=freeform_tags,
-            host_ocpu_utilization_infos=host_ocpu_utilization_infos,
-            idcs_access_token=idcs_access_token,
-            is_byol=is_byol,
-            is_multi_ad=is_multi_ad,
-            lifecycle_details=lifecycle_details,
-            load_balancer_shape=load_balancer_shape,
-            platform_role=platform_role,
-            platform_shape_type=platform_shape_type,
-            platform_version=platform_version,
-            replicas=replicas,
-            service_endpoint=service_endpoint,
-            service_version=service_version,
-            state=state,
-            storage_size_in_tbs=storage_size_in_tbs,
-            storage_used_in_tbs=storage_used_in_tbs,
-            time_created=time_created,
-            time_updated=time_updated,
-            total_ocpu_capacity=total_ocpu_capacity,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_cert_archive_text: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             component_details: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]] = None,
-             compute_shape: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             federated_user_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             host_ocpu_utilization_infos: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]] = None,
-             idcs_access_token: Optional[pulumi.Input[str]] = None,
-             is_byol: Optional[pulumi.Input[bool]] = None,
-             is_multi_ad: Optional[pulumi.Input[bool]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             load_balancer_shape: Optional[pulumi.Input[str]] = None,
-             platform_role: Optional[pulumi.Input[str]] = None,
-             platform_shape_type: Optional[pulumi.Input[str]] = None,
-             platform_version: Optional[pulumi.Input[str]] = None,
-             replicas: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']] = None,
-             service_endpoint: Optional[pulumi.Input[str]] = None,
-             service_version: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
-             storage_used_in_tbs: Optional[pulumi.Input[float]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_cert_archive_text is None and 'caCertArchiveText' in kwargs:
-            ca_cert_archive_text = kwargs['caCertArchiveText']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if component_details is None and 'componentDetails' in kwargs:
-            component_details = kwargs['componentDetails']
-        if compute_shape is None and 'computeShape' in kwargs:
-            compute_shape = kwargs['computeShape']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if federated_user_id is None and 'federatedUserId' in kwargs:
-            federated_user_id = kwargs['federatedUserId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if host_ocpu_utilization_infos is None and 'hostOcpuUtilizationInfos' in kwargs:
-            host_ocpu_utilization_infos = kwargs['hostOcpuUtilizationInfos']
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if is_byol is None and 'isByol' in kwargs:
-            is_byol = kwargs['isByol']
-        if is_multi_ad is None and 'isMultiAd' in kwargs:
-            is_multi_ad = kwargs['isMultiAd']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if load_balancer_shape is None and 'loadBalancerShape' in kwargs:
-            load_balancer_shape = kwargs['loadBalancerShape']
-        if platform_role is None and 'platformRole' in kwargs:
-            platform_role = kwargs['platformRole']
-        if platform_shape_type is None and 'platformShapeType' in kwargs:
-            platform_shape_type = kwargs['platformShapeType']
-        if platform_version is None and 'platformVersion' in kwargs:
-            platform_version = kwargs['platformVersion']
-        if service_endpoint is None and 'serviceEndpoint' in kwargs:
-            service_endpoint = kwargs['serviceEndpoint']
-        if service_version is None and 'serviceVersion' in kwargs:
-            service_version = kwargs['serviceVersion']
-        if storage_size_in_tbs is None and 'storageSizeInTbs' in kwargs:
-            storage_size_in_tbs = kwargs['storageSizeInTbs']
-        if storage_used_in_tbs is None and 'storageUsedInTbs' in kwargs:
-            storage_used_in_tbs = kwargs['storageUsedInTbs']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if total_ocpu_capacity is None and 'totalOcpuCapacity' in kwargs:
-            total_ocpu_capacity = kwargs['totalOcpuCapacity']
-
         if ca_cert_archive_text is not None:
-            _setter("ca_cert_archive_text", ca_cert_archive_text)
+            pulumi.set(__self__, "ca_cert_archive_text", ca_cert_archive_text)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if component_details is not None:
-            _setter("component_details", component_details)
+            pulumi.set(__self__, "component_details", component_details)
         if compute_shape is not None:
-            _setter("compute_shape", compute_shape)
+            pulumi.set(__self__, "compute_shape", compute_shape)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if federated_user_id is not None:
-            _setter("federated_user_id", federated_user_id)
+            pulumi.set(__self__, "federated_user_id", federated_user_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_ocpu_utilization_infos is not None:
-            _setter("host_ocpu_utilization_infos", host_ocpu_utilization_infos)
+            pulumi.set(__self__, "host_ocpu_utilization_infos", host_ocpu_utilization_infos)
         if idcs_access_token is not None:
-            _setter("idcs_access_token", idcs_access_token)
+            pulumi.set(__self__, "idcs_access_token", idcs_access_token)
         if is_byol is not None:
-            _setter("is_byol", is_byol)
+            pulumi.set(__self__, "is_byol", is_byol)
         if is_multi_ad is not None:
-            _setter("is_multi_ad", is_multi_ad)
+            pulumi.set(__self__, "is_multi_ad", is_multi_ad)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if load_balancer_shape is not None:
-            _setter("load_balancer_shape", load_balancer_shape)
+            pulumi.set(__self__, "load_balancer_shape", load_balancer_shape)
         if platform_role is not None:
-            _setter("platform_role", platform_role)
+            pulumi.set(__self__, "platform_role", platform_role)
         if platform_shape_type is not None:
-            _setter("platform_shape_type", platform_shape_type)
+            pulumi.set(__self__, "platform_shape_type", platform_shape_type)
         if platform_version is not None:
-            _setter("platform_version", platform_version)
+            pulumi.set(__self__, "platform_version", platform_version)
         if replicas is not None:
-            _setter("replicas", replicas)
+            pulumi.set(__self__, "replicas", replicas)
         if service_endpoint is not None:
-            _setter("service_endpoint", service_endpoint)
+            pulumi.set(__self__, "service_endpoint", service_endpoint)
         if service_version is not None:
-            _setter("service_version", service_version)
+            pulumi.set(__self__, "service_version", service_version)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if storage_size_in_tbs is not None:
-            _setter("storage_size_in_tbs", storage_size_in_tbs)
+            pulumi.set(__self__, "storage_size_in_tbs", storage_size_in_tbs)
         if storage_used_in_tbs is not None:
-            _setter("storage_used_in_tbs", storage_used_in_tbs)
+            pulumi.set(__self__, "storage_used_in_tbs", storage_used_in_tbs)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if total_ocpu_capacity is not None:
-            _setter("total_ocpu_capacity", total_ocpu_capacity)
+            pulumi.set(__self__, "total_ocpu_capacity", total_ocpu_capacity)
 
     @property
     @pulumi.getter(name="caCertArchiveText")
@@ -1055,10 +865,6 @@ class BlockchainPlatform(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BlockchainPlatformArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1112,7 +918,6 @@ class BlockchainPlatform(pulumi.CustomResource):
                 raise TypeError("Missing required property 'platform_role'")
             __props__.__dict__["platform_role"] = platform_role
             __props__.__dict__["platform_version"] = platform_version
-            replicas = _utilities.configure(replicas, BlockchainPlatformReplicasArgs, True)
             __props__.__dict__["replicas"] = replicas
             __props__.__dict__["storage_size_in_tbs"] = storage_size_in_tbs
             __props__.__dict__["total_ocpu_capacity"] = total_ocpu_capacity

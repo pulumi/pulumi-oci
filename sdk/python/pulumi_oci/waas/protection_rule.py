@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,35 +27,12 @@ class ProtectionRuleArgs:
         :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         """
-        ProtectionRuleArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            waas_policy_id=waas_policy_id,
-            action=action,
-            exclusions=exclusions,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[pulumi.Input[str]] = None,
-             waas_policy_id: Optional[pulumi.Input[str]] = None,
-             action: Optional[pulumi.Input[str]] = None,
-             exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if waas_policy_id is None and 'waasPolicyId' in kwargs:
-            waas_policy_id = kwargs['waasPolicyId']
-        if waas_policy_id is None:
-            raise TypeError("Missing 'waas_policy_id' argument")
-
-        _setter("key", key)
-        _setter("waas_policy_id", waas_policy_id)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "waas_policy_id", waas_policy_id)
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if exclusions is not None:
-            _setter("exclusions", exclusions)
+            pulumi.set(__self__, "exclusions", exclusions)
 
     @property
     @pulumi.getter
@@ -128,51 +105,22 @@ class _ProtectionRuleState:
         :param pulumi.Input[str] name: The name of the protection rule.
         :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         """
-        _ProtectionRuleState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            description=description,
-            exclusions=exclusions,
-            key=key,
-            labels=labels,
-            mod_security_rule_ids=mod_security_rule_ids,
-            name=name,
-            waas_policy_id=waas_policy_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None,
-             key: Optional[pulumi.Input[str]] = None,
-             labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             mod_security_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             waas_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if mod_security_rule_ids is None and 'modSecurityRuleIds' in kwargs:
-            mod_security_rule_ids = kwargs['modSecurityRuleIds']
-        if waas_policy_id is None and 'waasPolicyId' in kwargs:
-            waas_policy_id = kwargs['waasPolicyId']
-
         if action is not None:
-            _setter("action", action)
+            pulumi.set(__self__, "action", action)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if exclusions is not None:
-            _setter("exclusions", exclusions)
+            pulumi.set(__self__, "exclusions", exclusions)
         if key is not None:
-            _setter("key", key)
+            pulumi.set(__self__, "key", key)
         if labels is not None:
-            _setter("labels", labels)
+            pulumi.set(__self__, "labels", labels)
         if mod_security_rule_ids is not None:
-            _setter("mod_security_rule_ids", mod_security_rule_ids)
+            pulumi.set(__self__, "mod_security_rule_ids", mod_security_rule_ids)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if waas_policy_id is not None:
-            _setter("waas_policy_id", waas_policy_id)
+            pulumi.set(__self__, "waas_policy_id", waas_policy_id)
 
     @property
     @pulumi.getter
@@ -334,10 +282,6 @@ class ProtectionRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ProtectionRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

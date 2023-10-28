@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -73,175 +73,46 @@ class ExadataInfrastructureArgs:
         :param pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs'] network_bonding_mode_details: (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
         """
-        ExadataInfrastructureArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            admin_network_cidr=admin_network_cidr,
-            cloud_control_plane_server1=cloud_control_plane_server1,
-            cloud_control_plane_server2=cloud_control_plane_server2,
-            compartment_id=compartment_id,
-            display_name=display_name,
-            dns_servers=dns_servers,
-            gateway=gateway,
-            infini_band_network_cidr=infini_band_network_cidr,
-            netmask=netmask,
-            ntp_servers=ntp_servers,
-            shape=shape,
-            time_zone=time_zone,
-            activation_file=activation_file,
-            additional_storage_count=additional_storage_count,
-            compute_count=compute_count,
-            contacts=contacts,
-            corporate_proxy=corporate_proxy,
-            create_async=create_async,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-            is_cps_offline_report_enabled=is_cps_offline_report_enabled,
-            is_multi_rack_deployment=is_multi_rack_deployment,
-            maintenance_window=maintenance_window,
-            multi_rack_configuration_file=multi_rack_configuration_file,
-            network_bonding_mode_details=network_bonding_mode_details,
-            storage_count=storage_count,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             admin_network_cidr: Optional[pulumi.Input[str]] = None,
-             cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
-             cloud_control_plane_server2: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             gateway: Optional[pulumi.Input[str]] = None,
-             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
-             netmask: Optional[pulumi.Input[str]] = None,
-             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             time_zone: Optional[pulumi.Input[str]] = None,
-             activation_file: Optional[pulumi.Input[str]] = None,
-             additional_storage_count: Optional[pulumi.Input[int]] = None,
-             compute_count: Optional[pulumi.Input[int]] = None,
-             contacts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureContactArgs']]]] = None,
-             corporate_proxy: Optional[pulumi.Input[str]] = None,
-             create_async: Optional[pulumi.Input[bool]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
-             is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
-             maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
-             multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
-             network_bonding_mode_details: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
-             storage_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if admin_network_cidr is None and 'adminNetworkCidr' in kwargs:
-            admin_network_cidr = kwargs['adminNetworkCidr']
-        if admin_network_cidr is None:
-            raise TypeError("Missing 'admin_network_cidr' argument")
-        if cloud_control_plane_server1 is None and 'cloudControlPlaneServer1' in kwargs:
-            cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
-        if cloud_control_plane_server1 is None:
-            raise TypeError("Missing 'cloud_control_plane_server1' argument")
-        if cloud_control_plane_server2 is None and 'cloudControlPlaneServer2' in kwargs:
-            cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
-        if cloud_control_plane_server2 is None:
-            raise TypeError("Missing 'cloud_control_plane_server2' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if dns_servers is None and 'dnsServers' in kwargs:
-            dns_servers = kwargs['dnsServers']
-        if dns_servers is None:
-            raise TypeError("Missing 'dns_servers' argument")
-        if gateway is None:
-            raise TypeError("Missing 'gateway' argument")
-        if infini_band_network_cidr is None and 'infiniBandNetworkCidr' in kwargs:
-            infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
-        if infini_band_network_cidr is None:
-            raise TypeError("Missing 'infini_band_network_cidr' argument")
-        if netmask is None:
-            raise TypeError("Missing 'netmask' argument")
-        if ntp_servers is None and 'ntpServers' in kwargs:
-            ntp_servers = kwargs['ntpServers']
-        if ntp_servers is None:
-            raise TypeError("Missing 'ntp_servers' argument")
-        if shape is None:
-            raise TypeError("Missing 'shape' argument")
-        if time_zone is None and 'timeZone' in kwargs:
-            time_zone = kwargs['timeZone']
-        if time_zone is None:
-            raise TypeError("Missing 'time_zone' argument")
-        if activation_file is None and 'activationFile' in kwargs:
-            activation_file = kwargs['activationFile']
-        if additional_storage_count is None and 'additionalStorageCount' in kwargs:
-            additional_storage_count = kwargs['additionalStorageCount']
-        if compute_count is None and 'computeCount' in kwargs:
-            compute_count = kwargs['computeCount']
-        if corporate_proxy is None and 'corporateProxy' in kwargs:
-            corporate_proxy = kwargs['corporateProxy']
-        if create_async is None and 'createAsync' in kwargs:
-            create_async = kwargs['createAsync']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_cps_offline_report_enabled is None and 'isCpsOfflineReportEnabled' in kwargs:
-            is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
-        if is_multi_rack_deployment is None and 'isMultiRackDeployment' in kwargs:
-            is_multi_rack_deployment = kwargs['isMultiRackDeployment']
-        if maintenance_window is None and 'maintenanceWindow' in kwargs:
-            maintenance_window = kwargs['maintenanceWindow']
-        if multi_rack_configuration_file is None and 'multiRackConfigurationFile' in kwargs:
-            multi_rack_configuration_file = kwargs['multiRackConfigurationFile']
-        if network_bonding_mode_details is None and 'networkBondingModeDetails' in kwargs:
-            network_bonding_mode_details = kwargs['networkBondingModeDetails']
-        if storage_count is None and 'storageCount' in kwargs:
-            storage_count = kwargs['storageCount']
-
-        _setter("admin_network_cidr", admin_network_cidr)
-        _setter("cloud_control_plane_server1", cloud_control_plane_server1)
-        _setter("cloud_control_plane_server2", cloud_control_plane_server2)
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
-        _setter("dns_servers", dns_servers)
-        _setter("gateway", gateway)
-        _setter("infini_band_network_cidr", infini_band_network_cidr)
-        _setter("netmask", netmask)
-        _setter("ntp_servers", ntp_servers)
-        _setter("shape", shape)
-        _setter("time_zone", time_zone)
+        pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
+        pulumi.set(__self__, "cloud_control_plane_server1", cloud_control_plane_server1)
+        pulumi.set(__self__, "cloud_control_plane_server2", cloud_control_plane_server2)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dns_servers", dns_servers)
+        pulumi.set(__self__, "gateway", gateway)
+        pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
+        pulumi.set(__self__, "netmask", netmask)
+        pulumi.set(__self__, "ntp_servers", ntp_servers)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "time_zone", time_zone)
         if activation_file is not None:
-            _setter("activation_file", activation_file)
+            pulumi.set(__self__, "activation_file", activation_file)
         if additional_storage_count is not None:
-            _setter("additional_storage_count", additional_storage_count)
+            pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         if compute_count is not None:
-            _setter("compute_count", compute_count)
+            pulumi.set(__self__, "compute_count", compute_count)
         if contacts is not None:
-            _setter("contacts", contacts)
+            pulumi.set(__self__, "contacts", contacts)
         if corporate_proxy is not None:
-            _setter("corporate_proxy", corporate_proxy)
+            pulumi.set(__self__, "corporate_proxy", corporate_proxy)
         if create_async is not None:
-            _setter("create_async", create_async)
+            pulumi.set(__self__, "create_async", create_async)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cps_offline_report_enabled is not None:
-            _setter("is_cps_offline_report_enabled", is_cps_offline_report_enabled)
+            pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         if is_multi_rack_deployment is not None:
-            _setter("is_multi_rack_deployment", is_multi_rack_deployment)
+            pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
         if maintenance_window is not None:
-            _setter("maintenance_window", maintenance_window)
+            pulumi.set(__self__, "maintenance_window", maintenance_window)
         if multi_rack_configuration_file is not None:
-            _setter("multi_rack_configuration_file", multi_rack_configuration_file)
+            pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         if network_bonding_mode_details is not None:
-            _setter("network_bonding_mode_details", network_bonding_mode_details)
+            pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
         if storage_count is not None:
-            _setter("storage_count", storage_count)
+            pulumi.set(__self__, "storage_count", storage_count)
 
     @property
     @pulumi.getter(name="adminNetworkCidr")
@@ -658,287 +529,100 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[str] time_created: The date and time the Exadata infrastructure was created.
         :param pulumi.Input[str] time_zone: (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
-        _ExadataInfrastructureState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            activated_storage_count=activated_storage_count,
-            activation_file=activation_file,
-            additional_compute_count=additional_compute_count,
-            additional_compute_system_model=additional_compute_system_model,
-            additional_storage_count=additional_storage_count,
-            admin_network_cidr=admin_network_cidr,
-            availability_domain=availability_domain,
-            cloud_control_plane_server1=cloud_control_plane_server1,
-            cloud_control_plane_server2=cloud_control_plane_server2,
-            compartment_id=compartment_id,
-            compute_count=compute_count,
-            contacts=contacts,
-            corporate_proxy=corporate_proxy,
-            cpus_enabled=cpus_enabled,
-            create_async=create_async,
-            csi_number=csi_number,
-            data_storage_size_in_tbs=data_storage_size_in_tbs,
-            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
-            db_server_version=db_server_version,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dns_servers=dns_servers,
-            freeform_tags=freeform_tags,
-            gateway=gateway,
-            infini_band_network_cidr=infini_band_network_cidr,
-            is_cps_offline_report_enabled=is_cps_offline_report_enabled,
-            is_multi_rack_deployment=is_multi_rack_deployment,
-            lifecycle_details=lifecycle_details,
-            maintenance_slo_status=maintenance_slo_status,
-            maintenance_window=maintenance_window,
-            max_cpu_count=max_cpu_count,
-            max_data_storage_in_tbs=max_data_storage_in_tbs,
-            max_db_node_storage_in_gbs=max_db_node_storage_in_gbs,
-            max_memory_in_gbs=max_memory_in_gbs,
-            memory_size_in_gbs=memory_size_in_gbs,
-            monthly_db_server_version=monthly_db_server_version,
-            multi_rack_configuration_file=multi_rack_configuration_file,
-            netmask=netmask,
-            network_bonding_mode_details=network_bonding_mode_details,
-            ntp_servers=ntp_servers,
-            rack_serial_number=rack_serial_number,
-            shape=shape,
-            state=state,
-            storage_count=storage_count,
-            storage_server_version=storage_server_version,
-            time_created=time_created,
-            time_zone=time_zone,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             activated_storage_count: Optional[pulumi.Input[int]] = None,
-             activation_file: Optional[pulumi.Input[str]] = None,
-             additional_compute_count: Optional[pulumi.Input[int]] = None,
-             additional_compute_system_model: Optional[pulumi.Input[str]] = None,
-             additional_storage_count: Optional[pulumi.Input[int]] = None,
-             admin_network_cidr: Optional[pulumi.Input[str]] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
-             cloud_control_plane_server2: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             compute_count: Optional[pulumi.Input[int]] = None,
-             contacts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureContactArgs']]]] = None,
-             corporate_proxy: Optional[pulumi.Input[str]] = None,
-             cpus_enabled: Optional[pulumi.Input[int]] = None,
-             create_async: Optional[pulumi.Input[bool]] = None,
-             csi_number: Optional[pulumi.Input[str]] = None,
-             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
-             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-             db_server_version: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             gateway: Optional[pulumi.Input[str]] = None,
-             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
-             is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
-             is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             maintenance_slo_status: Optional[pulumi.Input[str]] = None,
-             maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
-             max_cpu_count: Optional[pulumi.Input[int]] = None,
-             max_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
-             max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
-             max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
-             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
-             monthly_db_server_version: Optional[pulumi.Input[str]] = None,
-             multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
-             netmask: Optional[pulumi.Input[str]] = None,
-             network_bonding_mode_details: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
-             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             rack_serial_number: Optional[pulumi.Input[str]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             storage_count: Optional[pulumi.Input[int]] = None,
-             storage_server_version: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if activated_storage_count is None and 'activatedStorageCount' in kwargs:
-            activated_storage_count = kwargs['activatedStorageCount']
-        if activation_file is None and 'activationFile' in kwargs:
-            activation_file = kwargs['activationFile']
-        if additional_compute_count is None and 'additionalComputeCount' in kwargs:
-            additional_compute_count = kwargs['additionalComputeCount']
-        if additional_compute_system_model is None and 'additionalComputeSystemModel' in kwargs:
-            additional_compute_system_model = kwargs['additionalComputeSystemModel']
-        if additional_storage_count is None and 'additionalStorageCount' in kwargs:
-            additional_storage_count = kwargs['additionalStorageCount']
-        if admin_network_cidr is None and 'adminNetworkCidr' in kwargs:
-            admin_network_cidr = kwargs['adminNetworkCidr']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if cloud_control_plane_server1 is None and 'cloudControlPlaneServer1' in kwargs:
-            cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
-        if cloud_control_plane_server2 is None and 'cloudControlPlaneServer2' in kwargs:
-            cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compute_count is None and 'computeCount' in kwargs:
-            compute_count = kwargs['computeCount']
-        if corporate_proxy is None and 'corporateProxy' in kwargs:
-            corporate_proxy = kwargs['corporateProxy']
-        if cpus_enabled is None and 'cpusEnabled' in kwargs:
-            cpus_enabled = kwargs['cpusEnabled']
-        if create_async is None and 'createAsync' in kwargs:
-            create_async = kwargs['createAsync']
-        if csi_number is None and 'csiNumber' in kwargs:
-            csi_number = kwargs['csiNumber']
-        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
-            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
-        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
-            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
-        if db_server_version is None and 'dbServerVersion' in kwargs:
-            db_server_version = kwargs['dbServerVersion']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dns_servers is None and 'dnsServers' in kwargs:
-            dns_servers = kwargs['dnsServers']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if infini_band_network_cidr is None and 'infiniBandNetworkCidr' in kwargs:
-            infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
-        if is_cps_offline_report_enabled is None and 'isCpsOfflineReportEnabled' in kwargs:
-            is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
-        if is_multi_rack_deployment is None and 'isMultiRackDeployment' in kwargs:
-            is_multi_rack_deployment = kwargs['isMultiRackDeployment']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if maintenance_slo_status is None and 'maintenanceSloStatus' in kwargs:
-            maintenance_slo_status = kwargs['maintenanceSloStatus']
-        if maintenance_window is None and 'maintenanceWindow' in kwargs:
-            maintenance_window = kwargs['maintenanceWindow']
-        if max_cpu_count is None and 'maxCpuCount' in kwargs:
-            max_cpu_count = kwargs['maxCpuCount']
-        if max_data_storage_in_tbs is None and 'maxDataStorageInTbs' in kwargs:
-            max_data_storage_in_tbs = kwargs['maxDataStorageInTbs']
-        if max_db_node_storage_in_gbs is None and 'maxDbNodeStorageInGbs' in kwargs:
-            max_db_node_storage_in_gbs = kwargs['maxDbNodeStorageInGbs']
-        if max_memory_in_gbs is None and 'maxMemoryInGbs' in kwargs:
-            max_memory_in_gbs = kwargs['maxMemoryInGbs']
-        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
-            memory_size_in_gbs = kwargs['memorySizeInGbs']
-        if monthly_db_server_version is None and 'monthlyDbServerVersion' in kwargs:
-            monthly_db_server_version = kwargs['monthlyDbServerVersion']
-        if multi_rack_configuration_file is None and 'multiRackConfigurationFile' in kwargs:
-            multi_rack_configuration_file = kwargs['multiRackConfigurationFile']
-        if network_bonding_mode_details is None and 'networkBondingModeDetails' in kwargs:
-            network_bonding_mode_details = kwargs['networkBondingModeDetails']
-        if ntp_servers is None and 'ntpServers' in kwargs:
-            ntp_servers = kwargs['ntpServers']
-        if rack_serial_number is None and 'rackSerialNumber' in kwargs:
-            rack_serial_number = kwargs['rackSerialNumber']
-        if storage_count is None and 'storageCount' in kwargs:
-            storage_count = kwargs['storageCount']
-        if storage_server_version is None and 'storageServerVersion' in kwargs:
-            storage_server_version = kwargs['storageServerVersion']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_zone is None and 'timeZone' in kwargs:
-            time_zone = kwargs['timeZone']
-
         if activated_storage_count is not None:
-            _setter("activated_storage_count", activated_storage_count)
+            pulumi.set(__self__, "activated_storage_count", activated_storage_count)
         if activation_file is not None:
-            _setter("activation_file", activation_file)
+            pulumi.set(__self__, "activation_file", activation_file)
         if additional_compute_count is not None:
-            _setter("additional_compute_count", additional_compute_count)
+            pulumi.set(__self__, "additional_compute_count", additional_compute_count)
         if additional_compute_system_model is not None:
-            _setter("additional_compute_system_model", additional_compute_system_model)
+            pulumi.set(__self__, "additional_compute_system_model", additional_compute_system_model)
         if additional_storage_count is not None:
-            _setter("additional_storage_count", additional_storage_count)
+            pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         if admin_network_cidr is not None:
-            _setter("admin_network_cidr", admin_network_cidr)
+            pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if cloud_control_plane_server1 is not None:
-            _setter("cloud_control_plane_server1", cloud_control_plane_server1)
+            pulumi.set(__self__, "cloud_control_plane_server1", cloud_control_plane_server1)
         if cloud_control_plane_server2 is not None:
-            _setter("cloud_control_plane_server2", cloud_control_plane_server2)
+            pulumi.set(__self__, "cloud_control_plane_server2", cloud_control_plane_server2)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_count is not None:
-            _setter("compute_count", compute_count)
+            pulumi.set(__self__, "compute_count", compute_count)
         if contacts is not None:
-            _setter("contacts", contacts)
+            pulumi.set(__self__, "contacts", contacts)
         if corporate_proxy is not None:
-            _setter("corporate_proxy", corporate_proxy)
+            pulumi.set(__self__, "corporate_proxy", corporate_proxy)
         if cpus_enabled is not None:
-            _setter("cpus_enabled", cpus_enabled)
+            pulumi.set(__self__, "cpus_enabled", cpus_enabled)
         if create_async is not None:
-            _setter("create_async", create_async)
+            pulumi.set(__self__, "create_async", create_async)
         if csi_number is not None:
-            _setter("csi_number", csi_number)
+            pulumi.set(__self__, "csi_number", csi_number)
         if data_storage_size_in_tbs is not None:
-            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
+            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
-            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_server_version is not None:
-            _setter("db_server_version", db_server_version)
+            pulumi.set(__self__, "db_server_version", db_server_version)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dns_servers is not None:
-            _setter("dns_servers", dns_servers)
+            pulumi.set(__self__, "dns_servers", dns_servers)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if gateway is not None:
-            _setter("gateway", gateway)
+            pulumi.set(__self__, "gateway", gateway)
         if infini_band_network_cidr is not None:
-            _setter("infini_band_network_cidr", infini_band_network_cidr)
+            pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
         if is_cps_offline_report_enabled is not None:
-            _setter("is_cps_offline_report_enabled", is_cps_offline_report_enabled)
+            pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         if is_multi_rack_deployment is not None:
-            _setter("is_multi_rack_deployment", is_multi_rack_deployment)
+            pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_slo_status is not None:
-            _setter("maintenance_slo_status", maintenance_slo_status)
+            pulumi.set(__self__, "maintenance_slo_status", maintenance_slo_status)
         if maintenance_window is not None:
-            _setter("maintenance_window", maintenance_window)
+            pulumi.set(__self__, "maintenance_window", maintenance_window)
         if max_cpu_count is not None:
-            _setter("max_cpu_count", max_cpu_count)
+            pulumi.set(__self__, "max_cpu_count", max_cpu_count)
         if max_data_storage_in_tbs is not None:
-            _setter("max_data_storage_in_tbs", max_data_storage_in_tbs)
+            pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
         if max_db_node_storage_in_gbs is not None:
-            _setter("max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
+            pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
         if max_memory_in_gbs is not None:
-            _setter("max_memory_in_gbs", max_memory_in_gbs)
+            pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
         if memory_size_in_gbs is not None:
-            _setter("memory_size_in_gbs", memory_size_in_gbs)
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if monthly_db_server_version is not None:
-            _setter("monthly_db_server_version", monthly_db_server_version)
+            pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
         if multi_rack_configuration_file is not None:
-            _setter("multi_rack_configuration_file", multi_rack_configuration_file)
+            pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         if netmask is not None:
-            _setter("netmask", netmask)
+            pulumi.set(__self__, "netmask", netmask)
         if network_bonding_mode_details is not None:
-            _setter("network_bonding_mode_details", network_bonding_mode_details)
+            pulumi.set(__self__, "network_bonding_mode_details", network_bonding_mode_details)
         if ntp_servers is not None:
-            _setter("ntp_servers", ntp_servers)
+            pulumi.set(__self__, "ntp_servers", ntp_servers)
         if rack_serial_number is not None:
-            _setter("rack_serial_number", rack_serial_number)
+            pulumi.set(__self__, "rack_serial_number", rack_serial_number)
         if shape is not None:
-            _setter("shape", shape)
+            pulumi.set(__self__, "shape", shape)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if storage_count is not None:
-            _setter("storage_count", storage_count)
+            pulumi.set(__self__, "storage_count", storage_count)
         if storage_server_version is not None:
-            _setter("storage_server_version", storage_server_version)
+            pulumi.set(__self__, "storage_server_version", storage_server_version)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
-            _setter("time_zone", time_zone)
+            pulumi.set(__self__, "time_zone", time_zone)
 
     @property
     @pulumi.getter(name="activatedStorageCount")
@@ -1732,10 +1416,6 @@ class ExadataInfrastructure(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExadataInfrastructureArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1810,13 +1490,11 @@ class ExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
             __props__.__dict__["is_cps_offline_report_enabled"] = is_cps_offline_report_enabled
             __props__.__dict__["is_multi_rack_deployment"] = is_multi_rack_deployment
-            maintenance_window = _utilities.configure(maintenance_window, ExadataInfrastructureMaintenanceWindowArgs, True)
             __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["multi_rack_configuration_file"] = multi_rack_configuration_file
             if netmask is None and not opts.urn:
                 raise TypeError("Missing required property 'netmask'")
             __props__.__dict__["netmask"] = netmask
-            network_bonding_mode_details = _utilities.configure(network_bonding_mode_details, ExadataInfrastructureNetworkBondingModeDetailsArgs, True)
             __props__.__dict__["network_bonding_mode_details"] = network_bonding_mode_details
             if ntp_servers is None and not opts.urn:
                 raise TypeError("Missing required property 'ntp_servers'")

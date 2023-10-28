@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BdsInstanceApiKeyArgs', 'BdsInstanceApiKey']
@@ -31,47 +31,12 @@ class BdsInstanceApiKeyArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] default_region: The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
         """
-        BdsInstanceApiKeyArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bds_instance_id=bds_instance_id,
-            key_alias=key_alias,
-            passphrase=passphrase,
-            user_id=user_id,
-            default_region=default_region,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bds_instance_id: Optional[pulumi.Input[str]] = None,
-             key_alias: Optional[pulumi.Input[str]] = None,
-             passphrase: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             default_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
-            bds_instance_id = kwargs['bdsInstanceId']
-        if bds_instance_id is None:
-            raise TypeError("Missing 'bds_instance_id' argument")
-        if key_alias is None and 'keyAlias' in kwargs:
-            key_alias = kwargs['keyAlias']
-        if key_alias is None:
-            raise TypeError("Missing 'key_alias' argument")
-        if passphrase is None:
-            raise TypeError("Missing 'passphrase' argument")
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-        if user_id is None:
-            raise TypeError("Missing 'user_id' argument")
-        if default_region is None and 'defaultRegion' in kwargs:
-            default_region = kwargs['defaultRegion']
-
-        _setter("bds_instance_id", bds_instance_id)
-        _setter("key_alias", key_alias)
-        _setter("passphrase", passphrase)
-        _setter("user_id", user_id)
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "key_alias", key_alias)
+        pulumi.set(__self__, "passphrase", passphrase)
+        pulumi.set(__self__, "user_id", user_id)
         if default_region is not None:
-            _setter("default_region", default_region)
+            pulumi.set(__self__, "default_region", default_region)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -168,67 +133,26 @@ class _BdsInstanceApiKeyState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _BdsInstanceApiKeyState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            bds_instance_id=bds_instance_id,
-            default_region=default_region,
-            fingerprint=fingerprint,
-            key_alias=key_alias,
-            passphrase=passphrase,
-            pemfilepath=pemfilepath,
-            state=state,
-            tenant_id=tenant_id,
-            time_created=time_created,
-            user_id=user_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             bds_instance_id: Optional[pulumi.Input[str]] = None,
-             default_region: Optional[pulumi.Input[str]] = None,
-             fingerprint: Optional[pulumi.Input[str]] = None,
-             key_alias: Optional[pulumi.Input[str]] = None,
-             passphrase: Optional[pulumi.Input[str]] = None,
-             pemfilepath: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             tenant_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
-            bds_instance_id = kwargs['bdsInstanceId']
-        if default_region is None and 'defaultRegion' in kwargs:
-            default_region = kwargs['defaultRegion']
-        if key_alias is None and 'keyAlias' in kwargs:
-            key_alias = kwargs['keyAlias']
-        if tenant_id is None and 'tenantId' in kwargs:
-            tenant_id = kwargs['tenantId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if user_id is None and 'userId' in kwargs:
-            user_id = kwargs['userId']
-
         if bds_instance_id is not None:
-            _setter("bds_instance_id", bds_instance_id)
+            pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         if default_region is not None:
-            _setter("default_region", default_region)
+            pulumi.set(__self__, "default_region", default_region)
         if fingerprint is not None:
-            _setter("fingerprint", fingerprint)
+            pulumi.set(__self__, "fingerprint", fingerprint)
         if key_alias is not None:
-            _setter("key_alias", key_alias)
+            pulumi.set(__self__, "key_alias", key_alias)
         if passphrase is not None:
-            _setter("passphrase", passphrase)
+            pulumi.set(__self__, "passphrase", passphrase)
         if pemfilepath is not None:
-            _setter("pemfilepath", pemfilepath)
+            pulumi.set(__self__, "pemfilepath", pemfilepath)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if tenant_id is not None:
-            _setter("tenant_id", tenant_id)
+            pulumi.set(__self__, "tenant_id", tenant_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if user_id is not None:
-            _setter("user_id", user_id)
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -448,10 +372,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            BdsInstanceApiKeyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

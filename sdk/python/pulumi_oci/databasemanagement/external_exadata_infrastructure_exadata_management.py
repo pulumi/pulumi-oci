@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalExadataInfrastructureExadataManagementArgs', 'ExternalExadataInfrastructureExadataManagement']
@@ -27,35 +27,10 @@ class ExternalExadataInfrastructureExadataManagementArgs:
         :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[str] license_model: The Oracle license model.
         """
-        ExternalExadataInfrastructureExadataManagementArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_exadata=enable_exadata,
-            external_exadata_infrastructure_id=external_exadata_infrastructure_id,
-            license_model=license_model,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_exadata: Optional[pulumi.Input[bool]] = None,
-             external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_exadata is None and 'enableExadata' in kwargs:
-            enable_exadata = kwargs['enableExadata']
-        if enable_exadata is None:
-            raise TypeError("Missing 'enable_exadata' argument")
-        if external_exadata_infrastructure_id is None and 'externalExadataInfrastructureId' in kwargs:
-            external_exadata_infrastructure_id = kwargs['externalExadataInfrastructureId']
-        if external_exadata_infrastructure_id is None:
-            raise TypeError("Missing 'external_exadata_infrastructure_id' argument")
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-
-        _setter("enable_exadata", enable_exadata)
-        _setter("external_exadata_infrastructure_id", external_exadata_infrastructure_id)
+        pulumi.set(__self__, "enable_exadata", enable_exadata)
+        pulumi.set(__self__, "external_exadata_infrastructure_id", external_exadata_infrastructure_id)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
 
     @property
     @pulumi.getter(name="enableExadata")
@@ -114,33 +89,12 @@ class _ExternalExadataInfrastructureExadataManagementState:
         :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[str] license_model: The Oracle license model.
         """
-        _ExternalExadataInfrastructureExadataManagementState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            enable_exadata=enable_exadata,
-            external_exadata_infrastructure_id=external_exadata_infrastructure_id,
-            license_model=license_model,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             enable_exadata: Optional[pulumi.Input[bool]] = None,
-             external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-             license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if enable_exadata is None and 'enableExadata' in kwargs:
-            enable_exadata = kwargs['enableExadata']
-        if external_exadata_infrastructure_id is None and 'externalExadataInfrastructureId' in kwargs:
-            external_exadata_infrastructure_id = kwargs['externalExadataInfrastructureId']
-        if license_model is None and 'licenseModel' in kwargs:
-            license_model = kwargs['licenseModel']
-
         if enable_exadata is not None:
-            _setter("enable_exadata", enable_exadata)
+            pulumi.set(__self__, "enable_exadata", enable_exadata)
         if external_exadata_infrastructure_id is not None:
-            _setter("external_exadata_infrastructure_id", external_exadata_infrastructure_id)
+            pulumi.set(__self__, "external_exadata_infrastructure_id", external_exadata_infrastructure_id)
         if license_model is not None:
-            _setter("license_model", license_model)
+            pulumi.set(__self__, "license_model", license_model)
 
     @property
     @pulumi.getter(name="enableExadata")
@@ -262,10 +216,6 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalExadataInfrastructureExadataManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['InstanceArgs', 'Instance']
@@ -55,119 +55,34 @@ class InstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        InstanceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            admin_email=admin_email,
-            compartment_id=compartment_id,
-            idcs_access_token=idcs_access_token,
-            object_storage_namespace=object_storage_namespace,
-            tenancy_id=tenancy_id,
-            tenancy_name=tenancy_name,
-            add_on_features=add_on_features,
-            defined_tags=defined_tags,
-            description=description,
-            dr_region=dr_region,
-            freeform_tags=freeform_tags,
-            instance_access_type=instance_access_type,
-            instance_license_type=instance_license_type,
-            instance_usage_type=instance_usage_type,
-            name=name,
-            upgrade_schedule=upgrade_schedule,
-            waf_primary_domain=waf_primary_domain,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             admin_email: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             idcs_access_token: Optional[pulumi.Input[str]] = None,
-             object_storage_namespace: Optional[pulumi.Input[str]] = None,
-             tenancy_id: Optional[pulumi.Input[str]] = None,
-             tenancy_name: Optional[pulumi.Input[str]] = None,
-             add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             dr_region: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             instance_access_type: Optional[pulumi.Input[str]] = None,
-             instance_license_type: Optional[pulumi.Input[str]] = None,
-             instance_usage_type: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             upgrade_schedule: Optional[pulumi.Input[str]] = None,
-             waf_primary_domain: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if admin_email is None and 'adminEmail' in kwargs:
-            admin_email = kwargs['adminEmail']
-        if admin_email is None:
-            raise TypeError("Missing 'admin_email' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if idcs_access_token is None:
-            raise TypeError("Missing 'idcs_access_token' argument")
-        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
-            object_storage_namespace = kwargs['objectStorageNamespace']
-        if object_storage_namespace is None:
-            raise TypeError("Missing 'object_storage_namespace' argument")
-        if tenancy_id is None and 'tenancyId' in kwargs:
-            tenancy_id = kwargs['tenancyId']
-        if tenancy_id is None:
-            raise TypeError("Missing 'tenancy_id' argument")
-        if tenancy_name is None and 'tenancyName' in kwargs:
-            tenancy_name = kwargs['tenancyName']
-        if tenancy_name is None:
-            raise TypeError("Missing 'tenancy_name' argument")
-        if add_on_features is None and 'addOnFeatures' in kwargs:
-            add_on_features = kwargs['addOnFeatures']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if dr_region is None and 'drRegion' in kwargs:
-            dr_region = kwargs['drRegion']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if instance_access_type is None and 'instanceAccessType' in kwargs:
-            instance_access_type = kwargs['instanceAccessType']
-        if instance_license_type is None and 'instanceLicenseType' in kwargs:
-            instance_license_type = kwargs['instanceLicenseType']
-        if instance_usage_type is None and 'instanceUsageType' in kwargs:
-            instance_usage_type = kwargs['instanceUsageType']
-        if upgrade_schedule is None and 'upgradeSchedule' in kwargs:
-            upgrade_schedule = kwargs['upgradeSchedule']
-        if waf_primary_domain is None and 'wafPrimaryDomain' in kwargs:
-            waf_primary_domain = kwargs['wafPrimaryDomain']
-
-        _setter("admin_email", admin_email)
-        _setter("compartment_id", compartment_id)
-        _setter("idcs_access_token", idcs_access_token)
-        _setter("object_storage_namespace", object_storage_namespace)
-        _setter("tenancy_id", tenancy_id)
-        _setter("tenancy_name", tenancy_name)
+        pulumi.set(__self__, "admin_email", admin_email)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "tenancy_name", tenancy_name)
         if add_on_features is not None:
-            _setter("add_on_features", add_on_features)
+            pulumi.set(__self__, "add_on_features", add_on_features)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if dr_region is not None:
-            _setter("dr_region", dr_region)
+            pulumi.set(__self__, "dr_region", dr_region)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if instance_access_type is not None:
-            _setter("instance_access_type", instance_access_type)
+            pulumi.set(__self__, "instance_access_type", instance_access_type)
         if instance_license_type is not None:
-            _setter("instance_license_type", instance_license_type)
+            pulumi.set(__self__, "instance_license_type", instance_license_type)
         if instance_usage_type is not None:
-            _setter("instance_usage_type", instance_usage_type)
+            pulumi.set(__self__, "instance_usage_type", instance_usage_type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if upgrade_schedule is not None:
-            _setter("upgrade_schedule", upgrade_schedule)
+            pulumi.set(__self__, "upgrade_schedule", upgrade_schedule)
         if waf_primary_domain is not None:
-            _setter("waf_primary_domain", waf_primary_domain)
+            pulumi.set(__self__, "waf_primary_domain", waf_primary_domain)
 
     @property
     @pulumi.getter(name="adminEmail")
@@ -440,161 +355,58 @@ class _InstanceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _InstanceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            add_on_features=add_on_features,
-            admin_email=admin_email,
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            description=description,
-            dr_region=dr_region,
-            freeform_tags=freeform_tags,
-            guid=guid,
-            idcs_access_token=idcs_access_token,
-            idcs_tenancy=idcs_tenancy,
-            instance_access_type=instance_access_type,
-            instance_license_type=instance_license_type,
-            instance_usage_type=instance_usage_type,
-            lifecycle_details=lifecycle_details,
-            name=name,
-            object_storage_namespace=object_storage_namespace,
-            service=service,
-            state=state,
-            state_message=state_message,
-            system_tags=system_tags,
-            tenancy_id=tenancy_id,
-            tenancy_name=tenancy_name,
-            time_created=time_created,
-            time_updated=time_updated,
-            upgrade_schedule=upgrade_schedule,
-            waf_primary_domain=waf_primary_domain,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             admin_email: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             dr_region: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             guid: Optional[pulumi.Input[str]] = None,
-             idcs_access_token: Optional[pulumi.Input[str]] = None,
-             idcs_tenancy: Optional[pulumi.Input[str]] = None,
-             instance_access_type: Optional[pulumi.Input[str]] = None,
-             instance_license_type: Optional[pulumi.Input[str]] = None,
-             instance_usage_type: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             object_storage_namespace: Optional[pulumi.Input[str]] = None,
-             service: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             state_message: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             tenancy_id: Optional[pulumi.Input[str]] = None,
-             tenancy_name: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             upgrade_schedule: Optional[pulumi.Input[str]] = None,
-             waf_primary_domain: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if add_on_features is None and 'addOnFeatures' in kwargs:
-            add_on_features = kwargs['addOnFeatures']
-        if admin_email is None and 'adminEmail' in kwargs:
-            admin_email = kwargs['adminEmail']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if dr_region is None and 'drRegion' in kwargs:
-            dr_region = kwargs['drRegion']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if idcs_access_token is None and 'idcsAccessToken' in kwargs:
-            idcs_access_token = kwargs['idcsAccessToken']
-        if idcs_tenancy is None and 'idcsTenancy' in kwargs:
-            idcs_tenancy = kwargs['idcsTenancy']
-        if instance_access_type is None and 'instanceAccessType' in kwargs:
-            instance_access_type = kwargs['instanceAccessType']
-        if instance_license_type is None and 'instanceLicenseType' in kwargs:
-            instance_license_type = kwargs['instanceLicenseType']
-        if instance_usage_type is None and 'instanceUsageType' in kwargs:
-            instance_usage_type = kwargs['instanceUsageType']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if object_storage_namespace is None and 'objectStorageNamespace' in kwargs:
-            object_storage_namespace = kwargs['objectStorageNamespace']
-        if state_message is None and 'stateMessage' in kwargs:
-            state_message = kwargs['stateMessage']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if tenancy_id is None and 'tenancyId' in kwargs:
-            tenancy_id = kwargs['tenancyId']
-        if tenancy_name is None and 'tenancyName' in kwargs:
-            tenancy_name = kwargs['tenancyName']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if upgrade_schedule is None and 'upgradeSchedule' in kwargs:
-            upgrade_schedule = kwargs['upgradeSchedule']
-        if waf_primary_domain is None and 'wafPrimaryDomain' in kwargs:
-            waf_primary_domain = kwargs['wafPrimaryDomain']
-
         if add_on_features is not None:
-            _setter("add_on_features", add_on_features)
+            pulumi.set(__self__, "add_on_features", add_on_features)
         if admin_email is not None:
-            _setter("admin_email", admin_email)
+            pulumi.set(__self__, "admin_email", admin_email)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if dr_region is not None:
-            _setter("dr_region", dr_region)
+            pulumi.set(__self__, "dr_region", dr_region)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if guid is not None:
-            _setter("guid", guid)
+            pulumi.set(__self__, "guid", guid)
         if idcs_access_token is not None:
-            _setter("idcs_access_token", idcs_access_token)
+            pulumi.set(__self__, "idcs_access_token", idcs_access_token)
         if idcs_tenancy is not None:
-            _setter("idcs_tenancy", idcs_tenancy)
+            pulumi.set(__self__, "idcs_tenancy", idcs_tenancy)
         if instance_access_type is not None:
-            _setter("instance_access_type", instance_access_type)
+            pulumi.set(__self__, "instance_access_type", instance_access_type)
         if instance_license_type is not None:
-            _setter("instance_license_type", instance_license_type)
+            pulumi.set(__self__, "instance_license_type", instance_license_type)
         if instance_usage_type is not None:
-            _setter("instance_usage_type", instance_usage_type)
+            pulumi.set(__self__, "instance_usage_type", instance_usage_type)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if object_storage_namespace is not None:
-            _setter("object_storage_namespace", object_storage_namespace)
+            pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
         if service is not None:
-            _setter("service", service)
+            pulumi.set(__self__, "service", service)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if state_message is not None:
-            _setter("state_message", state_message)
+            pulumi.set(__self__, "state_message", state_message)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if tenancy_id is not None:
-            _setter("tenancy_id", tenancy_id)
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
         if tenancy_name is not None:
-            _setter("tenancy_name", tenancy_name)
+            pulumi.set(__self__, "tenancy_name", tenancy_name)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if upgrade_schedule is not None:
-            _setter("upgrade_schedule", upgrade_schedule)
+            pulumi.set(__self__, "upgrade_schedule", upgrade_schedule)
         if waf_primary_domain is not None:
-            _setter("waf_primary_domain", waf_primary_domain)
+            pulumi.set(__self__, "waf_primary_domain", waf_primary_domain)
 
     @property
     @pulumi.getter(name="addOnFeatures")
@@ -1060,10 +872,6 @@ class Instance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

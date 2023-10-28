@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,38 +31,11 @@ class NetworkFirewallPolicyServiceArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: Name of the service
         """
-        NetworkFirewallPolicyServiceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            network_firewall_policy_id=network_firewall_policy_id,
-            port_ranges=port_ranges,
-            type=type,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if network_firewall_policy_id is None:
-            raise TypeError("Missing 'network_firewall_policy_id' argument")
-        if port_ranges is None and 'portRanges' in kwargs:
-            port_ranges = kwargs['portRanges']
-        if port_ranges is None:
-            raise TypeError("Missing 'port_ranges' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-
-        _setter("network_firewall_policy_id", network_firewall_policy_id)
-        _setter("port_ranges", port_ranges)
-        _setter("type", type)
+        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+        pulumi.set(__self__, "port_ranges", port_ranges)
+        pulumi.set(__self__, "type", type)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
@@ -137,41 +110,16 @@ class _NetworkFirewallPolicyServiceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _NetworkFirewallPolicyServiceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            network_firewall_policy_id=network_firewall_policy_id,
-            parent_resource_id=parent_resource_id,
-            port_ranges=port_ranges,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[pulumi.Input[str]] = None,
-             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
-             parent_resource_id: Optional[pulumi.Input[str]] = None,
-             port_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
-            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
-        if parent_resource_id is None and 'parentResourceId' in kwargs:
-            parent_resource_id = kwargs['parentResourceId']
-        if port_ranges is None and 'portRanges' in kwargs:
-            port_ranges = kwargs['portRanges']
-
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if network_firewall_policy_id is not None:
-            _setter("network_firewall_policy_id", network_firewall_policy_id)
+            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            _setter("parent_resource_id", parent_resource_id)
+            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         if port_ranges is not None:
-            _setter("port_ranges", port_ranges)
+            pulumi.set(__self__, "port_ranges", port_ranges)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -331,10 +279,6 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            NetworkFirewallPolicyServiceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

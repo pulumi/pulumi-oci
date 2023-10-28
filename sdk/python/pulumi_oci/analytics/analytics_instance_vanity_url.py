@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AnalyticsInstanceVanityUrlArgs', 'AnalyticsInstanceVanityUrl']
@@ -35,56 +35,15 @@ class AnalyticsInstanceVanityUrlArgs:
         :param pulumi.Input[str] description: Optional description.
         :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
         """
-        AnalyticsInstanceVanityUrlArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            analytics_instance_id=analytics_instance_id,
-            ca_certificate=ca_certificate,
-            hosts=hosts,
-            private_key=private_key,
-            public_certificate=public_certificate,
-            description=description,
-            passphrase=passphrase,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             analytics_instance_id: Optional[pulumi.Input[str]] = None,
-             ca_certificate: Optional[pulumi.Input[str]] = None,
-             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             private_key: Optional[pulumi.Input[str]] = None,
-             public_certificate: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             passphrase: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if analytics_instance_id is None and 'analyticsInstanceId' in kwargs:
-            analytics_instance_id = kwargs['analyticsInstanceId']
-        if analytics_instance_id is None:
-            raise TypeError("Missing 'analytics_instance_id' argument")
-        if ca_certificate is None and 'caCertificate' in kwargs:
-            ca_certificate = kwargs['caCertificate']
-        if ca_certificate is None:
-            raise TypeError("Missing 'ca_certificate' argument")
-        if hosts is None:
-            raise TypeError("Missing 'hosts' argument")
-        if private_key is None and 'privateKey' in kwargs:
-            private_key = kwargs['privateKey']
-        if private_key is None:
-            raise TypeError("Missing 'private_key' argument")
-        if public_certificate is None and 'publicCertificate' in kwargs:
-            public_certificate = kwargs['publicCertificate']
-        if public_certificate is None:
-            raise TypeError("Missing 'public_certificate' argument")
-
-        _setter("analytics_instance_id", analytics_instance_id)
-        _setter("ca_certificate", ca_certificate)
-        _setter("hosts", hosts)
-        _setter("private_key", private_key)
-        _setter("public_certificate", public_certificate)
+        pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
+        pulumi.set(__self__, "ca_certificate", ca_certificate)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "private_key", private_key)
+        pulumi.set(__self__, "public_certificate", public_certificate)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if passphrase is not None:
-            _setter("passphrase", passphrase)
+            pulumi.set(__self__, "passphrase", passphrase)
 
     @property
     @pulumi.getter(name="analyticsInstanceId")
@@ -199,51 +158,20 @@ class _AnalyticsInstanceVanityUrlState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _AnalyticsInstanceVanityUrlState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            analytics_instance_id=analytics_instance_id,
-            ca_certificate=ca_certificate,
-            description=description,
-            hosts=hosts,
-            passphrase=passphrase,
-            private_key=private_key,
-            public_certificate=public_certificate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             analytics_instance_id: Optional[pulumi.Input[str]] = None,
-             ca_certificate: Optional[pulumi.Input[str]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             passphrase: Optional[pulumi.Input[str]] = None,
-             private_key: Optional[pulumi.Input[str]] = None,
-             public_certificate: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if analytics_instance_id is None and 'analyticsInstanceId' in kwargs:
-            analytics_instance_id = kwargs['analyticsInstanceId']
-        if ca_certificate is None and 'caCertificate' in kwargs:
-            ca_certificate = kwargs['caCertificate']
-        if private_key is None and 'privateKey' in kwargs:
-            private_key = kwargs['privateKey']
-        if public_certificate is None and 'publicCertificate' in kwargs:
-            public_certificate = kwargs['publicCertificate']
-
         if analytics_instance_id is not None:
-            _setter("analytics_instance_id", analytics_instance_id)
+            pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
         if ca_certificate is not None:
-            _setter("ca_certificate", ca_certificate)
+            pulumi.set(__self__, "ca_certificate", ca_certificate)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if hosts is not None:
-            _setter("hosts", hosts)
+            pulumi.set(__self__, "hosts", hosts)
         if passphrase is not None:
-            _setter("passphrase", passphrase)
+            pulumi.set(__self__, "passphrase", passphrase)
         if private_key is not None:
-            _setter("private_key", private_key)
+            pulumi.set(__self__, "private_key", private_key)
         if public_certificate is not None:
-            _setter("public_certificate", public_certificate)
+            pulumi.set(__self__, "public_certificate", public_certificate)
 
     @property
     @pulumi.getter(name="analyticsInstanceId")
@@ -437,10 +365,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AnalyticsInstanceVanityUrlArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -142,204 +142,75 @@ class InstanceArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subnet_id: Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         """
-        InstanceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            availability_domain=availability_domain,
-            compartment_id=compartment_id,
-            agent_config=agent_config,
-            async_=async_,
-            availability_config=availability_config,
-            capacity_reservation_id=capacity_reservation_id,
-            compute_cluster_id=compute_cluster_id,
-            create_vnic_details=create_vnic_details,
-            dedicated_vm_host_id=dedicated_vm_host_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            extended_metadata=extended_metadata,
-            fault_domain=fault_domain,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            image=image,
-            instance_configuration_id=instance_configuration_id,
-            instance_options=instance_options,
-            ipxe_script=ipxe_script,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            launch_options=launch_options,
-            metadata=metadata,
-            platform_config=platform_config,
-            preemptible_instance_config=preemptible_instance_config,
-            preserve_boot_volume=preserve_boot_volume,
-            shape=shape,
-            shape_config=shape_config,
-            source_details=source_details,
-            state=state,
-            subnet_id=subnet_id,
-            update_operation_constraint=update_operation_constraint,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
-             async_: Optional[pulumi.Input[bool]] = None,
-             availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
-             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-             compute_cluster_id: Optional[pulumi.Input[str]] = None,
-             create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
-             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             image: Optional[pulumi.Input[str]] = None,
-             instance_configuration_id: Optional[pulumi.Input[str]] = None,
-             instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
-             ipxe_script: Optional[pulumi.Input[str]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
-             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
-             preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
-             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
-             source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             update_operation_constraint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if availability_domain is None:
-            raise TypeError("Missing 'availability_domain' argument")
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if agent_config is None and 'agentConfig' in kwargs:
-            agent_config = kwargs['agentConfig']
-        if async_ is None and 'async' in kwargs:
-            async_ = kwargs['async']
-        if availability_config is None and 'availabilityConfig' in kwargs:
-            availability_config = kwargs['availabilityConfig']
-        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
-            capacity_reservation_id = kwargs['capacityReservationId']
-        if compute_cluster_id is None and 'computeClusterId' in kwargs:
-            compute_cluster_id = kwargs['computeClusterId']
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
-            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if extended_metadata is None and 'extendedMetadata' in kwargs:
-            extended_metadata = kwargs['extendedMetadata']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
-            instance_configuration_id = kwargs['instanceConfigurationId']
-        if instance_options is None and 'instanceOptions' in kwargs:
-            instance_options = kwargs['instanceOptions']
-        if ipxe_script is None and 'ipxeScript' in kwargs:
-            ipxe_script = kwargs['ipxeScript']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if launch_options is None and 'launchOptions' in kwargs:
-            launch_options = kwargs['launchOptions']
-        if platform_config is None and 'platformConfig' in kwargs:
-            platform_config = kwargs['platformConfig']
-        if preemptible_instance_config is None and 'preemptibleInstanceConfig' in kwargs:
-            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
-        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
-            preserve_boot_volume = kwargs['preserveBootVolume']
-        if shape_config is None and 'shapeConfig' in kwargs:
-            shape_config = kwargs['shapeConfig']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if update_operation_constraint is None and 'updateOperationConstraint' in kwargs:
-            update_operation_constraint = kwargs['updateOperationConstraint']
-
-        _setter("availability_domain", availability_domain)
-        _setter("compartment_id", compartment_id)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if agent_config is not None:
-            _setter("agent_config", agent_config)
+            pulumi.set(__self__, "agent_config", agent_config)
         if async_ is not None:
-            _setter("async_", async_)
+            pulumi.set(__self__, "async_", async_)
         if availability_config is not None:
-            _setter("availability_config", availability_config)
+            pulumi.set(__self__, "availability_config", availability_config)
         if capacity_reservation_id is not None:
-            _setter("capacity_reservation_id", capacity_reservation_id)
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_cluster_id is not None:
-            _setter("compute_cluster_id", compute_cluster_id)
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
-            _setter("create_vnic_details", create_vnic_details)
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
+            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if extended_metadata is not None:
-            _setter("extended_metadata", extended_metadata)
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if image is not None:
             warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
         if image is not None:
-            _setter("image", image)
+            pulumi.set(__self__, "image", image)
         if instance_configuration_id is not None:
-            _setter("instance_configuration_id", instance_configuration_id)
+            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         if instance_options is not None:
-            _setter("instance_options", instance_options)
+            pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
-            _setter("ipxe_script", ipxe_script)
+            pulumi.set(__self__, "ipxe_script", ipxe_script)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_options is not None:
-            _setter("launch_options", launch_options)
+            pulumi.set(__self__, "launch_options", launch_options)
         if metadata is not None:
-            _setter("metadata", metadata)
+            pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
-            _setter("platform_config", platform_config)
+            pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
-            _setter("preemptible_instance_config", preemptible_instance_config)
+            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preserve_boot_volume is not None:
-            _setter("preserve_boot_volume", preserve_boot_volume)
+            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
         if shape is not None:
-            _setter("shape", shape)
+            pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
-            _setter("shape_config", shape_config)
+            pulumi.set(__self__, "shape_config", shape_config)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if update_operation_constraint is not None:
-            _setter("update_operation_constraint", update_operation_constraint)
+            pulumi.set(__self__, "update_operation_constraint", update_operation_constraint)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -929,254 +800,95 @@ class _InstanceState:
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         """
-        _InstanceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            agent_config=agent_config,
-            async_=async_,
-            availability_config=availability_config,
-            availability_domain=availability_domain,
-            boot_volume_id=boot_volume_id,
-            capacity_reservation_id=capacity_reservation_id,
-            compartment_id=compartment_id,
-            compute_cluster_id=compute_cluster_id,
-            create_vnic_details=create_vnic_details,
-            dedicated_vm_host_id=dedicated_vm_host_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            extended_metadata=extended_metadata,
-            fault_domain=fault_domain,
-            freeform_tags=freeform_tags,
-            hostname_label=hostname_label,
-            image=image,
-            instance_configuration_id=instance_configuration_id,
-            instance_options=instance_options,
-            ipxe_script=ipxe_script,
-            is_cross_numa_node=is_cross_numa_node,
-            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
-            launch_mode=launch_mode,
-            launch_options=launch_options,
-            metadata=metadata,
-            platform_config=platform_config,
-            preemptible_instance_config=preemptible_instance_config,
-            preserve_boot_volume=preserve_boot_volume,
-            private_ip=private_ip,
-            public_ip=public_ip,
-            region=region,
-            shape=shape,
-            shape_config=shape_config,
-            source_details=source_details,
-            state=state,
-            subnet_id=subnet_id,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_maintenance_reboot_due=time_maintenance_reboot_due,
-            update_operation_constraint=update_operation_constraint,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
-             async_: Optional[pulumi.Input[bool]] = None,
-             availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
-             availability_domain: Optional[pulumi.Input[str]] = None,
-             boot_volume_id: Optional[pulumi.Input[str]] = None,
-             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             compute_cluster_id: Optional[pulumi.Input[str]] = None,
-             create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
-             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             fault_domain: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             hostname_label: Optional[pulumi.Input[str]] = None,
-             image: Optional[pulumi.Input[str]] = None,
-             instance_configuration_id: Optional[pulumi.Input[str]] = None,
-             instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
-             ipxe_script: Optional[pulumi.Input[str]] = None,
-             is_cross_numa_node: Optional[pulumi.Input[bool]] = None,
-             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
-             launch_mode: Optional[pulumi.Input[str]] = None,
-             launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
-             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
-             preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
-             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             private_ip: Optional[pulumi.Input[str]] = None,
-             public_ip: Optional[pulumi.Input[str]] = None,
-             region: Optional[pulumi.Input[str]] = None,
-             shape: Optional[pulumi.Input[str]] = None,
-             shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
-             source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             subnet_id: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
-             update_operation_constraint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if agent_config is None and 'agentConfig' in kwargs:
-            agent_config = kwargs['agentConfig']
-        if async_ is None and 'async' in kwargs:
-            async_ = kwargs['async']
-        if availability_config is None and 'availabilityConfig' in kwargs:
-            availability_config = kwargs['availabilityConfig']
-        if availability_domain is None and 'availabilityDomain' in kwargs:
-            availability_domain = kwargs['availabilityDomain']
-        if boot_volume_id is None and 'bootVolumeId' in kwargs:
-            boot_volume_id = kwargs['bootVolumeId']
-        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
-            capacity_reservation_id = kwargs['capacityReservationId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compute_cluster_id is None and 'computeClusterId' in kwargs:
-            compute_cluster_id = kwargs['computeClusterId']
-        if create_vnic_details is None and 'createVnicDetails' in kwargs:
-            create_vnic_details = kwargs['createVnicDetails']
-        if dedicated_vm_host_id is None and 'dedicatedVmHostId' in kwargs:
-            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if extended_metadata is None and 'extendedMetadata' in kwargs:
-            extended_metadata = kwargs['extendedMetadata']
-        if fault_domain is None and 'faultDomain' in kwargs:
-            fault_domain = kwargs['faultDomain']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if hostname_label is None and 'hostnameLabel' in kwargs:
-            hostname_label = kwargs['hostnameLabel']
-        if instance_configuration_id is None and 'instanceConfigurationId' in kwargs:
-            instance_configuration_id = kwargs['instanceConfigurationId']
-        if instance_options is None and 'instanceOptions' in kwargs:
-            instance_options = kwargs['instanceOptions']
-        if ipxe_script is None and 'ipxeScript' in kwargs:
-            ipxe_script = kwargs['ipxeScript']
-        if is_cross_numa_node is None and 'isCrossNumaNode' in kwargs:
-            is_cross_numa_node = kwargs['isCrossNumaNode']
-        if is_pv_encryption_in_transit_enabled is None and 'isPvEncryptionInTransitEnabled' in kwargs:
-            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
-        if launch_mode is None and 'launchMode' in kwargs:
-            launch_mode = kwargs['launchMode']
-        if launch_options is None and 'launchOptions' in kwargs:
-            launch_options = kwargs['launchOptions']
-        if platform_config is None and 'platformConfig' in kwargs:
-            platform_config = kwargs['platformConfig']
-        if preemptible_instance_config is None and 'preemptibleInstanceConfig' in kwargs:
-            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
-        if preserve_boot_volume is None and 'preserveBootVolume' in kwargs:
-            preserve_boot_volume = kwargs['preserveBootVolume']
-        if private_ip is None and 'privateIp' in kwargs:
-            private_ip = kwargs['privateIp']
-        if public_ip is None and 'publicIp' in kwargs:
-            public_ip = kwargs['publicIp']
-        if shape_config is None and 'shapeConfig' in kwargs:
-            shape_config = kwargs['shapeConfig']
-        if source_details is None and 'sourceDetails' in kwargs:
-            source_details = kwargs['sourceDetails']
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_maintenance_reboot_due is None and 'timeMaintenanceRebootDue' in kwargs:
-            time_maintenance_reboot_due = kwargs['timeMaintenanceRebootDue']
-        if update_operation_constraint is None and 'updateOperationConstraint' in kwargs:
-            update_operation_constraint = kwargs['updateOperationConstraint']
-
         if agent_config is not None:
-            _setter("agent_config", agent_config)
+            pulumi.set(__self__, "agent_config", agent_config)
         if async_ is not None:
-            _setter("async_", async_)
+            pulumi.set(__self__, "async_", async_)
         if availability_config is not None:
-            _setter("availability_config", availability_config)
+            pulumi.set(__self__, "availability_config", availability_config)
         if availability_domain is not None:
-            _setter("availability_domain", availability_domain)
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if boot_volume_id is not None:
-            _setter("boot_volume_id", boot_volume_id)
+            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         if capacity_reservation_id is not None:
-            _setter("capacity_reservation_id", capacity_reservation_id)
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_cluster_id is not None:
-            _setter("compute_cluster_id", compute_cluster_id)
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
-            _setter("create_vnic_details", create_vnic_details)
+            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
+            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if extended_metadata is not None:
-            _setter("extended_metadata", extended_metadata)
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
         if fault_domain is not None:
-            _setter("fault_domain", fault_domain)
+            pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if hostname_label is not None:
             warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
         if hostname_label is not None:
-            _setter("hostname_label", hostname_label)
+            pulumi.set(__self__, "hostname_label", hostname_label)
         if image is not None:
             warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
         if image is not None:
-            _setter("image", image)
+            pulumi.set(__self__, "image", image)
         if instance_configuration_id is not None:
-            _setter("instance_configuration_id", instance_configuration_id)
+            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
         if instance_options is not None:
-            _setter("instance_options", instance_options)
+            pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
-            _setter("ipxe_script", ipxe_script)
+            pulumi.set(__self__, "ipxe_script", ipxe_script)
         if is_cross_numa_node is not None:
-            _setter("is_cross_numa_node", is_cross_numa_node)
+            pulumi.set(__self__, "is_cross_numa_node", is_cross_numa_node)
         if is_pv_encryption_in_transit_enabled is not None:
-            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_mode is not None:
-            _setter("launch_mode", launch_mode)
+            pulumi.set(__self__, "launch_mode", launch_mode)
         if launch_options is not None:
-            _setter("launch_options", launch_options)
+            pulumi.set(__self__, "launch_options", launch_options)
         if metadata is not None:
-            _setter("metadata", metadata)
+            pulumi.set(__self__, "metadata", metadata)
         if platform_config is not None:
-            _setter("platform_config", platform_config)
+            pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
-            _setter("preemptible_instance_config", preemptible_instance_config)
+            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
         if preserve_boot_volume is not None:
-            _setter("preserve_boot_volume", preserve_boot_volume)
+            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
         if private_ip is not None:
-            _setter("private_ip", private_ip)
+            pulumi.set(__self__, "private_ip", private_ip)
         if public_ip is not None:
-            _setter("public_ip", public_ip)
+            pulumi.set(__self__, "public_ip", public_ip)
         if region is not None:
-            _setter("region", region)
+            pulumi.set(__self__, "region", region)
         if shape is not None:
-            _setter("shape", shape)
+            pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
-            _setter("shape_config", shape_config)
+            pulumi.set(__self__, "shape_config", shape_config)
         if source_details is not None:
-            _setter("source_details", source_details)
+            pulumi.set(__self__, "source_details", source_details)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
         if subnet_id is not None:
-            _setter("subnet_id", subnet_id)
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_maintenance_reboot_due is not None:
-            _setter("time_maintenance_reboot_due", time_maintenance_reboot_due)
+            pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
         if update_operation_constraint is not None:
-            _setter("update_operation_constraint", update_operation_constraint)
+            pulumi.set(__self__, "update_operation_constraint", update_operation_constraint)
 
     @property
     @pulumi.getter(name="agentConfig")
@@ -1985,10 +1697,6 @@ class Instance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -2034,10 +1742,8 @@ class Instance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InstanceArgs.__new__(InstanceArgs)
 
-            agent_config = _utilities.configure(agent_config, InstanceAgentConfigArgs, True)
             __props__.__dict__["agent_config"] = agent_config
             __props__.__dict__["async_"] = async_
-            availability_config = _utilities.configure(availability_config, InstanceAvailabilityConfigArgs, True)
             __props__.__dict__["availability_config"] = availability_config
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
@@ -2047,7 +1753,6 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["compute_cluster_id"] = compute_cluster_id
-            create_vnic_details = _utilities.configure(create_vnic_details, InstanceCreateVnicDetailsArgs, True)
             __props__.__dict__["create_vnic_details"] = create_vnic_details
             __props__.__dict__["dedicated_vm_host_id"] = dedicated_vm_host_id
             __props__.__dict__["defined_tags"] = defined_tags
@@ -2058,22 +1763,16 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["image"] = image
             __props__.__dict__["instance_configuration_id"] = instance_configuration_id
-            instance_options = _utilities.configure(instance_options, InstanceInstanceOptionsArgs, True)
             __props__.__dict__["instance_options"] = instance_options
             __props__.__dict__["ipxe_script"] = ipxe_script
             __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
-            launch_options = _utilities.configure(launch_options, InstanceLaunchOptionsArgs, True)
             __props__.__dict__["launch_options"] = launch_options
             __props__.__dict__["metadata"] = metadata
-            platform_config = _utilities.configure(platform_config, InstancePlatformConfigArgs, True)
             __props__.__dict__["platform_config"] = platform_config
-            preemptible_instance_config = _utilities.configure(preemptible_instance_config, InstancePreemptibleInstanceConfigArgs, True)
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
             __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
             __props__.__dict__["shape"] = shape
-            shape_config = _utilities.configure(shape_config, InstanceShapeConfigArgs, True)
             __props__.__dict__["shape_config"] = shape_config
-            source_details = _utilities.configure(source_details, InstanceSourceDetailsArgs, True)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["state"] = state
             __props__.__dict__["subnet_id"] = subnet_id

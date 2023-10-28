@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -130,96 +130,27 @@ class DomainsSecurityQuestionSettingArgs:
                * type: complex
                * uniqueness: none
         """
-        DomainsSecurityQuestionSettingArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idcs_endpoint=idcs_endpoint,
-            max_field_length=max_field_length,
-            min_answer_length=min_answer_length,
-            num_questions_to_ans=num_questions_to_ans,
-            num_questions_to_setup=num_questions_to_setup,
-            schemas=schemas,
-            security_question_setting_id=security_question_setting_id,
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            external_id=external_id,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            tags=tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             max_field_length: Optional[pulumi.Input[int]] = None,
-             min_answer_length: Optional[pulumi.Input[int]] = None,
-             num_questions_to_ans: Optional[pulumi.Input[int]] = None,
-             num_questions_to_setup: Optional[pulumi.Input[int]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             security_question_setting_id: Optional[pulumi.Input[str]] = None,
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             external_id: Optional[pulumi.Input[str]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionSettingTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_endpoint is None:
-            raise TypeError("Missing 'idcs_endpoint' argument")
-        if max_field_length is None and 'maxFieldLength' in kwargs:
-            max_field_length = kwargs['maxFieldLength']
-        if max_field_length is None:
-            raise TypeError("Missing 'max_field_length' argument")
-        if min_answer_length is None and 'minAnswerLength' in kwargs:
-            min_answer_length = kwargs['minAnswerLength']
-        if min_answer_length is None:
-            raise TypeError("Missing 'min_answer_length' argument")
-        if num_questions_to_ans is None and 'numQuestionsToAns' in kwargs:
-            num_questions_to_ans = kwargs['numQuestionsToAns']
-        if num_questions_to_ans is None:
-            raise TypeError("Missing 'num_questions_to_ans' argument")
-        if num_questions_to_setup is None and 'numQuestionsToSetup' in kwargs:
-            num_questions_to_setup = kwargs['numQuestionsToSetup']
-        if num_questions_to_setup is None:
-            raise TypeError("Missing 'num_questions_to_setup' argument")
-        if schemas is None:
-            raise TypeError("Missing 'schemas' argument")
-        if security_question_setting_id is None and 'securityQuestionSettingId' in kwargs:
-            security_question_setting_id = kwargs['securityQuestionSettingId']
-        if security_question_setting_id is None:
-            raise TypeError("Missing 'security_question_setting_id' argument")
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if external_id is None and 'externalId' in kwargs:
-            external_id = kwargs['externalId']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-
-        _setter("idcs_endpoint", idcs_endpoint)
-        _setter("max_field_length", max_field_length)
-        _setter("min_answer_length", min_answer_length)
-        _setter("num_questions_to_ans", num_questions_to_ans)
-        _setter("num_questions_to_setup", num_questions_to_setup)
-        _setter("schemas", schemas)
-        _setter("security_question_setting_id", security_question_setting_id)
+        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+        pulumi.set(__self__, "max_field_length", max_field_length)
+        pulumi.set(__self__, "min_answer_length", min_answer_length)
+        pulumi.set(__self__, "num_questions_to_ans", num_questions_to_ans)
+        pulumi.set(__self__, "num_questions_to_setup", num_questions_to_setup)
+        pulumi.set(__self__, "schemas", schemas)
+        pulumi.set(__self__, "security_question_setting_id", security_question_setting_id)
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if external_id is not None:
-            _setter("external_id", external_id)
+            pulumi.set(__self__, "external_id", external_id)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -697,141 +628,52 @@ class _DomainsSecurityQuestionSettingState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _DomainsSecurityQuestionSettingState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attribute_sets=attribute_sets,
-            attributes=attributes,
-            authorization=authorization,
-            compartment_ocid=compartment_ocid,
-            delete_in_progress=delete_in_progress,
-            domain_ocid=domain_ocid,
-            external_id=external_id,
-            idcs_created_bies=idcs_created_bies,
-            idcs_endpoint=idcs_endpoint,
-            idcs_last_modified_bies=idcs_last_modified_bies,
-            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
-            idcs_prevented_operations=idcs_prevented_operations,
-            max_field_length=max_field_length,
-            metas=metas,
-            min_answer_length=min_answer_length,
-            num_questions_to_ans=num_questions_to_ans,
-            num_questions_to_setup=num_questions_to_setup,
-            ocid=ocid,
-            resource_type_schema_version=resource_type_schema_version,
-            schemas=schemas,
-            security_question_setting_id=security_question_setting_id,
-            tags=tags,
-            tenancy_ocid=tenancy_ocid,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             attributes: Optional[pulumi.Input[str]] = None,
-             authorization: Optional[pulumi.Input[str]] = None,
-             compartment_ocid: Optional[pulumi.Input[str]] = None,
-             delete_in_progress: Optional[pulumi.Input[bool]] = None,
-             domain_ocid: Optional[pulumi.Input[str]] = None,
-             external_id: Optional[pulumi.Input[str]] = None,
-             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionSettingIdcsCreatedByArgs']]]] = None,
-             idcs_endpoint: Optional[pulumi.Input[str]] = None,
-             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionSettingIdcsLastModifiedByArgs']]]] = None,
-             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
-             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             max_field_length: Optional[pulumi.Input[int]] = None,
-             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionSettingMetaArgs']]]] = None,
-             min_answer_length: Optional[pulumi.Input[int]] = None,
-             num_questions_to_ans: Optional[pulumi.Input[int]] = None,
-             num_questions_to_setup: Optional[pulumi.Input[int]] = None,
-             ocid: Optional[pulumi.Input[str]] = None,
-             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             security_question_setting_id: Optional[pulumi.Input[str]] = None,
-             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsSecurityQuestionSettingTagArgs']]]] = None,
-             tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attribute_sets is None and 'attributeSets' in kwargs:
-            attribute_sets = kwargs['attributeSets']
-        if compartment_ocid is None and 'compartmentOcid' in kwargs:
-            compartment_ocid = kwargs['compartmentOcid']
-        if delete_in_progress is None and 'deleteInProgress' in kwargs:
-            delete_in_progress = kwargs['deleteInProgress']
-        if domain_ocid is None and 'domainOcid' in kwargs:
-            domain_ocid = kwargs['domainOcid']
-        if external_id is None and 'externalId' in kwargs:
-            external_id = kwargs['externalId']
-        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
-            idcs_created_bies = kwargs['idcsCreatedBies']
-        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
-            idcs_endpoint = kwargs['idcsEndpoint']
-        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
-            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
-        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
-            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
-        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
-            idcs_prevented_operations = kwargs['idcsPreventedOperations']
-        if max_field_length is None and 'maxFieldLength' in kwargs:
-            max_field_length = kwargs['maxFieldLength']
-        if min_answer_length is None and 'minAnswerLength' in kwargs:
-            min_answer_length = kwargs['minAnswerLength']
-        if num_questions_to_ans is None and 'numQuestionsToAns' in kwargs:
-            num_questions_to_ans = kwargs['numQuestionsToAns']
-        if num_questions_to_setup is None and 'numQuestionsToSetup' in kwargs:
-            num_questions_to_setup = kwargs['numQuestionsToSetup']
-        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
-            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
-        if security_question_setting_id is None and 'securityQuestionSettingId' in kwargs:
-            security_question_setting_id = kwargs['securityQuestionSettingId']
-        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
-            tenancy_ocid = kwargs['tenancyOcid']
-
         if attribute_sets is not None:
-            _setter("attribute_sets", attribute_sets)
+            pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
-            _setter("attributes", attributes)
+            pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
-            _setter("authorization", authorization)
+            pulumi.set(__self__, "authorization", authorization)
         if compartment_ocid is not None:
-            _setter("compartment_ocid", compartment_ocid)
+            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            _setter("delete_in_progress", delete_in_progress)
+            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
         if domain_ocid is not None:
-            _setter("domain_ocid", domain_ocid)
+            pulumi.set(__self__, "domain_ocid", domain_ocid)
         if external_id is not None:
-            _setter("external_id", external_id)
+            pulumi.set(__self__, "external_id", external_id)
         if idcs_created_bies is not None:
-            _setter("idcs_created_bies", idcs_created_bies)
+            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            _setter("idcs_endpoint", idcs_endpoint)
+            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
+            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            _setter("idcs_prevented_operations", idcs_prevented_operations)
+            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
         if max_field_length is not None:
-            _setter("max_field_length", max_field_length)
+            pulumi.set(__self__, "max_field_length", max_field_length)
         if metas is not None:
-            _setter("metas", metas)
+            pulumi.set(__self__, "metas", metas)
         if min_answer_length is not None:
-            _setter("min_answer_length", min_answer_length)
+            pulumi.set(__self__, "min_answer_length", min_answer_length)
         if num_questions_to_ans is not None:
-            _setter("num_questions_to_ans", num_questions_to_ans)
+            pulumi.set(__self__, "num_questions_to_ans", num_questions_to_ans)
         if num_questions_to_setup is not None:
-            _setter("num_questions_to_setup", num_questions_to_setup)
+            pulumi.set(__self__, "num_questions_to_setup", num_questions_to_setup)
         if ocid is not None:
-            _setter("ocid", ocid)
+            pulumi.set(__self__, "ocid", ocid)
         if resource_type_schema_version is not None:
-            _setter("resource_type_schema_version", resource_type_schema_version)
+            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            _setter("schemas", schemas)
+            pulumi.set(__self__, "schemas", schemas)
         if security_question_setting_id is not None:
-            _setter("security_question_setting_id", security_question_setting_id)
+            pulumi.set(__self__, "security_question_setting_id", security_question_setting_id)
         if tags is not None:
-            _setter("tags", tags)
+            pulumi.set(__self__, "tags", tags)
         if tenancy_ocid is not None:
-            _setter("tenancy_ocid", tenancy_ocid)
+            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
 
     @property
     @pulumi.getter(name="attributeSets")
@@ -1444,10 +1286,6 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DomainsSecurityQuestionSettingArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

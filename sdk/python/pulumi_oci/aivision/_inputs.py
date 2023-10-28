@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -36,42 +36,15 @@ class ModelTestingDatasetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ModelTestingDatasetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dataset_type=dataset_type,
-            bucket=bucket,
-            dataset_id=dataset_id,
-            namespace_name=namespace_name,
-            object=object,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dataset_type: Optional[pulumi.Input[str]] = None,
-             bucket: Optional[pulumi.Input[str]] = None,
-             dataset_id: Optional[pulumi.Input[str]] = None,
-             namespace_name: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dataset_type is None and 'datasetType' in kwargs:
-            dataset_type = kwargs['datasetType']
-        if dataset_type is None:
-            raise TypeError("Missing 'dataset_type' argument")
-        if dataset_id is None and 'datasetId' in kwargs:
-            dataset_id = kwargs['datasetId']
-        if namespace_name is None and 'namespaceName' in kwargs:
-            namespace_name = kwargs['namespaceName']
-
-        _setter("dataset_type", dataset_type)
+        pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if dataset_id is not None:
-            _setter("dataset_id", dataset_id)
+            pulumi.set(__self__, "dataset_id", dataset_id)
         if namespace_name is not None:
-            _setter("namespace_name", namespace_name)
+            pulumi.set(__self__, "namespace_name", namespace_name)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -157,42 +130,15 @@ class ModelTrainingDatasetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ModelTrainingDatasetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dataset_type=dataset_type,
-            bucket=bucket,
-            dataset_id=dataset_id,
-            namespace_name=namespace_name,
-            object=object,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dataset_type: Optional[pulumi.Input[str]] = None,
-             bucket: Optional[pulumi.Input[str]] = None,
-             dataset_id: Optional[pulumi.Input[str]] = None,
-             namespace_name: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dataset_type is None and 'datasetType' in kwargs:
-            dataset_type = kwargs['datasetType']
-        if dataset_type is None:
-            raise TypeError("Missing 'dataset_type' argument")
-        if dataset_id is None and 'datasetId' in kwargs:
-            dataset_id = kwargs['datasetId']
-        if namespace_name is None and 'namespaceName' in kwargs:
-            namespace_name = kwargs['namespaceName']
-
-        _setter("dataset_type", dataset_type)
+        pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if dataset_id is not None:
-            _setter("dataset_id", dataset_id)
+            pulumi.set(__self__, "dataset_id", dataset_id)
         if namespace_name is not None:
-            _setter("namespace_name", namespace_name)
+            pulumi.set(__self__, "namespace_name", namespace_name)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -278,42 +224,15 @@ class ModelValidationDatasetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ModelValidationDatasetArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dataset_type=dataset_type,
-            bucket=bucket,
-            dataset_id=dataset_id,
-            namespace_name=namespace_name,
-            object=object,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dataset_type: Optional[pulumi.Input[str]] = None,
-             bucket: Optional[pulumi.Input[str]] = None,
-             dataset_id: Optional[pulumi.Input[str]] = None,
-             namespace_name: Optional[pulumi.Input[str]] = None,
-             object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dataset_type is None and 'datasetType' in kwargs:
-            dataset_type = kwargs['datasetType']
-        if dataset_type is None:
-            raise TypeError("Missing 'dataset_type' argument")
-        if dataset_id is None and 'datasetId' in kwargs:
-            dataset_id = kwargs['datasetId']
-        if namespace_name is None and 'namespaceName' in kwargs:
-            namespace_name = kwargs['namespaceName']
-
-        _setter("dataset_type", dataset_type)
+        pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
-            _setter("bucket", bucket)
+            pulumi.set(__self__, "bucket", bucket)
         if dataset_id is not None:
-            _setter("dataset_id", dataset_id)
+            pulumi.set(__self__, "dataset_id", dataset_id)
         if namespace_name is not None:
-            _setter("namespace_name", namespace_name)
+            pulumi.set(__self__, "namespace_name", namespace_name)
         if object is not None:
-            _setter("object", object)
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -386,29 +305,10 @@ class GetModelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetModelsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -444,29 +344,10 @@ class GetProjectsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetProjectsFilterArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter

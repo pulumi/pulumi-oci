@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,90 +47,27 @@ class CrossConnectArgs:
         :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         """
-        CrossConnectArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            location_name=location_name,
-            port_speed_shape_name=port_speed_shape_name,
-            cross_connect_group_id=cross_connect_group_id,
-            customer_reference_name=customer_reference_name,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            far_cross_connect_or_cross_connect_group_id=far_cross_connect_or_cross_connect_group_id,
-            freeform_tags=freeform_tags,
-            is_active=is_active,
-            macsec_properties=macsec_properties,
-            near_cross_connect_or_cross_connect_group_id=near_cross_connect_or_cross_connect_group_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             location_name: Optional[pulumi.Input[str]] = None,
-             port_speed_shape_name: Optional[pulumi.Input[str]] = None,
-             cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             customer_reference_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             far_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_active: Optional[pulumi.Input[bool]] = None,
-             macsec_properties: Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']] = None,
-             near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if location_name is None and 'locationName' in kwargs:
-            location_name = kwargs['locationName']
-        if location_name is None:
-            raise TypeError("Missing 'location_name' argument")
-        if port_speed_shape_name is None and 'portSpeedShapeName' in kwargs:
-            port_speed_shape_name = kwargs['portSpeedShapeName']
-        if port_speed_shape_name is None:
-            raise TypeError("Missing 'port_speed_shape_name' argument")
-        if cross_connect_group_id is None and 'crossConnectGroupId' in kwargs:
-            cross_connect_group_id = kwargs['crossConnectGroupId']
-        if customer_reference_name is None and 'customerReferenceName' in kwargs:
-            customer_reference_name = kwargs['customerReferenceName']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if far_cross_connect_or_cross_connect_group_id is None and 'farCrossConnectOrCrossConnectGroupId' in kwargs:
-            far_cross_connect_or_cross_connect_group_id = kwargs['farCrossConnectOrCrossConnectGroupId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_active is None and 'isActive' in kwargs:
-            is_active = kwargs['isActive']
-        if macsec_properties is None and 'macsecProperties' in kwargs:
-            macsec_properties = kwargs['macsecProperties']
-        if near_cross_connect_or_cross_connect_group_id is None and 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
-            near_cross_connect_or_cross_connect_group_id = kwargs['nearCrossConnectOrCrossConnectGroupId']
-
-        _setter("compartment_id", compartment_id)
-        _setter("location_name", location_name)
-        _setter("port_speed_shape_name", port_speed_shape_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "location_name", location_name)
+        pulumi.set(__self__, "port_speed_shape_name", port_speed_shape_name)
         if cross_connect_group_id is not None:
-            _setter("cross_connect_group_id", cross_connect_group_id)
+            pulumi.set(__self__, "cross_connect_group_id", cross_connect_group_id)
         if customer_reference_name is not None:
-            _setter("customer_reference_name", customer_reference_name)
+            pulumi.set(__self__, "customer_reference_name", customer_reference_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if far_cross_connect_or_cross_connect_group_id is not None:
-            _setter("far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
+            pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_active is not None:
-            _setter("is_active", is_active)
+            pulumi.set(__self__, "is_active", is_active)
         if macsec_properties is not None:
-            _setter("macsec_properties", macsec_properties)
+            pulumi.set(__self__, "macsec_properties", macsec_properties)
         if near_cross_connect_or_cross_connect_group_id is not None:
-            _setter("near_cross_connect_or_cross_connect_group_id", near_cross_connect_or_cross_connect_group_id)
+            pulumi.set(__self__, "near_cross_connect_or_cross_connect_group_id", near_cross_connect_or_cross_connect_group_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -325,115 +262,40 @@ class _CrossConnectState:
         :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
         :param pulumi.Input[str] time_created: The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
-        _CrossConnectState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            cross_connect_group_id=cross_connect_group_id,
-            customer_reference_name=customer_reference_name,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            far_cross_connect_or_cross_connect_group_id=far_cross_connect_or_cross_connect_group_id,
-            freeform_tags=freeform_tags,
-            is_active=is_active,
-            location_name=location_name,
-            macsec_properties=macsec_properties,
-            near_cross_connect_or_cross_connect_group_id=near_cross_connect_or_cross_connect_group_id,
-            oci_logical_device_name=oci_logical_device_name,
-            oci_physical_device_name=oci_physical_device_name,
-            port_name=port_name,
-            port_speed_shape_name=port_speed_shape_name,
-            state=state,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             customer_reference_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             far_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_active: Optional[pulumi.Input[bool]] = None,
-             location_name: Optional[pulumi.Input[str]] = None,
-             macsec_properties: Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']] = None,
-             near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             oci_logical_device_name: Optional[pulumi.Input[str]] = None,
-             oci_physical_device_name: Optional[pulumi.Input[str]] = None,
-             port_name: Optional[pulumi.Input[str]] = None,
-             port_speed_shape_name: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if cross_connect_group_id is None and 'crossConnectGroupId' in kwargs:
-            cross_connect_group_id = kwargs['crossConnectGroupId']
-        if customer_reference_name is None and 'customerReferenceName' in kwargs:
-            customer_reference_name = kwargs['customerReferenceName']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if far_cross_connect_or_cross_connect_group_id is None and 'farCrossConnectOrCrossConnectGroupId' in kwargs:
-            far_cross_connect_or_cross_connect_group_id = kwargs['farCrossConnectOrCrossConnectGroupId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_active is None and 'isActive' in kwargs:
-            is_active = kwargs['isActive']
-        if location_name is None and 'locationName' in kwargs:
-            location_name = kwargs['locationName']
-        if macsec_properties is None and 'macsecProperties' in kwargs:
-            macsec_properties = kwargs['macsecProperties']
-        if near_cross_connect_or_cross_connect_group_id is None and 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
-            near_cross_connect_or_cross_connect_group_id = kwargs['nearCrossConnectOrCrossConnectGroupId']
-        if oci_logical_device_name is None and 'ociLogicalDeviceName' in kwargs:
-            oci_logical_device_name = kwargs['ociLogicalDeviceName']
-        if oci_physical_device_name is None and 'ociPhysicalDeviceName' in kwargs:
-            oci_physical_device_name = kwargs['ociPhysicalDeviceName']
-        if port_name is None and 'portName' in kwargs:
-            port_name = kwargs['portName']
-        if port_speed_shape_name is None and 'portSpeedShapeName' in kwargs:
-            port_speed_shape_name = kwargs['portSpeedShapeName']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if cross_connect_group_id is not None:
-            _setter("cross_connect_group_id", cross_connect_group_id)
+            pulumi.set(__self__, "cross_connect_group_id", cross_connect_group_id)
         if customer_reference_name is not None:
-            _setter("customer_reference_name", customer_reference_name)
+            pulumi.set(__self__, "customer_reference_name", customer_reference_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if far_cross_connect_or_cross_connect_group_id is not None:
-            _setter("far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
+            pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_active is not None:
-            _setter("is_active", is_active)
+            pulumi.set(__self__, "is_active", is_active)
         if location_name is not None:
-            _setter("location_name", location_name)
+            pulumi.set(__self__, "location_name", location_name)
         if macsec_properties is not None:
-            _setter("macsec_properties", macsec_properties)
+            pulumi.set(__self__, "macsec_properties", macsec_properties)
         if near_cross_connect_or_cross_connect_group_id is not None:
-            _setter("near_cross_connect_or_cross_connect_group_id", near_cross_connect_or_cross_connect_group_id)
+            pulumi.set(__self__, "near_cross_connect_or_cross_connect_group_id", near_cross_connect_or_cross_connect_group_id)
         if oci_logical_device_name is not None:
-            _setter("oci_logical_device_name", oci_logical_device_name)
+            pulumi.set(__self__, "oci_logical_device_name", oci_logical_device_name)
         if oci_physical_device_name is not None:
-            _setter("oci_physical_device_name", oci_physical_device_name)
+            pulumi.set(__self__, "oci_physical_device_name", oci_physical_device_name)
         if port_name is not None:
-            _setter("port_name", port_name)
+            pulumi.set(__self__, "port_name", port_name)
         if port_speed_shape_name is not None:
-            _setter("port_speed_shape_name", port_speed_shape_name)
+            pulumi.set(__self__, "port_speed_shape_name", port_speed_shape_name)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -823,10 +685,6 @@ class CrossConnect(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            CrossConnectArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -866,7 +724,6 @@ class CrossConnect(pulumi.CustomResource):
             if location_name is None and not opts.urn:
                 raise TypeError("Missing required property 'location_name'")
             __props__.__dict__["location_name"] = location_name
-            macsec_properties = _utilities.configure(macsec_properties, CrossConnectMacsecPropertiesArgs, True)
             __props__.__dict__["macsec_properties"] = macsec_properties
             __props__.__dict__["near_cross_connect_or_cross_connect_group_id"] = near_cross_connect_or_cross_connect_group_id
             if port_speed_shape_name is None and not opts.urn:

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,79 +47,24 @@ class ListenerArgs:
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
-        ListenerArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            default_backend_set_name=default_backend_set_name,
-            load_balancer_id=load_balancer_id,
-            port=port,
-            protocol=protocol,
-            connection_configuration=connection_configuration,
-            hostname_names=hostname_names,
-            name=name,
-            path_route_set_name=path_route_set_name,
-            routing_policy_name=routing_policy_name,
-            rule_set_names=rule_set_names,
-            ssl_configuration=ssl_configuration,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             default_backend_set_name: Optional[pulumi.Input[str]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             connection_configuration: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']] = None,
-             hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             path_route_set_name: Optional[pulumi.Input[str]] = None,
-             routing_policy_name: Optional[pulumi.Input[str]] = None,
-             rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_backend_set_name is None and 'defaultBackendSetName' in kwargs:
-            default_backend_set_name = kwargs['defaultBackendSetName']
-        if default_backend_set_name is None:
-            raise TypeError("Missing 'default_backend_set_name' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if connection_configuration is None and 'connectionConfiguration' in kwargs:
-            connection_configuration = kwargs['connectionConfiguration']
-        if hostname_names is None and 'hostnameNames' in kwargs:
-            hostname_names = kwargs['hostnameNames']
-        if path_route_set_name is None and 'pathRouteSetName' in kwargs:
-            path_route_set_name = kwargs['pathRouteSetName']
-        if routing_policy_name is None and 'routingPolicyName' in kwargs:
-            routing_policy_name = kwargs['routingPolicyName']
-        if rule_set_names is None and 'ruleSetNames' in kwargs:
-            rule_set_names = kwargs['ruleSetNames']
-        if ssl_configuration is None and 'sslConfiguration' in kwargs:
-            ssl_configuration = kwargs['sslConfiguration']
-
-        _setter("default_backend_set_name", default_backend_set_name)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("port", port)
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
         if connection_configuration is not None:
-            _setter("connection_configuration", connection_configuration)
+            pulumi.set(__self__, "connection_configuration", connection_configuration)
         if hostname_names is not None:
-            _setter("hostname_names", hostname_names)
+            pulumi.set(__self__, "hostname_names", hostname_names)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if path_route_set_name is not None:
-            _setter("path_route_set_name", path_route_set_name)
+            pulumi.set(__self__, "path_route_set_name", path_route_set_name)
         if routing_policy_name is not None:
-            _setter("routing_policy_name", routing_policy_name)
+            pulumi.set(__self__, "routing_policy_name", routing_policy_name)
         if rule_set_names is not None:
-            _setter("rule_set_names", rule_set_names)
+            pulumi.set(__self__, "rule_set_names", rule_set_names)
         if ssl_configuration is not None:
-            _setter("ssl_configuration", ssl_configuration)
+            pulumi.set(__self__, "ssl_configuration", ssl_configuration)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -295,79 +240,30 @@ class _ListenerState:
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
-        _ListenerState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            connection_configuration=connection_configuration,
-            default_backend_set_name=default_backend_set_name,
-            hostname_names=hostname_names,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            path_route_set_name=path_route_set_name,
-            port=port,
-            protocol=protocol,
-            routing_policy_name=routing_policy_name,
-            rule_set_names=rule_set_names,
-            ssl_configuration=ssl_configuration,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             connection_configuration: Optional[pulumi.Input['ListenerConnectionConfigurationArgs']] = None,
-             default_backend_set_name: Optional[pulumi.Input[str]] = None,
-             hostname_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             load_balancer_id: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             path_route_set_name: Optional[pulumi.Input[str]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             protocol: Optional[pulumi.Input[str]] = None,
-             routing_policy_name: Optional[pulumi.Input[str]] = None,
-             rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_configuration is None and 'connectionConfiguration' in kwargs:
-            connection_configuration = kwargs['connectionConfiguration']
-        if default_backend_set_name is None and 'defaultBackendSetName' in kwargs:
-            default_backend_set_name = kwargs['defaultBackendSetName']
-        if hostname_names is None and 'hostnameNames' in kwargs:
-            hostname_names = kwargs['hostnameNames']
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if path_route_set_name is None and 'pathRouteSetName' in kwargs:
-            path_route_set_name = kwargs['pathRouteSetName']
-        if routing_policy_name is None and 'routingPolicyName' in kwargs:
-            routing_policy_name = kwargs['routingPolicyName']
-        if rule_set_names is None and 'ruleSetNames' in kwargs:
-            rule_set_names = kwargs['ruleSetNames']
-        if ssl_configuration is None and 'sslConfiguration' in kwargs:
-            ssl_configuration = kwargs['sslConfiguration']
-
         if connection_configuration is not None:
-            _setter("connection_configuration", connection_configuration)
+            pulumi.set(__self__, "connection_configuration", connection_configuration)
         if default_backend_set_name is not None:
-            _setter("default_backend_set_name", default_backend_set_name)
+            pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         if hostname_names is not None:
-            _setter("hostname_names", hostname_names)
+            pulumi.set(__self__, "hostname_names", hostname_names)
         if load_balancer_id is not None:
-            _setter("load_balancer_id", load_balancer_id)
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if path_route_set_name is not None:
-            _setter("path_route_set_name", path_route_set_name)
+            pulumi.set(__self__, "path_route_set_name", path_route_set_name)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if routing_policy_name is not None:
-            _setter("routing_policy_name", routing_policy_name)
+            pulumi.set(__self__, "routing_policy_name", routing_policy_name)
         if rule_set_names is not None:
-            _setter("rule_set_names", rule_set_names)
+            pulumi.set(__self__, "rule_set_names", rule_set_names)
         if ssl_configuration is not None:
-            _setter("ssl_configuration", ssl_configuration)
+            pulumi.set(__self__, "ssl_configuration", ssl_configuration)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="connectionConfiguration")
@@ -658,10 +554,6 @@ class Listener(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ListenerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -687,7 +579,6 @@ class Listener(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ListenerArgs.__new__(ListenerArgs)
 
-            connection_configuration = _utilities.configure(connection_configuration, ListenerConnectionConfigurationArgs, True)
             __props__.__dict__["connection_configuration"] = connection_configuration
             if default_backend_set_name is None and not opts.urn:
                 raise TypeError("Missing required property 'default_backend_set_name'")
@@ -706,7 +597,6 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["protocol"] = protocol
             __props__.__dict__["routing_policy_name"] = routing_policy_name
             __props__.__dict__["rule_set_names"] = rule_set_names
-            ssl_configuration = _utilities.configure(ssl_configuration, ListenerSslConfigurationArgs, True)
             __props__.__dict__["ssl_configuration"] = ssl_configuration
             __props__.__dict__["state"] = None
         super(Listener, __self__).__init__(

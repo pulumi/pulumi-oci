@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -30,29 +30,10 @@ class GetQueryQuickPicksFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetQueryQuickPicksFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -79,29 +60,8 @@ class GetQueryQuickPicksQuickPickResult(dict):
         :param str quick_pick_name: Quick Pick name for the query.
         :param str quick_pick_query: Query for the Quick Pick.
         """
-        GetQueryQuickPicksQuickPickResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            quick_pick_name=quick_pick_name,
-            quick_pick_query=quick_pick_query,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             quick_pick_name: Optional[str] = None,
-             quick_pick_query: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if quick_pick_name is None and 'quickPickName' in kwargs:
-            quick_pick_name = kwargs['quickPickName']
-        if quick_pick_name is None:
-            raise TypeError("Missing 'quick_pick_name' argument")
-        if quick_pick_query is None and 'quickPickQuery' in kwargs:
-            quick_pick_query = kwargs['quickPickQuery']
-        if quick_pick_query is None:
-            raise TypeError("Missing 'quick_pick_query' argument")
-
-        _setter("quick_pick_name", quick_pick_name)
-        _setter("quick_pick_query", quick_pick_query)
+        pulumi.set(__self__, "quick_pick_name", quick_pick_name)
+        pulumi.set(__self__, "quick_pick_query", quick_pick_query)
 
     @property
     @pulumi.getter(name="quickPickName")
@@ -129,25 +89,8 @@ class GetTraceAggregatedSnapshotDataDetailResult(dict):
         :param str key: Name of the property.
         :param str value: Value of the property.
         """
-        GetTraceAggregatedSnapshotDataDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("key", key)
-        _setter("value", value)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -177,36 +120,9 @@ class GetTraceServiceSummaryResult(dict):
         :param str span_service_name: Name associated with the service.
         :param str total_spans: Number of spans for serviceName in the trace.
         """
-        GetTraceServiceSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            error_spans=error_spans,
-            span_service_name=span_service_name,
-            total_spans=total_spans,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             error_spans: Optional[str] = None,
-             span_service_name: Optional[str] = None,
-             total_spans: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if error_spans is None and 'errorSpans' in kwargs:
-            error_spans = kwargs['errorSpans']
-        if error_spans is None:
-            raise TypeError("Missing 'error_spans' argument")
-        if span_service_name is None and 'spanServiceName' in kwargs:
-            span_service_name = kwargs['spanServiceName']
-        if span_service_name is None:
-            raise TypeError("Missing 'span_service_name' argument")
-        if total_spans is None and 'totalSpans' in kwargs:
-            total_spans = kwargs['totalSpans']
-        if total_spans is None:
-            raise TypeError("Missing 'total_spans' argument")
-
-        _setter("error_spans", error_spans)
-        _setter("span_service_name", span_service_name)
-        _setter("total_spans", total_spans)
+        pulumi.set(__self__, "error_spans", error_spans)
+        pulumi.set(__self__, "span_service_name", span_service_name)
+        pulumi.set(__self__, "total_spans", total_spans)
 
     @property
     @pulumi.getter(name="errorSpans")
@@ -242,25 +158,8 @@ class GetTraceSnapshotDataTraceSnapshotDetailResult(dict):
         :param str key: Name of the property.
         :param str value: Value of the property.
         """
-        GetTraceSnapshotDataTraceSnapshotDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            key=key,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             key: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("key", key)
-        _setter("value", value)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -308,91 +207,18 @@ class GetTraceSpanResult(dict):
         :param str time_started: Span start time.  Timestamp when the span was started.
         :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
         """
-        GetTraceSpanResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            duration_in_ms=duration_in_ms,
-            is_error=is_error,
-            key=key,
-            kind=kind,
-            logs=logs,
-            operation_name=operation_name,
-            parent_span_key=parent_span_key,
-            service_name=service_name,
-            tags=tags,
-            time_ended=time_ended,
-            time_started=time_started,
-            trace_key=trace_key,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             duration_in_ms: Optional[str] = None,
-             is_error: Optional[bool] = None,
-             key: Optional[str] = None,
-             kind: Optional[str] = None,
-             logs: Optional[Sequence['outputs.GetTraceSpanLogResult']] = None,
-             operation_name: Optional[str] = None,
-             parent_span_key: Optional[str] = None,
-             service_name: Optional[str] = None,
-             tags: Optional[Sequence['outputs.GetTraceSpanTagResult']] = None,
-             time_ended: Optional[str] = None,
-             time_started: Optional[str] = None,
-             trace_key: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if duration_in_ms is None and 'durationInMs' in kwargs:
-            duration_in_ms = kwargs['durationInMs']
-        if duration_in_ms is None:
-            raise TypeError("Missing 'duration_in_ms' argument")
-        if is_error is None and 'isError' in kwargs:
-            is_error = kwargs['isError']
-        if is_error is None:
-            raise TypeError("Missing 'is_error' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if kind is None:
-            raise TypeError("Missing 'kind' argument")
-        if logs is None:
-            raise TypeError("Missing 'logs' argument")
-        if operation_name is None and 'operationName' in kwargs:
-            operation_name = kwargs['operationName']
-        if operation_name is None:
-            raise TypeError("Missing 'operation_name' argument")
-        if parent_span_key is None and 'parentSpanKey' in kwargs:
-            parent_span_key = kwargs['parentSpanKey']
-        if parent_span_key is None:
-            raise TypeError("Missing 'parent_span_key' argument")
-        if service_name is None and 'serviceName' in kwargs:
-            service_name = kwargs['serviceName']
-        if service_name is None:
-            raise TypeError("Missing 'service_name' argument")
-        if tags is None:
-            raise TypeError("Missing 'tags' argument")
-        if time_ended is None and 'timeEnded' in kwargs:
-            time_ended = kwargs['timeEnded']
-        if time_ended is None:
-            raise TypeError("Missing 'time_ended' argument")
-        if time_started is None and 'timeStarted' in kwargs:
-            time_started = kwargs['timeStarted']
-        if time_started is None:
-            raise TypeError("Missing 'time_started' argument")
-        if trace_key is None and 'traceKey' in kwargs:
-            trace_key = kwargs['traceKey']
-        if trace_key is None:
-            raise TypeError("Missing 'trace_key' argument")
-
-        _setter("duration_in_ms", duration_in_ms)
-        _setter("is_error", is_error)
-        _setter("key", key)
-        _setter("kind", kind)
-        _setter("logs", logs)
-        _setter("operation_name", operation_name)
-        _setter("parent_span_key", parent_span_key)
-        _setter("service_name", service_name)
-        _setter("tags", tags)
-        _setter("time_ended", time_ended)
-        _setter("time_started", time_started)
-        _setter("trace_key", trace_key)
+        pulumi.set(__self__, "duration_in_ms", duration_in_ms)
+        pulumi.set(__self__, "is_error", is_error)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "logs", logs)
+        pulumi.set(__self__, "operation_name", operation_name)
+        pulumi.set(__self__, "parent_span_key", parent_span_key)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "trace_key", trace_key)
 
     @property
     @pulumi.getter(name="durationInMs")
@@ -500,29 +326,8 @@ class GetTraceSpanLogResult(dict):
         :param Sequence['GetTraceSpanLogSpanLogArgs'] span_logs: List of logs associated with the span at the given timestamp.
         :param str time_created: Timestamp at which the log is created.
         """
-        GetTraceSpanLogResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            span_logs=span_logs,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             span_logs: Optional[Sequence['outputs.GetTraceSpanLogSpanLogResult']] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if span_logs is None and 'spanLogs' in kwargs:
-            span_logs = kwargs['spanLogs']
-        if span_logs is None:
-            raise TypeError("Missing 'span_logs' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("span_logs", span_logs)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "span_logs", span_logs)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="spanLogs")
@@ -550,29 +355,8 @@ class GetTraceSpanLogSpanLogResult(dict):
         :param str log_key: Key that specifies the log name.
         :param str log_value: Value associated with the log key.
         """
-        GetTraceSpanLogSpanLogResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            log_key=log_key,
-            log_value=log_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             log_key: Optional[str] = None,
-             log_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if log_key is None and 'logKey' in kwargs:
-            log_key = kwargs['logKey']
-        if log_key is None:
-            raise TypeError("Missing 'log_key' argument")
-        if log_value is None and 'logValue' in kwargs:
-            log_value = kwargs['logValue']
-        if log_value is None:
-            raise TypeError("Missing 'log_value' argument")
-
-        _setter("log_key", log_key)
-        _setter("log_value", log_value)
+        pulumi.set(__self__, "log_key", log_key)
+        pulumi.set(__self__, "log_value", log_value)
 
     @property
     @pulumi.getter(name="logKey")
@@ -628,125 +412,22 @@ class GetTraceSpanSummaryResult(dict):
         :param str trace_error_type: Error type of the trace.
         :param str trace_status: The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
         """
-        GetTraceSpanSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            error_span_count=error_span_count,
-            is_fault=is_fault,
-            key=key,
-            root_span_duration_in_ms=root_span_duration_in_ms,
-            root_span_operation_name=root_span_operation_name,
-            root_span_service_name=root_span_service_name,
-            service_summaries=service_summaries,
-            span_count=span_count,
-            time_earliest_span_started=time_earliest_span_started,
-            time_latest_span_ended=time_latest_span_ended,
-            time_root_span_ended=time_root_span_ended,
-            time_root_span_started=time_root_span_started,
-            trace_duration_in_ms=trace_duration_in_ms,
-            trace_error_code=trace_error_code,
-            trace_error_type=trace_error_type,
-            trace_status=trace_status,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             error_span_count: Optional[int] = None,
-             is_fault: Optional[bool] = None,
-             key: Optional[str] = None,
-             root_span_duration_in_ms: Optional[int] = None,
-             root_span_operation_name: Optional[str] = None,
-             root_span_service_name: Optional[str] = None,
-             service_summaries: Optional[Sequence['outputs.GetTraceSpanSummaryServiceSummaryResult']] = None,
-             span_count: Optional[int] = None,
-             time_earliest_span_started: Optional[str] = None,
-             time_latest_span_ended: Optional[str] = None,
-             time_root_span_ended: Optional[str] = None,
-             time_root_span_started: Optional[str] = None,
-             trace_duration_in_ms: Optional[int] = None,
-             trace_error_code: Optional[str] = None,
-             trace_error_type: Optional[str] = None,
-             trace_status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if error_span_count is None and 'errorSpanCount' in kwargs:
-            error_span_count = kwargs['errorSpanCount']
-        if error_span_count is None:
-            raise TypeError("Missing 'error_span_count' argument")
-        if is_fault is None and 'isFault' in kwargs:
-            is_fault = kwargs['isFault']
-        if is_fault is None:
-            raise TypeError("Missing 'is_fault' argument")
-        if key is None:
-            raise TypeError("Missing 'key' argument")
-        if root_span_duration_in_ms is None and 'rootSpanDurationInMs' in kwargs:
-            root_span_duration_in_ms = kwargs['rootSpanDurationInMs']
-        if root_span_duration_in_ms is None:
-            raise TypeError("Missing 'root_span_duration_in_ms' argument")
-        if root_span_operation_name is None and 'rootSpanOperationName' in kwargs:
-            root_span_operation_name = kwargs['rootSpanOperationName']
-        if root_span_operation_name is None:
-            raise TypeError("Missing 'root_span_operation_name' argument")
-        if root_span_service_name is None and 'rootSpanServiceName' in kwargs:
-            root_span_service_name = kwargs['rootSpanServiceName']
-        if root_span_service_name is None:
-            raise TypeError("Missing 'root_span_service_name' argument")
-        if service_summaries is None and 'serviceSummaries' in kwargs:
-            service_summaries = kwargs['serviceSummaries']
-        if service_summaries is None:
-            raise TypeError("Missing 'service_summaries' argument")
-        if span_count is None and 'spanCount' in kwargs:
-            span_count = kwargs['spanCount']
-        if span_count is None:
-            raise TypeError("Missing 'span_count' argument")
-        if time_earliest_span_started is None and 'timeEarliestSpanStarted' in kwargs:
-            time_earliest_span_started = kwargs['timeEarliestSpanStarted']
-        if time_earliest_span_started is None:
-            raise TypeError("Missing 'time_earliest_span_started' argument")
-        if time_latest_span_ended is None and 'timeLatestSpanEnded' in kwargs:
-            time_latest_span_ended = kwargs['timeLatestSpanEnded']
-        if time_latest_span_ended is None:
-            raise TypeError("Missing 'time_latest_span_ended' argument")
-        if time_root_span_ended is None and 'timeRootSpanEnded' in kwargs:
-            time_root_span_ended = kwargs['timeRootSpanEnded']
-        if time_root_span_ended is None:
-            raise TypeError("Missing 'time_root_span_ended' argument")
-        if time_root_span_started is None and 'timeRootSpanStarted' in kwargs:
-            time_root_span_started = kwargs['timeRootSpanStarted']
-        if time_root_span_started is None:
-            raise TypeError("Missing 'time_root_span_started' argument")
-        if trace_duration_in_ms is None and 'traceDurationInMs' in kwargs:
-            trace_duration_in_ms = kwargs['traceDurationInMs']
-        if trace_duration_in_ms is None:
-            raise TypeError("Missing 'trace_duration_in_ms' argument")
-        if trace_error_code is None and 'traceErrorCode' in kwargs:
-            trace_error_code = kwargs['traceErrorCode']
-        if trace_error_code is None:
-            raise TypeError("Missing 'trace_error_code' argument")
-        if trace_error_type is None and 'traceErrorType' in kwargs:
-            trace_error_type = kwargs['traceErrorType']
-        if trace_error_type is None:
-            raise TypeError("Missing 'trace_error_type' argument")
-        if trace_status is None and 'traceStatus' in kwargs:
-            trace_status = kwargs['traceStatus']
-        if trace_status is None:
-            raise TypeError("Missing 'trace_status' argument")
-
-        _setter("error_span_count", error_span_count)
-        _setter("is_fault", is_fault)
-        _setter("key", key)
-        _setter("root_span_duration_in_ms", root_span_duration_in_ms)
-        _setter("root_span_operation_name", root_span_operation_name)
-        _setter("root_span_service_name", root_span_service_name)
-        _setter("service_summaries", service_summaries)
-        _setter("span_count", span_count)
-        _setter("time_earliest_span_started", time_earliest_span_started)
-        _setter("time_latest_span_ended", time_latest_span_ended)
-        _setter("time_root_span_ended", time_root_span_ended)
-        _setter("time_root_span_started", time_root_span_started)
-        _setter("trace_duration_in_ms", trace_duration_in_ms)
-        _setter("trace_error_code", trace_error_code)
-        _setter("trace_error_type", trace_error_type)
-        _setter("trace_status", trace_status)
+        pulumi.set(__self__, "error_span_count", error_span_count)
+        pulumi.set(__self__, "is_fault", is_fault)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "root_span_duration_in_ms", root_span_duration_in_ms)
+        pulumi.set(__self__, "root_span_operation_name", root_span_operation_name)
+        pulumi.set(__self__, "root_span_service_name", root_span_service_name)
+        pulumi.set(__self__, "service_summaries", service_summaries)
+        pulumi.set(__self__, "span_count", span_count)
+        pulumi.set(__self__, "time_earliest_span_started", time_earliest_span_started)
+        pulumi.set(__self__, "time_latest_span_ended", time_latest_span_ended)
+        pulumi.set(__self__, "time_root_span_ended", time_root_span_ended)
+        pulumi.set(__self__, "time_root_span_started", time_root_span_started)
+        pulumi.set(__self__, "trace_duration_in_ms", trace_duration_in_ms)
+        pulumi.set(__self__, "trace_error_code", trace_error_code)
+        pulumi.set(__self__, "trace_error_type", trace_error_type)
+        pulumi.set(__self__, "trace_status", trace_status)
 
     @property
     @pulumi.getter(name="errorSpanCount")
@@ -888,36 +569,9 @@ class GetTraceSpanSummaryServiceSummaryResult(dict):
         :param str span_service_name: Name associated with the service.
         :param str total_spans: Number of spans for serviceName in the trace.
         """
-        GetTraceSpanSummaryServiceSummaryResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            error_spans=error_spans,
-            span_service_name=span_service_name,
-            total_spans=total_spans,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             error_spans: Optional[str] = None,
-             span_service_name: Optional[str] = None,
-             total_spans: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if error_spans is None and 'errorSpans' in kwargs:
-            error_spans = kwargs['errorSpans']
-        if error_spans is None:
-            raise TypeError("Missing 'error_spans' argument")
-        if span_service_name is None and 'spanServiceName' in kwargs:
-            span_service_name = kwargs['spanServiceName']
-        if span_service_name is None:
-            raise TypeError("Missing 'span_service_name' argument")
-        if total_spans is None and 'totalSpans' in kwargs:
-            total_spans = kwargs['totalSpans']
-        if total_spans is None:
-            raise TypeError("Missing 'total_spans' argument")
-
-        _setter("error_spans", error_spans)
-        _setter("span_service_name", span_service_name)
-        _setter("total_spans", total_spans)
+        pulumi.set(__self__, "error_spans", error_spans)
+        pulumi.set(__self__, "span_service_name", span_service_name)
+        pulumi.set(__self__, "total_spans", total_spans)
 
     @property
     @pulumi.getter(name="errorSpans")
@@ -953,29 +607,8 @@ class GetTraceSpanTagResult(dict):
         :param str tag_name: Key that specifies the tag name.
         :param str tag_value: Value associated with the tag key.
         """
-        GetTraceSpanTagResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            tag_name=tag_name,
-            tag_value=tag_value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             tag_name: Optional[str] = None,
-             tag_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if tag_name is None and 'tagName' in kwargs:
-            tag_name = kwargs['tagName']
-        if tag_name is None:
-            raise TypeError("Missing 'tag_name' argument")
-        if tag_value is None and 'tagValue' in kwargs:
-            tag_value = kwargs['tagValue']
-        if tag_value is None:
-            raise TypeError("Missing 'tag_value' argument")
-
-        _setter("tag_name", tag_name)
-        _setter("tag_value", tag_value)
+        pulumi.set(__self__, "tag_name", tag_name)
+        pulumi.set(__self__, "tag_value", tag_value)
 
     @property
     @pulumi.getter(name="tagName")

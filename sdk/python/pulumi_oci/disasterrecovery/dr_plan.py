@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,46 +33,13 @@ class DrPlanArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
-        DrPlanArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            display_name=display_name,
-            dr_protection_group_id=dr_protection_group_id,
-            type=type,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             display_name: Optional[pulumi.Input[str]] = None,
-             dr_protection_group_id: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if dr_protection_group_id is None and 'drProtectionGroupId' in kwargs:
-            dr_protection_group_id = kwargs['drProtectionGroupId']
-        if dr_protection_group_id is None:
-            raise TypeError("Missing 'dr_protection_group_id' argument")
-        if type is None:
-            raise TypeError("Missing 'type' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("display_name", display_name)
-        _setter("dr_protection_group_id", dr_protection_group_id)
-        _setter("type", type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
+        pulumi.set(__self__, "type", type)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="displayName")
@@ -177,95 +144,34 @@ class _DrPlanState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _DrPlanState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            dr_protection_group_id=dr_protection_group_id,
-            freeform_tags=freeform_tags,
-            life_cycle_details=life_cycle_details,
-            peer_dr_protection_group_id=peer_dr_protection_group_id,
-            peer_region=peer_region,
-            plan_groups=plan_groups,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_updated=time_updated,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             dr_protection_group_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             life_cycle_details: Optional[pulumi.Input[str]] = None,
-             peer_dr_protection_group_id: Optional[pulumi.Input[str]] = None,
-             peer_region: Optional[pulumi.Input[str]] = None,
-             plan_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if dr_protection_group_id is None and 'drProtectionGroupId' in kwargs:
-            dr_protection_group_id = kwargs['drProtectionGroupId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if life_cycle_details is None and 'lifeCycleDetails' in kwargs:
-            life_cycle_details = kwargs['lifeCycleDetails']
-        if peer_dr_protection_group_id is None and 'peerDrProtectionGroupId' in kwargs:
-            peer_dr_protection_group_id = kwargs['peerDrProtectionGroupId']
-        if peer_region is None and 'peerRegion' in kwargs:
-            peer_region = kwargs['peerRegion']
-        if plan_groups is None and 'planGroups' in kwargs:
-            plan_groups = kwargs['planGroups']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if dr_protection_group_id is not None:
-            _setter("dr_protection_group_id", dr_protection_group_id)
+            pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if life_cycle_details is not None:
-            _setter("life_cycle_details", life_cycle_details)
+            pulumi.set(__self__, "life_cycle_details", life_cycle_details)
         if peer_dr_protection_group_id is not None:
-            _setter("peer_dr_protection_group_id", peer_dr_protection_group_id)
+            pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
         if peer_region is not None:
-            _setter("peer_region", peer_region)
+            pulumi.set(__self__, "peer_region", peer_region)
         if plan_groups is not None:
-            _setter("plan_groups", plan_groups)
+            pulumi.set(__self__, "plan_groups", plan_groups)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -541,10 +447,6 @@ class DrPlan(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DrPlanArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

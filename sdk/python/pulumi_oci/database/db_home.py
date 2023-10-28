@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -53,89 +53,32 @@ class DbHomeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        DbHomeArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            database=database,
-            database_software_image_id=database_software_image_id,
-            db_system_id=db_system_id,
-            db_version=db_version,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            enable_database_delete=enable_database_delete,
-            freeform_tags=freeform_tags,
-            is_desupported_version=is_desupported_version,
-            kms_key_id=kms_key_id,
-            kms_key_version_id=kms_key_version_id,
-            source=source,
-            vm_cluster_id=vm_cluster_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             database: Optional[pulumi.Input['DbHomeDatabaseArgs']] = None,
-             database_software_image_id: Optional[pulumi.Input[str]] = None,
-             db_system_id: Optional[pulumi.Input[str]] = None,
-             db_version: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             enable_database_delete: Optional[pulumi.Input[bool]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_desupported_version: Optional[pulumi.Input[bool]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             kms_key_version_id: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
-            database_software_image_id = kwargs['databaseSoftwareImageId']
-        if db_system_id is None and 'dbSystemId' in kwargs:
-            db_system_id = kwargs['dbSystemId']
-        if db_version is None and 'dbVersion' in kwargs:
-            db_version = kwargs['dbVersion']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if enable_database_delete is None and 'enableDatabaseDelete' in kwargs:
-            enable_database_delete = kwargs['enableDatabaseDelete']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_desupported_version is None and 'isDesupportedVersion' in kwargs:
-            is_desupported_version = kwargs['isDesupportedVersion']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
-            kms_key_version_id = kwargs['kmsKeyVersionId']
-        if vm_cluster_id is None and 'vmClusterId' in kwargs:
-            vm_cluster_id = kwargs['vmClusterId']
-
         if database is not None:
-            _setter("database", database)
+            pulumi.set(__self__, "database", database)
         if database_software_image_id is not None:
-            _setter("database_software_image_id", database_software_image_id)
+            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_system_id is not None:
-            _setter("db_system_id", db_system_id)
+            pulumi.set(__self__, "db_system_id", db_system_id)
         if db_version is not None:
-            _setter("db_version", db_version)
+            pulumi.set(__self__, "db_version", db_version)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if enable_database_delete is not None:
-            _setter("enable_database_delete", enable_database_delete)
+            pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_desupported_version is not None:
-            _setter("is_desupported_version", is_desupported_version)
+            pulumi.set(__self__, "is_desupported_version", is_desupported_version)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            _setter("kms_key_version_id", kms_key_version_id)
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if vm_cluster_id is not None:
-            _setter("vm_cluster_id", vm_cluster_id)
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter
@@ -354,123 +297,44 @@ class _DbHomeState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        _DbHomeState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            database=database,
-            database_software_image_id=database_software_image_id,
-            db_home_location=db_home_location,
-            db_system_id=db_system_id,
-            db_version=db_version,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            enable_database_delete=enable_database_delete,
-            freeform_tags=freeform_tags,
-            is_desupported_version=is_desupported_version,
-            kms_key_id=kms_key_id,
-            kms_key_version_id=kms_key_version_id,
-            last_patch_history_entry_id=last_patch_history_entry_id,
-            lifecycle_details=lifecycle_details,
-            source=source,
-            state=state,
-            time_created=time_created,
-            vm_cluster_id=vm_cluster_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             database: Optional[pulumi.Input['DbHomeDatabaseArgs']] = None,
-             database_software_image_id: Optional[pulumi.Input[str]] = None,
-             db_home_location: Optional[pulumi.Input[str]] = None,
-             db_system_id: Optional[pulumi.Input[str]] = None,
-             db_version: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             enable_database_delete: Optional[pulumi.Input[bool]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             is_desupported_version: Optional[pulumi.Input[bool]] = None,
-             kms_key_id: Optional[pulumi.Input[str]] = None,
-             kms_key_version_id: Optional[pulumi.Input[str]] = None,
-             last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
-            database_software_image_id = kwargs['databaseSoftwareImageId']
-        if db_home_location is None and 'dbHomeLocation' in kwargs:
-            db_home_location = kwargs['dbHomeLocation']
-        if db_system_id is None and 'dbSystemId' in kwargs:
-            db_system_id = kwargs['dbSystemId']
-        if db_version is None and 'dbVersion' in kwargs:
-            db_version = kwargs['dbVersion']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if enable_database_delete is None and 'enableDatabaseDelete' in kwargs:
-            enable_database_delete = kwargs['enableDatabaseDelete']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if is_desupported_version is None and 'isDesupportedVersion' in kwargs:
-            is_desupported_version = kwargs['isDesupportedVersion']
-        if kms_key_id is None and 'kmsKeyId' in kwargs:
-            kms_key_id = kwargs['kmsKeyId']
-        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
-            kms_key_version_id = kwargs['kmsKeyVersionId']
-        if last_patch_history_entry_id is None and 'lastPatchHistoryEntryId' in kwargs:
-            last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if vm_cluster_id is None and 'vmClusterId' in kwargs:
-            vm_cluster_id = kwargs['vmClusterId']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if database is not None:
-            _setter("database", database)
+            pulumi.set(__self__, "database", database)
         if database_software_image_id is not None:
-            _setter("database_software_image_id", database_software_image_id)
+            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_home_location is not None:
-            _setter("db_home_location", db_home_location)
+            pulumi.set(__self__, "db_home_location", db_home_location)
         if db_system_id is not None:
-            _setter("db_system_id", db_system_id)
+            pulumi.set(__self__, "db_system_id", db_system_id)
         if db_version is not None:
-            _setter("db_version", db_version)
+            pulumi.set(__self__, "db_version", db_version)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if enable_database_delete is not None:
-            _setter("enable_database_delete", enable_database_delete)
+            pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_desupported_version is not None:
-            _setter("is_desupported_version", is_desupported_version)
+            pulumi.set(__self__, "is_desupported_version", is_desupported_version)
         if kms_key_id is not None:
-            _setter("kms_key_id", kms_key_id)
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            _setter("kms_key_version_id", kms_key_version_id)
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if last_patch_history_entry_id is not None:
-            _setter("last_patch_history_entry_id", last_patch_history_entry_id)
+            pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if vm_cluster_id is not None:
-            _setter("vm_cluster_id", vm_cluster_id)
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -802,10 +666,6 @@ class DbHome(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            DbHomeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -833,7 +693,6 @@ class DbHome(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbHomeArgs.__new__(DbHomeArgs)
 
-            database = _utilities.configure(database, DbHomeDatabaseArgs, True)
             __props__.__dict__["database"] = database
             __props__.__dict__["database_software_image_id"] = database_software_image_id
             __props__.__dict__["db_system_id"] = db_system_id

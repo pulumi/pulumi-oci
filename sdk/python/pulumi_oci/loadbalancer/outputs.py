@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -122,47 +122,18 @@ class BackendSetBackend(dict):
         :param bool offline: Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param int weight: The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        BackendSetBackend._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ip_address=ip_address,
-            port=port,
-            backup=backup,
-            drain=drain,
-            name=name,
-            offline=offline,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ip_address: Optional[str] = None,
-             port: Optional[int] = None,
-             backup: Optional[bool] = None,
-             drain: Optional[bool] = None,
-             name: Optional[str] = None,
-             offline: Optional[bool] = None,
-             weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if ip_address is None:
-            raise TypeError("Missing 'ip_address' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-
-        _setter("ip_address", ip_address)
-        _setter("port", port)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "port", port)
         if backup is not None:
-            _setter("backup", backup)
+            pulumi.set(__self__, "backup", backup)
         if drain is not None:
-            _setter("drain", drain)
+            pulumi.set(__self__, "drain", drain)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if offline is not None:
-            _setter("offline", offline)
+            pulumi.set(__self__, "offline", offline)
         if weight is not None:
-            _setter("weight", weight)
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -281,64 +252,23 @@ class BackendSetHealthChecker(dict):
         :param int timeout_in_millis: (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period.  Example: `3000`
         :param str url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
-        BackendSetHealthChecker._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            protocol=protocol,
-            interval_ms=interval_ms,
-            is_force_plain_text=is_force_plain_text,
-            port=port,
-            response_body_regex=response_body_regex,
-            retries=retries,
-            return_code=return_code,
-            timeout_in_millis=timeout_in_millis,
-            url_path=url_path,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             protocol: Optional[str] = None,
-             interval_ms: Optional[int] = None,
-             is_force_plain_text: Optional[bool] = None,
-             port: Optional[int] = None,
-             response_body_regex: Optional[str] = None,
-             retries: Optional[int] = None,
-             return_code: Optional[int] = None,
-             timeout_in_millis: Optional[int] = None,
-             url_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if interval_ms is None and 'intervalMs' in kwargs:
-            interval_ms = kwargs['intervalMs']
-        if is_force_plain_text is None and 'isForcePlainText' in kwargs:
-            is_force_plain_text = kwargs['isForcePlainText']
-        if response_body_regex is None and 'responseBodyRegex' in kwargs:
-            response_body_regex = kwargs['responseBodyRegex']
-        if return_code is None and 'returnCode' in kwargs:
-            return_code = kwargs['returnCode']
-        if timeout_in_millis is None and 'timeoutInMillis' in kwargs:
-            timeout_in_millis = kwargs['timeoutInMillis']
-        if url_path is None and 'urlPath' in kwargs:
-            url_path = kwargs['urlPath']
-
-        _setter("protocol", protocol)
+        pulumi.set(__self__, "protocol", protocol)
         if interval_ms is not None:
-            _setter("interval_ms", interval_ms)
+            pulumi.set(__self__, "interval_ms", interval_ms)
         if is_force_plain_text is not None:
-            _setter("is_force_plain_text", is_force_plain_text)
+            pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if response_body_regex is not None:
-            _setter("response_body_regex", response_body_regex)
+            pulumi.set(__self__, "response_body_regex", response_body_regex)
         if retries is not None:
-            _setter("retries", retries)
+            pulumi.set(__self__, "retries", retries)
         if return_code is not None:
-            _setter("return_code", return_code)
+            pulumi.set(__self__, "return_code", return_code)
         if timeout_in_millis is not None:
-            _setter("timeout_in_millis", timeout_in_millis)
+            pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
         if url_path is not None:
-            _setter("url_path", url_path)
+            pulumi.set(__self__, "url_path", url_path)
 
     @property
     @pulumi.getter
@@ -487,53 +417,20 @@ class BackendSetLbCookieSessionPersistenceConfiguration(dict):
                
                Example: `/example`
         """
-        BackendSetLbCookieSessionPersistenceConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cookie_name=cookie_name,
-            disable_fallback=disable_fallback,
-            domain=domain,
-            is_http_only=is_http_only,
-            is_secure=is_secure,
-            max_age_in_seconds=max_age_in_seconds,
-            path=path,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cookie_name: Optional[str] = None,
-             disable_fallback: Optional[bool] = None,
-             domain: Optional[str] = None,
-             is_http_only: Optional[bool] = None,
-             is_secure: Optional[bool] = None,
-             max_age_in_seconds: Optional[int] = None,
-             path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cookie_name is None and 'cookieName' in kwargs:
-            cookie_name = kwargs['cookieName']
-        if disable_fallback is None and 'disableFallback' in kwargs:
-            disable_fallback = kwargs['disableFallback']
-        if is_http_only is None and 'isHttpOnly' in kwargs:
-            is_http_only = kwargs['isHttpOnly']
-        if is_secure is None and 'isSecure' in kwargs:
-            is_secure = kwargs['isSecure']
-        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
-            max_age_in_seconds = kwargs['maxAgeInSeconds']
-
         if cookie_name is not None:
-            _setter("cookie_name", cookie_name)
+            pulumi.set(__self__, "cookie_name", cookie_name)
         if disable_fallback is not None:
-            _setter("disable_fallback", disable_fallback)
+            pulumi.set(__self__, "disable_fallback", disable_fallback)
         if domain is not None:
-            _setter("domain", domain)
+            pulumi.set(__self__, "domain", domain)
         if is_http_only is not None:
-            _setter("is_http_only", is_http_only)
+            pulumi.set(__self__, "is_http_only", is_http_only)
         if is_secure is not None:
-            _setter("is_secure", is_secure)
+            pulumi.set(__self__, "is_secure", is_secure)
         if max_age_in_seconds is not None:
-            _setter("max_age_in_seconds", max_age_in_seconds)
+            pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
         if path is not None:
-            _setter("path", path)
+            pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -644,28 +541,9 @@ class BackendSetSessionPersistenceConfiguration(dict):
         :param str cookie_name: (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
         :param bool disable_fallback: (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         """
-        BackendSetSessionPersistenceConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cookie_name=cookie_name,
-            disable_fallback=disable_fallback,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cookie_name: Optional[str] = None,
-             disable_fallback: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cookie_name is None and 'cookieName' in kwargs:
-            cookie_name = kwargs['cookieName']
-        if cookie_name is None:
-            raise TypeError("Missing 'cookie_name' argument")
-        if disable_fallback is None and 'disableFallback' in kwargs:
-            disable_fallback = kwargs['disableFallback']
-
-        _setter("cookie_name", cookie_name)
+        pulumi.set(__self__, "cookie_name", cookie_name)
         if disable_fallback is not None:
-            _setter("disable_fallback", disable_fallback)
+            pulumi.set(__self__, "disable_fallback", disable_fallback)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -770,61 +648,22 @@ class BackendSetSslConfiguration(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        BackendSetSslConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_ids=certificate_ids,
-            certificate_name=certificate_name,
-            cipher_suite_name=cipher_suite_name,
-            protocols=protocols,
-            server_order_preference=server_order_preference,
-            trusted_certificate_authority_ids=trusted_certificate_authority_ids,
-            verify_depth=verify_depth,
-            verify_peer_certificate=verify_peer_certificate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_ids: Optional[Sequence[str]] = None,
-             certificate_name: Optional[str] = None,
-             cipher_suite_name: Optional[str] = None,
-             protocols: Optional[Sequence[str]] = None,
-             server_order_preference: Optional[str] = None,
-             trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
-             verify_depth: Optional[int] = None,
-             verify_peer_certificate: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_ids is None and 'certificateIds' in kwargs:
-            certificate_ids = kwargs['certificateIds']
-        if certificate_name is None and 'certificateName' in kwargs:
-            certificate_name = kwargs['certificateName']
-        if cipher_suite_name is None and 'cipherSuiteName' in kwargs:
-            cipher_suite_name = kwargs['cipherSuiteName']
-        if server_order_preference is None and 'serverOrderPreference' in kwargs:
-            server_order_preference = kwargs['serverOrderPreference']
-        if trusted_certificate_authority_ids is None and 'trustedCertificateAuthorityIds' in kwargs:
-            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
-        if verify_depth is None and 'verifyDepth' in kwargs:
-            verify_depth = kwargs['verifyDepth']
-        if verify_peer_certificate is None and 'verifyPeerCertificate' in kwargs:
-            verify_peer_certificate = kwargs['verifyPeerCertificate']
-
         if certificate_ids is not None:
-            _setter("certificate_ids", certificate_ids)
+            pulumi.set(__self__, "certificate_ids", certificate_ids)
         if certificate_name is not None:
-            _setter("certificate_name", certificate_name)
+            pulumi.set(__self__, "certificate_name", certificate_name)
         if cipher_suite_name is not None:
-            _setter("cipher_suite_name", cipher_suite_name)
+            pulumi.set(__self__, "cipher_suite_name", cipher_suite_name)
         if protocols is not None:
-            _setter("protocols", protocols)
+            pulumi.set(__self__, "protocols", protocols)
         if server_order_preference is not None:
-            _setter("server_order_preference", server_order_preference)
+            pulumi.set(__self__, "server_order_preference", server_order_preference)
         if trusted_certificate_authority_ids is not None:
-            _setter("trusted_certificate_authority_ids", trusted_certificate_authority_ids)
+            pulumi.set(__self__, "trusted_certificate_authority_ids", trusted_certificate_authority_ids)
         if verify_depth is not None:
-            _setter("verify_depth", verify_depth)
+            pulumi.set(__self__, "verify_depth", verify_depth)
         if verify_peer_certificate is not None:
-            _setter("verify_peer_certificate", verify_peer_certificate)
+            pulumi.set(__self__, "verify_peer_certificate", verify_peer_certificate)
 
     @property
     @pulumi.getter(name="certificateIds")
@@ -959,28 +798,9 @@ class ListenerConnectionConfiguration(dict):
                Example: `1200`
         :param int backend_tcp_proxy_protocol_version: (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
         """
-        ListenerConnectionConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            idle_timeout_in_seconds=idle_timeout_in_seconds,
-            backend_tcp_proxy_protocol_version=backend_tcp_proxy_protocol_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             idle_timeout_in_seconds: Optional[str] = None,
-             backend_tcp_proxy_protocol_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if idle_timeout_in_seconds is None and 'idleTimeoutInSeconds' in kwargs:
-            idle_timeout_in_seconds = kwargs['idleTimeoutInSeconds']
-        if idle_timeout_in_seconds is None:
-            raise TypeError("Missing 'idle_timeout_in_seconds' argument")
-        if backend_tcp_proxy_protocol_version is None and 'backendTcpProxyProtocolVersion' in kwargs:
-            backend_tcp_proxy_protocol_version = kwargs['backendTcpProxyProtocolVersion']
-
-        _setter("idle_timeout_in_seconds", idle_timeout_in_seconds)
+        pulumi.set(__self__, "idle_timeout_in_seconds", idle_timeout_in_seconds)
         if backend_tcp_proxy_protocol_version is not None:
-            _setter("backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
+            pulumi.set(__self__, "backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
 
     @property
     @pulumi.getter(name="idleTimeoutInSeconds")
@@ -1090,61 +910,22 @@ class ListenerSslConfiguration(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ListenerSslConfiguration._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_ids=certificate_ids,
-            certificate_name=certificate_name,
-            cipher_suite_name=cipher_suite_name,
-            protocols=protocols,
-            server_order_preference=server_order_preference,
-            trusted_certificate_authority_ids=trusted_certificate_authority_ids,
-            verify_depth=verify_depth,
-            verify_peer_certificate=verify_peer_certificate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_ids: Optional[Sequence[str]] = None,
-             certificate_name: Optional[str] = None,
-             cipher_suite_name: Optional[str] = None,
-             protocols: Optional[Sequence[str]] = None,
-             server_order_preference: Optional[str] = None,
-             trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
-             verify_depth: Optional[int] = None,
-             verify_peer_certificate: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_ids is None and 'certificateIds' in kwargs:
-            certificate_ids = kwargs['certificateIds']
-        if certificate_name is None and 'certificateName' in kwargs:
-            certificate_name = kwargs['certificateName']
-        if cipher_suite_name is None and 'cipherSuiteName' in kwargs:
-            cipher_suite_name = kwargs['cipherSuiteName']
-        if server_order_preference is None and 'serverOrderPreference' in kwargs:
-            server_order_preference = kwargs['serverOrderPreference']
-        if trusted_certificate_authority_ids is None and 'trustedCertificateAuthorityIds' in kwargs:
-            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
-        if verify_depth is None and 'verifyDepth' in kwargs:
-            verify_depth = kwargs['verifyDepth']
-        if verify_peer_certificate is None and 'verifyPeerCertificate' in kwargs:
-            verify_peer_certificate = kwargs['verifyPeerCertificate']
-
         if certificate_ids is not None:
-            _setter("certificate_ids", certificate_ids)
+            pulumi.set(__self__, "certificate_ids", certificate_ids)
         if certificate_name is not None:
-            _setter("certificate_name", certificate_name)
+            pulumi.set(__self__, "certificate_name", certificate_name)
         if cipher_suite_name is not None:
-            _setter("cipher_suite_name", cipher_suite_name)
+            pulumi.set(__self__, "cipher_suite_name", cipher_suite_name)
         if protocols is not None:
-            _setter("protocols", protocols)
+            pulumi.set(__self__, "protocols", protocols)
         if server_order_preference is not None:
-            _setter("server_order_preference", server_order_preference)
+            pulumi.set(__self__, "server_order_preference", server_order_preference)
         if trusted_certificate_authority_ids is not None:
-            _setter("trusted_certificate_authority_ids", trusted_certificate_authority_ids)
+            pulumi.set(__self__, "trusted_certificate_authority_ids", trusted_certificate_authority_ids)
         if verify_depth is not None:
-            _setter("verify_depth", verify_depth)
+            pulumi.set(__self__, "verify_depth", verify_depth)
         if verify_peer_certificate is not None:
-            _setter("verify_peer_certificate", verify_peer_certificate)
+            pulumi.set(__self__, "verify_peer_certificate", verify_peer_certificate)
 
     @property
     @pulumi.getter(name="certificateIds")
@@ -1280,33 +1061,12 @@ class LoadBalancerIpAddressDetail(dict):
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['LoadBalancerIpAddressDetailReservedIpArgs'] reserved_ips: Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
-        LoadBalancerIpAddressDetail._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ip_address=ip_address,
-            is_public=is_public,
-            reserved_ips=reserved_ips,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ip_address: Optional[str] = None,
-             is_public: Optional[bool] = None,
-             reserved_ips: Optional[Sequence['outputs.LoadBalancerIpAddressDetailReservedIp']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if is_public is None and 'isPublic' in kwargs:
-            is_public = kwargs['isPublic']
-        if reserved_ips is None and 'reservedIps' in kwargs:
-            reserved_ips = kwargs['reservedIps']
-
         if ip_address is not None:
-            _setter("ip_address", ip_address)
+            pulumi.set(__self__, "ip_address", ip_address)
         if is_public is not None:
-            _setter("is_public", is_public)
+            pulumi.set(__self__, "is_public", is_public)
         if reserved_ips is not None:
-            _setter("reserved_ips", reserved_ips)
+            pulumi.set(__self__, "reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -1337,19 +1097,8 @@ class LoadBalancerIpAddressDetail(dict):
 class LoadBalancerIpAddressDetailReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[str] = None):
-        LoadBalancerIpAddressDetailReservedIp._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -1361,19 +1110,8 @@ class LoadBalancerIpAddressDetailReservedIp(dict):
 class LoadBalancerReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[str] = None):
-        LoadBalancerReservedIp._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if id is not None:
-            _setter("id", id)
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -1396,30 +1134,9 @@ class LoadBalancerRoutingPolicyRule(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        LoadBalancerRoutingPolicyRule._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            actions=actions,
-            condition=condition,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             actions: Optional[Sequence['outputs.LoadBalancerRoutingPolicyRuleAction']] = None,
-             condition: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if actions is None:
-            raise TypeError("Missing 'actions' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("actions", actions)
-        _setter("condition", condition)
-        _setter("name", name)
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -1480,27 +1197,8 @@ class LoadBalancerRoutingPolicyRuleAction(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        LoadBalancerRoutingPolicyRuleAction._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if backend_set_name is None:
-            raise TypeError("Missing 'backend_set_name' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("backend_set_name", backend_set_name)
-        _setter("name", name)
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -1555,29 +1253,8 @@ class LoadBalancerShapeDetails(dict):
                Example: `1500`
         :param int minimum_bandwidth_in_mbps: (Updatable) Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
         """
-        LoadBalancerShapeDetails._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            maximum_bandwidth_in_mbps=maximum_bandwidth_in_mbps,
-            minimum_bandwidth_in_mbps=minimum_bandwidth_in_mbps,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             maximum_bandwidth_in_mbps: Optional[int] = None,
-             minimum_bandwidth_in_mbps: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if maximum_bandwidth_in_mbps is None and 'maximumBandwidthInMbps' in kwargs:
-            maximum_bandwidth_in_mbps = kwargs['maximumBandwidthInMbps']
-        if maximum_bandwidth_in_mbps is None:
-            raise TypeError("Missing 'maximum_bandwidth_in_mbps' argument")
-        if minimum_bandwidth_in_mbps is None and 'minimumBandwidthInMbps' in kwargs:
-            minimum_bandwidth_in_mbps = kwargs['minimumBandwidthInMbps']
-        if minimum_bandwidth_in_mbps is None:
-            raise TypeError("Missing 'minimum_bandwidth_in_mbps' argument")
-
-        _setter("maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
-        _setter("minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
+        pulumi.set(__self__, "maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
+        pulumi.set(__self__, "minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
 
     @property
     @pulumi.getter(name="maximumBandwidthInMbps")
@@ -1635,34 +1312,9 @@ class PathRouteSetPathRoute(dict):
                Example: `/example/video/123`
         :param 'PathRouteSetPathRoutePathMatchTypeArgs' path_match_type: (Updatable) The type of matching to apply to incoming URIs.
         """
-        PathRouteSetPathRoute._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            path=path,
-            path_match_type=path_match_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[str] = None,
-             path: Optional[str] = None,
-             path_match_type: Optional['outputs.PathRouteSetPathRoutePathMatchType'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if backend_set_name is None:
-            raise TypeError("Missing 'backend_set_name' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if path_match_type is None and 'pathMatchType' in kwargs:
-            path_match_type = kwargs['pathMatchType']
-        if path_match_type is None:
-            raise TypeError("Missing 'path_match_type' argument")
-
-        _setter("backend_set_name", backend_set_name)
-        _setter("path", path)
-        _setter("path_match_type", path_match_type)
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "path_match_type", path_match_type)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -1728,22 +1380,7 @@ class PathRouteSetPathRoutePathMatchType(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        PathRouteSetPathRoutePathMatchType._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            match_type=match_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             match_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if match_type is None and 'matchType' in kwargs:
-            match_type = kwargs['matchType']
-        if match_type is None:
-            raise TypeError("Missing 'match_type' argument")
-
-        _setter("match_type", match_type)
+        pulumi.set(__self__, "match_type", match_type)
 
     @property
     @pulumi.getter(name="matchType")
@@ -1878,80 +1515,31 @@ class RuleSetItem(dict):
                
                Example: `example_value`
         """
-        RuleSetItem._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            allowed_methods=allowed_methods,
-            are_invalid_characters_allowed=are_invalid_characters_allowed,
-            conditions=conditions,
-            description=description,
-            header=header,
-            http_large_header_size_in_kb=http_large_header_size_in_kb,
-            prefix=prefix,
-            redirect_uri=redirect_uri,
-            response_code=response_code,
-            status_code=status_code,
-            suffix=suffix,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             allowed_methods: Optional[Sequence[str]] = None,
-             are_invalid_characters_allowed: Optional[bool] = None,
-             conditions: Optional[Sequence['outputs.RuleSetItemCondition']] = None,
-             description: Optional[str] = None,
-             header: Optional[str] = None,
-             http_large_header_size_in_kb: Optional[int] = None,
-             prefix: Optional[str] = None,
-             redirect_uri: Optional['outputs.RuleSetItemRedirectUri'] = None,
-             response_code: Optional[int] = None,
-             status_code: Optional[int] = None,
-             suffix: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if allowed_methods is None and 'allowedMethods' in kwargs:
-            allowed_methods = kwargs['allowedMethods']
-        if are_invalid_characters_allowed is None and 'areInvalidCharactersAllowed' in kwargs:
-            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
-        if http_large_header_size_in_kb is None and 'httpLargeHeaderSizeInKb' in kwargs:
-            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
-        if redirect_uri is None and 'redirectUri' in kwargs:
-            redirect_uri = kwargs['redirectUri']
-        if response_code is None and 'responseCode' in kwargs:
-            response_code = kwargs['responseCode']
-        if status_code is None and 'statusCode' in kwargs:
-            status_code = kwargs['statusCode']
-
-        _setter("action", action)
+        pulumi.set(__self__, "action", action)
         if allowed_methods is not None:
-            _setter("allowed_methods", allowed_methods)
+            pulumi.set(__self__, "allowed_methods", allowed_methods)
         if are_invalid_characters_allowed is not None:
-            _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
+            pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
         if conditions is not None:
-            _setter("conditions", conditions)
+            pulumi.set(__self__, "conditions", conditions)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if header is not None:
-            _setter("header", header)
+            pulumi.set(__self__, "header", header)
         if http_large_header_size_in_kb is not None:
-            _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
+            pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
         if prefix is not None:
-            _setter("prefix", prefix)
+            pulumi.set(__self__, "prefix", prefix)
         if redirect_uri is not None:
-            _setter("redirect_uri", redirect_uri)
+            pulumi.set(__self__, "redirect_uri", redirect_uri)
         if response_code is not None:
-            _setter("response_code", response_code)
+            pulumi.set(__self__, "response_code", response_code)
         if status_code is not None:
-            _setter("status_code", status_code)
+            pulumi.set(__self__, "status_code", status_code)
         if suffix is not None:
-            _setter("suffix", suffix)
+            pulumi.set(__self__, "suffix", suffix)
         if value is not None:
-            _setter("value", value)
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -2151,33 +1739,10 @@ class RuleSetItemCondition(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        RuleSetItemCondition._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attribute_name=attribute_name,
-            attribute_value=attribute_value,
-            operator=operator,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attribute_name: Optional[str] = None,
-             attribute_value: Optional[str] = None,
-             operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attribute_name is None and 'attributeName' in kwargs:
-            attribute_name = kwargs['attributeName']
-        if attribute_name is None:
-            raise TypeError("Missing 'attribute_name' argument")
-        if attribute_value is None and 'attributeValue' in kwargs:
-            attribute_value = kwargs['attributeValue']
-        if attribute_value is None:
-            raise TypeError("Missing 'attribute_value' argument")
-
-        _setter("attribute_name", attribute_name)
-        _setter("attribute_value", attribute_value)
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
         if operator is not None:
-            _setter("operator", operator)
+            pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -2284,35 +1849,16 @@ class RuleSetItemRedirectUri(dict):
                *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
                *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
         """
-        RuleSetItemRedirectUri._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            path=path,
-            port=port,
-            protocol=protocol,
-            query=query,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             path: Optional[str] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             query: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if path is not None:
-            _setter("path", path)
+            pulumi.set(__self__, "path", path)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if protocol is not None:
-            _setter("protocol", protocol)
+            pulumi.set(__self__, "protocol", protocol)
         if query is not None:
-            _setter("query", query)
+            pulumi.set(__self__, "query", query)
 
     @property
     @pulumi.getter
@@ -2426,41 +1972,10 @@ class GetBackendHealthHealthCheckResultResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
         :param str timestamp: The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
         """
-        GetBackendHealthHealthCheckResultResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            health_check_status=health_check_status,
-            source_ip_address=source_ip_address,
-            subnet_id=subnet_id,
-            timestamp=timestamp,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             health_check_status: Optional[str] = None,
-             source_ip_address: Optional[str] = None,
-             subnet_id: Optional[str] = None,
-             timestamp: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if health_check_status is None and 'healthCheckStatus' in kwargs:
-            health_check_status = kwargs['healthCheckStatus']
-        if health_check_status is None:
-            raise TypeError("Missing 'health_check_status' argument")
-        if source_ip_address is None and 'sourceIpAddress' in kwargs:
-            source_ip_address = kwargs['sourceIpAddress']
-        if source_ip_address is None:
-            raise TypeError("Missing 'source_ip_address' argument")
-        if subnet_id is None and 'subnetId' in kwargs:
-            subnet_id = kwargs['subnetId']
-        if subnet_id is None:
-            raise TypeError("Missing 'subnet_id' argument")
-        if timestamp is None:
-            raise TypeError("Missing 'timestamp' argument")
-
-        _setter("health_check_status", health_check_status)
-        _setter("source_ip_address", source_ip_address)
-        _setter("subnet_id", subnet_id)
-        _setter("timestamp", timestamp)
+        pulumi.set(__self__, "health_check_status", health_check_status)
+        pulumi.set(__self__, "source_ip_address", source_ip_address)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "timestamp", timestamp)
 
     @property
     @pulumi.getter(name="healthCheckStatus")
@@ -2517,75 +2032,16 @@ class GetBackendSetsBackendsetResult(dict):
         :param Sequence['GetBackendSetsBackendsetSessionPersistenceConfigurationArgs'] session_persistence_configurations: The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
         :param Sequence['GetBackendSetsBackendsetSslConfigurationArgs'] ssl_configurations: A listener's SSL handling configuration.
         """
-        GetBackendSetsBackendsetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backends=backends,
-            health_checkers=health_checkers,
-            id=id,
-            lb_cookie_session_persistence_configurations=lb_cookie_session_persistence_configurations,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            policy=policy,
-            session_persistence_configurations=session_persistence_configurations,
-            ssl_configurations=ssl_configurations,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backends: Optional[Sequence['outputs.GetBackendSetsBackendsetBackendResult']] = None,
-             health_checkers: Optional[Sequence['outputs.GetBackendSetsBackendsetHealthCheckerResult']] = None,
-             id: Optional[str] = None,
-             lb_cookie_session_persistence_configurations: Optional[Sequence['outputs.GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult']] = None,
-             load_balancer_id: Optional[str] = None,
-             name: Optional[str] = None,
-             policy: Optional[str] = None,
-             session_persistence_configurations: Optional[Sequence['outputs.GetBackendSetsBackendsetSessionPersistenceConfigurationResult']] = None,
-             ssl_configurations: Optional[Sequence['outputs.GetBackendSetsBackendsetSslConfigurationResult']] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backends is None:
-            raise TypeError("Missing 'backends' argument")
-        if health_checkers is None and 'healthCheckers' in kwargs:
-            health_checkers = kwargs['healthCheckers']
-        if health_checkers is None:
-            raise TypeError("Missing 'health_checkers' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if lb_cookie_session_persistence_configurations is None and 'lbCookieSessionPersistenceConfigurations' in kwargs:
-            lb_cookie_session_persistence_configurations = kwargs['lbCookieSessionPersistenceConfigurations']
-        if lb_cookie_session_persistence_configurations is None:
-            raise TypeError("Missing 'lb_cookie_session_persistence_configurations' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if policy is None:
-            raise TypeError("Missing 'policy' argument")
-        if session_persistence_configurations is None and 'sessionPersistenceConfigurations' in kwargs:
-            session_persistence_configurations = kwargs['sessionPersistenceConfigurations']
-        if session_persistence_configurations is None:
-            raise TypeError("Missing 'session_persistence_configurations' argument")
-        if ssl_configurations is None and 'sslConfigurations' in kwargs:
-            ssl_configurations = kwargs['sslConfigurations']
-        if ssl_configurations is None:
-            raise TypeError("Missing 'ssl_configurations' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("backends", backends)
-        _setter("health_checkers", health_checkers)
-        _setter("id", id)
-        _setter("lb_cookie_session_persistence_configurations", lb_cookie_session_persistence_configurations)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("name", name)
-        _setter("policy", policy)
-        _setter("session_persistence_configurations", session_persistence_configurations)
-        _setter("ssl_configurations", ssl_configurations)
-        _setter("state", state)
+        pulumi.set(__self__, "backends", backends)
+        pulumi.set(__self__, "health_checkers", health_checkers)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lb_cookie_session_persistence_configurations", lb_cookie_session_persistence_configurations)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "policy", policy)
+        pulumi.set(__self__, "session_persistence_configurations", session_persistence_configurations)
+        pulumi.set(__self__, "ssl_configurations", ssl_configurations)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -2678,52 +2134,13 @@ class GetBackendSetsBackendsetBackendResult(dict):
         :param int port: The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
         :param int weight: The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        GetBackendSetsBackendsetBackendResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backup=backup,
-            drain=drain,
-            ip_address=ip_address,
-            name=name,
-            offline=offline,
-            port=port,
-            weight=weight,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backup: Optional[bool] = None,
-             drain: Optional[bool] = None,
-             ip_address: Optional[str] = None,
-             name: Optional[str] = None,
-             offline: Optional[bool] = None,
-             port: Optional[int] = None,
-             weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backup is None:
-            raise TypeError("Missing 'backup' argument")
-        if drain is None:
-            raise TypeError("Missing 'drain' argument")
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if ip_address is None:
-            raise TypeError("Missing 'ip_address' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if offline is None:
-            raise TypeError("Missing 'offline' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("backup", backup)
-        _setter("drain", drain)
-        _setter("ip_address", ip_address)
-        _setter("name", name)
-        _setter("offline", offline)
-        _setter("port", port)
-        _setter("weight", weight)
+        pulumi.set(__self__, "backup", backup)
+        pulumi.set(__self__, "drain", drain)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "offline", offline)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
@@ -2805,72 +2222,15 @@ class GetBackendSetsBackendsetHealthCheckerResult(dict):
         :param int timeout_in_millis: The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
         :param str url_path: The path against which to run the health check.  Example: `/healthcheck`
         """
-        GetBackendSetsBackendsetHealthCheckerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            interval_ms=interval_ms,
-            is_force_plain_text=is_force_plain_text,
-            port=port,
-            protocol=protocol,
-            response_body_regex=response_body_regex,
-            retries=retries,
-            return_code=return_code,
-            timeout_in_millis=timeout_in_millis,
-            url_path=url_path,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             interval_ms: Optional[int] = None,
-             is_force_plain_text: Optional[bool] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             response_body_regex: Optional[str] = None,
-             retries: Optional[int] = None,
-             return_code: Optional[int] = None,
-             timeout_in_millis: Optional[int] = None,
-             url_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if interval_ms is None and 'intervalMs' in kwargs:
-            interval_ms = kwargs['intervalMs']
-        if interval_ms is None:
-            raise TypeError("Missing 'interval_ms' argument")
-        if is_force_plain_text is None and 'isForcePlainText' in kwargs:
-            is_force_plain_text = kwargs['isForcePlainText']
-        if is_force_plain_text is None:
-            raise TypeError("Missing 'is_force_plain_text' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if response_body_regex is None and 'responseBodyRegex' in kwargs:
-            response_body_regex = kwargs['responseBodyRegex']
-        if response_body_regex is None:
-            raise TypeError("Missing 'response_body_regex' argument")
-        if retries is None:
-            raise TypeError("Missing 'retries' argument")
-        if return_code is None and 'returnCode' in kwargs:
-            return_code = kwargs['returnCode']
-        if return_code is None:
-            raise TypeError("Missing 'return_code' argument")
-        if timeout_in_millis is None and 'timeoutInMillis' in kwargs:
-            timeout_in_millis = kwargs['timeoutInMillis']
-        if timeout_in_millis is None:
-            raise TypeError("Missing 'timeout_in_millis' argument")
-        if url_path is None and 'urlPath' in kwargs:
-            url_path = kwargs['urlPath']
-        if url_path is None:
-            raise TypeError("Missing 'url_path' argument")
-
-        _setter("interval_ms", interval_ms)
-        _setter("is_force_plain_text", is_force_plain_text)
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("response_body_regex", response_body_regex)
-        _setter("retries", retries)
-        _setter("return_code", return_code)
-        _setter("timeout_in_millis", timeout_in_millis)
-        _setter("url_path", url_path)
+        pulumi.set(__self__, "interval_ms", interval_ms)
+        pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "response_body_regex", response_body_regex)
+        pulumi.set(__self__, "retries", retries)
+        pulumi.set(__self__, "return_code", return_code)
+        pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
+        pulumi.set(__self__, "url_path", url_path)
 
     @property
     @pulumi.getter(name="intervalMs")
@@ -2964,60 +2324,13 @@ class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult(dict
         :param int max_age_in_seconds: The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
         :param str path: The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
         """
-        GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cookie_name=cookie_name,
-            disable_fallback=disable_fallback,
-            domain=domain,
-            is_http_only=is_http_only,
-            is_secure=is_secure,
-            max_age_in_seconds=max_age_in_seconds,
-            path=path,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cookie_name: Optional[str] = None,
-             disable_fallback: Optional[bool] = None,
-             domain: Optional[str] = None,
-             is_http_only: Optional[bool] = None,
-             is_secure: Optional[bool] = None,
-             max_age_in_seconds: Optional[int] = None,
-             path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cookie_name is None and 'cookieName' in kwargs:
-            cookie_name = kwargs['cookieName']
-        if cookie_name is None:
-            raise TypeError("Missing 'cookie_name' argument")
-        if disable_fallback is None and 'disableFallback' in kwargs:
-            disable_fallback = kwargs['disableFallback']
-        if disable_fallback is None:
-            raise TypeError("Missing 'disable_fallback' argument")
-        if domain is None:
-            raise TypeError("Missing 'domain' argument")
-        if is_http_only is None and 'isHttpOnly' in kwargs:
-            is_http_only = kwargs['isHttpOnly']
-        if is_http_only is None:
-            raise TypeError("Missing 'is_http_only' argument")
-        if is_secure is None and 'isSecure' in kwargs:
-            is_secure = kwargs['isSecure']
-        if is_secure is None:
-            raise TypeError("Missing 'is_secure' argument")
-        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
-            max_age_in_seconds = kwargs['maxAgeInSeconds']
-        if max_age_in_seconds is None:
-            raise TypeError("Missing 'max_age_in_seconds' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-
-        _setter("cookie_name", cookie_name)
-        _setter("disable_fallback", disable_fallback)
-        _setter("domain", domain)
-        _setter("is_http_only", is_http_only)
-        _setter("is_secure", is_secure)
-        _setter("max_age_in_seconds", max_age_in_seconds)
-        _setter("path", path)
+        pulumi.set(__self__, "cookie_name", cookie_name)
+        pulumi.set(__self__, "disable_fallback", disable_fallback)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "is_http_only", is_http_only)
+        pulumi.set(__self__, "is_secure", is_secure)
+        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+        pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -3085,29 +2398,8 @@ class GetBackendSetsBackendsetSessionPersistenceConfigurationResult(dict):
         :param str cookie_name: The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
         :param bool disable_fallback: Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         """
-        GetBackendSetsBackendsetSessionPersistenceConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            cookie_name=cookie_name,
-            disable_fallback=disable_fallback,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             cookie_name: Optional[str] = None,
-             disable_fallback: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if cookie_name is None and 'cookieName' in kwargs:
-            cookie_name = kwargs['cookieName']
-        if cookie_name is None:
-            raise TypeError("Missing 'cookie_name' argument")
-        if disable_fallback is None and 'disableFallback' in kwargs:
-            disable_fallback = kwargs['disableFallback']
-        if disable_fallback is None:
-            raise TypeError("Missing 'disable_fallback' argument")
-
-        _setter("cookie_name", cookie_name)
-        _setter("disable_fallback", disable_fallback)
+        pulumi.set(__self__, "cookie_name", cookie_name)
+        pulumi.set(__self__, "disable_fallback", disable_fallback)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -3147,69 +2439,14 @@ class GetBackendSetsBackendsetSslConfigurationResult(dict):
         :param int verify_depth: The maximum depth for peer certificate chain verification.  Example: `3`
         :param bool verify_peer_certificate: Whether the load balancer listener should verify peer certificates.  Example: `true`
         """
-        GetBackendSetsBackendsetSslConfigurationResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            certificate_ids=certificate_ids,
-            certificate_name=certificate_name,
-            cipher_suite_name=cipher_suite_name,
-            protocols=protocols,
-            server_order_preference=server_order_preference,
-            trusted_certificate_authority_ids=trusted_certificate_authority_ids,
-            verify_depth=verify_depth,
-            verify_peer_certificate=verify_peer_certificate,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             certificate_ids: Optional[Sequence[str]] = None,
-             certificate_name: Optional[str] = None,
-             cipher_suite_name: Optional[str] = None,
-             protocols: Optional[Sequence[str]] = None,
-             server_order_preference: Optional[str] = None,
-             trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
-             verify_depth: Optional[int] = None,
-             verify_peer_certificate: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if certificate_ids is None and 'certificateIds' in kwargs:
-            certificate_ids = kwargs['certificateIds']
-        if certificate_ids is None:
-            raise TypeError("Missing 'certificate_ids' argument")
-        if certificate_name is None and 'certificateName' in kwargs:
-            certificate_name = kwargs['certificateName']
-        if certificate_name is None:
-            raise TypeError("Missing 'certificate_name' argument")
-        if cipher_suite_name is None and 'cipherSuiteName' in kwargs:
-            cipher_suite_name = kwargs['cipherSuiteName']
-        if cipher_suite_name is None:
-            raise TypeError("Missing 'cipher_suite_name' argument")
-        if protocols is None:
-            raise TypeError("Missing 'protocols' argument")
-        if server_order_preference is None and 'serverOrderPreference' in kwargs:
-            server_order_preference = kwargs['serverOrderPreference']
-        if server_order_preference is None:
-            raise TypeError("Missing 'server_order_preference' argument")
-        if trusted_certificate_authority_ids is None and 'trustedCertificateAuthorityIds' in kwargs:
-            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
-        if trusted_certificate_authority_ids is None:
-            raise TypeError("Missing 'trusted_certificate_authority_ids' argument")
-        if verify_depth is None and 'verifyDepth' in kwargs:
-            verify_depth = kwargs['verifyDepth']
-        if verify_depth is None:
-            raise TypeError("Missing 'verify_depth' argument")
-        if verify_peer_certificate is None and 'verifyPeerCertificate' in kwargs:
-            verify_peer_certificate = kwargs['verifyPeerCertificate']
-        if verify_peer_certificate is None:
-            raise TypeError("Missing 'verify_peer_certificate' argument")
-
-        _setter("certificate_ids", certificate_ids)
-        _setter("certificate_name", certificate_name)
-        _setter("cipher_suite_name", cipher_suite_name)
-        _setter("protocols", protocols)
-        _setter("server_order_preference", server_order_preference)
-        _setter("trusted_certificate_authority_ids", trusted_certificate_authority_ids)
-        _setter("verify_depth", verify_depth)
-        _setter("verify_peer_certificate", verify_peer_certificate)
+        pulumi.set(__self__, "certificate_ids", certificate_ids)
+        pulumi.set(__self__, "certificate_name", certificate_name)
+        pulumi.set(__self__, "cipher_suite_name", cipher_suite_name)
+        pulumi.set(__self__, "protocols", protocols)
+        pulumi.set(__self__, "server_order_preference", server_order_preference)
+        pulumi.set(__self__, "trusted_certificate_authority_ids", trusted_certificate_authority_ids)
+        pulumi.set(__self__, "verify_depth", verify_depth)
+        pulumi.set(__self__, "verify_peer_certificate", verify_peer_certificate)
 
     @property
     @pulumi.getter(name="certificateIds")
@@ -3285,29 +2522,10 @@ class GetBackendSetsFilterResult(dict):
         """
         :param str name: A friendly name for the backend set. It must be unique and it cannot be changed.
         """
-        GetBackendSetsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3352,70 +2570,17 @@ class GetBackendsBackendResult(dict):
         :param int weight: The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         :param bool backup: Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         """
-        GetBackendsBackendResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backendset_name=backendset_name,
-            drain=drain,
-            ip_address=ip_address,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            offline=offline,
-            port=port,
-            state=state,
-            weight=weight,
-            backup=backup,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backendset_name: Optional[str] = None,
-             drain: Optional[bool] = None,
-             ip_address: Optional[str] = None,
-             load_balancer_id: Optional[str] = None,
-             name: Optional[str] = None,
-             offline: Optional[bool] = None,
-             port: Optional[int] = None,
-             state: Optional[str] = None,
-             weight: Optional[int] = None,
-             backup: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backendset_name is None and 'backendsetName' in kwargs:
-            backendset_name = kwargs['backendsetName']
-        if backendset_name is None:
-            raise TypeError("Missing 'backendset_name' argument")
-        if drain is None:
-            raise TypeError("Missing 'drain' argument")
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if ip_address is None:
-            raise TypeError("Missing 'ip_address' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if offline is None:
-            raise TypeError("Missing 'offline' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if weight is None:
-            raise TypeError("Missing 'weight' argument")
-
-        _setter("backendset_name", backendset_name)
-        _setter("drain", drain)
-        _setter("ip_address", ip_address)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("name", name)
-        _setter("offline", offline)
-        _setter("port", port)
-        _setter("state", state)
-        _setter("weight", weight)
+        pulumi.set(__self__, "backendset_name", backendset_name)
+        pulumi.set(__self__, "drain", drain)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "offline", offline)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "weight", weight)
         if backup is not None:
-            _setter("backup", backup)
+            pulumi.set(__self__, "backup", backup)
 
     @property
     @pulumi.getter(name="backendsetName")
@@ -3504,29 +2669,10 @@ class GetBackendsFilterResult(dict):
         """
         :param str name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         """
-        GetBackendsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3563,59 +2709,14 @@ class GetCertificatesCertificateResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
         :param str public_certificate: The public certificate, in PEM format, that you received from your SSL certificate provider.
         """
-        GetCertificatesCertificateResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ca_certificate=ca_certificate,
-            certificate_name=certificate_name,
-            load_balancer_id=load_balancer_id,
-            private_key=private_key,
-            public_certificate=public_certificate,
-            state=state,
-            passphrase=passphrase,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ca_certificate: Optional[str] = None,
-             certificate_name: Optional[str] = None,
-             load_balancer_id: Optional[str] = None,
-             private_key: Optional[str] = None,
-             public_certificate: Optional[str] = None,
-             state: Optional[str] = None,
-             passphrase: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ca_certificate is None and 'caCertificate' in kwargs:
-            ca_certificate = kwargs['caCertificate']
-        if ca_certificate is None:
-            raise TypeError("Missing 'ca_certificate' argument")
-        if certificate_name is None and 'certificateName' in kwargs:
-            certificate_name = kwargs['certificateName']
-        if certificate_name is None:
-            raise TypeError("Missing 'certificate_name' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if private_key is None and 'privateKey' in kwargs:
-            private_key = kwargs['privateKey']
-        if private_key is None:
-            raise TypeError("Missing 'private_key' argument")
-        if public_certificate is None and 'publicCertificate' in kwargs:
-            public_certificate = kwargs['publicCertificate']
-        if public_certificate is None:
-            raise TypeError("Missing 'public_certificate' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ca_certificate", ca_certificate)
-        _setter("certificate_name", certificate_name)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("private_key", private_key)
-        _setter("public_certificate", public_certificate)
-        _setter("state", state)
+        pulumi.set(__self__, "ca_certificate", ca_certificate)
+        pulumi.set(__self__, "certificate_name", certificate_name)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "private_key", private_key)
+        pulumi.set(__self__, "public_certificate", public_certificate)
+        pulumi.set(__self__, "state", state)
         if passphrase is not None:
-            _setter("passphrase", passphrase)
+            pulumi.set(__self__, "passphrase", passphrase)
 
     @property
     @pulumi.getter(name="caCertificate")
@@ -3671,29 +2772,10 @@ class GetCertificatesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        GetCertificatesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3720,29 +2802,10 @@ class GetHostnamesFilterResult(dict):
         """
         :param str name: A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
         """
-        GetHostnamesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3775,37 +2838,10 @@ class GetHostnamesHostnameResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
         :param str name: A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
         """
-        GetHostnamesHostnameResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            hostname=hostname,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             hostname: Optional[str] = None,
-             load_balancer_id: Optional[str] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if hostname is None:
-            raise TypeError("Missing 'hostname' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("hostname", hostname)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("name", name)
-        _setter("state", state)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -3846,29 +2882,10 @@ class GetListenerRulesFilterResult(dict):
         """
         :param str name: The name of the rule set that the rule belongs to.
         """
-        GetListenerRulesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -3899,30 +2916,9 @@ class GetListenerRulesListenerRuleResult(dict):
         :param str name: The name of the rule set that the rule belongs to.
         :param Sequence['GetListenerRulesListenerRuleRuleArgs'] rules: A rule object that applies to the listener.
         """
-        GetListenerRulesListenerRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            rules=rules,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             rules: Optional[Sequence['outputs.GetListenerRulesListenerRuleRuleResult']] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if rules is None:
-            raise TypeError("Missing 'rules' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("name", name)
-        _setter("rules", rules)
-        _setter("state", state)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -3982,92 +2978,19 @@ class GetListenerRulesListenerRuleRuleResult(dict):
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         """
-        GetListenerRulesListenerRuleRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            allowed_methods=allowed_methods,
-            are_invalid_characters_allowed=are_invalid_characters_allowed,
-            conditions=conditions,
-            description=description,
-            header=header,
-            http_large_header_size_in_kb=http_large_header_size_in_kb,
-            prefix=prefix,
-            redirect_uris=redirect_uris,
-            response_code=response_code,
-            status_code=status_code,
-            suffix=suffix,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             allowed_methods: Optional[Sequence[str]] = None,
-             are_invalid_characters_allowed: Optional[bool] = None,
-             conditions: Optional[Sequence['outputs.GetListenerRulesListenerRuleRuleConditionResult']] = None,
-             description: Optional[str] = None,
-             header: Optional[str] = None,
-             http_large_header_size_in_kb: Optional[int] = None,
-             prefix: Optional[str] = None,
-             redirect_uris: Optional[Sequence['outputs.GetListenerRulesListenerRuleRuleRedirectUriResult']] = None,
-             response_code: Optional[int] = None,
-             status_code: Optional[int] = None,
-             suffix: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if allowed_methods is None and 'allowedMethods' in kwargs:
-            allowed_methods = kwargs['allowedMethods']
-        if allowed_methods is None:
-            raise TypeError("Missing 'allowed_methods' argument")
-        if are_invalid_characters_allowed is None and 'areInvalidCharactersAllowed' in kwargs:
-            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
-        if are_invalid_characters_allowed is None:
-            raise TypeError("Missing 'are_invalid_characters_allowed' argument")
-        if conditions is None:
-            raise TypeError("Missing 'conditions' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if header is None:
-            raise TypeError("Missing 'header' argument")
-        if http_large_header_size_in_kb is None and 'httpLargeHeaderSizeInKb' in kwargs:
-            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
-        if http_large_header_size_in_kb is None:
-            raise TypeError("Missing 'http_large_header_size_in_kb' argument")
-        if prefix is None:
-            raise TypeError("Missing 'prefix' argument")
-        if redirect_uris is None and 'redirectUris' in kwargs:
-            redirect_uris = kwargs['redirectUris']
-        if redirect_uris is None:
-            raise TypeError("Missing 'redirect_uris' argument")
-        if response_code is None and 'responseCode' in kwargs:
-            response_code = kwargs['responseCode']
-        if response_code is None:
-            raise TypeError("Missing 'response_code' argument")
-        if status_code is None and 'statusCode' in kwargs:
-            status_code = kwargs['statusCode']
-        if status_code is None:
-            raise TypeError("Missing 'status_code' argument")
-        if suffix is None:
-            raise TypeError("Missing 'suffix' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("action", action)
-        _setter("allowed_methods", allowed_methods)
-        _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
-        _setter("conditions", conditions)
-        _setter("description", description)
-        _setter("header", header)
-        _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
-        _setter("prefix", prefix)
-        _setter("redirect_uris", redirect_uris)
-        _setter("response_code", response_code)
-        _setter("status_code", status_code)
-        _setter("suffix", suffix)
-        _setter("value", value)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "allowed_methods", allowed_methods)
+        pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "header", header)
+        pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+        pulumi.set(__self__, "prefix", prefix)
+        pulumi.set(__self__, "redirect_uris", redirect_uris)
+        pulumi.set(__self__, "response_code", response_code)
+        pulumi.set(__self__, "status_code", status_code)
+        pulumi.set(__self__, "suffix", suffix)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -4192,34 +3115,9 @@ class GetListenerRulesListenerRuleRuleConditionResult(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        GetListenerRulesListenerRuleRuleConditionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attribute_name=attribute_name,
-            attribute_value=attribute_value,
-            operator=operator,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attribute_name: Optional[str] = None,
-             attribute_value: Optional[str] = None,
-             operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attribute_name is None and 'attributeName' in kwargs:
-            attribute_name = kwargs['attributeName']
-        if attribute_name is None:
-            raise TypeError("Missing 'attribute_name' argument")
-        if attribute_value is None and 'attributeValue' in kwargs:
-            attribute_value = kwargs['attributeValue']
-        if attribute_value is None:
-            raise TypeError("Missing 'attribute_value' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-
-        _setter("attribute_name", attribute_name)
-        _setter("attribute_value", attribute_value)
-        _setter("operator", operator)
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
+        pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -4265,40 +3163,11 @@ class GetListenerRulesListenerRuleRuleRedirectUriResult(dict):
         :param str protocol: The HTTP protocol to use in the redirect URI.
         :param str query: The query string to use in the redirect URI.
         """
-        GetListenerRulesListenerRuleRuleRedirectUriResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            path=path,
-            port=port,
-            protocol=protocol,
-            query=query,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             path: Optional[str] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             query: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-
-        _setter("host", host)
-        _setter("path", path)
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("query", query)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "query", query)
 
     @property
     @pulumi.getter
@@ -4350,29 +3219,10 @@ class GetLoadBalancerRoutingPoliciesFilterResult(dict):
         """
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        GetLoadBalancerRoutingPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4407,44 +3257,11 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyResult(dict):
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         :param Sequence['GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArgs'] rules: The ordered list of routing rules.
         """
-        GetLoadBalancerRoutingPoliciesRoutingPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            condition_language_version=condition_language_version,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            rules=rules,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             condition_language_version: Optional[str] = None,
-             load_balancer_id: Optional[str] = None,
-             name: Optional[str] = None,
-             rules: Optional[Sequence['outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult']] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if condition_language_version is None and 'conditionLanguageVersion' in kwargs:
-            condition_language_version = kwargs['conditionLanguageVersion']
-        if condition_language_version is None:
-            raise TypeError("Missing 'condition_language_version' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if rules is None:
-            raise TypeError("Missing 'rules' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("condition_language_version", condition_language_version)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("name", name)
-        _setter("rules", rules)
-        _setter("state", state)
+        pulumi.set(__self__, "condition_language_version", condition_language_version)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="conditionLanguageVersion")
@@ -4495,30 +3312,9 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult(dict):
         :param str condition: A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            actions=actions,
-            condition=condition,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             actions: Optional[Sequence['outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult']] = None,
-             condition: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if actions is None:
-            raise TypeError("Missing 'actions' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("actions", actions)
-        _setter("condition", condition)
-        _setter("name", name)
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -4554,27 +3350,8 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult(dict):
         :param str backend_set_name: Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if backend_set_name is None:
-            raise TypeError("Missing 'backend_set_name' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("backend_set_name", backend_set_name)
-        _setter("name", name)
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -4604,30 +3381,9 @@ class GetLoadBalancerRoutingPolicyRuleResult(dict):
         :param str condition: A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        GetLoadBalancerRoutingPolicyRuleResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            actions=actions,
-            condition=condition,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             actions: Optional[Sequence['outputs.GetLoadBalancerRoutingPolicyRuleActionResult']] = None,
-             condition: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if actions is None:
-            raise TypeError("Missing 'actions' argument")
-        if condition is None:
-            raise TypeError("Missing 'condition' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("actions", actions)
-        _setter("condition", condition)
-        _setter("name", name)
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -4663,27 +3419,8 @@ class GetLoadBalancerRoutingPolicyRuleActionResult(dict):
         :param str backend_set_name: Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        GetLoadBalancerRoutingPolicyRuleActionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[str] = None,
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if backend_set_name is None:
-            raise TypeError("Missing 'backend_set_name' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("backend_set_name", backend_set_name)
-        _setter("name", name)
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -4711,29 +3448,10 @@ class GetLoadBalancersFilterResult(dict):
         """
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        GetLoadBalancersFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -4791,128 +3509,23 @@ class GetLoadBalancersLoadBalancerResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
-        GetLoadBalancersLoadBalancerResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            id=id,
-            ip_address_details=ip_address_details,
-            ip_addresses=ip_addresses,
-            ip_mode=ip_mode,
-            is_private=is_private,
-            network_security_group_ids=network_security_group_ids,
-            reserved_ips=reserved_ips,
-            shape=shape,
-            shape_details=shape_details,
-            state=state,
-            subnet_ids=subnet_ids,
-            system_tags=system_tags,
-            time_created=time_created,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[str] = None,
-             defined_tags: Optional[Mapping[str, Any]] = None,
-             display_name: Optional[str] = None,
-             freeform_tags: Optional[Mapping[str, Any]] = None,
-             id: Optional[str] = None,
-             ip_address_details: Optional[Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailResult']] = None,
-             ip_addresses: Optional[Sequence[str]] = None,
-             ip_mode: Optional[str] = None,
-             is_private: Optional[bool] = None,
-             network_security_group_ids: Optional[Sequence[str]] = None,
-             reserved_ips: Optional[Sequence['outputs.GetLoadBalancersLoadBalancerReservedIpResult']] = None,
-             shape: Optional[str] = None,
-             shape_details: Optional[Sequence['outputs.GetLoadBalancersLoadBalancerShapeDetailResult']] = None,
-             state: Optional[str] = None,
-             subnet_ids: Optional[Sequence[str]] = None,
-             system_tags: Optional[Mapping[str, Any]] = None,
-             time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if defined_tags is None:
-            raise TypeError("Missing 'defined_tags' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if freeform_tags is None:
-            raise TypeError("Missing 'freeform_tags' argument")
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if ip_address_details is None and 'ipAddressDetails' in kwargs:
-            ip_address_details = kwargs['ipAddressDetails']
-        if ip_address_details is None:
-            raise TypeError("Missing 'ip_address_details' argument")
-        if ip_addresses is None and 'ipAddresses' in kwargs:
-            ip_addresses = kwargs['ipAddresses']
-        if ip_addresses is None:
-            raise TypeError("Missing 'ip_addresses' argument")
-        if ip_mode is None and 'ipMode' in kwargs:
-            ip_mode = kwargs['ipMode']
-        if ip_mode is None:
-            raise TypeError("Missing 'ip_mode' argument")
-        if is_private is None and 'isPrivate' in kwargs:
-            is_private = kwargs['isPrivate']
-        if is_private is None:
-            raise TypeError("Missing 'is_private' argument")
-        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
-            network_security_group_ids = kwargs['networkSecurityGroupIds']
-        if network_security_group_ids is None:
-            raise TypeError("Missing 'network_security_group_ids' argument")
-        if reserved_ips is None and 'reservedIps' in kwargs:
-            reserved_ips = kwargs['reservedIps']
-        if reserved_ips is None:
-            raise TypeError("Missing 'reserved_ips' argument")
-        if shape is None:
-            raise TypeError("Missing 'shape' argument")
-        if shape_details is None and 'shapeDetails' in kwargs:
-            shape_details = kwargs['shapeDetails']
-        if shape_details is None:
-            raise TypeError("Missing 'shape_details' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-        if subnet_ids is None and 'subnetIds' in kwargs:
-            subnet_ids = kwargs['subnetIds']
-        if subnet_ids is None:
-            raise TypeError("Missing 'subnet_ids' argument")
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if system_tags is None:
-            raise TypeError("Missing 'system_tags' argument")
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_created is None:
-            raise TypeError("Missing 'time_created' argument")
-
-        _setter("compartment_id", compartment_id)
-        _setter("defined_tags", defined_tags)
-        _setter("display_name", display_name)
-        _setter("freeform_tags", freeform_tags)
-        _setter("id", id)
-        _setter("ip_address_details", ip_address_details)
-        _setter("ip_addresses", ip_addresses)
-        _setter("ip_mode", ip_mode)
-        _setter("is_private", is_private)
-        _setter("network_security_group_ids", network_security_group_ids)
-        _setter("reserved_ips", reserved_ips)
-        _setter("shape", shape)
-        _setter("shape_details", shape_details)
-        _setter("state", state)
-        _setter("subnet_ids", subnet_ids)
-        _setter("system_tags", system_tags)
-        _setter("time_created", time_created)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ip_address_details", ip_address_details)
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "ip_mode", ip_mode)
+        pulumi.set(__self__, "is_private", is_private)
+        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "reserved_ips", reserved_ips)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_details", shape_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_ids", subnet_ids)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5059,36 +3672,9 @@ class GetLoadBalancersLoadBalancerIpAddressDetailResult(dict):
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs'] reserved_ips: Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
-        GetLoadBalancersLoadBalancerIpAddressDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ip_address=ip_address,
-            is_public=is_public,
-            reserved_ips=reserved_ips,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ip_address: Optional[str] = None,
-             is_public: Optional[bool] = None,
-             reserved_ips: Optional[Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult']] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ip_address is None and 'ipAddress' in kwargs:
-            ip_address = kwargs['ipAddress']
-        if ip_address is None:
-            raise TypeError("Missing 'ip_address' argument")
-        if is_public is None and 'isPublic' in kwargs:
-            is_public = kwargs['isPublic']
-        if is_public is None:
-            raise TypeError("Missing 'is_public' argument")
-        if reserved_ips is None and 'reservedIps' in kwargs:
-            reserved_ips = kwargs['reservedIps']
-        if reserved_ips is None:
-            raise TypeError("Missing 'reserved_ips' argument")
-
-        _setter("ip_address", ip_address)
-        _setter("is_public", is_public)
-        _setter("reserved_ips", reserved_ips)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "is_public", is_public)
+        pulumi.set(__self__, "reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -5122,20 +3708,7 @@ class GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult(dict):
         """
         :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
         """
-        GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("id", id)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -5153,20 +3726,7 @@ class GetLoadBalancersLoadBalancerReservedIpResult(dict):
         """
         :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
         """
-        GetLoadBalancersLoadBalancerReservedIpResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-
-        _setter("id", id)
+        pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter
@@ -5186,29 +3746,8 @@ class GetLoadBalancersLoadBalancerShapeDetailResult(dict):
         :param int maximum_bandwidth_in_mbps: Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
         :param int minimum_bandwidth_in_mbps: Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
         """
-        GetLoadBalancersLoadBalancerShapeDetailResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            maximum_bandwidth_in_mbps=maximum_bandwidth_in_mbps,
-            minimum_bandwidth_in_mbps=minimum_bandwidth_in_mbps,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             maximum_bandwidth_in_mbps: Optional[int] = None,
-             minimum_bandwidth_in_mbps: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if maximum_bandwidth_in_mbps is None and 'maximumBandwidthInMbps' in kwargs:
-            maximum_bandwidth_in_mbps = kwargs['maximumBandwidthInMbps']
-        if maximum_bandwidth_in_mbps is None:
-            raise TypeError("Missing 'maximum_bandwidth_in_mbps' argument")
-        if minimum_bandwidth_in_mbps is None and 'minimumBandwidthInMbps' in kwargs:
-            minimum_bandwidth_in_mbps = kwargs['minimumBandwidthInMbps']
-        if minimum_bandwidth_in_mbps is None:
-            raise TypeError("Missing 'minimum_bandwidth_in_mbps' argument")
-
-        _setter("maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
-        _setter("minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
+        pulumi.set(__self__, "maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
+        pulumi.set(__self__, "minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
 
     @property
     @pulumi.getter(name="maximumBandwidthInMbps")
@@ -5236,29 +3775,10 @@ class GetPathRouteSetsFilterResult(dict):
         """
         :param str name: The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
         """
-        GetPathRouteSetsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5291,39 +3811,10 @@ class GetPathRouteSetsPathRouteSetResult(dict):
         :param str name: The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
         :param Sequence['GetPathRouteSetsPathRouteSetPathRouteArgs'] path_routes: The set of path route rules.
         """
-        GetPathRouteSetsPathRouteSetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            load_balancer_id=load_balancer_id,
-            name=name,
-            path_routes=path_routes,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             load_balancer_id: Optional[str] = None,
-             name: Optional[str] = None,
-             path_routes: Optional[Sequence['outputs.GetPathRouteSetsPathRouteSetPathRouteResult']] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if path_routes is None and 'pathRoutes' in kwargs:
-            path_routes = kwargs['pathRoutes']
-        if path_routes is None:
-            raise TypeError("Missing 'path_routes' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("name", name)
-        _setter("path_routes", path_routes)
-        _setter("state", state)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "path_routes", path_routes)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="loadBalancerId")
@@ -5369,34 +3860,9 @@ class GetPathRouteSetsPathRouteSetPathRouteResult(dict):
                *  Regular expressions are not supported.
         :param 'GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeArgs' path_match_type: The type of matching to apply to incoming URIs.
         """
-        GetPathRouteSetsPathRouteSetPathRouteResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            backend_set_name=backend_set_name,
-            path=path,
-            path_match_type=path_match_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             backend_set_name: Optional[str] = None,
-             path: Optional[str] = None,
-             path_match_type: Optional['outputs.GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult'] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if backend_set_name is None and 'backendSetName' in kwargs:
-            backend_set_name = kwargs['backendSetName']
-        if backend_set_name is None:
-            raise TypeError("Missing 'backend_set_name' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if path_match_type is None and 'pathMatchType' in kwargs:
-            path_match_type = kwargs['pathMatchType']
-        if path_match_type is None:
-            raise TypeError("Missing 'path_match_type' argument")
-
-        _setter("backend_set_name", backend_set_name)
-        _setter("path", path)
-        _setter("path_match_type", path_match_type)
+        pulumi.set(__self__, "backend_set_name", backend_set_name)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "path_match_type", path_match_type)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -5437,22 +3903,7 @@ class GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult(dict):
                *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
                *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
         """
-        GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            match_type=match_type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             match_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if match_type is None and 'matchType' in kwargs:
-            match_type = kwargs['matchType']
-        if match_type is None:
-            raise TypeError("Missing 'match_type' argument")
-
-        _setter("match_type", match_type)
+        pulumi.set(__self__, "match_type", match_type)
 
     @property
     @pulumi.getter(name="matchType")
@@ -5476,29 +3927,10 @@ class GetPoliciesFilterResult(dict):
         """
         :param str name: The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
         """
-        GetPoliciesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5526,20 +3958,7 @@ class GetPoliciesPolicyResult(dict):
         """
         :param str name: The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
         """
-        GetPoliciesPolicyResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -5559,29 +3978,10 @@ class GetProtocolsFilterResult(dict):
         """
         :param str name: The name of a protocol.  Example: 'HTTP'
         """
-        GetProtocolsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -5609,20 +4009,7 @@ class GetProtocolsProtocolResult(dict):
         """
         :param str name: The name of a protocol.  Example: 'HTTP'
         """
-        GetProtocolsProtocolResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -5669,92 +4056,19 @@ class GetRuleSetItemResult(dict):
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         """
-        GetRuleSetItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            allowed_methods=allowed_methods,
-            are_invalid_characters_allowed=are_invalid_characters_allowed,
-            conditions=conditions,
-            description=description,
-            header=header,
-            http_large_header_size_in_kb=http_large_header_size_in_kb,
-            prefix=prefix,
-            redirect_uris=redirect_uris,
-            response_code=response_code,
-            status_code=status_code,
-            suffix=suffix,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             allowed_methods: Optional[Sequence[str]] = None,
-             are_invalid_characters_allowed: Optional[bool] = None,
-             conditions: Optional[Sequence['outputs.GetRuleSetItemConditionResult']] = None,
-             description: Optional[str] = None,
-             header: Optional[str] = None,
-             http_large_header_size_in_kb: Optional[int] = None,
-             prefix: Optional[str] = None,
-             redirect_uris: Optional[Sequence['outputs.GetRuleSetItemRedirectUriResult']] = None,
-             response_code: Optional[int] = None,
-             status_code: Optional[int] = None,
-             suffix: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if allowed_methods is None and 'allowedMethods' in kwargs:
-            allowed_methods = kwargs['allowedMethods']
-        if allowed_methods is None:
-            raise TypeError("Missing 'allowed_methods' argument")
-        if are_invalid_characters_allowed is None and 'areInvalidCharactersAllowed' in kwargs:
-            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
-        if are_invalid_characters_allowed is None:
-            raise TypeError("Missing 'are_invalid_characters_allowed' argument")
-        if conditions is None:
-            raise TypeError("Missing 'conditions' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if header is None:
-            raise TypeError("Missing 'header' argument")
-        if http_large_header_size_in_kb is None and 'httpLargeHeaderSizeInKb' in kwargs:
-            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
-        if http_large_header_size_in_kb is None:
-            raise TypeError("Missing 'http_large_header_size_in_kb' argument")
-        if prefix is None:
-            raise TypeError("Missing 'prefix' argument")
-        if redirect_uris is None and 'redirectUris' in kwargs:
-            redirect_uris = kwargs['redirectUris']
-        if redirect_uris is None:
-            raise TypeError("Missing 'redirect_uris' argument")
-        if response_code is None and 'responseCode' in kwargs:
-            response_code = kwargs['responseCode']
-        if response_code is None:
-            raise TypeError("Missing 'response_code' argument")
-        if status_code is None and 'statusCode' in kwargs:
-            status_code = kwargs['statusCode']
-        if status_code is None:
-            raise TypeError("Missing 'status_code' argument")
-        if suffix is None:
-            raise TypeError("Missing 'suffix' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("action", action)
-        _setter("allowed_methods", allowed_methods)
-        _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
-        _setter("conditions", conditions)
-        _setter("description", description)
-        _setter("header", header)
-        _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
-        _setter("prefix", prefix)
-        _setter("redirect_uris", redirect_uris)
-        _setter("response_code", response_code)
-        _setter("status_code", status_code)
-        _setter("suffix", suffix)
-        _setter("value", value)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "allowed_methods", allowed_methods)
+        pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "header", header)
+        pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+        pulumi.set(__self__, "prefix", prefix)
+        pulumi.set(__self__, "redirect_uris", redirect_uris)
+        pulumi.set(__self__, "response_code", response_code)
+        pulumi.set(__self__, "status_code", status_code)
+        pulumi.set(__self__, "suffix", suffix)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -5882,34 +4196,9 @@ class GetRuleSetItemConditionResult(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        GetRuleSetItemConditionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attribute_name=attribute_name,
-            attribute_value=attribute_value,
-            operator=operator,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attribute_name: Optional[str] = None,
-             attribute_value: Optional[str] = None,
-             operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attribute_name is None and 'attributeName' in kwargs:
-            attribute_name = kwargs['attributeName']
-        if attribute_name is None:
-            raise TypeError("Missing 'attribute_name' argument")
-        if attribute_value is None and 'attributeValue' in kwargs:
-            attribute_value = kwargs['attributeValue']
-        if attribute_value is None:
-            raise TypeError("Missing 'attribute_value' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-
-        _setter("attribute_name", attribute_name)
-        _setter("attribute_value", attribute_value)
-        _setter("operator", operator)
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
+        pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -5958,40 +4247,11 @@ class GetRuleSetItemRedirectUriResult(dict):
         :param str protocol: The HTTP protocol to use in the redirect URI.
         :param str query: The query string to use in the redirect URI.
         """
-        GetRuleSetItemRedirectUriResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            path=path,
-            port=port,
-            protocol=protocol,
-            query=query,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             path: Optional[str] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             query: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-
-        _setter("host", host)
-        _setter("path", path)
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("query", query)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "query", query)
 
     @property
     @pulumi.getter
@@ -6043,29 +4303,10 @@ class GetRuleSetsFilterResult(dict):
         """
         :param str name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         """
-        GetRuleSetsFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6099,42 +4340,11 @@ class GetRuleSetsRuleSetResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         :param str name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         """
-        GetRuleSetsRuleSetResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            id=id,
-            items=items,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             id: Optional[str] = None,
-             items: Optional[Sequence['outputs.GetRuleSetsRuleSetItemResult']] = None,
-             load_balancer_id: Optional[str] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if id is None:
-            raise TypeError("Missing 'id' argument")
-        if items is None:
-            raise TypeError("Missing 'items' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("id", id)
-        _setter("items", items)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("name", name)
-        _setter("state", state)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter
@@ -6207,92 +4417,19 @@ class GetRuleSetsRuleSetItemResult(dict):
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         """
-        GetRuleSetsRuleSetItemResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            action=action,
-            allowed_methods=allowed_methods,
-            are_invalid_characters_allowed=are_invalid_characters_allowed,
-            conditions=conditions,
-            description=description,
-            header=header,
-            http_large_header_size_in_kb=http_large_header_size_in_kb,
-            prefix=prefix,
-            redirect_uris=redirect_uris,
-            response_code=response_code,
-            status_code=status_code,
-            suffix=suffix,
-            value=value,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             action: Optional[str] = None,
-             allowed_methods: Optional[Sequence[str]] = None,
-             are_invalid_characters_allowed: Optional[bool] = None,
-             conditions: Optional[Sequence['outputs.GetRuleSetsRuleSetItemConditionResult']] = None,
-             description: Optional[str] = None,
-             header: Optional[str] = None,
-             http_large_header_size_in_kb: Optional[int] = None,
-             prefix: Optional[str] = None,
-             redirect_uris: Optional[Sequence['outputs.GetRuleSetsRuleSetItemRedirectUriResult']] = None,
-             response_code: Optional[int] = None,
-             status_code: Optional[int] = None,
-             suffix: Optional[str] = None,
-             value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if action is None:
-            raise TypeError("Missing 'action' argument")
-        if allowed_methods is None and 'allowedMethods' in kwargs:
-            allowed_methods = kwargs['allowedMethods']
-        if allowed_methods is None:
-            raise TypeError("Missing 'allowed_methods' argument")
-        if are_invalid_characters_allowed is None and 'areInvalidCharactersAllowed' in kwargs:
-            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
-        if are_invalid_characters_allowed is None:
-            raise TypeError("Missing 'are_invalid_characters_allowed' argument")
-        if conditions is None:
-            raise TypeError("Missing 'conditions' argument")
-        if description is None:
-            raise TypeError("Missing 'description' argument")
-        if header is None:
-            raise TypeError("Missing 'header' argument")
-        if http_large_header_size_in_kb is None and 'httpLargeHeaderSizeInKb' in kwargs:
-            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
-        if http_large_header_size_in_kb is None:
-            raise TypeError("Missing 'http_large_header_size_in_kb' argument")
-        if prefix is None:
-            raise TypeError("Missing 'prefix' argument")
-        if redirect_uris is None and 'redirectUris' in kwargs:
-            redirect_uris = kwargs['redirectUris']
-        if redirect_uris is None:
-            raise TypeError("Missing 'redirect_uris' argument")
-        if response_code is None and 'responseCode' in kwargs:
-            response_code = kwargs['responseCode']
-        if response_code is None:
-            raise TypeError("Missing 'response_code' argument")
-        if status_code is None and 'statusCode' in kwargs:
-            status_code = kwargs['statusCode']
-        if status_code is None:
-            raise TypeError("Missing 'status_code' argument")
-        if suffix is None:
-            raise TypeError("Missing 'suffix' argument")
-        if value is None:
-            raise TypeError("Missing 'value' argument")
-
-        _setter("action", action)
-        _setter("allowed_methods", allowed_methods)
-        _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
-        _setter("conditions", conditions)
-        _setter("description", description)
-        _setter("header", header)
-        _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
-        _setter("prefix", prefix)
-        _setter("redirect_uris", redirect_uris)
-        _setter("response_code", response_code)
-        _setter("status_code", status_code)
-        _setter("suffix", suffix)
-        _setter("value", value)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "allowed_methods", allowed_methods)
+        pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "header", header)
+        pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+        pulumi.set(__self__, "prefix", prefix)
+        pulumi.set(__self__, "redirect_uris", redirect_uris)
+        pulumi.set(__self__, "response_code", response_code)
+        pulumi.set(__self__, "status_code", status_code)
+        pulumi.set(__self__, "suffix", suffix)
+        pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
@@ -6420,34 +4557,9 @@ class GetRuleSetsRuleSetItemConditionResult(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        GetRuleSetsRuleSetItemConditionResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            attribute_name=attribute_name,
-            attribute_value=attribute_value,
-            operator=operator,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             attribute_name: Optional[str] = None,
-             attribute_value: Optional[str] = None,
-             operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if attribute_name is None and 'attributeName' in kwargs:
-            attribute_name = kwargs['attributeName']
-        if attribute_name is None:
-            raise TypeError("Missing 'attribute_name' argument")
-        if attribute_value is None and 'attributeValue' in kwargs:
-            attribute_value = kwargs['attributeValue']
-        if attribute_value is None:
-            raise TypeError("Missing 'attribute_value' argument")
-        if operator is None:
-            raise TypeError("Missing 'operator' argument")
-
-        _setter("attribute_name", attribute_name)
-        _setter("attribute_value", attribute_value)
-        _setter("operator", operator)
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
+        pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -6496,40 +4608,11 @@ class GetRuleSetsRuleSetItemRedirectUriResult(dict):
         :param str protocol: The HTTP protocol to use in the redirect URI.
         :param str query: The query string to use in the redirect URI.
         """
-        GetRuleSetsRuleSetItemRedirectUriResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            host=host,
-            path=path,
-            port=port,
-            protocol=protocol,
-            query=query,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             host: Optional[str] = None,
-             path: Optional[str] = None,
-             port: Optional[int] = None,
-             protocol: Optional[str] = None,
-             query: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if host is None:
-            raise TypeError("Missing 'host' argument")
-        if path is None:
-            raise TypeError("Missing 'path' argument")
-        if port is None:
-            raise TypeError("Missing 'port' argument")
-        if protocol is None:
-            raise TypeError("Missing 'protocol' argument")
-        if query is None:
-            raise TypeError("Missing 'query' argument")
-
-        _setter("host", host)
-        _setter("path", path)
-        _setter("port", port)
-        _setter("protocol", protocol)
-        _setter("query", query)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "query", query)
 
     @property
     @pulumi.getter
@@ -6581,29 +4664,10 @@ class GetShapesFilterResult(dict):
         """
         :param str name: The name of the shape.  Example: `100Mbps`
         """
-        GetShapesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6631,20 +4695,7 @@ class GetShapesShapeResult(dict):
         """
         :param str name: The name of the shape.  Example: `100Mbps`
         """
-        GetShapesShapeResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-
-        _setter("name", name)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
@@ -6664,29 +4715,10 @@ class GetSslCipherSuitesFilterResult(dict):
         """
         :param str name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
-        GetSslCipherSuitesFilterResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            name=name,
-            values=values,
-            regex=regex,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             name: Optional[str] = None,
-             values: Optional[Sequence[str]] = None,
-             regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if values is None:
-            raise TypeError("Missing 'values' argument")
-
-        _setter("name", name)
-        _setter("values", values)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
         if regex is not None:
-            _setter("regex", regex)
+            pulumi.set(__self__, "regex", regex)
 
     @property
     @pulumi.getter
@@ -6719,37 +4751,10 @@ class GetSslCipherSuitesSslCipherSuiteResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param str name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
-        GetSslCipherSuitesSslCipherSuiteResult._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            ciphers=ciphers,
-            load_balancer_id=load_balancer_id,
-            name=name,
-            state=state,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             ciphers: Optional[Sequence[str]] = None,
-             load_balancer_id: Optional[str] = None,
-             name: Optional[str] = None,
-             state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ciphers is None:
-            raise TypeError("Missing 'ciphers' argument")
-        if load_balancer_id is None and 'loadBalancerId' in kwargs:
-            load_balancer_id = kwargs['loadBalancerId']
-        if load_balancer_id is None:
-            raise TypeError("Missing 'load_balancer_id' argument")
-        if name is None:
-            raise TypeError("Missing 'name' argument")
-        if state is None:
-            raise TypeError("Missing 'state' argument")
-
-        _setter("ciphers", ciphers)
-        _setter("load_balancer_id", load_balancer_id)
-        _setter("name", name)
-        _setter("state", state)
+        pulumi.set(__self__, "ciphers", ciphers)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter

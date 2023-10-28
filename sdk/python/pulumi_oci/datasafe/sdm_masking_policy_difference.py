@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SdmMaskingPolicyDifferenceArgs', 'SdmMaskingPolicyDifference']
@@ -33,53 +33,16 @@ class SdmMaskingPolicyDifferenceArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the SDM masking policy difference. Does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
-        SdmMaskingPolicyDifferenceArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            masking_policy_id=masking_policy_id,
-            defined_tags=defined_tags,
-            difference_type=difference_type,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             masking_policy_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             difference_type: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
-            masking_policy_id = kwargs['maskingPolicyId']
-        if masking_policy_id is None:
-            raise TypeError("Missing 'masking_policy_id' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if difference_type is None and 'differenceType' in kwargs:
-            difference_type = kwargs['differenceType']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
-        _setter("masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if difference_type is not None:
-            _setter("difference_type", difference_type)
+            pulumi.set(__self__, "difference_type", difference_type)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -190,79 +153,28 @@ class _SdmMaskingPolicyDifferenceState:
         :param pulumi.Input[str] time_created: The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_creation_started: The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        _SdmMaskingPolicyDifferenceState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            defined_tags=defined_tags,
-            difference_type=difference_type,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            masking_policy_id=masking_policy_id,
-            sensitive_data_model_id=sensitive_data_model_id,
-            state=state,
-            system_tags=system_tags,
-            time_created=time_created,
-            time_creation_started=time_creation_started,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             difference_type: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             masking_policy_id: Optional[pulumi.Input[str]] = None,
-             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_creation_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if difference_type is None and 'differenceType' in kwargs:
-            difference_type = kwargs['differenceType']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
-            masking_policy_id = kwargs['maskingPolicyId']
-        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
-            sensitive_data_model_id = kwargs['sensitiveDataModelId']
-        if system_tags is None and 'systemTags' in kwargs:
-            system_tags = kwargs['systemTags']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_creation_started is None and 'timeCreationStarted' in kwargs:
-            time_creation_started = kwargs['timeCreationStarted']
-
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if difference_type is not None:
-            _setter("difference_type", difference_type)
+            pulumi.set(__self__, "difference_type", difference_type)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if masking_policy_id is not None:
-            _setter("masking_policy_id", masking_policy_id)
+            pulumi.set(__self__, "masking_policy_id", masking_policy_id)
         if sensitive_data_model_id is not None:
-            _setter("sensitive_data_model_id", sensitive_data_model_id)
+            pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if system_tags is not None:
-            _setter("system_tags", system_tags)
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_creation_started is not None:
-            _setter("time_creation_started", time_creation_started)
+            pulumi.set(__self__, "time_creation_started", time_creation_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -514,10 +426,6 @@ class SdmMaskingPolicyDifference(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            SdmMaskingPolicyDifferenceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

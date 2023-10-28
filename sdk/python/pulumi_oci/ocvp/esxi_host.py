@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['EsxiHostArgs', 'EsxiHost']
@@ -52,117 +52,52 @@ class EsxiHostArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         """
-        EsxiHostArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_donor_host_id=billing_donor_host_id,
-            capacity_reservation_id=capacity_reservation_id,
-            compute_availability_domain=compute_availability_domain,
-            current_sku=current_sku,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            failed_esxi_host_id=failed_esxi_host_id,
-            freeform_tags=freeform_tags,
-            host_ocpu_count=host_ocpu_count,
-            host_shape_name=host_shape_name,
-            next_sku=next_sku,
-            non_upgraded_esxi_host_id=non_upgraded_esxi_host_id,
-            sddc_id=sddc_id,
-            swap_billing_host_id=swap_billing_host_id,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_donor_host_id: Optional[pulumi.Input[str]] = None,
-             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-             compute_availability_domain: Optional[pulumi.Input[str]] = None,
-             current_sku: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             failed_esxi_host_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             host_ocpu_count: Optional[pulumi.Input[float]] = None,
-             host_shape_name: Optional[pulumi.Input[str]] = None,
-             next_sku: Optional[pulumi.Input[str]] = None,
-             non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
-             sddc_id: Optional[pulumi.Input[str]] = None,
-             swap_billing_host_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_donor_host_id is None and 'billingDonorHostId' in kwargs:
-            billing_donor_host_id = kwargs['billingDonorHostId']
-        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
-            capacity_reservation_id = kwargs['capacityReservationId']
-        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
-            compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if current_sku is None and 'currentSku' in kwargs:
-            current_sku = kwargs['currentSku']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if failed_esxi_host_id is None and 'failedEsxiHostId' in kwargs:
-            failed_esxi_host_id = kwargs['failedEsxiHostId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if host_ocpu_count is None and 'hostOcpuCount' in kwargs:
-            host_ocpu_count = kwargs['hostOcpuCount']
-        if host_shape_name is None and 'hostShapeName' in kwargs:
-            host_shape_name = kwargs['hostShapeName']
-        if next_sku is None and 'nextSku' in kwargs:
-            next_sku = kwargs['nextSku']
-        if non_upgraded_esxi_host_id is None and 'nonUpgradedEsxiHostId' in kwargs:
-            non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
-        if sddc_id is None and 'sddcId' in kwargs:
-            sddc_id = kwargs['sddcId']
-        if swap_billing_host_id is None and 'swapBillingHostId' in kwargs:
-            swap_billing_host_id = kwargs['swapBillingHostId']
-
         if billing_donor_host_id is not None:
             warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
             pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
         if billing_donor_host_id is not None:
-            _setter("billing_donor_host_id", billing_donor_host_id)
+            pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
         if capacity_reservation_id is not None:
-            _setter("capacity_reservation_id", capacity_reservation_id)
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_availability_domain is not None:
-            _setter("compute_availability_domain", compute_availability_domain)
+            pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         if current_sku is not None:
             warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
         if current_sku is not None:
-            _setter("current_sku", current_sku)
+            pulumi.set(__self__, "current_sku", current_sku)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if failed_esxi_host_id is not None:
             warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
             pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
         if failed_esxi_host_id is not None:
-            _setter("failed_esxi_host_id", failed_esxi_host_id)
+            pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_ocpu_count is not None:
-            _setter("host_ocpu_count", host_ocpu_count)
+            pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
         if host_shape_name is not None:
-            _setter("host_shape_name", host_shape_name)
+            pulumi.set(__self__, "host_shape_name", host_shape_name)
         if next_sku is not None:
             warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
         if next_sku is not None:
-            _setter("next_sku", next_sku)
+            pulumi.set(__self__, "next_sku", next_sku)
         if non_upgraded_esxi_host_id is not None:
             warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
             pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
         if non_upgraded_esxi_host_id is not None:
-            _setter("non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+            pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
         if sddc_id is not None:
             warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
             pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
         if sddc_id is not None:
-            _setter("sddc_id", sddc_id)
+            pulumi.set(__self__, "sddc_id", sddc_id)
         if swap_billing_host_id is not None:
-            _setter("swap_billing_host_id", swap_billing_host_id)
+            pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
 
     @property
     @pulumi.getter(name="billingDonorHostId")
@@ -421,187 +356,76 @@ class _EsxiHostState:
         :param pulumi.Input[str] upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         :param pulumi.Input[str] vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
-        _EsxiHostState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            billing_contract_end_date=billing_contract_end_date,
-            billing_donor_host_id=billing_donor_host_id,
-            capacity_reservation_id=capacity_reservation_id,
-            compartment_id=compartment_id,
-            compute_availability_domain=compute_availability_domain,
-            compute_instance_id=compute_instance_id,
-            current_sku=current_sku,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            failed_esxi_host_id=failed_esxi_host_id,
-            freeform_tags=freeform_tags,
-            grace_period_end_date=grace_period_end_date,
-            host_ocpu_count=host_ocpu_count,
-            host_shape_name=host_shape_name,
-            is_billing_continuation_in_progress=is_billing_continuation_in_progress,
-            is_billing_swapping_in_progress=is_billing_swapping_in_progress,
-            next_sku=next_sku,
-            non_upgraded_esxi_host_id=non_upgraded_esxi_host_id,
-            replacement_esxi_host_id=replacement_esxi_host_id,
-            sddc_id=sddc_id,
-            state=state,
-            swap_billing_host_id=swap_billing_host_id,
-            time_created=time_created,
-            time_updated=time_updated,
-            upgraded_replacement_esxi_host_id=upgraded_replacement_esxi_host_id,
-            vmware_software_version=vmware_software_version,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             billing_contract_end_date: Optional[pulumi.Input[str]] = None,
-             billing_donor_host_id: Optional[pulumi.Input[str]] = None,
-             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             compute_availability_domain: Optional[pulumi.Input[str]] = None,
-             compute_instance_id: Optional[pulumi.Input[str]] = None,
-             current_sku: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             failed_esxi_host_id: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             grace_period_end_date: Optional[pulumi.Input[str]] = None,
-             host_ocpu_count: Optional[pulumi.Input[float]] = None,
-             host_shape_name: Optional[pulumi.Input[str]] = None,
-             is_billing_continuation_in_progress: Optional[pulumi.Input[bool]] = None,
-             is_billing_swapping_in_progress: Optional[pulumi.Input[bool]] = None,
-             next_sku: Optional[pulumi.Input[str]] = None,
-             non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
-             replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
-             sddc_id: Optional[pulumi.Input[str]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             swap_billing_host_id: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_updated: Optional[pulumi.Input[str]] = None,
-             upgraded_replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
-             vmware_software_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if billing_contract_end_date is None and 'billingContractEndDate' in kwargs:
-            billing_contract_end_date = kwargs['billingContractEndDate']
-        if billing_donor_host_id is None and 'billingDonorHostId' in kwargs:
-            billing_donor_host_id = kwargs['billingDonorHostId']
-        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
-            capacity_reservation_id = kwargs['capacityReservationId']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
-            compute_availability_domain = kwargs['computeAvailabilityDomain']
-        if compute_instance_id is None and 'computeInstanceId' in kwargs:
-            compute_instance_id = kwargs['computeInstanceId']
-        if current_sku is None and 'currentSku' in kwargs:
-            current_sku = kwargs['currentSku']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if failed_esxi_host_id is None and 'failedEsxiHostId' in kwargs:
-            failed_esxi_host_id = kwargs['failedEsxiHostId']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if grace_period_end_date is None and 'gracePeriodEndDate' in kwargs:
-            grace_period_end_date = kwargs['gracePeriodEndDate']
-        if host_ocpu_count is None and 'hostOcpuCount' in kwargs:
-            host_ocpu_count = kwargs['hostOcpuCount']
-        if host_shape_name is None and 'hostShapeName' in kwargs:
-            host_shape_name = kwargs['hostShapeName']
-        if is_billing_continuation_in_progress is None and 'isBillingContinuationInProgress' in kwargs:
-            is_billing_continuation_in_progress = kwargs['isBillingContinuationInProgress']
-        if is_billing_swapping_in_progress is None and 'isBillingSwappingInProgress' in kwargs:
-            is_billing_swapping_in_progress = kwargs['isBillingSwappingInProgress']
-        if next_sku is None and 'nextSku' in kwargs:
-            next_sku = kwargs['nextSku']
-        if non_upgraded_esxi_host_id is None and 'nonUpgradedEsxiHostId' in kwargs:
-            non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
-        if replacement_esxi_host_id is None and 'replacementEsxiHostId' in kwargs:
-            replacement_esxi_host_id = kwargs['replacementEsxiHostId']
-        if sddc_id is None and 'sddcId' in kwargs:
-            sddc_id = kwargs['sddcId']
-        if swap_billing_host_id is None and 'swapBillingHostId' in kwargs:
-            swap_billing_host_id = kwargs['swapBillingHostId']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_updated is None and 'timeUpdated' in kwargs:
-            time_updated = kwargs['timeUpdated']
-        if upgraded_replacement_esxi_host_id is None and 'upgradedReplacementEsxiHostId' in kwargs:
-            upgraded_replacement_esxi_host_id = kwargs['upgradedReplacementEsxiHostId']
-        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
-            vmware_software_version = kwargs['vmwareSoftwareVersion']
-
         if billing_contract_end_date is not None:
-            _setter("billing_contract_end_date", billing_contract_end_date)
+            pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
         if billing_donor_host_id is not None:
             warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
             pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
         if billing_donor_host_id is not None:
-            _setter("billing_donor_host_id", billing_donor_host_id)
+            pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
         if capacity_reservation_id is not None:
-            _setter("capacity_reservation_id", capacity_reservation_id)
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_availability_domain is not None:
-            _setter("compute_availability_domain", compute_availability_domain)
+            pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         if compute_instance_id is not None:
-            _setter("compute_instance_id", compute_instance_id)
+            pulumi.set(__self__, "compute_instance_id", compute_instance_id)
         if current_sku is not None:
             warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
         if current_sku is not None:
-            _setter("current_sku", current_sku)
+            pulumi.set(__self__, "current_sku", current_sku)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if failed_esxi_host_id is not None:
             warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
             pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
         if failed_esxi_host_id is not None:
-            _setter("failed_esxi_host_id", failed_esxi_host_id)
+            pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if grace_period_end_date is not None:
-            _setter("grace_period_end_date", grace_period_end_date)
+            pulumi.set(__self__, "grace_period_end_date", grace_period_end_date)
         if host_ocpu_count is not None:
-            _setter("host_ocpu_count", host_ocpu_count)
+            pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
         if host_shape_name is not None:
-            _setter("host_shape_name", host_shape_name)
+            pulumi.set(__self__, "host_shape_name", host_shape_name)
         if is_billing_continuation_in_progress is not None:
-            _setter("is_billing_continuation_in_progress", is_billing_continuation_in_progress)
+            pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
         if is_billing_swapping_in_progress is not None:
-            _setter("is_billing_swapping_in_progress", is_billing_swapping_in_progress)
+            pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
         if next_sku is not None:
             warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
         if next_sku is not None:
-            _setter("next_sku", next_sku)
+            pulumi.set(__self__, "next_sku", next_sku)
         if non_upgraded_esxi_host_id is not None:
             warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
             pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
         if non_upgraded_esxi_host_id is not None:
-            _setter("non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+            pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
         if replacement_esxi_host_id is not None:
-            _setter("replacement_esxi_host_id", replacement_esxi_host_id)
+            pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
         if sddc_id is not None:
             warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
             pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
         if sddc_id is not None:
-            _setter("sddc_id", sddc_id)
+            pulumi.set(__self__, "sddc_id", sddc_id)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if swap_billing_host_id is not None:
-            _setter("swap_billing_host_id", swap_billing_host_id)
+            pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
-            _setter("time_updated", time_updated)
+            pulumi.set(__self__, "time_updated", time_updated)
         if upgraded_replacement_esxi_host_id is not None:
-            _setter("upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
+            pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
         if vmware_software_version is not None:
-            _setter("vmware_software_version", vmware_software_version)
+            pulumi.set(__self__, "vmware_software_version", vmware_software_version)
 
     @property
     @pulumi.getter(name="billingContractEndDate")
@@ -1035,10 +859,6 @@ class EsxiHost(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            EsxiHostArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

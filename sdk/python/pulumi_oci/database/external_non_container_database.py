@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,41 +31,12 @@ class ExternalNonContainerDatabaseArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        ExternalNonContainerDatabaseArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            compartment_id=compartment_id,
-            display_name=display_name,
-            defined_tags=defined_tags,
-            freeform_tags=freeform_tags,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if compartment_id is None:
-            raise TypeError("Missing 'compartment_id' argument")
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if display_name is None:
-            raise TypeError("Missing 'display_name' argument")
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-
-        _setter("compartment_id", compartment_id)
-        _setter("display_name", display_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -168,127 +139,44 @@ class _ExternalNonContainerDatabaseState:
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         """
-        _ExternalNonContainerDatabaseState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            character_set=character_set,
-            compartment_id=compartment_id,
-            database_configuration=database_configuration,
-            database_edition=database_edition,
-            database_management_configs=database_management_configs,
-            database_version=database_version,
-            db_id=db_id,
-            db_packs=db_packs,
-            db_unique_name=db_unique_name,
-            defined_tags=defined_tags,
-            display_name=display_name,
-            freeform_tags=freeform_tags,
-            lifecycle_details=lifecycle_details,
-            ncharacter_set=ncharacter_set,
-            operations_insights_configs=operations_insights_configs,
-            stack_monitoring_configs=stack_monitoring_configs,
-            state=state,
-            time_created=time_created,
-            time_zone=time_zone,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             character_set: Optional[pulumi.Input[str]] = None,
-             compartment_id: Optional[pulumi.Input[str]] = None,
-             database_configuration: Optional[pulumi.Input[str]] = None,
-             database_edition: Optional[pulumi.Input[str]] = None,
-             database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseDatabaseManagementConfigArgs']]]] = None,
-             database_version: Optional[pulumi.Input[str]] = None,
-             db_id: Optional[pulumi.Input[str]] = None,
-             db_packs: Optional[pulumi.Input[str]] = None,
-             db_unique_name: Optional[pulumi.Input[str]] = None,
-             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             display_name: Optional[pulumi.Input[str]] = None,
-             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             lifecycle_details: Optional[pulumi.Input[str]] = None,
-             ncharacter_set: Optional[pulumi.Input[str]] = None,
-             operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]] = None,
-             stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]] = None,
-             state: Optional[pulumi.Input[str]] = None,
-             time_created: Optional[pulumi.Input[str]] = None,
-             time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if character_set is None and 'characterSet' in kwargs:
-            character_set = kwargs['characterSet']
-        if compartment_id is None and 'compartmentId' in kwargs:
-            compartment_id = kwargs['compartmentId']
-        if database_configuration is None and 'databaseConfiguration' in kwargs:
-            database_configuration = kwargs['databaseConfiguration']
-        if database_edition is None and 'databaseEdition' in kwargs:
-            database_edition = kwargs['databaseEdition']
-        if database_management_configs is None and 'databaseManagementConfigs' in kwargs:
-            database_management_configs = kwargs['databaseManagementConfigs']
-        if database_version is None and 'databaseVersion' in kwargs:
-            database_version = kwargs['databaseVersion']
-        if db_id is None and 'dbId' in kwargs:
-            db_id = kwargs['dbId']
-        if db_packs is None and 'dbPacks' in kwargs:
-            db_packs = kwargs['dbPacks']
-        if db_unique_name is None and 'dbUniqueName' in kwargs:
-            db_unique_name = kwargs['dbUniqueName']
-        if defined_tags is None and 'definedTags' in kwargs:
-            defined_tags = kwargs['definedTags']
-        if display_name is None and 'displayName' in kwargs:
-            display_name = kwargs['displayName']
-        if freeform_tags is None and 'freeformTags' in kwargs:
-            freeform_tags = kwargs['freeformTags']
-        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
-            lifecycle_details = kwargs['lifecycleDetails']
-        if ncharacter_set is None and 'ncharacterSet' in kwargs:
-            ncharacter_set = kwargs['ncharacterSet']
-        if operations_insights_configs is None and 'operationsInsightsConfigs' in kwargs:
-            operations_insights_configs = kwargs['operationsInsightsConfigs']
-        if stack_monitoring_configs is None and 'stackMonitoringConfigs' in kwargs:
-            stack_monitoring_configs = kwargs['stackMonitoringConfigs']
-        if time_created is None and 'timeCreated' in kwargs:
-            time_created = kwargs['timeCreated']
-        if time_zone is None and 'timeZone' in kwargs:
-            time_zone = kwargs['timeZone']
-
         if character_set is not None:
-            _setter("character_set", character_set)
+            pulumi.set(__self__, "character_set", character_set)
         if compartment_id is not None:
-            _setter("compartment_id", compartment_id)
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if database_configuration is not None:
-            _setter("database_configuration", database_configuration)
+            pulumi.set(__self__, "database_configuration", database_configuration)
         if database_edition is not None:
-            _setter("database_edition", database_edition)
+            pulumi.set(__self__, "database_edition", database_edition)
         if database_management_configs is not None:
-            _setter("database_management_configs", database_management_configs)
+            pulumi.set(__self__, "database_management_configs", database_management_configs)
         if database_version is not None:
-            _setter("database_version", database_version)
+            pulumi.set(__self__, "database_version", database_version)
         if db_id is not None:
-            _setter("db_id", db_id)
+            pulumi.set(__self__, "db_id", db_id)
         if db_packs is not None:
-            _setter("db_packs", db_packs)
+            pulumi.set(__self__, "db_packs", db_packs)
         if db_unique_name is not None:
-            _setter("db_unique_name", db_unique_name)
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
         if defined_tags is not None:
-            _setter("defined_tags", defined_tags)
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
-            _setter("display_name", display_name)
+            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
-            _setter("freeform_tags", freeform_tags)
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            _setter("lifecycle_details", lifecycle_details)
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
-            _setter("ncharacter_set", ncharacter_set)
+            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         if operations_insights_configs is not None:
-            _setter("operations_insights_configs", operations_insights_configs)
+            pulumi.set(__self__, "operations_insights_configs", operations_insights_configs)
         if stack_monitoring_configs is not None:
-            _setter("stack_monitoring_configs", stack_monitoring_configs)
+            pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         if state is not None:
-            _setter("state", state)
+            pulumi.set(__self__, "state", state)
         if time_created is not None:
-            _setter("time_created", time_created)
+            pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
-            _setter("time_zone", time_zone)
+            pulumi.set(__self__, "time_zone", time_zone)
 
     @property
     @pulumi.getter(name="characterSet")
@@ -616,10 +504,6 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            ExternalNonContainerDatabaseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

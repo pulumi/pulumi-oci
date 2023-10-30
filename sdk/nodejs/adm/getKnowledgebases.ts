@@ -44,7 +44,7 @@ export function getKnowledgebases(args?: GetKnowledgebasesArgs, opts?: pulumi.In
  */
 export interface GetKnowledgebasesArgs {
     /**
-     * A filter to return only resources that belong to the specified compartment identifier.
+     * A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      */
     compartmentId?: string;
     /**
@@ -53,7 +53,7 @@ export interface GetKnowledgebasesArgs {
     displayName?: string;
     filters?: inputs.Adm.GetKnowledgebasesFilter[];
     /**
-     * A filter to return only resources that match the specified identifier.
+     * A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      */
     id?: string;
     /**
@@ -67,16 +67,16 @@ export interface GetKnowledgebasesArgs {
  */
 export interface GetKnowledgebasesResult {
     /**
-     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+     * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
     readonly compartmentId?: string;
     /**
-     * The name of the Knowledge Base.
+     * The name of the knowledge base.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Adm.GetKnowledgebasesFilter[];
     /**
-     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
     readonly id?: string;
     /**
@@ -84,7 +84,7 @@ export interface GetKnowledgebasesResult {
      */
     readonly knowledgeBaseCollections: outputs.Adm.GetKnowledgebasesKnowledgeBaseCollection[];
     /**
-     * The current lifecycle state of the Knowledge Base.
+     * The current lifecycle state of the knowledge base.
      */
     readonly state?: string;
 }
@@ -117,7 +117,7 @@ export function getKnowledgebasesOutput(args?: GetKnowledgebasesOutputArgs, opts
  */
 export interface GetKnowledgebasesOutputArgs {
     /**
-     * A filter to return only resources that belong to the specified compartment identifier.
+     * A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -126,7 +126,7 @@ export interface GetKnowledgebasesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Adm.GetKnowledgebasesFilterArgs>[]>;
     /**
-     * A filter to return only resources that match the specified identifier.
+     * A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      */
     id?: pulumi.Input<string>;
     /**

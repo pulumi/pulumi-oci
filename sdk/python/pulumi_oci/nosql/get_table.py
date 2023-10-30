@@ -22,7 +22,7 @@ class GetTableResult:
     """
     A collection of values returned by getTable.
     """
-    def __init__(__self__, compartment_id=None, ddl_statement=None, defined_tags=None, freeform_tags=None, id=None, is_auto_reclaimable=None, lifecycle_details=None, name=None, schemas=None, state=None, system_tags=None, table_limits=None, table_name_or_id=None, time_created=None, time_of_expiration=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, ddl_statement=None, defined_tags=None, freeform_tags=None, id=None, is_auto_reclaimable=None, is_multi_region=None, lifecycle_details=None, local_replica_initialization_in_percent=None, name=None, replicas=None, schema_state=None, schemas=None, state=None, system_tags=None, table_limits=None, table_name_or_id=None, time_created=None, time_of_expiration=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -41,12 +41,24 @@ class GetTableResult:
         if is_auto_reclaimable and not isinstance(is_auto_reclaimable, bool):
             raise TypeError("Expected argument 'is_auto_reclaimable' to be a bool")
         pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
+        if is_multi_region and not isinstance(is_multi_region, bool):
+            raise TypeError("Expected argument 'is_multi_region' to be a bool")
+        pulumi.set(__self__, "is_multi_region", is_multi_region)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if local_replica_initialization_in_percent and not isinstance(local_replica_initialization_in_percent, int):
+            raise TypeError("Expected argument 'local_replica_initialization_in_percent' to be a int")
+        pulumi.set(__self__, "local_replica_initialization_in_percent", local_replica_initialization_in_percent)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if replicas and not isinstance(replicas, list):
+            raise TypeError("Expected argument 'replicas' to be a list")
+        pulumi.set(__self__, "replicas", replicas)
+        if schema_state and not isinstance(schema_state, str):
+            raise TypeError("Expected argument 'schema_state' to be a str")
+        pulumi.set(__self__, "schema_state", schema_state)
         if schemas and not isinstance(schemas, list):
             raise TypeError("Expected argument 'schemas' to be a list")
         pulumi.set(__self__, "schemas", schemas)
@@ -121,6 +133,14 @@ class GetTableResult:
         return pulumi.get(self, "is_auto_reclaimable")
 
     @property
+    @pulumi.getter(name="isMultiRegion")
+    def is_multi_region(self) -> bool:
+        """
+        True if this table is currently a member of a replication set.
+        """
+        return pulumi.get(self, "is_multi_region")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -129,12 +149,36 @@ class GetTableResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localReplicaInitializationInPercent")
+    def local_replica_initialization_in_percent(self) -> int:
+        """
+        If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+        """
+        return pulumi.get(self, "local_replica_initialization_in_percent")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
         The column name.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def replicas(self) -> Sequence['outputs.GetTableReplicaResult']:
+        """
+        An array of Replica listing this table's replicas, if any
+        """
+        return pulumi.get(self, "replicas")
+
+    @property
+    @pulumi.getter(name="schemaState")
+    def schema_state(self) -> str:
+        """
+        The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        """
+        return pulumi.get(self, "schema_state")
 
     @property
     @pulumi.getter
@@ -210,8 +254,12 @@ class AwaitableGetTableResult(GetTableResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_auto_reclaimable=self.is_auto_reclaimable,
+            is_multi_region=self.is_multi_region,
             lifecycle_details=self.lifecycle_details,
+            local_replica_initialization_in_percent=self.local_replica_initialization_in_percent,
             name=self.name,
+            replicas=self.replicas,
+            schema_state=self.schema_state,
             schemas=self.schemas,
             state=self.state,
             system_tags=self.system_tags,
@@ -257,8 +305,12 @@ def get_table(compartment_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_auto_reclaimable=pulumi.get(__ret__, 'is_auto_reclaimable'),
+        is_multi_region=pulumi.get(__ret__, 'is_multi_region'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        local_replica_initialization_in_percent=pulumi.get(__ret__, 'local_replica_initialization_in_percent'),
         name=pulumi.get(__ret__, 'name'),
+        replicas=pulumi.get(__ret__, 'replicas'),
+        schema_state=pulumi.get(__ret__, 'schema_state'),
         schemas=pulumi.get(__ret__, 'schemas'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

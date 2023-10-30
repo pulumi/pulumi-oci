@@ -57,7 +57,7 @@ class GetKnowledgebaseResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+        The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -73,7 +73,7 @@ class GetKnowledgebaseResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The name of the Knowledge Base.
+        The name of the knowledge base.
         """
         return pulumi.get(self, "display_name")
 
@@ -89,7 +89,7 @@ class GetKnowledgebaseResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         """
         return pulumi.get(self, "id")
 
@@ -102,7 +102,7 @@ class GetKnowledgebaseResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current lifecycle state of the Knowledge Base.
+        The current lifecycle state of the knowledge base.
         """
         return pulumi.get(self, "state")
 
@@ -118,7 +118,7 @@ class GetKnowledgebaseResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_created")
 
@@ -126,7 +126,7 @@ class GetKnowledgebaseResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_updated")
 

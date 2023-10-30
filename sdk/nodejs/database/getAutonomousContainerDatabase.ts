@@ -94,6 +94,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * The user-provided name for the Autonomous Container Database.
      */
     readonly displayName: string;
+    /**
+     * DST Time Zone File version of the Autonomous Container Database.
+     */
+    readonly dstFileVersion: string;
     readonly fastStartFailOverLagLimitInSeconds: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -108,6 +112,10 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly infrastructureType: string;
     readonly isAutomaticFailoverEnabled: boolean;
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     */
+    readonly isDstFileUpdateEnabled: boolean;
     /**
      * Key History Entry.
      */

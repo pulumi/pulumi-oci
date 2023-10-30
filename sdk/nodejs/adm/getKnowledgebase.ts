@@ -43,7 +43,7 @@ export interface GetKnowledgebaseArgs {
  */
 export interface GetKnowledgebaseResult {
     /**
-     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+     * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
     readonly compartmentId: string;
     /**
@@ -51,7 +51,7 @@ export interface GetKnowledgebaseResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * The name of the Knowledge Base.
+     * The name of the knowledge base.
      */
     readonly displayName: string;
     /**
@@ -59,12 +59,12 @@ export interface GetKnowledgebaseResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
     readonly id: string;
     readonly knowledgeBaseId: string;
     /**
-     * The current lifecycle state of the Knowledge Base.
+     * The current lifecycle state of the knowledge base.
      */
     readonly state: string;
     /**
@@ -72,11 +72,11 @@ export interface GetKnowledgebaseResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     readonly timeCreated: string;
     /**
-     * The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     readonly timeUpdated: string;
 }

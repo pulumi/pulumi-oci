@@ -107,6 +107,10 @@ namespace Pulumi.Oci.Database
     {
         public readonly string AutonomousPatchId;
         /// <summary>
+        /// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+        /// </summary>
+        public readonly string AutonomousPatchType;
+        /// <summary>
         /// The text describing this patch package.
         /// </summary>
         public readonly string Description;
@@ -151,6 +155,8 @@ namespace Pulumi.Oci.Database
         private GetAutonomousPatchResult(
             string autonomousPatchId,
 
+            string autonomousPatchType,
+
             string description,
 
             string id,
@@ -172,6 +178,7 @@ namespace Pulumi.Oci.Database
             string year)
         {
             AutonomousPatchId = autonomousPatchId;
+            AutonomousPatchType = autonomousPatchType;
             Description = description;
             Id = id;
             LifecycleDetails = lifecycleDetails;

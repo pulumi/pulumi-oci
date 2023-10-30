@@ -84,7 +84,9 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-provided name for the Autonomous Container Database.
-	DisplayName                        string `pulumi:"displayName"`
+	DisplayName string `pulumi:"displayName"`
+	// DST Time Zone File version of the Autonomous Container Database.
+	DstFileVersion                     string `pulumi:"dstFileVersion"`
 	FastStartFailOverLagLimitInSeconds int    `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -93,6 +95,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// The infrastructure type this resource belongs to.
 	InfrastructureType         string `pulumi:"infrastructureType"`
 	IsAutomaticFailoverEnabled bool   `pulumi:"isAutomaticFailoverEnabled"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousContainerDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -271,6 +275,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) DisplayName() pulumi.Stri
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// DST Time Zone File version of the Autonomous Container Database.
+func (o LookupAutonomousContainerDatabaseResultOutput) DstFileVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DstFileVersion }).(pulumi.StringOutput)
+}
+
 func (o LookupAutonomousContainerDatabaseResultOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.FastStartFailOverLagLimitInSeconds }).(pulumi.IntOutput)
 }
@@ -292,6 +301,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) InfrastructureType() pulu
 
 func (o LookupAutonomousContainerDatabaseResultOutput) IsAutomaticFailoverEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.IsAutomaticFailoverEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+func (o LookupAutonomousContainerDatabaseResultOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
 // Key History Entry.

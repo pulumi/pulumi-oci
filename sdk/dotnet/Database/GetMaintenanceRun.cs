@@ -145,9 +145,10 @@ namespace Pulumi.Oci.Database
         /// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         /// </summary>
         public readonly bool IsCustomActionTimeoutEnabled;
-        public readonly bool IsEnabled;
-        public readonly bool IsPatchNowEnabled;
-        public readonly bool IsResumePatching;
+        /// <summary>
+        /// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        /// </summary>
+        public readonly bool IsDstFileUpdateEnabled;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
@@ -169,6 +170,7 @@ namespace Pulumi.Oci.Database
         /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
         /// </summary>
         public readonly string PatchId;
+        public readonly string PatchType;
         /// <summary>
         /// The time when the patching operation ended.
         /// </summary>
@@ -244,11 +246,7 @@ namespace Pulumi.Oci.Database
 
             bool isCustomActionTimeoutEnabled,
 
-            bool isEnabled,
-
-            bool isPatchNowEnabled,
-
-            bool isResumePatching,
+            bool isDstFileUpdateEnabled,
 
             string lifecycleDetails,
 
@@ -261,6 +259,8 @@ namespace Pulumi.Oci.Database
             int patchFailureCount,
 
             string patchId,
+
+            string patchType,
 
             string patchingEndTime,
 
@@ -298,15 +298,14 @@ namespace Pulumi.Oci.Database
             EstimatedPatchingTimes = estimatedPatchingTimes;
             Id = id;
             IsCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
-            IsEnabled = isEnabled;
-            IsPatchNowEnabled = isPatchNowEnabled;
-            IsResumePatching = isResumePatching;
+            IsDstFileUpdateEnabled = isDstFileUpdateEnabled;
             LifecycleDetails = lifecycleDetails;
             MaintenanceRunId = maintenanceRunId;
             MaintenanceSubtype = maintenanceSubtype;
             MaintenanceType = maintenanceType;
             PatchFailureCount = patchFailureCount;
             PatchId = patchId;
+            PatchType = patchType;
             PatchingEndTime = patchingEndTime;
             PatchingMode = patchingMode;
             PatchingStartTime = patchingStartTime;

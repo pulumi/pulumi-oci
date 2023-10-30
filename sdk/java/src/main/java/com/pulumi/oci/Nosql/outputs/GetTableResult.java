@@ -4,9 +4,11 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Nosql.outputs.GetTableReplica;
 import com.pulumi.oci.Nosql.outputs.GetTableSchema;
 import com.pulumi.oci.Nosql.outputs.GetTableTableLimit;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -46,15 +48,35 @@ public final class GetTableResult {
      */
     private Boolean isAutoReclaimable;
     /**
+     * @return True if this table is currently a member of a replication set.
+     * 
+     */
+    private Boolean isMultiRegion;
+    /**
      * @return A message describing the current state in more detail.
      * 
      */
     private String lifecycleDetails;
     /**
+     * @return If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+     * 
+     */
+    private Integer localReplicaInitializationInPercent;
+    /**
      * @return The column name.
      * 
      */
     private String name;
+    /**
+     * @return An array of Replica listing this table&#39;s replicas, if any
+     * 
+     */
+    private List<GetTableReplica> replicas;
+    /**
+     * @return The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     * 
+     */
+    private String schemaState;
     /**
      * @return The table schema information as a JSON object.
      * 
@@ -136,6 +158,13 @@ public final class GetTableResult {
         return this.isAutoReclaimable;
     }
     /**
+     * @return True if this table is currently a member of a replication set.
+     * 
+     */
+    public Boolean isMultiRegion() {
+        return this.isMultiRegion;
+    }
+    /**
      * @return A message describing the current state in more detail.
      * 
      */
@@ -143,11 +172,32 @@ public final class GetTableResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+     * 
+     */
+    public Integer localReplicaInitializationInPercent() {
+        return this.localReplicaInitializationInPercent;
+    }
+    /**
      * @return The column name.
      * 
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return An array of Replica listing this table&#39;s replicas, if any
+     * 
+     */
+    public List<GetTableReplica> replicas() {
+        return this.replicas;
+    }
+    /**
+     * @return The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     * 
+     */
+    public String schemaState() {
+        return this.schemaState;
     }
     /**
      * @return The table schema information as a JSON object.
@@ -217,8 +267,12 @@ public final class GetTableResult {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isAutoReclaimable;
+        private Boolean isMultiRegion;
         private String lifecycleDetails;
+        private Integer localReplicaInitializationInPercent;
         private String name;
+        private List<GetTableReplica> replicas;
+        private String schemaState;
         private List<GetTableSchema> schemas;
         private String state;
         private Map<String,Object> systemTags;
@@ -236,8 +290,12 @@ public final class GetTableResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAutoReclaimable = defaults.isAutoReclaimable;
+    	      this.isMultiRegion = defaults.isMultiRegion;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.localReplicaInitializationInPercent = defaults.localReplicaInitializationInPercent;
     	      this.name = defaults.name;
+    	      this.replicas = defaults.replicas;
+    	      this.schemaState = defaults.schemaState;
     	      this.schemas = defaults.schemas;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -279,13 +337,36 @@ public final class GetTableResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isMultiRegion(Boolean isMultiRegion) {
+            this.isMultiRegion = Objects.requireNonNull(isMultiRegion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
         @CustomType.Setter
+        public Builder localReplicaInitializationInPercent(Integer localReplicaInitializationInPercent) {
+            this.localReplicaInitializationInPercent = Objects.requireNonNull(localReplicaInitializationInPercent);
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicas(List<GetTableReplica> replicas) {
+            this.replicas = Objects.requireNonNull(replicas);
+            return this;
+        }
+        public Builder replicas(GetTableReplica... replicas) {
+            return replicas(List.of(replicas));
+        }
+        @CustomType.Setter
+        public Builder schemaState(String schemaState) {
+            this.schemaState = Objects.requireNonNull(schemaState);
             return this;
         }
         @CustomType.Setter
@@ -342,8 +423,12 @@ public final class GetTableResult {
             o.freeformTags = freeformTags;
             o.id = id;
             o.isAutoReclaimable = isAutoReclaimable;
+            o.isMultiRegion = isMultiRegion;
             o.lifecycleDetails = lifecycleDetails;
+            o.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
             o.name = name;
+            o.replicas = replicas;
+            o.schemaState = schemaState;
             o.schemas = schemas;
             o.state = state;
             o.systemTags = systemTags;

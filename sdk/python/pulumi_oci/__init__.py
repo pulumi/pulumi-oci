@@ -351,6 +351,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Adm/remediationRecipe",
+  "fqn": "pulumi_oci.adm",
+  "classes": {
+   "oci:Adm/remediationRecipe:RemediationRecipe": "RemediationRecipe"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Adm/remediationRun",
+  "fqn": "pulumi_oci.adm",
+  "classes": {
+   "oci:Adm/remediationRun:RemediationRun": "RemediationRun"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Adm/vulnerabilityAudit",
   "fqn": "pulumi_oci.adm",
   "classes": {
@@ -4275,6 +4291,14 @@ _utilities.register(
   "fqn": "pulumi_oci.nosql",
   "classes": {
    "oci:Nosql/table:Table": "Table"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Nosql/tableReplica",
+  "fqn": "pulumi_oci.nosql",
+  "classes": {
+   "oci:Nosql/tableReplica:TableReplica": "TableReplica"
   }
  },
  {

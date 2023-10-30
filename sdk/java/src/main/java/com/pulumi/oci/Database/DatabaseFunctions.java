@@ -1930,6 +1930,7 @@ public final class DatabaseFunctions {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
      *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
      *             .compartmentId(var_.compartment_id())
+     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
      *             .build());
      * 
      *     }
@@ -1970,6 +1971,7 @@ public final class DatabaseFunctions {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
      *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
      *             .compartmentId(var_.compartment_id())
+     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
      *             .build());
      * 
      *     }
@@ -2010,6 +2012,7 @@ public final class DatabaseFunctions {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
      *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
      *             .compartmentId(var_.compartment_id())
+     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
      *             .build());
      * 
      *     }
@@ -2050,6 +2053,7 @@ public final class DatabaseFunctions {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
      *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
      *             .compartmentId(var_.compartment_id())
+     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
      *             .build());
      * 
      *     }

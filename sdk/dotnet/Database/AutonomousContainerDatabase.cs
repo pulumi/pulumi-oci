@@ -101,6 +101,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// DST Time Zone File version of the Autonomous Container Database.
+        /// </summary>
+        [Output("dstFileVersion")]
+        public Output<string> DstFileVersion { get; private set; } = null!;
+
+        /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Output("fastStartFailOverLagLimitInSeconds")]
@@ -123,6 +129,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
         public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        /// </summary>
+        [Output("isDstFileUpdateEnabled")]
+        public Output<bool> IsDstFileUpdateEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Key History Entry.
@@ -470,6 +482,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        /// </summary>
+        [Input("isDstFileUpdateEnabled")]
+        public Input<bool>? IsDstFileUpdateEnabled { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         [Input("keyStoreId")]
@@ -659,6 +677,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// DST Time Zone File version of the Autonomous Container Database.
+        /// </summary>
+        [Input("dstFileVersion")]
+        public Input<string>? DstFileVersion { get; set; }
+
+        /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Input("fastStartFailOverLagLimitInSeconds")]
@@ -687,6 +711,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        /// </summary>
+        [Input("isDstFileUpdateEnabled")]
+        public Input<bool>? IsDstFileUpdateEnabled { get; set; }
 
         [Input("keyHistoryEntries")]
         private InputList<Inputs.AutonomousContainerDatabaseKeyHistoryEntryGetArgs>? _keyHistoryEntries;

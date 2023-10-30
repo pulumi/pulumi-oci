@@ -105,7 +105,7 @@ class GetAlarmResult:
     @pulumi.getter
     def body(self) -> str:
         """
-        The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         """
         return pulumi.get(self, "body")
 
@@ -129,7 +129,7 @@ class GetAlarmResult:
     @pulumi.getter
     def destinations(self) -> Sequence[str]:
         """
-        A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+        A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
         """
         return pulumi.get(self, "destinations")
 
@@ -169,7 +169,7 @@ class GetAlarmResult:
     @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
     def is_notifications_per_metric_dimension_enabled(self) -> bool:
         """
-        When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
         """
         return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
@@ -177,7 +177,7 @@ class GetAlarmResult:
     @pulumi.getter(name="messageFormat")
     def message_format(self) -> str:
         """
-        The format to use for notification messages sent from this alarm. The formats are:
+        The format to use for alarm notifications. The formats are:
         """
         return pulumi.get(self, "message_format")
 
@@ -217,7 +217,7 @@ class GetAlarmResult:
     @pulumi.getter
     def query(self) -> str:
         """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         """
         return pulumi.get(self, "query")
 
@@ -225,7 +225,7 @@ class GetAlarmResult:
     @pulumi.getter(name="repeatNotificationDuration")
     def repeat_notification_duration(self) -> str:
         """
-        The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+        The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
         """
         return pulumi.get(self, "repeat_notification_duration")
 
@@ -324,7 +324,10 @@ def get_alarm(alarm_id: Optional[str] = None,
     This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
 
     Gets the specified alarm.
-    For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+    For more information, see
+    [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+    For important limits information, see
+    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 
     This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
     Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -381,7 +384,10 @@ def get_alarm_output(alarm_id: Optional[pulumi.Input[str]] = None,
     This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
 
     Gets the specified alarm.
-    For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+    For more information, see
+    [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+    For important limits information, see
+    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 
     This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
     Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,

@@ -23,6 +23,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Adm/knowledgeBase:KnowledgeBase":
 		r = &KnowledgeBase{}
+	case "oci:Adm/remediationRecipe:RemediationRecipe":
+		r = &RemediationRecipe{}
+	case "oci:Adm/remediationRun:RemediationRun":
+		r = &RemediationRun{}
 	case "oci:Adm/vulnerabilityAudit:VulnerabilityAudit":
 		r = &VulnerabilityAudit{}
 	default:
@@ -41,6 +45,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Adm/knowledgeBase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Adm/remediationRecipe",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Adm/remediationRun",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

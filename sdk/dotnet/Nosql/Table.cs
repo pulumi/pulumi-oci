@@ -88,16 +88,40 @@ namespace Pulumi.Oci.Nosql
         public Output<bool> IsAutoReclaimable { get; private set; } = null!;
 
         /// <summary>
+        /// True if this table is currently a member of a replication set.
+        /// </summary>
+        [Output("isMultiRegion")]
+        public Output<bool> IsMultiRegion { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+        /// </summary>
+        [Output("localReplicaInitializationInPercent")]
+        public Output<int> LocalReplicaInitializationInPercent { get; private set; } = null!;
+
+        /// <summary>
         /// Table name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// An array of Replica listing this table's replicas, if any
+        /// </summary>
+        [Output("replicas")]
+        public Output<ImmutableArray<Outputs.TableReplica>> Replicas { get; private set; } = null!;
+
+        /// <summary>
+        /// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        /// </summary>
+        [Output("schemaState")]
+        public Output<string> SchemaState { get; private set; } = null!;
 
         /// <summary>
         /// The table schema information as a JSON object.
@@ -292,16 +316,46 @@ namespace Pulumi.Oci.Nosql
         public Input<bool>? IsAutoReclaimable { get; set; }
 
         /// <summary>
+        /// True if this table is currently a member of a replication set.
+        /// </summary>
+        [Input("isMultiRegion")]
+        public Input<bool>? IsMultiRegion { get; set; }
+
+        /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+        /// </summary>
+        [Input("localReplicaInitializationInPercent")]
+        public Input<int>? LocalReplicaInitializationInPercent { get; set; }
+
+        /// <summary>
         /// Table name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        [Input("replicas")]
+        private InputList<Inputs.TableReplicaGetArgs>? _replicas;
+
+        /// <summary>
+        /// An array of Replica listing this table's replicas, if any
+        /// </summary>
+        public InputList<Inputs.TableReplicaGetArgs> Replicas
+        {
+            get => _replicas ?? (_replicas = new InputList<Inputs.TableReplicaGetArgs>());
+            set => _replicas = value;
+        }
+
+        /// <summary>
+        /// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        /// </summary>
+        [Input("schemaState")]
+        public Input<string>? SchemaState { get; set; }
 
         [Input("schemas")]
         private InputList<Inputs.TableSchemaGetArgs>? _schemas;

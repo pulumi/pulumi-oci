@@ -214,6 +214,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * DST Time Zone File version of the Autonomous Container Database.
+     * 
+     */
+    @Import(name="dstFileVersion")
+    private @Nullable Output<String> dstFileVersion;
+
+    /**
+     * @return DST Time Zone File version of the Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<String>> dstFileVersion() {
+        return Optional.ofNullable(this.dstFileVersion);
+    }
+
+    /**
      * The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
@@ -271,6 +286,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      */
     public Optional<Output<Boolean>> isAutomaticFailoverEnabled() {
         return Optional.ofNullable(this.isAutomaticFailoverEnabled);
+    }
+
+    /**
+     * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    @Import(name="isDstFileUpdateEnabled")
+    private @Nullable Output<Boolean> isDstFileUpdateEnabled;
+
+    /**
+     * @return (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    public Optional<Output<Boolean>> isDstFileUpdateEnabled() {
+        return Optional.ofNullable(this.isDstFileUpdateEnabled);
     }
 
     /**
@@ -812,10 +842,12 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.dstFileVersion = $.dstFileVersion;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
         this.infrastructureType = $.infrastructureType;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
+        this.isDstFileUpdateEnabled = $.isDstFileUpdateEnabled;
         this.keyHistoryEntries = $.keyHistoryEntries;
         this.keyStoreId = $.keyStoreId;
         this.keyStoreWalletName = $.keyStoreWalletName;
@@ -1133,6 +1165,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
+         * @param dstFileVersion DST Time Zone File version of the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dstFileVersion(@Nullable Output<String> dstFileVersion) {
+            $.dstFileVersion = dstFileVersion;
+            return this;
+        }
+
+        /**
+         * @param dstFileVersion DST Time Zone File version of the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dstFileVersion(String dstFileVersion) {
+            return dstFileVersion(Output.of(dstFileVersion));
+        }
+
+        /**
          * @param fastStartFailOverLagLimitInSeconds The lag time for my preference based on data loss tolerance in seconds.
          * 
          * @return builder
@@ -1214,6 +1267,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             return isAutomaticFailoverEnabled(Output.of(isAutomaticFailoverEnabled));
+        }
+
+        /**
+         * @param isDstFileUpdateEnabled (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDstFileUpdateEnabled(@Nullable Output<Boolean> isDstFileUpdateEnabled) {
+            $.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            return this;
+        }
+
+        /**
+         * @param isDstFileUpdateEnabled (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            return isDstFileUpdateEnabled(Output.of(isDstFileUpdateEnabled));
         }
 
         /**

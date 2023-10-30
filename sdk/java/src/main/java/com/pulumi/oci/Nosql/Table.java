@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Nosql.TableArgs;
 import com.pulumi.oci.Nosql.inputs.TableState;
+import com.pulumi.oci.Nosql.outputs.TableReplica;
 import com.pulumi.oci.Nosql.outputs.TableSchema;
 import com.pulumi.oci.Nosql.outputs.TableTableLimits;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -147,6 +149,20 @@ public class Table extends com.pulumi.resources.CustomResource {
         return this.isAutoReclaimable;
     }
     /**
+     * True if this table is currently a member of a replication set.
+     * 
+     */
+    @Export(name="isMultiRegion", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isMultiRegion;
+
+    /**
+     * @return True if this table is currently a member of a replication set.
+     * 
+     */
+    public Output<Boolean> isMultiRegion() {
+        return this.isMultiRegion;
+    }
+    /**
      * A message describing the current state in more detail.
      * 
      */
@@ -161,6 +177,20 @@ public class Table extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
+     * If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+     * 
+     */
+    @Export(name="localReplicaInitializationInPercent", refs={Integer.class}, tree="[0]")
+    private Output<Integer> localReplicaInitializationInPercent;
+
+    /**
+     * @return If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+     * 
+     */
+    public Output<Integer> localReplicaInitializationInPercent() {
+        return this.localReplicaInitializationInPercent;
+    }
+    /**
      * Table name.
      * 
      */
@@ -173,6 +203,34 @@ public class Table extends com.pulumi.resources.CustomResource {
      */
     public Output<String> name() {
         return this.name;
+    }
+    /**
+     * An array of Replica listing this table&#39;s replicas, if any
+     * 
+     */
+    @Export(name="replicas", refs={List.class,TableReplica.class}, tree="[0,1]")
+    private Output<List<TableReplica>> replicas;
+
+    /**
+     * @return An array of Replica listing this table&#39;s replicas, if any
+     * 
+     */
+    public Output<List<TableReplica>> replicas() {
+        return this.replicas;
+    }
+    /**
+     * The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     * 
+     */
+    @Export(name="schemaState", refs={String.class}, tree="[0]")
+    private Output<String> schemaState;
+
+    /**
+     * @return The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     * 
+     */
+    public Output<String> schemaState() {
+        return this.schemaState;
     }
     /**
      * The table schema information as a JSON object.

@@ -15,8 +15,12 @@ import (
 // This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
 //
 // Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
-// For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
-// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+// For more information, see
+// [Querying Metric Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+// and
+// [Creating a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
+// For important limits information, see
+// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 //
 // Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
 //
@@ -81,7 +85,7 @@ type GetMetricDataArgs struct {
 	//
 	// Example: `CpuUtilization[1m].sum()`
 	Query string `pulumi:"query"`
-	// The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
+	// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 	Resolution *string `pulumi:"resolution"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup *string `pulumi:"resourceGroup"`
@@ -91,7 +95,7 @@ type GetMetricDataArgs struct {
 
 // A collection of values returned by getMetricData.
 type GetMetricDataResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources from which the aggregated data was returned.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources that the aggregated data was returned from.
 	CompartmentId          string                `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool                 `pulumi:"compartmentIdInSubtree"`
 	EndTime                *string               `pulumi:"endTime"`
@@ -103,7 +107,7 @@ type GetMetricDataResult struct {
 	// The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
 	Query     string `pulumi:"query"`
-	// The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
+	// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 	Resolution *string `pulumi:"resolution"`
 	// Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup *string `pulumi:"resourceGroup"`
@@ -142,7 +146,7 @@ type GetMetricDataOutputArgs struct {
 	//
 	// Example: `CpuUtilization[1m].sum()`
 	Query pulumi.StringInput `pulumi:"query"`
-	// The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
+	// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 	Resolution pulumi.StringPtrInput `pulumi:"resolution"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
@@ -175,7 +179,7 @@ func (o GetMetricDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[
 	}
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources from which the aggregated data was returned.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources that the aggregated data was returned from.
 func (o GetMetricDataResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricDataResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -211,7 +215,7 @@ func (o GetMetricDataResultOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricDataResult) string { return v.Query }).(pulumi.StringOutput)
 }
 
-// The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
+// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 func (o GetMetricDataResultOutput) Resolution() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMetricDataResult) *string { return v.Resolution }).(pulumi.StringPtrOutput)
 }

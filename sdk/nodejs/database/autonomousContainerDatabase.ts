@@ -97,6 +97,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * DST Time Zone File version of the Autonomous Container Database.
+     */
+    public /*out*/ readonly dstFileVersion!: pulumi.Output<string>;
+    /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
     public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number>;
@@ -112,6 +116,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
     public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     */
+    public readonly isDstFileUpdateEnabled!: pulumi.Output<boolean>;
     /**
      * Key History Entry.
      */
@@ -281,10 +289,12 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["dstFileVersion"] = state ? state.dstFileVersion : undefined;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = state ? state.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["infrastructureType"] = state ? state.infrastructureType : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = state ? state.isAutomaticFailoverEnabled : undefined;
+            resourceInputs["isDstFileUpdateEnabled"] = state ? state.isDstFileUpdateEnabled : undefined;
             resourceInputs["keyHistoryEntries"] = state ? state.keyHistoryEntries : undefined;
             resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
             resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
@@ -341,6 +351,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = args ? args.fastStartFailOverLagLimitInSeconds : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutomaticFailoverEnabled"] = args ? args.isAutomaticFailoverEnabled : undefined;
+            resourceInputs["isDstFileUpdateEnabled"] = args ? args.isDstFileUpdateEnabled : undefined;
             resourceInputs["keyStoreId"] = args ? args.keyStoreId : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
@@ -361,6 +372,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
+            resourceInputs["dstFileVersion"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["keyHistoryEntries"] = undefined /*out*/;
             resourceInputs["keyStoreWalletName"] = undefined /*out*/;
@@ -440,6 +452,10 @@ export interface AutonomousContainerDatabaseState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * DST Time Zone File version of the Autonomous Container Database.
+     */
+    dstFileVersion?: pulumi.Input<string>;
+    /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
     fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
@@ -455,6 +471,10 @@ export interface AutonomousContainerDatabaseState {
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     */
+    isDstFileUpdateEnabled?: pulumi.Input<boolean>;
     /**
      * Key History Entry.
      */
@@ -652,6 +672,10 @@ export interface AutonomousContainerDatabaseArgs {
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
     isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     */
+    isDstFileUpdateEnabled?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */

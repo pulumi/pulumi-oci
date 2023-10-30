@@ -47,7 +47,7 @@ class GetKnowledgebasesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+        The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -55,7 +55,7 @@ class GetKnowledgebasesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The name of the Knowledge Base.
+        The name of the knowledge base.
         """
         return pulumi.get(self, "display_name")
 
@@ -68,7 +68,7 @@ class GetKnowledgebasesResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         """
         return pulumi.get(self, "id")
 
@@ -84,7 +84,7 @@ class GetKnowledgebasesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current lifecycle state of the Knowledge Base.
+        The current lifecycle state of the knowledge base.
         """
         return pulumi.get(self, "state")
 
@@ -128,9 +128,9 @@ def get_knowledgebases(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier.
+    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only resources that match the specified identifier.
+    :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
     :param str state: A filter to return only Knowledge Bases that match the specified lifecycleState.
     """
     __args__ = dict()
@@ -177,9 +177,9 @@ def get_knowledgebases_output(compartment_id: Optional[pulumi.Input[Optional[str
     ```
 
 
-    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier.
+    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only resources that match the specified identifier.
+    :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
     :param str state: A filter to return only Knowledge Bases that match the specified lifecycleState.
     """
     ...

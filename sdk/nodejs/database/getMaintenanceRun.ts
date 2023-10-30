@@ -84,9 +84,10 @@ export interface GetMaintenanceRunResult {
      * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      */
     readonly isCustomActionTimeoutEnabled: boolean;
-    readonly isEnabled: boolean;
-    readonly isPatchNowEnabled: boolean;
-    readonly isResumePatching: boolean;
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     */
+    readonly isDstFileUpdateEnabled: boolean;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -108,6 +109,7 @@ export interface GetMaintenanceRunResult {
      * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      */
     readonly patchId: string;
+    readonly patchType: string;
     /**
      * The time when the patching operation ended.
      */

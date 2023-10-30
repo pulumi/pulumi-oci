@@ -18,14 +18,14 @@ public final class GetKnowledgebasesArgs extends com.pulumi.resources.InvokeArgs
     public static final GetKnowledgebasesArgs Empty = new GetKnowledgebasesArgs();
 
     /**
-     * A filter to return only resources that belong to the specified compartment identifier.
+     * A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return A filter to return only resources that belong to the specified compartment identifier.
+     * @return A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -55,14 +55,14 @@ public final class GetKnowledgebasesArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * A filter to return only resources that match the specified identifier.
+     * A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return A filter to return only resources that match the specified identifier.
+     * @return A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      * 
      */
     public Optional<Output<String>> id() {
@@ -113,7 +113,7 @@ public final class GetKnowledgebasesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param compartmentId A filter to return only resources that belong to the specified compartment identifier.
+         * @param compartmentId A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class GetKnowledgebasesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param compartmentId A filter to return only resources that belong to the specified compartment identifier.
+         * @param compartmentId A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class GetKnowledgebasesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param id A filter to return only resources that match the specified identifier.
+         * @param id A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetKnowledgebasesArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param id A filter to return only resources that match the specified identifier.
+         * @param id A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
          * 
          * @return builder
          * 

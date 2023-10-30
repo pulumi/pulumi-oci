@@ -22,7 +22,7 @@ class GetMaintenanceRunResult:
     """
     A collection of values returned by getMaintenanceRun.
     """
-    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_enabled=None, is_patch_now_enabled=None, is_resume_patching=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, state=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None):
+    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, state=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,15 +53,9 @@ class GetMaintenanceRunResult:
         if is_custom_action_timeout_enabled and not isinstance(is_custom_action_timeout_enabled, bool):
             raise TypeError("Expected argument 'is_custom_action_timeout_enabled' to be a bool")
         pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
-        if is_enabled and not isinstance(is_enabled, bool):
-            raise TypeError("Expected argument 'is_enabled' to be a bool")
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        if is_patch_now_enabled and not isinstance(is_patch_now_enabled, bool):
-            raise TypeError("Expected argument 'is_patch_now_enabled' to be a bool")
-        pulumi.set(__self__, "is_patch_now_enabled", is_patch_now_enabled)
-        if is_resume_patching and not isinstance(is_resume_patching, bool):
-            raise TypeError("Expected argument 'is_resume_patching' to be a bool")
-        pulumi.set(__self__, "is_resume_patching", is_resume_patching)
+        if is_dst_file_update_enabled and not isinstance(is_dst_file_update_enabled, bool):
+            raise TypeError("Expected argument 'is_dst_file_update_enabled' to be a bool")
+        pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -80,6 +74,9 @@ class GetMaintenanceRunResult:
         if patch_id and not isinstance(patch_id, str):
             raise TypeError("Expected argument 'patch_id' to be a str")
         pulumi.set(__self__, "patch_id", patch_id)
+        if patch_type and not isinstance(patch_type, str):
+            raise TypeError("Expected argument 'patch_type' to be a str")
+        pulumi.set(__self__, "patch_type", patch_type)
         if patching_end_time and not isinstance(patching_end_time, str):
             raise TypeError("Expected argument 'patching_end_time' to be a str")
         pulumi.set(__self__, "patching_end_time", patching_end_time)
@@ -201,19 +198,12 @@ class GetMaintenanceRunResult:
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        return pulumi.get(self, "is_enabled")
-
-    @property
-    @pulumi.getter(name="isPatchNowEnabled")
-    def is_patch_now_enabled(self) -> bool:
-        return pulumi.get(self, "is_patch_now_enabled")
-
-    @property
-    @pulumi.getter(name="isResumePatching")
-    def is_resume_patching(self) -> bool:
-        return pulumi.get(self, "is_resume_patching")
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> bool:
+        """
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -259,6 +249,11 @@ class GetMaintenanceRunResult:
         The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> str:
+        return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter(name="patchingEndTime")
@@ -381,15 +376,14 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
             estimated_patching_times=self.estimated_patching_times,
             id=self.id,
             is_custom_action_timeout_enabled=self.is_custom_action_timeout_enabled,
-            is_enabled=self.is_enabled,
-            is_patch_now_enabled=self.is_patch_now_enabled,
-            is_resume_patching=self.is_resume_patching,
+            is_dst_file_update_enabled=self.is_dst_file_update_enabled,
             lifecycle_details=self.lifecycle_details,
             maintenance_run_id=self.maintenance_run_id,
             maintenance_subtype=self.maintenance_subtype,
             maintenance_type=self.maintenance_type,
             patch_failure_count=self.patch_failure_count,
             patch_id=self.patch_id,
+            patch_type=self.patch_type,
             patching_end_time=self.patching_end_time,
             patching_mode=self.patching_mode,
             patching_start_time=self.patching_start_time,
@@ -440,15 +434,14 @@ def get_maintenance_run(maintenance_run_id: Optional[str] = None,
         estimated_patching_times=pulumi.get(__ret__, 'estimated_patching_times'),
         id=pulumi.get(__ret__, 'id'),
         is_custom_action_timeout_enabled=pulumi.get(__ret__, 'is_custom_action_timeout_enabled'),
-        is_enabled=pulumi.get(__ret__, 'is_enabled'),
-        is_patch_now_enabled=pulumi.get(__ret__, 'is_patch_now_enabled'),
-        is_resume_patching=pulumi.get(__ret__, 'is_resume_patching'),
+        is_dst_file_update_enabled=pulumi.get(__ret__, 'is_dst_file_update_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_run_id=pulumi.get(__ret__, 'maintenance_run_id'),
         maintenance_subtype=pulumi.get(__ret__, 'maintenance_subtype'),
         maintenance_type=pulumi.get(__ret__, 'maintenance_type'),
         patch_failure_count=pulumi.get(__ret__, 'patch_failure_count'),
         patch_id=pulumi.get(__ret__, 'patch_id'),
+        patch_type=pulumi.get(__ret__, 'patch_type'),
         patching_end_time=pulumi.get(__ret__, 'patching_end_time'),
         patching_mode=pulumi.get(__ret__, 'patching_mode'),
         patching_start_time=pulumi.get(__ret__, 'patching_start_time'),

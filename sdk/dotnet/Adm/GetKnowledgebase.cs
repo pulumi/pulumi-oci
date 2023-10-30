@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Adm
     public sealed class GetKnowledgebaseResult
     {
         /// <summary>
-        /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+        /// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The name of the Knowledge Base.
+        /// The name of the knowledge base.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -122,12 +122,12 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+        /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
         public readonly string Id;
         public readonly string KnowledgeBaseId;
         /// <summary>
-        /// The current lifecycle state of the Knowledge Base.
+        /// The current lifecycle state of the knowledge base.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -135,11 +135,11 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         public readonly string TimeUpdated;
 

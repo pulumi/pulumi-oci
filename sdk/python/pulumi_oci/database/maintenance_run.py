@@ -16,158 +16,100 @@ __all__ = ['MaintenanceRunArgs', 'MaintenanceRun']
 @pulumi.input_type
 class MaintenanceRunArgs:
     def __init__(__self__, *,
-                 maintenance_run_id: pulumi.Input[str],
-                 current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
-                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
-                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_patch_now_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_resume_patching: Optional[pulumi.Input[bool]] = None,
-                 patch_id: Optional[pulumi.Input[str]] = None,
-                 patching_mode: Optional[pulumi.Input[str]] = None,
-                 target_db_server_version: Optional[pulumi.Input[str]] = None,
-                 target_storage_server_version: Optional[pulumi.Input[str]] = None,
-                 time_scheduled: Optional[pulumi.Input[str]] = None):
+                 patch_type: pulumi.Input[str],
+                 target_resource_id: pulumi.Input[str],
+                 time_scheduled: pulumi.Input[str],
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
+                 patching_mode: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MaintenanceRun resource.
-        :param pulumi.Input[str] maintenance_run_id: The maintenance run OCID.
-        :param pulumi.Input[int] current_custom_action_timeout_in_mins: (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-        :param pulumi.Input[bool] is_enabled: (Updatable) If `FALSE`, skips the maintenance run.
-        :param pulumi.Input[bool] is_patch_now_enabled: (Updatable) If set to `TRUE`, starts patching immediately.
-        :param pulumi.Input[bool] is_resume_patching: (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-        :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
-        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
-        :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
+        :param pulumi.Input[str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
+        :param pulumi.Input[str] time_scheduled: (Updatable) The date and time that update should be scheduled.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
-        pulumi.set(__self__, "maintenance_run_id", maintenance_run_id)
-        if current_custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
-        if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
-        if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
-        if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
-        if is_patch_now_enabled is not None:
-            pulumi.set(__self__, "is_patch_now_enabled", is_patch_now_enabled)
-        if is_resume_patching is not None:
-            pulumi.set(__self__, "is_resume_patching", is_resume_patching)
-        if patch_id is not None:
-            pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patch_type", patch_type)
+        pulumi.set(__self__, "target_resource_id", target_resource_id)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if is_dst_file_update_enabled is not None:
+            pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
-        if target_db_server_version is not None:
-            pulumi.set(__self__, "target_db_server_version", target_db_server_version)
-        if target_storage_server_version is not None:
-            pulumi.set(__self__, "target_storage_server_version", target_storage_server_version)
-        if time_scheduled is not None:
-            pulumi.set(__self__, "time_scheduled", time_scheduled)
 
     @property
-    @pulumi.getter(name="maintenanceRunId")
-    def maintenance_run_id(self) -> pulumi.Input[str]:
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> pulumi.Input[str]:
         """
-        The maintenance run OCID.
+        Patch type, either "QUARTERLY" or "TIMEZONE".
         """
-        return pulumi.get(self, "maintenance_run_id")
+        return pulumi.get(self, "patch_type")
 
-    @maintenance_run_id.setter
-    def maintenance_run_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "maintenance_run_id", value)
-
-    @property
-    @pulumi.getter(name="currentCustomActionTimeoutInMins")
-    def current_custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
-        """
-        return pulumi.get(self, "current_custom_action_timeout_in_mins")
-
-    @current_custom_action_timeout_in_mins.setter
-    def current_custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "current_custom_action_timeout_in_mins", value)
+    @patch_type.setter
+    def patch_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "patch_type", value)
 
     @property
-    @pulumi.getter(name="customActionTimeoutInMins")
-    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+    @pulumi.getter(name="targetResourceId")
+    def target_resource_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+        The ID of the target resource for which the maintenance run should be created.
         """
-        return pulumi.get(self, "custom_action_timeout_in_mins")
+        return pulumi.get(self, "target_resource_id")
 
-    @custom_action_timeout_in_mins.setter
-    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "custom_action_timeout_in_mins", value)
-
-    @property
-    @pulumi.getter(name="isCustomActionTimeoutEnabled")
-    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-        """
-        return pulumi.get(self, "is_custom_action_timeout_enabled")
-
-    @is_custom_action_timeout_enabled.setter
-    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+    @target_resource_id.setter
+    def target_resource_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "target_resource_id", value)
 
     @property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> pulumi.Input[str]:
         """
-        (Updatable) If `FALSE`, skips the maintenance run.
-        """
-        return pulumi.get(self, "is_enabled")
+        (Updatable) The date and time that update should be scheduled.
 
-    @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_enabled", value)
 
-    @property
-    @pulumi.getter(name="isPatchNowEnabled")
-    def is_patch_now_enabled(self) -> Optional[pulumi.Input[bool]]:
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        (Updatable) If set to `TRUE`, starts patching immediately.
-        """
-        return pulumi.get(self, "is_patch_now_enabled")
+        return pulumi.get(self, "time_scheduled")
 
-    @is_patch_now_enabled.setter
-    def is_patch_now_enabled(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_patch_now_enabled", value)
+    @time_scheduled.setter
+    def time_scheduled(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_scheduled", value)
 
     @property
-    @pulumi.getter(name="isResumePatching")
-    def is_resume_patching(self) -> Optional[pulumi.Input[bool]]:
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
         """
-        return pulumi.get(self, "is_resume_patching")
+        return pulumi.get(self, "compartment_id")
 
-    @is_resume_patching.setter
-    def is_resume_patching(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_resume_patching", value)
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
 
     @property
-    @pulumi.getter(name="patchId")
-    def patch_id(self) -> Optional[pulumi.Input[str]]:
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
-        return pulumi.get(self, "patch_id")
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
-    @patch_id.setter
-    def patch_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "patch_id", value)
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @property
     @pulumi.getter(name="patchingMode")
@@ -183,46 +125,6 @@ class MaintenanceRunArgs:
     def patching_mode(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "patching_mode", value)
 
-    @property
-    @pulumi.getter(name="targetDbServerVersion")
-    def target_db_server_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target database server system software version for the patching operation.
-        """
-        return pulumi.get(self, "target_db_server_version")
-
-    @target_db_server_version.setter
-    def target_db_server_version(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "target_db_server_version", value)
-
-    @property
-    @pulumi.getter(name="targetStorageServerVersion")
-    def target_storage_server_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target storage cell system software version for the patching operation.
-        """
-        return pulumi.get(self, "target_storage_server_version")
-
-    @target_storage_server_version.setter
-    def target_storage_server_version(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "target_storage_server_version", value)
-
-    @property
-    @pulumi.getter(name="timeScheduled")
-    def time_scheduled(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The scheduled date and time of the maintenance run to update.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "time_scheduled")
-
-    @time_scheduled.setter
-    def time_scheduled(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "time_scheduled", value)
-
 
 @pulumi.input_type
 class _MaintenanceRunState:
@@ -236,15 +138,13 @@ class _MaintenanceRunState:
                  estimated_component_patching_start_time: Optional[pulumi.Input[str]] = None,
                  estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_patch_now_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_resume_patching: Optional[pulumi.Input[bool]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
-                 maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  maintenance_subtype: Optional[pulumi.Input[str]] = None,
                  maintenance_type: Optional[pulumi.Input[str]] = None,
                  patch_failure_count: Optional[pulumi.Input[int]] = None,
                  patch_id: Optional[pulumi.Input[str]] = None,
+                 patch_type: Optional[pulumi.Input[str]] = None,
                  patching_end_time: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  patching_start_time: Optional[pulumi.Input[str]] = None,
@@ -260,24 +160,22 @@ class _MaintenanceRunState:
                  time_started: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MaintenanceRun resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[int] current_custom_action_timeout_in_mins: (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+        :param pulumi.Input[int] current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param pulumi.Input[str] current_patching_component: The name of the current infrastruture component that is getting patched.
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+        :param pulumi.Input[int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         :param pulumi.Input[str] description: Description of the maintenance run.
         :param pulumi.Input[str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
         :param pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-        :param pulumi.Input[bool] is_enabled: (Updatable) If `FALSE`, skips the maintenance run.
-        :param pulumi.Input[bool] is_patch_now_enabled: (Updatable) If set to `TRUE`, starts patching immediately.
-        :param pulumi.Input[bool] is_resume_patching: (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
+        :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] maintenance_run_id: The maintenance run OCID.
         :param pulumi.Input[str] maintenance_subtype: Maintenance sub-type.
         :param pulumi.Input[str] maintenance_type: Maintenance type.
         :param pulumi.Input[int] patch_failure_count: Contain the patch failure count.
-        :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+        :param pulumi.Input[str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
         :param pulumi.Input[str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
@@ -286,12 +184,12 @@ class _MaintenanceRunState:
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
-        :param pulumi.Input[str] target_resource_id: The ID of the target resource on which the maintenance run occurs.
+        :param pulumi.Input[str] target_db_server_version: The target software version for the database server patching operation.
+        :param pulumi.Input[str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[str] target_resource_type: The type of the target resource on which the maintenance run occurs.
-        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
+        :param pulumi.Input[str] target_storage_server_version: The target Cell version that is to be patched to.
         :param pulumi.Input[str] time_ended: The date and time the maintenance run was completed.
-        :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+        :param pulumi.Input[str] time_scheduled: (Updatable) The date and time that update should be scheduled.
                
                
                ** IMPORTANT **
@@ -316,16 +214,10 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "estimated_patching_times", estimated_patching_times)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
-        if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
-        if is_patch_now_enabled is not None:
-            pulumi.set(__self__, "is_patch_now_enabled", is_patch_now_enabled)
-        if is_resume_patching is not None:
-            pulumi.set(__self__, "is_resume_patching", is_resume_patching)
+        if is_dst_file_update_enabled is not None:
+            pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        if maintenance_run_id is not None:
-            pulumi.set(__self__, "maintenance_run_id", maintenance_run_id)
         if maintenance_subtype is not None:
             pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         if maintenance_type is not None:
@@ -334,6 +226,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "patch_failure_count", patch_failure_count)
         if patch_id is not None:
             pulumi.set(__self__, "patch_id", patch_id)
+        if patch_type is not None:
+            pulumi.set(__self__, "patch_type", patch_type)
         if patching_end_time is not None:
             pulumi.set(__self__, "patching_end_time", patching_end_time)
         if patching_mode is not None:
@@ -365,7 +259,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -377,7 +271,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="currentCustomActionTimeoutInMins")
     def current_custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+        Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         """
         return pulumi.get(self, "current_custom_action_timeout_in_mins")
 
@@ -401,7 +295,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+        Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
@@ -461,7 +355,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
@@ -470,40 +364,16 @@ class _MaintenanceRunState:
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
 
     @property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If `FALSE`, skips the maintenance run.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
-        return pulumi.get(self, "is_enabled")
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
-    @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_enabled", value)
-
-    @property
-    @pulumi.getter(name="isPatchNowEnabled")
-    def is_patch_now_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set to `TRUE`, starts patching immediately.
-        """
-        return pulumi.get(self, "is_patch_now_enabled")
-
-    @is_patch_now_enabled.setter
-    def is_patch_now_enabled(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_patch_now_enabled", value)
-
-    @property
-    @pulumi.getter(name="isResumePatching")
-    def is_resume_patching(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-        """
-        return pulumi.get(self, "is_resume_patching")
-
-    @is_resume_patching.setter
-    def is_resume_patching(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_resume_patching", value)
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -516,18 +386,6 @@ class _MaintenanceRunState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
-
-    @property
-    @pulumi.getter(name="maintenanceRunId")
-    def maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The maintenance run OCID.
-        """
-        return pulumi.get(self, "maintenance_run_id")
-
-    @maintenance_run_id.setter
-    def maintenance_run_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "maintenance_run_id", value)
 
     @property
     @pulumi.getter(name="maintenanceSubtype")
@@ -569,13 +427,25 @@ class _MaintenanceRunState:
     @pulumi.getter(name="patchId")
     def patch_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
     @patch_id.setter
     def patch_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "patch_id", value)
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Patch type, either "QUARTERLY" or "TIMEZONE".
+        """
+        return pulumi.get(self, "patch_type")
+
+    @patch_type.setter
+    def patch_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "patch_type", value)
 
     @property
     @pulumi.getter(name="patchingEndTime")
@@ -655,7 +525,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="targetDbServerVersion")
     def target_db_server_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target database server system software version for the patching operation.
+        The target software version for the database server patching operation.
         """
         return pulumi.get(self, "target_db_server_version")
 
@@ -667,7 +537,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the target resource on which the maintenance run occurs.
+        The ID of the target resource for which the maintenance run should be created.
         """
         return pulumi.get(self, "target_resource_id")
 
@@ -691,7 +561,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="targetStorageServerVersion")
     def target_storage_server_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target storage cell system software version for the patching operation.
+        The target Cell version that is to be patched to.
         """
         return pulumi.get(self, "target_storage_server_version")
 
@@ -715,7 +585,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The scheduled date and time of the maintenance run to update.
+        (Updatable) The date and time that update should be scheduled.
 
 
         ** IMPORTANT **
@@ -745,23 +615,35 @@ class MaintenanceRun(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
-                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
-                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_patch_now_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_resume_patching: Optional[pulumi.Input[bool]] = None,
-                 maintenance_run_id: Optional[pulumi.Input[str]] = None,
-                 patch_id: Optional[pulumi.Input[str]] = None,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
+                 patch_type: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
-                 target_db_server_version: Optional[pulumi.Input[str]] = None,
-                 target_storage_server_version: Optional[pulumi.Input[str]] = None,
+                 target_resource_id: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
 
-        Updates the properties of a maintenance run, such as the state of a maintenance run.
+        Creates a maintenance run with one of the following:
+        The latest available release update patch (RUP) for the Autonomous Container Database.
+        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_maintenance_run = oci.database.MaintenanceRun("testMaintenanceRun",
+            patch_type=var["maintenance_run_patch_type"],
+            target_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+            time_scheduled=var["maintenance_run_time_scheduled"],
+            compartment_id=var["compartment_id"],
+            is_dst_file_update_enabled=var["maintenance_run_is_dst_file_update_enabled"],
+            patching_mode=var["maintenance_run_patching_mode"])
+        ```
 
         ## Import
 
@@ -773,20 +655,14 @@ class MaintenanceRun(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] current_custom_action_timeout_in_mins: (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-        :param pulumi.Input[bool] is_enabled: (Updatable) If `FALSE`, skips the maintenance run.
-        :param pulumi.Input[bool] is_patch_now_enabled: (Updatable) If set to `TRUE`, starts patching immediately.
-        :param pulumi.Input[bool] is_resume_patching: (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-        :param pulumi.Input[str] maintenance_run_id: The maintenance run OCID.
-        :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
-        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
-        :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+        :param pulumi.Input[str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
+        :param pulumi.Input[str] time_scheduled: (Updatable) The date and time that update should be scheduled.
                
                
                ** IMPORTANT **
@@ -801,7 +677,25 @@ class MaintenanceRun(pulumi.CustomResource):
         """
         This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
 
-        Updates the properties of a maintenance run, such as the state of a maintenance run.
+        Creates a maintenance run with one of the following:
+        The latest available release update patch (RUP) for the Autonomous Container Database.
+        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_maintenance_run = oci.database.MaintenanceRun("testMaintenanceRun",
+            patch_type=var["maintenance_run_patch_type"],
+            target_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+            time_scheduled=var["maintenance_run_time_scheduled"],
+            compartment_id=var["compartment_id"],
+            is_dst_file_update_enabled=var["maintenance_run_is_dst_file_update_enabled"],
+            patching_mode=var["maintenance_run_patching_mode"])
+        ```
 
         ## Import
 
@@ -826,17 +720,11 @@ class MaintenanceRun(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
-                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
-                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_patch_now_enabled: Optional[pulumi.Input[bool]] = None,
-                 is_resume_patching: Optional[pulumi.Input[bool]] = None,
-                 maintenance_run_id: Optional[pulumi.Input[str]] = None,
-                 patch_id: Optional[pulumi.Input[str]] = None,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
+                 patch_type: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
-                 target_db_server_version: Optional[pulumi.Input[str]] = None,
-                 target_storage_server_version: Optional[pulumi.Input[str]] = None,
+                 target_resource_id: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -847,37 +735,39 @@ class MaintenanceRun(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MaintenanceRunArgs.__new__(MaintenanceRunArgs)
 
-            __props__.__dict__["current_custom_action_timeout_in_mins"] = current_custom_action_timeout_in_mins
-            __props__.__dict__["custom_action_timeout_in_mins"] = custom_action_timeout_in_mins
-            __props__.__dict__["is_custom_action_timeout_enabled"] = is_custom_action_timeout_enabled
-            __props__.__dict__["is_enabled"] = is_enabled
-            __props__.__dict__["is_patch_now_enabled"] = is_patch_now_enabled
-            __props__.__dict__["is_resume_patching"] = is_resume_patching
-            if maintenance_run_id is None and not opts.urn:
-                raise TypeError("Missing required property 'maintenance_run_id'")
-            __props__.__dict__["maintenance_run_id"] = maintenance_run_id
-            __props__.__dict__["patch_id"] = patch_id
+            __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["is_dst_file_update_enabled"] = is_dst_file_update_enabled
+            if patch_type is None and not opts.urn:
+                raise TypeError("Missing required property 'patch_type'")
+            __props__.__dict__["patch_type"] = patch_type
             __props__.__dict__["patching_mode"] = patching_mode
-            __props__.__dict__["target_db_server_version"] = target_db_server_version
-            __props__.__dict__["target_storage_server_version"] = target_storage_server_version
+            if target_resource_id is None and not opts.urn:
+                raise TypeError("Missing required property 'target_resource_id'")
+            __props__.__dict__["target_resource_id"] = target_resource_id
+            if time_scheduled is None and not opts.urn:
+                raise TypeError("Missing required property 'time_scheduled'")
             __props__.__dict__["time_scheduled"] = time_scheduled
-            __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["current_custom_action_timeout_in_mins"] = None
             __props__.__dict__["current_patching_component"] = None
+            __props__.__dict__["custom_action_timeout_in_mins"] = None
             __props__.__dict__["description"] = None
             __props__.__dict__["display_name"] = None
             __props__.__dict__["estimated_component_patching_start_time"] = None
             __props__.__dict__["estimated_patching_times"] = None
+            __props__.__dict__["is_custom_action_timeout_enabled"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["maintenance_subtype"] = None
             __props__.__dict__["maintenance_type"] = None
             __props__.__dict__["patch_failure_count"] = None
+            __props__.__dict__["patch_id"] = None
             __props__.__dict__["patching_end_time"] = None
             __props__.__dict__["patching_start_time"] = None
             __props__.__dict__["patching_status"] = None
             __props__.__dict__["peer_maintenance_run_id"] = None
             __props__.__dict__["state"] = None
-            __props__.__dict__["target_resource_id"] = None
+            __props__.__dict__["target_db_server_version"] = None
             __props__.__dict__["target_resource_type"] = None
+            __props__.__dict__["target_storage_server_version"] = None
             __props__.__dict__["time_ended"] = None
             __props__.__dict__["time_started"] = None
         super(MaintenanceRun, __self__).__init__(
@@ -899,15 +789,13 @@ class MaintenanceRun(pulumi.CustomResource):
             estimated_component_patching_start_time: Optional[pulumi.Input[str]] = None,
             estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceRunEstimatedPatchingTimeArgs']]]]] = None,
             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
-            is_enabled: Optional[pulumi.Input[bool]] = None,
-            is_patch_now_enabled: Optional[pulumi.Input[bool]] = None,
-            is_resume_patching: Optional[pulumi.Input[bool]] = None,
+            is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
-            maintenance_run_id: Optional[pulumi.Input[str]] = None,
             maintenance_subtype: Optional[pulumi.Input[str]] = None,
             maintenance_type: Optional[pulumi.Input[str]] = None,
             patch_failure_count: Optional[pulumi.Input[int]] = None,
             patch_id: Optional[pulumi.Input[str]] = None,
+            patch_type: Optional[pulumi.Input[str]] = None,
             patching_end_time: Optional[pulumi.Input[str]] = None,
             patching_mode: Optional[pulumi.Input[str]] = None,
             patching_start_time: Optional[pulumi.Input[str]] = None,
@@ -928,24 +816,22 @@ class MaintenanceRun(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[int] current_custom_action_timeout_in_mins: (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+        :param pulumi.Input[int] current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param pulumi.Input[str] current_patching_component: The name of the current infrastruture component that is getting patched.
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+        :param pulumi.Input[int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         :param pulumi.Input[str] description: Description of the maintenance run.
         :param pulumi.Input[str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceRunEstimatedPatchingTimeArgs']]]] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-        :param pulumi.Input[bool] is_enabled: (Updatable) If `FALSE`, skips the maintenance run.
-        :param pulumi.Input[bool] is_patch_now_enabled: (Updatable) If set to `TRUE`, starts patching immediately.
-        :param pulumi.Input[bool] is_resume_patching: (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
+        :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] maintenance_run_id: The maintenance run OCID.
         :param pulumi.Input[str] maintenance_subtype: Maintenance sub-type.
         :param pulumi.Input[str] maintenance_type: Maintenance type.
         :param pulumi.Input[int] patch_failure_count: Contain the patch failure count.
-        :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+        :param pulumi.Input[str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param pulumi.Input[str] patch_type: Patch type, either "QUARTERLY" or "TIMEZONE".
         :param pulumi.Input[str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
@@ -954,12 +840,12 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
-        :param pulumi.Input[str] target_resource_id: The ID of the target resource on which the maintenance run occurs.
+        :param pulumi.Input[str] target_db_server_version: The target software version for the database server patching operation.
+        :param pulumi.Input[str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[str] target_resource_type: The type of the target resource on which the maintenance run occurs.
-        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
+        :param pulumi.Input[str] target_storage_server_version: The target Cell version that is to be patched to.
         :param pulumi.Input[str] time_ended: The date and time the maintenance run was completed.
-        :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+        :param pulumi.Input[str] time_scheduled: (Updatable) The date and time that update should be scheduled.
                
                
                ** IMPORTANT **
@@ -979,15 +865,13 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["estimated_component_patching_start_time"] = estimated_component_patching_start_time
         __props__.__dict__["estimated_patching_times"] = estimated_patching_times
         __props__.__dict__["is_custom_action_timeout_enabled"] = is_custom_action_timeout_enabled
-        __props__.__dict__["is_enabled"] = is_enabled
-        __props__.__dict__["is_patch_now_enabled"] = is_patch_now_enabled
-        __props__.__dict__["is_resume_patching"] = is_resume_patching
+        __props__.__dict__["is_dst_file_update_enabled"] = is_dst_file_update_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
-        __props__.__dict__["maintenance_run_id"] = maintenance_run_id
         __props__.__dict__["maintenance_subtype"] = maintenance_subtype
         __props__.__dict__["maintenance_type"] = maintenance_type
         __props__.__dict__["patch_failure_count"] = patch_failure_count
         __props__.__dict__["patch_id"] = patch_id
+        __props__.__dict__["patch_type"] = patch_type
         __props__.__dict__["patching_end_time"] = patching_end_time
         __props__.__dict__["patching_mode"] = patching_mode
         __props__.__dict__["patching_start_time"] = patching_start_time
@@ -1007,7 +891,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1015,7 +899,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="currentCustomActionTimeoutInMins")
     def current_custom_action_timeout_in_mins(self) -> pulumi.Output[int]:
         """
-        (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+        Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         """
         return pulumi.get(self, "current_custom_action_timeout_in_mins")
 
@@ -1031,7 +915,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> pulumi.Output[int]:
         """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+        Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
@@ -1071,33 +955,17 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Output[bool]:
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) If `FALSE`, skips the maintenance run.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
-        return pulumi.get(self, "is_enabled")
-
-    @property
-    @pulumi.getter(name="isPatchNowEnabled")
-    def is_patch_now_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If set to `TRUE`, starts patching immediately.
-        """
-        return pulumi.get(self, "is_patch_now_enabled")
-
-    @property
-    @pulumi.getter(name="isResumePatching")
-    def is_resume_patching(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-        """
-        return pulumi.get(self, "is_resume_patching")
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -1106,14 +974,6 @@ class MaintenanceRun(pulumi.CustomResource):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
-
-    @property
-    @pulumi.getter(name="maintenanceRunId")
-    def maintenance_run_id(self) -> pulumi.Output[str]:
-        """
-        The maintenance run OCID.
-        """
-        return pulumi.get(self, "maintenance_run_id")
 
     @property
     @pulumi.getter(name="maintenanceSubtype")
@@ -1143,9 +1003,17 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="patchId")
     def patch_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> pulumi.Output[str]:
+        """
+        Patch type, either "QUARTERLY" or "TIMEZONE".
+        """
+        return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter(name="patchingEndTime")
@@ -1201,7 +1069,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="targetDbServerVersion")
     def target_db_server_version(self) -> pulumi.Output[str]:
         """
-        (Updatable) The target database server system software version for the patching operation.
+        The target software version for the database server patching operation.
         """
         return pulumi.get(self, "target_db_server_version")
 
@@ -1209,7 +1077,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> pulumi.Output[str]:
         """
-        The ID of the target resource on which the maintenance run occurs.
+        The ID of the target resource for which the maintenance run should be created.
         """
         return pulumi.get(self, "target_resource_id")
 
@@ -1225,7 +1093,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="targetStorageServerVersion")
     def target_storage_server_version(self) -> pulumi.Output[str]:
         """
-        (Updatable) The target storage cell system software version for the patching operation.
+        The target Cell version that is to be patched to.
         """
         return pulumi.get(self, "target_storage_server_version")
 
@@ -1241,7 +1109,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> pulumi.Output[str]:
         """
-        (Updatable) The scheduled date and time of the maintenance run to update.
+        (Updatable) The date and time that update should be scheduled.
 
 
         ** IMPORTANT **

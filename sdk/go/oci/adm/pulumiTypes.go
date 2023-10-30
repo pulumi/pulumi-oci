@@ -14,12 +14,1212 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type RemediationRecipeDetectConfiguration struct {
+	// (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+	Exclusions []string `pulumi:"exclusions"`
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	MaxPermissibleCvssV2score *float64 `pulumi:"maxPermissibleCvssV2score"`
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	MaxPermissibleCvssV3score *float64 `pulumi:"maxPermissibleCvssV3score"`
+	// (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+	UpgradePolicy *string `pulumi:"upgradePolicy"`
+}
+
+// RemediationRecipeDetectConfigurationInput is an input type that accepts RemediationRecipeDetectConfigurationArgs and RemediationRecipeDetectConfigurationOutput values.
+// You can construct a concrete instance of `RemediationRecipeDetectConfigurationInput` via:
+//
+//	RemediationRecipeDetectConfigurationArgs{...}
+type RemediationRecipeDetectConfigurationInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeDetectConfigurationOutput() RemediationRecipeDetectConfigurationOutput
+	ToRemediationRecipeDetectConfigurationOutputWithContext(context.Context) RemediationRecipeDetectConfigurationOutput
+}
+
+type RemediationRecipeDetectConfigurationArgs struct {
+	// (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	MaxPermissibleCvssV2score pulumi.Float64PtrInput `pulumi:"maxPermissibleCvssV2score"`
+	// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	MaxPermissibleCvssV3score pulumi.Float64PtrInput `pulumi:"maxPermissibleCvssV3score"`
+	// (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+	UpgradePolicy pulumi.StringPtrInput `pulumi:"upgradePolicy"`
+}
+
+func (RemediationRecipeDetectConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (i RemediationRecipeDetectConfigurationArgs) ToRemediationRecipeDetectConfigurationOutput() RemediationRecipeDetectConfigurationOutput {
+	return i.ToRemediationRecipeDetectConfigurationOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeDetectConfigurationArgs) ToRemediationRecipeDetectConfigurationOutputWithContext(ctx context.Context) RemediationRecipeDetectConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeDetectConfigurationOutput)
+}
+
+func (i RemediationRecipeDetectConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeDetectConfiguration] {
+	return pulumix.Output[RemediationRecipeDetectConfiguration]{
+		OutputState: i.ToRemediationRecipeDetectConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i RemediationRecipeDetectConfigurationArgs) ToRemediationRecipeDetectConfigurationPtrOutput() RemediationRecipeDetectConfigurationPtrOutput {
+	return i.ToRemediationRecipeDetectConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeDetectConfigurationArgs) ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeDetectConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeDetectConfigurationOutput).ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx)
+}
+
+// RemediationRecipeDetectConfigurationPtrInput is an input type that accepts RemediationRecipeDetectConfigurationArgs, RemediationRecipeDetectConfigurationPtr and RemediationRecipeDetectConfigurationPtrOutput values.
+// You can construct a concrete instance of `RemediationRecipeDetectConfigurationPtrInput` via:
+//
+//	        RemediationRecipeDetectConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type RemediationRecipeDetectConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeDetectConfigurationPtrOutput() RemediationRecipeDetectConfigurationPtrOutput
+	ToRemediationRecipeDetectConfigurationPtrOutputWithContext(context.Context) RemediationRecipeDetectConfigurationPtrOutput
+}
+
+type remediationRecipeDetectConfigurationPtrType RemediationRecipeDetectConfigurationArgs
+
+func RemediationRecipeDetectConfigurationPtr(v *RemediationRecipeDetectConfigurationArgs) RemediationRecipeDetectConfigurationPtrInput {
+	return (*remediationRecipeDetectConfigurationPtrType)(v)
+}
+
+func (*remediationRecipeDetectConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (i *remediationRecipeDetectConfigurationPtrType) ToRemediationRecipeDetectConfigurationPtrOutput() RemediationRecipeDetectConfigurationPtrOutput {
+	return i.ToRemediationRecipeDetectConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *remediationRecipeDetectConfigurationPtrType) ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeDetectConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeDetectConfigurationPtrOutput)
+}
+
+func (i *remediationRecipeDetectConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeDetectConfiguration] {
+	return pulumix.Output[*RemediationRecipeDetectConfiguration]{
+		OutputState: i.ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type RemediationRecipeDetectConfigurationOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeDetectConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeDetectConfigurationOutput) ToRemediationRecipeDetectConfigurationOutput() RemediationRecipeDetectConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeDetectConfigurationOutput) ToRemediationRecipeDetectConfigurationOutputWithContext(ctx context.Context) RemediationRecipeDetectConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeDetectConfigurationOutput) ToRemediationRecipeDetectConfigurationPtrOutput() RemediationRecipeDetectConfigurationPtrOutput {
+	return o.ToRemediationRecipeDetectConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o RemediationRecipeDetectConfigurationOutput) ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeDetectConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RemediationRecipeDetectConfiguration) *RemediationRecipeDetectConfiguration {
+		return &v
+	}).(RemediationRecipeDetectConfigurationPtrOutput)
+}
+
+func (o RemediationRecipeDetectConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeDetectConfiguration] {
+	return pulumix.Output[RemediationRecipeDetectConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+func (o RemediationRecipeDetectConfigurationOutput) Exclusions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+func (o RemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) *float64 { return v.MaxPermissibleCvssV2score }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+func (o RemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) *float64 { return v.MaxPermissibleCvssV3score }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+func (o RemediationRecipeDetectConfigurationOutput) UpgradePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeDetectConfiguration) *string { return v.UpgradePolicy }).(pulumi.StringPtrOutput)
+}
+
+type RemediationRecipeDetectConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeDetectConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeDetectConfigurationPtrOutput) ToRemediationRecipeDetectConfigurationPtrOutput() RemediationRecipeDetectConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeDetectConfigurationPtrOutput) ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeDetectConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeDetectConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeDetectConfiguration] {
+	return pulumix.Output[*RemediationRecipeDetectConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o RemediationRecipeDetectConfigurationPtrOutput) Elem() RemediationRecipeDetectConfigurationOutput {
+	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) RemediationRecipeDetectConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret RemediationRecipeDetectConfiguration
+		return ret
+	}).(RemediationRecipeDetectConfigurationOutput)
+}
+
+// (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+func (o RemediationRecipeDetectConfigurationPtrOutput) Exclusions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Exclusions
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+func (o RemediationRecipeDetectConfigurationPtrOutput) MaxPermissibleCvssV2score() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MaxPermissibleCvssV2score
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+func (o RemediationRecipeDetectConfigurationPtrOutput) MaxPermissibleCvssV3score() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MaxPermissibleCvssV3score
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+func (o RemediationRecipeDetectConfigurationPtrOutput) UpgradePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeDetectConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UpgradePolicy
+	}).(pulumi.StringPtrOutput)
+}
+
+type RemediationRecipeNetworkConfiguration struct {
+	// (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// RemediationRecipeNetworkConfigurationInput is an input type that accepts RemediationRecipeNetworkConfigurationArgs and RemediationRecipeNetworkConfigurationOutput values.
+// You can construct a concrete instance of `RemediationRecipeNetworkConfigurationInput` via:
+//
+//	RemediationRecipeNetworkConfigurationArgs{...}
+type RemediationRecipeNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeNetworkConfigurationOutput() RemediationRecipeNetworkConfigurationOutput
+	ToRemediationRecipeNetworkConfigurationOutputWithContext(context.Context) RemediationRecipeNetworkConfigurationOutput
+}
+
+type RemediationRecipeNetworkConfigurationArgs struct {
+	// (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (RemediationRecipeNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (i RemediationRecipeNetworkConfigurationArgs) ToRemediationRecipeNetworkConfigurationOutput() RemediationRecipeNetworkConfigurationOutput {
+	return i.ToRemediationRecipeNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeNetworkConfigurationArgs) ToRemediationRecipeNetworkConfigurationOutputWithContext(ctx context.Context) RemediationRecipeNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeNetworkConfigurationOutput)
+}
+
+func (i RemediationRecipeNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[RemediationRecipeNetworkConfiguration]{
+		OutputState: i.ToRemediationRecipeNetworkConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i RemediationRecipeNetworkConfigurationArgs) ToRemediationRecipeNetworkConfigurationPtrOutput() RemediationRecipeNetworkConfigurationPtrOutput {
+	return i.ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeNetworkConfigurationArgs) ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeNetworkConfigurationOutput).ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// RemediationRecipeNetworkConfigurationPtrInput is an input type that accepts RemediationRecipeNetworkConfigurationArgs, RemediationRecipeNetworkConfigurationPtr and RemediationRecipeNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `RemediationRecipeNetworkConfigurationPtrInput` via:
+//
+//	        RemediationRecipeNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type RemediationRecipeNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeNetworkConfigurationPtrOutput() RemediationRecipeNetworkConfigurationPtrOutput
+	ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(context.Context) RemediationRecipeNetworkConfigurationPtrOutput
+}
+
+type remediationRecipeNetworkConfigurationPtrType RemediationRecipeNetworkConfigurationArgs
+
+func RemediationRecipeNetworkConfigurationPtr(v *RemediationRecipeNetworkConfigurationArgs) RemediationRecipeNetworkConfigurationPtrInput {
+	return (*remediationRecipeNetworkConfigurationPtrType)(v)
+}
+
+func (*remediationRecipeNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *remediationRecipeNetworkConfigurationPtrType) ToRemediationRecipeNetworkConfigurationPtrOutput() RemediationRecipeNetworkConfigurationPtrOutput {
+	return i.ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *remediationRecipeNetworkConfigurationPtrType) ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeNetworkConfigurationPtrOutput)
+}
+
+func (i *remediationRecipeNetworkConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[*RemediationRecipeNetworkConfiguration]{
+		OutputState: i.ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type RemediationRecipeNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeNetworkConfigurationOutput) ToRemediationRecipeNetworkConfigurationOutput() RemediationRecipeNetworkConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeNetworkConfigurationOutput) ToRemediationRecipeNetworkConfigurationOutputWithContext(ctx context.Context) RemediationRecipeNetworkConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeNetworkConfigurationOutput) ToRemediationRecipeNetworkConfigurationPtrOutput() RemediationRecipeNetworkConfigurationPtrOutput {
+	return o.ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o RemediationRecipeNetworkConfigurationOutput) ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RemediationRecipeNetworkConfiguration) *RemediationRecipeNetworkConfiguration {
+		return &v
+	}).(RemediationRecipeNetworkConfigurationPtrOutput)
+}
+
+func (o RemediationRecipeNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[RemediationRecipeNetworkConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+func (o RemediationRecipeNetworkConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RemediationRecipeNetworkConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+func (o RemediationRecipeNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v RemediationRecipeNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type RemediationRecipeNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeNetworkConfigurationPtrOutput) ToRemediationRecipeNetworkConfigurationPtrOutput() RemediationRecipeNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeNetworkConfigurationPtrOutput) ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeNetworkConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[*RemediationRecipeNetworkConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o RemediationRecipeNetworkConfigurationPtrOutput) Elem() RemediationRecipeNetworkConfigurationOutput {
+	return o.ApplyT(func(v *RemediationRecipeNetworkConfiguration) RemediationRecipeNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret RemediationRecipeNetworkConfiguration
+		return ret
+	}).(RemediationRecipeNetworkConfigurationOutput)
+}
+
+// (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+func (o RemediationRecipeNetworkConfigurationPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RemediationRecipeNetworkConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+func (o RemediationRecipeNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type RemediationRecipeScmConfiguration struct {
+	// (Updatable) The branch used by ADM to patch vulnerabilities.
+	Branch string `pulumi:"branch"`
+	// (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+	BuildFileLocation *string `pulumi:"buildFileLocation"`
+	// (Updatable) The type of External Source Code Management.
+	ExternalScmType *string `pulumi:"externalScmType"`
+	// (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+	IsAutomergeEnabled bool `pulumi:"isAutomergeEnabled"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+	OciCodeRepositoryId *string `pulumi:"ociCodeRepositoryId"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId *string `pulumi:"patSecretId"`
+	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl *string `pulumi:"repositoryUrl"`
+	// (Updatable) The type of Source Code Management.
+	ScmType string `pulumi:"scmType"`
+	// (Updatable) The username that will be used to authenticate with Jenkins.
+	Username *string `pulumi:"username"`
+}
+
+// RemediationRecipeScmConfigurationInput is an input type that accepts RemediationRecipeScmConfigurationArgs and RemediationRecipeScmConfigurationOutput values.
+// You can construct a concrete instance of `RemediationRecipeScmConfigurationInput` via:
+//
+//	RemediationRecipeScmConfigurationArgs{...}
+type RemediationRecipeScmConfigurationInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeScmConfigurationOutput() RemediationRecipeScmConfigurationOutput
+	ToRemediationRecipeScmConfigurationOutputWithContext(context.Context) RemediationRecipeScmConfigurationOutput
+}
+
+type RemediationRecipeScmConfigurationArgs struct {
+	// (Updatable) The branch used by ADM to patch vulnerabilities.
+	Branch pulumi.StringInput `pulumi:"branch"`
+	// (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+	BuildFileLocation pulumi.StringPtrInput `pulumi:"buildFileLocation"`
+	// (Updatable) The type of External Source Code Management.
+	ExternalScmType pulumi.StringPtrInput `pulumi:"externalScmType"`
+	// (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+	IsAutomergeEnabled pulumi.BoolInput `pulumi:"isAutomergeEnabled"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+	OciCodeRepositoryId pulumi.StringPtrInput `pulumi:"ociCodeRepositoryId"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId pulumi.StringPtrInput `pulumi:"patSecretId"`
+	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl pulumi.StringPtrInput `pulumi:"repositoryUrl"`
+	// (Updatable) The type of Source Code Management.
+	ScmType pulumi.StringInput `pulumi:"scmType"`
+	// (Updatable) The username that will be used to authenticate with Jenkins.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (RemediationRecipeScmConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (i RemediationRecipeScmConfigurationArgs) ToRemediationRecipeScmConfigurationOutput() RemediationRecipeScmConfigurationOutput {
+	return i.ToRemediationRecipeScmConfigurationOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeScmConfigurationArgs) ToRemediationRecipeScmConfigurationOutputWithContext(ctx context.Context) RemediationRecipeScmConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeScmConfigurationOutput)
+}
+
+func (i RemediationRecipeScmConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeScmConfiguration] {
+	return pulumix.Output[RemediationRecipeScmConfiguration]{
+		OutputState: i.ToRemediationRecipeScmConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i RemediationRecipeScmConfigurationArgs) ToRemediationRecipeScmConfigurationPtrOutput() RemediationRecipeScmConfigurationPtrOutput {
+	return i.ToRemediationRecipeScmConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeScmConfigurationArgs) ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeScmConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeScmConfigurationOutput).ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx)
+}
+
+// RemediationRecipeScmConfigurationPtrInput is an input type that accepts RemediationRecipeScmConfigurationArgs, RemediationRecipeScmConfigurationPtr and RemediationRecipeScmConfigurationPtrOutput values.
+// You can construct a concrete instance of `RemediationRecipeScmConfigurationPtrInput` via:
+//
+//	        RemediationRecipeScmConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type RemediationRecipeScmConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeScmConfigurationPtrOutput() RemediationRecipeScmConfigurationPtrOutput
+	ToRemediationRecipeScmConfigurationPtrOutputWithContext(context.Context) RemediationRecipeScmConfigurationPtrOutput
+}
+
+type remediationRecipeScmConfigurationPtrType RemediationRecipeScmConfigurationArgs
+
+func RemediationRecipeScmConfigurationPtr(v *RemediationRecipeScmConfigurationArgs) RemediationRecipeScmConfigurationPtrInput {
+	return (*remediationRecipeScmConfigurationPtrType)(v)
+}
+
+func (*remediationRecipeScmConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (i *remediationRecipeScmConfigurationPtrType) ToRemediationRecipeScmConfigurationPtrOutput() RemediationRecipeScmConfigurationPtrOutput {
+	return i.ToRemediationRecipeScmConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *remediationRecipeScmConfigurationPtrType) ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeScmConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeScmConfigurationPtrOutput)
+}
+
+func (i *remediationRecipeScmConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeScmConfiguration] {
+	return pulumix.Output[*RemediationRecipeScmConfiguration]{
+		OutputState: i.ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type RemediationRecipeScmConfigurationOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeScmConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeScmConfigurationOutput) ToRemediationRecipeScmConfigurationOutput() RemediationRecipeScmConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeScmConfigurationOutput) ToRemediationRecipeScmConfigurationOutputWithContext(ctx context.Context) RemediationRecipeScmConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeScmConfigurationOutput) ToRemediationRecipeScmConfigurationPtrOutput() RemediationRecipeScmConfigurationPtrOutput {
+	return o.ToRemediationRecipeScmConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o RemediationRecipeScmConfigurationOutput) ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeScmConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RemediationRecipeScmConfiguration) *RemediationRecipeScmConfiguration {
+		return &v
+	}).(RemediationRecipeScmConfigurationPtrOutput)
+}
+
+func (o RemediationRecipeScmConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeScmConfiguration] {
+	return pulumix.Output[RemediationRecipeScmConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The branch used by ADM to patch vulnerabilities.
+func (o RemediationRecipeScmConfigurationOutput) Branch() pulumi.StringOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) string { return v.Branch }).(pulumi.StringOutput)
+}
+
+// (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+func (o RemediationRecipeScmConfigurationOutput) BuildFileLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.BuildFileLocation }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of External Source Code Management.
+func (o RemediationRecipeScmConfigurationOutput) ExternalScmType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.ExternalScmType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+func (o RemediationRecipeScmConfigurationOutput) IsAutomergeEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) bool { return v.IsAutomergeEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+func (o RemediationRecipeScmConfigurationOutput) OciCodeRepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.OciCodeRepositoryId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o RemediationRecipeScmConfigurationOutput) PatSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.PatSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o RemediationRecipeScmConfigurationOutput) RepositoryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.RepositoryUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of Source Code Management.
+func (o RemediationRecipeScmConfigurationOutput) ScmType() pulumi.StringOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) string { return v.ScmType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The username that will be used to authenticate with Jenkins.
+func (o RemediationRecipeScmConfigurationOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type RemediationRecipeScmConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeScmConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeScmConfigurationPtrOutput) ToRemediationRecipeScmConfigurationPtrOutput() RemediationRecipeScmConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeScmConfigurationPtrOutput) ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeScmConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeScmConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeScmConfiguration] {
+	return pulumix.Output[*RemediationRecipeScmConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o RemediationRecipeScmConfigurationPtrOutput) Elem() RemediationRecipeScmConfigurationOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) RemediationRecipeScmConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret RemediationRecipeScmConfiguration
+		return ret
+	}).(RemediationRecipeScmConfigurationOutput)
+}
+
+// (Updatable) The branch used by ADM to patch vulnerabilities.
+func (o RemediationRecipeScmConfigurationPtrOutput) Branch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Branch
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+func (o RemediationRecipeScmConfigurationPtrOutput) BuildFileLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BuildFileLocation
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of External Source Code Management.
+func (o RemediationRecipeScmConfigurationPtrOutput) ExternalScmType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExternalScmType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+func (o RemediationRecipeScmConfigurationPtrOutput) IsAutomergeEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsAutomergeEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+func (o RemediationRecipeScmConfigurationPtrOutput) OciCodeRepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OciCodeRepositoryId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o RemediationRecipeScmConfigurationPtrOutput) PatSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PatSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o RemediationRecipeScmConfigurationPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RepositoryUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of Source Code Management.
+func (o RemediationRecipeScmConfigurationPtrOutput) ScmType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ScmType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The username that will be used to authenticate with Jenkins.
+func (o RemediationRecipeScmConfigurationPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type RemediationRecipeVerifyConfiguration struct {
+	// (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+	AdditionalParameters map[string]interface{} `pulumi:"additionalParameters"`
+	// (Updatable) The type of Build Service.
+	BuildServiceType string `pulumi:"buildServiceType"`
+	// (Updatable) The URL that locates the Jenkins pipeline.
+	JenkinsUrl *string `pulumi:"jenkinsUrl"`
+	// (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+	JobName *string `pulumi:"jobName"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId *string `pulumi:"patSecretId"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+	PipelineId *string `pulumi:"pipelineId"`
+	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl *string `pulumi:"repositoryUrl"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+	TriggerSecretId *string `pulumi:"triggerSecretId"`
+	// (Updatable) The username that will be used to authenticate with Jenkins.
+	Username *string `pulumi:"username"`
+	// (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+	WorkflowName *string `pulumi:"workflowName"`
+}
+
+// RemediationRecipeVerifyConfigurationInput is an input type that accepts RemediationRecipeVerifyConfigurationArgs and RemediationRecipeVerifyConfigurationOutput values.
+// You can construct a concrete instance of `RemediationRecipeVerifyConfigurationInput` via:
+//
+//	RemediationRecipeVerifyConfigurationArgs{...}
+type RemediationRecipeVerifyConfigurationInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeVerifyConfigurationOutput() RemediationRecipeVerifyConfigurationOutput
+	ToRemediationRecipeVerifyConfigurationOutputWithContext(context.Context) RemediationRecipeVerifyConfigurationOutput
+}
+
+type RemediationRecipeVerifyConfigurationArgs struct {
+	// (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+	AdditionalParameters pulumi.MapInput `pulumi:"additionalParameters"`
+	// (Updatable) The type of Build Service.
+	BuildServiceType pulumi.StringInput `pulumi:"buildServiceType"`
+	// (Updatable) The URL that locates the Jenkins pipeline.
+	JenkinsUrl pulumi.StringPtrInput `pulumi:"jenkinsUrl"`
+	// (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+	JobName pulumi.StringPtrInput `pulumi:"jobName"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId pulumi.StringPtrInput `pulumi:"patSecretId"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+	PipelineId pulumi.StringPtrInput `pulumi:"pipelineId"`
+	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl pulumi.StringPtrInput `pulumi:"repositoryUrl"`
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+	TriggerSecretId pulumi.StringPtrInput `pulumi:"triggerSecretId"`
+	// (Updatable) The username that will be used to authenticate with Jenkins.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+	// (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+	WorkflowName pulumi.StringPtrInput `pulumi:"workflowName"`
+}
+
+func (RemediationRecipeVerifyConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (i RemediationRecipeVerifyConfigurationArgs) ToRemediationRecipeVerifyConfigurationOutput() RemediationRecipeVerifyConfigurationOutput {
+	return i.ToRemediationRecipeVerifyConfigurationOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeVerifyConfigurationArgs) ToRemediationRecipeVerifyConfigurationOutputWithContext(ctx context.Context) RemediationRecipeVerifyConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeVerifyConfigurationOutput)
+}
+
+func (i RemediationRecipeVerifyConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[RemediationRecipeVerifyConfiguration]{
+		OutputState: i.ToRemediationRecipeVerifyConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i RemediationRecipeVerifyConfigurationArgs) ToRemediationRecipeVerifyConfigurationPtrOutput() RemediationRecipeVerifyConfigurationPtrOutput {
+	return i.ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i RemediationRecipeVerifyConfigurationArgs) ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeVerifyConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeVerifyConfigurationOutput).ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx)
+}
+
+// RemediationRecipeVerifyConfigurationPtrInput is an input type that accepts RemediationRecipeVerifyConfigurationArgs, RemediationRecipeVerifyConfigurationPtr and RemediationRecipeVerifyConfigurationPtrOutput values.
+// You can construct a concrete instance of `RemediationRecipeVerifyConfigurationPtrInput` via:
+//
+//	        RemediationRecipeVerifyConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type RemediationRecipeVerifyConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToRemediationRecipeVerifyConfigurationPtrOutput() RemediationRecipeVerifyConfigurationPtrOutput
+	ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(context.Context) RemediationRecipeVerifyConfigurationPtrOutput
+}
+
+type remediationRecipeVerifyConfigurationPtrType RemediationRecipeVerifyConfigurationArgs
+
+func RemediationRecipeVerifyConfigurationPtr(v *RemediationRecipeVerifyConfigurationArgs) RemediationRecipeVerifyConfigurationPtrInput {
+	return (*remediationRecipeVerifyConfigurationPtrType)(v)
+}
+
+func (*remediationRecipeVerifyConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (i *remediationRecipeVerifyConfigurationPtrType) ToRemediationRecipeVerifyConfigurationPtrOutput() RemediationRecipeVerifyConfigurationPtrOutput {
+	return i.ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *remediationRecipeVerifyConfigurationPtrType) ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeVerifyConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeVerifyConfigurationPtrOutput)
+}
+
+func (i *remediationRecipeVerifyConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[*RemediationRecipeVerifyConfiguration]{
+		OutputState: i.ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type RemediationRecipeVerifyConfigurationOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeVerifyConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeVerifyConfigurationOutput) ToRemediationRecipeVerifyConfigurationOutput() RemediationRecipeVerifyConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeVerifyConfigurationOutput) ToRemediationRecipeVerifyConfigurationOutputWithContext(ctx context.Context) RemediationRecipeVerifyConfigurationOutput {
+	return o
+}
+
+func (o RemediationRecipeVerifyConfigurationOutput) ToRemediationRecipeVerifyConfigurationPtrOutput() RemediationRecipeVerifyConfigurationPtrOutput {
+	return o.ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o RemediationRecipeVerifyConfigurationOutput) ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeVerifyConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RemediationRecipeVerifyConfiguration) *RemediationRecipeVerifyConfiguration {
+		return &v
+	}).(RemediationRecipeVerifyConfigurationPtrOutput)
+}
+
+func (o RemediationRecipeVerifyConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[RemediationRecipeVerifyConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+func (o RemediationRecipeVerifyConfigurationOutput) AdditionalParameters() pulumi.MapOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) map[string]interface{} { return v.AdditionalParameters }).(pulumi.MapOutput)
+}
+
+// (Updatable) The type of Build Service.
+func (o RemediationRecipeVerifyConfigurationOutput) BuildServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) string { return v.BuildServiceType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The URL that locates the Jenkins pipeline.
+func (o RemediationRecipeVerifyConfigurationOutput) JenkinsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.JenkinsUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+func (o RemediationRecipeVerifyConfigurationOutput) JobName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.JobName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o RemediationRecipeVerifyConfigurationOutput) PatSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.PatSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+func (o RemediationRecipeVerifyConfigurationOutput) PipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.PipelineId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o RemediationRecipeVerifyConfigurationOutput) RepositoryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.RepositoryUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+func (o RemediationRecipeVerifyConfigurationOutput) TriggerSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.TriggerSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The username that will be used to authenticate with Jenkins.
+func (o RemediationRecipeVerifyConfigurationOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+func (o RemediationRecipeVerifyConfigurationOutput) WorkflowName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) *string { return v.WorkflowName }).(pulumi.StringPtrOutput)
+}
+
+type RemediationRecipeVerifyConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (RemediationRecipeVerifyConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (o RemediationRecipeVerifyConfigurationPtrOutput) ToRemediationRecipeVerifyConfigurationPtrOutput() RemediationRecipeVerifyConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeVerifyConfigurationPtrOutput) ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeVerifyConfigurationPtrOutput {
+	return o
+}
+
+func (o RemediationRecipeVerifyConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[*RemediationRecipeVerifyConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o RemediationRecipeVerifyConfigurationPtrOutput) Elem() RemediationRecipeVerifyConfigurationOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) RemediationRecipeVerifyConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret RemediationRecipeVerifyConfiguration
+		return ret
+	}).(RemediationRecipeVerifyConfigurationOutput)
+}
+
+// (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) AdditionalParameters() pulumi.MapOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalParameters
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) The type of Build Service.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) BuildServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.BuildServiceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The URL that locates the Jenkins pipeline.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) JenkinsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JenkinsUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) JobName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JobName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) PatSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PatSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) PipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PipelineId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o RemediationRecipeVerifyConfigurationPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RepositoryUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) TriggerSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The username that will be used to authenticate with Jenkins.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+func (o RemediationRecipeVerifyConfigurationPtrOutput) WorkflowName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WorkflowName
+	}).(pulumi.StringPtrOutput)
+}
+
+type RemediationRunStage struct {
+	// Information about the current step within the given stage.
+	Summary *string `pulumi:"summary"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished *string `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted *string `pulumi:"timeStarted"`
+	// The type of stage.
+	Type *string `pulumi:"type"`
+}
+
+// RemediationRunStageInput is an input type that accepts RemediationRunStageArgs and RemediationRunStageOutput values.
+// You can construct a concrete instance of `RemediationRunStageInput` via:
+//
+//	RemediationRunStageArgs{...}
+type RemediationRunStageInput interface {
+	pulumi.Input
+
+	ToRemediationRunStageOutput() RemediationRunStageOutput
+	ToRemediationRunStageOutputWithContext(context.Context) RemediationRunStageOutput
+}
+
+type RemediationRunStageArgs struct {
+	// Information about the current step within the given stage.
+	Summary pulumi.StringPtrInput `pulumi:"summary"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
+	// The type of stage.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (RemediationRunStageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRunStage)(nil)).Elem()
+}
+
+func (i RemediationRunStageArgs) ToRemediationRunStageOutput() RemediationRunStageOutput {
+	return i.ToRemediationRunStageOutputWithContext(context.Background())
+}
+
+func (i RemediationRunStageArgs) ToRemediationRunStageOutputWithContext(ctx context.Context) RemediationRunStageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunStageOutput)
+}
+
+func (i RemediationRunStageArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRunStage] {
+	return pulumix.Output[RemediationRunStage]{
+		OutputState: i.ToRemediationRunStageOutputWithContext(ctx).OutputState,
+	}
+}
+
+// RemediationRunStageArrayInput is an input type that accepts RemediationRunStageArray and RemediationRunStageArrayOutput values.
+// You can construct a concrete instance of `RemediationRunStageArrayInput` via:
+//
+//	RemediationRunStageArray{ RemediationRunStageArgs{...} }
+type RemediationRunStageArrayInput interface {
+	pulumi.Input
+
+	ToRemediationRunStageArrayOutput() RemediationRunStageArrayOutput
+	ToRemediationRunStageArrayOutputWithContext(context.Context) RemediationRunStageArrayOutput
+}
+
+type RemediationRunStageArray []RemediationRunStageInput
+
+func (RemediationRunStageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RemediationRunStage)(nil)).Elem()
+}
+
+func (i RemediationRunStageArray) ToRemediationRunStageArrayOutput() RemediationRunStageArrayOutput {
+	return i.ToRemediationRunStageArrayOutputWithContext(context.Background())
+}
+
+func (i RemediationRunStageArray) ToRemediationRunStageArrayOutputWithContext(ctx context.Context) RemediationRunStageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunStageArrayOutput)
+}
+
+func (i RemediationRunStageArray) ToOutput(ctx context.Context) pulumix.Output[[]RemediationRunStage] {
+	return pulumix.Output[[]RemediationRunStage]{
+		OutputState: i.ToRemediationRunStageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type RemediationRunStageOutput struct{ *pulumi.OutputState }
+
+func (RemediationRunStageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RemediationRunStage)(nil)).Elem()
+}
+
+func (o RemediationRunStageOutput) ToRemediationRunStageOutput() RemediationRunStageOutput {
+	return o
+}
+
+func (o RemediationRunStageOutput) ToRemediationRunStageOutputWithContext(ctx context.Context) RemediationRunStageOutput {
+	return o
+}
+
+func (o RemediationRunStageOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRunStage] {
+	return pulumix.Output[RemediationRunStage]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Information about the current step within the given stage.
+func (o RemediationRunStageOutput) Summary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRunStage) *string { return v.Summary }).(pulumi.StringPtrOutput)
+}
+
+// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o RemediationRunStageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRunStage) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o RemediationRunStageOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRunStage) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
+}
+
+// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o RemediationRunStageOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRunStage) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
+}
+
+// The type of stage.
+func (o RemediationRunStageOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RemediationRunStage) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type RemediationRunStageArrayOutput struct{ *pulumi.OutputState }
+
+func (RemediationRunStageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RemediationRunStage)(nil)).Elem()
+}
+
+func (o RemediationRunStageArrayOutput) ToRemediationRunStageArrayOutput() RemediationRunStageArrayOutput {
+	return o
+}
+
+func (o RemediationRunStageArrayOutput) ToRemediationRunStageArrayOutputWithContext(ctx context.Context) RemediationRunStageArrayOutput {
+	return o
+}
+
+func (o RemediationRunStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RemediationRunStage] {
+	return pulumix.Output[[]RemediationRunStage]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o RemediationRunStageArrayOutput) Index(i pulumi.IntInput) RemediationRunStageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RemediationRunStage {
+		return vs[0].([]RemediationRunStage)[vs[1].(int)]
+	}).(RemediationRunStageOutput)
+}
+
 type VulnerabilityAuditApplicationDependency struct {
-	// List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+	// List of application dependencies on which this application dependency depends, each identified by its nodeId.
 	ApplicationDependencyNodeIds []string `pulumi:"applicationDependencyNodeIds"`
 	// Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
 	Gav string `pulumi:"gav"`
-	// Unique identifier of an Application Dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
+	// Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
 	NodeId string `pulumi:"nodeId"`
 }
 
@@ -35,11 +1235,11 @@ type VulnerabilityAuditApplicationDependencyInput interface {
 }
 
 type VulnerabilityAuditApplicationDependencyArgs struct {
-	// List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+	// List of application dependencies on which this application dependency depends, each identified by its nodeId.
 	ApplicationDependencyNodeIds pulumi.StringArrayInput `pulumi:"applicationDependencyNodeIds"`
 	// Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
 	Gav pulumi.StringInput `pulumi:"gav"`
-	// Unique identifier of an Application Dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
+	// Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
 }
 
@@ -112,7 +1312,7 @@ func (o VulnerabilityAuditApplicationDependencyOutput) ToOutput(ctx context.Cont
 	}
 }
 
-// List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+// List of application dependencies on which this application dependency depends, each identified by its nodeId.
 func (o VulnerabilityAuditApplicationDependencyOutput) ApplicationDependencyNodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v VulnerabilityAuditApplicationDependency) []string { return v.ApplicationDependencyNodeIds }).(pulumi.StringArrayOutput)
 }
@@ -122,7 +1322,7 @@ func (o VulnerabilityAuditApplicationDependencyOutput) Gav() pulumi.StringOutput
 	return o.ApplyT(func(v VulnerabilityAuditApplicationDependency) string { return v.Gav }).(pulumi.StringOutput)
 }
 
-// Unique identifier of an Application Dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
+// Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
 func (o VulnerabilityAuditApplicationDependencyOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v VulnerabilityAuditApplicationDependency) string { return v.NodeId }).(pulumi.StringOutput)
 }
@@ -154,11 +1354,11 @@ func (o VulnerabilityAuditApplicationDependencyArrayOutput) Index(i pulumi.IntIn
 }
 
 type VulnerabilityAuditConfiguration struct {
-	// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+	// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions []string `pulumi:"exclusions"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV2score *float64 `pulumi:"maxPermissibleCvssV2score"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV3score *float64 `pulumi:"maxPermissibleCvssV3score"`
 }
 
@@ -174,11 +1374,11 @@ type VulnerabilityAuditConfigurationInput interface {
 }
 
 type VulnerabilityAuditConfigurationArgs struct {
-	// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+	// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV2score pulumi.Float64PtrInput `pulumi:"maxPermissibleCvssV2score"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV3score pulumi.Float64PtrInput `pulumi:"maxPermissibleCvssV3score"`
 }
 
@@ -277,17 +1477,17 @@ func (o VulnerabilityAuditConfigurationOutput) ToOutput(ctx context.Context) pul
 	}
 }
 
-// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 func (o VulnerabilityAuditConfigurationOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v VulnerabilityAuditConfiguration) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o VulnerabilityAuditConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditConfiguration) *float64 { return v.MaxPermissibleCvssV2score }).(pulumi.Float64PtrOutput)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o VulnerabilityAuditConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditConfiguration) *float64 { return v.MaxPermissibleCvssV3score }).(pulumi.Float64PtrOutput)
 }
@@ -322,7 +1522,7 @@ func (o VulnerabilityAuditConfigurationPtrOutput) Elem() VulnerabilityAuditConfi
 	}).(VulnerabilityAuditConfigurationOutput)
 }
 
-// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 func (o VulnerabilityAuditConfigurationPtrOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VulnerabilityAuditConfiguration) []string {
 		if v == nil {
@@ -332,7 +1532,7 @@ func (o VulnerabilityAuditConfigurationPtrOutput) Exclusions() pulumi.StringArra
 	}).(pulumi.StringArrayOutput)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o VulnerabilityAuditConfigurationPtrOutput) MaxPermissibleCvssV2score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VulnerabilityAuditConfiguration) *float64 {
 		if v == nil {
@@ -342,7 +1542,7 @@ func (o VulnerabilityAuditConfigurationPtrOutput) MaxPermissibleCvssV2score() pu
 	}).(pulumi.Float64PtrOutput)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o VulnerabilityAuditConfigurationPtrOutput) MaxPermissibleCvssV3score() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *VulnerabilityAuditConfiguration) *float64 {
 		if v == nil {
@@ -355,9 +1555,9 @@ func (o VulnerabilityAuditConfigurationPtrOutput) MaxPermissibleCvssV3score() pu
 type VulnerabilityAuditSource struct {
 	// Description of the external resource source.
 	Description *string `pulumi:"description"`
-	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId *string `pulumi:"ociResourceId"`
-	// Source type of the Vulnerability Audit.
+	// Source type of the vulnerability audit.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -378,9 +1578,9 @@ type VulnerabilityAuditSourceInput interface {
 type VulnerabilityAuditSourceArgs struct {
 	// Description of the external resource source.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId pulumi.StringPtrInput `pulumi:"ociResourceId"`
-	// Source type of the Vulnerability Audit.
+	// Source type of the vulnerability audit.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -487,12 +1687,12 @@ func (o VulnerabilityAuditSourceOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 func (o VulnerabilityAuditSourceOutput) OciResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditSource) *string { return v.OciResourceId }).(pulumi.StringPtrOutput)
 }
 
-// Source type of the Vulnerability Audit.
+// Source type of the vulnerability audit.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -540,7 +1740,7 @@ func (o VulnerabilityAuditSourcePtrOutput) Description() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 func (o VulnerabilityAuditSourcePtrOutput) OciResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VulnerabilityAuditSource) *string {
 		if v == nil {
@@ -550,7 +1750,7 @@ func (o VulnerabilityAuditSourcePtrOutput) OciResourceId() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// Source type of the Vulnerability Audit.
+// Source type of the vulnerability audit.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -962,7 +2162,7 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) Index(i pulumi.IntI
 }
 
 type GetKnowledgebasesKnowledgeBaseCollectionItem struct {
-	// A filter to return only resources that belong to the specified compartment identifier.
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -970,15 +2170,15 @@ type GetKnowledgebasesKnowledgeBaseCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
 	// A filter to return only Knowledge Bases that match the specified lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -994,7 +2194,7 @@ type GetKnowledgebasesKnowledgeBaseCollectionItemInput interface {
 }
 
 type GetKnowledgebasesKnowledgeBaseCollectionItemArgs struct {
-	// A filter to return only resources that belong to the specified compartment identifier.
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -1002,15 +2202,15 @@ type GetKnowledgebasesKnowledgeBaseCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only Knowledge Bases that match the specified lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -1083,7 +2283,7 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ToOutput(ctx context
 	}
 }
 
-// A filter to return only resources that belong to the specified compartment identifier.
+// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -1103,7 +2303,7 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) FreeformTags() pulum
 	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A filter to return only resources that match the specified identifier.
+// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -1118,12 +2318,12 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) SystemTags() pulumi.
 	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -1152,6 +2352,4140 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKnowledgebasesKnowledgeBaseCollectionItem {
 		return vs[0].([]GetKnowledgebasesKnowledgeBaseCollectionItem)[vs[1].(int)]
 	}).(GetKnowledgebasesKnowledgeBaseCollectionItemOutput)
+}
+
+type GetRemediationRecipeDetectConfiguration struct {
+	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+	Exclusions []string `pulumi:"exclusions"`
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	MaxPermissibleCvssV2score float64 `pulumi:"maxPermissibleCvssV2score"`
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	MaxPermissibleCvssV3score float64 `pulumi:"maxPermissibleCvssV3score"`
+	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+	UpgradePolicy string `pulumi:"upgradePolicy"`
+}
+
+// GetRemediationRecipeDetectConfigurationInput is an input type that accepts GetRemediationRecipeDetectConfigurationArgs and GetRemediationRecipeDetectConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeDetectConfigurationInput` via:
+//
+//	GetRemediationRecipeDetectConfigurationArgs{...}
+type GetRemediationRecipeDetectConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeDetectConfigurationOutput() GetRemediationRecipeDetectConfigurationOutput
+	ToGetRemediationRecipeDetectConfigurationOutputWithContext(context.Context) GetRemediationRecipeDetectConfigurationOutput
+}
+
+type GetRemediationRecipeDetectConfigurationArgs struct {
+	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	MaxPermissibleCvssV2score pulumi.Float64Input `pulumi:"maxPermissibleCvssV2score"`
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	MaxPermissibleCvssV3score pulumi.Float64Input `pulumi:"maxPermissibleCvssV3score"`
+	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+	UpgradePolicy pulumi.StringInput `pulumi:"upgradePolicy"`
+}
+
+func (GetRemediationRecipeDetectConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeDetectConfigurationArgs) ToGetRemediationRecipeDetectConfigurationOutput() GetRemediationRecipeDetectConfigurationOutput {
+	return i.ToGetRemediationRecipeDetectConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeDetectConfigurationArgs) ToGetRemediationRecipeDetectConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeDetectConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeDetectConfigurationOutput)
+}
+
+func (i GetRemediationRecipeDetectConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeDetectConfiguration] {
+	return pulumix.Output[GetRemediationRecipeDetectConfiguration]{
+		OutputState: i.ToGetRemediationRecipeDetectConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipeDetectConfigurationArrayInput is an input type that accepts GetRemediationRecipeDetectConfigurationArray and GetRemediationRecipeDetectConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeDetectConfigurationArrayInput` via:
+//
+//	GetRemediationRecipeDetectConfigurationArray{ GetRemediationRecipeDetectConfigurationArgs{...} }
+type GetRemediationRecipeDetectConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeDetectConfigurationArrayOutput() GetRemediationRecipeDetectConfigurationArrayOutput
+	ToGetRemediationRecipeDetectConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipeDetectConfigurationArrayOutput
+}
+
+type GetRemediationRecipeDetectConfigurationArray []GetRemediationRecipeDetectConfigurationInput
+
+func (GetRemediationRecipeDetectConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeDetectConfigurationArray) ToGetRemediationRecipeDetectConfigurationArrayOutput() GetRemediationRecipeDetectConfigurationArrayOutput {
+	return i.ToGetRemediationRecipeDetectConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeDetectConfigurationArray) ToGetRemediationRecipeDetectConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeDetectConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeDetectConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipeDetectConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeDetectConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeDetectConfiguration]{
+		OutputState: i.ToGetRemediationRecipeDetectConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipeDetectConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeDetectConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeDetectConfigurationOutput) ToGetRemediationRecipeDetectConfigurationOutput() GetRemediationRecipeDetectConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeDetectConfigurationOutput) ToGetRemediationRecipeDetectConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeDetectConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeDetectConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeDetectConfiguration] {
+	return pulumix.Output[GetRemediationRecipeDetectConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+func (o GetRemediationRecipeDetectConfigurationOutput) Exclusions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
+}
+
+// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+func (o GetRemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) float64 { return v.MaxPermissibleCvssV2score }).(pulumi.Float64Output)
+}
+
+// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+func (o GetRemediationRecipeDetectConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) float64 { return v.MaxPermissibleCvssV3score }).(pulumi.Float64Output)
+}
+
+// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+func (o GetRemediationRecipeDetectConfigurationOutput) UpgradePolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeDetectConfiguration) string { return v.UpgradePolicy }).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipeDetectConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeDetectConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeDetectConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeDetectConfigurationArrayOutput) ToGetRemediationRecipeDetectConfigurationArrayOutput() GetRemediationRecipeDetectConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeDetectConfigurationArrayOutput) ToGetRemediationRecipeDetectConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeDetectConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeDetectConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeDetectConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeDetectConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipeDetectConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeDetectConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipeDetectConfiguration {
+		return vs[0].([]GetRemediationRecipeDetectConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipeDetectConfigurationOutput)
+}
+
+type GetRemediationRecipeNetworkConfiguration struct {
+	// The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetRemediationRecipeNetworkConfigurationInput is an input type that accepts GetRemediationRecipeNetworkConfigurationArgs and GetRemediationRecipeNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeNetworkConfigurationInput` via:
+//
+//	GetRemediationRecipeNetworkConfigurationArgs{...}
+type GetRemediationRecipeNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeNetworkConfigurationOutput() GetRemediationRecipeNetworkConfigurationOutput
+	ToGetRemediationRecipeNetworkConfigurationOutputWithContext(context.Context) GetRemediationRecipeNetworkConfigurationOutput
+}
+
+type GetRemediationRecipeNetworkConfigurationArgs struct {
+	// The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetRemediationRecipeNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeNetworkConfigurationArgs) ToGetRemediationRecipeNetworkConfigurationOutput() GetRemediationRecipeNetworkConfigurationOutput {
+	return i.ToGetRemediationRecipeNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeNetworkConfigurationArgs) ToGetRemediationRecipeNetworkConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeNetworkConfigurationOutput)
+}
+
+func (i GetRemediationRecipeNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[GetRemediationRecipeNetworkConfiguration]{
+		OutputState: i.ToGetRemediationRecipeNetworkConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipeNetworkConfigurationArrayInput is an input type that accepts GetRemediationRecipeNetworkConfigurationArray and GetRemediationRecipeNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeNetworkConfigurationArrayInput` via:
+//
+//	GetRemediationRecipeNetworkConfigurationArray{ GetRemediationRecipeNetworkConfigurationArgs{...} }
+type GetRemediationRecipeNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeNetworkConfigurationArrayOutput() GetRemediationRecipeNetworkConfigurationArrayOutput
+	ToGetRemediationRecipeNetworkConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipeNetworkConfigurationArrayOutput
+}
+
+type GetRemediationRecipeNetworkConfigurationArray []GetRemediationRecipeNetworkConfigurationInput
+
+func (GetRemediationRecipeNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeNetworkConfigurationArray) ToGetRemediationRecipeNetworkConfigurationArrayOutput() GetRemediationRecipeNetworkConfigurationArrayOutput {
+	return i.ToGetRemediationRecipeNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeNetworkConfigurationArray) ToGetRemediationRecipeNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeNetworkConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipeNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeNetworkConfiguration]{
+		OutputState: i.ToGetRemediationRecipeNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipeNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeNetworkConfigurationOutput) ToGetRemediationRecipeNetworkConfigurationOutput() GetRemediationRecipeNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeNetworkConfigurationOutput) ToGetRemediationRecipeNetworkConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[GetRemediationRecipeNetworkConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+func (o GetRemediationRecipeNetworkConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipeNetworkConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+func (o GetRemediationRecipeNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipeNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeNetworkConfigurationArrayOutput) ToGetRemediationRecipeNetworkConfigurationArrayOutput() GetRemediationRecipeNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeNetworkConfigurationArrayOutput) ToGetRemediationRecipeNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeNetworkConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeNetworkConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipeNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipeNetworkConfiguration {
+		return vs[0].([]GetRemediationRecipeNetworkConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipeNetworkConfigurationOutput)
+}
+
+type GetRemediationRecipeScmConfiguration struct {
+	// The branch used by ADM to patch vulnerabilities.
+	Branch string `pulumi:"branch"`
+	// The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+	BuildFileLocation string `pulumi:"buildFileLocation"`
+	// The type of External Source Code Management.
+	ExternalScmType string `pulumi:"externalScmType"`
+	// If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+	IsAutomergeEnabled bool `pulumi:"isAutomergeEnabled"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+	OciCodeRepositoryId string `pulumi:"ociCodeRepositoryId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId string `pulumi:"patSecretId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl string `pulumi:"repositoryUrl"`
+	// The type of Source Code Management.
+	ScmType string `pulumi:"scmType"`
+	// The username that will be used to authenticate with Jenkins.
+	Username string `pulumi:"username"`
+}
+
+// GetRemediationRecipeScmConfigurationInput is an input type that accepts GetRemediationRecipeScmConfigurationArgs and GetRemediationRecipeScmConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeScmConfigurationInput` via:
+//
+//	GetRemediationRecipeScmConfigurationArgs{...}
+type GetRemediationRecipeScmConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeScmConfigurationOutput() GetRemediationRecipeScmConfigurationOutput
+	ToGetRemediationRecipeScmConfigurationOutputWithContext(context.Context) GetRemediationRecipeScmConfigurationOutput
+}
+
+type GetRemediationRecipeScmConfigurationArgs struct {
+	// The branch used by ADM to patch vulnerabilities.
+	Branch pulumi.StringInput `pulumi:"branch"`
+	// The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+	BuildFileLocation pulumi.StringInput `pulumi:"buildFileLocation"`
+	// The type of External Source Code Management.
+	ExternalScmType pulumi.StringInput `pulumi:"externalScmType"`
+	// If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+	IsAutomergeEnabled pulumi.BoolInput `pulumi:"isAutomergeEnabled"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+	OciCodeRepositoryId pulumi.StringInput `pulumi:"ociCodeRepositoryId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
+	// The type of Source Code Management.
+	ScmType pulumi.StringInput `pulumi:"scmType"`
+	// The username that will be used to authenticate with Jenkins.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetRemediationRecipeScmConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeScmConfigurationArgs) ToGetRemediationRecipeScmConfigurationOutput() GetRemediationRecipeScmConfigurationOutput {
+	return i.ToGetRemediationRecipeScmConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeScmConfigurationArgs) ToGetRemediationRecipeScmConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeScmConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeScmConfigurationOutput)
+}
+
+func (i GetRemediationRecipeScmConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeScmConfiguration] {
+	return pulumix.Output[GetRemediationRecipeScmConfiguration]{
+		OutputState: i.ToGetRemediationRecipeScmConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipeScmConfigurationArrayInput is an input type that accepts GetRemediationRecipeScmConfigurationArray and GetRemediationRecipeScmConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeScmConfigurationArrayInput` via:
+//
+//	GetRemediationRecipeScmConfigurationArray{ GetRemediationRecipeScmConfigurationArgs{...} }
+type GetRemediationRecipeScmConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeScmConfigurationArrayOutput() GetRemediationRecipeScmConfigurationArrayOutput
+	ToGetRemediationRecipeScmConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipeScmConfigurationArrayOutput
+}
+
+type GetRemediationRecipeScmConfigurationArray []GetRemediationRecipeScmConfigurationInput
+
+func (GetRemediationRecipeScmConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeScmConfigurationArray) ToGetRemediationRecipeScmConfigurationArrayOutput() GetRemediationRecipeScmConfigurationArrayOutput {
+	return i.ToGetRemediationRecipeScmConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeScmConfigurationArray) ToGetRemediationRecipeScmConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeScmConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeScmConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipeScmConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeScmConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeScmConfiguration]{
+		OutputState: i.ToGetRemediationRecipeScmConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipeScmConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeScmConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeScmConfigurationOutput) ToGetRemediationRecipeScmConfigurationOutput() GetRemediationRecipeScmConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeScmConfigurationOutput) ToGetRemediationRecipeScmConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeScmConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeScmConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeScmConfiguration] {
+	return pulumix.Output[GetRemediationRecipeScmConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The branch used by ADM to patch vulnerabilities.
+func (o GetRemediationRecipeScmConfigurationOutput) Branch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.Branch }).(pulumi.StringOutput)
+}
+
+// The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+func (o GetRemediationRecipeScmConfigurationOutput) BuildFileLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.BuildFileLocation }).(pulumi.StringOutput)
+}
+
+// The type of External Source Code Management.
+func (o GetRemediationRecipeScmConfigurationOutput) ExternalScmType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.ExternalScmType }).(pulumi.StringOutput)
+}
+
+// If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+func (o GetRemediationRecipeScmConfigurationOutput) IsAutomergeEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) bool { return v.IsAutomergeEnabled }).(pulumi.BoolOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+func (o GetRemediationRecipeScmConfigurationOutput) OciCodeRepositoryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.OciCodeRepositoryId }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o GetRemediationRecipeScmConfigurationOutput) PatSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.PatSecretId }).(pulumi.StringOutput)
+}
+
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o GetRemediationRecipeScmConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.RepositoryUrl }).(pulumi.StringOutput)
+}
+
+// The type of Source Code Management.
+func (o GetRemediationRecipeScmConfigurationOutput) ScmType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.ScmType }).(pulumi.StringOutput)
+}
+
+// The username that will be used to authenticate with Jenkins.
+func (o GetRemediationRecipeScmConfigurationOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeScmConfiguration) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipeScmConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeScmConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeScmConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeScmConfigurationArrayOutput) ToGetRemediationRecipeScmConfigurationArrayOutput() GetRemediationRecipeScmConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeScmConfigurationArrayOutput) ToGetRemediationRecipeScmConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeScmConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeScmConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeScmConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeScmConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipeScmConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeScmConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipeScmConfiguration {
+		return vs[0].([]GetRemediationRecipeScmConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipeScmConfigurationOutput)
+}
+
+type GetRemediationRecipeVerifyConfiguration struct {
+	// Additional key-value pairs passed as parameters to the build service when running an experiment.
+	AdditionalParameters map[string]interface{} `pulumi:"additionalParameters"`
+	// The type of Build Service.
+	BuildServiceType string `pulumi:"buildServiceType"`
+	// The URL that locates the Jenkins pipeline.
+	JenkinsUrl string `pulumi:"jenkinsUrl"`
+	// The name of the Jenkins pipeline job that identifies the build pipeline.
+	JobName string `pulumi:"jobName"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId string `pulumi:"patSecretId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+	PipelineId string `pulumi:"pipelineId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl string `pulumi:"repositoryUrl"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+	TriggerSecretId string `pulumi:"triggerSecretId"`
+	// The username that will be used to authenticate with Jenkins.
+	Username string `pulumi:"username"`
+	// The name of the GitHub Actions workflow that defines the build pipeline.
+	WorkflowName string `pulumi:"workflowName"`
+}
+
+// GetRemediationRecipeVerifyConfigurationInput is an input type that accepts GetRemediationRecipeVerifyConfigurationArgs and GetRemediationRecipeVerifyConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeVerifyConfigurationInput` via:
+//
+//	GetRemediationRecipeVerifyConfigurationArgs{...}
+type GetRemediationRecipeVerifyConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeVerifyConfigurationOutput() GetRemediationRecipeVerifyConfigurationOutput
+	ToGetRemediationRecipeVerifyConfigurationOutputWithContext(context.Context) GetRemediationRecipeVerifyConfigurationOutput
+}
+
+type GetRemediationRecipeVerifyConfigurationArgs struct {
+	// Additional key-value pairs passed as parameters to the build service when running an experiment.
+	AdditionalParameters pulumi.MapInput `pulumi:"additionalParameters"`
+	// The type of Build Service.
+	BuildServiceType pulumi.StringInput `pulumi:"buildServiceType"`
+	// The URL that locates the Jenkins pipeline.
+	JenkinsUrl pulumi.StringInput `pulumi:"jenkinsUrl"`
+	// The name of the Jenkins pipeline job that identifies the build pipeline.
+	JobName pulumi.StringInput `pulumi:"jobName"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+	TriggerSecretId pulumi.StringInput `pulumi:"triggerSecretId"`
+	// The username that will be used to authenticate with Jenkins.
+	Username pulumi.StringInput `pulumi:"username"`
+	// The name of the GitHub Actions workflow that defines the build pipeline.
+	WorkflowName pulumi.StringInput `pulumi:"workflowName"`
+}
+
+func (GetRemediationRecipeVerifyConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeVerifyConfigurationArgs) ToGetRemediationRecipeVerifyConfigurationOutput() GetRemediationRecipeVerifyConfigurationOutput {
+	return i.ToGetRemediationRecipeVerifyConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeVerifyConfigurationArgs) ToGetRemediationRecipeVerifyConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeVerifyConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeVerifyConfigurationOutput)
+}
+
+func (i GetRemediationRecipeVerifyConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[GetRemediationRecipeVerifyConfiguration]{
+		OutputState: i.ToGetRemediationRecipeVerifyConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipeVerifyConfigurationArrayInput is an input type that accepts GetRemediationRecipeVerifyConfigurationArray and GetRemediationRecipeVerifyConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipeVerifyConfigurationArrayInput` via:
+//
+//	GetRemediationRecipeVerifyConfigurationArray{ GetRemediationRecipeVerifyConfigurationArgs{...} }
+type GetRemediationRecipeVerifyConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipeVerifyConfigurationArrayOutput() GetRemediationRecipeVerifyConfigurationArrayOutput
+	ToGetRemediationRecipeVerifyConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipeVerifyConfigurationArrayOutput
+}
+
+type GetRemediationRecipeVerifyConfigurationArray []GetRemediationRecipeVerifyConfigurationInput
+
+func (GetRemediationRecipeVerifyConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipeVerifyConfigurationArray) ToGetRemediationRecipeVerifyConfigurationArrayOutput() GetRemediationRecipeVerifyConfigurationArrayOutput {
+	return i.ToGetRemediationRecipeVerifyConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipeVerifyConfigurationArray) ToGetRemediationRecipeVerifyConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeVerifyConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeVerifyConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipeVerifyConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeVerifyConfiguration]{
+		OutputState: i.ToGetRemediationRecipeVerifyConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipeVerifyConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeVerifyConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeVerifyConfigurationOutput) ToGetRemediationRecipeVerifyConfigurationOutput() GetRemediationRecipeVerifyConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeVerifyConfigurationOutput) ToGetRemediationRecipeVerifyConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeVerifyConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipeVerifyConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[GetRemediationRecipeVerifyConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Additional key-value pairs passed as parameters to the build service when running an experiment.
+func (o GetRemediationRecipeVerifyConfigurationOutput) AdditionalParameters() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) map[string]interface{} { return v.AdditionalParameters }).(pulumi.MapOutput)
+}
+
+// The type of Build Service.
+func (o GetRemediationRecipeVerifyConfigurationOutput) BuildServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.BuildServiceType }).(pulumi.StringOutput)
+}
+
+// The URL that locates the Jenkins pipeline.
+func (o GetRemediationRecipeVerifyConfigurationOutput) JenkinsUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.JenkinsUrl }).(pulumi.StringOutput)
+}
+
+// The name of the Jenkins pipeline job that identifies the build pipeline.
+func (o GetRemediationRecipeVerifyConfigurationOutput) JobName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.JobName }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o GetRemediationRecipeVerifyConfigurationOutput) PatSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.PatSecretId }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+func (o GetRemediationRecipeVerifyConfigurationOutput) PipelineId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.PipelineId }).(pulumi.StringOutput)
+}
+
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o GetRemediationRecipeVerifyConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.RepositoryUrl }).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+func (o GetRemediationRecipeVerifyConfigurationOutput) TriggerSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.TriggerSecretId }).(pulumi.StringOutput)
+}
+
+// The username that will be used to authenticate with Jenkins.
+func (o GetRemediationRecipeVerifyConfigurationOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.Username }).(pulumi.StringOutput)
+}
+
+// The name of the GitHub Actions workflow that defines the build pipeline.
+func (o GetRemediationRecipeVerifyConfigurationOutput) WorkflowName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) string { return v.WorkflowName }).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipeVerifyConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipeVerifyConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipeVerifyConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipeVerifyConfigurationArrayOutput) ToGetRemediationRecipeVerifyConfigurationArrayOutput() GetRemediationRecipeVerifyConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeVerifyConfigurationArrayOutput) ToGetRemediationRecipeVerifyConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeVerifyConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipeVerifyConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeVerifyConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipeVerifyConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipeVerifyConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeVerifyConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipeVerifyConfiguration {
+		return vs[0].([]GetRemediationRecipeVerifyConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipeVerifyConfigurationOutput)
+}
+
+type GetRemediationRecipesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRemediationRecipesFilterInput is an input type that accepts GetRemediationRecipesFilterArgs and GetRemediationRecipesFilterOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesFilterInput` via:
+//
+//	GetRemediationRecipesFilterArgs{...}
+type GetRemediationRecipesFilterInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesFilterOutput() GetRemediationRecipesFilterOutput
+	ToGetRemediationRecipesFilterOutputWithContext(context.Context) GetRemediationRecipesFilterOutput
+}
+
+type GetRemediationRecipesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRemediationRecipesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesFilterArgs) ToGetRemediationRecipesFilterOutput() GetRemediationRecipesFilterOutput {
+	return i.ToGetRemediationRecipesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesFilterArgs) ToGetRemediationRecipesFilterOutputWithContext(ctx context.Context) GetRemediationRecipesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesFilterOutput)
+}
+
+func (i GetRemediationRecipesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesFilter] {
+	return pulumix.Output[GetRemediationRecipesFilter]{
+		OutputState: i.ToGetRemediationRecipesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipesFilterArrayInput is an input type that accepts GetRemediationRecipesFilterArray and GetRemediationRecipesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesFilterArrayInput` via:
+//
+//	GetRemediationRecipesFilterArray{ GetRemediationRecipesFilterArgs{...} }
+type GetRemediationRecipesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesFilterArrayOutput() GetRemediationRecipesFilterArrayOutput
+	ToGetRemediationRecipesFilterArrayOutputWithContext(context.Context) GetRemediationRecipesFilterArrayOutput
+}
+
+type GetRemediationRecipesFilterArray []GetRemediationRecipesFilterInput
+
+func (GetRemediationRecipesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesFilterArray) ToGetRemediationRecipesFilterArrayOutput() GetRemediationRecipesFilterArrayOutput {
+	return i.ToGetRemediationRecipesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesFilterArray) ToGetRemediationRecipesFilterArrayOutputWithContext(ctx context.Context) GetRemediationRecipesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesFilterArrayOutput)
+}
+
+func (i GetRemediationRecipesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesFilter] {
+	return pulumix.Output[[]GetRemediationRecipesFilter]{
+		OutputState: i.ToGetRemediationRecipesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesFilterOutput) ToGetRemediationRecipesFilterOutput() GetRemediationRecipesFilterOutput {
+	return o
+}
+
+func (o GetRemediationRecipesFilterOutput) ToGetRemediationRecipesFilterOutputWithContext(ctx context.Context) GetRemediationRecipesFilterOutput {
+	return o
+}
+
+func (o GetRemediationRecipesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesFilter] {
+	return pulumix.Output[GetRemediationRecipesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRemediationRecipesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRemediationRecipesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRemediationRecipesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRemediationRecipesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesFilterArrayOutput) ToGetRemediationRecipesFilterArrayOutput() GetRemediationRecipesFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesFilterArrayOutput) ToGetRemediationRecipesFilterArrayOutputWithContext(ctx context.Context) GetRemediationRecipesFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesFilter] {
+	return pulumix.Output[[]GetRemediationRecipesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesFilter {
+		return vs[0].([]GetRemediationRecipesFilter)[vs[1].(int)]
+	}).(GetRemediationRecipesFilterOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollection struct {
+	Items []GetRemediationRecipesRemediationRecipeCollectionItem `pulumi:"items"`
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionArgs and GetRemediationRecipesRemediationRecipeCollectionOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionArgs{...}
+type GetRemediationRecipesRemediationRecipeCollectionInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionOutput() GetRemediationRecipesRemediationRecipeCollectionOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionArgs struct {
+	Items GetRemediationRecipesRemediationRecipeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRemediationRecipesRemediationRecipeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionArgs) ToGetRemediationRecipesRemediationRecipeCollectionOutput() GetRemediationRecipesRemediationRecipeCollectionOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionArgs) ToGetRemediationRecipesRemediationRecipeCollectionOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollection] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollection]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionArray and GetRemediationRecipesRemediationRecipeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionArrayInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionArray{ GetRemediationRecipesRemediationRecipeCollectionArgs{...} }
+type GetRemediationRecipesRemediationRecipeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionArrayOutput() GetRemediationRecipesRemediationRecipeCollectionArrayOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionArrayOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionArrayOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionArray []GetRemediationRecipesRemediationRecipeCollectionInput
+
+func (GetRemediationRecipesRemediationRecipeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionArray) ToGetRemediationRecipesRemediationRecipeCollectionArrayOutput() GetRemediationRecipesRemediationRecipeCollectionArrayOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionArray) ToGetRemediationRecipesRemediationRecipeCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionArrayOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionOutput) ToGetRemediationRecipesRemediationRecipeCollectionOutput() GetRemediationRecipesRemediationRecipeCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionOutput) ToGetRemediationRecipesRemediationRecipeCollectionOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollection] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionOutput) Items() GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollection) []GetRemediationRecipesRemediationRecipeCollectionItem {
+		return v.Items
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionArrayOutput() GetRemediationRecipesRemediationRecipeCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollection {
+		return vs[0].([]GetRemediationRecipesRemediationRecipeCollection)[vs[1].(int)]
+	}).(GetRemediationRecipesRemediationRecipeCollectionOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItem struct {
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A configuration to define the constraints when detecting vulnerable dependencies.
+	DetectConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration `pulumi:"detectConfigurations"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+	Id string `pulumi:"id"`
+	// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
+	IsRunTriggeredOnKbChange bool `pulumi:"isRunTriggeredOnKbChange"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
+	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+	// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	NetworkConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration `pulumi:"networkConfigurations"`
+	// A configuration for the Source Code Management tool/platform used by a remediation recipe.
+	ScmConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration `pulumi:"scmConfigurations"`
+	// A filter to return only Remediation Recipes that match the specified lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
+	VerifyConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration `pulumi:"verifyConfigurations"`
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemArgs and GetRemediationRecipesRemediationRecipeCollectionItemOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemArgs{...}
+type GetRemediationRecipesRemediationRecipeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemOutput() GetRemediationRecipesRemediationRecipeCollectionItemOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemArgs struct {
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A configuration to define the constraints when detecting vulnerable dependencies.
+	DetectConfigurations GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput `pulumi:"detectConfigurations"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
+	IsRunTriggeredOnKbChange pulumi.BoolInput `pulumi:"isRunTriggeredOnKbChange"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
+	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
+	// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+	NetworkConfigurations GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	// A configuration for the Source Code Management tool/platform used by a remediation recipe.
+	ScmConfigurations GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput `pulumi:"scmConfigurations"`
+	// A filter to return only Remediation Recipes that match the specified lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
+	VerifyConfigurations GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayInput `pulumi:"verifyConfigurations"`
+}
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemOutput() GetRemediationRecipesRemediationRecipeCollectionItemOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemArray and GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemArrayInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemArray{ GetRemediationRecipesRemediationRecipeCollectionItemArgs{...} }
+type GetRemediationRecipesRemediationRecipeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemArray []GetRemediationRecipesRemediationRecipeCollectionItemInput
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemArray) ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemArray) ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemOutput() GetRemediationRecipesRemediationRecipeCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A configuration to define the constraints when detecting vulnerable dependencies.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DetectConfigurations() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) []GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration {
+		return v.DetectConfigurations
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) IsRunTriggeredOnKbChange() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) bool { return v.IsRunTriggeredOnKbChange }).(pulumi.BoolOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) KnowledgeBaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
+}
+
+// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) NetworkConfigurations() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) []GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput)
+}
+
+// A configuration for the Source Code Management tool/platform used by a remediation recipe.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) ScmConfigurations() GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) []GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration {
+		return v.ScmConfigurations
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput)
+}
+
+// A filter to return only Remediation Recipes that match the specified lifecycleState.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) VerifyConfigurations() GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) []GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration {
+		return v.VerifyConfigurations
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollectionItem {
+		return vs[0].([]GetRemediationRecipesRemediationRecipeCollectionItem)[vs[1].(int)]
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration struct {
+	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+	Exclusions []string `pulumi:"exclusions"`
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	MaxPermissibleCvssV2score float64 `pulumi:"maxPermissibleCvssV2score"`
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	MaxPermissibleCvssV3score float64 `pulumi:"maxPermissibleCvssV3score"`
+	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+	UpgradePolicy string `pulumi:"upgradePolicy"`
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs and GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs{...}
+type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs struct {
+	// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
+	// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+	MaxPermissibleCvssV2score pulumi.Float64Input `pulumi:"maxPermissibleCvssV2score"`
+	// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+	MaxPermissibleCvssV3score pulumi.Float64Input `pulumi:"maxPermissibleCvssV3score"`
+	// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+	UpgradePolicy pulumi.StringInput `pulumi:"upgradePolicy"`
+}
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray{ GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs{...} }
+type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray []GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationInput
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) Exclusions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration) []string {
+		return v.Exclusions
+	}).(pulumi.StringArrayOutput)
+}
+
+// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration) float64 {
+		return v.MaxPermissibleCvssV2score
+	}).(pulumi.Float64Output)
+}
+
+// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64Output {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration) float64 {
+		return v.MaxPermissibleCvssV3score
+	}).(pulumi.Float64Output)
+}
+
+// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) UpgradePolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration) string {
+		return v.UpgradePolicy
+	}).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration {
+		return vs[0].([]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration struct {
+	// The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs and GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs{...}
+type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs struct {
+	// The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray{ GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs{...} }
+type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray []GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationInput
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration {
+		return vs[0].([]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration struct {
+	// The branch used by ADM to patch vulnerabilities.
+	Branch string `pulumi:"branch"`
+	// The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+	BuildFileLocation string `pulumi:"buildFileLocation"`
+	// The type of External Source Code Management.
+	ExternalScmType string `pulumi:"externalScmType"`
+	// If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+	IsAutomergeEnabled bool `pulumi:"isAutomergeEnabled"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+	OciCodeRepositoryId string `pulumi:"ociCodeRepositoryId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId string `pulumi:"patSecretId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl string `pulumi:"repositoryUrl"`
+	// The type of Source Code Management.
+	ScmType string `pulumi:"scmType"`
+	// The username that will be used to authenticate with Jenkins.
+	Username string `pulumi:"username"`
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs and GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs{...}
+type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs struct {
+	// The branch used by ADM to patch vulnerabilities.
+	Branch pulumi.StringInput `pulumi:"branch"`
+	// The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+	BuildFileLocation pulumi.StringInput `pulumi:"buildFileLocation"`
+	// The type of External Source Code Management.
+	ExternalScmType pulumi.StringInput `pulumi:"externalScmType"`
+	// If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+	IsAutomergeEnabled pulumi.BoolInput `pulumi:"isAutomergeEnabled"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+	OciCodeRepositoryId pulumi.StringInput `pulumi:"ociCodeRepositoryId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
+	// The type of Source Code Management.
+	ScmType pulumi.StringInput `pulumi:"scmType"`
+	// The username that will be used to authenticate with Jenkins.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray{ GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs{...} }
+type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray []GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationInput
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The branch used by ADM to patch vulnerabilities.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) Branch() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string { return v.Branch }).(pulumi.StringOutput)
+}
+
+// The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) BuildFileLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string {
+		return v.BuildFileLocation
+	}).(pulumi.StringOutput)
+}
+
+// The type of External Source Code Management.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ExternalScmType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string {
+		return v.ExternalScmType
+	}).(pulumi.StringOutput)
+}
+
+// If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) IsAutomergeEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) bool {
+		return v.IsAutomergeEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) OciCodeRepositoryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string {
+		return v.OciCodeRepositoryId
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) PatSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string {
+		return v.PatSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string {
+		return v.RepositoryUrl
+	}).(pulumi.StringOutput)
+}
+
+// The type of Source Code Management.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ScmType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string { return v.ScmType }).(pulumi.StringOutput)
+}
+
+// The username that will be used to authenticate with Jenkins.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration {
+		return vs[0].([]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration struct {
+	// Additional key-value pairs passed as parameters to the build service when running an experiment.
+	AdditionalParameters map[string]interface{} `pulumi:"additionalParameters"`
+	// The type of Build Service.
+	BuildServiceType string `pulumi:"buildServiceType"`
+	// The URL that locates the Jenkins pipeline.
+	JenkinsUrl string `pulumi:"jenkinsUrl"`
+	// The name of the Jenkins pipeline job that identifies the build pipeline.
+	JobName string `pulumi:"jobName"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId string `pulumi:"patSecretId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+	PipelineId string `pulumi:"pipelineId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl string `pulumi:"repositoryUrl"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+	TriggerSecretId string `pulumi:"triggerSecretId"`
+	// The username that will be used to authenticate with Jenkins.
+	Username string `pulumi:"username"`
+	// The name of the GitHub Actions workflow that defines the build pipeline.
+	WorkflowName string `pulumi:"workflowName"`
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs and GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs{...}
+type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs struct {
+	// Additional key-value pairs passed as parameters to the build service when running an experiment.
+	AdditionalParameters pulumi.MapInput `pulumi:"additionalParameters"`
+	// The type of Build Service.
+	BuildServiceType pulumi.StringInput `pulumi:"buildServiceType"`
+	// The URL that locates the Jenkins pipeline.
+	JenkinsUrl pulumi.StringInput `pulumi:"jenkinsUrl"`
+	// The name of the Jenkins pipeline job that identifies the build pipeline.
+	JobName pulumi.StringInput `pulumi:"jobName"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	PatSecretId pulumi.StringInput `pulumi:"patSecretId"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
+	// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	RepositoryUrl pulumi.StringInput `pulumi:"repositoryUrl"`
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+	TriggerSecretId pulumi.StringInput `pulumi:"triggerSecretId"`
+	// The username that will be used to authenticate with Jenkins.
+	Username pulumi.StringInput `pulumi:"username"`
+	// The name of the GitHub Actions workflow that defines the build pipeline.
+	WorkflowName pulumi.StringInput `pulumi:"workflowName"`
+}
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayInput` via:
+//
+//	GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray{ GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs{...} }
+type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput
+	ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutputWithContext(context.Context) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray []GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationInput
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration)(nil)).Elem()
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput {
+	return i.ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput)
+}
+
+func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
+		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput() GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
+	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Additional key-value pairs passed as parameters to the build service when running an experiment.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) AdditionalParameters() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) map[string]interface{} {
+		return v.AdditionalParameters
+	}).(pulumi.MapOutput)
+}
+
+// The type of Build Service.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) BuildServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.BuildServiceType
+	}).(pulumi.StringOutput)
+}
+
+// The URL that locates the Jenkins pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) JenkinsUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.JenkinsUrl
+	}).(pulumi.StringOutput)
+}
+
+// The name of the Jenkins pipeline job that identifies the build pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) JobName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.JobName
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) PatSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.PatSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) PipelineId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.PipelineId
+	}).(pulumi.StringOutput)
+}
+
+// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) RepositoryUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.RepositoryUrl
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) TriggerSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.TriggerSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The username that will be used to authenticate with Jenkins.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+// The name of the GitHub Actions workflow that defines the build pipeline.
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) WorkflowName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) string {
+		return v.WorkflowName
+	}).(pulumi.StringOutput)
+}
+
+type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration)(nil)).Elem()
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput() GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput {
+	return o
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
+	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration {
+		return vs[0].([]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration)[vs[1].(int)]
+	}).(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput)
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection struct {
+	// List of application recommendation summaries.
+	Items []GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem `pulumi:"items"`
+}
+
+// GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs and GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput values.
+// You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionInput` via:
+//
+//	GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs{...}
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutputWithContext(context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs struct {
+	// List of application recommendation summaries.
+	Items GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput {
+	return i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput)
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
+	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
+		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray and GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayInput` via:
+//
+//	GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray{ GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs{...} }
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutputWithContext(context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray []GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionInput
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput {
+	return i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput)
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
+	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
+		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
+	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of application recommendation summaries.
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) Items() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection) []GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem {
+		return v.Items
+	}).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput)
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
+	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection {
+		return vs[0].([]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection)[vs[1].(int)]
+	}).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput)
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem struct {
+	// List of (application dependencies) node identifiers from which this node depends.
+	ApplicationDependencyNodeIds []string `pulumi:"applicationDependencyNodeIds"`
+	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+	Gav string `pulumi:"gav"`
+	// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
+	NodeId string `pulumi:"nodeId"`
+	// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
+	RecommendedGav string `pulumi:"recommendedGav"`
+}
+
+// GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs and GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput values.
+// You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemInput` via:
+//
+//	GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs{...}
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutputWithContext(context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs struct {
+	// List of (application dependencies) node identifiers from which this node depends.
+	ApplicationDependencyNodeIds pulumi.StringArrayInput `pulumi:"applicationDependencyNodeIds"`
+	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+	Gav pulumi.StringInput `pulumi:"gav"`
+	// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
+	RecommendedGav pulumi.StringInput `pulumi:"recommendedGav"`
+}
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput {
+	return i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput)
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
+	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
+		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray and GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayInput` via:
+//
+//	GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray{ GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs{...} }
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput
+	ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutputWithContext(context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray []GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemInput
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput {
+	return i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput)
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
+	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
+		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
+	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of (application dependencies) node identifiers from which this node depends.
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ApplicationDependencyNodeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem) []string {
+		return v.ApplicationDependencyNodeIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) Gav() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem) string {
+		return v.Gav
+	}).(pulumi.StringOutput)
+}
+
+// Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem) string {
+		return v.NodeId
+	}).(pulumi.StringOutput)
+}
+
+// Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) RecommendedGav() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem) string {
+		return v.RecommendedGav
+	}).(pulumi.StringOutput)
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
+	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem {
+		return vs[0].([]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem)[vs[1].(int)]
+	}).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput)
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRemediationRunApplicationDependencyRecommendationsFilterInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsFilterArgs and GetRemediationRunApplicationDependencyRecommendationsFilterOutput values.
+// You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsFilterInput` via:
+//
+//	GetRemediationRunApplicationDependencyRecommendationsFilterArgs{...}
+type GetRemediationRunApplicationDependencyRecommendationsFilterInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunApplicationDependencyRecommendationsFilterOutput() GetRemediationRunApplicationDependencyRecommendationsFilterOutput
+	ToGetRemediationRunApplicationDependencyRecommendationsFilterOutputWithContext(context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterOutput
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRemediationRunApplicationDependencyRecommendationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsFilterArgs) ToGetRemediationRunApplicationDependencyRecommendationsFilterOutput() GetRemediationRunApplicationDependencyRecommendationsFilterOutput {
+	return i.ToGetRemediationRunApplicationDependencyRecommendationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsFilterArgs) ToGetRemediationRunApplicationDependencyRecommendationsFilterOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsFilterOutput)
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter] {
+	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter]{
+		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunApplicationDependencyRecommendationsFilterArrayInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsFilterArray and GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsFilterArrayInput` via:
+//
+//	GetRemediationRunApplicationDependencyRecommendationsFilterArray{ GetRemediationRunApplicationDependencyRecommendationsFilterArgs{...} }
+type GetRemediationRunApplicationDependencyRecommendationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput() GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput
+	ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutputWithContext(context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsFilterArray []GetRemediationRunApplicationDependencyRecommendationsFilterInput
+
+func (GetRemediationRunApplicationDependencyRecommendationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunApplicationDependencyRecommendationsFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsFilterArray) ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput() GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput {
+	return i.ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsFilterArray) ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput)
+}
+
+func (i GetRemediationRunApplicationDependencyRecommendationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter] {
+	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter]{
+		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ToGetRemediationRunApplicationDependencyRecommendationsFilterOutput() GetRemediationRunApplicationDependencyRecommendationsFilterOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ToGetRemediationRunApplicationDependencyRecommendationsFilterOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter] {
+	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunApplicationDependencyRecommendationsFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput() GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter] {
+	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRunApplicationDependencyRecommendationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunApplicationDependencyRecommendationsFilter {
+		return vs[0].([]GetRemediationRunApplicationDependencyRecommendationsFilter)[vs[1].(int)]
+	}).(GetRemediationRunApplicationDependencyRecommendationsFilterOutput)
+}
+
+type GetRemediationRunStage struct {
+	// Information about the current step within the given stage.
+	Summary string `pulumi:"summary"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted string `pulumi:"timeStarted"`
+	// The type of stage.
+	Type string `pulumi:"type"`
+}
+
+// GetRemediationRunStageInput is an input type that accepts GetRemediationRunStageArgs and GetRemediationRunStageOutput values.
+// You can construct a concrete instance of `GetRemediationRunStageInput` via:
+//
+//	GetRemediationRunStageArgs{...}
+type GetRemediationRunStageInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStageOutput() GetRemediationRunStageOutput
+	ToGetRemediationRunStageOutputWithContext(context.Context) GetRemediationRunStageOutput
+}
+
+type GetRemediationRunStageArgs struct {
+	// Information about the current step within the given stage.
+	Summary pulumi.StringInput `pulumi:"summary"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The type of stage.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRemediationRunStageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStage)(nil)).Elem()
+}
+
+func (i GetRemediationRunStageArgs) ToGetRemediationRunStageOutput() GetRemediationRunStageOutput {
+	return i.ToGetRemediationRunStageOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStageArgs) ToGetRemediationRunStageOutputWithContext(ctx context.Context) GetRemediationRunStageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStageOutput)
+}
+
+func (i GetRemediationRunStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStage] {
+	return pulumix.Output[GetRemediationRunStage]{
+		OutputState: i.ToGetRemediationRunStageOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStageArrayInput is an input type that accepts GetRemediationRunStageArray and GetRemediationRunStageArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStageArrayInput` via:
+//
+//	GetRemediationRunStageArray{ GetRemediationRunStageArgs{...} }
+type GetRemediationRunStageArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStageArrayOutput() GetRemediationRunStageArrayOutput
+	ToGetRemediationRunStageArrayOutputWithContext(context.Context) GetRemediationRunStageArrayOutput
+}
+
+type GetRemediationRunStageArray []GetRemediationRunStageInput
+
+func (GetRemediationRunStageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStage)(nil)).Elem()
+}
+
+func (i GetRemediationRunStageArray) ToGetRemediationRunStageArrayOutput() GetRemediationRunStageArrayOutput {
+	return i.ToGetRemediationRunStageArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStageArray) ToGetRemediationRunStageArrayOutputWithContext(ctx context.Context) GetRemediationRunStageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStageArrayOutput)
+}
+
+func (i GetRemediationRunStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStage] {
+	return pulumix.Output[[]GetRemediationRunStage]{
+		OutputState: i.ToGetRemediationRunStageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStageOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStage)(nil)).Elem()
+}
+
+func (o GetRemediationRunStageOutput) ToGetRemediationRunStageOutput() GetRemediationRunStageOutput {
+	return o
+}
+
+func (o GetRemediationRunStageOutput) ToGetRemediationRunStageOutputWithContext(ctx context.Context) GetRemediationRunStageOutput {
+	return o
+}
+
+func (o GetRemediationRunStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStage] {
+	return pulumix.Output[GetRemediationRunStage]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Information about the current step within the given stage.
+func (o GetRemediationRunStageOutput) Summary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStage) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunStageOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStage) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunStageOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStage) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunStageOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStage) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The type of stage.
+func (o GetRemediationRunStageOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStage) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRemediationRunStageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStage)(nil)).Elem()
+}
+
+func (o GetRemediationRunStageArrayOutput) ToGetRemediationRunStageArrayOutput() GetRemediationRunStageArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStageArrayOutput) ToGetRemediationRunStageArrayOutputWithContext(ctx context.Context) GetRemediationRunStageArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStage] {
+	return pulumix.Output[[]GetRemediationRunStage]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStageArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStage {
+		return vs[0].([]GetRemediationRunStage)[vs[1].(int)]
+	}).(GetRemediationRunStageOutput)
+}
+
+type GetRemediationRunStagePipelineProperty struct {
+	// Unique identifier for the pipeline or action created in the Verify stage.
+	PipelineIdentifier string `pulumi:"pipelineIdentifier"`
+	// The web link to the pipeline from the Verify stage.
+	PipelineUrl string `pulumi:"pipelineUrl"`
+}
+
+// GetRemediationRunStagePipelinePropertyInput is an input type that accepts GetRemediationRunStagePipelinePropertyArgs and GetRemediationRunStagePipelinePropertyOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagePipelinePropertyInput` via:
+//
+//	GetRemediationRunStagePipelinePropertyArgs{...}
+type GetRemediationRunStagePipelinePropertyInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagePipelinePropertyOutput() GetRemediationRunStagePipelinePropertyOutput
+	ToGetRemediationRunStagePipelinePropertyOutputWithContext(context.Context) GetRemediationRunStagePipelinePropertyOutput
+}
+
+type GetRemediationRunStagePipelinePropertyArgs struct {
+	// Unique identifier for the pipeline or action created in the Verify stage.
+	PipelineIdentifier pulumi.StringInput `pulumi:"pipelineIdentifier"`
+	// The web link to the pipeline from the Verify stage.
+	PipelineUrl pulumi.StringInput `pulumi:"pipelineUrl"`
+}
+
+func (GetRemediationRunStagePipelinePropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagePipelineProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagePipelinePropertyArgs) ToGetRemediationRunStagePipelinePropertyOutput() GetRemediationRunStagePipelinePropertyOutput {
+	return i.ToGetRemediationRunStagePipelinePropertyOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagePipelinePropertyArgs) ToGetRemediationRunStagePipelinePropertyOutputWithContext(ctx context.Context) GetRemediationRunStagePipelinePropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePipelinePropertyOutput)
+}
+
+func (i GetRemediationRunStagePipelinePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePipelineProperty] {
+	return pulumix.Output[GetRemediationRunStagePipelineProperty]{
+		OutputState: i.ToGetRemediationRunStagePipelinePropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStagePipelinePropertyArrayInput is an input type that accepts GetRemediationRunStagePipelinePropertyArray and GetRemediationRunStagePipelinePropertyArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagePipelinePropertyArrayInput` via:
+//
+//	GetRemediationRunStagePipelinePropertyArray{ GetRemediationRunStagePipelinePropertyArgs{...} }
+type GetRemediationRunStagePipelinePropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagePipelinePropertyArrayOutput() GetRemediationRunStagePipelinePropertyArrayOutput
+	ToGetRemediationRunStagePipelinePropertyArrayOutputWithContext(context.Context) GetRemediationRunStagePipelinePropertyArrayOutput
+}
+
+type GetRemediationRunStagePipelinePropertyArray []GetRemediationRunStagePipelinePropertyInput
+
+func (GetRemediationRunStagePipelinePropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagePipelineProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagePipelinePropertyArray) ToGetRemediationRunStagePipelinePropertyArrayOutput() GetRemediationRunStagePipelinePropertyArrayOutput {
+	return i.ToGetRemediationRunStagePipelinePropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagePipelinePropertyArray) ToGetRemediationRunStagePipelinePropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagePipelinePropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePipelinePropertyArrayOutput)
+}
+
+func (i GetRemediationRunStagePipelinePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePipelineProperty] {
+	return pulumix.Output[[]GetRemediationRunStagePipelineProperty]{
+		OutputState: i.ToGetRemediationRunStagePipelinePropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStagePipelinePropertyOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagePipelinePropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagePipelineProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagePipelinePropertyOutput) ToGetRemediationRunStagePipelinePropertyOutput() GetRemediationRunStagePipelinePropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePipelinePropertyOutput) ToGetRemediationRunStagePipelinePropertyOutputWithContext(ctx context.Context) GetRemediationRunStagePipelinePropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePipelinePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePipelineProperty] {
+	return pulumix.Output[GetRemediationRunStagePipelineProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Unique identifier for the pipeline or action created in the Verify stage.
+func (o GetRemediationRunStagePipelinePropertyOutput) PipelineIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagePipelineProperty) string { return v.PipelineIdentifier }).(pulumi.StringOutput)
+}
+
+// The web link to the pipeline from the Verify stage.
+func (o GetRemediationRunStagePipelinePropertyOutput) PipelineUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagePipelineProperty) string { return v.PipelineUrl }).(pulumi.StringOutput)
+}
+
+type GetRemediationRunStagePipelinePropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagePipelinePropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagePipelineProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagePipelinePropertyArrayOutput) ToGetRemediationRunStagePipelinePropertyArrayOutput() GetRemediationRunStagePipelinePropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePipelinePropertyArrayOutput) ToGetRemediationRunStagePipelinePropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagePipelinePropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePipelinePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePipelineProperty] {
+	return pulumix.Output[[]GetRemediationRunStagePipelineProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagePipelinePropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagePipelinePropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagePipelineProperty {
+		return vs[0].([]GetRemediationRunStagePipelineProperty)[vs[1].(int)]
+	}).(GetRemediationRunStagePipelinePropertyOutput)
+}
+
+type GetRemediationRunStagePullRequestProperty struct {
+	// Unique identifier for the pull or merge request created in the recommend stage.
+	PullRequestIdentifier string `pulumi:"pullRequestIdentifier"`
+	// The web link to the pull or merge request created in the recommend stage.
+	PullRequestUrl string `pulumi:"pullRequestUrl"`
+}
+
+// GetRemediationRunStagePullRequestPropertyInput is an input type that accepts GetRemediationRunStagePullRequestPropertyArgs and GetRemediationRunStagePullRequestPropertyOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagePullRequestPropertyInput` via:
+//
+//	GetRemediationRunStagePullRequestPropertyArgs{...}
+type GetRemediationRunStagePullRequestPropertyInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagePullRequestPropertyOutput() GetRemediationRunStagePullRequestPropertyOutput
+	ToGetRemediationRunStagePullRequestPropertyOutputWithContext(context.Context) GetRemediationRunStagePullRequestPropertyOutput
+}
+
+type GetRemediationRunStagePullRequestPropertyArgs struct {
+	// Unique identifier for the pull or merge request created in the recommend stage.
+	PullRequestIdentifier pulumi.StringInput `pulumi:"pullRequestIdentifier"`
+	// The web link to the pull or merge request created in the recommend stage.
+	PullRequestUrl pulumi.StringInput `pulumi:"pullRequestUrl"`
+}
+
+func (GetRemediationRunStagePullRequestPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagePullRequestProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagePullRequestPropertyArgs) ToGetRemediationRunStagePullRequestPropertyOutput() GetRemediationRunStagePullRequestPropertyOutput {
+	return i.ToGetRemediationRunStagePullRequestPropertyOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagePullRequestPropertyArgs) ToGetRemediationRunStagePullRequestPropertyOutputWithContext(ctx context.Context) GetRemediationRunStagePullRequestPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePullRequestPropertyOutput)
+}
+
+func (i GetRemediationRunStagePullRequestPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePullRequestProperty] {
+	return pulumix.Output[GetRemediationRunStagePullRequestProperty]{
+		OutputState: i.ToGetRemediationRunStagePullRequestPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStagePullRequestPropertyArrayInput is an input type that accepts GetRemediationRunStagePullRequestPropertyArray and GetRemediationRunStagePullRequestPropertyArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagePullRequestPropertyArrayInput` via:
+//
+//	GetRemediationRunStagePullRequestPropertyArray{ GetRemediationRunStagePullRequestPropertyArgs{...} }
+type GetRemediationRunStagePullRequestPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagePullRequestPropertyArrayOutput() GetRemediationRunStagePullRequestPropertyArrayOutput
+	ToGetRemediationRunStagePullRequestPropertyArrayOutputWithContext(context.Context) GetRemediationRunStagePullRequestPropertyArrayOutput
+}
+
+type GetRemediationRunStagePullRequestPropertyArray []GetRemediationRunStagePullRequestPropertyInput
+
+func (GetRemediationRunStagePullRequestPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagePullRequestProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagePullRequestPropertyArray) ToGetRemediationRunStagePullRequestPropertyArrayOutput() GetRemediationRunStagePullRequestPropertyArrayOutput {
+	return i.ToGetRemediationRunStagePullRequestPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagePullRequestPropertyArray) ToGetRemediationRunStagePullRequestPropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagePullRequestPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePullRequestPropertyArrayOutput)
+}
+
+func (i GetRemediationRunStagePullRequestPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePullRequestProperty] {
+	return pulumix.Output[[]GetRemediationRunStagePullRequestProperty]{
+		OutputState: i.ToGetRemediationRunStagePullRequestPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStagePullRequestPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagePullRequestPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagePullRequestProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagePullRequestPropertyOutput) ToGetRemediationRunStagePullRequestPropertyOutput() GetRemediationRunStagePullRequestPropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePullRequestPropertyOutput) ToGetRemediationRunStagePullRequestPropertyOutputWithContext(ctx context.Context) GetRemediationRunStagePullRequestPropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePullRequestPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePullRequestProperty] {
+	return pulumix.Output[GetRemediationRunStagePullRequestProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Unique identifier for the pull or merge request created in the recommend stage.
+func (o GetRemediationRunStagePullRequestPropertyOutput) PullRequestIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagePullRequestProperty) string { return v.PullRequestIdentifier }).(pulumi.StringOutput)
+}
+
+// The web link to the pull or merge request created in the recommend stage.
+func (o GetRemediationRunStagePullRequestPropertyOutput) PullRequestUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagePullRequestProperty) string { return v.PullRequestUrl }).(pulumi.StringOutput)
+}
+
+type GetRemediationRunStagePullRequestPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagePullRequestPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagePullRequestProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagePullRequestPropertyArrayOutput) ToGetRemediationRunStagePullRequestPropertyArrayOutput() GetRemediationRunStagePullRequestPropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePullRequestPropertyArrayOutput) ToGetRemediationRunStagePullRequestPropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagePullRequestPropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagePullRequestPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePullRequestProperty] {
+	return pulumix.Output[[]GetRemediationRunStagePullRequestProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagePullRequestPropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagePullRequestPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagePullRequestProperty {
+		return vs[0].([]GetRemediationRunStagePullRequestProperty)[vs[1].(int)]
+	}).(GetRemediationRunStagePullRequestPropertyOutput)
+}
+
+type GetRemediationRunStagesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRemediationRunStagesFilterInput is an input type that accepts GetRemediationRunStagesFilterArgs and GetRemediationRunStagesFilterOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesFilterInput` via:
+//
+//	GetRemediationRunStagesFilterArgs{...}
+type GetRemediationRunStagesFilterInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesFilterOutput() GetRemediationRunStagesFilterOutput
+	ToGetRemediationRunStagesFilterOutputWithContext(context.Context) GetRemediationRunStagesFilterOutput
+}
+
+type GetRemediationRunStagesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRemediationRunStagesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesFilterArgs) ToGetRemediationRunStagesFilterOutput() GetRemediationRunStagesFilterOutput {
+	return i.ToGetRemediationRunStagesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesFilterArgs) ToGetRemediationRunStagesFilterOutputWithContext(ctx context.Context) GetRemediationRunStagesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesFilterOutput)
+}
+
+func (i GetRemediationRunStagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesFilter] {
+	return pulumix.Output[GetRemediationRunStagesFilter]{
+		OutputState: i.ToGetRemediationRunStagesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStagesFilterArrayInput is an input type that accepts GetRemediationRunStagesFilterArray and GetRemediationRunStagesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesFilterArrayInput` via:
+//
+//	GetRemediationRunStagesFilterArray{ GetRemediationRunStagesFilterArgs{...} }
+type GetRemediationRunStagesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesFilterArrayOutput() GetRemediationRunStagesFilterArrayOutput
+	ToGetRemediationRunStagesFilterArrayOutputWithContext(context.Context) GetRemediationRunStagesFilterArrayOutput
+}
+
+type GetRemediationRunStagesFilterArray []GetRemediationRunStagesFilterInput
+
+func (GetRemediationRunStagesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesFilterArray) ToGetRemediationRunStagesFilterArrayOutput() GetRemediationRunStagesFilterArrayOutput {
+	return i.ToGetRemediationRunStagesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesFilterArray) ToGetRemediationRunStagesFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesFilterArrayOutput)
+}
+
+func (i GetRemediationRunStagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesFilter] {
+	return pulumix.Output[[]GetRemediationRunStagesFilter]{
+		OutputState: i.ToGetRemediationRunStagesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStagesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesFilterOutput) ToGetRemediationRunStagesFilterOutput() GetRemediationRunStagesFilterOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesFilterOutput) ToGetRemediationRunStagesFilterOutputWithContext(ctx context.Context) GetRemediationRunStagesFilterOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesFilter] {
+	return pulumix.Output[GetRemediationRunStagesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRemediationRunStagesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRemediationRunStagesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRemediationRunStagesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesFilterArrayOutput) ToGetRemediationRunStagesFilterArrayOutput() GetRemediationRunStagesFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesFilterArrayOutput) ToGetRemediationRunStagesFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesFilter] {
+	return pulumix.Output[[]GetRemediationRunStagesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagesFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagesFilter {
+		return vs[0].([]GetRemediationRunStagesFilter)[vs[1].(int)]
+	}).(GetRemediationRunStagesFilterOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollection struct {
+	Items []GetRemediationRunStagesRemediationRunStageCollectionItem `pulumi:"items"`
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionArgs and GetRemediationRunStagesRemediationRunStageCollectionOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionArgs{...}
+type GetRemediationRunStagesRemediationRunStageCollectionInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionOutput() GetRemediationRunStagesRemediationRunStageCollectionOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionArgs struct {
+	Items GetRemediationRunStagesRemediationRunStageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRemediationRunStagesRemediationRunStageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionArgs) ToGetRemediationRunStagesRemediationRunStageCollectionOutput() GetRemediationRunStagesRemediationRunStageCollectionOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionArgs) ToGetRemediationRunStagesRemediationRunStageCollectionOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionArray and GetRemediationRunStagesRemediationRunStageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionArrayInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionArray{ GetRemediationRunStagesRemediationRunStageCollectionArgs{...} }
+type GetRemediationRunStagesRemediationRunStageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionArrayOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionArrayOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionArray []GetRemediationRunStagesRemediationRunStageCollectionInput
+
+func (GetRemediationRunStagesRemediationRunStageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionArray) ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionArrayOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionArray) ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionArrayOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) ToGetRemediationRunStagesRemediationRunStageCollectionOutput() GetRemediationRunStagesRemediationRunStageCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) ToGetRemediationRunStagesRemediationRunStageCollectionOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) Items() GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollection) []GetRemediationRunStagesRemediationRunStageCollectionItem {
+		return v.Items
+	}).(GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagesRemediationRunStageCollection {
+		return vs[0].([]GetRemediationRunStagesRemediationRunStageCollection)[vs[1].(int)]
+	}).(GetRemediationRunStagesRemediationRunStageCollectionOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItem struct {
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
+	AuditId string `pulumi:"auditId"`
+	// The next type of stage in the remediation run.
+	NextStageType string `pulumi:"nextStageType"`
+	// Pipeline properties which result from the run of the verify stage.
+	PipelineProperties []GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty `pulumi:"pipelineProperties"`
+	// The previous type of stage in the remediation run.
+	PreviousStageType string `pulumi:"previousStageType"`
+	// Pull request properties from recommend stage of the remediation run.
+	PullRequestProperties []GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty `pulumi:"pullRequestProperties"`
+	// Count of recommended application dependencies to update.
+	RecommendedUpdatesCount int `pulumi:"recommendedUpdatesCount"`
+	// Unique Remediation Run identifier path parameter.
+	RemediationRunId string `pulumi:"remediationRunId"`
+	// A filter to return only Stages that match the specified status.
+	Status string `pulumi:"status"`
+	// Information about the current step within the stage.
+	Summary string `pulumi:"summary"`
+	// The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted string `pulumi:"timeStarted"`
+	// A filter to return only Stages that match the specified type.
+	Type string `pulumi:"type"`
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionItemInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemArgs and GetRemediationRunStagesRemediationRunStageCollectionItemOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionItemArgs{...}
+type GetRemediationRunStagesRemediationRunStageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemOutput() GetRemediationRunStagesRemediationRunStageCollectionItemOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemArgs struct {
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
+	AuditId pulumi.StringInput `pulumi:"auditId"`
+	// The next type of stage in the remediation run.
+	NextStageType pulumi.StringInput `pulumi:"nextStageType"`
+	// Pipeline properties which result from the run of the verify stage.
+	PipelineProperties GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayInput `pulumi:"pipelineProperties"`
+	// The previous type of stage in the remediation run.
+	PreviousStageType pulumi.StringInput `pulumi:"previousStageType"`
+	// Pull request properties from recommend stage of the remediation run.
+	PullRequestProperties GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayInput `pulumi:"pullRequestProperties"`
+	// Count of recommended application dependencies to update.
+	RecommendedUpdatesCount pulumi.IntInput `pulumi:"recommendedUpdatesCount"`
+	// Unique Remediation Run identifier path parameter.
+	RemediationRunId pulumi.StringInput `pulumi:"remediationRunId"`
+	// A filter to return only Stages that match the specified status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Information about the current step within the stage.
+	Summary pulumi.StringInput `pulumi:"summary"`
+	// The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// A filter to return only Stages that match the specified type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemArgs) ToGetRemediationRunStagesRemediationRunStageCollectionItemOutput() GetRemediationRunStagesRemediationRunStageCollectionItemOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemArgs) ToGetRemediationRunStagesRemediationRunStageCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionItemArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemArray and GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemArrayInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionItemArray{ GetRemediationRunStagesRemediationRunStageCollectionItemArgs{...} }
+type GetRemediationRunStagesRemediationRunStageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemArray []GetRemediationRunStagesRemediationRunStageCollectionItemInput
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemArray) ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemArray) ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemOutput() GetRemediationRunStagesRemediationRunStageCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) AuditId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.AuditId }).(pulumi.StringOutput)
+}
+
+// The next type of stage in the remediation run.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) NextStageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.NextStageType }).(pulumi.StringOutput)
+}
+
+// Pipeline properties which result from the run of the verify stage.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) PipelineProperties() GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) []GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty {
+		return v.PipelineProperties
+	}).(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput)
+}
+
+// The previous type of stage in the remediation run.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) PreviousStageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.PreviousStageType }).(pulumi.StringOutput)
+}
+
+// Pull request properties from recommend stage of the remediation run.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) PullRequestProperties() GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) []GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty {
+		return v.PullRequestProperties
+	}).(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput)
+}
+
+// Count of recommended application dependencies to update.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) RecommendedUpdatesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) int { return v.RecommendedUpdatesCount }).(pulumi.IntOutput)
+}
+
+// Unique Remediation Run identifier path parameter.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) RemediationRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.RemediationRunId }).(pulumi.StringOutput)
+}
+
+// A filter to return only Stages that match the specified status.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Information about the current step within the stage.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) Summary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// A filter to return only Stages that match the specified type.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagesRemediationRunStageCollectionItem {
+		return vs[0].([]GetRemediationRunStagesRemediationRunStageCollectionItem)[vs[1].(int)]
+	}).(GetRemediationRunStagesRemediationRunStageCollectionItemOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty struct {
+	// Unique identifier for the pipeline or action created in the Verify stage.
+	PipelineIdentifier string `pulumi:"pipelineIdentifier"`
+	// The web link to the pipeline from the Verify stage.
+	PipelineUrl string `pulumi:"pipelineUrl"`
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs and GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs{...}
+type GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs struct {
+	// Unique identifier for the pipeline or action created in the Verify stage.
+	PipelineIdentifier pulumi.StringInput `pulumi:"pipelineIdentifier"`
+	// The web link to the pipeline from the Verify stage.
+	PipelineUrl pulumi.StringInput `pulumi:"pipelineUrl"`
+}
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray and GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray{ GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs{...} }
+type GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray []GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyInput
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Unique identifier for the pipeline or action created in the Verify stage.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) PipelineIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty) string {
+		return v.PipelineIdentifier
+	}).(pulumi.StringOutput)
+}
+
+// The web link to the pipeline from the Verify stage.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) PipelineUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty) string {
+		return v.PipelineUrl
+	}).(pulumi.StringOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty {
+		return vs[0].([]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty)[vs[1].(int)]
+	}).(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty struct {
+	// Unique identifier for the pull or merge request created in the recommend stage.
+	PullRequestIdentifier string `pulumi:"pullRequestIdentifier"`
+	// The web link to the pull or merge request created in the recommend stage.
+	PullRequestUrl string `pulumi:"pullRequestUrl"`
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs and GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs{...}
+type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs struct {
+	// Unique identifier for the pull or merge request created in the recommend stage.
+	PullRequestIdentifier pulumi.StringInput `pulumi:"pullRequestIdentifier"`
+	// The web link to the pull or merge request created in the recommend stage.
+	PullRequestUrl pulumi.StringInput `pulumi:"pullRequestUrl"`
+}
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray and GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayInput` via:
+//
+//	GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray{ GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs{...} }
+type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput
+	ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutputWithContext(context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray []GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyInput
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty)(nil)).Elem()
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput {
+	return i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput)
+}
+
+func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
+		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
+	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Unique identifier for the pull or merge request created in the recommend stage.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) PullRequestIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty) string {
+		return v.PullRequestIdentifier
+	}).(pulumi.StringOutput)
+}
+
+// The web link to the pull or merge request created in the recommend stage.
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) PullRequestUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty) string {
+		return v.PullRequestUrl
+	}).(pulumi.StringOutput)
+}
+
+type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty)(nil)).Elem()
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput() GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
+	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty {
+		return vs[0].([]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty)[vs[1].(int)]
+	}).(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput)
+}
+
+type GetRemediationRunsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRemediationRunsFilterInput is an input type that accepts GetRemediationRunsFilterArgs and GetRemediationRunsFilterOutput values.
+// You can construct a concrete instance of `GetRemediationRunsFilterInput` via:
+//
+//	GetRemediationRunsFilterArgs{...}
+type GetRemediationRunsFilterInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsFilterOutput() GetRemediationRunsFilterOutput
+	ToGetRemediationRunsFilterOutputWithContext(context.Context) GetRemediationRunsFilterOutput
+}
+
+type GetRemediationRunsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRemediationRunsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRunsFilterArgs) ToGetRemediationRunsFilterOutput() GetRemediationRunsFilterOutput {
+	return i.ToGetRemediationRunsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsFilterArgs) ToGetRemediationRunsFilterOutputWithContext(ctx context.Context) GetRemediationRunsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsFilterOutput)
+}
+
+func (i GetRemediationRunsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsFilter] {
+	return pulumix.Output[GetRemediationRunsFilter]{
+		OutputState: i.ToGetRemediationRunsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunsFilterArrayInput is an input type that accepts GetRemediationRunsFilterArray and GetRemediationRunsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunsFilterArrayInput` via:
+//
+//	GetRemediationRunsFilterArray{ GetRemediationRunsFilterArgs{...} }
+type GetRemediationRunsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsFilterArrayOutput() GetRemediationRunsFilterArrayOutput
+	ToGetRemediationRunsFilterArrayOutputWithContext(context.Context) GetRemediationRunsFilterArrayOutput
+}
+
+type GetRemediationRunsFilterArray []GetRemediationRunsFilterInput
+
+func (GetRemediationRunsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsFilter)(nil)).Elem()
+}
+
+func (i GetRemediationRunsFilterArray) ToGetRemediationRunsFilterArrayOutput() GetRemediationRunsFilterArrayOutput {
+	return i.ToGetRemediationRunsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsFilterArray) ToGetRemediationRunsFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsFilterArrayOutput)
+}
+
+func (i GetRemediationRunsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsFilter] {
+	return pulumix.Output[[]GetRemediationRunsFilter]{
+		OutputState: i.ToGetRemediationRunsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRunsFilterOutput) ToGetRemediationRunsFilterOutput() GetRemediationRunsFilterOutput {
+	return o
+}
+
+func (o GetRemediationRunsFilterOutput) ToGetRemediationRunsFilterOutputWithContext(ctx context.Context) GetRemediationRunsFilterOutput {
+	return o
+}
+
+func (o GetRemediationRunsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsFilter] {
+	return pulumix.Output[GetRemediationRunsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRemediationRunsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRemediationRunsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRemediationRunsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRemediationRunsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsFilter)(nil)).Elem()
+}
+
+func (o GetRemediationRunsFilterArrayOutput) ToGetRemediationRunsFilterArrayOutput() GetRemediationRunsFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsFilterArrayOutput) ToGetRemediationRunsFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunsFilterArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsFilter] {
+	return pulumix.Output[[]GetRemediationRunsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunsFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunsFilter {
+		return vs[0].([]GetRemediationRunsFilter)[vs[1].(int)]
+	}).(GetRemediationRunsFilterOutput)
+}
+
+type GetRemediationRunsRemediationRunCollection struct {
+	Items []GetRemediationRunsRemediationRunCollectionItem `pulumi:"items"`
+}
+
+// GetRemediationRunsRemediationRunCollectionInput is an input type that accepts GetRemediationRunsRemediationRunCollectionArgs and GetRemediationRunsRemediationRunCollectionOutput values.
+// You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionInput` via:
+//
+//	GetRemediationRunsRemediationRunCollectionArgs{...}
+type GetRemediationRunsRemediationRunCollectionInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsRemediationRunCollectionOutput() GetRemediationRunsRemediationRunCollectionOutput
+	ToGetRemediationRunsRemediationRunCollectionOutputWithContext(context.Context) GetRemediationRunsRemediationRunCollectionOutput
+}
+
+type GetRemediationRunsRemediationRunCollectionArgs struct {
+	Items GetRemediationRunsRemediationRunCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRemediationRunsRemediationRunCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsRemediationRunCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRunsRemediationRunCollectionArgs) ToGetRemediationRunsRemediationRunCollectionOutput() GetRemediationRunsRemediationRunCollectionOutput {
+	return i.ToGetRemediationRunsRemediationRunCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsRemediationRunCollectionArgs) ToGetRemediationRunsRemediationRunCollectionOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionOutput)
+}
+
+func (i GetRemediationRunsRemediationRunCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollection] {
+	return pulumix.Output[GetRemediationRunsRemediationRunCollection]{
+		OutputState: i.ToGetRemediationRunsRemediationRunCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunsRemediationRunCollectionArrayInput is an input type that accepts GetRemediationRunsRemediationRunCollectionArray and GetRemediationRunsRemediationRunCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionArrayInput` via:
+//
+//	GetRemediationRunsRemediationRunCollectionArray{ GetRemediationRunsRemediationRunCollectionArgs{...} }
+type GetRemediationRunsRemediationRunCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsRemediationRunCollectionArrayOutput() GetRemediationRunsRemediationRunCollectionArrayOutput
+	ToGetRemediationRunsRemediationRunCollectionArrayOutputWithContext(context.Context) GetRemediationRunsRemediationRunCollectionArrayOutput
+}
+
+type GetRemediationRunsRemediationRunCollectionArray []GetRemediationRunsRemediationRunCollectionInput
+
+func (GetRemediationRunsRemediationRunCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsRemediationRunCollection)(nil)).Elem()
+}
+
+func (i GetRemediationRunsRemediationRunCollectionArray) ToGetRemediationRunsRemediationRunCollectionArrayOutput() GetRemediationRunsRemediationRunCollectionArrayOutput {
+	return i.ToGetRemediationRunsRemediationRunCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsRemediationRunCollectionArray) ToGetRemediationRunsRemediationRunCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionArrayOutput)
+}
+
+func (i GetRemediationRunsRemediationRunCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollection] {
+	return pulumix.Output[[]GetRemediationRunsRemediationRunCollection]{
+		OutputState: i.ToGetRemediationRunsRemediationRunCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunsRemediationRunCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsRemediationRunCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsRemediationRunCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRunsRemediationRunCollectionOutput) ToGetRemediationRunsRemediationRunCollectionOutput() GetRemediationRunsRemediationRunCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionOutput) ToGetRemediationRunsRemediationRunCollectionOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollection] {
+	return pulumix.Output[GetRemediationRunsRemediationRunCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunsRemediationRunCollectionOutput) Items() GetRemediationRunsRemediationRunCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollection) []GetRemediationRunsRemediationRunCollectionItem {
+		return v.Items
+	}).(GetRemediationRunsRemediationRunCollectionItemArrayOutput)
+}
+
+type GetRemediationRunsRemediationRunCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsRemediationRunCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsRemediationRunCollection)(nil)).Elem()
+}
+
+func (o GetRemediationRunsRemediationRunCollectionArrayOutput) ToGetRemediationRunsRemediationRunCollectionArrayOutput() GetRemediationRunsRemediationRunCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionArrayOutput) ToGetRemediationRunsRemediationRunCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollection] {
+	return pulumix.Output[[]GetRemediationRunsRemediationRunCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunsRemediationRunCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsRemediationRunCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunsRemediationRunCollection {
+		return vs[0].([]GetRemediationRunsRemediationRunCollection)[vs[1].(int)]
+	}).(GetRemediationRunsRemediationRunCollectionOutput)
+}
+
+type GetRemediationRunsRemediationRunCollectionItem struct {
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The type of the current stage of the remediation run.
+	CurrentStageType string `pulumi:"currentStageType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the specified Remediation Recipe identifier.
+	RemediationRecipeId string `pulumi:"remediationRecipeId"`
+	// The source that triggered the Remediation Recipe.
+	RemediationRunSource string `pulumi:"remediationRunSource"`
+	// The list of remediation run stage summaries.
+	Stages []GetRemediationRunsRemediationRunCollectionItemStage `pulumi:"stages"`
+	// A filter to return only Remediation Runs that match the specified lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted string `pulumi:"timeStarted"`
+	// The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetRemediationRunsRemediationRunCollectionItemInput is an input type that accepts GetRemediationRunsRemediationRunCollectionItemArgs and GetRemediationRunsRemediationRunCollectionItemOutput values.
+// You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionItemInput` via:
+//
+//	GetRemediationRunsRemediationRunCollectionItemArgs{...}
+type GetRemediationRunsRemediationRunCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsRemediationRunCollectionItemOutput() GetRemediationRunsRemediationRunCollectionItemOutput
+	ToGetRemediationRunsRemediationRunCollectionItemOutputWithContext(context.Context) GetRemediationRunsRemediationRunCollectionItemOutput
+}
+
+type GetRemediationRunsRemediationRunCollectionItemArgs struct {
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The type of the current stage of the remediation run.
+	CurrentStageType pulumi.StringInput `pulumi:"currentStageType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the specified Remediation Recipe identifier.
+	RemediationRecipeId pulumi.StringInput `pulumi:"remediationRecipeId"`
+	// The source that triggered the Remediation Recipe.
+	RemediationRunSource pulumi.StringInput `pulumi:"remediationRunSource"`
+	// The list of remediation run stage summaries.
+	Stages GetRemediationRunsRemediationRunCollectionItemStageArrayInput `pulumi:"stages"`
+	// A filter to return only Remediation Runs that match the specified lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetRemediationRunsRemediationRunCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemArgs) ToGetRemediationRunsRemediationRunCollectionItemOutput() GetRemediationRunsRemediationRunCollectionItemOutput {
+	return i.ToGetRemediationRunsRemediationRunCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemArgs) ToGetRemediationRunsRemediationRunCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemOutput)
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItem] {
+	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItem]{
+		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunsRemediationRunCollectionItemArrayInput is an input type that accepts GetRemediationRunsRemediationRunCollectionItemArray and GetRemediationRunsRemediationRunCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionItemArrayInput` via:
+//
+//	GetRemediationRunsRemediationRunCollectionItemArray{ GetRemediationRunsRemediationRunCollectionItemArgs{...} }
+type GetRemediationRunsRemediationRunCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsRemediationRunCollectionItemArrayOutput() GetRemediationRunsRemediationRunCollectionItemArrayOutput
+	ToGetRemediationRunsRemediationRunCollectionItemArrayOutputWithContext(context.Context) GetRemediationRunsRemediationRunCollectionItemArrayOutput
+}
+
+type GetRemediationRunsRemediationRunCollectionItemArray []GetRemediationRunsRemediationRunCollectionItemInput
+
+func (GetRemediationRunsRemediationRunCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsRemediationRunCollectionItem)(nil)).Elem()
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemArray) ToGetRemediationRunsRemediationRunCollectionItemArrayOutput() GetRemediationRunsRemediationRunCollectionItemArrayOutput {
+	return i.ToGetRemediationRunsRemediationRunCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemArray) ToGetRemediationRunsRemediationRunCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemArrayOutput)
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem] {
+	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem]{
+		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunsRemediationRunCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsRemediationRunCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) ToGetRemediationRunsRemediationRunCollectionItemOutput() GetRemediationRunsRemediationRunCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) ToGetRemediationRunsRemediationRunCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItem] {
+	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The type of the current stage of the remediation run.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) CurrentStageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.CurrentStageType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified Remediation Recipe identifier.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) RemediationRecipeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.RemediationRecipeId }).(pulumi.StringOutput)
+}
+
+// The source that triggered the Remediation Recipe.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) RemediationRunSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.RemediationRunSource }).(pulumi.StringOutput)
+}
+
+// The list of remediation run stage summaries.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) Stages() GetRemediationRunsRemediationRunCollectionItemStageArrayOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) []GetRemediationRunsRemediationRunCollectionItemStage {
+		return v.Stages
+	}).(GetRemediationRunsRemediationRunCollectionItemStageArrayOutput)
+}
+
+// A filter to return only Remediation Runs that match the specified lifecycleState.
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetRemediationRunsRemediationRunCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsRemediationRunCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsRemediationRunCollectionItem)(nil)).Elem()
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemArrayOutput) ToGetRemediationRunsRemediationRunCollectionItemArrayOutput() GetRemediationRunsRemediationRunCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemArrayOutput) ToGetRemediationRunsRemediationRunCollectionItemArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem] {
+	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsRemediationRunCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunsRemediationRunCollectionItem {
+		return vs[0].([]GetRemediationRunsRemediationRunCollectionItem)[vs[1].(int)]
+	}).(GetRemediationRunsRemediationRunCollectionItemOutput)
+}
+
+type GetRemediationRunsRemediationRunCollectionItemStage struct {
+	// Information about the current step within the given stage.
+	Summary string `pulumi:"summary"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted string `pulumi:"timeStarted"`
+	// The type of stage.
+	Type string `pulumi:"type"`
+}
+
+// GetRemediationRunsRemediationRunCollectionItemStageInput is an input type that accepts GetRemediationRunsRemediationRunCollectionItemStageArgs and GetRemediationRunsRemediationRunCollectionItemStageOutput values.
+// You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionItemStageInput` via:
+//
+//	GetRemediationRunsRemediationRunCollectionItemStageArgs{...}
+type GetRemediationRunsRemediationRunCollectionItemStageInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsRemediationRunCollectionItemStageOutput() GetRemediationRunsRemediationRunCollectionItemStageOutput
+	ToGetRemediationRunsRemediationRunCollectionItemStageOutputWithContext(context.Context) GetRemediationRunsRemediationRunCollectionItemStageOutput
+}
+
+type GetRemediationRunsRemediationRunCollectionItemStageArgs struct {
+	// Information about the current step within the given stage.
+	Summary pulumi.StringInput `pulumi:"summary"`
+	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The type of stage.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRemediationRunsRemediationRunCollectionItemStageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItemStage)(nil)).Elem()
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemStageArgs) ToGetRemediationRunsRemediationRunCollectionItemStageOutput() GetRemediationRunsRemediationRunCollectionItemStageOutput {
+	return i.ToGetRemediationRunsRemediationRunCollectionItemStageOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemStageArgs) ToGetRemediationRunsRemediationRunCollectionItemStageOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemStageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemStageOutput)
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage] {
+	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage]{
+		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemStageOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetRemediationRunsRemediationRunCollectionItemStageArrayInput is an input type that accepts GetRemediationRunsRemediationRunCollectionItemStageArray and GetRemediationRunsRemediationRunCollectionItemStageArrayOutput values.
+// You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionItemStageArrayInput` via:
+//
+//	GetRemediationRunsRemediationRunCollectionItemStageArray{ GetRemediationRunsRemediationRunCollectionItemStageArgs{...} }
+type GetRemediationRunsRemediationRunCollectionItemStageArrayInput interface {
+	pulumi.Input
+
+	ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutput() GetRemediationRunsRemediationRunCollectionItemStageArrayOutput
+	ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutputWithContext(context.Context) GetRemediationRunsRemediationRunCollectionItemStageArrayOutput
+}
+
+type GetRemediationRunsRemediationRunCollectionItemStageArray []GetRemediationRunsRemediationRunCollectionItemStageInput
+
+func (GetRemediationRunsRemediationRunCollectionItemStageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsRemediationRunCollectionItemStage)(nil)).Elem()
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemStageArray) ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutput() GetRemediationRunsRemediationRunCollectionItemStageArrayOutput {
+	return i.ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutputWithContext(context.Background())
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemStageArray) ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemStageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemStageArrayOutput)
+}
+
+func (i GetRemediationRunsRemediationRunCollectionItemStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage] {
+	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage]{
+		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetRemediationRunsRemediationRunCollectionItemStageOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsRemediationRunCollectionItemStageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItemStage)(nil)).Elem()
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) ToGetRemediationRunsRemediationRunCollectionItemStageOutput() GetRemediationRunsRemediationRunCollectionItemStageOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) ToGetRemediationRunsRemediationRunCollectionItemStageOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemStageOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage] {
+	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Information about the current step within the given stage.
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) Summary() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItemStage) string { return v.Summary }).(pulumi.StringOutput)
+}
+
+// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItemStage) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItemStage) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItemStage) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The type of stage.
+func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItemStage) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRemediationRunsRemediationRunCollectionItemStageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRemediationRunsRemediationRunCollectionItemStage)(nil)).Elem()
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutput() GetRemediationRunsRemediationRunCollectionItemStageArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemStageArrayOutput {
+	return o
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage] {
+	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsRemediationRunCollectionItemStageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunsRemediationRunCollectionItemStage {
+		return vs[0].([]GetRemediationRunsRemediationRunCollectionItemStage)[vs[1].(int)]
+	}).(GetRemediationRunsRemediationRunCollectionItemStageOutput)
 }
 
 type GetVulnerabilityAuditApplicationDependency struct {
@@ -1285,7 +6619,7 @@ func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) Index(i pulumi.In
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection struct {
-	// List of Vulnerability Audit summaries.
+	// List of vulnerability audit summaries.
 	Items []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem `pulumi:"items"`
 }
 
@@ -1301,7 +6635,7 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs struct {
-	// List of Vulnerability Audit summaries.
+	// List of vulnerability audit summaries.
 	Items GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -1374,7 +6708,7 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	}
 }
 
-// List of Vulnerability Audit summaries.
+// List of vulnerability audit summaries.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput) Items() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection) []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem {
 		return v.Items
@@ -1408,15 +6742,15 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem struct {
-	// List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+	// List of application dependencies on which this application dependency depends, each identified by its nodeId.
 	ApplicationDependencyNodeIds []string `pulumi:"applicationDependencyNodeIds"`
 	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 	Gav string `pulumi:"gav"`
 	// Indicates if the artifact is found in the knowledge base.
 	IsFoundInKnowledgeBase bool `pulumi:"isFoundInKnowledgeBase"`
-	// Unique identifier of an Application Dependency, for example nodeId1.
+	// Unique identifier of an application dependency, for example nodeId1.
 	NodeId string `pulumi:"nodeId"`
-	// List of vulnerabilities for the Application Dependency.
+	// List of vulnerabilities for the application dependency.
 	Vulnerabilities []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability `pulumi:"vulnerabilities"`
 }
 
@@ -1432,15 +6766,15 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 }
 
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs struct {
-	// List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+	// List of application dependencies on which this application dependency depends, each identified by its nodeId.
 	ApplicationDependencyNodeIds pulumi.StringArrayInput `pulumi:"applicationDependencyNodeIds"`
 	// A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 	Gav pulumi.StringInput `pulumi:"gav"`
 	// Indicates if the artifact is found in the knowledge base.
 	IsFoundInKnowledgeBase pulumi.BoolInput `pulumi:"isFoundInKnowledgeBase"`
-	// Unique identifier of an Application Dependency, for example nodeId1.
+	// Unique identifier of an application dependency, for example nodeId1.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// List of vulnerabilities for the Application Dependency.
+	// List of vulnerabilities for the application dependency.
 	Vulnerabilities GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput `pulumi:"vulnerabilities"`
 }
 
@@ -1513,7 +6847,7 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	}
 }
 
-// List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+// List of application dependencies on which this application dependency depends, each identified by its nodeId.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) ApplicationDependencyNodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) []string {
 		return v.ApplicationDependencyNodeIds
@@ -1534,14 +6868,14 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	}).(pulumi.BoolOutput)
 }
 
-// Unique identifier of an Application Dependency, for example nodeId1.
+// Unique identifier of an application dependency, for example nodeId1.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) string {
 		return v.NodeId
 	}).(pulumi.StringOutput)
 }
 
-// List of vulnerabilities for the Application Dependency.
+// List of vulnerabilities for the application dependency.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) Vulnerabilities() GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem) []GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability {
 		return v.Vulnerabilities
@@ -2178,11 +7512,11 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 }
 
 type GetVulnerabilityAuditConfiguration struct {
-	// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+	// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions []string `pulumi:"exclusions"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV2score float64 `pulumi:"maxPermissibleCvssV2score"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV3score float64 `pulumi:"maxPermissibleCvssV3score"`
 }
 
@@ -2198,11 +7532,11 @@ type GetVulnerabilityAuditConfigurationInput interface {
 }
 
 type GetVulnerabilityAuditConfigurationArgs struct {
-	// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+	// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV2score pulumi.Float64Input `pulumi:"maxPermissibleCvssV2score"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV3score pulumi.Float64Input `pulumi:"maxPermissibleCvssV3score"`
 }
 
@@ -2275,17 +7609,17 @@ func (o GetVulnerabilityAuditConfigurationOutput) ToOutput(ctx context.Context) 
 	}
 }
 
-// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 func (o GetVulnerabilityAuditConfigurationOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditConfiguration) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o GetVulnerabilityAuditConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditConfiguration) float64 { return v.MaxPermissibleCvssV2score }).(pulumi.Float64Output)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o GetVulnerabilityAuditConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditConfiguration) float64 { return v.MaxPermissibleCvssV3score }).(pulumi.Float64Output)
 }
@@ -2319,9 +7653,9 @@ func (o GetVulnerabilityAuditConfigurationArrayOutput) Index(i pulumi.IntInput) 
 type GetVulnerabilityAuditSource struct {
 	// Description of the external resource source.
 	Description string `pulumi:"description"`
-	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId string `pulumi:"ociResourceId"`
-	// Source type of the Vulnerability Audit.
+	// Source type of the vulnerability audit.
 	Type string `pulumi:"type"`
 }
 
@@ -2339,9 +7673,9 @@ type GetVulnerabilityAuditSourceInput interface {
 type GetVulnerabilityAuditSourceArgs struct {
 	// Description of the external resource source.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId pulumi.StringInput `pulumi:"ociResourceId"`
-	// Source type of the Vulnerability Audit.
+	// Source type of the vulnerability audit.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2419,12 +7753,12 @@ func (o GetVulnerabilityAuditSourceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditSource) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 func (o GetVulnerabilityAuditSourceOutput) OciResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditSource) string { return v.OciResourceId }).(pulumi.StringOutput)
 }
 
-// Source type of the Vulnerability Audit.
+// Source type of the vulnerability audit.
 func (o GetVulnerabilityAuditSourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditSource) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2857,9 +8191,9 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 	ApplicationDependencies []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency `pulumi:"applicationDependencies"`
 	// The type of the build tool.
 	BuildType string `pulumi:"buildType"`
-	// A filter to return only resources that belong to the specified compartment identifier.
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Configuration for a Vulnerability Audit. A vulnerable Application Dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
+	// Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
 	Configurations []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -2867,35 +8201,35 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
 	// A filter to return only successful or failed Vulnerability Audits.
 	IsSuccess bool `pulumi:"isSuccess"`
 	// A filter to return only Vulnerability Audits that were created against the specified knowledge base.
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
-	// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable Application Dependencies.
+	// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
 	MaxObservedCvssV2score float64 `pulumi:"maxObservedCvssV2score"`
-	// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable Application Dependencies including ignored ones.
+	// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
 	MaxObservedCvssV2scoreWithIgnored float64 `pulumi:"maxObservedCvssV2scoreWithIgnored"`
-	// Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable Application Dependencies.
+	// Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable application dependencies.
 	MaxObservedCvssV3score float64 `pulumi:"maxObservedCvssV3score"`
-	// Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable Application Dependencies including ignored ones.
+	// Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable application dependencies including ignored ones.
 	MaxObservedCvssV3scoreWithIgnored float64 `pulumi:"maxObservedCvssV3scoreWithIgnored"`
-	// Vulnerability Audit source.
+	// vulnerability audit source.
 	Sources []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource `pulumi:"sources"`
 	// A filter to return only Vulnerability Audits that match the specified lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The creation date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The update date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// List of vulnerabilities found in the Vulnerability Audit.
+	// List of vulnerabilities found in the vulnerability audit.
 	Vulnerabilities []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability `pulumi:"vulnerabilities"`
-	// Count of non-ignored vulnerable Application Dependencies.
+	// Count of non-ignored vulnerable application dependencies.
 	VulnerableArtifactsCount int `pulumi:"vulnerableArtifactsCount"`
-	// Count of all vulnerable Application Dependencies.
+	// Count of all vulnerable application dependencies.
 	VulnerableArtifactsCountWithIgnored int `pulumi:"vulnerableArtifactsCountWithIgnored"`
 }
 
@@ -2914,9 +8248,9 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs struct {
 	ApplicationDependencies GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput `pulumi:"applicationDependencies"`
 	// The type of the build tool.
 	BuildType pulumi.StringInput `pulumi:"buildType"`
-	// A filter to return only resources that belong to the specified compartment identifier.
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Configuration for a Vulnerability Audit. A vulnerable Application Dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
+	// Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
 	Configurations GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -2924,35 +8258,35 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only successful or failed Vulnerability Audits.
 	IsSuccess pulumi.BoolInput `pulumi:"isSuccess"`
 	// A filter to return only Vulnerability Audits that were created against the specified knowledge base.
 	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
-	// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable Application Dependencies.
+	// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
 	MaxObservedCvssV2score pulumi.Float64Input `pulumi:"maxObservedCvssV2score"`
-	// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable Application Dependencies including ignored ones.
+	// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
 	MaxObservedCvssV2scoreWithIgnored pulumi.Float64Input `pulumi:"maxObservedCvssV2scoreWithIgnored"`
-	// Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable Application Dependencies.
+	// Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable application dependencies.
 	MaxObservedCvssV3score pulumi.Float64Input `pulumi:"maxObservedCvssV3score"`
-	// Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable Application Dependencies including ignored ones.
+	// Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable application dependencies including ignored ones.
 	MaxObservedCvssV3scoreWithIgnored pulumi.Float64Input `pulumi:"maxObservedCvssV3scoreWithIgnored"`
-	// Vulnerability Audit source.
+	// vulnerability audit source.
 	Sources GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayInput `pulumi:"sources"`
 	// A filter to return only Vulnerability Audits that match the specified lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The creation date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The update date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// List of vulnerabilities found in the Vulnerability Audit.
+	// List of vulnerabilities found in the vulnerability audit.
 	Vulnerabilities GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput `pulumi:"vulnerabilities"`
-	// Count of non-ignored vulnerable Application Dependencies.
+	// Count of non-ignored vulnerable application dependencies.
 	VulnerableArtifactsCount pulumi.IntInput `pulumi:"vulnerableArtifactsCount"`
-	// Count of all vulnerable Application Dependencies.
+	// Count of all vulnerable application dependencies.
 	VulnerableArtifactsCountWithIgnored pulumi.IntInput `pulumi:"vulnerableArtifactsCountWithIgnored"`
 }
 
@@ -3036,12 +8370,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) BuildType(
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.BuildType }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that belong to the specified compartment identifier.
+// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Configuration for a Vulnerability Audit. A vulnerable Application Dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
+// Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) Configurations() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration {
 		return v.Configurations
@@ -3067,7 +8401,7 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) FreeformTa
 	}).(pulumi.MapOutput)
 }
 
-// A filter to return only resources that match the specified identifier.
+// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -3082,35 +8416,35 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) KnowledgeB
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
-// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable Application Dependencies.
+// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) MaxObservedCvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) float64 {
 		return v.MaxObservedCvssV2score
 	}).(pulumi.Float64Output)
 }
 
-// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable Application Dependencies including ignored ones.
+// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) MaxObservedCvssV2scoreWithIgnored() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) float64 {
 		return v.MaxObservedCvssV2scoreWithIgnored
 	}).(pulumi.Float64Output)
 }
 
-// Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable Application Dependencies.
+// Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable application dependencies.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) MaxObservedCvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) float64 {
 		return v.MaxObservedCvssV3score
 	}).(pulumi.Float64Output)
 }
 
-// Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable Application Dependencies including ignored ones.
+// Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable application dependencies including ignored ones.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) MaxObservedCvssV3scoreWithIgnored() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) float64 {
 		return v.MaxObservedCvssV3scoreWithIgnored
 	}).(pulumi.Float64Output)
 }
 
-// Vulnerability Audit source.
+// vulnerability audit source.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) Sources() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource {
 		return v.Sources
@@ -3129,29 +8463,29 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) SystemTags
 	}).(pulumi.MapOutput)
 }
 
-// The creation date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The update date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// List of vulnerabilities found in the Vulnerability Audit.
+// List of vulnerabilities found in the vulnerability audit.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) Vulnerabilities() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability {
 		return v.Vulnerabilities
 	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput)
 }
 
-// Count of non-ignored vulnerable Application Dependencies.
+// Count of non-ignored vulnerable application dependencies.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) VulnerableArtifactsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) int { return v.VulnerableArtifactsCount }).(pulumi.IntOutput)
 }
 
-// Count of all vulnerable Application Dependencies.
+// Count of all vulnerable application dependencies.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) VulnerableArtifactsCountWithIgnored() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) int {
 		return v.VulnerableArtifactsCountWithIgnored
@@ -3321,11 +8655,11 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 }
 
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration struct {
-	// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+	// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions []string `pulumi:"exclusions"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV2score float64 `pulumi:"maxPermissibleCvssV2score"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV3score float64 `pulumi:"maxPermissibleCvssV3score"`
 }
 
@@ -3341,11 +8675,11 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationInput in
 }
 
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs struct {
-	// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+	// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV2score pulumi.Float64Input `pulumi:"maxPermissibleCvssV2score"`
-	// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+	// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 	MaxPermissibleCvssV3score pulumi.Float64Input `pulumi:"maxPermissibleCvssV3score"`
 }
 
@@ -3418,21 +8752,21 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutpu
 	}
 }
 
-// A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+// A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration) []string {
 		return v.Exclusions
 	}).(pulumi.StringArrayOutput)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) MaxPermissibleCvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration) float64 {
 		return v.MaxPermissibleCvssV2score
 	}).(pulumi.Float64Output)
 }
 
-// A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+// A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) MaxPermissibleCvssV3score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration) float64 {
 		return v.MaxPermissibleCvssV3score
@@ -3468,9 +8802,9 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource struct {
 	// Description of the external resource source.
 	Description string `pulumi:"description"`
-	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId string `pulumi:"ociResourceId"`
-	// Source type of the Vulnerability Audit.
+	// Source type of the vulnerability audit.
 	Type string `pulumi:"type"`
 }
 
@@ -3488,9 +8822,9 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceInput interface
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs struct {
 	// Description of the external resource source.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId pulumi.StringInput `pulumi:"ociResourceId"`
-	// Source type of the Vulnerability Audit.
+	// Source type of the vulnerability audit.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -3568,12 +8902,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) Desc
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) OciResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource) string { return v.OciResourceId }).(pulumi.StringOutput)
 }
 
-// Source type of the Vulnerability Audit.
+// Source type of the vulnerability audit.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -3609,7 +8943,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability struct 
 	CvssV2score float64 `pulumi:"cvssV2score"`
 	// Common Vulnerability Scoring System (CVSS) Version 3.
 	CvssV3score float64 `pulumi:"cvssV3score"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
@@ -3631,7 +8965,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs str
 	CvssV2score pulumi.Float64Input `pulumi:"cvssV2score"`
 	// Common Vulnerability Scoring System (CVSS) Version 3.
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
@@ -3720,7 +9054,7 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutpu
 	}).(pulumi.Float64Output)
 }
 
-// A filter to return only resources that match the specified identifier.
+// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -3757,6 +9091,16 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeDetectConfigurationInput)(nil)).Elem(), RemediationRecipeDetectConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeDetectConfigurationPtrInput)(nil)).Elem(), RemediationRecipeDetectConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeNetworkConfigurationInput)(nil)).Elem(), RemediationRecipeNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeNetworkConfigurationPtrInput)(nil)).Elem(), RemediationRecipeNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeScmConfigurationInput)(nil)).Elem(), RemediationRecipeScmConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeScmConfigurationPtrInput)(nil)).Elem(), RemediationRecipeScmConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeVerifyConfigurationInput)(nil)).Elem(), RemediationRecipeVerifyConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRecipeVerifyConfigurationPtrInput)(nil)).Elem(), RemediationRecipeVerifyConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRunStageInput)(nil)).Elem(), RemediationRunStageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RemediationRunStageArrayInput)(nil)).Elem(), RemediationRunStageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditApplicationDependencyInput)(nil)).Elem(), VulnerabilityAuditApplicationDependencyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditApplicationDependencyArrayInput)(nil)).Elem(), VulnerabilityAuditApplicationDependencyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditConfigurationInput)(nil)).Elem(), VulnerabilityAuditConfigurationArgs{})
@@ -3771,6 +9115,58 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKnowledgebasesKnowledgeBaseCollectionArrayInput)(nil)).Elem(), GetKnowledgebasesKnowledgeBaseCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKnowledgebasesKnowledgeBaseCollectionItemInput)(nil)).Elem(), GetKnowledgebasesKnowledgeBaseCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput)(nil)).Elem(), GetKnowledgebasesKnowledgeBaseCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeDetectConfigurationInput)(nil)).Elem(), GetRemediationRecipeDetectConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeDetectConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipeDetectConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeNetworkConfigurationInput)(nil)).Elem(), GetRemediationRecipeNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeNetworkConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipeNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeScmConfigurationInput)(nil)).Elem(), GetRemediationRecipeScmConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeScmConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipeScmConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeVerifyConfigurationInput)(nil)).Elem(), GetRemediationRecipeVerifyConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipeVerifyConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipeVerifyConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesFilterInput)(nil)).Elem(), GetRemediationRecipesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesFilterArrayInput)(nil)).Elem(), GetRemediationRecipesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionArrayInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemArrayInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayInput)(nil)).Elem(), GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionInput)(nil)).Elem(), GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayInput)(nil)).Elem(), GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemInput)(nil)).Elem(), GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayInput)(nil)).Elem(), GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsFilterInput)(nil)).Elem(), GetRemediationRunApplicationDependencyRecommendationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunApplicationDependencyRecommendationsFilterArrayInput)(nil)).Elem(), GetRemediationRunApplicationDependencyRecommendationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStageInput)(nil)).Elem(), GetRemediationRunStageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStageArrayInput)(nil)).Elem(), GetRemediationRunStageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagePipelinePropertyInput)(nil)).Elem(), GetRemediationRunStagePipelinePropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagePipelinePropertyArrayInput)(nil)).Elem(), GetRemediationRunStagePipelinePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagePullRequestPropertyInput)(nil)).Elem(), GetRemediationRunStagePullRequestPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagePullRequestPropertyArrayInput)(nil)).Elem(), GetRemediationRunStagePullRequestPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesFilterInput)(nil)).Elem(), GetRemediationRunStagesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesFilterArrayInput)(nil)).Elem(), GetRemediationRunStagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionArrayInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemArrayInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayInput)(nil)).Elem(), GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsFilterInput)(nil)).Elem(), GetRemediationRunsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsFilterArrayInput)(nil)).Elem(), GetRemediationRunsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionInput)(nil)).Elem(), GetRemediationRunsRemediationRunCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionArrayInput)(nil)).Elem(), GetRemediationRunsRemediationRunCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItemInput)(nil)).Elem(), GetRemediationRunsRemediationRunCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItemArrayInput)(nil)).Elem(), GetRemediationRunsRemediationRunCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItemStageInput)(nil)).Elem(), GetRemediationRunsRemediationRunCollectionItemStageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRemediationRunsRemediationRunCollectionItemStageArrayInput)(nil)).Elem(), GetRemediationRunsRemediationRunCollectionItemStageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyArrayInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionInput)(nil)).Elem(), GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs{})
@@ -3805,6 +9201,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray{})
+	pulumi.RegisterOutputType(RemediationRecipeDetectConfigurationOutput{})
+	pulumi.RegisterOutputType(RemediationRecipeDetectConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(RemediationRecipeNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(RemediationRecipeNetworkConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(RemediationRecipeScmConfigurationOutput{})
+	pulumi.RegisterOutputType(RemediationRecipeScmConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(RemediationRecipeVerifyConfigurationOutput{})
+	pulumi.RegisterOutputType(RemediationRecipeVerifyConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(RemediationRunStageOutput{})
+	pulumi.RegisterOutputType(RemediationRunStageArrayOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditApplicationDependencyOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditApplicationDependencyArrayOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditConfigurationOutput{})
@@ -3819,6 +9225,58 @@ func init() {
 	pulumi.RegisterOutputType(GetKnowledgebasesKnowledgeBaseCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetKnowledgebasesKnowledgeBaseCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeDetectConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeDetectConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeScmConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeScmConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeVerifyConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipeVerifyConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesFilterOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput{})
+	pulumi.RegisterOutputType(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunApplicationDependencyRecommendationsFilterOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStageOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStageArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagePipelinePropertyOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagePipelinePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagePullRequestPropertyOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagePullRequestPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesFilterOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsFilterOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsRemediationRunCollectionOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsRemediationRunCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsRemediationRunCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsRemediationRunCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsRemediationRunCollectionItemStageOutput{})
+	pulumi.RegisterOutputType(GetRemediationRunsRemediationRunCollectionItemStageArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput{})

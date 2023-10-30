@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetKnowledgebasesKnowledgeBaseCollectionItem {
     /**
-     * @return A filter to return only resources that belong to the specified compartment identifier.
+     * @return A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      * 
      */
     private String compartmentId;
@@ -32,7 +32,7 @@ public final class GetKnowledgebasesKnowledgeBaseCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return A filter to return only resources that match the specified identifier.
+     * @return A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      * 
      */
     private String id;
@@ -47,19 +47,19 @@ public final class GetKnowledgebasesKnowledgeBaseCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     private String timeUpdated;
 
     private GetKnowledgebasesKnowledgeBaseCollectionItem() {}
     /**
-     * @return A filter to return only resources that belong to the specified compartment identifier.
+     * @return A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      * 
      */
     public String compartmentId() {
@@ -87,7 +87,7 @@ public final class GetKnowledgebasesKnowledgeBaseCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return A filter to return only resources that match the specified identifier.
+     * @return A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      * 
      */
     public String id() {
@@ -108,14 +108,14 @@ public final class GetKnowledgebasesKnowledgeBaseCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public String timeUpdated() {

@@ -91,13 +91,29 @@ export class Table extends pulumi.CustomResource {
      */
     public readonly isAutoReclaimable!: pulumi.Output<boolean>;
     /**
+     * True if this table is currently a member of a replication set.
+     */
+    public /*out*/ readonly isMultiRegion!: pulumi.Output<boolean>;
+    /**
      * A message describing the current state in more detail.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+     */
+    public /*out*/ readonly localReplicaInitializationInPercent!: pulumi.Output<number>;
+    /**
      * Table name.
      */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * An array of Replica listing this table's replicas, if any
+     */
+    public /*out*/ readonly replicas!: pulumi.Output<outputs.Nosql.TableReplica[]>;
+    /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     */
+    public /*out*/ readonly schemaState!: pulumi.Output<string>;
     /**
      * The table schema information as a JSON object.
      */
@@ -145,8 +161,12 @@ export class Table extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutoReclaimable"] = state ? state.isAutoReclaimable : undefined;
+            resourceInputs["isMultiRegion"] = state ? state.isMultiRegion : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["localReplicaInitializationInPercent"] = state ? state.localReplicaInitializationInPercent : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["replicas"] = state ? state.replicas : undefined;
+            resourceInputs["schemaState"] = state ? state.schemaState : undefined;
             resourceInputs["schemas"] = state ? state.schemas : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -169,7 +189,11 @@ export class Table extends pulumi.CustomResource {
             resourceInputs["isAutoReclaimable"] = args ? args.isAutoReclaimable : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["tableLimits"] = args ? args.tableLimits : undefined;
+            resourceInputs["isMultiRegion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["localReplicaInitializationInPercent"] = undefined /*out*/;
+            resourceInputs["replicas"] = undefined /*out*/;
+            resourceInputs["schemaState"] = undefined /*out*/;
             resourceInputs["schemas"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -207,13 +231,29 @@ export interface TableState {
      */
     isAutoReclaimable?: pulumi.Input<boolean>;
     /**
+     * True if this table is currently a member of a replication set.
+     */
+    isMultiRegion?: pulumi.Input<boolean>;
+    /**
      * A message describing the current state in more detail.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+     */
+    localReplicaInitializationInPercent?: pulumi.Input<number>;
+    /**
      * Table name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * An array of Replica listing this table's replicas, if any
+     */
+    replicas?: pulumi.Input<pulumi.Input<inputs.Nosql.TableReplica>[]>;
+    /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     */
+    schemaState?: pulumi.Input<string>;
     /**
      * The table schema information as a JSON object.
      */

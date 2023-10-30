@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Adm
     public sealed class GetKnowledgebasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that belong to the specified compartment identifier.
+        /// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// A filter to return only resources that match the specified identifier.
+        /// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Adm
     public sealed class GetKnowledgebasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that belong to the specified compartment identifier.
+        /// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// A filter to return only resources that match the specified identifier.
+        /// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -168,16 +168,16 @@ namespace Pulumi.Oci.Adm
     public sealed class GetKnowledgebasesResult
     {
         /// <summary>
-        /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+        /// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// The name of the Knowledge Base.
+        /// The name of the knowledge base.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetKnowledgebasesFilterResult> Filters;
         /// <summary>
-        /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+        /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Adm
         /// </summary>
         public readonly ImmutableArray<Outputs.GetKnowledgebasesKnowledgeBaseCollectionResult> KnowledgeBaseCollections;
         /// <summary>
-        /// The current lifecycle state of the Knowledge Base.
+        /// The current lifecycle state of the knowledge base.
         /// </summary>
         public readonly string? State;
 

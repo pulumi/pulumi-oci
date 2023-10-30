@@ -23,10 +23,13 @@ class GetAutonomousContainerPatchesResult:
     """
     A collection of values returned by getAutonomousContainerPatches.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_patches=None, compartment_id=None, filters=None, id=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_patch_type=None, autonomous_patches=None, compartment_id=None, filters=None, id=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        if autonomous_patch_type and not isinstance(autonomous_patch_type, str):
+            raise TypeError("Expected argument 'autonomous_patch_type' to be a str")
+        pulumi.set(__self__, "autonomous_patch_type", autonomous_patch_type)
         if autonomous_patches and not isinstance(autonomous_patches, list):
             raise TypeError("Expected argument 'autonomous_patches' to be a list")
         pulumi.set(__self__, "autonomous_patches", autonomous_patches)
@@ -44,6 +47,14 @@ class GetAutonomousContainerPatchesResult:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> str:
         return pulumi.get(self, "autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="autonomousPatchType")
+    def autonomous_patch_type(self) -> Optional[str]:
+        """
+        Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+        """
+        return pulumi.get(self, "autonomous_patch_type")
 
     @property
     @pulumi.getter(name="autonomousPatches")
@@ -79,6 +90,7 @@ class AwaitableGetAutonomousContainerPatchesResult(GetAutonomousContainerPatches
             yield self
         return GetAutonomousContainerPatchesResult(
             autonomous_container_database_id=self.autonomous_container_database_id,
+            autonomous_patch_type=self.autonomous_patch_type,
             autonomous_patches=self.autonomous_patches,
             compartment_id=self.compartment_id,
             filters=self.filters,
@@ -86,6 +98,7 @@ class AwaitableGetAutonomousContainerPatchesResult(GetAutonomousContainerPatches
 
 
 def get_autonomous_container_patches(autonomous_container_database_id: Optional[str] = None,
+                                     autonomous_patch_type: Optional[str] = None,
                                      compartment_id: Optional[str] = None,
                                      filters: Optional[Sequence[pulumi.InputType['GetAutonomousContainerPatchesFilterArgs']]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerPatchesResult:
@@ -101,15 +114,18 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
     import pulumi_oci as oci
 
     test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-        compartment_id=var["compartment_id"])
+        compartment_id=var["compartment_id"],
+        autonomous_patch_type=var["autonomous_container_patch_autonomous_patch_type"])
     ```
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str autonomous_patch_type: Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
+    __args__['autonomousPatchType'] = autonomous_patch_type
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -117,6 +133,7 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
 
     return AwaitableGetAutonomousContainerPatchesResult(
         autonomous_container_database_id=pulumi.get(__ret__, 'autonomous_container_database_id'),
+        autonomous_patch_type=pulumi.get(__ret__, 'autonomous_patch_type'),
         autonomous_patches=pulumi.get(__ret__, 'autonomous_patches'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
@@ -125,6 +142,7 @@ def get_autonomous_container_patches(autonomous_container_database_id: Optional[
 
 @_utilities.lift_output_func(get_autonomous_container_patches)
 def get_autonomous_container_patches_output(autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+                                            autonomous_patch_type: Optional[pulumi.Input[Optional[str]]] = None,
                                             compartment_id: Optional[pulumi.Input[str]] = None,
                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousContainerPatchesFilterArgs']]]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerPatchesResult]:
@@ -140,11 +158,13 @@ def get_autonomous_container_patches_output(autonomous_container_database_id: Op
     import pulumi_oci as oci
 
     test_autonomous_container_patches = oci.Database.get_autonomous_container_patches(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-        compartment_id=var["compartment_id"])
+        compartment_id=var["compartment_id"],
+        autonomous_patch_type=var["autonomous_container_patch_autonomous_patch_type"])
     ```
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param str autonomous_patch_type: Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     ...

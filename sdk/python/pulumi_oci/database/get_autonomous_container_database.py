@@ -22,7 +22,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -65,6 +65,9 @@ class GetAutonomousContainerDatabaseResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if dst_file_version and not isinstance(dst_file_version, str):
+            raise TypeError("Expected argument 'dst_file_version' to be a str")
+        pulumi.set(__self__, "dst_file_version", dst_file_version)
         if fast_start_fail_over_lag_limit_in_seconds and not isinstance(fast_start_fail_over_lag_limit_in_seconds, int):
             raise TypeError("Expected argument 'fast_start_fail_over_lag_limit_in_seconds' to be a int")
         pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
@@ -80,6 +83,9 @@ class GetAutonomousContainerDatabaseResult:
         if is_automatic_failover_enabled and not isinstance(is_automatic_failover_enabled, bool):
             raise TypeError("Expected argument 'is_automatic_failover_enabled' to be a bool")
         pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if is_dst_file_update_enabled and not isinstance(is_dst_file_update_enabled, bool):
+            raise TypeError("Expected argument 'is_dst_file_update_enabled' to be a bool")
+        pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if key_history_entries and not isinstance(key_history_entries, list):
             raise TypeError("Expected argument 'key_history_entries' to be a list")
         pulumi.set(__self__, "key_history_entries", key_history_entries)
@@ -293,6 +299,14 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="dstFileVersion")
+    def dst_file_version(self) -> str:
+        """
+        DST Time Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "dst_file_version")
+
+    @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
@@ -325,6 +339,14 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> bool:
         return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> bool:
+        """
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
@@ -599,11 +621,13 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             db_version=self.db_version,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            dst_file_version=self.dst_file_version,
             fast_start_fail_over_lag_limit_in_seconds=self.fast_start_fail_over_lag_limit_in_seconds,
             freeform_tags=self.freeform_tags,
             id=self.id,
             infrastructure_type=self.infrastructure_type,
             is_automatic_failover_enabled=self.is_automatic_failover_enabled,
+            is_dst_file_update_enabled=self.is_dst_file_update_enabled,
             key_history_entries=self.key_history_entries,
             key_store_id=self.key_store_id,
             key_store_wallet_name=self.key_store_wallet_name,
@@ -680,11 +704,13 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         db_version=pulumi.get(__ret__, 'db_version'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        dst_file_version=pulumi.get(__ret__, 'dst_file_version'),
         fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__ret__, 'fast_start_fail_over_lag_limit_in_seconds'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
         is_automatic_failover_enabled=pulumi.get(__ret__, 'is_automatic_failover_enabled'),
+        is_dst_file_update_enabled=pulumi.get(__ret__, 'is_dst_file_update_enabled'),
         key_history_entries=pulumi.get(__ret__, 'key_history_entries'),
         key_store_id=pulumi.get(__ret__, 'key_store_id'),
         key_store_wallet_name=pulumi.get(__ret__, 'key_store_wallet_name'),

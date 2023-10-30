@@ -144,13 +144,29 @@ namespace Pulumi.Oci.Nosql
         /// </summary>
         public readonly bool IsAutoReclaimable;
         /// <summary>
+        /// True if this table is currently a member of a replication set.
+        /// </summary>
+        public readonly bool IsMultiRegion;
+        /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+        /// </summary>
+        public readonly int LocalReplicaInitializationInPercent;
+        /// <summary>
         /// The column name.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// An array of Replica listing this table's replicas, if any
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetTableReplicaResult> Replicas;
+        /// <summary>
+        /// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        /// </summary>
+        public readonly string SchemaState;
         /// <summary>
         /// The table schema information as a JSON object.
         /// </summary>
@@ -195,9 +211,17 @@ namespace Pulumi.Oci.Nosql
 
             bool isAutoReclaimable,
 
+            bool isMultiRegion,
+
             string lifecycleDetails,
 
+            int localReplicaInitializationInPercent,
+
             string name,
+
+            ImmutableArray<Outputs.GetTableReplicaResult> replicas,
+
+            string schemaState,
 
             ImmutableArray<Outputs.GetTableSchemaResult> schemas,
 
@@ -221,8 +245,12 @@ namespace Pulumi.Oci.Nosql
             FreeformTags = freeformTags;
             Id = id;
             IsAutoReclaimable = isAutoReclaimable;
+            IsMultiRegion = isMultiRegion;
             LifecycleDetails = lifecycleDetails;
+            LocalReplicaInitializationInPercent = localReplicaInitializationInPercent;
             Name = name;
+            Replicas = replicas;
+            SchemaState = schemaState;
             Schemas = schemas;
             State = state;
             SystemTags = systemTags;

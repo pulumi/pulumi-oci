@@ -33,6 +33,7 @@ import (
 //			_, err := Database.GetAutonomousContainerPatches(ctx, &database.GetAutonomousContainerPatchesArgs{
 //				AutonomousContainerDatabaseId: oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
 //				CompartmentId:                 _var.Compartment_id,
+//				AutonomousPatchType:           pulumi.StringRef(_var.Autonomous_container_patch_autonomous_patch_type),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,6 +57,8 @@ func GetAutonomousContainerPatches(ctx *pulumi.Context, args *GetAutonomousConta
 type GetAutonomousContainerPatchesArgs struct {
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
+	// Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+	AutonomousPatchType *string `pulumi:"autonomousPatchType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                                `pulumi:"compartmentId"`
 	Filters       []GetAutonomousContainerPatchesFilter `pulumi:"filters"`
@@ -64,6 +67,8 @@ type GetAutonomousContainerPatchesArgs struct {
 // A collection of values returned by getAutonomousContainerPatches.
 type GetAutonomousContainerPatchesResult struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
+	// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+	AutonomousPatchType *string `pulumi:"autonomousPatchType"`
 	// The list of autonomous_patches.
 	AutonomousPatches []GetAutonomousContainerPatchesAutonomousPatch `pulumi:"autonomousPatches"`
 	CompartmentId     string                                         `pulumi:"compartmentId"`
@@ -89,6 +94,8 @@ func GetAutonomousContainerPatchesOutput(ctx *pulumi.Context, args GetAutonomous
 type GetAutonomousContainerPatchesOutputArgs struct {
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId pulumi.StringInput `pulumi:"autonomousContainerDatabaseId"`
+	// Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+	AutonomousPatchType pulumi.StringPtrInput `pulumi:"autonomousPatchType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput                            `pulumi:"compartmentId"`
 	Filters       GetAutonomousContainerPatchesFilterArrayInput `pulumi:"filters"`
@@ -121,6 +128,11 @@ func (o GetAutonomousContainerPatchesResultOutput) ToOutput(ctx context.Context)
 
 func (o GetAutonomousContainerPatchesResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousContainerPatchesResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
+}
+
+// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+func (o GetAutonomousContainerPatchesResultOutput) AutonomousPatchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerPatchesResult) *string { return v.AutonomousPatchType }).(pulumi.StringPtrOutput)
 }
 
 // The list of autonomous_patches.

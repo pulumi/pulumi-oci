@@ -10,7 +10,10 @@ import * as utilities from "../utilities";
  * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
  *
  * Lists the alarms for the specified compartment.
- * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+ * For more information, see
+ * [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+ * For important limits information, see
+ * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
  *
  * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
  * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -96,7 +99,10 @@ export interface GetAlarmsResult {
  * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
  *
  * Lists the alarms for the specified compartment.
- * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+ * For more information, see
+ * [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+ * For important limits information, see
+ * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
  *
  * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
  * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,

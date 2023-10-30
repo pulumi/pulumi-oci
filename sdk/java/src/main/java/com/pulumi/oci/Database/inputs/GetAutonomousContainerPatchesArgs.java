@@ -33,6 +33,21 @@ public final class GetAutonomousContainerPatchesArgs extends com.pulumi.resource
     }
 
     /**
+     * Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    @Import(name="autonomousPatchType")
+    private @Nullable Output<String> autonomousPatchType;
+
+    /**
+     * @return Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    public Optional<Output<String>> autonomousPatchType() {
+        return Optional.ofNullable(this.autonomousPatchType);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -58,6 +73,7 @@ public final class GetAutonomousContainerPatchesArgs extends com.pulumi.resource
 
     private GetAutonomousContainerPatchesArgs(GetAutonomousContainerPatchesArgs $) {
         this.autonomousContainerDatabaseId = $.autonomousContainerDatabaseId;
+        this.autonomousPatchType = $.autonomousPatchType;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
     }
@@ -99,6 +115,27 @@ public final class GetAutonomousContainerPatchesArgs extends com.pulumi.resource
          */
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             return autonomousContainerDatabaseId(Output.of(autonomousContainerDatabaseId));
+        }
+
+        /**
+         * @param autonomousPatchType Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousPatchType(@Nullable Output<String> autonomousPatchType) {
+            $.autonomousPatchType = autonomousPatchType;
+            return this;
+        }
+
+        /**
+         * @param autonomousPatchType Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousPatchType(String autonomousPatchType) {
+            return autonomousPatchType(Output.of(autonomousPatchType));
         }
 
         /**

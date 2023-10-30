@@ -9,11 +9,17 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerPatchesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerPatchesResult {
     private String autonomousContainerDatabaseId;
+    /**
+     * @return Maintenance run type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    private @Nullable String autonomousPatchType;
     /**
      * @return The list of autonomous_patches.
      * 
@@ -30,6 +36,13 @@ public final class GetAutonomousContainerPatchesResult {
     private GetAutonomousContainerPatchesResult() {}
     public String autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
+    }
+    /**
+     * @return Maintenance run type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    public Optional<String> autonomousPatchType() {
+        return Optional.ofNullable(this.autonomousPatchType);
     }
     /**
      * @return The list of autonomous_patches.
@@ -62,6 +75,7 @@ public final class GetAutonomousContainerPatchesResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousContainerDatabaseId;
+        private @Nullable String autonomousPatchType;
         private List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
         private String compartmentId;
         private @Nullable List<GetAutonomousContainerPatchesFilter> filters;
@@ -70,6 +84,7 @@ public final class GetAutonomousContainerPatchesResult {
         public Builder(GetAutonomousContainerPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
+    	      this.autonomousPatchType = defaults.autonomousPatchType;
     	      this.autonomousPatches = defaults.autonomousPatches;
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
@@ -79,6 +94,11 @@ public final class GetAutonomousContainerPatchesResult {
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autonomousPatchType(@Nullable String autonomousPatchType) {
+            this.autonomousPatchType = autonomousPatchType;
             return this;
         }
         @CustomType.Setter
@@ -110,6 +130,7 @@ public final class GetAutonomousContainerPatchesResult {
         public GetAutonomousContainerPatchesResult build() {
             final var o = new GetAutonomousContainerPatchesResult();
             o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            o.autonomousPatchType = autonomousPatchType;
             o.autonomousPatches = autonomousPatches;
             o.compartmentId = compartmentId;
             o.filters = filters;

@@ -15,7 +15,12 @@ import (
 // This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
 //
 // List the status of each alarm in the specified compartment.
-// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+// Status is collective, across all metric streams in the alarm.
+// To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+// For more information, see
+// [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+// For important limits information, see
+// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 //
 // This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
 // Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -39,6 +44,10 @@ import (
 //				CompartmentId:          _var.Compartment_id,
 //				CompartmentIdInSubtree: pulumi.BoolRef(_var.Alarm_status_compartment_id_in_subtree),
 //				DisplayName:            pulumi.StringRef(_var.Alarm_status_display_name),
+//				EntityId:               pulumi.StringRef(oci_monitoring_entity.Test_entity.Id),
+//				ResourceId:             pulumi.StringRef(oci_monitoring_resource.Test_resource.Id),
+//				ServiceName:            pulumi.StringRef(oci_core_service.Test_service.Name),
+//				Status:                 pulumi.StringRef(_var.Alarm_status_status),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -65,8 +74,16 @@ type GetAlarmStatusesArgs struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-	DisplayName *string                  `pulumi:"displayName"`
-	Filters     []GetAlarmStatusesFilter `pulumi:"filters"`
+	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+	EntityId *string                  `pulumi:"entityId"`
+	Filters  []GetAlarmStatusesFilter `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+	ResourceId *string `pulumi:"resourceId"`
+	// A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+	ServiceName *string `pulumi:"serviceName"`
+	// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
+	Status *string `pulumi:"status"`
 }
 
 // A collection of values returned by getAlarmStatuses.
@@ -77,9 +94,14 @@ type GetAlarmStatusesResult struct {
 	CompartmentIdInSubtree *bool                         `pulumi:"compartmentIdInSubtree"`
 	// The configured name of the alarm.  Example: `High CPU Utilization`
 	DisplayName *string                  `pulumi:"displayName"`
+	EntityId    *string                  `pulumi:"entityId"`
 	Filters     []GetAlarmStatusesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id          string  `pulumi:"id"`
+	ResourceId  *string `pulumi:"resourceId"`
+	ServiceName *string `pulumi:"serviceName"`
+	// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+	Status *string `pulumi:"status"`
 }
 
 func GetAlarmStatusesOutput(ctx *pulumi.Context, args GetAlarmStatusesOutputArgs, opts ...pulumi.InvokeOption) GetAlarmStatusesResultOutput {
@@ -102,8 +124,16 @@ type GetAlarmStatusesOutputArgs struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`
-	Filters     GetAlarmStatusesFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+	EntityId pulumi.StringPtrInput            `pulumi:"entityId"`
+	Filters  GetAlarmStatusesFilterArrayInput `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetAlarmStatusesOutputArgs) ElementType() reflect.Type {
@@ -149,6 +179,10 @@ func (o GetAlarmStatusesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
+func (o GetAlarmStatusesResultOutput) EntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.EntityId }).(pulumi.StringPtrOutput)
+}
+
 func (o GetAlarmStatusesResultOutput) Filters() GetAlarmStatusesFilterArrayOutput {
 	return o.ApplyT(func(v GetAlarmStatusesResult) []GetAlarmStatusesFilter { return v.Filters }).(GetAlarmStatusesFilterArrayOutput)
 }
@@ -156,6 +190,19 @@ func (o GetAlarmStatusesResultOutput) Filters() GetAlarmStatusesFilterArrayOutpu
 // The provider-assigned unique ID for this managed resource.
 func (o GetAlarmStatusesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmStatusesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAlarmStatusesResultOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAlarmStatusesResultOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+func (o GetAlarmStatusesResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 func init() {

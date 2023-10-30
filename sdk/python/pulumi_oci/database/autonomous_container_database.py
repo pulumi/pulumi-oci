@@ -30,6 +30,7 @@ class AutonomousContainerDatabaseArgs:
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
@@ -61,6 +62,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -106,6 +108,8 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_automatic_failover_enabled is not None:
             pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if is_dst_file_update_enabled is not None:
+            pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if key_store_id is not None:
             pulumi.set(__self__, "key_store_id", key_store_id)
         if kms_key_id is not None:
@@ -303,6 +307,18 @@ class AutonomousContainerDatabaseArgs:
     @is_automatic_failover_enabled.setter
     def is_automatic_failover_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_automatic_failover_enabled", value)
+
+    @property
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @property
     @pulumi.getter(name="keyStoreId")
@@ -511,10 +527,12 @@ class _AutonomousContainerDatabaseState:
                  db_version: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dst_file_version: Optional[pulumi.Input[str]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  infrastructure_type: Optional[pulumi.Input[str]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  key_store_wallet_name: Optional[pulumi.Input[str]] = None,
@@ -564,10 +582,12 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
+        :param pulumi.Input[str] dst_file_version: DST Time Zone File version of the Autonomous Container Database.
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -636,6 +656,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if dst_file_version is not None:
+            pulumi.set(__self__, "dst_file_version", dst_file_version)
         if fast_start_fail_over_lag_limit_in_seconds is not None:
             pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if freeform_tags is not None:
@@ -644,6 +666,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         if is_automatic_failover_enabled is not None:
             pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        if is_dst_file_update_enabled is not None:
+            pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         if key_history_entries is not None:
             pulumi.set(__self__, "key_history_entries", key_history_entries)
         if key_store_id is not None:
@@ -869,6 +893,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="dstFileVersion")
+    def dst_file_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        DST Time Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "dst_file_version")
+
+    @dst_file_version.setter
+    def dst_file_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dst_file_version", value)
+
+    @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
@@ -915,6 +951,18 @@ class _AutonomousContainerDatabaseState:
     @is_automatic_failover_enabled.setter
     def is_automatic_failover_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_automatic_failover_enabled", value)
+
+    @property
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
+
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
@@ -1357,6 +1405,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]] = None,
@@ -1402,6 +1451,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -1469,6 +1519,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]] = None,
@@ -1510,6 +1561,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["fast_start_fail_over_lag_limit_in_seconds"] = fast_start_fail_over_lag_limit_in_seconds
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
+            __props__.__dict__["is_dst_file_update_enabled"] = is_dst_file_update_enabled
             __props__.__dict__["key_store_id"] = key_store_id
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
@@ -1532,6 +1584,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["available_cpus"] = None
             __props__.__dict__["compute_model"] = None
+            __props__.__dict__["dst_file_version"] = None
             __props__.__dict__["infrastructure_type"] = None
             __props__.__dict__["key_history_entries"] = None
             __props__.__dict__["key_store_wallet_name"] = None
@@ -1574,10 +1627,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             db_version: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            dst_file_version: Optional[pulumi.Input[str]] = None,
             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             infrastructure_type: Optional[pulumi.Input[str]] = None,
             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+            is_dst_file_update_enabled: Optional[pulumi.Input[bool]] = None,
             key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]]] = None,
             key_store_id: Optional[pulumi.Input[str]] = None,
             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
@@ -1632,10 +1687,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
+        :param pulumi.Input[str] dst_file_version: DST Time Zone File version of the Autonomous Container Database.
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -1695,10 +1752,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["db_version"] = db_version
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["dst_file_version"] = dst_file_version
         __props__.__dict__["fast_start_fail_over_lag_limit_in_seconds"] = fast_start_fail_over_lag_limit_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["infrastructure_type"] = infrastructure_type
         __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
+        __props__.__dict__["is_dst_file_update_enabled"] = is_dst_file_update_enabled
         __props__.__dict__["key_history_entries"] = key_history_entries
         __props__.__dict__["key_store_id"] = key_store_id
         __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
@@ -1838,6 +1897,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="dstFileVersion")
+    def dst_file_version(self) -> pulumi.Output[str]:
+        """
+        DST Time Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "dst_file_version")
+
+    @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> pulumi.Output[int]:
         """
@@ -1868,6 +1935,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")

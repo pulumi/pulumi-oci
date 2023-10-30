@@ -153,6 +153,181 @@ func (o IndexKeyArrayOutput) Index(i pulumi.IntInput) IndexKeyOutput {
 	}).(IndexKeyOutput)
 }
 
+type TableReplicaType struct {
+	// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	CapacityMode *string `pulumi:"capacityMode"`
+	// A message describing the current state in more detail.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Maximum sustained write throughput limit for the table.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MaxWriteUnits *int `pulumi:"maxWriteUnits"`
+	// A customer-facing region identifier
+	Region *string `pulumi:"region"`
+	// The state of a table.
+	State *string `pulumi:"state"`
+	// The OCID of the replica table
+	TableId *string `pulumi:"tableId"`
+}
+
+// TableReplicaTypeInput is an input type that accepts TableReplicaTypeArgs and TableReplicaTypeOutput values.
+// You can construct a concrete instance of `TableReplicaTypeInput` via:
+//
+//	TableReplicaTypeArgs{...}
+type TableReplicaTypeInput interface {
+	pulumi.Input
+
+	ToTableReplicaTypeOutput() TableReplicaTypeOutput
+	ToTableReplicaTypeOutputWithContext(context.Context) TableReplicaTypeOutput
+}
+
+type TableReplicaTypeArgs struct {
+	// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	CapacityMode pulumi.StringPtrInput `pulumi:"capacityMode"`
+	// A message describing the current state in more detail.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// (Updatable) Maximum sustained write throughput limit for the table.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MaxWriteUnits pulumi.IntPtrInput `pulumi:"maxWriteUnits"`
+	// A customer-facing region identifier
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// The state of a table.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The OCID of the replica table
+	TableId pulumi.StringPtrInput `pulumi:"tableId"`
+}
+
+func (TableReplicaTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TableReplicaType)(nil)).Elem()
+}
+
+func (i TableReplicaTypeArgs) ToTableReplicaTypeOutput() TableReplicaTypeOutput {
+	return i.ToTableReplicaTypeOutputWithContext(context.Background())
+}
+
+func (i TableReplicaTypeArgs) ToTableReplicaTypeOutputWithContext(ctx context.Context) TableReplicaTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TableReplicaTypeOutput)
+}
+
+func (i TableReplicaTypeArgs) ToOutput(ctx context.Context) pulumix.Output[TableReplicaType] {
+	return pulumix.Output[TableReplicaType]{
+		OutputState: i.ToTableReplicaTypeOutputWithContext(ctx).OutputState,
+	}
+}
+
+// TableReplicaTypeArrayInput is an input type that accepts TableReplicaTypeArray and TableReplicaTypeArrayOutput values.
+// You can construct a concrete instance of `TableReplicaTypeArrayInput` via:
+//
+//	TableReplicaTypeArray{ TableReplicaTypeArgs{...} }
+type TableReplicaTypeArrayInput interface {
+	pulumi.Input
+
+	ToTableReplicaTypeArrayOutput() TableReplicaTypeArrayOutput
+	ToTableReplicaTypeArrayOutputWithContext(context.Context) TableReplicaTypeArrayOutput
+}
+
+type TableReplicaTypeArray []TableReplicaTypeInput
+
+func (TableReplicaTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TableReplicaType)(nil)).Elem()
+}
+
+func (i TableReplicaTypeArray) ToTableReplicaTypeArrayOutput() TableReplicaTypeArrayOutput {
+	return i.ToTableReplicaTypeArrayOutputWithContext(context.Background())
+}
+
+func (i TableReplicaTypeArray) ToTableReplicaTypeArrayOutputWithContext(ctx context.Context) TableReplicaTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TableReplicaTypeArrayOutput)
+}
+
+func (i TableReplicaTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]TableReplicaType] {
+	return pulumix.Output[[]TableReplicaType]{
+		OutputState: i.ToTableReplicaTypeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type TableReplicaTypeOutput struct{ *pulumi.OutputState }
+
+func (TableReplicaTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TableReplicaType)(nil)).Elem()
+}
+
+func (o TableReplicaTypeOutput) ToTableReplicaTypeOutput() TableReplicaTypeOutput {
+	return o
+}
+
+func (o TableReplicaTypeOutput) ToTableReplicaTypeOutputWithContext(ctx context.Context) TableReplicaTypeOutput {
+	return o
+}
+
+func (o TableReplicaTypeOutput) ToOutput(ctx context.Context) pulumix.Output[TableReplicaType] {
+	return pulumix.Output[TableReplicaType]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+func (o TableReplicaTypeOutput) CapacityMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TableReplicaType) *string { return v.CapacityMode }).(pulumi.StringPtrOutput)
+}
+
+// A message describing the current state in more detail.
+func (o TableReplicaTypeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TableReplicaType) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Maximum sustained write throughput limit for the table.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TableReplicaTypeOutput) MaxWriteUnits() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TableReplicaType) *int { return v.MaxWriteUnits }).(pulumi.IntPtrOutput)
+}
+
+// A customer-facing region identifier
+func (o TableReplicaTypeOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TableReplicaType) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// The state of a table.
+func (o TableReplicaTypeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TableReplicaType) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the replica table
+func (o TableReplicaTypeOutput) TableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TableReplicaType) *string { return v.TableId }).(pulumi.StringPtrOutput)
+}
+
+type TableReplicaTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (TableReplicaTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TableReplicaType)(nil)).Elem()
+}
+
+func (o TableReplicaTypeArrayOutput) ToTableReplicaTypeArrayOutput() TableReplicaTypeArrayOutput {
+	return o
+}
+
+func (o TableReplicaTypeArrayOutput) ToTableReplicaTypeArrayOutputWithContext(ctx context.Context) TableReplicaTypeArrayOutput {
+	return o
+}
+
+func (o TableReplicaTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TableReplicaType] {
+	return pulumix.Output[[]TableReplicaType]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o TableReplicaTypeArrayOutput) Index(i pulumi.IntInput) TableReplicaTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TableReplicaType {
+		return vs[0].([]TableReplicaType)[vs[1].(int)]
+	}).(TableReplicaTypeOutput)
+}
+
 type TableSchema struct {
 	// The columns of a table.
 	Columns []TableSchemaColumn `pulumi:"columns"`
@@ -1452,6 +1627,172 @@ func (o GetIndexesIndexCollectionKeyArrayOutput) Index(i pulumi.IntInput) GetInd
 	}).(GetIndexesIndexCollectionKeyOutput)
 }
 
+type GetTableReplicaType struct {
+	// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	CapacityMode string `pulumi:"capacityMode"`
+	// A message describing the current state in more detail.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Maximum sustained write throughput limit for the table.
+	MaxWriteUnits int `pulumi:"maxWriteUnits"`
+	// A customer-facing region identifier
+	Region string `pulumi:"region"`
+	// The state of a table.
+	State string `pulumi:"state"`
+	// The OCID of the replica table
+	TableId string `pulumi:"tableId"`
+}
+
+// GetTableReplicaTypeInput is an input type that accepts GetTableReplicaTypeArgs and GetTableReplicaTypeOutput values.
+// You can construct a concrete instance of `GetTableReplicaTypeInput` via:
+//
+//	GetTableReplicaTypeArgs{...}
+type GetTableReplicaTypeInput interface {
+	pulumi.Input
+
+	ToGetTableReplicaTypeOutput() GetTableReplicaTypeOutput
+	ToGetTableReplicaTypeOutputWithContext(context.Context) GetTableReplicaTypeOutput
+}
+
+type GetTableReplicaTypeArgs struct {
+	// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	CapacityMode pulumi.StringInput `pulumi:"capacityMode"`
+	// A message describing the current state in more detail.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Maximum sustained write throughput limit for the table.
+	MaxWriteUnits pulumi.IntInput `pulumi:"maxWriteUnits"`
+	// A customer-facing region identifier
+	Region pulumi.StringInput `pulumi:"region"`
+	// The state of a table.
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of the replica table
+	TableId pulumi.StringInput `pulumi:"tableId"`
+}
+
+func (GetTableReplicaTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTableReplicaType)(nil)).Elem()
+}
+
+func (i GetTableReplicaTypeArgs) ToGetTableReplicaTypeOutput() GetTableReplicaTypeOutput {
+	return i.ToGetTableReplicaTypeOutputWithContext(context.Background())
+}
+
+func (i GetTableReplicaTypeArgs) ToGetTableReplicaTypeOutputWithContext(ctx context.Context) GetTableReplicaTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTableReplicaTypeOutput)
+}
+
+func (i GetTableReplicaTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetTableReplicaType] {
+	return pulumix.Output[GetTableReplicaType]{
+		OutputState: i.ToGetTableReplicaTypeOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetTableReplicaTypeArrayInput is an input type that accepts GetTableReplicaTypeArray and GetTableReplicaTypeArrayOutput values.
+// You can construct a concrete instance of `GetTableReplicaTypeArrayInput` via:
+//
+//	GetTableReplicaTypeArray{ GetTableReplicaTypeArgs{...} }
+type GetTableReplicaTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetTableReplicaTypeArrayOutput() GetTableReplicaTypeArrayOutput
+	ToGetTableReplicaTypeArrayOutputWithContext(context.Context) GetTableReplicaTypeArrayOutput
+}
+
+type GetTableReplicaTypeArray []GetTableReplicaTypeInput
+
+func (GetTableReplicaTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTableReplicaType)(nil)).Elem()
+}
+
+func (i GetTableReplicaTypeArray) ToGetTableReplicaTypeArrayOutput() GetTableReplicaTypeArrayOutput {
+	return i.ToGetTableReplicaTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTableReplicaTypeArray) ToGetTableReplicaTypeArrayOutputWithContext(ctx context.Context) GetTableReplicaTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTableReplicaTypeArrayOutput)
+}
+
+func (i GetTableReplicaTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTableReplicaType] {
+	return pulumix.Output[[]GetTableReplicaType]{
+		OutputState: i.ToGetTableReplicaTypeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetTableReplicaTypeOutput struct{ *pulumi.OutputState }
+
+func (GetTableReplicaTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTableReplicaType)(nil)).Elem()
+}
+
+func (o GetTableReplicaTypeOutput) ToGetTableReplicaTypeOutput() GetTableReplicaTypeOutput {
+	return o
+}
+
+func (o GetTableReplicaTypeOutput) ToGetTableReplicaTypeOutputWithContext(ctx context.Context) GetTableReplicaTypeOutput {
+	return o
+}
+
+func (o GetTableReplicaTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetTableReplicaType] {
+	return pulumix.Output[GetTableReplicaType]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+func (o GetTableReplicaTypeOutput) CapacityMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTableReplicaType) string { return v.CapacityMode }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail.
+func (o GetTableReplicaTypeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTableReplicaType) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Maximum sustained write throughput limit for the table.
+func (o GetTableReplicaTypeOutput) MaxWriteUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTableReplicaType) int { return v.MaxWriteUnits }).(pulumi.IntOutput)
+}
+
+// A customer-facing region identifier
+func (o GetTableReplicaTypeOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTableReplicaType) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The state of a table.
+func (o GetTableReplicaTypeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTableReplicaType) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The OCID of the replica table
+func (o GetTableReplicaTypeOutput) TableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTableReplicaType) string { return v.TableId }).(pulumi.StringOutput)
+}
+
+type GetTableReplicaTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTableReplicaTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTableReplicaType)(nil)).Elem()
+}
+
+func (o GetTableReplicaTypeArrayOutput) ToGetTableReplicaTypeArrayOutput() GetTableReplicaTypeArrayOutput {
+	return o
+}
+
+func (o GetTableReplicaTypeArrayOutput) ToGetTableReplicaTypeArrayOutputWithContext(ctx context.Context) GetTableReplicaTypeArrayOutput {
+	return o
+}
+
+func (o GetTableReplicaTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTableReplicaType] {
+	return pulumix.Output[[]GetTableReplicaType]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetTableReplicaTypeArrayOutput) Index(i pulumi.IntInput) GetTableReplicaTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTableReplicaType {
+		return vs[0].([]GetTableReplicaType)[vs[1].(int)]
+	}).(GetTableReplicaTypeOutput)
+}
+
 type GetTableSchema struct {
 	// The columns of a table.
 	Columns []GetTableSchemaColumn `pulumi:"columns"`
@@ -2207,11 +2548,17 @@ type GetTablesTableCollection struct {
 	Id string `pulumi:"id"`
 	// True if this table can be reclaimed after an idle period.
 	IsAutoReclaimable bool `pulumi:"isAutoReclaimable"`
+	// True if this table is currently a member of a replication set.
+	IsMultiRegion bool `pulumi:"isMultiRegion"`
 	// A message describing the current state in more detail.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails                    string `pulumi:"lifecycleDetails"`
+	LocalReplicaInitializationInPercent int    `pulumi:"localReplicaInitializationInPercent"`
 	// A shell-globbing-style (*?[]) filter for names.
-	Name    string                           `pulumi:"name"`
-	Schemas []GetTablesTableCollectionSchema `pulumi:"schemas"`
+	Name     string                            `pulumi:"name"`
+	Replicas []GetTablesTableCollectionReplica `pulumi:"replicas"`
+	// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+	SchemaState string                           `pulumi:"schemaState"`
+	Schemas     []GetTablesTableCollectionSchema `pulumi:"schemas"`
 	// Filter list by the lifecycle state of the item.
 	State string `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
@@ -2249,11 +2596,17 @@ type GetTablesTableCollectionArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// True if this table can be reclaimed after an idle period.
 	IsAutoReclaimable pulumi.BoolInput `pulumi:"isAutoReclaimable"`
+	// True if this table is currently a member of a replication set.
+	IsMultiRegion pulumi.BoolInput `pulumi:"isMultiRegion"`
 	// A message describing the current state in more detail.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails                    pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LocalReplicaInitializationInPercent pulumi.IntInput    `pulumi:"localReplicaInitializationInPercent"`
 	// A shell-globbing-style (*?[]) filter for names.
-	Name    pulumi.StringInput                       `pulumi:"name"`
-	Schemas GetTablesTableCollectionSchemaArrayInput `pulumi:"schemas"`
+	Name     pulumi.StringInput                        `pulumi:"name"`
+	Replicas GetTablesTableCollectionReplicaArrayInput `pulumi:"replicas"`
+	// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+	SchemaState pulumi.StringInput                       `pulumi:"schemaState"`
+	Schemas     GetTablesTableCollectionSchemaArrayInput `pulumi:"schemas"`
 	// Filter list by the lifecycle state of the item.
 	State pulumi.StringInput `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
@@ -2366,14 +2719,32 @@ func (o GetTablesTableCollectionOutput) IsAutoReclaimable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetTablesTableCollection) bool { return v.IsAutoReclaimable }).(pulumi.BoolOutput)
 }
 
+// True if this table is currently a member of a replication set.
+func (o GetTablesTableCollectionOutput) IsMultiRegion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTablesTableCollection) bool { return v.IsMultiRegion }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail.
 func (o GetTablesTableCollectionOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTablesTableCollection) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o GetTablesTableCollectionOutput) LocalReplicaInitializationInPercent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTablesTableCollection) int { return v.LocalReplicaInitializationInPercent }).(pulumi.IntOutput)
+}
+
 // A shell-globbing-style (*?[]) filter for names.
 func (o GetTablesTableCollectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTablesTableCollection) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTablesTableCollectionOutput) Replicas() GetTablesTableCollectionReplicaArrayOutput {
+	return o.ApplyT(func(v GetTablesTableCollection) []GetTablesTableCollectionReplica { return v.Replicas }).(GetTablesTableCollectionReplicaArrayOutput)
+}
+
+// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+func (o GetTablesTableCollectionOutput) SchemaState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTablesTableCollection) string { return v.SchemaState }).(pulumi.StringOutput)
 }
 
 func (o GetTablesTableCollectionOutput) Schemas() GetTablesTableCollectionSchemaArrayOutput {
@@ -2434,6 +2805,166 @@ func (o GetTablesTableCollectionArrayOutput) Index(i pulumi.IntInput) GetTablesT
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTablesTableCollection {
 		return vs[0].([]GetTablesTableCollection)[vs[1].(int)]
 	}).(GetTablesTableCollectionOutput)
+}
+
+type GetTablesTableCollectionReplica struct {
+	// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	CapacityMode string `pulumi:"capacityMode"`
+	// A message describing the current state in more detail.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Maximum sustained write throughput limit for the table.
+	MaxWriteUnits int    `pulumi:"maxWriteUnits"`
+	Region        string `pulumi:"region"`
+	// Filter list by the lifecycle state of the item.
+	State   string `pulumi:"state"`
+	TableId string `pulumi:"tableId"`
+}
+
+// GetTablesTableCollectionReplicaInput is an input type that accepts GetTablesTableCollectionReplicaArgs and GetTablesTableCollectionReplicaOutput values.
+// You can construct a concrete instance of `GetTablesTableCollectionReplicaInput` via:
+//
+//	GetTablesTableCollectionReplicaArgs{...}
+type GetTablesTableCollectionReplicaInput interface {
+	pulumi.Input
+
+	ToGetTablesTableCollectionReplicaOutput() GetTablesTableCollectionReplicaOutput
+	ToGetTablesTableCollectionReplicaOutputWithContext(context.Context) GetTablesTableCollectionReplicaOutput
+}
+
+type GetTablesTableCollectionReplicaArgs struct {
+	// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	CapacityMode pulumi.StringInput `pulumi:"capacityMode"`
+	// A message describing the current state in more detail.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Maximum sustained write throughput limit for the table.
+	MaxWriteUnits pulumi.IntInput    `pulumi:"maxWriteUnits"`
+	Region        pulumi.StringInput `pulumi:"region"`
+	// Filter list by the lifecycle state of the item.
+	State   pulumi.StringInput `pulumi:"state"`
+	TableId pulumi.StringInput `pulumi:"tableId"`
+}
+
+func (GetTablesTableCollectionReplicaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTablesTableCollectionReplica)(nil)).Elem()
+}
+
+func (i GetTablesTableCollectionReplicaArgs) ToGetTablesTableCollectionReplicaOutput() GetTablesTableCollectionReplicaOutput {
+	return i.ToGetTablesTableCollectionReplicaOutputWithContext(context.Background())
+}
+
+func (i GetTablesTableCollectionReplicaArgs) ToGetTablesTableCollectionReplicaOutputWithContext(ctx context.Context) GetTablesTableCollectionReplicaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTablesTableCollectionReplicaOutput)
+}
+
+func (i GetTablesTableCollectionReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetTablesTableCollectionReplica] {
+	return pulumix.Output[GetTablesTableCollectionReplica]{
+		OutputState: i.ToGetTablesTableCollectionReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetTablesTableCollectionReplicaArrayInput is an input type that accepts GetTablesTableCollectionReplicaArray and GetTablesTableCollectionReplicaArrayOutput values.
+// You can construct a concrete instance of `GetTablesTableCollectionReplicaArrayInput` via:
+//
+//	GetTablesTableCollectionReplicaArray{ GetTablesTableCollectionReplicaArgs{...} }
+type GetTablesTableCollectionReplicaArrayInput interface {
+	pulumi.Input
+
+	ToGetTablesTableCollectionReplicaArrayOutput() GetTablesTableCollectionReplicaArrayOutput
+	ToGetTablesTableCollectionReplicaArrayOutputWithContext(context.Context) GetTablesTableCollectionReplicaArrayOutput
+}
+
+type GetTablesTableCollectionReplicaArray []GetTablesTableCollectionReplicaInput
+
+func (GetTablesTableCollectionReplicaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTablesTableCollectionReplica)(nil)).Elem()
+}
+
+func (i GetTablesTableCollectionReplicaArray) ToGetTablesTableCollectionReplicaArrayOutput() GetTablesTableCollectionReplicaArrayOutput {
+	return i.ToGetTablesTableCollectionReplicaArrayOutputWithContext(context.Background())
+}
+
+func (i GetTablesTableCollectionReplicaArray) ToGetTablesTableCollectionReplicaArrayOutputWithContext(ctx context.Context) GetTablesTableCollectionReplicaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTablesTableCollectionReplicaArrayOutput)
+}
+
+func (i GetTablesTableCollectionReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTablesTableCollectionReplica] {
+	return pulumix.Output[[]GetTablesTableCollectionReplica]{
+		OutputState: i.ToGetTablesTableCollectionReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetTablesTableCollectionReplicaOutput struct{ *pulumi.OutputState }
+
+func (GetTablesTableCollectionReplicaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTablesTableCollectionReplica)(nil)).Elem()
+}
+
+func (o GetTablesTableCollectionReplicaOutput) ToGetTablesTableCollectionReplicaOutput() GetTablesTableCollectionReplicaOutput {
+	return o
+}
+
+func (o GetTablesTableCollectionReplicaOutput) ToGetTablesTableCollectionReplicaOutputWithContext(ctx context.Context) GetTablesTableCollectionReplicaOutput {
+	return o
+}
+
+func (o GetTablesTableCollectionReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetTablesTableCollectionReplica] {
+	return pulumix.Output[GetTablesTableCollectionReplica]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+func (o GetTablesTableCollectionReplicaOutput) CapacityMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTablesTableCollectionReplica) string { return v.CapacityMode }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail.
+func (o GetTablesTableCollectionReplicaOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTablesTableCollectionReplica) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Maximum sustained write throughput limit for the table.
+func (o GetTablesTableCollectionReplicaOutput) MaxWriteUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTablesTableCollectionReplica) int { return v.MaxWriteUnits }).(pulumi.IntOutput)
+}
+
+func (o GetTablesTableCollectionReplicaOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTablesTableCollectionReplica) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Filter list by the lifecycle state of the item.
+func (o GetTablesTableCollectionReplicaOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTablesTableCollectionReplica) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetTablesTableCollectionReplicaOutput) TableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTablesTableCollectionReplica) string { return v.TableId }).(pulumi.StringOutput)
+}
+
+type GetTablesTableCollectionReplicaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTablesTableCollectionReplicaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTablesTableCollectionReplica)(nil)).Elem()
+}
+
+func (o GetTablesTableCollectionReplicaArrayOutput) ToGetTablesTableCollectionReplicaArrayOutput() GetTablesTableCollectionReplicaArrayOutput {
+	return o
+}
+
+func (o GetTablesTableCollectionReplicaArrayOutput) ToGetTablesTableCollectionReplicaArrayOutputWithContext(ctx context.Context) GetTablesTableCollectionReplicaArrayOutput {
+	return o
+}
+
+func (o GetTablesTableCollectionReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTablesTableCollectionReplica] {
+	return pulumix.Output[[]GetTablesTableCollectionReplica]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetTablesTableCollectionReplicaArrayOutput) Index(i pulumi.IntInput) GetTablesTableCollectionReplicaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTablesTableCollectionReplica {
+		return vs[0].([]GetTablesTableCollectionReplica)[vs[1].(int)]
+	}).(GetTablesTableCollectionReplicaOutput)
 }
 
 type GetTablesTableCollectionSchema struct {
@@ -3010,6 +3541,8 @@ func (o GetTablesTableCollectionTableLimitArrayOutput) Index(i pulumi.IntInput) 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyInput)(nil)).Elem(), IndexKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyArrayInput)(nil)).Elem(), IndexKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TableReplicaTypeInput)(nil)).Elem(), TableReplicaTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TableReplicaTypeArrayInput)(nil)).Elem(), TableReplicaTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TableSchemaInput)(nil)).Elem(), TableSchemaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TableSchemaArrayInput)(nil)).Elem(), TableSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TableSchemaColumnInput)(nil)).Elem(), TableSchemaColumnArgs{})
@@ -3026,6 +3559,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexesIndexCollectionArrayInput)(nil)).Elem(), GetIndexesIndexCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexesIndexCollectionKeyInput)(nil)).Elem(), GetIndexesIndexCollectionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexesIndexCollectionKeyArrayInput)(nil)).Elem(), GetIndexesIndexCollectionKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTableReplicaTypeInput)(nil)).Elem(), GetTableReplicaTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTableReplicaTypeArrayInput)(nil)).Elem(), GetTableReplicaTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTableSchemaInput)(nil)).Elem(), GetTableSchemaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTableSchemaArrayInput)(nil)).Elem(), GetTableSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTableSchemaColumnInput)(nil)).Elem(), GetTableSchemaColumnArgs{})
@@ -3038,6 +3573,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesFilterArrayInput)(nil)).Elem(), GetTablesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionInput)(nil)).Elem(), GetTablesTableCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionArrayInput)(nil)).Elem(), GetTablesTableCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionReplicaInput)(nil)).Elem(), GetTablesTableCollectionReplicaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionReplicaArrayInput)(nil)).Elem(), GetTablesTableCollectionReplicaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionSchemaInput)(nil)).Elem(), GetTablesTableCollectionSchemaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionSchemaArrayInput)(nil)).Elem(), GetTablesTableCollectionSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionSchemaColumnInput)(nil)).Elem(), GetTablesTableCollectionSchemaColumnArgs{})
@@ -3048,6 +3585,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTablesTableCollectionTableLimitArrayInput)(nil)).Elem(), GetTablesTableCollectionTableLimitArray{})
 	pulumi.RegisterOutputType(IndexKeyOutput{})
 	pulumi.RegisterOutputType(IndexKeyArrayOutput{})
+	pulumi.RegisterOutputType(TableReplicaTypeOutput{})
+	pulumi.RegisterOutputType(TableReplicaTypeArrayOutput{})
 	pulumi.RegisterOutputType(TableSchemaOutput{})
 	pulumi.RegisterOutputType(TableSchemaArrayOutput{})
 	pulumi.RegisterOutputType(TableSchemaColumnOutput{})
@@ -3064,6 +3603,8 @@ func init() {
 	pulumi.RegisterOutputType(GetIndexesIndexCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetIndexesIndexCollectionKeyOutput{})
 	pulumi.RegisterOutputType(GetIndexesIndexCollectionKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetTableReplicaTypeOutput{})
+	pulumi.RegisterOutputType(GetTableReplicaTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetTableSchemaOutput{})
 	pulumi.RegisterOutputType(GetTableSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetTableSchemaColumnOutput{})
@@ -3076,6 +3617,8 @@ func init() {
 	pulumi.RegisterOutputType(GetTablesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTablesTableCollectionOutput{})
 	pulumi.RegisterOutputType(GetTablesTableCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTablesTableCollectionReplicaOutput{})
+	pulumi.RegisterOutputType(GetTablesTableCollectionReplicaArrayOutput{})
 	pulumi.RegisterOutputType(GetTablesTableCollectionSchemaOutput{})
 	pulumi.RegisterOutputType(GetTablesTableCollectionSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetTablesTableCollectionSchemaColumnOutput{})

@@ -11,6 +11,20 @@ import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
 import com.pulumi.oci.Adm.inputs.GetKnowledgebasePlainArgs;
 import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
 import com.pulumi.oci.Adm.inputs.GetKnowledgebasesPlainArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRecipePlainArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRecipesPlainArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsPlainArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunPlainArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunStagePlainArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesPlainArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+import com.pulumi.oci.Adm.inputs.GetRemediationRunsPlainArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesPlainArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
@@ -21,6 +35,13 @@ import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
 import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsPlainArgs;
 import com.pulumi.oci.Adm.outputs.GetKnowledgebaseResult;
 import com.pulumi.oci.Adm.outputs.GetKnowledgebasesResult;
+import com.pulumi.oci.Adm.outputs.GetRemediationRecipeResult;
+import com.pulumi.oci.Adm.outputs.GetRemediationRecipesResult;
+import com.pulumi.oci.Adm.outputs.GetRemediationRunApplicationDependencyRecommendationsResult;
+import com.pulumi.oci.Adm.outputs.GetRemediationRunResult;
+import com.pulumi.oci.Adm.outputs.GetRemediationRunStageResult;
+import com.pulumi.oci.Adm.outputs.GetRemediationRunStagesResult;
+import com.pulumi.oci.Adm.outputs.GetRemediationRunsResult;
 import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult;
 import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityResult;
 import com.pulumi.oci.Adm.outputs.GetVulnerabilityAuditResult;
@@ -442,6 +463,1324 @@ public final class AdmFunctions {
      */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain(GetKnowledgebasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Adm/getKnowledgebases:getKnowledgebases", TypeShape.of(GetKnowledgebasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified RemediationRecipe.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRecipeResult> getRemediationRecipe(GetRemediationRecipeArgs args) {
+        return getRemediationRecipe(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified RemediationRecipe.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRecipeResult> getRemediationRecipePlain(GetRemediationRecipePlainArgs args) {
+        return getRemediationRecipePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified RemediationRecipe.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRecipeResult> getRemediationRecipe(GetRemediationRecipeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRecipe:getRemediationRecipe", TypeShape.of(GetRemediationRecipeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified RemediationRecipe.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRecipeResult> getRemediationRecipePlain(GetRemediationRecipePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRecipe:getRemediationRecipe", TypeShape.of(GetRemediationRecipeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_recipe_display_name())
+     *             .id(var_.remediation_recipe_id())
+     *             .state(var_.remediation_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRecipesResult> getRemediationRecipes() {
+        return getRemediationRecipes(GetRemediationRecipesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_recipe_display_name())
+     *             .id(var_.remediation_recipe_id())
+     *             .state(var_.remediation_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRecipesResult> getRemediationRecipesPlain() {
+        return getRemediationRecipesPlain(GetRemediationRecipesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_recipe_display_name())
+     *             .id(var_.remediation_recipe_id())
+     *             .state(var_.remediation_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRecipesResult> getRemediationRecipes(GetRemediationRecipesArgs args) {
+        return getRemediationRecipes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_recipe_display_name())
+     *             .id(var_.remediation_recipe_id())
+     *             .state(var_.remediation_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRecipesResult> getRemediationRecipesPlain(GetRemediationRecipesPlainArgs args) {
+        return getRemediationRecipesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_recipe_display_name())
+     *             .id(var_.remediation_recipe_id())
+     *             .state(var_.remediation_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRecipesResult> getRemediationRecipes(GetRemediationRecipesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRecipes:getRemediationRecipes", TypeShape.of(GetRemediationRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_recipe_display_name())
+     *             .id(var_.remediation_recipe_id())
+     *             .state(var_.remediation_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRecipesResult> getRemediationRecipesPlain(GetRemediationRecipesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRecipes:getRemediationRecipes", TypeShape.of(GetRemediationRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified remediation run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunResult> getRemediationRun(GetRemediationRunArgs args) {
+        return getRemediationRun(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified remediation run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunResult> getRemediationRunPlain(GetRemediationRunPlainArgs args) {
+        return getRemediationRunPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified remediation run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunResult> getRemediationRun(GetRemediationRunArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRun:getRemediationRun", TypeShape.of(GetRemediationRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified remediation run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunResult> getRemediationRunPlain(GetRemediationRunPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRun:getRemediationRun", TypeShape.of(GetRemediationRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of application dependency with their associated recommendations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs args) {
+        return getRemediationRunApplicationDependencyRecommendations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of application dependency with their associated recommendations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendationsPlain(GetRemediationRunApplicationDependencyRecommendationsPlainArgs args) {
+        return getRemediationRunApplicationDependencyRecommendationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of application dependency with their associated recommendations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", TypeShape.of(GetRemediationRunApplicationDependencyRecommendationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of application dependency with their associated recommendations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunApplicationDependencyRecommendationsResult> getRemediationRunApplicationDependencyRecommendationsPlain(GetRemediationRunApplicationDependencyRecommendationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRunApplicationDependencyRecommendations:getRemediationRunApplicationDependencyRecommendations", TypeShape.of(GetRemediationRunApplicationDependencyRecommendationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified Remediation Run Stage.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunStageResult> getRemediationRunStage(GetRemediationRunStageArgs args) {
+        return getRemediationRunStage(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified Remediation Run Stage.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunStageResult> getRemediationRunStagePlain(GetRemediationRunStagePlainArgs args) {
+        return getRemediationRunStagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified Remediation Run Stage.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunStageResult> getRemediationRunStage(GetRemediationRunStageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRunStage:getRemediationRunStage", TypeShape.of(GetRemediationRunStageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns the details of the specified Remediation Run Stage.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunStageResult> getRemediationRunStagePlain(GetRemediationRunStagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRunStage:getRemediationRunStage", TypeShape.of(GetRemediationRunStageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .status(var_.remediation_run_stage_status())
+     *             .type(var_.remediation_run_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunStagesResult> getRemediationRunStages(GetRemediationRunStagesArgs args) {
+        return getRemediationRunStages(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .status(var_.remediation_run_stage_status())
+     *             .type(var_.remediation_run_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunStagesResult> getRemediationRunStagesPlain(GetRemediationRunStagesPlainArgs args) {
+        return getRemediationRunStagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .status(var_.remediation_run_stage_status())
+     *             .type(var_.remediation_run_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunStagesResult> getRemediationRunStages(GetRemediationRunStagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRunStages:getRemediationRunStages", TypeShape.of(GetRemediationRunStagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
+     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .status(var_.remediation_run_stage_status())
+     *             .type(var_.remediation_run_stage_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunStagesResult> getRemediationRunStagesPlain(GetRemediationRunStagesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRunStages:getRemediationRunStages", TypeShape.of(GetRemediationRunStagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_run_display_name())
+     *             .id(var_.remediation_run_id())
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .state(var_.remediation_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunsResult> getRemediationRuns() {
+        return getRemediationRuns(GetRemediationRunsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_run_display_name())
+     *             .id(var_.remediation_run_id())
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .state(var_.remediation_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunsResult> getRemediationRunsPlain() {
+        return getRemediationRunsPlain(GetRemediationRunsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_run_display_name())
+     *             .id(var_.remediation_run_id())
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .state(var_.remediation_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunsResult> getRemediationRuns(GetRemediationRunsArgs args) {
+        return getRemediationRuns(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_run_display_name())
+     *             .id(var_.remediation_run_id())
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .state(var_.remediation_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunsResult> getRemediationRunsPlain(GetRemediationRunsPlainArgs args) {
+        return getRemediationRunsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_run_display_name())
+     *             .id(var_.remediation_run_id())
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .state(var_.remediation_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRemediationRunsResult> getRemediationRuns(GetRemediationRunsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Adm/getRemediationRuns:getRemediationRuns", TypeShape.of(GetRemediationRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
+     * 
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetRemediationRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.remediation_run_display_name())
+     *             .id(var_.remediation_run_id())
+     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .state(var_.remediation_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRemediationRunsResult> getRemediationRunsPlain(GetRemediationRunsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Adm/getRemediationRuns:getRemediationRuns", TypeShape.of(GetRemediationRunsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Vulnerability Audit resource in Oracle Cloud Infrastructure ADM service.

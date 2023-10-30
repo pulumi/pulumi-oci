@@ -15,8 +15,12 @@ import (
 // This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
 //
 // Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-// For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+// For more information, see
+// [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+// For information about metrics, see
+// [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+// For important limits information, see
+// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 //
 // Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
 //
@@ -70,7 +74,7 @@ type GetMetricsArgs struct {
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	DimensionFilters map[string]interface{} `pulumi:"dimensionFilters"`
 	Filters          []GetMetricsFilter     `pulumi:"filters"`
-	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
 	//
 	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies []string `pulumi:"groupBies"`
@@ -124,7 +128,7 @@ type GetMetricsOutputArgs struct {
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	DimensionFilters pulumi.MapInput            `pulumi:"dimensionFilters"`
 	Filters          GetMetricsFilterArrayInput `pulumi:"filters"`
-	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
 	//
 	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`

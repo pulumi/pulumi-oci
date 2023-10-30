@@ -15,7 +15,12 @@ namespace Pulumi.Oci.Monitoring
         /// This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
         /// 
         /// List the status of each alarm in the specified compartment.
-        /// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+        /// Status is collective, across all metric streams in the alarm.
+        /// To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// For more information, see
+        /// [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
         /// 
         /// This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -39,6 +44,10 @@ namespace Pulumi.Oci.Monitoring
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
         ///         DisplayName = @var.Alarm_status_display_name,
+        ///         EntityId = oci_monitoring_entity.Test_entity.Id,
+        ///         ResourceId = oci_monitoring_resource.Test_resource.Id,
+        ///         ServiceName = oci_core_service.Test_service.Name,
+        ///         Status = @var.Alarm_status_status,
         ///     });
         /// 
         /// });
@@ -53,7 +62,12 @@ namespace Pulumi.Oci.Monitoring
         /// This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
         /// 
         /// List the status of each alarm in the specified compartment.
-        /// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+        /// Status is collective, across all metric streams in the alarm.
+        /// To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// For more information, see
+        /// [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
         /// 
         /// This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -77,6 +91,10 @@ namespace Pulumi.Oci.Monitoring
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
         ///         DisplayName = @var.Alarm_status_display_name,
+        ///         EntityId = oci_monitoring_entity.Test_entity.Id,
+        ///         ResourceId = oci_monitoring_resource.Test_resource.Id,
+        ///         ServiceName = oci_core_service.Test_service.Name,
+        ///         Status = @var.Alarm_status_status,
         ///     });
         /// 
         /// });
@@ -109,6 +127,12 @@ namespace Pulumi.Oci.Monitoring
         [Input("displayName")]
         public string? DisplayName { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+        /// </summary>
+        [Input("entityId")]
+        public string? EntityId { get; set; }
+
         [Input("filters")]
         private List<Inputs.GetAlarmStatusesFilterArgs>? _filters;
         public List<Inputs.GetAlarmStatusesFilterArgs> Filters
@@ -116,6 +140,24 @@ namespace Pulumi.Oci.Monitoring
             get => _filters ?? (_filters = new List<Inputs.GetAlarmStatusesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+        /// </summary>
+        [Input("resourceId")]
+        public string? ResourceId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+        /// </summary>
+        [Input("serviceName")]
+        public string? ServiceName { get; set; }
+
+        /// <summary>
+        /// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
+        /// </summary>
+        [Input("status")]
+        public string? Status { get; set; }
 
         public GetAlarmStatusesArgs()
         {
@@ -143,6 +185,12 @@ namespace Pulumi.Oci.Monitoring
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+        /// </summary>
+        [Input("entityId")]
+        public Input<string>? EntityId { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetAlarmStatusesFilterInputArgs>? _filters;
         public InputList<Inputs.GetAlarmStatusesFilterInputArgs> Filters
@@ -150,6 +198,24 @@ namespace Pulumi.Oci.Monitoring
             get => _filters ?? (_filters = new InputList<Inputs.GetAlarmStatusesFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+        /// </summary>
+        [Input("resourceId")]
+        public Input<string>? ResourceId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+        /// </summary>
+        [Input("serviceName")]
+        public Input<string>? ServiceName { get; set; }
+
+        /// <summary>
+        /// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
+        /// </summary>
+        [Input("status")]
+        public Input<string>? Status { get; set; }
 
         public GetAlarmStatusesInvokeArgs()
         {
@@ -171,11 +237,18 @@ namespace Pulumi.Oci.Monitoring
         /// The configured name of the alarm.  Example: `High CPU Utilization`
         /// </summary>
         public readonly string? DisplayName;
+        public readonly string? EntityId;
         public readonly ImmutableArray<Outputs.GetAlarmStatusesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ResourceId;
+        public readonly string? ServiceName;
+        /// <summary>
+        /// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+        /// </summary>
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetAlarmStatusesResult(
@@ -187,16 +260,28 @@ namespace Pulumi.Oci.Monitoring
 
             string? displayName,
 
+            string? entityId,
+
             ImmutableArray<Outputs.GetAlarmStatusesFilterResult> filters,
 
-            string id)
+            string id,
+
+            string? resourceId,
+
+            string? serviceName,
+
+            string? status)
         {
             AlarmStatuses = alarmStatuses;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             DisplayName = displayName;
+            EntityId = entityId;
             Filters = filters;
             Id = id;
+            ResourceId = resourceId;
+            ServiceName = serviceName;
+            Status = status;
         }
     }
 }

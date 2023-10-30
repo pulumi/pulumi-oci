@@ -60,6 +60,8 @@ type GetAutonomousPatchArgs struct {
 // A collection of values returned by getAutonomousPatch.
 type GetAutonomousPatchResult struct {
 	AutonomousPatchId string `pulumi:"autonomousPatchId"`
+	// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+	AutonomousPatchType string `pulumi:"autonomousPatchType"`
 	// The text describing this patch package.
 	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
@@ -128,6 +130,11 @@ func (o GetAutonomousPatchResultOutput) ToOutput(ctx context.Context) pulumix.Ou
 
 func (o GetAutonomousPatchResultOutput) AutonomousPatchId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.AutonomousPatchId }).(pulumi.StringOutput)
+}
+
+// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+func (o GetAutonomousPatchResultOutput) AutonomousPatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.AutonomousPatchType }).(pulumi.StringOutput)
 }
 
 // The text describing this patch package.

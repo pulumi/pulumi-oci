@@ -64,6 +64,11 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
      */
     private Boolean isCustomActionTimeoutEnabled;
     /**
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    private Boolean isDstFileUpdateEnabled;
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -226,6 +231,13 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
         return this.isCustomActionTimeoutEnabled;
     }
     /**
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    public Boolean isDstFileUpdateEnabled() {
+        return this.isDstFileUpdateEnabled;
+    }
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -371,6 +383,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
         private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes;
         private String id;
         private Boolean isCustomActionTimeoutEnabled;
+        private Boolean isDstFileUpdateEnabled;
         private String lifecycleDetails;
         private String maintenanceSubtype;
         private String maintenanceType;
@@ -402,6 +415,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
     	      this.estimatedPatchingTimes = defaults.estimatedPatchingTimes;
     	      this.id = defaults.id;
     	      this.isCustomActionTimeoutEnabled = defaults.isCustomActionTimeoutEnabled;
+    	      this.isDstFileUpdateEnabled = defaults.isDstFileUpdateEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceSubtype = defaults.maintenanceSubtype;
     	      this.maintenanceType = defaults.maintenanceType;
@@ -473,6 +487,11 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
         @CustomType.Setter
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
             this.isCustomActionTimeoutEnabled = Objects.requireNonNull(isCustomActionTimeoutEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = Objects.requireNonNull(isDstFileUpdateEnabled);
             return this;
         }
         @CustomType.Setter
@@ -577,6 +596,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
             o.estimatedPatchingTimes = estimatedPatchingTimes;
             o.id = id;
             o.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            o.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             o.lifecycleDetails = lifecycleDetails;
             o.maintenanceSubtype = maintenanceSubtype;
             o.maintenanceType = maintenanceType;

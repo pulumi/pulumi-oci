@@ -11,6 +11,11 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'RemediationRecipeDetectConfiguration',
+    'RemediationRecipeNetworkConfiguration',
+    'RemediationRecipeScmConfiguration',
+    'RemediationRecipeVerifyConfiguration',
+    'RemediationRunStage',
     'VulnerabilityAuditApplicationDependency',
     'VulnerabilityAuditConfiguration',
     'VulnerabilityAuditSource',
@@ -18,6 +23,32 @@ __all__ = [
     'GetKnowledgebasesFilterResult',
     'GetKnowledgebasesKnowledgeBaseCollectionResult',
     'GetKnowledgebasesKnowledgeBaseCollectionItemResult',
+    'GetRemediationRecipeDetectConfigurationResult',
+    'GetRemediationRecipeNetworkConfigurationResult',
+    'GetRemediationRecipeScmConfigurationResult',
+    'GetRemediationRecipeVerifyConfigurationResult',
+    'GetRemediationRecipesFilterResult',
+    'GetRemediationRecipesRemediationRecipeCollectionResult',
+    'GetRemediationRecipesRemediationRecipeCollectionItemResult',
+    'GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult',
+    'GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationResult',
+    'GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult',
+    'GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult',
+    'GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionResult',
+    'GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemResult',
+    'GetRemediationRunApplicationDependencyRecommendationsFilterResult',
+    'GetRemediationRunStageResult',
+    'GetRemediationRunStagePipelinePropertyResult',
+    'GetRemediationRunStagePullRequestPropertyResult',
+    'GetRemediationRunStagesFilterResult',
+    'GetRemediationRunStagesRemediationRunStageCollectionResult',
+    'GetRemediationRunStagesRemediationRunStageCollectionItemResult',
+    'GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyResult',
+    'GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyResult',
+    'GetRemediationRunsFilterResult',
+    'GetRemediationRunsRemediationRunCollectionResult',
+    'GetRemediationRunsRemediationRunCollectionItemResult',
+    'GetRemediationRunsRemediationRunCollectionItemStageResult',
     'GetVulnerabilityAuditApplicationDependencyResult',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionResult',
     'GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemResult',
@@ -36,6 +67,519 @@ __all__ = [
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult',
 ]
+
+@pulumi.output_type
+class RemediationRecipeDetectConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maxPermissibleCvssV2score":
+            suggest = "max_permissible_cvss_v2score"
+        elif key == "maxPermissibleCvssV3score":
+            suggest = "max_permissible_cvss_v3score"
+        elif key == "upgradePolicy":
+            suggest = "upgrade_policy"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RemediationRecipeDetectConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RemediationRecipeDetectConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RemediationRecipeDetectConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 exclusions: Optional[Sequence[str]] = None,
+                 max_permissible_cvss_v2score: Optional[float] = None,
+                 max_permissible_cvss_v3score: Optional[float] = None,
+                 upgrade_policy: Optional[str] = None):
+        """
+        :param Sequence[str] exclusions: (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+        :param float max_permissible_cvss_v2score: (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        :param float max_permissible_cvss_v3score: (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        :param str upgrade_policy: (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+        """
+        if exclusions is not None:
+            pulumi.set(__self__, "exclusions", exclusions)
+        if max_permissible_cvss_v2score is not None:
+            pulumi.set(__self__, "max_permissible_cvss_v2score", max_permissible_cvss_v2score)
+        if max_permissible_cvss_v3score is not None:
+            pulumi.set(__self__, "max_permissible_cvss_v3score", max_permissible_cvss_v3score)
+        if upgrade_policy is not None:
+            pulumi.set(__self__, "upgrade_policy", upgrade_policy)
+
+    @property
+    @pulumi.getter
+    def exclusions(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+        """
+        return pulumi.get(self, "exclusions")
+
+    @property
+    @pulumi.getter(name="maxPermissibleCvssV2score")
+    def max_permissible_cvss_v2score(self) -> Optional[float]:
+        """
+        (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        """
+        return pulumi.get(self, "max_permissible_cvss_v2score")
+
+    @property
+    @pulumi.getter(name="maxPermissibleCvssV3score")
+    def max_permissible_cvss_v3score(self) -> Optional[float]:
+        """
+        (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        """
+        return pulumi.get(self, "max_permissible_cvss_v3score")
+
+    @property
+    @pulumi.getter(name="upgradePolicy")
+    def upgrade_policy(self) -> Optional[str]:
+        """
+        (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+        """
+        return pulumi.get(self, "upgrade_policy")
+
+
+@pulumi.output_type
+class RemediationRecipeNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RemediationRecipeNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RemediationRecipeNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RemediationRecipeNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 subnet_id: str,
+                 nsg_ids: Optional[Sequence[str]] = None):
+        """
+        :param str subnet_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+        :param Sequence[str] nsg_ids: (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+
+@pulumi.output_type
+class RemediationRecipeScmConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isAutomergeEnabled":
+            suggest = "is_automerge_enabled"
+        elif key == "scmType":
+            suggest = "scm_type"
+        elif key == "buildFileLocation":
+            suggest = "build_file_location"
+        elif key == "externalScmType":
+            suggest = "external_scm_type"
+        elif key == "ociCodeRepositoryId":
+            suggest = "oci_code_repository_id"
+        elif key == "patSecretId":
+            suggest = "pat_secret_id"
+        elif key == "repositoryUrl":
+            suggest = "repository_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RemediationRecipeScmConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RemediationRecipeScmConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RemediationRecipeScmConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 branch: str,
+                 is_automerge_enabled: bool,
+                 scm_type: str,
+                 build_file_location: Optional[str] = None,
+                 external_scm_type: Optional[str] = None,
+                 oci_code_repository_id: Optional[str] = None,
+                 pat_secret_id: Optional[str] = None,
+                 repository_url: Optional[str] = None,
+                 username: Optional[str] = None):
+        """
+        :param str branch: (Updatable) The branch used by ADM to patch vulnerabilities.
+        :param bool is_automerge_enabled: (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+        :param str scm_type: (Updatable) The type of Source Code Management.
+        :param str build_file_location: (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+        :param str external_scm_type: (Updatable) The type of External Source Code Management.
+        :param str oci_code_repository_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+        :param str pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        :param str repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str username: (Updatable) The username that will be used to authenticate with Jenkins.
+        """
+        pulumi.set(__self__, "branch", branch)
+        pulumi.set(__self__, "is_automerge_enabled", is_automerge_enabled)
+        pulumi.set(__self__, "scm_type", scm_type)
+        if build_file_location is not None:
+            pulumi.set(__self__, "build_file_location", build_file_location)
+        if external_scm_type is not None:
+            pulumi.set(__self__, "external_scm_type", external_scm_type)
+        if oci_code_repository_id is not None:
+            pulumi.set(__self__, "oci_code_repository_id", oci_code_repository_id)
+        if pat_secret_id is not None:
+            pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+        if repository_url is not None:
+            pulumi.set(__self__, "repository_url", repository_url)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def branch(self) -> str:
+        """
+        (Updatable) The branch used by ADM to patch vulnerabilities.
+        """
+        return pulumi.get(self, "branch")
+
+    @property
+    @pulumi.getter(name="isAutomergeEnabled")
+    def is_automerge_enabled(self) -> bool:
+        """
+        (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+        """
+        return pulumi.get(self, "is_automerge_enabled")
+
+    @property
+    @pulumi.getter(name="scmType")
+    def scm_type(self) -> str:
+        """
+        (Updatable) The type of Source Code Management.
+        """
+        return pulumi.get(self, "scm_type")
+
+    @property
+    @pulumi.getter(name="buildFileLocation")
+    def build_file_location(self) -> Optional[str]:
+        """
+        (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+        """
+        return pulumi.get(self, "build_file_location")
+
+    @property
+    @pulumi.getter(name="externalScmType")
+    def external_scm_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of External Source Code Management.
+        """
+        return pulumi.get(self, "external_scm_type")
+
+    @property
+    @pulumi.getter(name="ociCodeRepositoryId")
+    def oci_code_repository_id(self) -> Optional[str]:
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+        """
+        return pulumi.get(self, "oci_code_repository_id")
+
+    @property
+    @pulumi.getter(name="patSecretId")
+    def pat_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        """
+        return pulumi.get(self, "pat_secret_id")
+
+    @property
+    @pulumi.getter(name="repositoryUrl")
+    def repository_url(self) -> Optional[str]:
+        """
+        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        """
+        return pulumi.get(self, "repository_url")
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[str]:
+        """
+        (Updatable) The username that will be used to authenticate with Jenkins.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class RemediationRecipeVerifyConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "buildServiceType":
+            suggest = "build_service_type"
+        elif key == "additionalParameters":
+            suggest = "additional_parameters"
+        elif key == "jenkinsUrl":
+            suggest = "jenkins_url"
+        elif key == "jobName":
+            suggest = "job_name"
+        elif key == "patSecretId":
+            suggest = "pat_secret_id"
+        elif key == "pipelineId":
+            suggest = "pipeline_id"
+        elif key == "repositoryUrl":
+            suggest = "repository_url"
+        elif key == "triggerSecretId":
+            suggest = "trigger_secret_id"
+        elif key == "workflowName":
+            suggest = "workflow_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RemediationRecipeVerifyConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RemediationRecipeVerifyConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RemediationRecipeVerifyConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 build_service_type: str,
+                 additional_parameters: Optional[Mapping[str, Any]] = None,
+                 jenkins_url: Optional[str] = None,
+                 job_name: Optional[str] = None,
+                 pat_secret_id: Optional[str] = None,
+                 pipeline_id: Optional[str] = None,
+                 repository_url: Optional[str] = None,
+                 trigger_secret_id: Optional[str] = None,
+                 username: Optional[str] = None,
+                 workflow_name: Optional[str] = None):
+        """
+        :param str build_service_type: (Updatable) The type of Build Service.
+        :param Mapping[str, Any] additional_parameters: (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+        :param str jenkins_url: (Updatable) The URL that locates the Jenkins pipeline.
+        :param str job_name: (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+        :param str pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        :param str pipeline_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+        :param str repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str trigger_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+        :param str username: (Updatable) The username that will be used to authenticate with Jenkins.
+        :param str workflow_name: (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+        """
+        pulumi.set(__self__, "build_service_type", build_service_type)
+        if additional_parameters is not None:
+            pulumi.set(__self__, "additional_parameters", additional_parameters)
+        if jenkins_url is not None:
+            pulumi.set(__self__, "jenkins_url", jenkins_url)
+        if job_name is not None:
+            pulumi.set(__self__, "job_name", job_name)
+        if pat_secret_id is not None:
+            pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+        if pipeline_id is not None:
+            pulumi.set(__self__, "pipeline_id", pipeline_id)
+        if repository_url is not None:
+            pulumi.set(__self__, "repository_url", repository_url)
+        if trigger_secret_id is not None:
+            pulumi.set(__self__, "trigger_secret_id", trigger_secret_id)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+        if workflow_name is not None:
+            pulumi.set(__self__, "workflow_name", workflow_name)
+
+    @property
+    @pulumi.getter(name="buildServiceType")
+    def build_service_type(self) -> str:
+        """
+        (Updatable) The type of Build Service.
+        """
+        return pulumi.get(self, "build_service_type")
+
+    @property
+    @pulumi.getter(name="additionalParameters")
+    def additional_parameters(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+        """
+        return pulumi.get(self, "additional_parameters")
+
+    @property
+    @pulumi.getter(name="jenkinsUrl")
+    def jenkins_url(self) -> Optional[str]:
+        """
+        (Updatable) The URL that locates the Jenkins pipeline.
+        """
+        return pulumi.get(self, "jenkins_url")
+
+    @property
+    @pulumi.getter(name="jobName")
+    def job_name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+        """
+        return pulumi.get(self, "job_name")
+
+    @property
+    @pulumi.getter(name="patSecretId")
+    def pat_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        """
+        return pulumi.get(self, "pat_secret_id")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> Optional[str]:
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="repositoryUrl")
+    def repository_url(self) -> Optional[str]:
+        """
+        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        """
+        return pulumi.get(self, "repository_url")
+
+    @property
+    @pulumi.getter(name="triggerSecretId")
+    def trigger_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+        """
+        return pulumi.get(self, "trigger_secret_id")
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[str]:
+        """
+        (Updatable) The username that will be used to authenticate with Jenkins.
+        """
+        return pulumi.get(self, "username")
+
+    @property
+    @pulumi.getter(name="workflowName")
+    def workflow_name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+        """
+        return pulumi.get(self, "workflow_name")
+
+
+@pulumi.output_type
+class RemediationRunStage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeFinished":
+            suggest = "time_finished"
+        elif key == "timeStarted":
+            suggest = "time_started"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RemediationRunStage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RemediationRunStage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RemediationRunStage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 summary: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str summary: Information about the current step within the given stage.
+        :param str time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_finished: The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str type: The type of stage.
+        """
+        if summary is not None:
+            pulumi.set(__self__, "summary", summary)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def summary(self) -> Optional[str]:
+        """
+        Information about the current step within the given stage.
+        """
+        return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[str]:
+        """
+        The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[str]:
+        """
+        The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of stage.
+        """
+        return pulumi.get(self, "type")
+
 
 @pulumi.output_type
 class VulnerabilityAuditApplicationDependency(dict):
@@ -64,8 +608,8 @@ class VulnerabilityAuditApplicationDependency(dict):
                  application_dependency_node_ids: Optional[Sequence[str]] = None):
         """
         :param str gav: Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
-        :param str node_id: Unique identifier of an Application Dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
-        :param Sequence[str] application_dependency_node_ids: List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+        :param str node_id: Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
+        :param Sequence[str] application_dependency_node_ids: List of application dependencies on which this application dependency depends, each identified by its nodeId.
         """
         pulumi.set(__self__, "gav", gav)
         pulumi.set(__self__, "node_id", node_id)
@@ -84,7 +628,7 @@ class VulnerabilityAuditApplicationDependency(dict):
     @pulumi.getter(name="nodeId")
     def node_id(self) -> str:
         """
-        Unique identifier of an Application Dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
+        Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
         """
         return pulumi.get(self, "node_id")
 
@@ -92,7 +636,7 @@ class VulnerabilityAuditApplicationDependency(dict):
     @pulumi.getter(name="applicationDependencyNodeIds")
     def application_dependency_node_ids(self) -> Optional[Sequence[str]]:
         """
-        List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+        List of application dependencies on which this application dependency depends, each identified by its nodeId.
         """
         return pulumi.get(self, "application_dependency_node_ids")
 
@@ -123,9 +667,9 @@ class VulnerabilityAuditConfiguration(dict):
                  max_permissible_cvss_v2score: Optional[float] = None,
                  max_permissible_cvss_v3score: Optional[float] = None):
         """
-        :param Sequence[str] exclusions: A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
-        :param float max_permissible_cvss_v2score: A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
-        :param float max_permissible_cvss_v3score: A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        :param Sequence[str] exclusions: A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
+        :param float max_permissible_cvss_v2score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        :param float max_permissible_cvss_v3score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         if exclusions is not None:
             pulumi.set(__self__, "exclusions", exclusions)
@@ -138,7 +682,7 @@ class VulnerabilityAuditConfiguration(dict):
     @pulumi.getter
     def exclusions(self) -> Optional[Sequence[str]]:
         """
-        A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+        A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
         """
         return pulumi.get(self, "exclusions")
 
@@ -146,7 +690,7 @@ class VulnerabilityAuditConfiguration(dict):
     @pulumi.getter(name="maxPermissibleCvssV2score")
     def max_permissible_cvss_v2score(self) -> Optional[float]:
         """
-        A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         return pulumi.get(self, "max_permissible_cvss_v2score")
 
@@ -154,7 +698,7 @@ class VulnerabilityAuditConfiguration(dict):
     @pulumi.getter(name="maxPermissibleCvssV3score")
     def max_permissible_cvss_v3score(self) -> Optional[float]:
         """
-        A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         return pulumi.get(self, "max_permissible_cvss_v3score")
 
@@ -183,13 +727,13 @@ class VulnerabilityAuditSource(dict):
                  description: Optional[str] = None,
                  oci_resource_id: Optional[str] = None):
         """
-        :param str type: Source type of the Vulnerability Audit.
+        :param str type: Source type of the vulnerability audit.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str description: Description of the external resource source.
-        :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+        :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
         """
         pulumi.set(__self__, "type", type)
         if description is not None:
@@ -201,7 +745,7 @@ class VulnerabilityAuditSource(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Source type of the Vulnerability Audit.
+        Source type of the vulnerability audit.
 
 
         ** IMPORTANT **
@@ -221,7 +765,7 @@ class VulnerabilityAuditSource(dict):
     @pulumi.getter(name="ociResourceId")
     def oci_resource_id(self) -> Optional[str]:
         """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
         """
         return pulumi.get(self, "oci_resource_id")
 
@@ -354,15 +898,15 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier.
+        :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: A filter to return only resources that match the specified identifier.
+        :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param str state: A filter to return only Knowledge Bases that match the specified lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str time_updated: The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_created: The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_updated: The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -378,7 +922,7 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        A filter to return only resources that belong to the specified compartment identifier.
+        A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -410,7 +954,7 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        A filter to return only resources that match the specified identifier.
+        A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         """
         return pulumi.get(self, "id")
 
@@ -434,7 +978,7 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_created")
 
@@ -442,9 +986,1562 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetRemediationRecipeDetectConfigurationResult(dict):
+    def __init__(__self__, *,
+                 exclusions: Sequence[str],
+                 max_permissible_cvss_v2score: float,
+                 max_permissible_cvss_v3score: float,
+                 upgrade_policy: str):
+        """
+        :param Sequence[str] exclusions: The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+        :param float max_permissible_cvss_v2score: The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        :param float max_permissible_cvss_v3score: The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        :param str upgrade_policy: The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+        """
+        pulumi.set(__self__, "exclusions", exclusions)
+        pulumi.set(__self__, "max_permissible_cvss_v2score", max_permissible_cvss_v2score)
+        pulumi.set(__self__, "max_permissible_cvss_v3score", max_permissible_cvss_v3score)
+        pulumi.set(__self__, "upgrade_policy", upgrade_policy)
+
+    @property
+    @pulumi.getter
+    def exclusions(self) -> Sequence[str]:
+        """
+        The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+        """
+        return pulumi.get(self, "exclusions")
+
+    @property
+    @pulumi.getter(name="maxPermissibleCvssV2score")
+    def max_permissible_cvss_v2score(self) -> float:
+        """
+        The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        """
+        return pulumi.get(self, "max_permissible_cvss_v2score")
+
+    @property
+    @pulumi.getter(name="maxPermissibleCvssV3score")
+    def max_permissible_cvss_v3score(self) -> float:
+        """
+        The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        """
+        return pulumi.get(self, "max_permissible_cvss_v3score")
+
+    @property
+    @pulumi.getter(name="upgradePolicy")
+    def upgrade_policy(self) -> str:
+        """
+        The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+        """
+        return pulumi.get(self, "upgrade_policy")
+
+
+@pulumi.output_type
+class GetRemediationRecipeNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[str],
+                 subnet_id: str):
+        """
+        :param Sequence[str] nsg_ids: The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+        :param str subnet_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetRemediationRecipeScmConfigurationResult(dict):
+    def __init__(__self__, *,
+                 branch: str,
+                 build_file_location: str,
+                 external_scm_type: str,
+                 is_automerge_enabled: bool,
+                 oci_code_repository_id: str,
+                 pat_secret_id: str,
+                 repository_url: str,
+                 scm_type: str,
+                 username: str):
+        """
+        :param str branch: The branch used by ADM to patch vulnerabilities.
+        :param str build_file_location: The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+        :param str external_scm_type: The type of External Source Code Management.
+        :param bool is_automerge_enabled: If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+        :param str oci_code_repository_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+        :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str scm_type: The type of Source Code Management.
+        :param str username: The username that will be used to authenticate with Jenkins.
+        """
+        pulumi.set(__self__, "branch", branch)
+        pulumi.set(__self__, "build_file_location", build_file_location)
+        pulumi.set(__self__, "external_scm_type", external_scm_type)
+        pulumi.set(__self__, "is_automerge_enabled", is_automerge_enabled)
+        pulumi.set(__self__, "oci_code_repository_id", oci_code_repository_id)
+        pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+        pulumi.set(__self__, "repository_url", repository_url)
+        pulumi.set(__self__, "scm_type", scm_type)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def branch(self) -> str:
+        """
+        The branch used by ADM to patch vulnerabilities.
+        """
+        return pulumi.get(self, "branch")
+
+    @property
+    @pulumi.getter(name="buildFileLocation")
+    def build_file_location(self) -> str:
+        """
+        The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+        """
+        return pulumi.get(self, "build_file_location")
+
+    @property
+    @pulumi.getter(name="externalScmType")
+    def external_scm_type(self) -> str:
+        """
+        The type of External Source Code Management.
+        """
+        return pulumi.get(self, "external_scm_type")
+
+    @property
+    @pulumi.getter(name="isAutomergeEnabled")
+    def is_automerge_enabled(self) -> bool:
+        """
+        If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+        """
+        return pulumi.get(self, "is_automerge_enabled")
+
+    @property
+    @pulumi.getter(name="ociCodeRepositoryId")
+    def oci_code_repository_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+        """
+        return pulumi.get(self, "oci_code_repository_id")
+
+    @property
+    @pulumi.getter(name="patSecretId")
+    def pat_secret_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        """
+        return pulumi.get(self, "pat_secret_id")
+
+    @property
+    @pulumi.getter(name="repositoryUrl")
+    def repository_url(self) -> str:
+        """
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        """
+        return pulumi.get(self, "repository_url")
+
+    @property
+    @pulumi.getter(name="scmType")
+    def scm_type(self) -> str:
+        """
+        The type of Source Code Management.
+        """
+        return pulumi.get(self, "scm_type")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        The username that will be used to authenticate with Jenkins.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetRemediationRecipeVerifyConfigurationResult(dict):
+    def __init__(__self__, *,
+                 additional_parameters: Mapping[str, Any],
+                 build_service_type: str,
+                 jenkins_url: str,
+                 job_name: str,
+                 pat_secret_id: str,
+                 pipeline_id: str,
+                 repository_url: str,
+                 trigger_secret_id: str,
+                 username: str,
+                 workflow_name: str):
+        """
+        :param Mapping[str, Any] additional_parameters: Additional key-value pairs passed as parameters to the build service when running an experiment.
+        :param str build_service_type: The type of Build Service.
+        :param str jenkins_url: The URL that locates the Jenkins pipeline.
+        :param str job_name: The name of the Jenkins pipeline job that identifies the build pipeline.
+        :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        :param str pipeline_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str trigger_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+        :param str username: The username that will be used to authenticate with Jenkins.
+        :param str workflow_name: The name of the GitHub Actions workflow that defines the build pipeline.
+        """
+        pulumi.set(__self__, "additional_parameters", additional_parameters)
+        pulumi.set(__self__, "build_service_type", build_service_type)
+        pulumi.set(__self__, "jenkins_url", jenkins_url)
+        pulumi.set(__self__, "job_name", job_name)
+        pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "repository_url", repository_url)
+        pulumi.set(__self__, "trigger_secret_id", trigger_secret_id)
+        pulumi.set(__self__, "username", username)
+        pulumi.set(__self__, "workflow_name", workflow_name)
+
+    @property
+    @pulumi.getter(name="additionalParameters")
+    def additional_parameters(self) -> Mapping[str, Any]:
+        """
+        Additional key-value pairs passed as parameters to the build service when running an experiment.
+        """
+        return pulumi.get(self, "additional_parameters")
+
+    @property
+    @pulumi.getter(name="buildServiceType")
+    def build_service_type(self) -> str:
+        """
+        The type of Build Service.
+        """
+        return pulumi.get(self, "build_service_type")
+
+    @property
+    @pulumi.getter(name="jenkinsUrl")
+    def jenkins_url(self) -> str:
+        """
+        The URL that locates the Jenkins pipeline.
+        """
+        return pulumi.get(self, "jenkins_url")
+
+    @property
+    @pulumi.getter(name="jobName")
+    def job_name(self) -> str:
+        """
+        The name of the Jenkins pipeline job that identifies the build pipeline.
+        """
+        return pulumi.get(self, "job_name")
+
+    @property
+    @pulumi.getter(name="patSecretId")
+    def pat_secret_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        """
+        return pulumi.get(self, "pat_secret_id")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="repositoryUrl")
+    def repository_url(self) -> str:
+        """
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        """
+        return pulumi.get(self, "repository_url")
+
+    @property
+    @pulumi.getter(name="triggerSecretId")
+    def trigger_secret_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+        """
+        return pulumi.get(self, "trigger_secret_id")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        The username that will be used to authenticate with Jenkins.
+        """
+        return pulumi.get(self, "username")
+
+    @property
+    @pulumi.getter(name="workflowName")
+    def workflow_name(self) -> str:
+        """
+        The name of the GitHub Actions workflow that defines the build pipeline.
+        """
+        return pulumi.get(self, "workflow_name")
+
+
+@pulumi.output_type
+class GetRemediationRecipesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRemediationRecipesRemediationRecipeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRemediationRecipesRemediationRecipeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 detect_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult'],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_run_triggered_on_kb_change: bool,
+                 knowledge_base_id: str,
+                 network_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationResult'],
+                 scm_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult'],
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str,
+                 verify_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult']):
+        """
+        :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs'] detect_configurations: A configuration to define the constraints when detecting vulnerable dependencies.
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+        :param bool is_run_triggered_on_kb_change: Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
+        :param str knowledge_base_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
+        :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs'] network_configurations: A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs'] scm_configurations: A configuration for the Source Code Management tool/platform used by a remediation recipe.
+        :param str state: A filter to return only Remediation Recipes that match the specified lifecycleState.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_updated: The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs'] verify_configurations: The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "detect_configurations", detect_configurations)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_run_triggered_on_kb_change", is_run_triggered_on_kb_change)
+        pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "scm_configurations", scm_configurations)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "verify_configurations", verify_configurations)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="detectConfigurations")
+    def detect_configurations(self) -> Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult']:
+        """
+        A configuration to define the constraints when detecting vulnerable dependencies.
+        """
+        return pulumi.get(self, "detect_configurations")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isRunTriggeredOnKbChange")
+    def is_run_triggered_on_kb_change(self) -> bool:
+        """
+        Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
+        """
+        return pulumi.get(self, "is_run_triggered_on_kb_change")
+
+    @property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
+        """
+        return pulumi.get(self, "knowledge_base_id")
+
+    @property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationResult']:
+        """
+        A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
+        """
+        return pulumi.get(self, "network_configurations")
+
+    @property
+    @pulumi.getter(name="scmConfigurations")
+    def scm_configurations(self) -> Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult']:
+        """
+        A configuration for the Source Code Management tool/platform used by a remediation recipe.
+        """
+        return pulumi.get(self, "scm_configurations")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Remediation Recipes that match the specified lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="verifyConfigurations")
+    def verify_configurations(self) -> Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult']:
+        """
+        The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
+        """
+        return pulumi.get(self, "verify_configurations")
+
+
+@pulumi.output_type
+class GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult(dict):
+    def __init__(__self__, *,
+                 exclusions: Sequence[str],
+                 max_permissible_cvss_v2score: float,
+                 max_permissible_cvss_v3score: float,
+                 upgrade_policy: str):
+        """
+        :param Sequence[str] exclusions: The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+        :param float max_permissible_cvss_v2score: The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        :param float max_permissible_cvss_v3score: The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        :param str upgrade_policy: The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+        """
+        pulumi.set(__self__, "exclusions", exclusions)
+        pulumi.set(__self__, "max_permissible_cvss_v2score", max_permissible_cvss_v2score)
+        pulumi.set(__self__, "max_permissible_cvss_v3score", max_permissible_cvss_v3score)
+        pulumi.set(__self__, "upgrade_policy", upgrade_policy)
+
+    @property
+    @pulumi.getter
+    def exclusions(self) -> Sequence[str]:
+        """
+        The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+        """
+        return pulumi.get(self, "exclusions")
+
+    @property
+    @pulumi.getter(name="maxPermissibleCvssV2score")
+    def max_permissible_cvss_v2score(self) -> float:
+        """
+        The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+        """
+        return pulumi.get(self, "max_permissible_cvss_v2score")
+
+    @property
+    @pulumi.getter(name="maxPermissibleCvssV3score")
+    def max_permissible_cvss_v3score(self) -> float:
+        """
+        The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+        """
+        return pulumi.get(self, "max_permissible_cvss_v3score")
+
+    @property
+    @pulumi.getter(name="upgradePolicy")
+    def upgrade_policy(self) -> str:
+        """
+        The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+        """
+        return pulumi.get(self, "upgrade_policy")
+
+
+@pulumi.output_type
+class GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[str],
+                 subnet_id: str):
+        """
+        :param Sequence[str] nsg_ids: The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+        :param str subnet_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult(dict):
+    def __init__(__self__, *,
+                 branch: str,
+                 build_file_location: str,
+                 external_scm_type: str,
+                 is_automerge_enabled: bool,
+                 oci_code_repository_id: str,
+                 pat_secret_id: str,
+                 repository_url: str,
+                 scm_type: str,
+                 username: str):
+        """
+        :param str branch: The branch used by ADM to patch vulnerabilities.
+        :param str build_file_location: The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+        :param str external_scm_type: The type of External Source Code Management.
+        :param bool is_automerge_enabled: If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+        :param str oci_code_repository_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+        :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str scm_type: The type of Source Code Management.
+        :param str username: The username that will be used to authenticate with Jenkins.
+        """
+        pulumi.set(__self__, "branch", branch)
+        pulumi.set(__self__, "build_file_location", build_file_location)
+        pulumi.set(__self__, "external_scm_type", external_scm_type)
+        pulumi.set(__self__, "is_automerge_enabled", is_automerge_enabled)
+        pulumi.set(__self__, "oci_code_repository_id", oci_code_repository_id)
+        pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+        pulumi.set(__self__, "repository_url", repository_url)
+        pulumi.set(__self__, "scm_type", scm_type)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def branch(self) -> str:
+        """
+        The branch used by ADM to patch vulnerabilities.
+        """
+        return pulumi.get(self, "branch")
+
+    @property
+    @pulumi.getter(name="buildFileLocation")
+    def build_file_location(self) -> str:
+        """
+        The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+        """
+        return pulumi.get(self, "build_file_location")
+
+    @property
+    @pulumi.getter(name="externalScmType")
+    def external_scm_type(self) -> str:
+        """
+        The type of External Source Code Management.
+        """
+        return pulumi.get(self, "external_scm_type")
+
+    @property
+    @pulumi.getter(name="isAutomergeEnabled")
+    def is_automerge_enabled(self) -> bool:
+        """
+        If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+        """
+        return pulumi.get(self, "is_automerge_enabled")
+
+    @property
+    @pulumi.getter(name="ociCodeRepositoryId")
+    def oci_code_repository_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+        """
+        return pulumi.get(self, "oci_code_repository_id")
+
+    @property
+    @pulumi.getter(name="patSecretId")
+    def pat_secret_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        """
+        return pulumi.get(self, "pat_secret_id")
+
+    @property
+    @pulumi.getter(name="repositoryUrl")
+    def repository_url(self) -> str:
+        """
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        """
+        return pulumi.get(self, "repository_url")
+
+    @property
+    @pulumi.getter(name="scmType")
+    def scm_type(self) -> str:
+        """
+        The type of Source Code Management.
+        """
+        return pulumi.get(self, "scm_type")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        The username that will be used to authenticate with Jenkins.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult(dict):
+    def __init__(__self__, *,
+                 additional_parameters: Mapping[str, Any],
+                 build_service_type: str,
+                 jenkins_url: str,
+                 job_name: str,
+                 pat_secret_id: str,
+                 pipeline_id: str,
+                 repository_url: str,
+                 trigger_secret_id: str,
+                 username: str,
+                 workflow_name: str):
+        """
+        :param Mapping[str, Any] additional_parameters: Additional key-value pairs passed as parameters to the build service when running an experiment.
+        :param str build_service_type: The type of Build Service.
+        :param str jenkins_url: The URL that locates the Jenkins pipeline.
+        :param str job_name: The name of the Jenkins pipeline job that identifies the build pipeline.
+        :param str pat_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        :param str pipeline_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+        :param str repository_url: The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        :param str trigger_secret_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+        :param str username: The username that will be used to authenticate with Jenkins.
+        :param str workflow_name: The name of the GitHub Actions workflow that defines the build pipeline.
+        """
+        pulumi.set(__self__, "additional_parameters", additional_parameters)
+        pulumi.set(__self__, "build_service_type", build_service_type)
+        pulumi.set(__self__, "jenkins_url", jenkins_url)
+        pulumi.set(__self__, "job_name", job_name)
+        pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "repository_url", repository_url)
+        pulumi.set(__self__, "trigger_secret_id", trigger_secret_id)
+        pulumi.set(__self__, "username", username)
+        pulumi.set(__self__, "workflow_name", workflow_name)
+
+    @property
+    @pulumi.getter(name="additionalParameters")
+    def additional_parameters(self) -> Mapping[str, Any]:
+        """
+        Additional key-value pairs passed as parameters to the build service when running an experiment.
+        """
+        return pulumi.get(self, "additional_parameters")
+
+    @property
+    @pulumi.getter(name="buildServiceType")
+    def build_service_type(self) -> str:
+        """
+        The type of Build Service.
+        """
+        return pulumi.get(self, "build_service_type")
+
+    @property
+    @pulumi.getter(name="jenkinsUrl")
+    def jenkins_url(self) -> str:
+        """
+        The URL that locates the Jenkins pipeline.
+        """
+        return pulumi.get(self, "jenkins_url")
+
+    @property
+    @pulumi.getter(name="jobName")
+    def job_name(self) -> str:
+        """
+        The name of the Jenkins pipeline job that identifies the build pipeline.
+        """
+        return pulumi.get(self, "job_name")
+
+    @property
+    @pulumi.getter(name="patSecretId")
+    def pat_secret_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        """
+        return pulumi.get(self, "pat_secret_id")
+
+    @property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @property
+    @pulumi.getter(name="repositoryUrl")
+    def repository_url(self) -> str:
+        """
+        The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        """
+        return pulumi.get(self, "repository_url")
+
+    @property
+    @pulumi.getter(name="triggerSecretId")
+    def trigger_secret_id(self) -> str:
+        """
+        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+        """
+        return pulumi.get(self, "trigger_secret_id")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        The username that will be used to authenticate with Jenkins.
+        """
+        return pulumi.get(self, "username")
+
+    @property
+    @pulumi.getter(name="workflowName")
+    def workflow_name(self) -> str:
+        """
+        The name of the GitHub Actions workflow that defines the build pipeline.
+        """
+        return pulumi.get(self, "workflow_name")
+
+
+@pulumi.output_type
+class GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemResult']):
+        """
+        :param Sequence['GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs'] items: List of application recommendation summaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemResult']:
+        """
+        List of application recommendation summaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_dependency_node_ids: Sequence[str],
+                 gav: str,
+                 node_id: str,
+                 recommended_gav: str):
+        """
+        :param Sequence[str] application_dependency_node_ids: List of (application dependencies) node identifiers from which this node depends.
+        :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+        :param str node_id: Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
+        :param str recommended_gav: Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
+        """
+        pulumi.set(__self__, "application_dependency_node_ids", application_dependency_node_ids)
+        pulumi.set(__self__, "gav", gav)
+        pulumi.set(__self__, "node_id", node_id)
+        pulumi.set(__self__, "recommended_gav", recommended_gav)
+
+    @property
+    @pulumi.getter(name="applicationDependencyNodeIds")
+    def application_dependency_node_ids(self) -> Sequence[str]:
+        """
+        List of (application dependencies) node identifiers from which this node depends.
+        """
+        return pulumi.get(self, "application_dependency_node_ids")
+
+    @property
+    @pulumi.getter
+    def gav(self) -> str:
+        """
+        A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+        """
+        return pulumi.get(self, "gav")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> str:
+        """
+        Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="recommendedGav")
+    def recommended_gav(self) -> str:
+        """
+        Recommended application dependency in "group:artifact:version" (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
+        """
+        return pulumi.get(self, "recommended_gav")
+
+
+@pulumi.output_type
+class GetRemediationRunApplicationDependencyRecommendationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRemediationRunStageResult(dict):
+    def __init__(__self__, *,
+                 summary: str,
+                 time_created: str,
+                 time_finished: str,
+                 time_started: str,
+                 type: str):
+        """
+        :param str summary: Information about the current step within the given stage.
+        :param str time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_finished: The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str type: The type of stage.
+        """
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        Information about the current step within the given stage.
+        """
+        return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of stage.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRemediationRunStagePipelinePropertyResult(dict):
+    def __init__(__self__, *,
+                 pipeline_identifier: str,
+                 pipeline_url: str):
+        """
+        :param str pipeline_identifier: Unique identifier for the pipeline or action created in the Verify stage.
+        :param str pipeline_url: The web link to the pipeline from the Verify stage.
+        """
+        pulumi.set(__self__, "pipeline_identifier", pipeline_identifier)
+        pulumi.set(__self__, "pipeline_url", pipeline_url)
+
+    @property
+    @pulumi.getter(name="pipelineIdentifier")
+    def pipeline_identifier(self) -> str:
+        """
+        Unique identifier for the pipeline or action created in the Verify stage.
+        """
+        return pulumi.get(self, "pipeline_identifier")
+
+    @property
+    @pulumi.getter(name="pipelineUrl")
+    def pipeline_url(self) -> str:
+        """
+        The web link to the pipeline from the Verify stage.
+        """
+        return pulumi.get(self, "pipeline_url")
+
+
+@pulumi.output_type
+class GetRemediationRunStagePullRequestPropertyResult(dict):
+    def __init__(__self__, *,
+                 pull_request_identifier: str,
+                 pull_request_url: str):
+        """
+        :param str pull_request_identifier: Unique identifier for the pull or merge request created in the recommend stage.
+        :param str pull_request_url: The web link to the pull or merge request created in the recommend stage.
+        """
+        pulumi.set(__self__, "pull_request_identifier", pull_request_identifier)
+        pulumi.set(__self__, "pull_request_url", pull_request_url)
+
+    @property
+    @pulumi.getter(name="pullRequestIdentifier")
+    def pull_request_identifier(self) -> str:
+        """
+        Unique identifier for the pull or merge request created in the recommend stage.
+        """
+        return pulumi.get(self, "pull_request_identifier")
+
+    @property
+    @pulumi.getter(name="pullRequestUrl")
+    def pull_request_url(self) -> str:
+        """
+        The web link to the pull or merge request created in the recommend stage.
+        """
+        return pulumi.get(self, "pull_request_url")
+
+
+@pulumi.output_type
+class GetRemediationRunStagesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRemediationRunStagesRemediationRunStageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRemediationRunStagesRemediationRunStageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 audit_id: str,
+                 next_stage_type: str,
+                 pipeline_properties: Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyResult'],
+                 previous_stage_type: str,
+                 pull_request_properties: Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyResult'],
+                 recommended_updates_count: int,
+                 remediation_run_id: str,
+                 status: str,
+                 summary: str,
+                 time_created: str,
+                 time_finished: str,
+                 time_started: str,
+                 type: str):
+        """
+        :param str audit_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
+        :param str next_stage_type: The next type of stage in the remediation run.
+        :param Sequence['GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs'] pipeline_properties: Pipeline properties which result from the run of the verify stage.
+        :param str previous_stage_type: The previous type of stage in the remediation run.
+        :param Sequence['GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs'] pull_request_properties: Pull request properties from recommend stage of the remediation run.
+        :param int recommended_updates_count: Count of recommended application dependencies to update.
+        :param str remediation_run_id: Unique Remediation Run identifier path parameter.
+        :param str status: A filter to return only Stages that match the specified status.
+        :param str summary: Information about the current step within the stage.
+        :param str time_created: The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_finished: The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_started: The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str type: A filter to return only Stages that match the specified type.
+        """
+        pulumi.set(__self__, "audit_id", audit_id)
+        pulumi.set(__self__, "next_stage_type", next_stage_type)
+        pulumi.set(__self__, "pipeline_properties", pipeline_properties)
+        pulumi.set(__self__, "previous_stage_type", previous_stage_type)
+        pulumi.set(__self__, "pull_request_properties", pull_request_properties)
+        pulumi.set(__self__, "recommended_updates_count", recommended_updates_count)
+        pulumi.set(__self__, "remediation_run_id", remediation_run_id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="auditId")
+    def audit_id(self) -> str:
+        """
+        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
+        """
+        return pulumi.get(self, "audit_id")
+
+    @property
+    @pulumi.getter(name="nextStageType")
+    def next_stage_type(self) -> str:
+        """
+        The next type of stage in the remediation run.
+        """
+        return pulumi.get(self, "next_stage_type")
+
+    @property
+    @pulumi.getter(name="pipelineProperties")
+    def pipeline_properties(self) -> Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyResult']:
+        """
+        Pipeline properties which result from the run of the verify stage.
+        """
+        return pulumi.get(self, "pipeline_properties")
+
+    @property
+    @pulumi.getter(name="previousStageType")
+    def previous_stage_type(self) -> str:
+        """
+        The previous type of stage in the remediation run.
+        """
+        return pulumi.get(self, "previous_stage_type")
+
+    @property
+    @pulumi.getter(name="pullRequestProperties")
+    def pull_request_properties(self) -> Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyResult']:
+        """
+        Pull request properties from recommend stage of the remediation run.
+        """
+        return pulumi.get(self, "pull_request_properties")
+
+    @property
+    @pulumi.getter(name="recommendedUpdatesCount")
+    def recommended_updates_count(self) -> int:
+        """
+        Count of recommended application dependencies to update.
+        """
+        return pulumi.get(self, "recommended_updates_count")
+
+    @property
+    @pulumi.getter(name="remediationRunId")
+    def remediation_run_id(self) -> str:
+        """
+        Unique Remediation Run identifier path parameter.
+        """
+        return pulumi.get(self, "remediation_run_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        A filter to return only Stages that match the specified status.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        Information about the current step within the stage.
+        """
+        return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        A filter to return only Stages that match the specified type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyResult(dict):
+    def __init__(__self__, *,
+                 pipeline_identifier: str,
+                 pipeline_url: str):
+        """
+        :param str pipeline_identifier: Unique identifier for the pipeline or action created in the Verify stage.
+        :param str pipeline_url: The web link to the pipeline from the Verify stage.
+        """
+        pulumi.set(__self__, "pipeline_identifier", pipeline_identifier)
+        pulumi.set(__self__, "pipeline_url", pipeline_url)
+
+    @property
+    @pulumi.getter(name="pipelineIdentifier")
+    def pipeline_identifier(self) -> str:
+        """
+        Unique identifier for the pipeline or action created in the Verify stage.
+        """
+        return pulumi.get(self, "pipeline_identifier")
+
+    @property
+    @pulumi.getter(name="pipelineUrl")
+    def pipeline_url(self) -> str:
+        """
+        The web link to the pipeline from the Verify stage.
+        """
+        return pulumi.get(self, "pipeline_url")
+
+
+@pulumi.output_type
+class GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyResult(dict):
+    def __init__(__self__, *,
+                 pull_request_identifier: str,
+                 pull_request_url: str):
+        """
+        :param str pull_request_identifier: Unique identifier for the pull or merge request created in the recommend stage.
+        :param str pull_request_url: The web link to the pull or merge request created in the recommend stage.
+        """
+        pulumi.set(__self__, "pull_request_identifier", pull_request_identifier)
+        pulumi.set(__self__, "pull_request_url", pull_request_url)
+
+    @property
+    @pulumi.getter(name="pullRequestIdentifier")
+    def pull_request_identifier(self) -> str:
+        """
+        Unique identifier for the pull or merge request created in the recommend stage.
+        """
+        return pulumi.get(self, "pull_request_identifier")
+
+    @property
+    @pulumi.getter(name="pullRequestUrl")
+    def pull_request_url(self) -> str:
+        """
+        The web link to the pull or merge request created in the recommend stage.
+        """
+        return pulumi.get(self, "pull_request_url")
+
+
+@pulumi.output_type
+class GetRemediationRunsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRemediationRunsRemediationRunCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRemediationRunsRemediationRunCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRemediationRunsRemediationRunCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRemediationRunsRemediationRunCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 current_stage_type: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 remediation_recipe_id: str,
+                 remediation_run_source: str,
+                 stages: Sequence['outputs.GetRemediationRunsRemediationRunCollectionItemStageResult'],
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_finished: str,
+                 time_started: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+        :param str current_stage_type: The type of the current stage of the remediation run.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+        :param str remediation_recipe_id: A filter to return only resources that match the specified Remediation Recipe identifier.
+        :param str remediation_run_source: The source that triggered the Remediation Recipe.
+        :param Sequence['GetRemediationRunsRemediationRunCollectionItemStageArgs'] stages: The list of remediation run stage summaries.
+        :param str state: A filter to return only Remediation Runs that match the specified lifecycleState.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_finished: The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_updated: The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_stage_type", current_stage_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "remediation_recipe_id", remediation_recipe_id)
+        pulumi.set(__self__, "remediation_run_source", remediation_run_source)
+        pulumi.set(__self__, "stages", stages)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="currentStageType")
+    def current_stage_type(self) -> str:
+        """
+        The type of the current stage of the remediation run.
+        """
+        return pulumi.get(self, "current_stage_type")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="remediationRecipeId")
+    def remediation_recipe_id(self) -> str:
+        """
+        A filter to return only resources that match the specified Remediation Recipe identifier.
+        """
+        return pulumi.get(self, "remediation_recipe_id")
+
+    @property
+    @pulumi.getter(name="remediationRunSource")
+    def remediation_run_source(self) -> str:
+        """
+        The source that triggered the Remediation Recipe.
+        """
+        return pulumi.get(self, "remediation_run_source")
+
+    @property
+    @pulumi.getter
+    def stages(self) -> Sequence['outputs.GetRemediationRunsRemediationRunCollectionItemStageResult']:
+        """
+        The list of remediation run stage summaries.
+        """
+        return pulumi.get(self, "stages")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Remediation Runs that match the specified lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetRemediationRunsRemediationRunCollectionItemStageResult(dict):
+    def __init__(__self__, *,
+                 summary: str,
+                 time_created: str,
+                 time_finished: str,
+                 time_started: str,
+                 type: str):
+        """
+        :param str summary: Information about the current step within the given stage.
+        :param str time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_finished: The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str type: The type of stage.
+        """
+        pulumi.set(__self__, "summary", summary)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        Information about the current step within the given stage.
+        """
+        return pulumi.get(self, "summary")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of stage.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -478,7 +2575,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemResult']):
         """
-        :param Sequence['GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs'] items: List of Vulnerability Audit summaries.
+        :param Sequence['GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs'] items: List of vulnerability audit summaries.
         """
         pulumi.set(__self__, "items", items)
 
@@ -486,7 +2583,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemResult']:
         """
-        List of Vulnerability Audit summaries.
+        List of vulnerability audit summaries.
         """
         return pulumi.get(self, "items")
 
@@ -500,11 +2597,11 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
                  node_id: str,
                  vulnerabilities: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityResult']):
         """
-        :param Sequence[str] application_dependency_node_ids: List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+        :param Sequence[str] application_dependency_node_ids: List of application dependencies on which this application dependency depends, each identified by its nodeId.
         :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
         :param bool is_found_in_knowledge_base: Indicates if the artifact is found in the knowledge base.
-        :param str node_id: Unique identifier of an Application Dependency, for example nodeId1.
-        :param Sequence['GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArgs'] vulnerabilities: List of vulnerabilities for the Application Dependency.
+        :param str node_id: Unique identifier of an application dependency, for example nodeId1.
+        :param Sequence['GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArgs'] vulnerabilities: List of vulnerabilities for the application dependency.
         """
         pulumi.set(__self__, "application_dependency_node_ids", application_dependency_node_ids)
         pulumi.set(__self__, "gav", gav)
@@ -516,7 +2613,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @pulumi.getter(name="applicationDependencyNodeIds")
     def application_dependency_node_ids(self) -> Sequence[str]:
         """
-        List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+        List of application dependencies on which this application dependency depends, each identified by its nodeId.
         """
         return pulumi.get(self, "application_dependency_node_ids")
 
@@ -540,7 +2637,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @pulumi.getter(name="nodeId")
     def node_id(self) -> str:
         """
-        Unique identifier of an Application Dependency, for example nodeId1.
+        Unique identifier of an application dependency, for example nodeId1.
         """
         return pulumi.get(self, "node_id")
 
@@ -548,7 +2645,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     @pulumi.getter
     def vulnerabilities(self) -> Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityResult']:
         """
-        List of vulnerabilities for the Application Dependency.
+        List of vulnerabilities for the application dependency.
         """
         return pulumi.get(self, "vulnerabilities")
 
@@ -751,9 +2848,9 @@ class GetVulnerabilityAuditConfigurationResult(dict):
                  max_permissible_cvss_v2score: float,
                  max_permissible_cvss_v3score: float):
         """
-        :param Sequence[str] exclusions: A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
-        :param float max_permissible_cvss_v2score: A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
-        :param float max_permissible_cvss_v3score: A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        :param Sequence[str] exclusions: A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
+        :param float max_permissible_cvss_v2score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        :param float max_permissible_cvss_v3score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         pulumi.set(__self__, "exclusions", exclusions)
         pulumi.set(__self__, "max_permissible_cvss_v2score", max_permissible_cvss_v2score)
@@ -763,7 +2860,7 @@ class GetVulnerabilityAuditConfigurationResult(dict):
     @pulumi.getter
     def exclusions(self) -> Sequence[str]:
         """
-        A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+        A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
         """
         return pulumi.get(self, "exclusions")
 
@@ -771,7 +2868,7 @@ class GetVulnerabilityAuditConfigurationResult(dict):
     @pulumi.getter(name="maxPermissibleCvssV2score")
     def max_permissible_cvss_v2score(self) -> float:
         """
-        A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         return pulumi.get(self, "max_permissible_cvss_v2score")
 
@@ -779,7 +2876,7 @@ class GetVulnerabilityAuditConfigurationResult(dict):
     @pulumi.getter(name="maxPermissibleCvssV3score")
     def max_permissible_cvss_v3score(self) -> float:
         """
-        A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         return pulumi.get(self, "max_permissible_cvss_v3score")
 
@@ -792,8 +2889,8 @@ class GetVulnerabilityAuditSourceResult(dict):
                  type: str):
         """
         :param str description: Description of the external resource source.
-        :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
-        :param str type: Source type of the Vulnerability Audit.
+        :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
+        :param str type: Source type of the vulnerability audit.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "oci_resource_id", oci_resource_id)
@@ -811,7 +2908,7 @@ class GetVulnerabilityAuditSourceResult(dict):
     @pulumi.getter(name="ociResourceId")
     def oci_resource_id(self) -> str:
         """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
         """
         return pulumi.get(self, "oci_resource_id")
 
@@ -819,7 +2916,7 @@ class GetVulnerabilityAuditSourceResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Source type of the Vulnerability Audit.
+        Source type of the vulnerability audit.
         """
         return pulumi.get(self, "type")
 
@@ -941,26 +3038,26 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
                  vulnerable_artifacts_count_with_ignored: int):
         """
         :param str build_type: The type of the build tool.
-        :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier.
-        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs'] configurations: Configuration for a Vulnerability Audit. A vulnerable Application Dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
+        :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
+        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs'] configurations: Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: A filter to return only resources that match the specified identifier.
+        :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param bool is_success: A filter to return only successful or failed Vulnerability Audits.
         :param str knowledge_base_id: A filter to return only Vulnerability Audits that were created against the specified knowledge base.
-        :param float max_observed_cvss_v2score: Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable Application Dependencies.
-        :param float max_observed_cvss_v2score_with_ignored: Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable Application Dependencies including ignored ones.
-        :param float max_observed_cvss_v3score: Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable Application Dependencies.
-        :param float max_observed_cvss_v3score_with_ignored: Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable Application Dependencies including ignored ones.
-        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs'] sources: Vulnerability Audit source.
+        :param float max_observed_cvss_v2score: Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
+        :param float max_observed_cvss_v2score_with_ignored: Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
+        :param float max_observed_cvss_v3score: Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable application dependencies.
+        :param float max_observed_cvss_v3score_with_ignored: Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable application dependencies including ignored ones.
+        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs'] sources: vulnerability audit source.
         :param str state: A filter to return only Vulnerability Audits that match the specified lifecycleState.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The creation date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str time_updated: The update date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs'] vulnerabilities: List of vulnerabilities found in the Vulnerability Audit.
-        :param int vulnerable_artifacts_count: Count of non-ignored vulnerable Application Dependencies.
-        :param int vulnerable_artifacts_count_with_ignored: Count of all vulnerable Application Dependencies.
+        :param str time_created: The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_updated: The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs'] vulnerabilities: List of vulnerabilities found in the vulnerability audit.
+        :param int vulnerable_artifacts_count: Count of non-ignored vulnerable application dependencies.
+        :param int vulnerable_artifacts_count_with_ignored: Count of all vulnerable application dependencies.
         """
         pulumi.set(__self__, "application_dependencies", application_dependencies)
         pulumi.set(__self__, "build_type", build_type)
@@ -1002,7 +3099,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        A filter to return only resources that belong to the specified compartment identifier.
+        A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1010,7 +3107,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter
     def configurations(self) -> Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult']:
         """
-        Configuration for a Vulnerability Audit. A vulnerable Application Dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
+        Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
         """
         return pulumi.get(self, "configurations")
 
@@ -1042,7 +3139,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        A filter to return only resources that match the specified identifier.
+        A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         """
         return pulumi.get(self, "id")
 
@@ -1066,7 +3163,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="maxObservedCvssV2score")
     def max_observed_cvss_v2score(self) -> float:
         """
-        Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable Application Dependencies.
+        Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
         """
         return pulumi.get(self, "max_observed_cvss_v2score")
 
@@ -1074,7 +3171,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="maxObservedCvssV2scoreWithIgnored")
     def max_observed_cvss_v2score_with_ignored(self) -> float:
         """
-        Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable Application Dependencies including ignored ones.
+        Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
         """
         return pulumi.get(self, "max_observed_cvss_v2score_with_ignored")
 
@@ -1082,7 +3179,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="maxObservedCvssV3score")
     def max_observed_cvss_v3score(self) -> float:
         """
-        Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable Application Dependencies.
+        Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable application dependencies.
         """
         return pulumi.get(self, "max_observed_cvss_v3score")
 
@@ -1090,7 +3187,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="maxObservedCvssV3scoreWithIgnored")
     def max_observed_cvss_v3score_with_ignored(self) -> float:
         """
-        Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable Application Dependencies including ignored ones.
+        Maximum Common Vulnerability Scoring System Version 3 score observed for vulnerable application dependencies including ignored ones.
         """
         return pulumi.get(self, "max_observed_cvss_v3score_with_ignored")
 
@@ -1098,7 +3195,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult']:
         """
-        Vulnerability Audit source.
+        vulnerability audit source.
         """
         return pulumi.get(self, "sources")
 
@@ -1122,7 +3219,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The creation date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_created")
 
@@ -1130,7 +3227,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The update date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_updated")
 
@@ -1138,7 +3235,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter
     def vulnerabilities(self) -> Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult']:
         """
-        List of vulnerabilities found in the Vulnerability Audit.
+        List of vulnerabilities found in the vulnerability audit.
         """
         return pulumi.get(self, "vulnerabilities")
 
@@ -1146,7 +3243,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="vulnerableArtifactsCount")
     def vulnerable_artifacts_count(self) -> int:
         """
-        Count of non-ignored vulnerable Application Dependencies.
+        Count of non-ignored vulnerable application dependencies.
         """
         return pulumi.get(self, "vulnerable_artifacts_count")
 
@@ -1154,7 +3251,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
     @pulumi.getter(name="vulnerableArtifactsCountWithIgnored")
     def vulnerable_artifacts_count_with_ignored(self) -> int:
         """
-        Count of all vulnerable Application Dependencies.
+        Count of all vulnerable application dependencies.
         """
         return pulumi.get(self, "vulnerable_artifacts_count_with_ignored")
 
@@ -1192,9 +3289,9 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult(
                  max_permissible_cvss_v2score: float,
                  max_permissible_cvss_v3score: float):
         """
-        :param Sequence[str] exclusions: A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
-        :param float max_permissible_cvss_v2score: A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
-        :param float max_permissible_cvss_v3score: A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        :param Sequence[str] exclusions: A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
+        :param float max_permissible_cvss_v2score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        :param float max_permissible_cvss_v3score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         pulumi.set(__self__, "exclusions", exclusions)
         pulumi.set(__self__, "max_permissible_cvss_v2score", max_permissible_cvss_v2score)
@@ -1204,7 +3301,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult(
     @pulumi.getter
     def exclusions(self) -> Sequence[str]:
         """
-        A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+        A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
         """
         return pulumi.get(self, "exclusions")
 
@@ -1212,7 +3309,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult(
     @pulumi.getter(name="maxPermissibleCvssV2score")
     def max_permissible_cvss_v2score(self) -> float:
         """
-        A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         return pulumi.get(self, "max_permissible_cvss_v2score")
 
@@ -1220,7 +3317,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult(
     @pulumi.getter(name="maxPermissibleCvssV3score")
     def max_permissible_cvss_v3score(self) -> float:
         """
-        A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+        A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
         return pulumi.get(self, "max_permissible_cvss_v3score")
 
@@ -1233,8 +3330,8 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
                  type: str):
         """
         :param str description: Description of the external resource source.
-        :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
-        :param str type: Source type of the Vulnerability Audit.
+        :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
+        :param str type: Source type of the vulnerability audit.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "oci_resource_id", oci_resource_id)
@@ -1252,7 +3349,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
     @pulumi.getter(name="ociResourceId")
     def oci_resource_id(self) -> str:
         """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
         """
         return pulumi.get(self, "oci_resource_id")
 
@@ -1260,7 +3357,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Source type of the Vulnerability Audit.
+        Source type of the vulnerability audit.
         """
         return pulumi.get(self, "type")
 
@@ -1275,7 +3372,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
         """
         :param float cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
         :param float cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3.
-        :param str id: A filter to return only resources that match the specified identifier.
+        :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
         """
         pulumi.set(__self__, "cvss_v2score", cvss_v2score)
@@ -1303,7 +3400,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
     @pulumi.getter
     def id(self) -> str:
         """
-        A filter to return only resources that match the specified identifier.
+        A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         """
         return pulumi.get(self, "id")
 

@@ -62,11 +62,71 @@ public final class GetAlarmStatusesPlainArgs extends com.pulumi.resources.Invoke
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+     * 
+     */
+    @Import(name="entityId")
+    private @Nullable String entityId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+     * 
+     */
+    public Optional<String> entityId() {
+        return Optional.ofNullable(this.entityId);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetAlarmStatusesFilter> filters;
 
     public Optional<List<GetAlarmStatusesFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+     * 
+     */
+    @Import(name="resourceId")
+    private @Nullable String resourceId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+     * 
+     */
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+
+    /**
+     * A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+     * 
+     */
+    @Import(name="serviceName")
+    private @Nullable String serviceName;
+
+    /**
+     * @return A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+     * 
+     */
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
+    }
+
+    /**
+     * The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to &#34;FIRING&#34; to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams&#39; status.  Example: `FIRING`
+     * 
+     */
+    @Import(name="status")
+    private @Nullable String status;
+
+    /**
+     * @return The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to &#34;FIRING&#34; to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams&#39; status.  Example: `FIRING`
+     * 
+     */
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     private GetAlarmStatusesPlainArgs() {}
@@ -75,7 +135,11 @@ public final class GetAlarmStatusesPlainArgs extends com.pulumi.resources.Invoke
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
+        this.entityId = $.entityId;
         this.filters = $.filters;
+        this.resourceId = $.resourceId;
+        this.serviceName = $.serviceName;
+        this.status = $.status;
     }
 
     public static Builder builder() {
@@ -129,6 +193,17 @@ public final class GetAlarmStatusesPlainArgs extends com.pulumi.resources.Invoke
             return this;
         }
 
+        /**
+         * @param entityId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entityId(@Nullable String entityId) {
+            $.entityId = entityId;
+            return this;
+        }
+
         public Builder filters(@Nullable List<GetAlarmStatusesFilter> filters) {
             $.filters = filters;
             return this;
@@ -136,6 +211,39 @@ public final class GetAlarmStatusesPlainArgs extends com.pulumi.resources.Invoke
 
         public Builder filters(GetAlarmStatusesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param resourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceId(@Nullable String resourceId) {
+            $.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * @param serviceName A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceName(@Nullable String serviceName) {
+            $.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * @param status The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to &#34;FIRING&#34; to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams&#39; status.  Example: `FIRING`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(@Nullable String status) {
+            $.status = status;
+            return this;
         }
 
         public GetAlarmStatusesPlainArgs build() {

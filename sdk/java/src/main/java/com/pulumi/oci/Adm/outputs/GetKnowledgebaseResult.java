@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetKnowledgebaseResult {
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * @return The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     private String compartmentId;
@@ -22,7 +22,7 @@ public final class GetKnowledgebaseResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The name of the Knowledge Base.
+     * @return The name of the knowledge base.
      * 
      */
     private String displayName;
@@ -32,13 +32,13 @@ public final class GetKnowledgebaseResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     private String id;
     private String knowledgeBaseId;
     /**
-     * @return The current lifecycle state of the Knowledge Base.
+     * @return The current lifecycle state of the knowledge base.
      * 
      */
     private String state;
@@ -48,19 +48,19 @@ public final class GetKnowledgebaseResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     private String timeUpdated;
 
     private GetKnowledgebaseResult() {}
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * @return The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     public String compartmentId() {
@@ -74,7 +74,7 @@ public final class GetKnowledgebaseResult {
         return this.definedTags;
     }
     /**
-     * @return The name of the Knowledge Base.
+     * @return The name of the knowledge base.
      * 
      */
     public String displayName() {
@@ -88,7 +88,7 @@ public final class GetKnowledgebaseResult {
         return this.freeformTags;
     }
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     public String id() {
@@ -98,7 +98,7 @@ public final class GetKnowledgebaseResult {
         return this.knowledgeBaseId;
     }
     /**
-     * @return The current lifecycle state of the Knowledge Base.
+     * @return The current lifecycle state of the knowledge base.
      * 
      */
     public String state() {
@@ -112,14 +112,14 @@ public final class GetKnowledgebaseResult {
         return this.systemTags;
     }
     /**
-     * @return The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public String timeUpdated() {

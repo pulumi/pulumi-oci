@@ -10,6 +10,11 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousContainerPatchesAutonomousPatch {
     /**
+     * @return Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    private String autonomousPatchType;
+    /**
      * @return The text describing this patch package.
      * 
      */
@@ -61,6 +66,13 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
     private String year;
 
     private GetAutonomousContainerPatchesAutonomousPatch() {}
+    /**
+     * @return Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    public String autonomousPatchType() {
+        return this.autonomousPatchType;
+    }
     /**
      * @return The text describing this patch package.
      * 
@@ -141,6 +153,7 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String autonomousPatchType;
         private String description;
         private String id;
         private String lifecycleDetails;
@@ -154,6 +167,7 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
         public Builder() {}
         public Builder(GetAutonomousContainerPatchesAutonomousPatch defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autonomousPatchType = defaults.autonomousPatchType;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -166,6 +180,11 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
     	      this.year = defaults.year;
         }
 
+        @CustomType.Setter
+        public Builder autonomousPatchType(String autonomousPatchType) {
+            this.autonomousPatchType = Objects.requireNonNull(autonomousPatchType);
+            return this;
+        }
         @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
@@ -218,6 +237,7 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
         }
         public GetAutonomousContainerPatchesAutonomousPatch build() {
             final var o = new GetAutonomousContainerPatchesAutonomousPatch();
+            o.autonomousPatchType = autonomousPatchType;
             o.description = description;
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;

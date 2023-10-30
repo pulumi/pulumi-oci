@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
         ///         CompartmentId = @var.Compartment_id,
+        ///         AutonomousPatchType = @var.Autonomous_container_patch_autonomous_patch_type,
         ///     });
         /// 
         /// });
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
         ///         CompartmentId = @var.Compartment_id,
+        ///         AutonomousPatchType = @var.Autonomous_container_patch_autonomous_patch_type,
         ///     });
         /// 
         /// });
@@ -84,6 +86,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("autonomousContainerDatabaseId", required: true)]
         public string AutonomousContainerDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+        /// </summary>
+        [Input("autonomousPatchType")]
+        public string? AutonomousPatchType { get; set; }
 
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -114,6 +122,12 @@ namespace Pulumi.Oci.Database
         public Input<string> AutonomousContainerDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+        /// </summary>
+        [Input("autonomousPatchType")]
+        public Input<string>? AutonomousPatchType { get; set; }
+
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -139,6 +153,10 @@ namespace Pulumi.Oci.Database
     {
         public readonly string AutonomousContainerDatabaseId;
         /// <summary>
+        /// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+        /// </summary>
+        public readonly string? AutonomousPatchType;
+        /// <summary>
         /// The list of autonomous_patches.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerPatchesAutonomousPatchResult> AutonomousPatches;
@@ -153,6 +171,8 @@ namespace Pulumi.Oci.Database
         private GetAutonomousContainerPatchesResult(
             string autonomousContainerDatabaseId,
 
+            string? autonomousPatchType,
+
             ImmutableArray<Outputs.GetAutonomousContainerPatchesAutonomousPatchResult> autonomousPatches,
 
             string compartmentId,
@@ -162,6 +182,7 @@ namespace Pulumi.Oci.Database
             string id)
         {
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            AutonomousPatchType = autonomousPatchType;
             AutonomousPatches = autonomousPatches;
             CompartmentId = compartmentId;
             Filters = filters;

@@ -44,6 +44,10 @@ export interface GetAutonomousPatchArgs {
 export interface GetAutonomousPatchResult {
     readonly autonomousPatchId: string;
     /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     */
+    readonly autonomousPatchType: string;
+    /**
      * The text describing this patch package.
      */
     readonly description: string;

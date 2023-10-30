@@ -32,6 +32,21 @@ public final class GetAutonomousContainerPatchesPlainArgs extends com.pulumi.res
     }
 
     /**
+     * Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    @Import(name="autonomousPatchType")
+    private @Nullable String autonomousPatchType;
+
+    /**
+     * @return Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    public Optional<String> autonomousPatchType() {
+        return Optional.ofNullable(this.autonomousPatchType);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -57,6 +72,7 @@ public final class GetAutonomousContainerPatchesPlainArgs extends com.pulumi.res
 
     private GetAutonomousContainerPatchesPlainArgs(GetAutonomousContainerPatchesPlainArgs $) {
         this.autonomousContainerDatabaseId = $.autonomousContainerDatabaseId;
+        this.autonomousPatchType = $.autonomousPatchType;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
     }
@@ -87,6 +103,17 @@ public final class GetAutonomousContainerPatchesPlainArgs extends com.pulumi.res
          */
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             $.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param autonomousPatchType Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousPatchType(@Nullable String autonomousPatchType) {
+            $.autonomousPatchType = autonomousPatchType;
             return this;
         }
 

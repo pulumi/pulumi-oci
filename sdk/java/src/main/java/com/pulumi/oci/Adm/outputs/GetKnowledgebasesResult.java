@@ -15,18 +15,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetKnowledgebasesResult {
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * @return The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return The name of the Knowledge Base.
+     * @return The name of the knowledge base.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetKnowledgebasesFilter> filters;
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     private @Nullable String id;
@@ -36,21 +36,21 @@ public final class GetKnowledgebasesResult {
      */
     private List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections;
     /**
-     * @return The current lifecycle state of the Knowledge Base.
+     * @return The current lifecycle state of the knowledge base.
      * 
      */
     private @Nullable String state;
 
     private GetKnowledgebasesResult() {}
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * @return The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return The name of the Knowledge Base.
+     * @return The name of the knowledge base.
      * 
      */
     public Optional<String> displayName() {
@@ -60,7 +60,7 @@ public final class GetKnowledgebasesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+     * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     public Optional<String> id() {
@@ -74,7 +74,7 @@ public final class GetKnowledgebasesResult {
         return this.knowledgeBaseCollections;
     }
     /**
-     * @return The current lifecycle state of the Knowledge Base.
+     * @return The current lifecycle state of the knowledge base.
      * 
      */
     public Optional<String> state() {

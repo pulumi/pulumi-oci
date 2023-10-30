@@ -6,7 +6,6 @@ package com.pulumi.oci.Database;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,123 +17,48 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
     public static final MaintenanceRunArgs Empty = new MaintenanceRunArgs();
 
     /**
-     * (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      * 
      */
-    @Import(name="currentCustomActionTimeoutInMins")
-    private @Nullable Output<Integer> currentCustomActionTimeoutInMins;
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      * 
      */
-    public Optional<Output<Integer>> currentCustomActionTimeoutInMins() {
-        return Optional.ofNullable(this.currentCustomActionTimeoutInMins);
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
-     * (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    @Import(name="customActionTimeoutInMins")
-    private @Nullable Output<Integer> customActionTimeoutInMins;
+    @Import(name="isDstFileUpdateEnabled")
+    private @Nullable Output<Boolean> isDstFileUpdateEnabled;
 
     /**
-     * @return (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    public Optional<Output<Integer>> customActionTimeoutInMins() {
-        return Optional.ofNullable(this.customActionTimeoutInMins);
+    public Optional<Output<Boolean>> isDstFileUpdateEnabled() {
+        return Optional.ofNullable(this.isDstFileUpdateEnabled);
     }
 
     /**
-     * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     * Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
      * 
      */
-    @Import(name="isCustomActionTimeoutEnabled")
-    private @Nullable Output<Boolean> isCustomActionTimeoutEnabled;
+    @Import(name="patchType", required=true)
+    private Output<String> patchType;
 
     /**
-     * @return (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     * @return Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
      * 
      */
-    public Optional<Output<Boolean>> isCustomActionTimeoutEnabled() {
-        return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
-    }
-
-    /**
-     * (Updatable) If `FALSE`, skips the maintenance run.
-     * 
-     */
-    @Import(name="isEnabled")
-    private @Nullable Output<Boolean> isEnabled;
-
-    /**
-     * @return (Updatable) If `FALSE`, skips the maintenance run.
-     * 
-     */
-    public Optional<Output<Boolean>> isEnabled() {
-        return Optional.ofNullable(this.isEnabled);
-    }
-
-    /**
-     * (Updatable) If set to `TRUE`, starts patching immediately.
-     * 
-     */
-    @Import(name="isPatchNowEnabled")
-    private @Nullable Output<Boolean> isPatchNowEnabled;
-
-    /**
-     * @return (Updatable) If set to `TRUE`, starts patching immediately.
-     * 
-     */
-    public Optional<Output<Boolean>> isPatchNowEnabled() {
-        return Optional.ofNullable(this.isPatchNowEnabled);
-    }
-
-    /**
-     * (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-     * 
-     */
-    @Import(name="isResumePatching")
-    private @Nullable Output<Boolean> isResumePatching;
-
-    /**
-     * @return (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-     * 
-     */
-    public Optional<Output<Boolean>> isResumePatching() {
-        return Optional.ofNullable(this.isResumePatching);
-    }
-
-    /**
-     * The maintenance run OCID.
-     * 
-     */
-    @Import(name="maintenanceRunId", required=true)
-    private Output<String> maintenanceRunId;
-
-    /**
-     * @return The maintenance run OCID.
-     * 
-     */
-    public Output<String> maintenanceRunId() {
-        return this.maintenanceRunId;
-    }
-
-    /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
-     * 
-     */
-    @Import(name="patchId")
-    private @Nullable Output<String> patchId;
-
-    /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
-     * 
-     */
-    public Optional<Output<String>> patchId() {
-        return Optional.ofNullable(this.patchId);
+    public Output<String> patchType() {
+        return this.patchType;
     }
 
     /**
@@ -157,70 +81,49 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The target database server system software version for the patching operation.
+     * The ID of the target resource for which the maintenance run should be created.
      * 
      */
-    @Import(name="targetDbServerVersion")
-    private @Nullable Output<String> targetDbServerVersion;
+    @Import(name="targetResourceId", required=true)
+    private Output<String> targetResourceId;
 
     /**
-     * @return (Updatable) The target database server system software version for the patching operation.
+     * @return The ID of the target resource for which the maintenance run should be created.
      * 
      */
-    public Optional<Output<String>> targetDbServerVersion() {
-        return Optional.ofNullable(this.targetDbServerVersion);
+    public Output<String> targetResourceId() {
+        return this.targetResourceId;
     }
 
     /**
-     * (Updatable) The target storage cell system software version for the patching operation.
-     * 
-     */
-    @Import(name="targetStorageServerVersion")
-    private @Nullable Output<String> targetStorageServerVersion;
-
-    /**
-     * @return (Updatable) The target storage cell system software version for the patching operation.
-     * 
-     */
-    public Optional<Output<String>> targetStorageServerVersion() {
-        return Optional.ofNullable(this.targetStorageServerVersion);
-    }
-
-    /**
-     * (Updatable) The scheduled date and time of the maintenance run to update.
+     * (Updatable) The date and time that update should be scheduled.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="timeScheduled")
-    private @Nullable Output<String> timeScheduled;
+    @Import(name="timeScheduled", required=true)
+    private Output<String> timeScheduled;
 
     /**
-     * @return (Updatable) The scheduled date and time of the maintenance run to update.
+     * @return (Updatable) The date and time that update should be scheduled.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> timeScheduled() {
-        return Optional.ofNullable(this.timeScheduled);
+    public Output<String> timeScheduled() {
+        return this.timeScheduled;
     }
 
     private MaintenanceRunArgs() {}
 
     private MaintenanceRunArgs(MaintenanceRunArgs $) {
-        this.currentCustomActionTimeoutInMins = $.currentCustomActionTimeoutInMins;
-        this.customActionTimeoutInMins = $.customActionTimeoutInMins;
-        this.isCustomActionTimeoutEnabled = $.isCustomActionTimeoutEnabled;
-        this.isEnabled = $.isEnabled;
-        this.isPatchNowEnabled = $.isPatchNowEnabled;
-        this.isResumePatching = $.isResumePatching;
-        this.maintenanceRunId = $.maintenanceRunId;
-        this.patchId = $.patchId;
+        this.compartmentId = $.compartmentId;
+        this.isDstFileUpdateEnabled = $.isDstFileUpdateEnabled;
+        this.patchType = $.patchType;
         this.patchingMode = $.patchingMode;
-        this.targetDbServerVersion = $.targetDbServerVersion;
-        this.targetStorageServerVersion = $.targetStorageServerVersion;
+        this.targetResourceId = $.targetResourceId;
         this.timeScheduled = $.timeScheduled;
     }
 
@@ -243,171 +146,66 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param currentCustomActionTimeoutInMins (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
          * 
          * @return builder
          * 
          */
-        public Builder currentCustomActionTimeoutInMins(@Nullable Output<Integer> currentCustomActionTimeoutInMins) {
-            $.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
             return this;
         }
 
         /**
-         * @param currentCustomActionTimeoutInMins (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
          * 
          * @return builder
          * 
          */
-        public Builder currentCustomActionTimeoutInMins(Integer currentCustomActionTimeoutInMins) {
-            return currentCustomActionTimeoutInMins(Output.of(currentCustomActionTimeoutInMins));
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
         }
 
         /**
-         * @param customActionTimeoutInMins (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+         * @param isDstFileUpdateEnabled Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
          * 
          * @return builder
          * 
          */
-        public Builder customActionTimeoutInMins(@Nullable Output<Integer> customActionTimeoutInMins) {
-            $.customActionTimeoutInMins = customActionTimeoutInMins;
+        public Builder isDstFileUpdateEnabled(@Nullable Output<Boolean> isDstFileUpdateEnabled) {
+            $.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             return this;
         }
 
         /**
-         * @param customActionTimeoutInMins (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+         * @param isDstFileUpdateEnabled Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
          * 
          * @return builder
          * 
          */
-        public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
-            return customActionTimeoutInMins(Output.of(customActionTimeoutInMins));
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            return isDstFileUpdateEnabled(Output.of(isDstFileUpdateEnabled));
         }
 
         /**
-         * @param isCustomActionTimeoutEnabled (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+         * @param patchType Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
          * 
          * @return builder
          * 
          */
-        public Builder isCustomActionTimeoutEnabled(@Nullable Output<Boolean> isCustomActionTimeoutEnabled) {
-            $.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+        public Builder patchType(Output<String> patchType) {
+            $.patchType = patchType;
             return this;
         }
 
         /**
-         * @param isCustomActionTimeoutEnabled (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+         * @param patchType Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
          * 
          * @return builder
          * 
          */
-        public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
-            return isCustomActionTimeoutEnabled(Output.of(isCustomActionTimeoutEnabled));
-        }
-
-        /**
-         * @param isEnabled (Updatable) If `FALSE`, skips the maintenance run.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isEnabled(@Nullable Output<Boolean> isEnabled) {
-            $.isEnabled = isEnabled;
-            return this;
-        }
-
-        /**
-         * @param isEnabled (Updatable) If `FALSE`, skips the maintenance run.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isEnabled(Boolean isEnabled) {
-            return isEnabled(Output.of(isEnabled));
-        }
-
-        /**
-         * @param isPatchNowEnabled (Updatable) If set to `TRUE`, starts patching immediately.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isPatchNowEnabled(@Nullable Output<Boolean> isPatchNowEnabled) {
-            $.isPatchNowEnabled = isPatchNowEnabled;
-            return this;
-        }
-
-        /**
-         * @param isPatchNowEnabled (Updatable) If set to `TRUE`, starts patching immediately.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isPatchNowEnabled(Boolean isPatchNowEnabled) {
-            return isPatchNowEnabled(Output.of(isPatchNowEnabled));
-        }
-
-        /**
-         * @param isResumePatching (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isResumePatching(@Nullable Output<Boolean> isResumePatching) {
-            $.isResumePatching = isResumePatching;
-            return this;
-        }
-
-        /**
-         * @param isResumePatching (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isResumePatching(Boolean isResumePatching) {
-            return isResumePatching(Output.of(isResumePatching));
-        }
-
-        /**
-         * @param maintenanceRunId The maintenance run OCID.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder maintenanceRunId(Output<String> maintenanceRunId) {
-            $.maintenanceRunId = maintenanceRunId;
-            return this;
-        }
-
-        /**
-         * @param maintenanceRunId The maintenance run OCID.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder maintenanceRunId(String maintenanceRunId) {
-            return maintenanceRunId(Output.of(maintenanceRunId));
-        }
-
-        /**
-         * @param patchId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder patchId(@Nullable Output<String> patchId) {
-            $.patchId = patchId;
-            return this;
-        }
-
-        /**
-         * @param patchId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder patchId(String patchId) {
-            return patchId(Output.of(patchId));
+        public Builder patchType(String patchType) {
+            return patchType(Output.of(patchType));
         }
 
         /**
@@ -436,49 +234,28 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param targetDbServerVersion (Updatable) The target database server system software version for the patching operation.
+         * @param targetResourceId The ID of the target resource for which the maintenance run should be created.
          * 
          * @return builder
          * 
          */
-        public Builder targetDbServerVersion(@Nullable Output<String> targetDbServerVersion) {
-            $.targetDbServerVersion = targetDbServerVersion;
+        public Builder targetResourceId(Output<String> targetResourceId) {
+            $.targetResourceId = targetResourceId;
             return this;
         }
 
         /**
-         * @param targetDbServerVersion (Updatable) The target database server system software version for the patching operation.
+         * @param targetResourceId The ID of the target resource for which the maintenance run should be created.
          * 
          * @return builder
          * 
          */
-        public Builder targetDbServerVersion(String targetDbServerVersion) {
-            return targetDbServerVersion(Output.of(targetDbServerVersion));
+        public Builder targetResourceId(String targetResourceId) {
+            return targetResourceId(Output.of(targetResourceId));
         }
 
         /**
-         * @param targetStorageServerVersion (Updatable) The target storage cell system software version for the patching operation.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder targetStorageServerVersion(@Nullable Output<String> targetStorageServerVersion) {
-            $.targetStorageServerVersion = targetStorageServerVersion;
-            return this;
-        }
-
-        /**
-         * @param targetStorageServerVersion (Updatable) The target storage cell system software version for the patching operation.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder targetStorageServerVersion(String targetStorageServerVersion) {
-            return targetStorageServerVersion(Output.of(targetStorageServerVersion));
-        }
-
-        /**
-         * @param timeScheduled (Updatable) The scheduled date and time of the maintenance run to update.
+         * @param timeScheduled (Updatable) The date and time that update should be scheduled.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -486,13 +263,13 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder timeScheduled(@Nullable Output<String> timeScheduled) {
+        public Builder timeScheduled(Output<String> timeScheduled) {
             $.timeScheduled = timeScheduled;
             return this;
         }
 
         /**
-         * @param timeScheduled (Updatable) The scheduled date and time of the maintenance run to update.
+         * @param timeScheduled (Updatable) The date and time that update should be scheduled.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -505,7 +282,9 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public MaintenanceRunArgs build() {
-            $.maintenanceRunId = Objects.requireNonNull($.maintenanceRunId, "expected parameter 'maintenanceRunId' to be non-null");
+            $.patchType = Objects.requireNonNull($.patchType, "expected parameter 'patchType' to be non-null");
+            $.targetResourceId = Objects.requireNonNull($.targetResourceId, "expected parameter 'targetResourceId' to be non-null");
+            $.timeScheduled = Objects.requireNonNull($.timeScheduled, "expected parameter 'timeScheduled' to be non-null");
             return $;
         }
     }

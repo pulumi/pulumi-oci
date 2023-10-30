@@ -12,6 +12,7 @@ from . import outputs
 
 __all__ = [
     'IndexKey',
+    'TableReplica',
     'TableSchema',
     'TableSchemaColumn',
     'TableSchemaIdentity',
@@ -20,12 +21,14 @@ __all__ = [
     'GetIndexesFilterResult',
     'GetIndexesIndexCollectionResult',
     'GetIndexesIndexCollectionKeyResult',
+    'GetTableReplicaResult',
     'GetTableSchemaResult',
     'GetTableSchemaColumnResult',
     'GetTableSchemaIdentityResult',
     'GetTableTableLimitResult',
     'GetTablesFilterResult',
     'GetTablesTableCollectionResult',
+    'GetTablesTableCollectionReplicaResult',
     'GetTablesTableCollectionSchemaResult',
     'GetTablesTableCollectionSchemaColumnResult',
     'GetTablesTableCollectionSchemaIdentityResult',
@@ -93,6 +96,116 @@ class IndexKey(dict):
         If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
         return pulumi.get(self, "json_path")
+
+
+@pulumi.output_type
+class TableReplica(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "capacityMode":
+            suggest = "capacity_mode"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "maxWriteUnits":
+            suggest = "max_write_units"
+        elif key == "tableId":
+            suggest = "table_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TableReplica. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TableReplica.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TableReplica.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capacity_mode: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 max_write_units: Optional[int] = None,
+                 region: Optional[str] = None,
+                 state: Optional[str] = None,
+                 table_id: Optional[str] = None):
+        """
+        :param str capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        :param str lifecycle_details: A message describing the current state in more detail.
+        :param int max_write_units: (Updatable) Maximum sustained write throughput limit for the table.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str region: A customer-facing region identifier
+        :param str state: The state of a table.
+        :param str table_id: The OCID of the replica table
+        """
+        if capacity_mode is not None:
+            pulumi.set(__self__, "capacity_mode", capacity_mode)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if max_write_units is not None:
+            pulumi.set(__self__, "max_write_units", max_write_units)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if table_id is not None:
+            pulumi.set(__self__, "table_id", table_id)
+
+    @property
+    @pulumi.getter(name="capacityMode")
+    def capacity_mode(self) -> Optional[str]:
+        """
+        (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        """
+        return pulumi.get(self, "capacity_mode")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        A message describing the current state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maxWriteUnits")
+    def max_write_units(self) -> Optional[int]:
+        """
+        (Updatable) Maximum sustained write throughput limit for the table.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "max_write_units")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        A customer-facing region identifier
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The state of a table.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="tableId")
+    def table_id(self) -> Optional[str]:
+        """
+        The OCID of the replica table
+        """
+        return pulumi.get(self, "table_id")
 
 
 @pulumi.output_type
@@ -653,6 +766,79 @@ class GetIndexesIndexCollectionKeyResult(dict):
 
 
 @pulumi.output_type
+class GetTableReplicaResult(dict):
+    def __init__(__self__, *,
+                 capacity_mode: str,
+                 lifecycle_details: str,
+                 max_write_units: int,
+                 region: str,
+                 state: str,
+                 table_id: str):
+        """
+        :param str capacity_mode: The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        :param str lifecycle_details: A message describing the current state in more detail.
+        :param int max_write_units: Maximum sustained write throughput limit for the table.
+        :param str region: A customer-facing region identifier
+        :param str state: The state of a table.
+        :param str table_id: The OCID of the replica table
+        """
+        pulumi.set(__self__, "capacity_mode", capacity_mode)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "max_write_units", max_write_units)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "table_id", table_id)
+
+    @property
+    @pulumi.getter(name="capacityMode")
+    def capacity_mode(self) -> str:
+        """
+        The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        """
+        return pulumi.get(self, "capacity_mode")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maxWriteUnits")
+    def max_write_units(self) -> int:
+        """
+        Maximum sustained write throughput limit for the table.
+        """
+        return pulumi.get(self, "max_write_units")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        A customer-facing region identifier
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of a table.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="tableId")
+    def table_id(self) -> str:
+        """
+        The OCID of the replica table
+        """
+        return pulumi.get(self, "table_id")
+
+
+@pulumi.output_type
 class GetTableSchemaResult(dict):
     def __init__(__self__, *,
                  columns: Sequence['outputs.GetTableSchemaColumnResult'],
@@ -920,8 +1106,12 @@ class GetTablesTableCollectionResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_auto_reclaimable: bool,
+                 is_multi_region: bool,
                  lifecycle_details: str,
+                 local_replica_initialization_in_percent: int,
                  name: str,
+                 replicas: Sequence['outputs.GetTablesTableCollectionReplicaResult'],
+                 schema_state: str,
                  schemas: Sequence['outputs.GetTablesTableCollectionSchemaResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
@@ -935,8 +1125,10 @@ class GetTablesTableCollectionResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable.
         :param bool is_auto_reclaimable: True if this table can be reclaimed after an idle period.
+        :param bool is_multi_region: True if this table is currently a member of a replication set.
         :param str lifecycle_details: A message describing the current state in more detail.
         :param str name: A shell-globbing-style (*?[]) filter for names.
+        :param str schema_state: The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
         :param str state: Filter list by the lifecycle state of the item.
         :param Mapping[str, Any] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
         :param Sequence['GetTablesTableCollectionTableLimitArgs'] table_limits: Throughput and storage limits configuration of a table.
@@ -950,8 +1142,12 @@ class GetTablesTableCollectionResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
+        pulumi.set(__self__, "is_multi_region", is_multi_region)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_replica_initialization_in_percent", local_replica_initialization_in_percent)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "replicas", replicas)
+        pulumi.set(__self__, "schema_state", schema_state)
         pulumi.set(__self__, "schemas", schemas)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -1006,6 +1202,14 @@ class GetTablesTableCollectionResult(dict):
         return pulumi.get(self, "is_auto_reclaimable")
 
     @property
+    @pulumi.getter(name="isMultiRegion")
+    def is_multi_region(self) -> bool:
+        """
+        True if this table is currently a member of a replication set.
+        """
+        return pulumi.get(self, "is_multi_region")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -1014,12 +1218,30 @@ class GetTablesTableCollectionResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localReplicaInitializationInPercent")
+    def local_replica_initialization_in_percent(self) -> int:
+        return pulumi.get(self, "local_replica_initialization_in_percent")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
         A shell-globbing-style (*?[]) filter for names.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def replicas(self) -> Sequence['outputs.GetTablesTableCollectionReplicaResult']:
+        return pulumi.get(self, "replicas")
+
+    @property
+    @pulumi.getter(name="schemaState")
+    def schema_state(self) -> str:
+        """
+        The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        """
+        return pulumi.get(self, "schema_state")
 
     @property
     @pulumi.getter
@@ -1073,6 +1295,71 @@ class GetTablesTableCollectionResult(dict):
         The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetTablesTableCollectionReplicaResult(dict):
+    def __init__(__self__, *,
+                 capacity_mode: str,
+                 lifecycle_details: str,
+                 max_write_units: int,
+                 region: str,
+                 state: str,
+                 table_id: str):
+        """
+        :param str capacity_mode: The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        :param str lifecycle_details: A message describing the current state in more detail.
+        :param int max_write_units: Maximum sustained write throughput limit for the table.
+        :param str state: Filter list by the lifecycle state of the item.
+        """
+        pulumi.set(__self__, "capacity_mode", capacity_mode)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "max_write_units", max_write_units)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "table_id", table_id)
+
+    @property
+    @pulumi.getter(name="capacityMode")
+    def capacity_mode(self) -> str:
+        """
+        The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        """
+        return pulumi.get(self, "capacity_mode")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maxWriteUnits")
+    def max_write_units(self) -> int:
+        """
+        Maximum sustained write throughput limit for the table.
+        """
+        return pulumi.get(self, "max_write_units")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter list by the lifecycle state of the item.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="tableId")
+    def table_id(self) -> str:
+        return pulumi.get(self, "table_id")
 
 
 @pulumi.output_type

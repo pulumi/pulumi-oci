@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 public final class GetAlarmHistoryCollectionResult {
     private @Nullable String alarmHistorytype;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve history for.
      * 
      */
     private String alarmId;
@@ -43,7 +43,7 @@ public final class GetAlarmHistoryCollectionResult {
         return Optional.ofNullable(this.alarmHistorytype);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve history for.
      * 
      */
     public String alarmId() {

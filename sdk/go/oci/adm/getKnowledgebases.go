@@ -57,12 +57,12 @@ func GetKnowledgebases(ctx *pulumi.Context, args *GetKnowledgebasesArgs, opts ..
 
 // A collection of arguments for invoking getKnowledgebases.
 type GetKnowledgebasesArgs struct {
-	// A filter to return only resources that belong to the specified compartment identifier.
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetKnowledgebasesFilter `pulumi:"filters"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id *string `pulumi:"id"`
 	// A filter to return only Knowledge Bases that match the specified lifecycleState.
 	State *string `pulumi:"state"`
@@ -70,16 +70,16 @@ type GetKnowledgebasesArgs struct {
 
 // A collection of values returned by getKnowledgebases.
 type GetKnowledgebasesResult struct {
-	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+	// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The name of the Knowledge Base.
+	// The name of the knowledge base.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetKnowledgebasesFilter `pulumi:"filters"`
-	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	Id *string `pulumi:"id"`
 	// The list of knowledge_base_collection.
 	KnowledgeBaseCollections []GetKnowledgebasesKnowledgeBaseCollection `pulumi:"knowledgeBaseCollections"`
-	// The current lifecycle state of the Knowledge Base.
+	// The current lifecycle state of the knowledge base.
 	State *string `pulumi:"state"`
 }
 
@@ -98,12 +98,12 @@ func GetKnowledgebasesOutput(ctx *pulumi.Context, args GetKnowledgebasesOutputAr
 
 // A collection of arguments for invoking getKnowledgebases.
 type GetKnowledgebasesOutputArgs struct {
-	// A filter to return only resources that belong to the specified compartment identifier.
+	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput             `pulumi:"displayName"`
 	Filters     GetKnowledgebasesFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources that match the specified identifier.
+	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only Knowledge Bases that match the specified lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -134,12 +134,12 @@ func (o GetKnowledgebasesResultOutput) ToOutput(ctx context.Context) pulumix.Out
 	}
 }
 
-// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 func (o GetKnowledgebasesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetKnowledgebasesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// The name of the Knowledge Base.
+// The name of the knowledge base.
 func (o GetKnowledgebasesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetKnowledgebasesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -148,7 +148,7 @@ func (o GetKnowledgebasesResultOutput) Filters() GetKnowledgebasesFilterArrayOut
 	return o.ApplyT(func(v GetKnowledgebasesResult) []GetKnowledgebasesFilter { return v.Filters }).(GetKnowledgebasesFilterArrayOutput)
 }
 
-// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base.
+// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 func (o GetKnowledgebasesResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetKnowledgebasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -160,7 +160,7 @@ func (o GetKnowledgebasesResultOutput) KnowledgeBaseCollections() GetKnowledgeba
 	}).(GetKnowledgebasesKnowledgeBaseCollectionArrayOutput)
 }
 
-// The current lifecycle state of the Knowledge Base.
+// The current lifecycle state of the knowledge base.
 func (o GetKnowledgebasesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetKnowledgebasesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

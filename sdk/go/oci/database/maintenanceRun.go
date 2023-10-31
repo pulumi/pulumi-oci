@@ -15,7 +15,41 @@ import (
 
 // This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
 //
-// Updates the properties of a maintenance run, such as the state of a maintenance run.
+// Creates a maintenance run with one of the following:
+// The latest available release update patch (RUP) for the Autonomous Container Database.
+// The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+// Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Database.NewMaintenanceRun(ctx, "testMaintenanceRun", &Database.MaintenanceRunArgs{
+//				PatchType:              pulumi.Any(_var.Maintenance_run_patch_type),
+//				TargetResourceId:       pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
+//				TimeScheduled:          pulumi.Any(_var.Maintenance_run_time_scheduled),
+//				CompartmentId:          pulumi.Any(_var.Compartment_id),
+//				IsDstFileUpdateEnabled: pulumi.Any(_var.Maintenance_run_is_dst_file_update_enabled),
+//				PatchingMode:           pulumi.Any(_var.Maintenance_run_patching_mode),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //
@@ -29,13 +63,13 @@ import (
 type MaintenanceRun struct {
 	pulumi.CustomResourceState
 
-	// The OCID of the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
 	CurrentCustomActionTimeoutInMins pulumi.IntOutput `pulumi:"currentCustomActionTimeoutInMins"`
 	// The name of the current infrastruture component that is getting patched.
 	CurrentPatchingComponent pulumi.StringOutput `pulumi:"currentPatchingComponent"`
-	// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins pulumi.IntOutput `pulumi:"customActionTimeoutInMins"`
 	// Description of the maintenance run.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -45,26 +79,22 @@ type MaintenanceRun struct {
 	EstimatedComponentPatchingStartTime pulumi.StringOutput `pulumi:"estimatedComponentPatchingStartTime"`
 	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
 	EstimatedPatchingTimes MaintenanceRunEstimatedPatchingTimeArrayOutput `pulumi:"estimatedPatchingTimes"`
-	// (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
 	IsCustomActionTimeoutEnabled pulumi.BoolOutput `pulumi:"isCustomActionTimeoutEnabled"`
-	// (Updatable) If `FALSE`, skips the maintenance run.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
-	// (Updatable) If set to `TRUE`, starts patching immediately.
-	IsPatchNowEnabled pulumi.BoolOutput `pulumi:"isPatchNowEnabled"`
-	// (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-	IsResumePatching pulumi.BoolOutput `pulumi:"isResumePatching"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled pulumi.BoolOutput `pulumi:"isDstFileUpdateEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The maintenance run OCID.
-	MaintenanceRunId pulumi.StringOutput `pulumi:"maintenanceRunId"`
 	// Maintenance sub-type.
 	MaintenanceSubtype pulumi.StringOutput `pulumi:"maintenanceSubtype"`
 	// Maintenance type.
 	MaintenanceType pulumi.StringOutput `pulumi:"maintenanceType"`
 	// Contain the patch failure count.
 	PatchFailureCount pulumi.IntOutput `pulumi:"patchFailureCount"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 	PatchId pulumi.StringOutput `pulumi:"patchId"`
+	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	PatchType pulumi.StringOutput `pulumi:"patchType"`
 	// The time when the patching operation ended.
 	PatchingEndTime pulumi.StringOutput `pulumi:"patchingEndTime"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -79,17 +109,17 @@ type MaintenanceRun struct {
 	PeerMaintenanceRunId pulumi.StringOutput `pulumi:"peerMaintenanceRunId"`
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringOutput `pulumi:"state"`
-	// (Updatable) The target database server system software version for the patching operation.
+	// The target software version for the database server patching operation.
 	TargetDbServerVersion pulumi.StringOutput `pulumi:"targetDbServerVersion"`
-	// The ID of the target resource on which the maintenance run occurs.
+	// The ID of the target resource for which the maintenance run should be created.
 	TargetResourceId pulumi.StringOutput `pulumi:"targetResourceId"`
 	// The type of the target resource on which the maintenance run occurs.
 	TargetResourceType pulumi.StringOutput `pulumi:"targetResourceType"`
-	// (Updatable) The target storage cell system software version for the patching operation.
+	// The target Cell version that is to be patched to.
 	TargetStorageServerVersion pulumi.StringOutput `pulumi:"targetStorageServerVersion"`
 	// The date and time the maintenance run was completed.
 	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
-	// (Updatable) The scheduled date and time of the maintenance run to update.
+	// (Updatable) The date and time that update should be scheduled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -105,8 +135,14 @@ func NewMaintenanceRun(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.MaintenanceRunId == nil {
-		return nil, errors.New("invalid value for required argument 'MaintenanceRunId'")
+	if args.PatchType == nil {
+		return nil, errors.New("invalid value for required argument 'PatchType'")
+	}
+	if args.TargetResourceId == nil {
+		return nil, errors.New("invalid value for required argument 'TargetResourceId'")
+	}
+	if args.TimeScheduled == nil {
+		return nil, errors.New("invalid value for required argument 'TimeScheduled'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MaintenanceRun
@@ -131,13 +167,13 @@ func GetMaintenanceRun(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MaintenanceRun resources.
 type maintenanceRunState struct {
-	// The OCID of the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
 	CurrentCustomActionTimeoutInMins *int `pulumi:"currentCustomActionTimeoutInMins"`
 	// The name of the current infrastruture component that is getting patched.
 	CurrentPatchingComponent *string `pulumi:"currentPatchingComponent"`
-	// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins *int `pulumi:"customActionTimeoutInMins"`
 	// Description of the maintenance run.
 	Description *string `pulumi:"description"`
@@ -147,26 +183,22 @@ type maintenanceRunState struct {
 	EstimatedComponentPatchingStartTime *string `pulumi:"estimatedComponentPatchingStartTime"`
 	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
 	EstimatedPatchingTimes []MaintenanceRunEstimatedPatchingTime `pulumi:"estimatedPatchingTimes"`
-	// (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
 	IsCustomActionTimeoutEnabled *bool `pulumi:"isCustomActionTimeoutEnabled"`
-	// (Updatable) If `FALSE`, skips the maintenance run.
-	IsEnabled *bool `pulumi:"isEnabled"`
-	// (Updatable) If set to `TRUE`, starts patching immediately.
-	IsPatchNowEnabled *bool `pulumi:"isPatchNowEnabled"`
-	// (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-	IsResumePatching *bool `pulumi:"isResumePatching"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled *bool `pulumi:"isDstFileUpdateEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The maintenance run OCID.
-	MaintenanceRunId *string `pulumi:"maintenanceRunId"`
 	// Maintenance sub-type.
 	MaintenanceSubtype *string `pulumi:"maintenanceSubtype"`
 	// Maintenance type.
 	MaintenanceType *string `pulumi:"maintenanceType"`
 	// Contain the patch failure count.
 	PatchFailureCount *int `pulumi:"patchFailureCount"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 	PatchId *string `pulumi:"patchId"`
+	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	PatchType *string `pulumi:"patchType"`
 	// The time when the patching operation ended.
 	PatchingEndTime *string `pulumi:"patchingEndTime"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -181,17 +213,17 @@ type maintenanceRunState struct {
 	PeerMaintenanceRunId *string `pulumi:"peerMaintenanceRunId"`
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
-	// (Updatable) The target database server system software version for the patching operation.
+	// The target software version for the database server patching operation.
 	TargetDbServerVersion *string `pulumi:"targetDbServerVersion"`
-	// The ID of the target resource on which the maintenance run occurs.
+	// The ID of the target resource for which the maintenance run should be created.
 	TargetResourceId *string `pulumi:"targetResourceId"`
 	// The type of the target resource on which the maintenance run occurs.
 	TargetResourceType *string `pulumi:"targetResourceType"`
-	// (Updatable) The target storage cell system software version for the patching operation.
+	// The target Cell version that is to be patched to.
 	TargetStorageServerVersion *string `pulumi:"targetStorageServerVersion"`
 	// The date and time the maintenance run was completed.
 	TimeEnded *string `pulumi:"timeEnded"`
-	// (Updatable) The scheduled date and time of the maintenance run to update.
+	// (Updatable) The date and time that update should be scheduled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,13 +233,13 @@ type maintenanceRunState struct {
 }
 
 type MaintenanceRunState struct {
-	// The OCID of the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
 	CurrentCustomActionTimeoutInMins pulumi.IntPtrInput
 	// The name of the current infrastruture component that is getting patched.
 	CurrentPatchingComponent pulumi.StringPtrInput
-	// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 	CustomActionTimeoutInMins pulumi.IntPtrInput
 	// Description of the maintenance run.
 	Description pulumi.StringPtrInput
@@ -217,26 +249,22 @@ type MaintenanceRunState struct {
 	EstimatedComponentPatchingStartTime pulumi.StringPtrInput
 	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
 	EstimatedPatchingTimes MaintenanceRunEstimatedPatchingTimeArrayInput
-	// (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
 	IsCustomActionTimeoutEnabled pulumi.BoolPtrInput
-	// (Updatable) If `FALSE`, skips the maintenance run.
-	IsEnabled pulumi.BoolPtrInput
-	// (Updatable) If set to `TRUE`, starts patching immediately.
-	IsPatchNowEnabled pulumi.BoolPtrInput
-	// (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-	IsResumePatching pulumi.BoolPtrInput
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled pulumi.BoolPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
-	// The maintenance run OCID.
-	MaintenanceRunId pulumi.StringPtrInput
 	// Maintenance sub-type.
 	MaintenanceSubtype pulumi.StringPtrInput
 	// Maintenance type.
 	MaintenanceType pulumi.StringPtrInput
 	// Contain the patch failure count.
 	PatchFailureCount pulumi.IntPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 	PatchId pulumi.StringPtrInput
+	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	PatchType pulumi.StringPtrInput
 	// The time when the patching operation ended.
 	PatchingEndTime pulumi.StringPtrInput
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -251,17 +279,17 @@ type MaintenanceRunState struct {
 	PeerMaintenanceRunId pulumi.StringPtrInput
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringPtrInput
-	// (Updatable) The target database server system software version for the patching operation.
+	// The target software version for the database server patching operation.
 	TargetDbServerVersion pulumi.StringPtrInput
-	// The ID of the target resource on which the maintenance run occurs.
+	// The ID of the target resource for which the maintenance run should be created.
 	TargetResourceId pulumi.StringPtrInput
 	// The type of the target resource on which the maintenance run occurs.
 	TargetResourceType pulumi.StringPtrInput
-	// (Updatable) The target storage cell system software version for the patching operation.
+	// The target Cell version that is to be patched to.
 	TargetStorageServerVersion pulumi.StringPtrInput
 	// The date and time the maintenance run was completed.
 	TimeEnded pulumi.StringPtrInput
-	// (Updatable) The scheduled date and time of the maintenance run to update.
+	// (Updatable) The date and time that update should be scheduled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -275,68 +303,44 @@ func (MaintenanceRunState) ElementType() reflect.Type {
 }
 
 type maintenanceRunArgs struct {
-	// (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
-	CurrentCustomActionTimeoutInMins *int `pulumi:"currentCustomActionTimeoutInMins"`
-	// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
-	CustomActionTimeoutInMins *int `pulumi:"customActionTimeoutInMins"`
-	// (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-	IsCustomActionTimeoutEnabled *bool `pulumi:"isCustomActionTimeoutEnabled"`
-	// (Updatable) If `FALSE`, skips the maintenance run.
-	IsEnabled *bool `pulumi:"isEnabled"`
-	// (Updatable) If set to `TRUE`, starts patching immediately.
-	IsPatchNowEnabled *bool `pulumi:"isPatchNowEnabled"`
-	// (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-	IsResumePatching *bool `pulumi:"isResumePatching"`
-	// The maintenance run OCID.
-	MaintenanceRunId string `pulumi:"maintenanceRunId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
-	PatchId *string `pulumi:"patchId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled *bool `pulumi:"isDstFileUpdateEnabled"`
+	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	PatchType string `pulumi:"patchType"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	//
 	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 	PatchingMode *string `pulumi:"patchingMode"`
-	// (Updatable) The target database server system software version for the patching operation.
-	TargetDbServerVersion *string `pulumi:"targetDbServerVersion"`
-	// (Updatable) The target storage cell system software version for the patching operation.
-	TargetStorageServerVersion *string `pulumi:"targetStorageServerVersion"`
-	// (Updatable) The scheduled date and time of the maintenance run to update.
+	// The ID of the target resource for which the maintenance run should be created.
+	TargetResourceId string `pulumi:"targetResourceId"`
+	// (Updatable) The date and time that update should be scheduled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeScheduled *string `pulumi:"timeScheduled"`
+	TimeScheduled string `pulumi:"timeScheduled"`
 }
 
 // The set of arguments for constructing a MaintenanceRun resource.
 type MaintenanceRunArgs struct {
-	// (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
-	CurrentCustomActionTimeoutInMins pulumi.IntPtrInput
-	// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
-	CustomActionTimeoutInMins pulumi.IntPtrInput
-	// (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-	IsCustomActionTimeoutEnabled pulumi.BoolPtrInput
-	// (Updatable) If `FALSE`, skips the maintenance run.
-	IsEnabled pulumi.BoolPtrInput
-	// (Updatable) If set to `TRUE`, starts patching immediately.
-	IsPatchNowEnabled pulumi.BoolPtrInput
-	// (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-	IsResumePatching pulumi.BoolPtrInput
-	// The maintenance run OCID.
-	MaintenanceRunId pulumi.StringInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
-	PatchId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
+	CompartmentId pulumi.StringPtrInput
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled pulumi.BoolPtrInput
+	// Patch type, either "QUARTERLY" or "TIMEZONE".
+	PatchType pulumi.StringInput
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	//
 	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 	PatchingMode pulumi.StringPtrInput
-	// (Updatable) The target database server system software version for the patching operation.
-	TargetDbServerVersion pulumi.StringPtrInput
-	// (Updatable) The target storage cell system software version for the patching operation.
-	TargetStorageServerVersion pulumi.StringPtrInput
-	// (Updatable) The scheduled date and time of the maintenance run to update.
+	// The ID of the target resource for which the maintenance run should be created.
+	TargetResourceId pulumi.StringInput
+	// (Updatable) The date and time that update should be scheduled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeScheduled pulumi.StringPtrInput
+	TimeScheduled pulumi.StringInput
 }
 
 func (MaintenanceRunArgs) ElementType() reflect.Type {
@@ -450,12 +454,12 @@ func (o MaintenanceRunOutput) ToOutput(ctx context.Context) pulumix.Output[*Main
 	}
 }
 
-// The OCID of the compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
 func (o MaintenanceRunOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
 func (o MaintenanceRunOutput) CurrentCustomActionTimeoutInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.CurrentCustomActionTimeoutInMins }).(pulumi.IntOutput)
 }
@@ -465,7 +469,7 @@ func (o MaintenanceRunOutput) CurrentPatchingComponent() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.CurrentPatchingComponent }).(pulumi.StringOutput)
 }
 
-// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
 func (o MaintenanceRunOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
 }
@@ -492,34 +496,19 @@ func (o MaintenanceRunOutput) EstimatedPatchingTimes() MaintenanceRunEstimatedPa
 	}).(MaintenanceRunEstimatedPatchingTimeArrayOutput)
 }
 
-// (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
 func (o MaintenanceRunOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
 }
 
-// (Updatable) If `FALSE`, skips the maintenance run.
-func (o MaintenanceRunOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
-}
-
-// (Updatable) If set to `TRUE`, starts patching immediately.
-func (o MaintenanceRunOutput) IsPatchNowEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsPatchNowEnabled }).(pulumi.BoolOutput)
-}
-
-// (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-func (o MaintenanceRunOutput) IsResumePatching() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsResumePatching }).(pulumi.BoolOutput)
+// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+func (o MaintenanceRunOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.
 func (o MaintenanceRunOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
-}
-
-// The maintenance run OCID.
-func (o MaintenanceRunOutput) MaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.MaintenanceRunId }).(pulumi.StringOutput)
 }
 
 // Maintenance sub-type.
@@ -537,9 +526,14 @@ func (o MaintenanceRunOutput) PatchFailureCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.PatchFailureCount }).(pulumi.IntOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 func (o MaintenanceRunOutput) PatchId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// Patch type, either "QUARTERLY" or "TIMEZONE".
+func (o MaintenanceRunOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchType }).(pulumi.StringOutput)
 }
 
 // The time when the patching operation ended.
@@ -574,12 +568,12 @@ func (o MaintenanceRunOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// (Updatable) The target database server system software version for the patching operation.
+// The target software version for the database server patching operation.
 func (o MaintenanceRunOutput) TargetDbServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetDbServerVersion }).(pulumi.StringOutput)
 }
 
-// The ID of the target resource on which the maintenance run occurs.
+// The ID of the target resource for which the maintenance run should be created.
 func (o MaintenanceRunOutput) TargetResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetResourceId }).(pulumi.StringOutput)
 }
@@ -589,7 +583,7 @@ func (o MaintenanceRunOutput) TargetResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetResourceType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The target storage cell system software version for the patching operation.
+// The target Cell version that is to be patched to.
 func (o MaintenanceRunOutput) TargetStorageServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetStorageServerVersion }).(pulumi.StringOutput)
 }
@@ -599,7 +593,7 @@ func (o MaintenanceRunOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// (Updatable) The scheduled date and time of the maintenance run to update.
+// (Updatable) The date and time that update should be scheduled.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

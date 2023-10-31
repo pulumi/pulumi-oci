@@ -27,12 +27,20 @@ public final class GetAlarmStatusesResult {
      * 
      */
     private @Nullable String displayName;
+    private @Nullable String entityId;
     private @Nullable List<GetAlarmStatusesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
+    private @Nullable String resourceId;
+    private @Nullable String serviceName;
+    /**
+     * @return The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+     * 
+     */
+    private @Nullable String status;
 
     private GetAlarmStatusesResult() {}
     /**
@@ -55,6 +63,9 @@ public final class GetAlarmStatusesResult {
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
+    public Optional<String> entityId() {
+        return Optional.ofNullable(this.entityId);
+    }
     public List<GetAlarmStatusesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -64,6 +75,19 @@ public final class GetAlarmStatusesResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
+    }
+    /**
+     * @return The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+     * 
+     */
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -79,8 +103,12 @@ public final class GetAlarmStatusesResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
+        private @Nullable String entityId;
         private @Nullable List<GetAlarmStatusesFilter> filters;
         private String id;
+        private @Nullable String resourceId;
+        private @Nullable String serviceName;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetAlarmStatusesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,8 +116,12 @@ public final class GetAlarmStatusesResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.displayName = defaults.displayName;
+    	      this.entityId = defaults.entityId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.resourceId = defaults.resourceId;
+    	      this.serviceName = defaults.serviceName;
+    	      this.status = defaults.status;
         }
 
         @CustomType.Setter
@@ -116,6 +148,11 @@ public final class GetAlarmStatusesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder entityId(@Nullable String entityId) {
+            this.entityId = entityId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAlarmStatusesFilter> filters) {
             this.filters = filters;
             return this;
@@ -128,14 +165,33 @@ public final class GetAlarmStatusesResult {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder status(@Nullable String status) {
+            this.status = status;
+            return this;
+        }
         public GetAlarmStatusesResult build() {
             final var o = new GetAlarmStatusesResult();
             o.alarmStatuses = alarmStatuses;
             o.compartmentId = compartmentId;
             o.compartmentIdInSubtree = compartmentIdInSubtree;
             o.displayName = displayName;
+            o.entityId = entityId;
             o.filters = filters;
             o.id = id;
+            o.resourceId = resourceId;
+            o.serviceName = serviceName;
+            o.status = status;
             return o;
         }
     }

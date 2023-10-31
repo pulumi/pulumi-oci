@@ -7,11 +7,20 @@ import typing
 # Export this package's modules as members:
 from .get_knowledgebase import *
 from .get_knowledgebases import *
+from .get_remediation_recipe import *
+from .get_remediation_recipes import *
+from .get_remediation_run import *
+from .get_remediation_run_application_dependency_recommendations import *
+from .get_remediation_run_stage import *
+from .get_remediation_run_stages import *
+from .get_remediation_runs import *
 from .get_vulnerability_audit import *
 from .get_vulnerability_audit_application_dependency_vulnerabilities import *
 from .get_vulnerability_audit_application_dependency_vulnerability import *
 from .get_vulnerability_audits import *
 from .knowledge_base import *
+from .remediation_recipe import *
+from .remediation_run import *
 from .vulnerability_audit import *
 from ._inputs import *
 from . import outputs

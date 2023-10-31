@@ -12193,11 +12193,13 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  db_version: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 dst_file_version: str,
                  fast_start_fail_over_lag_limit_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  infrastructure_type: str,
                  is_automatic_failover_enabled: bool,
+                 is_dst_file_update_enabled: bool,
                  key_history_entries: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryResult'],
                  key_store_id: str,
                  key_store_wallet_name: str,
@@ -12246,9 +12248,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str db_version: Oracle Database version of the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param str dst_file_version: DST Time Zone File version of the Autonomous Container Database.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
+        :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -12290,11 +12294,13 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dst_file_version", dst_file_version)
         pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+        pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         pulumi.set(__self__, "key_history_entries", key_history_entries)
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
@@ -12433,6 +12439,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="dstFileVersion")
+    def dst_file_version(self) -> str:
+        """
+        DST Time Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "dst_file_version")
+
+    @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
@@ -12465,6 +12479,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> bool:
         return pulumi.get(self, "is_automatic_failover_enabled")
+
+    @property
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> bool:
+        """
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
@@ -13298,6 +13320,7 @@ class GetAutonomousContainerDatabasesFilterResult(dict):
 @pulumi.output_type
 class GetAutonomousContainerPatchesAutonomousPatchResult(dict):
     def __init__(__self__, *,
+                 autonomous_patch_type: str,
                  description: str,
                  id: str,
                  lifecycle_details: str,
@@ -13309,6 +13332,7 @@ class GetAutonomousContainerPatchesAutonomousPatchResult(dict):
                  version: str,
                  year: str):
         """
+        :param str autonomous_patch_type: Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
         :param str description: The text describing this patch package.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
         :param str lifecycle_details: A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
@@ -13320,6 +13344,7 @@ class GetAutonomousContainerPatchesAutonomousPatchResult(dict):
         :param str version: The version of this patch package.
         :param str year: Year in which the patch was released.
         """
+        pulumi.set(__self__, "autonomous_patch_type", autonomous_patch_type)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -13330,6 +13355,14 @@ class GetAutonomousContainerPatchesAutonomousPatchResult(dict):
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "version", version)
         pulumi.set(__self__, "year", year)
+
+    @property
+    @pulumi.getter(name="autonomousPatchType")
+    def autonomous_patch_type(self) -> str:
+        """
+        Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+        """
+        return pulumi.get(self, "autonomous_patch_type")
 
     @property
     @pulumi.getter
@@ -26530,6 +26563,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
                  estimated_patching_times: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult'],
                  id: str,
                  is_custom_action_timeout_enabled: bool,
+                 is_dst_file_update_enabled: bool,
                  lifecycle_details: str,
                  maintenance_subtype: str,
                  maintenance_type: str,
@@ -26559,6 +26593,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs'] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         :param str id: The OCID of the maintenance run.
         :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_subtype: Maintenance sub-type.
         :param str maintenance_type: The maintenance type.
@@ -26588,6 +26623,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         pulumi.set(__self__, "estimated_patching_times", estimated_patching_times)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
@@ -26686,6 +26722,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> bool:
+        """
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -26987,6 +27031,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
                  estimated_patching_times: Sequence['outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult'],
                  id: str,
                  is_custom_action_timeout_enabled: bool,
+                 is_dst_file_update_enabled: bool,
                  lifecycle_details: str,
                  maintenance_subtype: str,
                  maintenance_type: str,
@@ -27016,6 +27061,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param Sequence['GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs'] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         :param str id: The OCID of the maintenance run.
         :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_subtype: Maintenance sub-type.
         :param str maintenance_type: Maintenance type.
@@ -27045,6 +27091,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         pulumi.set(__self__, "estimated_patching_times", estimated_patching_times)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
@@ -27143,6 +27190,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> bool:
+        """
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -36991,15 +37046,13 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
                  estimated_patching_times: Sequence['outputs.GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeResult'],
                  id: str,
                  is_custom_action_timeout_enabled: bool,
-                 is_enabled: bool,
-                 is_patch_now_enabled: bool,
-                 is_resume_patching: bool,
+                 is_dst_file_update_enabled: bool,
                  lifecycle_details: str,
-                 maintenance_run_id: str,
                  maintenance_subtype: str,
                  maintenance_type: str,
                  patch_failure_count: int,
                  patch_id: str,
+                 patch_type: str,
                  patching_end_time: str,
                  patching_mode: str,
                  patching_start_time: str,
@@ -37024,6 +37077,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param Sequence['GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs'] estimated_patching_times: The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         :param str id: The OCID of the maintenance run.
         :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+        :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_subtype: The sub-type of the maintenance run.
         :param str maintenance_type: The maintenance type.
@@ -37053,15 +37107,13 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         pulumi.set(__self__, "estimated_patching_times", estimated_patching_times)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_patch_now_enabled", is_patch_now_enabled)
-        pulumi.set(__self__, "is_resume_patching", is_resume_patching)
+        pulumi.set(__self__, "is_dst_file_update_enabled", is_dst_file_update_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "maintenance_run_id", maintenance_run_id)
         pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
         pulumi.set(__self__, "maintenance_type", maintenance_type)
         pulumi.set(__self__, "patch_failure_count", patch_failure_count)
         pulumi.set(__self__, "patch_id", patch_id)
+        pulumi.set(__self__, "patch_type", patch_type)
         pulumi.set(__self__, "patching_end_time", patching_end_time)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "patching_start_time", patching_start_time)
@@ -37157,19 +37209,12 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        return pulumi.get(self, "is_enabled")
-
-    @property
-    @pulumi.getter(name="isPatchNowEnabled")
-    def is_patch_now_enabled(self) -> bool:
-        return pulumi.get(self, "is_patch_now_enabled")
-
-    @property
-    @pulumi.getter(name="isResumePatching")
-    def is_resume_patching(self) -> bool:
-        return pulumi.get(self, "is_resume_patching")
+    @pulumi.getter(name="isDstFileUpdateEnabled")
+    def is_dst_file_update_enabled(self) -> bool:
+        """
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        """
+        return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -37178,11 +37223,6 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
-
-    @property
-    @pulumi.getter(name="maintenanceRunId")
-    def maintenance_run_id(self) -> str:
-        return pulumi.get(self, "maintenance_run_id")
 
     @property
     @pulumi.getter(name="maintenanceSubtype")
@@ -37215,6 +37255,11 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
+
+    @property
+    @pulumi.getter(name="patchType")
+    def patch_type(self) -> str:
+        return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter(name="patchingEndTime")

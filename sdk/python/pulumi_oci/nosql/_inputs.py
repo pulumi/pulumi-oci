@@ -11,6 +11,7 @@ from .. import _utilities
 
 __all__ = [
     'IndexKeyArgs',
+    'TableReplicaArgs',
     'TableSchemaArgs',
     'TableSchemaColumnArgs',
     'TableSchemaIdentityArgs',
@@ -71,6 +72,117 @@ class IndexKeyArgs:
     @json_path.setter
     def json_path(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "json_path", value)
+
+
+@pulumi.input_type
+class TableReplicaArgs:
+    def __init__(__self__, *,
+                 capacity_mode: Optional[pulumi.Input[str]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 max_write_units: Optional[pulumi.Input[int]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 table_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
+        :param pulumi.Input[int] max_write_units: (Updatable) Maximum sustained write throughput limit for the table.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] region: A customer-facing region identifier
+        :param pulumi.Input[str] state: The state of a table.
+        :param pulumi.Input[str] table_id: The OCID of the replica table
+        """
+        if capacity_mode is not None:
+            pulumi.set(__self__, "capacity_mode", capacity_mode)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if max_write_units is not None:
+            pulumi.set(__self__, "max_write_units", max_write_units)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if table_id is not None:
+            pulumi.set(__self__, "table_id", table_id)
+
+    @property
+    @pulumi.getter(name="capacityMode")
+    def capacity_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        """
+        return pulumi.get(self, "capacity_mode")
+
+    @capacity_mode.setter
+    def capacity_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "capacity_mode", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message describing the current state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="maxWriteUnits")
+    def max_write_units(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum sustained write throughput limit for the table.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "max_write_units")
+
+    @max_write_units.setter
+    def max_write_units(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_write_units", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        A customer-facing region identifier
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of a table.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="tableId")
+    def table_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the replica table
+        """
+        return pulumi.get(self, "table_id")
+
+    @table_id.setter
+    def table_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "table_id", value)
 
 
 @pulumi.input_type

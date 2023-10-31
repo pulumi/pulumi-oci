@@ -74,10 +74,18 @@ type LookupTableResult struct {
 	Id string `pulumi:"id"`
 	// True if this table can be reclaimed after an idle period.
 	IsAutoReclaimable bool `pulumi:"isAutoReclaimable"`
+	// True if this table is currently a member of a replication set.
+	IsMultiRegion bool `pulumi:"isMultiRegion"`
 	// A message describing the current state in more detail.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+	LocalReplicaInitializationInPercent int `pulumi:"localReplicaInitializationInPercent"`
 	// The column name.
 	Name string `pulumi:"name"`
+	// An array of Replica listing this table's replicas, if any
+	Replicas []GetTableReplicaType `pulumi:"replicas"`
+	// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+	SchemaState string `pulumi:"schemaState"`
 	// The table schema information as a JSON object.
 	Schemas []GetTableSchema `pulumi:"schemas"`
 	// The state of a table.
@@ -171,14 +179,34 @@ func (o LookupTableResultOutput) IsAutoReclaimable() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupTableResult) bool { return v.IsAutoReclaimable }).(pulumi.BoolOutput)
 }
 
+// True if this table is currently a member of a replication set.
+func (o LookupTableResultOutput) IsMultiRegion() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupTableResult) bool { return v.IsMultiRegion }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail.
 func (o LookupTableResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTableResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+func (o LookupTableResultOutput) LocalReplicaInitializationInPercent() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupTableResult) int { return v.LocalReplicaInitializationInPercent }).(pulumi.IntOutput)
+}
+
 // The column name.
 func (o LookupTableResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTableResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// An array of Replica listing this table's replicas, if any
+func (o LookupTableResultOutput) Replicas() GetTableReplicaTypeArrayOutput {
+	return o.ApplyT(func(v LookupTableResult) []GetTableReplicaType { return v.Replicas }).(GetTableReplicaTypeArrayOutput)
+}
+
+// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+func (o LookupTableResultOutput) SchemaState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTableResult) string { return v.SchemaState }).(pulumi.StringOutput)
 }
 
 // The table schema information as a JSON object.

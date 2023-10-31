@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousContainerPatchesAutonomousPatchResult
     {
         /// <summary>
+        /// Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+        /// </summary>
+        public readonly string AutonomousPatchType;
+        /// <summary>
         /// The text describing this patch package.
         /// </summary>
         public readonly string Description;
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetAutonomousContainerPatchesAutonomousPatchResult(
+            string autonomousPatchType,
+
             string description,
 
             string id,
@@ -76,6 +82,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string year)
         {
+            AutonomousPatchType = autonomousPatchType;
             Description = description;
             Id = id;
             LifecycleDetails = lifecycleDetails;

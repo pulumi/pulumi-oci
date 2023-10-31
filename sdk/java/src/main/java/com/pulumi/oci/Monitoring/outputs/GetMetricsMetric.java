@@ -34,7 +34,7 @@ public final class GetMetricsMetric {
      */
     private Map<String,Object> dimensions;
     /**
-     * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
+     * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
      * 
      * Example - group by namespace: `[ &#34;namespace&#34; ]`
      * 
@@ -86,7 +86,7 @@ public final class GetMetricsMetric {
         return this.dimensions;
     }
     /**
-     * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
+     * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
      * 
      * Example - group by namespace: `[ &#34;namespace&#34; ]`
      * 

@@ -139,8 +139,12 @@ class _TableState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
+                 is_multi_region: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 local_replica_initialization_in_percent: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 replicas: Optional[pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]]] = None,
+                 schema_state: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -155,8 +159,12 @@ class _TableState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
+        :param pulumi.Input[bool] is_multi_region: True if this table is currently a member of a replication set.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
+        :param pulumi.Input[int] local_replica_initialization_in_percent: If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
         :param pulumi.Input[str] name: Table name.
+        :param pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]] replicas: An array of Replica listing this table's replicas, if any
+        :param pulumi.Input[str] schema_state: The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
         :param pulumi.Input[Sequence[pulumi.Input['TableSchemaArgs']]] schemas: The table schema information as a JSON object.
         :param pulumi.Input[str] state: The state of a table.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
@@ -175,10 +183,18 @@ class _TableState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_reclaimable is not None:
             pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
+        if is_multi_region is not None:
+            pulumi.set(__self__, "is_multi_region", is_multi_region)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if local_replica_initialization_in_percent is not None:
+            pulumi.set(__self__, "local_replica_initialization_in_percent", local_replica_initialization_in_percent)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if replicas is not None:
+            pulumi.set(__self__, "replicas", replicas)
+        if schema_state is not None:
+            pulumi.set(__self__, "schema_state", schema_state)
         if schemas is not None:
             pulumi.set(__self__, "schemas", schemas)
         if state is not None:
@@ -255,6 +271,18 @@ class _TableState:
         pulumi.set(self, "is_auto_reclaimable", value)
 
     @property
+    @pulumi.getter(name="isMultiRegion")
+    def is_multi_region(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True if this table is currently a member of a replication set.
+        """
+        return pulumi.get(self, "is_multi_region")
+
+    @is_multi_region.setter
+    def is_multi_region(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_multi_region", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -267,6 +295,18 @@ class _TableState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="localReplicaInitializationInPercent")
+    def local_replica_initialization_in_percent(self) -> Optional[pulumi.Input[int]]:
+        """
+        If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+        """
+        return pulumi.get(self, "local_replica_initialization_in_percent")
+
+    @local_replica_initialization_in_percent.setter
+    def local_replica_initialization_in_percent(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "local_replica_initialization_in_percent", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -277,6 +317,30 @@ class _TableState:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]]]:
+        """
+        An array of Replica listing this table's replicas, if any
+        """
+        return pulumi.get(self, "replicas")
+
+    @replicas.setter
+    def replicas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]]]):
+        pulumi.set(self, "replicas", value)
+
+    @property
+    @pulumi.getter(name="schemaState")
+    def schema_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        """
+        return pulumi.get(self, "schema_state")
+
+    @schema_state.setter
+    def schema_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "schema_state", value)
 
     @property
     @pulumi.getter
@@ -504,7 +568,11 @@ class Table(pulumi.CustomResource):
             __props__.__dict__["is_auto_reclaimable"] = is_auto_reclaimable
             __props__.__dict__["name"] = name
             __props__.__dict__["table_limits"] = table_limits
+            __props__.__dict__["is_multi_region"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["local_replica_initialization_in_percent"] = None
+            __props__.__dict__["replicas"] = None
+            __props__.__dict__["schema_state"] = None
             __props__.__dict__["schemas"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -526,8 +594,12 @@ class Table(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
+            is_multi_region: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            local_replica_initialization_in_percent: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableReplicaArgs']]]]] = None,
+            schema_state: Optional[pulumi.Input[str]] = None,
             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableSchemaArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -547,8 +619,12 @@ class Table(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_auto_reclaimable: True if table can be reclaimed after an idle period.
+        :param pulumi.Input[bool] is_multi_region: True if this table is currently a member of a replication set.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
+        :param pulumi.Input[int] local_replica_initialization_in_percent: If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
         :param pulumi.Input[str] name: Table name.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableReplicaArgs']]]] replicas: An array of Replica listing this table's replicas, if any
+        :param pulumi.Input[str] schema_state: The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TableSchemaArgs']]]] schemas: The table schema information as a JSON object.
         :param pulumi.Input[str] state: The state of a table.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
@@ -566,8 +642,12 @@ class Table(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_auto_reclaimable"] = is_auto_reclaimable
+        __props__.__dict__["is_multi_region"] = is_multi_region
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["local_replica_initialization_in_percent"] = local_replica_initialization_in_percent
         __props__.__dict__["name"] = name
+        __props__.__dict__["replicas"] = replicas
+        __props__.__dict__["schema_state"] = schema_state
         __props__.__dict__["schemas"] = schemas
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -618,6 +698,14 @@ class Table(pulumi.CustomResource):
         return pulumi.get(self, "is_auto_reclaimable")
 
     @property
+    @pulumi.getter(name="isMultiRegion")
+    def is_multi_region(self) -> pulumi.Output[bool]:
+        """
+        True if this table is currently a member of a replication set.
+        """
+        return pulumi.get(self, "is_multi_region")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
@@ -626,12 +714,36 @@ class Table(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localReplicaInitializationInPercent")
+    def local_replica_initialization_in_percent(self) -> pulumi.Output[int]:
+        """
+        If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+        """
+        return pulumi.get(self, "local_replica_initialization_in_percent")
+
+    @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
         Table name.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def replicas(self) -> pulumi.Output[Sequence['outputs.TableReplica']]:
+        """
+        An array of Replica listing this table's replicas, if any
+        """
+        return pulumi.get(self, "replicas")
+
+    @property
+    @pulumi.getter(name="schemaState")
+    def schema_state(self) -> pulumi.Output[str]:
+        """
+        The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        """
+        return pulumi.get(self, "schema_state")
 
     @property
     @pulumi.getter

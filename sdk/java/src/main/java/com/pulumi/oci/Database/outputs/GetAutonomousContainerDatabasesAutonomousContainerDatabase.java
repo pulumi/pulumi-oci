@@ -81,6 +81,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String displayName;
+    /**
+     * @return DST Time Zone File version of the Autonomous Container Database.
+     * 
+     */
+    private String dstFileVersion;
     private Integer fastStartFailOverLagLimitInSeconds;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -98,6 +103,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String infrastructureType;
     private Boolean isAutomaticFailoverEnabled;
+    /**
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    private Boolean isDstFileUpdateEnabled;
     /**
      * @return Key History Entry.
      * 
@@ -324,6 +334,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return DST Time Zone File version of the Autonomous Container Database.
+     * 
+     */
+    public String dstFileVersion() {
+        return this.dstFileVersion;
+    }
     public Integer fastStartFailOverLagLimitInSeconds() {
         return this.fastStartFailOverLagLimitInSeconds;
     }
@@ -350,6 +367,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     }
     public Boolean isAutomaticFailoverEnabled() {
         return this.isAutomaticFailoverEnabled;
+    }
+    /**
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    public Boolean isDstFileUpdateEnabled() {
+        return this.isDstFileUpdateEnabled;
     }
     /**
      * @return Key History Entry.
@@ -581,11 +605,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private String dbVersion;
         private Map<String,Object> definedTags;
         private String displayName;
+        private String dstFileVersion;
         private Integer fastStartFailOverLagLimitInSeconds;
         private Map<String,Object> freeformTags;
         private String id;
         private String infrastructureType;
         private Boolean isAutomaticFailoverEnabled;
+        private Boolean isDstFileUpdateEnabled;
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
         private String keyStoreWalletName;
@@ -637,11 +663,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.dbVersion = defaults.dbVersion;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.dstFileVersion = defaults.dstFileVersion;
     	      this.fastStartFailOverLagLimitInSeconds = defaults.fastStartFailOverLagLimitInSeconds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.infrastructureType = defaults.infrastructureType;
     	      this.isAutomaticFailoverEnabled = defaults.isAutomaticFailoverEnabled;
+    	      this.isDstFileUpdateEnabled = defaults.isDstFileUpdateEnabled;
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
@@ -748,6 +776,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder dstFileVersion(String dstFileVersion) {
+            this.dstFileVersion = Objects.requireNonNull(dstFileVersion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
             this.fastStartFailOverLagLimitInSeconds = Objects.requireNonNull(fastStartFailOverLagLimitInSeconds);
             return this;
@@ -770,6 +803,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         @CustomType.Setter
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             this.isAutomaticFailoverEnabled = Objects.requireNonNull(isAutomaticFailoverEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = Objects.requireNonNull(isDstFileUpdateEnabled);
             return this;
         }
         @CustomType.Setter
@@ -977,11 +1015,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             o.dbVersion = dbVersion;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.dstFileVersion = dstFileVersion;
             o.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             o.freeformTags = freeformTags;
             o.id = id;
             o.infrastructureType = infrastructureType;
             o.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            o.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             o.keyHistoryEntries = keyHistoryEntries;
             o.keyStoreId = keyStoreId;
             o.keyStoreWalletName = keyStoreWalletName;

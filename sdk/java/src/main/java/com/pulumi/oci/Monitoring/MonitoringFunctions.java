@@ -33,7 +33,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Gets the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -77,7 +80,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Gets the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -121,7 +127,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Gets the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -165,7 +174,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Gets the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -209,7 +221,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Get the history of the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -256,7 +271,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Get the history of the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -303,7 +321,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Get the history of the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -350,7 +371,10 @@ public final class MonitoringFunctions {
      * This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Get the history of the specified alarm.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -397,7 +421,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
      * 
      * List the status of each alarm in the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * For more information, see
+     * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -429,6 +458,10 @@ public final class MonitoringFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
      *             .displayName(var_.alarm_status_display_name())
+     *             .entityId(oci_monitoring_entity.test_entity().id())
+     *             .resourceId(oci_monitoring_resource.test_resource().id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .status(var_.alarm_status_status())
      *             .build());
      * 
      *     }
@@ -443,7 +476,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
      * 
      * List the status of each alarm in the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * For more information, see
+     * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -475,6 +513,10 @@ public final class MonitoringFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
      *             .displayName(var_.alarm_status_display_name())
+     *             .entityId(oci_monitoring_entity.test_entity().id())
+     *             .resourceId(oci_monitoring_resource.test_resource().id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .status(var_.alarm_status_status())
      *             .build());
      * 
      *     }
@@ -489,7 +531,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
      * 
      * List the status of each alarm in the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * For more information, see
+     * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -521,6 +568,10 @@ public final class MonitoringFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
      *             .displayName(var_.alarm_status_display_name())
+     *             .entityId(oci_monitoring_entity.test_entity().id())
+     *             .resourceId(oci_monitoring_resource.test_resource().id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .status(var_.alarm_status_status())
      *             .build());
      * 
      *     }
@@ -535,7 +586,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
      * 
      * List the status of each alarm in the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * For more information, see
+     * [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -567,6 +623,10 @@ public final class MonitoringFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
      *             .displayName(var_.alarm_status_display_name())
+     *             .entityId(oci_monitoring_entity.test_entity().id())
+     *             .resourceId(oci_monitoring_resource.test_resource().id())
+     *             .serviceName(oci_core_service.test_service().name())
+     *             .status(var_.alarm_status_status())
      *             .build());
      * 
      *     }
@@ -581,7 +641,10 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Lists the alarms for the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -628,7 +691,10 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Lists the alarms for the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -675,7 +741,10 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Lists the alarms for the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -722,7 +791,10 @@ public final class MonitoringFunctions {
      * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Lists the alarms for the specified compartment.
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
      * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -769,8 +841,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
-     * For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Querying Metric Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+     * and
+     * [Creating a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
@@ -819,8 +895,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
-     * For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Querying Metric Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+     * and
+     * [Creating a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
@@ -869,8 +949,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
-     * For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Querying Metric Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+     * and
+     * [Creating a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
@@ -919,8 +1003,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
-     * For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Querying Metric Data](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+     * and
+     * [Creating a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
@@ -969,8 +1057,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-     * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+     * For information about metrics, see
+     * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
@@ -1018,8 +1110,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-     * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+     * For information about metrics, see
+     * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
@@ -1067,8 +1163,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-     * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+     * For information about metrics, see
+     * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
@@ -1116,8 +1216,12 @@ public final class MonitoringFunctions {
      * This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
      * 
      * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-     * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * For more information, see
+     * [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+     * For information about metrics, see
+     * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
      * 
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 

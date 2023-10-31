@@ -79,9 +79,8 @@ type LookupMaintenanceRunResult struct {
 	Id string `pulumi:"id"`
 	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
 	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
-	IsEnabled                    bool `pulumi:"isEnabled"`
-	IsPatchNowEnabled            bool `pulumi:"isPatchNowEnabled"`
-	IsResumePatching             bool `pulumi:"isResumePatching"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	MaintenanceRunId string `pulumi:"maintenanceRunId"`
@@ -92,7 +91,8 @@ type LookupMaintenanceRunResult struct {
 	// Contain the patch failure count.
 	PatchFailureCount int `pulumi:"patchFailureCount"`
 	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
-	PatchId string `pulumi:"patchId"`
+	PatchId   string `pulumi:"patchId"`
+	PatchType string `pulumi:"patchType"`
 	// The time when the patching operation ended.
 	PatchingEndTime string `pulumi:"patchingEndTime"`
 	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -217,16 +217,9 @@ func (o LookupMaintenanceRunResultOutput) IsCustomActionTimeoutEnabled() pulumi.
 	return o.ApplyT(func(v LookupMaintenanceRunResult) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
 }
 
-func (o LookupMaintenanceRunResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupMaintenanceRunResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
-}
-
-func (o LookupMaintenanceRunResultOutput) IsPatchNowEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupMaintenanceRunResult) bool { return v.IsPatchNowEnabled }).(pulumi.BoolOutput)
-}
-
-func (o LookupMaintenanceRunResultOutput) IsResumePatching() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupMaintenanceRunResult) bool { return v.IsResumePatching }).(pulumi.BoolOutput)
+// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+func (o LookupMaintenanceRunResultOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMaintenanceRunResult) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.
@@ -256,6 +249,10 @@ func (o LookupMaintenanceRunResultOutput) PatchFailureCount() pulumi.IntOutput {
 // The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
 func (o LookupMaintenanceRunResultOutput) PatchId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMaintenanceRunResult) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+func (o LookupMaintenanceRunResultOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMaintenanceRunResult) string { return v.PatchType }).(pulumi.StringOutput)
 }
 
 // The time when the patching operation ended.

@@ -15,6 +15,41 @@ export const getKnowledgebases: typeof import("./getKnowledgebases").getKnowledg
 export const getKnowledgebasesOutput: typeof import("./getKnowledgebases").getKnowledgebasesOutput = null as any;
 utilities.lazyLoad(exports, ["getKnowledgebases","getKnowledgebasesOutput"], () => require("./getKnowledgebases"));
 
+export { GetRemediationRecipeArgs, GetRemediationRecipeResult, GetRemediationRecipeOutputArgs } from "./getRemediationRecipe";
+export const getRemediationRecipe: typeof import("./getRemediationRecipe").getRemediationRecipe = null as any;
+export const getRemediationRecipeOutput: typeof import("./getRemediationRecipe").getRemediationRecipeOutput = null as any;
+utilities.lazyLoad(exports, ["getRemediationRecipe","getRemediationRecipeOutput"], () => require("./getRemediationRecipe"));
+
+export { GetRemediationRecipesArgs, GetRemediationRecipesResult, GetRemediationRecipesOutputArgs } from "./getRemediationRecipes";
+export const getRemediationRecipes: typeof import("./getRemediationRecipes").getRemediationRecipes = null as any;
+export const getRemediationRecipesOutput: typeof import("./getRemediationRecipes").getRemediationRecipesOutput = null as any;
+utilities.lazyLoad(exports, ["getRemediationRecipes","getRemediationRecipesOutput"], () => require("./getRemediationRecipes"));
+
+export { GetRemediationRunArgs, GetRemediationRunResult, GetRemediationRunOutputArgs } from "./getRemediationRun";
+export const getRemediationRun: typeof import("./getRemediationRun").getRemediationRun = null as any;
+export const getRemediationRunOutput: typeof import("./getRemediationRun").getRemediationRunOutput = null as any;
+utilities.lazyLoad(exports, ["getRemediationRun","getRemediationRunOutput"], () => require("./getRemediationRun"));
+
+export { GetRemediationRunApplicationDependencyRecommendationsArgs, GetRemediationRunApplicationDependencyRecommendationsResult, GetRemediationRunApplicationDependencyRecommendationsOutputArgs } from "./getRemediationRunApplicationDependencyRecommendations";
+export const getRemediationRunApplicationDependencyRecommendations: typeof import("./getRemediationRunApplicationDependencyRecommendations").getRemediationRunApplicationDependencyRecommendations = null as any;
+export const getRemediationRunApplicationDependencyRecommendationsOutput: typeof import("./getRemediationRunApplicationDependencyRecommendations").getRemediationRunApplicationDependencyRecommendationsOutput = null as any;
+utilities.lazyLoad(exports, ["getRemediationRunApplicationDependencyRecommendations","getRemediationRunApplicationDependencyRecommendationsOutput"], () => require("./getRemediationRunApplicationDependencyRecommendations"));
+
+export { GetRemediationRunStageArgs, GetRemediationRunStageResult, GetRemediationRunStageOutputArgs } from "./getRemediationRunStage";
+export const getRemediationRunStage: typeof import("./getRemediationRunStage").getRemediationRunStage = null as any;
+export const getRemediationRunStageOutput: typeof import("./getRemediationRunStage").getRemediationRunStageOutput = null as any;
+utilities.lazyLoad(exports, ["getRemediationRunStage","getRemediationRunStageOutput"], () => require("./getRemediationRunStage"));
+
+export { GetRemediationRunStagesArgs, GetRemediationRunStagesResult, GetRemediationRunStagesOutputArgs } from "./getRemediationRunStages";
+export const getRemediationRunStages: typeof import("./getRemediationRunStages").getRemediationRunStages = null as any;
+export const getRemediationRunStagesOutput: typeof import("./getRemediationRunStages").getRemediationRunStagesOutput = null as any;
+utilities.lazyLoad(exports, ["getRemediationRunStages","getRemediationRunStagesOutput"], () => require("./getRemediationRunStages"));
+
+export { GetRemediationRunsArgs, GetRemediationRunsResult, GetRemediationRunsOutputArgs } from "./getRemediationRuns";
+export const getRemediationRuns: typeof import("./getRemediationRuns").getRemediationRuns = null as any;
+export const getRemediationRunsOutput: typeof import("./getRemediationRuns").getRemediationRunsOutput = null as any;
+utilities.lazyLoad(exports, ["getRemediationRuns","getRemediationRunsOutput"], () => require("./getRemediationRuns"));
+
 export { GetVulnerabilityAuditArgs, GetVulnerabilityAuditResult, GetVulnerabilityAuditOutputArgs } from "./getVulnerabilityAudit";
 export const getVulnerabilityAudit: typeof import("./getVulnerabilityAudit").getVulnerabilityAudit = null as any;
 export const getVulnerabilityAuditOutput: typeof import("./getVulnerabilityAudit").getVulnerabilityAuditOutput = null as any;
@@ -40,6 +75,16 @@ export type KnowledgeBase = import("./knowledgeBase").KnowledgeBase;
 export const KnowledgeBase: typeof import("./knowledgeBase").KnowledgeBase = null as any;
 utilities.lazyLoad(exports, ["KnowledgeBase"], () => require("./knowledgeBase"));
 
+export { RemediationRecipeArgs, RemediationRecipeState } from "./remediationRecipe";
+export type RemediationRecipe = import("./remediationRecipe").RemediationRecipe;
+export const RemediationRecipe: typeof import("./remediationRecipe").RemediationRecipe = null as any;
+utilities.lazyLoad(exports, ["RemediationRecipe"], () => require("./remediationRecipe"));
+
+export { RemediationRunArgs, RemediationRunState } from "./remediationRun";
+export type RemediationRun = import("./remediationRun").RemediationRun;
+export const RemediationRun: typeof import("./remediationRun").RemediationRun = null as any;
+utilities.lazyLoad(exports, ["RemediationRun"], () => require("./remediationRun"));
+
 export { VulnerabilityAuditArgs, VulnerabilityAuditState } from "./vulnerabilityAudit";
 export type VulnerabilityAudit = import("./vulnerabilityAudit").VulnerabilityAudit;
 export const VulnerabilityAudit: typeof import("./vulnerabilityAudit").VulnerabilityAudit = null as any;
@@ -52,6 +97,10 @@ const _module = {
         switch (type) {
             case "oci:Adm/knowledgeBase:KnowledgeBase":
                 return new KnowledgeBase(name, <any>undefined, { urn })
+            case "oci:Adm/remediationRecipe:RemediationRecipe":
+                return new RemediationRecipe(name, <any>undefined, { urn })
+            case "oci:Adm/remediationRun:RemediationRun":
+                return new RemediationRun(name, <any>undefined, { urn })
             case "oci:Adm/vulnerabilityAudit:VulnerabilityAudit":
                 return new VulnerabilityAudit(name, <any>undefined, { urn })
             default:
@@ -60,4 +109,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Adm/knowledgeBase", _module)
+pulumi.runtime.registerResourceModule("oci", "Adm/remediationRecipe", _module)
+pulumi.runtime.registerResourceModule("oci", "Adm/remediationRun", _module)
 pulumi.runtime.registerResourceModule("oci", "Adm/vulnerabilityAudit", _module)

@@ -11,5 +11,6 @@ from .get_table import *
 from .get_tables import *
 from .index import *
 from .table import *
+from .table_replica import *
 from ._inputs import *
 from . import outputs

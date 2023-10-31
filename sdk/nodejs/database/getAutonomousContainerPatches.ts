@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
  *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
  *     compartmentId: _var.compartment_id,
+ *     autonomousPatchType: _var.autonomous_container_patch_autonomous_patch_type,
  * });
  * ```
  */
@@ -28,6 +29,7 @@ export function getAutonomousContainerPatches(args: GetAutonomousContainerPatche
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerPatches:getAutonomousContainerPatches", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
+        "autonomousPatchType": args.autonomousPatchType,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
     }, opts);
@@ -42,6 +44,10 @@ export interface GetAutonomousContainerPatchesArgs {
      */
     autonomousContainerDatabaseId: string;
     /**
+     * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+     */
+    autonomousPatchType?: string;
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: string;
@@ -53,6 +59,10 @@ export interface GetAutonomousContainerPatchesArgs {
  */
 export interface GetAutonomousContainerPatchesResult {
     readonly autonomousContainerDatabaseId: string;
+    /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     */
+    readonly autonomousPatchType?: string;
     /**
      * The list of autonomous_patches.
      */
@@ -78,6 +88,7 @@ export interface GetAutonomousContainerPatchesResult {
  * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
  *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
  *     compartmentId: _var.compartment_id,
+ *     autonomousPatchType: _var.autonomous_container_patch_autonomous_patch_type,
  * });
  * ```
  */
@@ -93,6 +104,10 @@ export interface GetAutonomousContainerPatchesOutputArgs {
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousContainerDatabaseId: pulumi.Input<string>;
+    /**
+     * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+     */
+    autonomousPatchType?: pulumi.Input<string>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

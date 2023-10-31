@@ -54,7 +54,7 @@ class GetAlarmHistoryCollectionResult:
     @pulumi.getter(name="alarmId")
     def alarm_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve history for.
         """
         return pulumi.get(self, "alarm_id")
 
@@ -117,7 +117,10 @@ def get_alarm_history_collection(alarm_historytype: Optional[str] = None,
     This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
 
     Get the history of the specified alarm.
-    For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+    For more information, see
+    [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+    For important limits information, see
+    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 
     This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
     Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -169,7 +172,10 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
     This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
 
     Get the history of the specified alarm.
-    For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+    For more information, see
+    [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+    For important limits information, see
+    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 
     This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
     Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,

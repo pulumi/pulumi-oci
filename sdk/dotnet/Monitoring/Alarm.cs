@@ -13,7 +13,10 @@ namespace Pulumi.Oci.Monitoring
     /// This resource provides the Alarm resource in Oracle Cloud Infrastructure Monitoring service.
     /// 
     /// Creates a new alarm in the specified compartment.
-    /// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+    /// For more information, see
+    /// [Creating an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm.htm).
+    /// For important limits information, see
+    /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
     /// 
     /// This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
     /// Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -81,7 +84,7 @@ namespace Pulumi.Oci.Monitoring
     public partial class Alarm : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         [Output("body")]
         public Output<string> Body { get; private set; } = null!;
@@ -99,7 +102,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
         /// </summary>
         [Output("destinations")]
         public Output<ImmutableArray<string>> Destinations { get; private set; } = null!;
@@ -107,7 +110,7 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// 
-        /// This name is sent as the title for notifications related to this alarm.
+        /// This value determines the title of each alarm notification.
         /// 
         /// Example: `High CPU Utilization`
         /// </summary>
@@ -127,13 +130,13 @@ namespace Pulumi.Oci.Monitoring
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        /// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
         /// </summary>
         [Output("isNotificationsPerMetricDimensionEnabled")]
         public Output<bool> IsNotificationsPerMetricDimensionEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
+        /// (Updatable) The format to use for alarm notifications. The formats are:
         /// </summary>
         [Output("messageFormat")]
         public Output<string> MessageFormat { get; private set; } = null!;
@@ -171,7 +174,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> PendingDuration { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
         /// 
@@ -193,7 +196,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> Query { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+        /// (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
         /// 
         /// Default value: null (notifications are not re-submitted).
         /// 
@@ -291,7 +294,7 @@ namespace Pulumi.Oci.Monitoring
     public sealed class AlarmArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         [Input("body")]
         public Input<string>? Body { get; set; }
@@ -318,7 +321,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<string>? _destinations;
 
         /// <summary>
-        /// (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
         /// </summary>
         public InputList<string> Destinations
         {
@@ -329,7 +332,7 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// 
-        /// This name is sent as the title for notifications related to this alarm.
+        /// This value determines the title of each alarm notification.
         /// 
         /// Example: `High CPU Utilization`
         /// </summary>
@@ -355,13 +358,13 @@ namespace Pulumi.Oci.Monitoring
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        /// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
         /// </summary>
         [Input("isNotificationsPerMetricDimensionEnabled")]
         public Input<bool>? IsNotificationsPerMetricDimensionEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
+        /// (Updatable) The format to use for alarm notifications. The formats are:
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }
@@ -399,7 +402,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? PendingDuration { get; set; }
 
         /// <summary>
-        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
         /// 
@@ -421,7 +424,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string> Query { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+        /// (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
         /// 
         /// Default value: null (notifications are not re-submitted).
         /// 
@@ -463,7 +466,7 @@ namespace Pulumi.Oci.Monitoring
     public sealed class AlarmState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         [Input("body")]
         public Input<string>? Body { get; set; }
@@ -490,7 +493,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<string>? _destinations;
 
         /// <summary>
-        /// (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+        /// (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
         /// </summary>
         public InputList<string> Destinations
         {
@@ -501,7 +504,7 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// 
-        /// This name is sent as the title for notifications related to this alarm.
+        /// This value determines the title of each alarm notification.
         /// 
         /// Example: `High CPU Utilization`
         /// </summary>
@@ -527,13 +530,13 @@ namespace Pulumi.Oci.Monitoring
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        /// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
         /// </summary>
         [Input("isNotificationsPerMetricDimensionEnabled")]
         public Input<bool>? IsNotificationsPerMetricDimensionEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
+        /// (Updatable) The format to use for alarm notifications. The formats are:
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }
@@ -571,7 +574,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? PendingDuration { get; set; }
 
         /// <summary>
-        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
         /// 
@@ -593,7 +596,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? Query { get; set; }
 
         /// <summary>
-        /// (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+        /// (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
         /// 
         /// Default value: null (notifications are not re-submitted).
         /// 

@@ -18,14 +18,14 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
     public static final KnowledgeBaseState Empty = new KnowledgeBaseState();
 
     /**
-     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * @return (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -48,14 +48,14 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The name of the Knowledge Base.
+     * (Updatable) The name of the knowledge base.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The name of the Knowledge Base.
+     * @return (Updatable) The name of the knowledge base.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -84,14 +84,14 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The current lifecycle state of the Knowledge Base.
+     * The current lifecycle state of the knowledge base.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Knowledge Base.
+     * @return The current lifecycle state of the knowledge base.
      * 
      */
     public Optional<Output<String>> state() {
@@ -114,14 +114,14 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -129,14 +129,14 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -175,7 +175,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+         * @param compartmentId (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+         * @param compartmentId (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) The name of the Knowledge Base.
+         * @param displayName (Updatable) The name of the knowledge base.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) The name of the Knowledge Base.
+         * @param displayName (Updatable) The name of the knowledge base.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param state The current lifecycle state of the Knowledge Base.
+         * @param state The current lifecycle state of the knowledge base.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param state The current lifecycle state of the Knowledge Base.
+         * @param state The current lifecycle state of the knowledge base.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timeCreated The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeCreated The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timeCreated The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeCreated The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timeUpdated The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeUpdated The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class KnowledgeBaseState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timeUpdated The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeUpdated The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 

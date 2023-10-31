@@ -155,6 +155,10 @@ namespace Pulumi.Oci.Database
         /// The user-provided name for the Autonomous Container Database.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// DST Time Zone File version of the Autonomous Container Database.
+        /// </summary>
+        public readonly string DstFileVersion;
         public readonly int FastStartFailOverLagLimitInSeconds;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -169,6 +173,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string InfrastructureType;
         public readonly bool IsAutomaticFailoverEnabled;
+        /// <summary>
+        /// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        /// </summary>
+        public readonly bool IsDstFileUpdateEnabled;
         /// <summary>
         /// Key History Entry.
         /// </summary>
@@ -312,6 +320,8 @@ namespace Pulumi.Oci.Database
 
             string displayName,
 
+            string dstFileVersion,
+
             int fastStartFailOverLagLimitInSeconds,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -321,6 +331,8 @@ namespace Pulumi.Oci.Database
             string infrastructureType,
 
             bool isAutomaticFailoverEnabled,
+
+            bool isDstFileUpdateEnabled,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseKeyHistoryEntryResult> keyHistoryEntries,
 
@@ -406,11 +418,13 @@ namespace Pulumi.Oci.Database
             DbVersion = dbVersion;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            DstFileVersion = dstFileVersion;
             FastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             FreeformTags = freeformTags;
             Id = id;
             InfrastructureType = infrastructureType;
             IsAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            IsDstFileUpdateEnabled = isDstFileUpdateEnabled;
             KeyHistoryEntries = keyHistoryEntries;
             KeyStoreId = keyStoreId;
             KeyStoreWalletName = keyStoreWalletName;

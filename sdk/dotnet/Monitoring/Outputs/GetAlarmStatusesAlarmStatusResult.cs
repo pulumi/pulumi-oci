@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Severity;
         /// <summary>
-        /// The status of this alarm.  Example: `FIRING`
+        /// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
         /// </summary>
         public readonly string Status;
         /// <summary>

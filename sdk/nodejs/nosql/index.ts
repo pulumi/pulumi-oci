@@ -35,6 +35,11 @@ export type Table = import("./table").Table;
 export const Table: typeof import("./table").Table = null as any;
 utilities.lazyLoad(exports, ["Table"], () => require("./table"));
 
+export { TableReplicaArgs, TableReplicaState } from "./tableReplica";
+export type TableReplica = import("./tableReplica").TableReplica;
+export const TableReplica: typeof import("./tableReplica").TableReplica = null as any;
+utilities.lazyLoad(exports, ["TableReplica"], () => require("./tableReplica"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +49,8 @@ const _module = {
                 return new Index(name, <any>undefined, { urn })
             case "oci:Nosql/table:Table":
                 return new Table(name, <any>undefined, { urn })
+            case "oci:Nosql/tableReplica:TableReplica":
+                return new TableReplica(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +58,4 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "Nosql/index", _module)
 pulumi.runtime.registerResourceModule("oci", "Nosql/table", _module)
+pulumi.runtime.registerResourceModule("oci", "Nosql/tableReplica", _module)

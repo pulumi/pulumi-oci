@@ -23,7 +23,7 @@ class GetAlarmStatusesResult:
     """
     A collection of values returned by getAlarmStatuses.
     """
-    def __init__(__self__, alarm_statuses=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None):
+    def __init__(__self__, alarm_statuses=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, entity_id=None, filters=None, id=None, resource_id=None, service_name=None, status=None):
         if alarm_statuses and not isinstance(alarm_statuses, list):
             raise TypeError("Expected argument 'alarm_statuses' to be a list")
         pulumi.set(__self__, "alarm_statuses", alarm_statuses)
@@ -36,12 +36,24 @@ class GetAlarmStatusesResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if entity_id and not isinstance(entity_id, str):
+            raise TypeError("Expected argument 'entity_id' to be a str")
+        pulumi.set(__self__, "entity_id", entity_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if resource_id and not isinstance(resource_id, str):
+            raise TypeError("Expected argument 'resource_id' to be a str")
+        pulumi.set(__self__, "resource_id", resource_id)
+        if service_name and not isinstance(service_name, str):
+            raise TypeError("Expected argument 'service_name' to be a str")
+        pulumi.set(__self__, "service_name", service_name)
+        if status and not isinstance(status, str):
+            raise TypeError("Expected argument 'status' to be a str")
+        pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter(name="alarmStatuses")
@@ -70,6 +82,11 @@ class GetAlarmStatusesResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
+
+    @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetAlarmStatusesFilterResult']]:
         return pulumi.get(self, "filters")
@@ -82,6 +99,24 @@ class GetAlarmStatusesResult:
         """
         return pulumi.get(self, "id")
 
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[str]:
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[str]:
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
+        """
+        return pulumi.get(self, "status")
+
 
 class AwaitableGetAlarmStatusesResult(GetAlarmStatusesResult):
     # pylint: disable=using-constant-test
@@ -93,20 +128,33 @@ class AwaitableGetAlarmStatusesResult(GetAlarmStatusesResult):
             compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             display_name=self.display_name,
+            entity_id=self.entity_id,
             filters=self.filters,
-            id=self.id)
+            id=self.id,
+            resource_id=self.resource_id,
+            service_name=self.service_name,
+            status=self.status)
 
 
 def get_alarm_statuses(compartment_id: Optional[str] = None,
                        compartment_id_in_subtree: Optional[bool] = None,
                        display_name: Optional[str] = None,
+                       entity_id: Optional[str] = None,
                        filters: Optional[Sequence[pulumi.InputType['GetAlarmStatusesFilterArgs']]] = None,
+                       resource_id: Optional[str] = None,
+                       service_name: Optional[str] = None,
+                       status: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlarmStatusesResult:
     """
     This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
 
     List the status of each alarm in the specified compartment.
-    For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+    Status is collective, across all metric streams in the alarm.
+    To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+    For more information, see
+    [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+    For important limits information, see
+    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 
     This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
     Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -120,19 +168,31 @@ def get_alarm_statuses(compartment_id: Optional[str] = None,
 
     test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["alarm_status_compartment_id_in_subtree"],
-        display_name=var["alarm_status_display_name"])
+        display_name=var["alarm_status_display_name"],
+        entity_id=oci_monitoring_entity["test_entity"]["id"],
+        resource_id=oci_monitoring_resource["test_resource"]["id"],
+        service_name=oci_core_service["test_service"]["name"],
+        status=var["alarm_status_status"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
     :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
     :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
+    :param str entity_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+    :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+    :param str service_name: A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+    :param str status: The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
+    __args__['entityId'] = entity_id
     __args__['filters'] = filters
+    __args__['resourceId'] = resource_id
+    __args__['serviceName'] = service_name
+    __args__['status'] = status
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Monitoring/getAlarmStatuses:getAlarmStatuses', __args__, opts=opts, typ=GetAlarmStatusesResult).value
 
@@ -141,21 +201,34 @@ def get_alarm_statuses(compartment_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        entity_id=pulumi.get(__ret__, 'entity_id'),
         filters=pulumi.get(__ret__, 'filters'),
-        id=pulumi.get(__ret__, 'id'))
+        id=pulumi.get(__ret__, 'id'),
+        resource_id=pulumi.get(__ret__, 'resource_id'),
+        service_name=pulumi.get(__ret__, 'service_name'),
+        status=pulumi.get(__ret__, 'status'))
 
 
 @_utilities.lift_output_func(get_alarm_statuses)
 def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None,
                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                               display_name: Optional[pulumi.Input[Optional[str]]] = None,
+                              entity_id: Optional[pulumi.Input[Optional[str]]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAlarmStatusesFilterArgs']]]]] = None,
+                              resource_id: Optional[pulumi.Input[Optional[str]]] = None,
+                              service_name: Optional[pulumi.Input[Optional[str]]] = None,
+                              status: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmStatusesResult]:
     """
     This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
 
     List the status of each alarm in the specified compartment.
-    For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+    Status is collective, across all metric streams in the alarm.
+    To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+    For more information, see
+    [Listing Alarm Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+    For important limits information, see
+    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 
     This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
     Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -169,12 +242,20 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["alarm_status_compartment_id_in_subtree"],
-        display_name=var["alarm_status_display_name"])
+        display_name=var["alarm_status_display_name"],
+        entity_id=oci_monitoring_entity["test_entity"]["id"],
+        resource_id=oci_monitoring_resource["test_resource"]["id"],
+        service_name=oci_core_service["test_service"]["name"],
+        status=var["alarm_status_status"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
     :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
     :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
+    :param str entity_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+    :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+    :param str service_name: A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
+    :param str status: The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
     """
     ...

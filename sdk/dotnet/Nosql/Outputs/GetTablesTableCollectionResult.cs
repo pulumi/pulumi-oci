@@ -35,13 +35,23 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// </summary>
         public readonly bool IsAutoReclaimable;
         /// <summary>
+        /// True if this table is currently a member of a replication set.
+        /// </summary>
+        public readonly bool IsMultiRegion;
+        /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly int LocalReplicaInitializationInPercent;
         /// <summary>
         /// A shell-globbing-style (*?[]) filter for names.
         /// </summary>
         public readonly string Name;
+        public readonly ImmutableArray<Outputs.GetTablesTableCollectionReplicaResult> Replicas;
+        /// <summary>
+        /// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+        /// </summary>
+        public readonly string SchemaState;
         public readonly ImmutableArray<Outputs.GetTablesTableCollectionSchemaResult> Schemas;
         /// <summary>
         /// Filter list by the lifecycle state of the item.
@@ -82,9 +92,17 @@ namespace Pulumi.Oci.Nosql.Outputs
 
             bool isAutoReclaimable,
 
+            bool isMultiRegion,
+
             string lifecycleDetails,
 
+            int localReplicaInitializationInPercent,
+
             string name,
+
+            ImmutableArray<Outputs.GetTablesTableCollectionReplicaResult> replicas,
+
+            string schemaState,
 
             ImmutableArray<Outputs.GetTablesTableCollectionSchemaResult> schemas,
 
@@ -106,8 +124,12 @@ namespace Pulumi.Oci.Nosql.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsAutoReclaimable = isAutoReclaimable;
+            IsMultiRegion = isMultiRegion;
             LifecycleDetails = lifecycleDetails;
+            LocalReplicaInitializationInPercent = localReplicaInitializationInPercent;
             Name = name;
+            Replicas = replicas;
+            SchemaState = schemaState;
             Schemas = schemas;
             State = state;
             SystemTags = systemTags;

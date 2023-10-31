@@ -75,13 +75,29 @@ export interface GetTableResult {
      */
     readonly isAutoReclaimable: boolean;
     /**
+     * True if this table is currently a member of a replication set.
+     */
+    readonly isMultiRegion: boolean;
+    /**
      * A message describing the current state in more detail.
      */
     readonly lifecycleDetails: string;
     /**
+     * If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
+     */
+    readonly localReplicaInitializationInPercent: number;
+    /**
      * The column name.
      */
     readonly name: string;
+    /**
+     * An array of Replica listing this table's replicas, if any
+     */
+    readonly replicas: outputs.Nosql.GetTableReplica[];
+    /**
+     * The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     */
+    readonly schemaState: string;
     /**
      * The table schema information as a JSON object.
      */

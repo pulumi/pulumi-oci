@@ -63,9 +63,11 @@ public final class GetMaintenanceRunResult {
      * 
      */
     private Boolean isCustomActionTimeoutEnabled;
-    private Boolean isEnabled;
-    private Boolean isPatchNowEnabled;
-    private Boolean isResumePatching;
+    /**
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    private Boolean isDstFileUpdateEnabled;
     /**
      * @return Additional information about the current lifecycle state.
      * 
@@ -92,6 +94,7 @@ public final class GetMaintenanceRunResult {
      * 
      */
     private String patchId;
+    private String patchType;
     /**
      * @return The time when the patching operation ended.
      * 
@@ -229,14 +232,12 @@ public final class GetMaintenanceRunResult {
     public Boolean isCustomActionTimeoutEnabled() {
         return this.isCustomActionTimeoutEnabled;
     }
-    public Boolean isEnabled() {
-        return this.isEnabled;
-    }
-    public Boolean isPatchNowEnabled() {
-        return this.isPatchNowEnabled;
-    }
-    public Boolean isResumePatching() {
-        return this.isResumePatching;
+    /**
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    public Boolean isDstFileUpdateEnabled() {
+        return this.isDstFileUpdateEnabled;
     }
     /**
      * @return Additional information about the current lifecycle state.
@@ -275,6 +276,9 @@ public final class GetMaintenanceRunResult {
      */
     public String patchId() {
         return this.patchId;
+    }
+    public String patchType() {
+        return this.patchType;
     }
     /**
      * @return The time when the patching operation ended.
@@ -387,15 +391,14 @@ public final class GetMaintenanceRunResult {
         private List<GetMaintenanceRunEstimatedPatchingTime> estimatedPatchingTimes;
         private String id;
         private Boolean isCustomActionTimeoutEnabled;
-        private Boolean isEnabled;
-        private Boolean isPatchNowEnabled;
-        private Boolean isResumePatching;
+        private Boolean isDstFileUpdateEnabled;
         private String lifecycleDetails;
         private String maintenanceRunId;
         private String maintenanceSubtype;
         private String maintenanceType;
         private Integer patchFailureCount;
         private String patchId;
+        private String patchType;
         private String patchingEndTime;
         private String patchingMode;
         private String patchingStartTime;
@@ -422,15 +425,14 @@ public final class GetMaintenanceRunResult {
     	      this.estimatedPatchingTimes = defaults.estimatedPatchingTimes;
     	      this.id = defaults.id;
     	      this.isCustomActionTimeoutEnabled = defaults.isCustomActionTimeoutEnabled;
-    	      this.isEnabled = defaults.isEnabled;
-    	      this.isPatchNowEnabled = defaults.isPatchNowEnabled;
-    	      this.isResumePatching = defaults.isResumePatching;
+    	      this.isDstFileUpdateEnabled = defaults.isDstFileUpdateEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceRunId = defaults.maintenanceRunId;
     	      this.maintenanceSubtype = defaults.maintenanceSubtype;
     	      this.maintenanceType = defaults.maintenanceType;
     	      this.patchFailureCount = defaults.patchFailureCount;
     	      this.patchId = defaults.patchId;
+    	      this.patchType = defaults.patchType;
     	      this.patchingEndTime = defaults.patchingEndTime;
     	      this.patchingMode = defaults.patchingMode;
     	      this.patchingStartTime = defaults.patchingStartTime;
@@ -500,18 +502,8 @@ public final class GetMaintenanceRunResult {
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder isPatchNowEnabled(Boolean isPatchNowEnabled) {
-            this.isPatchNowEnabled = Objects.requireNonNull(isPatchNowEnabled);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder isResumePatching(Boolean isResumePatching) {
-            this.isResumePatching = Objects.requireNonNull(isResumePatching);
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = Objects.requireNonNull(isDstFileUpdateEnabled);
             return this;
         }
         @CustomType.Setter
@@ -542,6 +534,11 @@ public final class GetMaintenanceRunResult {
         @CustomType.Setter
         public Builder patchId(String patchId) {
             this.patchId = Objects.requireNonNull(patchId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder patchType(String patchType) {
+            this.patchType = Objects.requireNonNull(patchType);
             return this;
         }
         @CustomType.Setter
@@ -621,15 +618,14 @@ public final class GetMaintenanceRunResult {
             o.estimatedPatchingTimes = estimatedPatchingTimes;
             o.id = id;
             o.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
-            o.isEnabled = isEnabled;
-            o.isPatchNowEnabled = isPatchNowEnabled;
-            o.isResumePatching = isResumePatching;
+            o.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             o.lifecycleDetails = lifecycleDetails;
             o.maintenanceRunId = maintenanceRunId;
             o.maintenanceSubtype = maintenanceSubtype;
             o.maintenanceType = maintenanceType;
             o.patchFailureCount = patchFailureCount;
             o.patchId = patchId;
+            o.patchType = patchType;
             o.patchingEndTime = patchingEndTime;
             o.patchingMode = patchingMode;
             o.patchingStartTime = patchingStartTime;

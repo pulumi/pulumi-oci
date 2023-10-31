@@ -27,7 +27,7 @@ public final class GetAlarmStatusesAlarmStatus {
      */
     private String severity;
     /**
-     * @return The status of this alarm.  Example: `FIRING`
+     * @return The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to &#34;FIRING&#34; to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams&#39; status.  Example: `FIRING`
      * 
      */
     private String status;
@@ -65,7 +65,7 @@ public final class GetAlarmStatusesAlarmStatus {
         return this.severity;
     }
     /**
-     * @return The status of this alarm.  Example: `FIRING`
+     * @return The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to &#34;FIRING&#34; to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams&#39; status.  Example: `FIRING`
      * 
      */
     public String status() {

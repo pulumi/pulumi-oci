@@ -64,7 +64,7 @@ export class KnowledgeBase extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+     * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -72,7 +72,7 @@ export class KnowledgeBase extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The name of the Knowledge Base.
+     * (Updatable) The name of the knowledge base.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -84,7 +84,7 @@ export class KnowledgeBase extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The current lifecycle state of the Knowledge Base.
+     * The current lifecycle state of the knowledge base.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -92,11 +92,11 @@ export class KnowledgeBase extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -145,7 +145,7 @@ export class KnowledgeBase extends pulumi.CustomResource {
  */
 export interface KnowledgeBaseState {
     /**
-     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+     * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -153,7 +153,7 @@ export interface KnowledgeBaseState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The name of the Knowledge Base.
+     * (Updatable) The name of the knowledge base.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -165,7 +165,7 @@ export interface KnowledgeBaseState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The current lifecycle state of the Knowledge Base.
+     * The current lifecycle state of the knowledge base.
      */
     state?: pulumi.Input<string>;
     /**
@@ -173,11 +173,11 @@ export interface KnowledgeBaseState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -187,7 +187,7 @@ export interface KnowledgeBaseState {
  */
 export interface KnowledgeBaseArgs {
     /**
-     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+     * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -195,7 +195,7 @@ export interface KnowledgeBaseArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The name of the Knowledge Base.
+     * (Updatable) The name of the knowledge base.
      */
     displayName?: pulumi.Input<string>;
     /**

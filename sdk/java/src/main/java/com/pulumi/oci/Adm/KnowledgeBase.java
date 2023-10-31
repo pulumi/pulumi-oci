@@ -65,14 +65,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Adm/knowledgeBase:KnowledgeBase")
 public class KnowledgeBase extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * @return (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     public Output<String> compartmentId() {
@@ -93,14 +93,14 @@ public class KnowledgeBase extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) The name of the Knowledge Base.
+     * (Updatable) The name of the knowledge base.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The name of the Knowledge Base.
+     * @return (Updatable) The name of the knowledge base.
      * 
      */
     public Output<String> displayName() {
@@ -127,14 +127,14 @@ public class KnowledgeBase extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The current lifecycle state of the Knowledge Base.
+     * The current lifecycle state of the knowledge base.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Knowledge Base.
+     * @return The current lifecycle state of the knowledge base.
      * 
      */
     public Output<String> state() {
@@ -155,28 +155,28 @@ public class KnowledgeBase extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Output<String> timeUpdated() {

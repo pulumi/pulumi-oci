@@ -18,14 +18,14 @@ public final class KnowledgeBaseArgs extends com.pulumi.resources.ResourceArgs {
     public static final KnowledgeBaseArgs Empty = new KnowledgeBaseArgs();
 
     /**
-     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+     * @return (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
     public Output<String> compartmentId() {
@@ -48,14 +48,14 @@ public final class KnowledgeBaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name of the Knowledge Base.
+     * (Updatable) The name of the knowledge base.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The name of the Knowledge Base.
+     * @return (Updatable) The name of the knowledge base.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -111,7 +111,7 @@ public final class KnowledgeBaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+         * @param compartmentId (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class KnowledgeBaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base&#39;s compartment.
+         * @param compartmentId (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class KnowledgeBaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The name of the Knowledge Base.
+         * @param displayName (Updatable) The name of the knowledge base.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class KnowledgeBaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The name of the Knowledge Base.
+         * @param displayName (Updatable) The name of the knowledge base.
          * 
          * @return builder
          * 

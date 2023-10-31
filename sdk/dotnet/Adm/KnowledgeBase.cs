@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Adm
     public partial class KnowledgeBase : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+        /// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Adm
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the Knowledge Base.
+        /// (Updatable) The name of the knowledge base.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Adm
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The current lifecycle state of the Knowledge Base.
+        /// The current lifecycle state of the knowledge base.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -93,13 +93,13 @@ namespace Pulumi.Oci.Adm
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.Adm
     public sealed class KnowledgeBaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+        /// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// (Updatable) The name of the Knowledge Base.
+        /// (Updatable) The name of the knowledge base.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Adm
     public sealed class KnowledgeBaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+        /// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -217,7 +217,7 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// (Updatable) The name of the Knowledge Base.
+        /// (Updatable) The name of the knowledge base.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -239,7 +239,7 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// The current lifecycle state of the Knowledge Base.
+        /// The current lifecycle state of the knowledge base.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -257,13 +257,13 @@ namespace Pulumi.Oci.Adm
         }
 
         /// <summary>
-        /// The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

@@ -18,6 +18,54 @@ export namespace Adm {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetRemediationRecipesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRemediationRecipesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRemediationRunApplicationDependencyRecommendationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRemediationRunApplicationDependencyRecommendationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRemediationRunStagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRemediationRunStagesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRemediationRunsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRemediationRunsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter {
         name: string;
         regex?: boolean;
@@ -42,9 +90,144 @@ export namespace Adm {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface RemediationRecipeDetectConfiguration {
+        /**
+         * (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+         */
+        exclusions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+         */
+        maxPermissibleCvssV2score?: pulumi.Input<number>;
+        /**
+         * (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+         */
+        maxPermissibleCvssV3score?: pulumi.Input<number>;
+        /**
+         * (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+         */
+        upgradePolicy?: pulumi.Input<string>;
+    }
+
+    export interface RemediationRecipeNetworkConfiguration {
+        /**
+         * (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
+         */
+        subnetId: pulumi.Input<string>;
+    }
+
+    export interface RemediationRecipeScmConfiguration {
+        /**
+         * (Updatable) The branch used by ADM to patch vulnerabilities.
+         */
+        branch: pulumi.Input<string>;
+        /**
+         * (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
+         */
+        buildFileLocation?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of External Source Code Management.
+         */
+        externalScmType?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
+         */
+        isAutomergeEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
+         */
+        ociCodeRepositoryId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+         */
+        patSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         */
+        repositoryUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of Source Code Management.
+         */
+        scmType: pulumi.Input<string>;
+        /**
+         * (Updatable) The username that will be used to authenticate with Jenkins.
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface RemediationRecipeVerifyConfiguration {
+        /**
+         * (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+         */
+        additionalParameters?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) The type of Build Service.
+         */
+        buildServiceType: pulumi.Input<string>;
+        /**
+         * (Updatable) The URL that locates the Jenkins pipeline.
+         */
+        jenkinsUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
+         */
+        jobName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+         */
+        patSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
+         */
+        pipelineId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         */
+        repositoryUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
+         */
+        triggerSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The username that will be used to authenticate with Jenkins.
+         */
+        username?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
+         */
+        workflowName?: pulumi.Input<string>;
+    }
+
+    export interface RemediationRunStage {
+        /**
+         * Information about the current step within the given stage.
+         */
+        summary?: pulumi.Input<string>;
+        /**
+         * The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        timeFinished?: pulumi.Input<string>;
+        /**
+         * The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        timeStarted?: pulumi.Input<string>;
+        /**
+         * The type of stage.
+         */
+        type?: pulumi.Input<string>;
+    }
+
     export interface VulnerabilityAuditApplicationDependency {
         /**
-         * List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
+         * List of application dependencies on which this application dependency depends, each identified by its nodeId.
          */
         applicationDependencyNodeIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -52,22 +235,22 @@ export namespace Adm {
          */
         gav: pulumi.Input<string>;
         /**
-         * Unique identifier of an Application Dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
+         * Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
          */
         nodeId: pulumi.Input<string>;
     }
 
     export interface VulnerabilityAuditConfiguration {
         /**
-         * A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
+         * A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
          */
         exclusions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+         * A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
          */
         maxPermissibleCvssV2score?: pulumi.Input<number>;
         /**
-         * A vulnerable Application Dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
+         * A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
          */
         maxPermissibleCvssV3score?: pulumi.Input<number>;
     }
@@ -78,11 +261,11 @@ export namespace Adm {
          */
         description?: pulumi.Input<string>;
         /**
-         * The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
+         * The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
          */
         ociResourceId?: pulumi.Input<string>;
         /**
-         * Source type of the Vulnerability Audit.
+         * Source type of the vulnerability audit.
          *
          *
          * ** IMPORTANT **
@@ -55970,6 +56153,37 @@ export namespace Nosql {
          * If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
          */
         jsonPath?: pulumi.Input<string>;
+    }
+
+    export interface TableReplica {
+        /**
+         * (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+         */
+        capacityMode?: pulumi.Input<string>;
+        /**
+         * A message describing the current state in more detail.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * (Updatable) Maximum sustained write throughput limit for the table.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        maxWriteUnits?: pulumi.Input<number>;
+        /**
+         * A customer-facing region identifier
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * The state of a table.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The OCID of the replica table
+         */
+        tableId?: pulumi.Input<string>;
     }
 
     export interface TableSchema {

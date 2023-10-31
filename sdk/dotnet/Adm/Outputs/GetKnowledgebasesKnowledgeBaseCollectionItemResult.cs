@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Adm.Outputs
     public sealed class GetKnowledgebasesKnowledgeBaseCollectionItemResult
     {
         /// <summary>
-        /// A filter to return only resources that belong to the specified compartment identifier.
+        /// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// A filter to return only resources that match the specified identifier.
+        /// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -42,11 +42,11 @@ namespace Pulumi.Oci.Adm.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         public readonly string TimeUpdated;
 

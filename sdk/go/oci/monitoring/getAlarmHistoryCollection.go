@@ -15,7 +15,10 @@ import (
 // This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
 //
 // Get the history of the specified alarm.
-// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+// For more information, see
+// [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+// For important limits information, see
+// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
 //
 // This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
 // Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
@@ -74,7 +77,7 @@ type GetAlarmHistoryCollectionArgs struct {
 // A collection of values returned by getAlarmHistoryCollection.
 type GetAlarmHistoryCollectionResult struct {
 	AlarmHistorytype *string `pulumi:"alarmHistorytype"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve history for.
 	AlarmId string `pulumi:"alarmId"`
 	// The set of history entries retrieved for the alarm.
 	Entries []GetAlarmHistoryCollectionEntry `pulumi:"entries"`
@@ -140,7 +143,7 @@ func (o GetAlarmHistoryCollectionResultOutput) AlarmHistorytype() pulumi.StringP
 	return o.ApplyT(func(v GetAlarmHistoryCollectionResult) *string { return v.AlarmHistorytype }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve history for.
 func (o GetAlarmHistoryCollectionResultOutput) AlarmId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmHistoryCollectionResult) string { return v.AlarmId }).(pulumi.StringOutput)
 }

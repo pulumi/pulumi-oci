@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> Dimensions;
         /// <summary>
-        /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+        /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
         /// 
         /// Example - group by namespace: `[ "namespace" ]`
         /// </summary>

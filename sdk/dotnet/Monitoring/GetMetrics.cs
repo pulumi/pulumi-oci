@@ -15,8 +15,12 @@ namespace Pulumi.Oci.Monitoring
         /// This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
         /// 
         /// Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-        /// For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-        /// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+        /// For more information, see
+        /// [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+        /// For information about metrics, see
+        /// [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
         /// 
         /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
         /// 
@@ -56,8 +60,12 @@ namespace Pulumi.Oci.Monitoring
         /// This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
         /// 
         /// Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-        /// For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-        /// For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+        /// For more information, see
+        /// [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+        /// For information about metrics, see
+        /// [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+        /// For important limits information, see
+        /// [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
         /// 
         /// Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
         /// 
@@ -133,7 +141,7 @@ namespace Pulumi.Oci.Monitoring
         private List<string>? _groupBies;
 
         /// <summary>
-        /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+        /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
         /// 
         /// Example - group by namespace: `[ "namespace" ]`
         /// </summary>
@@ -205,7 +213,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<string>? _groupBies;
 
         /// <summary>
-        /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+        /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
         /// 
         /// Example - group by namespace: `[ "namespace" ]`
         /// </summary>

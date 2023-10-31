@@ -81,6 +81,7 @@ import javax.annotation.Nullable;
  *             .fastStartFailOverLagLimitInSeconds(var_.autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isAutomaticFailoverEnabled(var_.autonomous_container_database_is_automatic_failover_enabled())
+ *             .isDstFileUpdateEnabled(var_.autonomous_container_database_is_dst_file_update_enabled())
  *             .keyStoreId(oci_database_key_store.test_key_store().id())
  *             .kmsKeyId(oci_kms_key.test_key().id())
  *             .maintenanceWindowDetails(AutonomousContainerDatabaseMaintenanceWindowDetailsArgs.builder()
@@ -312,6 +313,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.displayName;
     }
     /**
+     * DST Time Zone File version of the Autonomous Container Database.
+     * 
+     */
+    @Export(name="dstFileVersion", refs={String.class}, tree="[0]")
+    private Output<String> dstFileVersion;
+
+    /**
+     * @return DST Time Zone File version of the Autonomous Container Database.
+     * 
+     */
+    public Output<String> dstFileVersion() {
+        return this.dstFileVersion;
+    }
+    /**
      * The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
@@ -366,6 +381,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<Boolean> isAutomaticFailoverEnabled() {
         return this.isAutomaticFailoverEnabled;
+    }
+    /**
+     * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    @Export(name="isDstFileUpdateEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDstFileUpdateEnabled;
+
+    /**
+     * @return (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * 
+     */
+    public Output<Boolean> isDstFileUpdateEnabled() {
+        return this.isDstFileUpdateEnabled;
     }
     /**
      * Key History Entry.

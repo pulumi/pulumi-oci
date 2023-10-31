@@ -11,6 +11,11 @@ import java.util.Objects;
 public final class GetAutonomousPatchResult {
     private String autonomousPatchId;
     /**
+     * @return Maintenance run type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    private String autonomousPatchType;
+    /**
      * @return The text describing this patch package.
      * 
      */
@@ -64,6 +69,13 @@ public final class GetAutonomousPatchResult {
     private GetAutonomousPatchResult() {}
     public String autonomousPatchId() {
         return this.autonomousPatchId;
+    }
+    /**
+     * @return Maintenance run type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    public String autonomousPatchType() {
+        return this.autonomousPatchType;
     }
     /**
      * @return The text describing this patch package.
@@ -146,6 +158,7 @@ public final class GetAutonomousPatchResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousPatchId;
+        private String autonomousPatchType;
         private String description;
         private String id;
         private String lifecycleDetails;
@@ -160,6 +173,7 @@ public final class GetAutonomousPatchResult {
         public Builder(GetAutonomousPatchResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousPatchId = defaults.autonomousPatchId;
+    	      this.autonomousPatchType = defaults.autonomousPatchType;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -175,6 +189,11 @@ public final class GetAutonomousPatchResult {
         @CustomType.Setter
         public Builder autonomousPatchId(String autonomousPatchId) {
             this.autonomousPatchId = Objects.requireNonNull(autonomousPatchId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autonomousPatchType(String autonomousPatchType) {
+            this.autonomousPatchType = Objects.requireNonNull(autonomousPatchType);
             return this;
         }
         @CustomType.Setter
@@ -230,6 +249,7 @@ public final class GetAutonomousPatchResult {
         public GetAutonomousPatchResult build() {
             final var o = new GetAutonomousPatchResult();
             o.autonomousPatchId = autonomousPatchId;
+            o.autonomousPatchType = autonomousPatchType;
             o.description = description;
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;

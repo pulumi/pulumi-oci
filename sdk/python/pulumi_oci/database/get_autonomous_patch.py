@@ -21,10 +21,13 @@ class GetAutonomousPatchResult:
     """
     A collection of values returned by getAutonomousPatch.
     """
-    def __init__(__self__, autonomous_patch_id=None, description=None, id=None, lifecycle_details=None, patch_model=None, quarter=None, state=None, time_released=None, type=None, version=None, year=None):
+    def __init__(__self__, autonomous_patch_id=None, autonomous_patch_type=None, description=None, id=None, lifecycle_details=None, patch_model=None, quarter=None, state=None, time_released=None, type=None, version=None, year=None):
         if autonomous_patch_id and not isinstance(autonomous_patch_id, str):
             raise TypeError("Expected argument 'autonomous_patch_id' to be a str")
         pulumi.set(__self__, "autonomous_patch_id", autonomous_patch_id)
+        if autonomous_patch_type and not isinstance(autonomous_patch_type, str):
+            raise TypeError("Expected argument 'autonomous_patch_type' to be a str")
+        pulumi.set(__self__, "autonomous_patch_type", autonomous_patch_type)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -60,6 +63,14 @@ class GetAutonomousPatchResult:
     @pulumi.getter(name="autonomousPatchId")
     def autonomous_patch_id(self) -> str:
         return pulumi.get(self, "autonomous_patch_id")
+
+    @property
+    @pulumi.getter(name="autonomousPatchType")
+    def autonomous_patch_type(self) -> str:
+        """
+        Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+        """
+        return pulumi.get(self, "autonomous_patch_type")
 
     @property
     @pulumi.getter
@@ -149,6 +160,7 @@ class AwaitableGetAutonomousPatchResult(GetAutonomousPatchResult):
             yield self
         return GetAutonomousPatchResult(
             autonomous_patch_id=self.autonomous_patch_id,
+            autonomous_patch_type=self.autonomous_patch_type,
             description=self.description,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
@@ -187,6 +199,7 @@ def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
 
     return AwaitableGetAutonomousPatchResult(
         autonomous_patch_id=pulumi.get(__ret__, 'autonomous_patch_id'),
+        autonomous_patch_type=pulumi.get(__ret__, 'autonomous_patch_type'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),

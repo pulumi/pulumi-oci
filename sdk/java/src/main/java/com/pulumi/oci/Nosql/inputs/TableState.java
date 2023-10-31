@@ -5,9 +5,11 @@ package com.pulumi.oci.Nosql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Nosql.inputs.TableReplicaArgs;
 import com.pulumi.oci.Nosql.inputs.TableSchemaArgs;
 import com.pulumi.oci.Nosql.inputs.TableTableLimitsArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -97,6 +99,21 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * True if this table is currently a member of a replication set.
+     * 
+     */
+    @Import(name="isMultiRegion")
+    private @Nullable Output<Boolean> isMultiRegion;
+
+    /**
+     * @return True if this table is currently a member of a replication set.
+     * 
+     */
+    public Optional<Output<Boolean>> isMultiRegion() {
+        return Optional.ofNullable(this.isMultiRegion);
+    }
+
+    /**
      * A message describing the current state in more detail.
      * 
      */
@@ -112,6 +129,21 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+     * 
+     */
+    @Import(name="localReplicaInitializationInPercent")
+    private @Nullable Output<Integer> localReplicaInitializationInPercent;
+
+    /**
+     * @return If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+     * 
+     */
+    public Optional<Output<Integer>> localReplicaInitializationInPercent() {
+        return Optional.ofNullable(this.localReplicaInitializationInPercent);
+    }
+
+    /**
      * Table name.
      * 
      */
@@ -124,6 +156,36 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * An array of Replica listing this table&#39;s replicas, if any
+     * 
+     */
+    @Import(name="replicas")
+    private @Nullable Output<List<TableReplicaArgs>> replicas;
+
+    /**
+     * @return An array of Replica listing this table&#39;s replicas, if any
+     * 
+     */
+    public Optional<Output<List<TableReplicaArgs>>> replicas() {
+        return Optional.ofNullable(this.replicas);
+    }
+
+    /**
+     * The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     * 
+     */
+    @Import(name="schemaState")
+    private @Nullable Output<String> schemaState;
+
+    /**
+     * @return The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+     * 
+     */
+    public Optional<Output<String>> schemaState() {
+        return Optional.ofNullable(this.schemaState);
     }
 
     /**
@@ -239,8 +301,12 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isAutoReclaimable = $.isAutoReclaimable;
+        this.isMultiRegion = $.isMultiRegion;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.localReplicaInitializationInPercent = $.localReplicaInitializationInPercent;
         this.name = $.name;
+        this.replicas = $.replicas;
+        this.schemaState = $.schemaState;
         this.schemas = $.schemas;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -374,6 +440,27 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isMultiRegion True if this table is currently a member of a replication set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMultiRegion(@Nullable Output<Boolean> isMultiRegion) {
+            $.isMultiRegion = isMultiRegion;
+            return this;
+        }
+
+        /**
+         * @param isMultiRegion True if this table is currently a member of a replication set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMultiRegion(Boolean isMultiRegion) {
+            return isMultiRegion(Output.of(isMultiRegion));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail.
          * 
          * @return builder
@@ -395,6 +482,27 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param localReplicaInitializationInPercent If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localReplicaInitializationInPercent(@Nullable Output<Integer> localReplicaInitializationInPercent) {
+            $.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
+            return this;
+        }
+
+        /**
+         * @param localReplicaInitializationInPercent If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localReplicaInitializationInPercent(Integer localReplicaInitializationInPercent) {
+            return localReplicaInitializationInPercent(Output.of(localReplicaInitializationInPercent));
+        }
+
+        /**
          * @param name Table name.
          * 
          * @return builder
@@ -413,6 +521,58 @@ public final class TableState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param replicas An array of Replica listing this table&#39;s replicas, if any
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicas(@Nullable Output<List<TableReplicaArgs>> replicas) {
+            $.replicas = replicas;
+            return this;
+        }
+
+        /**
+         * @param replicas An array of Replica listing this table&#39;s replicas, if any
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicas(List<TableReplicaArgs> replicas) {
+            return replicas(Output.of(replicas));
+        }
+
+        /**
+         * @param replicas An array of Replica listing this table&#39;s replicas, if any
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicas(TableReplicaArgs... replicas) {
+            return replicas(List.of(replicas));
+        }
+
+        /**
+         * @param schemaState The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schemaState(@Nullable Output<String> schemaState) {
+            $.schemaState = schemaState;
+            return this;
+        }
+
+        /**
+         * @param schemaState The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder schemaState(String schemaState) {
+            return schemaState(Output.of(schemaState));
         }
 
         /**

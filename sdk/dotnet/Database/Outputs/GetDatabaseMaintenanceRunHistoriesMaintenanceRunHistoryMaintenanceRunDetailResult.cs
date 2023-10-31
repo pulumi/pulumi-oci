@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsCustomActionTimeoutEnabled;
         /// <summary>
+        /// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+        /// </summary>
+        public readonly bool IsDstFileUpdateEnabled;
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -148,6 +152,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isCustomActionTimeoutEnabled,
 
+            bool isDstFileUpdateEnabled,
+
             string lifecycleDetails,
 
             string maintenanceSubtype,
@@ -194,6 +200,7 @@ namespace Pulumi.Oci.Database.Outputs
             EstimatedPatchingTimes = estimatedPatchingTimes;
             Id = id;
             IsCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            IsDstFileUpdateEnabled = isDstFileUpdateEnabled;
             LifecycleDetails = lifecycleDetails;
             MaintenanceSubtype = maintenanceSubtype;
             MaintenanceType = maintenanceType;

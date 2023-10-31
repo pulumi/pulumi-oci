@@ -20,7 +20,45 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
  * 
- * Updates the properties of a maintenance run, such as the state of a maintenance run.
+ * Creates a maintenance run with one of the following:
+ * The latest available release update patch (RUP) for the Autonomous Container Database.
+ * The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+ * Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+ * 
+ * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.MaintenanceRun;
+ * import com.pulumi.oci.Database.MaintenanceRunArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMaintenanceRun = new MaintenanceRun(&#34;testMaintenanceRun&#34;, MaintenanceRunArgs.builder()        
+ *             .patchType(var_.maintenance_run_patch_type())
+ *             .targetResourceId(oci_usage_proxy_resource.test_resource().id())
+ *             .timeScheduled(var_.maintenance_run_time_scheduled())
+ *             .compartmentId(var_.compartment_id())
+ *             .isDstFileUpdateEnabled(var_.maintenance_run_is_dst_file_update_enabled())
+ *             .patchingMode(var_.maintenance_run_patching_mode())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -34,28 +72,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/maintenanceRun:MaintenanceRun")
 public class MaintenanceRun extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+     * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      * 
      */
     @Export(name="currentCustomActionTimeoutInMins", refs={Integer.class}, tree="[0]")
     private Output<Integer> currentCustomActionTimeoutInMins;
 
     /**
-     * @return (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+     * @return Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      * 
      */
     public Output<Integer> currentCustomActionTimeoutInMins() {
@@ -76,14 +114,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.currentPatchingComponent;
     }
     /**
-     * (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+     * Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      * 
      */
     @Export(name="customActionTimeoutInMins", refs={Integer.class}, tree="[0]")
     private Output<Integer> customActionTimeoutInMins;
 
     /**
-     * @return (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
+     * @return Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      * 
      */
     public Output<Integer> customActionTimeoutInMins() {
@@ -146,60 +184,32 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.estimatedPatchingTimes;
     }
     /**
-     * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * 
      */
     @Export(name="isCustomActionTimeoutEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCustomActionTimeoutEnabled;
 
     /**
-     * @return (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     * @return If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * 
      */
     public Output<Boolean> isCustomActionTimeoutEnabled() {
         return this.isCustomActionTimeoutEnabled;
     }
     /**
-     * (Updatable) If `FALSE`, skips the maintenance run.
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnabled;
+    @Export(name="isDstFileUpdateEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDstFileUpdateEnabled;
 
     /**
-     * @return (Updatable) If `FALSE`, skips the maintenance run.
+     * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
-    }
-    /**
-     * (Updatable) If set to `TRUE`, starts patching immediately.
-     * 
-     */
-    @Export(name="isPatchNowEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPatchNowEnabled;
-
-    /**
-     * @return (Updatable) If set to `TRUE`, starts patching immediately.
-     * 
-     */
-    public Output<Boolean> isPatchNowEnabled() {
-        return this.isPatchNowEnabled;
-    }
-    /**
-     * (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-     * 
-     */
-    @Export(name="isResumePatching", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isResumePatching;
-
-    /**
-     * @return (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
-     * 
-     */
-    public Output<Boolean> isResumePatching() {
-        return this.isResumePatching;
+    public Output<Boolean> isDstFileUpdateEnabled() {
+        return this.isDstFileUpdateEnabled;
     }
     /**
      * Additional information about the current lifecycle state.
@@ -214,20 +224,6 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
-    }
-    /**
-     * The maintenance run OCID.
-     * 
-     */
-    @Export(name="maintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> maintenanceRunId;
-
-    /**
-     * @return The maintenance run OCID.
-     * 
-     */
-    public Output<String> maintenanceRunId() {
-        return this.maintenanceRunId;
     }
     /**
      * Maintenance sub-type.
@@ -272,18 +268,32 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.patchFailureCount;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
     @Export(name="patchId", refs={String.class}, tree="[0]")
     private Output<String> patchId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+     * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
     public Output<String> patchId() {
         return this.patchId;
+    }
+    /**
+     * Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    @Export(name="patchType", refs={String.class}, tree="[0]")
+    private Output<String> patchType;
+
+    /**
+     * @return Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
+     * 
+     */
+    public Output<String> patchType() {
+        return this.patchType;
     }
     /**
      * The time when the patching operation ended.
@@ -374,28 +384,28 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * (Updatable) The target database server system software version for the patching operation.
+     * The target software version for the database server patching operation.
      * 
      */
     @Export(name="targetDbServerVersion", refs={String.class}, tree="[0]")
     private Output<String> targetDbServerVersion;
 
     /**
-     * @return (Updatable) The target database server system software version for the patching operation.
+     * @return The target software version for the database server patching operation.
      * 
      */
     public Output<String> targetDbServerVersion() {
         return this.targetDbServerVersion;
     }
     /**
-     * The ID of the target resource on which the maintenance run occurs.
+     * The ID of the target resource for which the maintenance run should be created.
      * 
      */
     @Export(name="targetResourceId", refs={String.class}, tree="[0]")
     private Output<String> targetResourceId;
 
     /**
-     * @return The ID of the target resource on which the maintenance run occurs.
+     * @return The ID of the target resource for which the maintenance run should be created.
      * 
      */
     public Output<String> targetResourceId() {
@@ -416,14 +426,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.targetResourceType;
     }
     /**
-     * (Updatable) The target storage cell system software version for the patching operation.
+     * The target Cell version that is to be patched to.
      * 
      */
     @Export(name="targetStorageServerVersion", refs={String.class}, tree="[0]")
     private Output<String> targetStorageServerVersion;
 
     /**
-     * @return (Updatable) The target storage cell system software version for the patching operation.
+     * @return The target Cell version that is to be patched to.
      * 
      */
     public Output<String> targetStorageServerVersion() {
@@ -444,7 +454,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.timeEnded;
     }
     /**
-     * (Updatable) The scheduled date and time of the maintenance run to update.
+     * (Updatable) The date and time that update should be scheduled.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -454,7 +464,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
     private Output<String> timeScheduled;
 
     /**
-     * @return (Updatable) The scheduled date and time of the maintenance run to update.
+     * @return (Updatable) The date and time that update should be scheduled.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

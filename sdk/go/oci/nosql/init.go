@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Index{}
 	case "oci:Nosql/table:Table":
 		r = &Table{}
+	case "oci:Nosql/tableReplica:TableReplica":
+		r = &TableReplica{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +48,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Nosql/table",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Nosql/tableReplica",
 		&module{version},
 	)
 }

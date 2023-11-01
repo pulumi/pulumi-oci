@@ -38,6 +38,7 @@ import (
 //				Fields:                          pulumi.Any(_var.Monitored_resources_search_fields),
 //				HostName:                        pulumi.Any(_var.Monitored_resources_search_host_name),
 //				HostNameContains:                pulumi.Any(_var.Monitored_resources_search_host_name_contains),
+//				License:                         pulumi.Any(_var.Monitored_resources_search_license),
 //				ManagementAgentId:               pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
 //				NameContains:                    pulumi.Any(_var.Monitored_resources_search_name_contains),
 //				PropertyEquals:                  pulumi.Any(_var.Monitored_resources_search_property_equals),
@@ -84,6 +85,8 @@ type MonitoredResourcesSearch struct {
 	HostNameContains pulumi.StringPtrOutput `pulumi:"hostNameContains"`
 	// List of monitored resources.
 	Items MonitoredResourcesSearchItemArrayOutput `pulumi:"items"`
+	// License edition of the monitored resource.
+	License pulumi.StringOutput `pulumi:"license"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -166,6 +169,8 @@ type monitoredResourcesSearchState struct {
 	HostNameContains *string `pulumi:"hostNameContains"`
 	// List of monitored resources.
 	Items []MonitoredResourcesSearchItem `pulumi:"items"`
+	// License edition of the monitored resource.
+	License *string `pulumi:"license"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -216,6 +221,8 @@ type MonitoredResourcesSearchState struct {
 	HostNameContains pulumi.StringPtrInput
 	// List of monitored resources.
 	Items MonitoredResourcesSearchItemArrayInput
+	// License edition of the monitored resource.
+	License pulumi.StringPtrInput
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrInput
 	// A filter to return resources that match exact resource name.
@@ -268,6 +275,8 @@ type monitoredResourcesSearchArgs struct {
 	HostName *string `pulumi:"hostName"`
 	// A filter to return resources with host name pattern.
 	HostNameContains *string `pulumi:"hostNameContains"`
+	// License edition of the monitored resource.
+	License *string `pulumi:"license"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -317,6 +326,8 @@ type MonitoredResourcesSearchArgs struct {
 	HostName pulumi.StringPtrInput
 	// A filter to return resources with host name pattern.
 	HostNameContains pulumi.StringPtrInput
+	// License edition of the monitored resource.
+	License pulumi.StringPtrInput
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrInput
 	// A filter to return resources that match exact resource name.
@@ -496,6 +507,11 @@ func (o MonitoredResourcesSearchOutput) HostNameContains() pulumi.StringPtrOutpu
 // List of monitored resources.
 func (o MonitoredResourcesSearchOutput) Items() MonitoredResourcesSearchItemArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearch) MonitoredResourcesSearchItemArrayOutput { return v.Items }).(MonitoredResourcesSearchItemArrayOutput)
+}
+
+// License edition of the monitored resource.
+func (o MonitoredResourcesSearchOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringOutput { return v.License }).(pulumi.StringOutput)
 }
 
 // A filter to return resources with matching management agent id.

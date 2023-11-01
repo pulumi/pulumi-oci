@@ -539,6 +539,7 @@ class MysqlBackupDbSystemSnapshotArgs:
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  crash_recovery: Optional[pulumi.Input[str]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+                 database_management: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -564,6 +565,7 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
         :param pulumi.Input[str] crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param pulumi.Input[str] database_management: Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]] deletion_policies: The Deletion policy for the DB System.
         :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
@@ -596,6 +598,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "crash_recovery", crash_recovery)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if database_management is not None:
+            pulumi.set(__self__, "database_management", database_management)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deletion_policies is not None:
@@ -714,6 +718,18 @@ class MysqlBackupDbSystemSnapshotArgs:
     @data_storage_size_in_gb.setter
     def data_storage_size_in_gb(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @property
+    @pulumi.getter(name="databaseManagement")
+    def database_management(self) -> Optional[pulumi.Input[str]]:
+        """
+        Whether to enable monitoring via the Database Management service.
+        """
+        return pulumi.get(self, "database_management")
+
+    @database_management.setter
+    def database_management(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_management", value)
 
     @property
     @pulumi.getter(name="definedTags")

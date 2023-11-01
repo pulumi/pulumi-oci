@@ -161,14 +161,14 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
         return this.dataType;
     }
     /**
-     * (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
+     * (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
      * 
      */
     @Export(name="isMaskingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMaskingEnabled;
 
     /**
-     * @return (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
+     * @return (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
      * 
      */
     public Output<Boolean> isMaskingEnabled() {

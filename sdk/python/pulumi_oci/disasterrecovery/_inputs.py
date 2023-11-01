@@ -22,6 +22,14 @@ __all__ = [
     'DrProtectionGroupAssociationArgs',
     'DrProtectionGroupLogLocationArgs',
     'DrProtectionGroupMemberArgs',
+    'DrProtectionGroupMemberBackendSetMappingArgs',
+    'DrProtectionGroupMemberBlockVolumeOperationArgs',
+    'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs',
+    'DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs',
+    'DrProtectionGroupMemberExportMappingArgs',
+    'DrProtectionGroupMemberFileSystemOperationArgs',
+    'DrProtectionGroupMemberFileSystemOperationMountDetailsArgs',
+    'DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs',
     'DrProtectionGroupMemberVnicMappingArgs',
     'GetDrPlanExecutionsFilterArgs',
     'GetDrPlansFilterArgs',
@@ -95,15 +103,15 @@ class DrPlanExecutionGroupExecutionArgs:
                  time_started: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
-        :param pulumi.Input[int] execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param pulumi.Input[str] group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
+        :param pulumi.Input[int] execution_duration_in_sec: The total duration in seconds taken to complete the step execution.  Example: `35`
+        :param pulumi.Input[str] group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         :param pulumi.Input[str] status: The status of the step execution.
-        :param pulumi.Input[str] status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
-        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgs']]] step_executions: A list of details of each step executed in this group.
-        :param pulumi.Input[str] time_ended: The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The plan group type.
+        :param pulumi.Input[str] status_details: Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgs']]] step_executions: A list of step executions in the group.
+        :param pulumi.Input[str] time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] type: The group type.  Example: `BUILT_IN`
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -128,7 +136,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+        (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
         """
         return pulumi.get(self, "display_name")
 
@@ -140,7 +148,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter(name="executionDurationInSec")
     def execution_duration_in_sec(self) -> Optional[pulumi.Input[int]]:
         """
-        The total duration in seconds taken to complete step execution.  Example: `35`
+        The total duration in seconds taken to complete the step execution.  Example: `35`
         """
         return pulumi.get(self, "execution_duration_in_sec")
 
@@ -152,7 +160,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         """
         return pulumi.get(self, "group_id")
 
@@ -176,7 +184,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter(name="statusDetails")
     def status_details(self) -> Optional[pulumi.Input[str]]:
         """
-        Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+        Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
         """
         return pulumi.get(self, "status_details")
 
@@ -188,7 +196,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter(name="stepExecutions")
     def step_executions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgs']]]]:
         """
-        A list of details of each step executed in this group.
+        A list of step executions in the group.
         """
         return pulumi.get(self, "step_executions")
 
@@ -200,7 +208,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_ended")
 
@@ -212,7 +220,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_started")
 
@@ -224,7 +232,7 @@ class DrPlanExecutionGroupExecutionArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The plan group type.
+        The group type.  Example: `BUILT_IN`
         """
         return pulumi.get(self, "type")
 
@@ -247,16 +255,16 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
                  time_started: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
-        :param pulumi.Input[int] execution_duration_in_sec: The total duration in seconds taken to complete step execution.  Example: `35`
-        :param pulumi.Input[str] group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
-        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs']]] log_locations: Information about an Object Storage log location for a DR Protection Group.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
+        :param pulumi.Input[int] execution_duration_in_sec: The total duration in seconds taken to complete the step execution.  Example: `35`
+        :param pulumi.Input[str] group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs']]] log_locations: The details of an object storage log location for a DR protection group.
         :param pulumi.Input[str] status: The status of the step execution.
-        :param pulumi.Input[str] status_details: Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
-        :param pulumi.Input[str] step_id: The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
-        :param pulumi.Input[str] time_ended: The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The plan group type.
+        :param pulumi.Input[str] status_details: Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
+        :param pulumi.Input[str] step_id: The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
+        :param pulumi.Input[str] time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] type: The group type.  Example: `BUILT_IN`
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -283,7 +291,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+        (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
         """
         return pulumi.get(self, "display_name")
 
@@ -295,7 +303,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="executionDurationInSec")
     def execution_duration_in_sec(self) -> Optional[pulumi.Input[int]]:
         """
-        The total duration in seconds taken to complete step execution.  Example: `35`
+        The total duration in seconds taken to complete the step execution.  Example: `35`
         """
         return pulumi.get(self, "execution_duration_in_sec")
 
@@ -307,7 +315,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         """
         return pulumi.get(self, "group_id")
 
@@ -319,7 +327,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="logLocations")
     def log_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs']]]]:
         """
-        Information about an Object Storage log location for a DR Protection Group.
+        The details of an object storage log location for a DR protection group.
         """
         return pulumi.get(self, "log_locations")
 
@@ -343,7 +351,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="statusDetails")
     def status_details(self) -> Optional[pulumi.Input[str]]:
         """
-        Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+        Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
         """
         return pulumi.get(self, "status_details")
 
@@ -355,7 +363,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="stepId")
     def step_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+        The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
         """
         return pulumi.get(self, "step_id")
 
@@ -367,7 +375,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_ended")
 
@@ -379,7 +387,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_started")
 
@@ -391,7 +399,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The plan group type.
+        The group type.  Example: `BUILT_IN`
         """
         return pulumi.get(self, "type")
 
@@ -407,9 +415,9 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bucket: The bucket name inside the Object Storage namespace.  Example: `operation_logs`
-        :param pulumi.Input[str] namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        :param pulumi.Input[str] object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+        :param pulumi.Input[str] bucket: The bucket name inside the object storage namespace.  Example: `operation_logs`
+        :param pulumi.Input[str] namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -422,7 +430,7 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
         """
-        The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+        The bucket name inside the object storage namespace.  Example: `operation_logs`
         """
         return pulumi.get(self, "bucket")
 
@@ -434,7 +442,7 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         """
         return pulumi.get(self, "namespace")
 
@@ -446,7 +454,7 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
         """
-        The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
         return pulumi.get(self, "object")
 
@@ -462,9 +470,9 @@ class DrPlanExecutionLogLocationArgs:
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bucket: The bucket name inside the Object Storage namespace.  Example: `operation_logs`
-        :param pulumi.Input[str] namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        :param pulumi.Input[str] object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+        :param pulumi.Input[str] bucket: The bucket name inside the object storage namespace.  Example: `operation_logs`
+        :param pulumi.Input[str] namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -477,7 +485,7 @@ class DrPlanExecutionLogLocationArgs:
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
         """
-        The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+        The bucket name inside the object storage namespace.  Example: `operation_logs`
         """
         return pulumi.get(self, "bucket")
 
@@ -489,7 +497,7 @@ class DrPlanExecutionLogLocationArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         """
         return pulumi.get(self, "namespace")
 
@@ -501,7 +509,7 @@ class DrPlanExecutionLogLocationArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
         """
-        The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
         return pulumi.get(self, "object")
 
@@ -518,10 +526,10 @@ class DrPlanPlanGroupArgs:
                  steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
-        :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]] steps: The list of steps in this plan group.
-        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
+        :param pulumi.Input[str] id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]] steps: The list of steps in the group.
+        :param pulumi.Input[str] type: The type of DR plan to be created. 
                
                
                ** IMPORTANT **
@@ -540,7 +548,7 @@ class DrPlanPlanGroupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         """
         return pulumi.get(self, "display_name")
 
@@ -552,7 +560,7 @@ class DrPlanPlanGroupArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+        The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         """
         return pulumi.get(self, "id")
 
@@ -564,7 +572,7 @@ class DrPlanPlanGroupArgs:
     @pulumi.getter
     def steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]]:
         """
-        The list of steps in this plan group.
+        The list of steps in the group.
         """
         return pulumi.get(self, "steps")
 
@@ -576,7 +584,7 @@ class DrPlanPlanGroupArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR Plan to be created. 
+        The type of DR plan to be created. 
 
 
         ** IMPORTANT **
@@ -602,19 +610,19 @@ class DrPlanPlanGroupStepArgs:
                  type: Optional[pulumi.Input[str]] = None,
                  user_defined_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] error_mode: The error mode for this step.
-        :param pulumi.Input[str] group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
-        :param pulumi.Input[str] id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+        :param pulumi.Input[str] group_id: The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
+        :param pulumi.Input[str] id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param pulumi.Input[bool] is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
-        :param pulumi.Input[str] member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+        :param pulumi.Input[str] member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         :param pulumi.Input[int] timeout: The timeout in seconds for executing this step.  Example: `600`
-        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+        :param pulumi.Input[str] type: The type of DR plan to be created. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]] user_defined_steps: The details for a user-defined step in a DR Plan.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]] user_defined_steps: The details for a user-defined step in a DR plan.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -639,7 +647,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         """
         return pulumi.get(self, "display_name")
 
@@ -663,7 +671,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+        The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         """
         return pulumi.get(self, "group_id")
 
@@ -675,7 +683,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+        The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         """
         return pulumi.get(self, "id")
 
@@ -699,7 +707,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter(name="memberId")
     def member_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+        The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         """
         return pulumi.get(self, "member_id")
 
@@ -723,7 +731,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR Plan to be created. 
+        The type of DR plan to be created. 
 
 
         ** IMPORTANT **
@@ -739,7 +747,7 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter(name="userDefinedSteps")
     def user_defined_steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]]]:
         """
-        The details for a user-defined step in a DR Plan.
+        The details for a user-defined step in a DR plan.
         """
         return pulumi.get(self, "user_defined_steps")
 
@@ -761,15 +769,15 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
                  script_command: Optional[pulumi.Input[str]] = None,
                  step_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+        :param pulumi.Input[str] function_id: The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
         :param pulumi.Input[str] function_region: The region in which the function is deployed.  Example: `us-ashburn-1`
-        :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs']]] object_storage_script_locations: Information about an Object Storage script location for a user-defined step in a DR Plan.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs']]] object_storage_script_locations: The details of an object storage script location for a user-defined step in a DR plan.
         :param pulumi.Input[str] request_body: The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
         :param pulumi.Input[str] run_as_user: The userid on the instance to be used for executing the script or command.  Example: `opc`
-        :param pulumi.Input[str] run_on_instance_id: The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
-        :param pulumi.Input[str] run_on_instance_region: The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+        :param pulumi.Input[str] run_on_instance_id: The OCID of the instance on which this script or command should be executed.
+        :param pulumi.Input[str] run_on_instance_region: The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
         :param pulumi.Input[str] script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
-        :param pulumi.Input[str] step_type: The type of the step.
+        :param pulumi.Input[str] step_type: The type of the user-defined step.
         """
         if function_id is not None:
             pulumi.set(__self__, "function_id", function_id)
@@ -794,7 +802,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+        The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
         """
         return pulumi.get(self, "function_id")
 
@@ -818,7 +826,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="objectStorageScriptLocations")
     def object_storage_script_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs']]]]:
         """
-        Information about an Object Storage script location for a user-defined step in a DR Plan.
+        The details of an object storage script location for a user-defined step in a DR plan.
         """
         return pulumi.get(self, "object_storage_script_locations")
 
@@ -854,7 +862,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="runOnInstanceId")
     def run_on_instance_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+        The OCID of the instance on which this script or command should be executed.
         """
         return pulumi.get(self, "run_on_instance_id")
 
@@ -866,7 +874,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="runOnInstanceRegion")
     def run_on_instance_region(self) -> Optional[pulumi.Input[str]]:
         """
-        The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+        The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
         """
         return pulumi.get(self, "run_on_instance_region")
 
@@ -890,7 +898,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="stepType")
     def step_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of the step.
+        The type of the user-defined step.
         """
         return pulumi.get(self, "step_type")
 
@@ -906,9 +914,9 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bucket: The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
-        :param pulumi.Input[str] namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        :param pulumi.Input[str] object: The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+        :param pulumi.Input[str] bucket: The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+        :param pulumi.Input[str] namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `validate_app_start.sh`
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -921,7 +929,7 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
         """
-        The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+        The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
         """
         return pulumi.get(self, "bucket")
 
@@ -933,7 +941,7 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         """
         return pulumi.get(self, "namespace")
 
@@ -945,7 +953,7 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
         """
-        The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+        The object name inside the object storage bucket.  Example: `validate_app_start.sh`
         """
         return pulumi.get(self, "object")
 
@@ -961,9 +969,9 @@ class DrProtectionGroupAssociationArgs:
                  peer_id: Optional[pulumi.Input[str]] = None,
                  peer_region: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] role: The role of this DR Protection Group.
-        :param pulumi.Input[str] peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
-        :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        :param pulumi.Input[str] role: The role of the DR protection group.  Example: `STANDBY`
+        :param pulumi.Input[str] peer_id: The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+        :param pulumi.Input[str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
         """
         pulumi.set(__self__, "role", role)
         if peer_id is not None:
@@ -975,7 +983,7 @@ class DrProtectionGroupAssociationArgs:
     @pulumi.getter
     def role(self) -> pulumi.Input[str]:
         """
-        The role of this DR Protection Group.
+        The role of the DR protection group.  Example: `STANDBY`
         """
         return pulumi.get(self, "role")
 
@@ -987,7 +995,7 @@ class DrProtectionGroupAssociationArgs:
     @pulumi.getter(name="peerId")
     def peer_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_id")
 
@@ -999,7 +1007,7 @@ class DrProtectionGroupAssociationArgs:
     @pulumi.getter(name="peerRegion")
     def peer_region(self) -> Optional[pulumi.Input[str]]:
         """
-        The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        The region of the peer DR protection group.  Example: `us-ashburn-1`
         """
         return pulumi.get(self, "peer_region")
 
@@ -1015,9 +1023,9 @@ class DrProtectionGroupLogLocationArgs:
                  namespace: pulumi.Input[str],
                  object: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bucket: (Updatable) The bucket name inside the Object Storage namespace.  Example: `operation_logs`
-        :param pulumi.Input[str] namespace: (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
-        :param pulumi.Input[str] object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+        :param pulumi.Input[str] bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+        :param pulumi.Input[str] namespace: (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -1028,7 +1036,7 @@ class DrProtectionGroupLogLocationArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
         """
-        (Updatable) The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+        (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
         """
         return pulumi.get(self, "bucket")
 
@@ -1040,7 +1048,7 @@ class DrProtectionGroupLogLocationArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         """
         return pulumi.get(self, "namespace")
 
@@ -1052,7 +1060,7 @@ class DrProtectionGroupLogLocationArgs:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
         """
-        The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+        The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
         return pulumi.get(self, "object")
 
@@ -1066,38 +1074,70 @@ class DrProtectionGroupMemberArgs:
     def __init__(__self__, *,
                  member_id: pulumi.Input[str],
                  member_type: pulumi.Input[str],
+                 backend_set_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]]] = None,
+                 block_volume_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]]] = None,
+                 destination_availability_domain: Optional[pulumi.Input[str]] = None,
                  destination_capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  destination_compartment_id: Optional[pulumi.Input[str]] = None,
                  destination_dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+                 destination_load_balancer_id: Optional[pulumi.Input[str]] = None,
+                 destination_network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+                 export_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]]] = None,
+                 file_system_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]]] = None,
                  is_movable: Optional[pulumi.Input[bool]] = None,
                  is_retain_fault_domain: Optional[pulumi.Input[bool]] = None,
+                 is_start_stop_enabled: Optional[pulumi.Input[bool]] = None,
                  password_vault_secret_id: Optional[pulumi.Input[str]] = None,
                  vnic_mapping: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
                  vnic_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None):
         """
-        :param pulumi.Input[str] member_id: (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+        :param pulumi.Input[str] member_id: (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         :param pulumi.Input[str] member_type: (Updatable) The type of the member.
-        :param pulumi.Input[str] destination_capacity_reservation_id: (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
-        :param pulumi.Input[str] destination_compartment_id: (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
-        :param pulumi.Input[str] destination_dedicated_vm_host_id: (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
-        :param pulumi.Input[bool] is_movable: (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
-        :param pulumi.Input[bool] is_retain_fault_domain: (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
-        :param pulumi.Input[str] password_vault_secret_id: (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
-        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mapping: (Updatable) A list of Compute Instance VNIC mappings.
-        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mappings: (Updatable) A list of Compute Instance VNIC mappings.
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]] backend_set_mappings: (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]] block_volume_operations: (Updatable) A list of operations performed on block volumes used by the compute instance.
+        :param pulumi.Input[str] destination_availability_domain: (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+        :param pulumi.Input[str] destination_capacity_reservation_id: (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
+        :param pulumi.Input[str] destination_compartment_id: (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
+        :param pulumi.Input[str] destination_dedicated_vm_host_id: (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
+        :param pulumi.Input[str] destination_load_balancer_id: (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        :param pulumi.Input[str] destination_network_load_balancer_id: (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]] export_mappings: (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]] file_system_operations: (Updatable) A list of operations performed on file systems used by the compute instance.
+        :param pulumi.Input[bool] is_movable: (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
+        :param pulumi.Input[bool] is_retain_fault_domain: (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
+        :param pulumi.Input[bool] is_start_stop_enabled: (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+        :param pulumi.Input[str] password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mapping: (Updatable) A list of compute instance VNIC mappings.
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mappings: (Updatable) A list of compute instance VNIC mappings.
         """
         pulumi.set(__self__, "member_id", member_id)
         pulumi.set(__self__, "member_type", member_type)
+        if backend_set_mappings is not None:
+            pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
+        if block_volume_operations is not None:
+            pulumi.set(__self__, "block_volume_operations", block_volume_operations)
+        if destination_availability_domain is not None:
+            pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
         if destination_capacity_reservation_id is not None:
             pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
         if destination_compartment_id is not None:
             pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
         if destination_dedicated_vm_host_id is not None:
             pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+        if destination_load_balancer_id is not None:
+            pulumi.set(__self__, "destination_load_balancer_id", destination_load_balancer_id)
+        if destination_network_load_balancer_id is not None:
+            pulumi.set(__self__, "destination_network_load_balancer_id", destination_network_load_balancer_id)
+        if export_mappings is not None:
+            pulumi.set(__self__, "export_mappings", export_mappings)
+        if file_system_operations is not None:
+            pulumi.set(__self__, "file_system_operations", file_system_operations)
         if is_movable is not None:
             pulumi.set(__self__, "is_movable", is_movable)
         if is_retain_fault_domain is not None:
             pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
+        if is_start_stop_enabled is not None:
+            pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
         if password_vault_secret_id is not None:
             pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         if vnic_mapping is not None:
@@ -1109,7 +1149,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="memberId")
     def member_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+        (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         """
         return pulumi.get(self, "member_id")
 
@@ -1130,10 +1170,46 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "member_type", value)
 
     @property
+    @pulumi.getter(name="backendSetMappings")
+    def backend_set_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]]]:
+        """
+        (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+        """
+        return pulumi.get(self, "backend_set_mappings")
+
+    @backend_set_mappings.setter
+    def backend_set_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]]]):
+        pulumi.set(self, "backend_set_mappings", value)
+
+    @property
+    @pulumi.getter(name="blockVolumeOperations")
+    def block_volume_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]]]:
+        """
+        (Updatable) A list of operations performed on block volumes used by the compute instance.
+        """
+        return pulumi.get(self, "block_volume_operations")
+
+    @block_volume_operations.setter
+    def block_volume_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]]]):
+        pulumi.set(self, "block_volume_operations", value)
+
+    @property
+    @pulumi.getter(name="destinationAvailabilityDomain")
+    def destination_availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+        """
+        return pulumi.get(self, "destination_availability_domain")
+
+    @destination_availability_domain.setter
+    def destination_availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_availability_domain", value)
+
+    @property
     @pulumi.getter(name="destinationCapacityReservationId")
     def destination_capacity_reservation_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+        (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         """
         return pulumi.get(self, "destination_capacity_reservation_id")
 
@@ -1145,7 +1221,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="destinationCompartmentId")
     def destination_compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
         """
         return pulumi.get(self, "destination_compartment_id")
 
@@ -1157,7 +1233,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="destinationDedicatedVmHostId")
     def destination_dedicated_vm_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
+        (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
         """
         return pulumi.get(self, "destination_dedicated_vm_host_id")
 
@@ -1166,10 +1242,58 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "destination_dedicated_vm_host_id", value)
 
     @property
+    @pulumi.getter(name="destinationLoadBalancerId")
+    def destination_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_load_balancer_id")
+
+    @destination_load_balancer_id.setter
+    def destination_load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_load_balancer_id", value)
+
+    @property
+    @pulumi.getter(name="destinationNetworkLoadBalancerId")
+    def destination_network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_network_load_balancer_id")
+
+    @destination_network_load_balancer_id.setter
+    def destination_network_load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_network_load_balancer_id", value)
+
+    @property
+    @pulumi.getter(name="exportMappings")
+    def export_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]]]:
+        """
+        (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+        """
+        return pulumi.get(self, "export_mappings")
+
+    @export_mappings.setter
+    def export_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]]]):
+        pulumi.set(self, "export_mappings", value)
+
+    @property
+    @pulumi.getter(name="fileSystemOperations")
+    def file_system_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]]]:
+        """
+        (Updatable) A list of operations performed on file systems used by the compute instance.
+        """
+        return pulumi.get(self, "file_system_operations")
+
+    @file_system_operations.setter
+    def file_system_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]]]):
+        pulumi.set(self, "file_system_operations", value)
+
+    @property
     @pulumi.getter(name="isMovable")
     def is_movable(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+        (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         """
         return pulumi.get(self, "is_movable")
 
@@ -1181,7 +1305,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="isRetainFaultDomain")
     def is_retain_fault_domain(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         """
         return pulumi.get(self, "is_retain_fault_domain")
 
@@ -1190,10 +1314,22 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "is_retain_fault_domain", value)
 
     @property
+    @pulumi.getter(name="isStartStopEnabled")
+    def is_start_stop_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+        """
+        return pulumi.get(self, "is_start_stop_enabled")
+
+    @is_start_stop_enabled.setter
+    def is_start_stop_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_start_stop_enabled", value)
+
+    @property
     @pulumi.getter(name="passwordVaultSecretId")
     def password_vault_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+        (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         """
         return pulumi.get(self, "password_vault_secret_id")
 
@@ -1205,7 +1341,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="vnicMapping")
     def vnic_mapping(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]]:
         """
-        (Updatable) A list of Compute Instance VNIC mappings.
+        (Updatable) A list of compute instance VNIC mappings.
         """
         return pulumi.get(self, "vnic_mapping")
 
@@ -1217,13 +1353,341 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="vnicMappings")
     def vnic_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]]:
         """
-        (Updatable) A list of Compute Instance VNIC mappings.
+        (Updatable) A list of compute instance VNIC mappings.
         """
         return pulumi.get(self, "vnic_mappings")
 
     @vnic_mappings.setter
     def vnic_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]]):
         pulumi.set(self, "vnic_mappings", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberBackendSetMappingArgs:
+    def __init__(__self__, *,
+                 destination_backend_set_name: Optional[pulumi.Input[str]] = None,
+                 is_backend_set_for_non_movable: Optional[pulumi.Input[bool]] = None,
+                 source_backend_set_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_backend_set_name: (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+        :param pulumi.Input[bool] is_backend_set_for_non_movable: (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+        :param pulumi.Input[str] source_backend_set_name: (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+        """
+        if destination_backend_set_name is not None:
+            pulumi.set(__self__, "destination_backend_set_name", destination_backend_set_name)
+        if is_backend_set_for_non_movable is not None:
+            pulumi.set(__self__, "is_backend_set_for_non_movable", is_backend_set_for_non_movable)
+        if source_backend_set_name is not None:
+            pulumi.set(__self__, "source_backend_set_name", source_backend_set_name)
+
+    @property
+    @pulumi.getter(name="destinationBackendSetName")
+    def destination_backend_set_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+        """
+        return pulumi.get(self, "destination_backend_set_name")
+
+    @destination_backend_set_name.setter
+    def destination_backend_set_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_backend_set_name", value)
+
+    @property
+    @pulumi.getter(name="isBackendSetForNonMovable")
+    def is_backend_set_for_non_movable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+        """
+        return pulumi.get(self, "is_backend_set_for_non_movable")
+
+    @is_backend_set_for_non_movable.setter
+    def is_backend_set_for_non_movable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_backend_set_for_non_movable", value)
+
+    @property
+    @pulumi.getter(name="sourceBackendSetName")
+    def source_backend_set_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+        """
+        return pulumi.get(self, "source_backend_set_name")
+
+    @source_backend_set_name.setter
+    def source_backend_set_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_backend_set_name", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberBlockVolumeOperationArgs:
+    def __init__(__self__, *,
+                 attachment_details: Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs']] = None,
+                 block_volume_id: Optional[pulumi.Input[str]] = None,
+                 mount_details: Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs']] = None):
+        """
+        :param pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs'] attachment_details: (Updatable) The details for creating a block volume attachment.
+        :param pulumi.Input[str] block_volume_id: (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        :param pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs'] mount_details: (Updatable) The details for creating a file system mount.
+        """
+        if attachment_details is not None:
+            pulumi.set(__self__, "attachment_details", attachment_details)
+        if block_volume_id is not None:
+            pulumi.set(__self__, "block_volume_id", block_volume_id)
+        if mount_details is not None:
+            pulumi.set(__self__, "mount_details", mount_details)
+
+    @property
+    @pulumi.getter(name="attachmentDetails")
+    def attachment_details(self) -> Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs']]:
+        """
+        (Updatable) The details for creating a block volume attachment.
+        """
+        return pulumi.get(self, "attachment_details")
+
+    @attachment_details.setter
+    def attachment_details(self, value: Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs']]):
+        pulumi.set(self, "attachment_details", value)
+
+    @property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @block_volume_id.setter
+    def block_volume_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "block_volume_id", value)
+
+    @property
+    @pulumi.getter(name="mountDetails")
+    def mount_details(self) -> Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs']]:
+        """
+        (Updatable) The details for creating a file system mount.
+        """
+        return pulumi.get(self, "mount_details")
+
+    @mount_details.setter
+    def mount_details(self, value: Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs']]):
+        pulumi.set(self, "mount_details", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs:
+    def __init__(__self__, *,
+                 volume_attachment_reference_instance_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] volume_attachment_reference_instance_id: (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        if volume_attachment_reference_instance_id is not None:
+            pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
+
+    @property
+    @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
+    def volume_attachment_reference_instance_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+        """
+        return pulumi.get(self, "volume_attachment_reference_instance_id")
+
+    @volume_attachment_reference_instance_id.setter
+    def volume_attachment_reference_instance_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "volume_attachment_reference_instance_id", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
+    def __init__(__self__, *,
+                 mount_point: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] mount_point: (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        return pulumi.get(self, "mount_point")
+
+    @mount_point.setter
+    def mount_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_point", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberExportMappingArgs:
+    def __init__(__self__, *,
+                 destination_mount_target_id: Optional[pulumi.Input[str]] = None,
+                 export_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_mount_target_id: (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        :param pulumi.Input[str] export_id: (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+        """
+        if destination_mount_target_id is not None:
+            pulumi.set(__self__, "destination_mount_target_id", destination_mount_target_id)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+
+    @property
+    @pulumi.getter(name="destinationMountTargetId")
+    def destination_mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_mount_target_id")
+
+    @destination_mount_target_id.setter
+    def destination_mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_mount_target_id", value)
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+        """
+        return pulumi.get(self, "export_id")
+
+    @export_id.setter
+    def export_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "export_id", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberFileSystemOperationArgs:
+    def __init__(__self__, *,
+                 export_path: Optional[pulumi.Input[str]] = None,
+                 mount_details: Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgs']] = None,
+                 mount_point: Optional[pulumi.Input[str]] = None,
+                 mount_target_id: Optional[pulumi.Input[str]] = None,
+                 unmount_details: Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs']] = None):
+        """
+        :param pulumi.Input[str] export_path: (Updatable) The export path of the file system.  Example: `/fs-export-path`
+        :param pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgs'] mount_details: (Updatable) The details for creating a file system mount.
+        :param pulumi.Input[str] mount_point: (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        :param pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs'] unmount_details: (Updatable) The details for creating a file system unmount.
+        """
+        if export_path is not None:
+            pulumi.set(__self__, "export_path", export_path)
+        if mount_details is not None:
+            pulumi.set(__self__, "mount_details", mount_details)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if unmount_details is not None:
+            pulumi.set(__self__, "unmount_details", unmount_details)
+
+    @property
+    @pulumi.getter(name="exportPath")
+    def export_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The export path of the file system.  Example: `/fs-export-path`
+        """
+        return pulumi.get(self, "export_path")
+
+    @export_path.setter
+    def export_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "export_path", value)
+
+    @property
+    @pulumi.getter(name="mountDetails")
+    def mount_details(self) -> Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgs']]:
+        """
+        (Updatable) The details for creating a file system mount.
+        """
+        return pulumi.get(self, "mount_details")
+
+    @mount_details.setter
+    def mount_details(self, value: Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgs']]):
+        pulumi.set(self, "mount_details", value)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        """
+        return pulumi.get(self, "mount_point")
+
+    @mount_point.setter
+    def mount_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_point", value)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
+
+    @property
+    @pulumi.getter(name="unmountDetails")
+    def unmount_details(self) -> Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs']]:
+        """
+        (Updatable) The details for creating a file system unmount.
+        """
+        return pulumi.get(self, "unmount_details")
+
+    @unmount_details.setter
+    def unmount_details(self, value: Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs']]):
+        pulumi.set(self, "unmount_details", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
+    def __init__(__self__, *,
+                 mount_target_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
+
+
+@pulumi.input_type
+class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs:
+    def __init__(__self__, *,
+                 mount_target_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
 
 
 @pulumi.input_type
@@ -1235,11 +1699,11 @@ class DrProtectionGroupMemberVnicMappingArgs:
                  destination_subnet_id: Optional[pulumi.Input[str]] = None,
                  source_vnic_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_nsg_id_lists: (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
-        :param pulumi.Input[str] destination_primary_private_ip_address: (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
-        :param pulumi.Input[str] destination_primary_private_ip_hostname_label: (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
-        :param pulumi.Input[str] destination_subnet_id: (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
-        :param pulumi.Input[str] source_vnic_id: (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_nsg_id_lists: (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+        :param pulumi.Input[str] destination_primary_private_ip_address: (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[str] destination_primary_private_ip_hostname_label: (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        :param pulumi.Input[str] destination_subnet_id: (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
+        :param pulumi.Input[str] source_vnic_id: (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         """
         if destination_nsg_id_lists is not None:
             pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
@@ -1256,7 +1720,7 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @pulumi.getter(name="destinationNsgIdLists")
     def destination_nsg_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+        (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
         """
         return pulumi.get(self, "destination_nsg_id_lists")
 
@@ -1268,7 +1732,7 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @pulumi.getter(name="destinationPrimaryPrivateIpAddress")
     def destination_primary_private_ip_address(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
         """
         return pulumi.get(self, "destination_primary_private_ip_address")
 
@@ -1280,7 +1744,7 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @pulumi.getter(name="destinationPrimaryPrivateIpHostnameLabel")
     def destination_primary_private_ip_hostname_label(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
         """
         return pulumi.get(self, "destination_primary_private_ip_hostname_label")
 
@@ -1292,7 +1756,7 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @pulumi.getter(name="destinationSubnetId")
     def destination_subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+        (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
         """
         return pulumi.get(self, "destination_subnet_id")
 
@@ -1304,7 +1768,7 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @pulumi.getter(name="sourceVnicId")
     def source_vnic_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+        (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         """
         return pulumi.get(self, "source_vnic_id")
 

@@ -421,6 +421,7 @@ class DiscoveryJob(pulumi.CustomResource):
                         ),
                     )],
                 ),
+                license=var["discovery_job_discovery_details_license"],
                 tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
                     properties_map=var["discovery_job_discovery_details_tags_properties_map"],
                 ),
@@ -493,6 +494,7 @@ class DiscoveryJob(pulumi.CustomResource):
                         ),
                     )],
                 ),
+                license=var["discovery_job_discovery_details_license"],
                 tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
                     properties_map=var["discovery_job_discovery_details_tags_properties_map"],
                 ),

@@ -12,79 +12,33 @@ namespace Pulumi.Oci.DisasterRecovery
     /// <summary>
     /// This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
     /// 
-    /// Create a new DR Protection Group.
+    /// Create a DR protection group.
     /// 
-    /// ## Example Usage
+    /// ## Create
+    /// 
+    /// Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrProtectionGroup = new Oci.DisasterRecovery.DrProtectionGroup("testDrProtectionGroup", new()
-    ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Dr_protection_group_display_name,
-    ///         LogLocation = new Oci.DisasterRecovery.Inputs.DrProtectionGroupLogLocationArgs
-    ///         {
-    ///             Bucket = @var.Dr_protection_group_log_location_bucket,
-    ///             Namespace = @var.Dr_protection_group_log_location_namespace,
-    ///         },
-    ///         Association = new Oci.DisasterRecovery.Inputs.DrProtectionGroupAssociationArgs
-    ///         {
-    ///             Role = @var.Dr_protection_group_association_role,
-    ///             PeerId = oci_blockchain_peer.Test_peer.Id,
-    ///             PeerRegion = @var.Dr_protection_group_association_peer_region,
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         Members = new[]
-    ///         {
-    ///             new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberArgs
-    ///             {
-    ///                 MemberId = oci_disaster_recovery_member.Test_member.Id,
-    ///                 MemberType = @var.Dr_protection_group_members_member_type,
-    ///                 DestinationCapacityReservationId = oci_disaster_recovery_destination_capacity_reservation.Test_destination_capacity_reservation.Id,
-    ///                 DestinationCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///                 DestinationDedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
-    ///                 IsMovable = @var.Dr_protection_group_members_is_movable,
-    ///                 IsRetainFaultDomain = @var.Dr_protection_group_members_is_retain_fault_domain,
-    ///                 PasswordVaultSecretId = oci_vault_secret.Test_secret.Id,
-    ///                 VnicMappings = new[]
-    ///                 {
-    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVnicMappingArgs
-    ///                     {
-    ///                         DestinationNsgIdLists = @var.Dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
-    ///                         DestinationPrimaryPrivateIpAddress = @var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
-    ///                         DestinationPrimaryPrivateIpHostnameLabel = @var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
-    ///                         DestinationSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                         SourceVnicId = oci_core_vnic.Test_vnic.Id,
-    ///                     },
-    ///                 },
-    ///                 VnicMappings = new[]
-    ///                 {
-    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberVnicMappingArgs
-    ///                     {
-    ///                         DestinationNsgIdLists = @var.Dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
-    ///                         DestinationPrimaryPrivateIpAddress = @var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
-    ///                         DestinationPrimaryPrivateIpHostnameLabel = @var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
-    ///                         DestinationSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                         SourceVnicId = oci_core_vnic.Test_vnic.Id,
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///     });
+    /// });
+    /// ```
     /// 
+    /// ## Delete
+    /// 
+    /// Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
     /// });
     /// ```
     /// 
@@ -100,19 +54,19 @@ namespace Pulumi.Oci.DisasterRecovery
     public partial class DrProtectionGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+        /// The details for associating a DR protection group with a peer DR protection group.
         /// </summary>
         [Output("association")]
         public Output<Outputs.DrProtectionGroupAssociation> Association { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -128,73 +82,79 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<int?> DisassociateTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        /// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the DR Protection Group's current state in more detail.
+        /// A message describing the DR protection group's current state in more detail.
         /// </summary>
         [Output("lifeCycleDetails")]
         public Output<string> LifeCycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+        /// The current sub-state of the DR protection group.
+        /// </summary>
+        [Output("lifecycleSubState")]
+        public Output<string> LifecycleSubState { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The details for creating an object storage log location for a DR protection group.
         /// </summary>
         [Output("logLocation")]
         public Output<Outputs.DrProtectionGroupLogLocation> LogLocation { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of DR Protection Group members.
+        /// (Updatable) A list of DR protection group members.
         /// </summary>
         [Output("members")]
         public Output<ImmutableArray<Outputs.DrProtectionGroupMember>> Members { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("peerId")]
         public Output<string> PeerId { get; private set; } = null!;
 
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Output("peerRegion")]
         public Output<string> PeerRegion { get; private set; } = null!;
 
         /// <summary>
-        /// The role of this DR Protection Group.
+        /// The role of the DR protection group.  Example: `STANDBY`
         /// </summary>
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the DR Protection Group.
+        /// The current state of the DR protection group.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -246,13 +206,13 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class DrProtectionGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+        /// The details for associating a DR protection group with a peer DR protection group.
         /// </summary>
         [Input("association")]
         public Input<Inputs.DrProtectionGroupAssociationArgs>? Association { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -261,7 +221,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -280,7 +240,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<int>? DisassociateTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        /// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -289,7 +249,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -298,7 +258,7 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+        /// (Updatable) The details for creating an object storage log location for a DR protection group.
         /// </summary>
         [Input("logLocation", required: true)]
         public Input<Inputs.DrProtectionGroupLogLocationArgs> LogLocation { get; set; } = null!;
@@ -307,7 +267,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputList<Inputs.DrProtectionGroupMemberArgs>? _members;
 
         /// <summary>
-        /// (Updatable) A list of DR Protection Group members.
+        /// (Updatable) A list of DR protection group members.
         /// </summary>
         public InputList<Inputs.DrProtectionGroupMemberArgs> Members
         {
@@ -324,13 +284,13 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class DrProtectionGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+        /// The details for associating a DR protection group with a peer DR protection group.
         /// </summary>
         [Input("association")]
         public Input<Inputs.DrProtectionGroupAssociationGetArgs>? Association { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -339,7 +299,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -358,7 +318,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<int>? DisassociateTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        /// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -367,7 +327,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -376,13 +336,19 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// A message describing the DR Protection Group's current state in more detail.
+        /// A message describing the DR protection group's current state in more detail.
         /// </summary>
         [Input("lifeCycleDetails")]
         public Input<string>? LifeCycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+        /// The current sub-state of the DR protection group.
+        /// </summary>
+        [Input("lifecycleSubState")]
+        public Input<string>? LifecycleSubState { get; set; }
+
+        /// <summary>
+        /// (Updatable) The details for creating an object storage log location for a DR protection group.
         /// </summary>
         [Input("logLocation")]
         public Input<Inputs.DrProtectionGroupLogLocationGetArgs>? LogLocation { get; set; }
@@ -391,7 +357,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputList<Inputs.DrProtectionGroupMemberGetArgs>? _members;
 
         /// <summary>
-        /// (Updatable) A list of DR Protection Group members.
+        /// (Updatable) A list of DR protection group members.
         /// </summary>
         public InputList<Inputs.DrProtectionGroupMemberGetArgs> Members
         {
@@ -400,25 +366,25 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("peerId")]
         public Input<string>? PeerId { get; set; }
 
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Input("peerRegion")]
         public Input<string>? PeerRegion { get; set; }
 
         /// <summary>
-        /// The role of this DR Protection Group.
+        /// The role of the DR protection group.  Example: `STANDBY`
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }
 
         /// <summary>
-        /// The current state of the DR Protection Group.
+        /// The current state of the DR protection group.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -427,7 +393,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _systemTags;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public InputMap<object> SystemTags
         {
@@ -436,13 +402,13 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

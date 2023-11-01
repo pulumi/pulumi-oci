@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrPlanPlanGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        /// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<Inputs.DrPlanPlanGroupStepArgs>? _steps;
 
         /// <summary>
-        /// The list of steps in this plan group.
+        /// The list of steps in the group.
         /// </summary>
         public InputList<Inputs.DrPlanPlanGroupStepArgs> Steps
         {
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         }
 
         /// <summary>
-        /// The type of DR Plan to be created. 
+        /// The type of DR plan to be created. 
         /// 
         /// 
         /// ** IMPORTANT **

@@ -54,6 +54,11 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      */
     private Integer dataStorageSizeInGb;
     /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    private String databaseManagement;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -188,6 +193,13 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      */
     public Integer dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    public String databaseManagement() {
+        return this.databaseManagement;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -325,6 +337,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         private String configurationId;
         private String crashRecovery;
         private Integer dataStorageSizeInGb;
+        private String databaseManagement;
         private Map<String,Object> definedTags;
         private List<GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
         private String description;
@@ -352,6 +365,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
     	      this.configurationId = defaults.configurationId;
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
     	      this.description = defaults.description;
@@ -407,6 +421,11 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseManagement(String databaseManagement) {
+            this.databaseManagement = Objects.requireNonNull(databaseManagement);
             return this;
         }
         @CustomType.Setter
@@ -512,6 +531,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             o.configurationId = configurationId;
             o.crashRecovery = crashRecovery;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.databaseManagement = databaseManagement;
             o.definedTags = definedTags;
             o.deletionPolicies = deletionPolicies;
             o.description = description;

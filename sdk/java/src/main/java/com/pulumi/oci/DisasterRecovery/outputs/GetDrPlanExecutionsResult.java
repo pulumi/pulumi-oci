@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDrPlanExecutionsResult {
     /**
-     * @return The display name of the step.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     private @Nullable String displayName;
@@ -27,7 +27,7 @@ public final class GetDrPlanExecutionsResult {
     private @Nullable String drPlanExecutionId;
     private @Nullable String drPlanExecutionType;
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private String drProtectionGroupId;
@@ -38,14 +38,14 @@ public final class GetDrPlanExecutionsResult {
      */
     private String id;
     /**
-     * @return The current state of the DR Plan Execution.
+     * @return The current state of the DR plan execution.
      * 
      */
     private @Nullable String state;
 
     private GetDrPlanExecutionsResult() {}
     /**
-     * @return The display name of the step.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     public Optional<String> displayName() {
@@ -65,7 +65,7 @@ public final class GetDrPlanExecutionsResult {
         return Optional.ofNullable(this.drPlanExecutionType);
     }
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String drProtectionGroupId() {
@@ -82,7 +82,7 @@ public final class GetDrPlanExecutionsResult {
         return this.id;
     }
     /**
-     * @return The current state of the DR Plan Execution.
+     * @return The current state of the DR plan execution.
      * 
      */
     public Optional<String> state() {

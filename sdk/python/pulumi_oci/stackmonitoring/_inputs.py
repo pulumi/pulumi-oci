@@ -16,6 +16,13 @@ __all__ = [
     'DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs',
     'DiscoveryJobDiscoveryDetailsPropertiesArgs',
     'DiscoveryJobDiscoveryDetailsTagsArgs',
+    'MetricExtensionEnabledOnResourceArgs',
+    'MetricExtensionMetricListArgs',
+    'MetricExtensionQueryPropertiesArgs',
+    'MetricExtensionQueryPropertiesInParamDetailArgs',
+    'MetricExtensionQueryPropertiesOutParamDetailsArgs',
+    'MetricExtensionQueryPropertiesScriptDetailsArgs',
+    'MetricExtensionQueryPropertiesSqlDetailsArgs',
     'MonitoredResourceAdditionalAliasArgs',
     'MonitoredResourceAdditionalAliasCredentialArgs',
     'MonitoredResourceAdditionalCredentialArgs',
@@ -26,6 +33,9 @@ __all__ = [
     'MonitoredResourceCredentialsPropertyArgs',
     'MonitoredResourceDatabaseConnectionDetailsArgs',
     'MonitoredResourcePropertyArgs',
+    'MonitoredResourceTaskTaskDetailsArgs',
+    'MonitoredResourceTypeMetadataArgs',
+    'MonitoredResourceTypeMetadataUniquePropertySetArgs',
     'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs',
     'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs',
     'MonitoredResourcesListMemberItemArgs',
@@ -34,9 +44,18 @@ __all__ = [
     'MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs',
     'MonitoredResourcesSearchItemArgs',
     'MonitoredResourcesSearchItemPropertyArgs',
+    'GetBaselineableMetricsEvaluateItemArgs',
+    'GetBaselineableMetricsEvaluateItemDataPointArgs',
+    'GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs',
+    'GetBaselineableMetricsEvaluateItemTrainingDataPointArgs',
+    'GetBaselineableMetricsFilterArgs',
     'GetConfigsFilterArgs',
     'GetDiscoveryJobLogsFilterArgs',
     'GetDiscoveryJobsFilterArgs',
+    'GetMetricExtensionsFilterArgs',
+    'GetMonitoredResourceTasksFilterArgs',
+    'GetMonitoredResourceTypesFilterArgs',
+    'GetMonitoredResourcesFilterArgs',
 ]
 
 @pulumi.input_type
@@ -47,6 +66,7 @@ class DiscoveryJobDiscoveryDetailsArgs:
                  resource_name: pulumi.Input[str],
                  resource_type: pulumi.Input[str],
                  credentials: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsArgs']] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsTagsArgs']] = None):
         """
         :param pulumi.Input[str] agent_id: The OCID of Management Agent
@@ -54,6 +74,7 @@ class DiscoveryJobDiscoveryDetailsArgs:
         :param pulumi.Input[str] resource_name: The Name of resource type
         :param pulumi.Input[str] resource_type: Resource Type.
         :param pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsArgs'] credentials: List of DiscoveryJob Credential Details.
+        :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input['DiscoveryJobDiscoveryDetailsTagsArgs'] tags: Property Details
         """
         pulumi.set(__self__, "agent_id", agent_id)
@@ -62,6 +83,8 @@ class DiscoveryJobDiscoveryDetailsArgs:
         pulumi.set(__self__, "resource_type", resource_type)
         if credentials is not None:
             pulumi.set(__self__, "credentials", credentials)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
 
@@ -124,6 +147,18 @@ class DiscoveryJobDiscoveryDetailsArgs:
     @credentials.setter
     def credentials(self, value: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
+
+    @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        License edition of the monitored resource.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
 
     @property
     @pulumi.getter
@@ -279,6 +314,557 @@ class DiscoveryJobDiscoveryDetailsTagsArgs:
     @properties_map.setter
     def properties_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "properties_map", value)
+
+
+@pulumi.input_type
+class MetricExtensionEnabledOnResourceArgs:
+    def __init__(__self__, *,
+                 resource_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] resource_id: The OCID of the resource on which Metric Extension is enabled
+        """
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the resource on which Metric Extension is enabled
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+@pulumi.input_type
+class MetricExtensionMetricListArgs:
+    def __init__(__self__, *,
+                 data_type: pulumi.Input[str],
+                 name: pulumi.Input[str],
+                 compute_expression: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 is_dimension: Optional[pulumi.Input[bool]] = None,
+                 is_hidden: Optional[pulumi.Input[bool]] = None,
+                 metric_category: Optional[pulumi.Input[str]] = None,
+                 unit: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] data_type: (Updatable) Data type of value of this metric
+        :param pulumi.Input[str] name: (Updatable) Name of the script file
+        :param pulumi.Input[str] compute_expression: (Updatable) Compute Expression to calculate the value of this metric
+        :param pulumi.Input[str] display_name: (Updatable) Display name of the metric.
+        :param pulumi.Input[bool] is_dimension: (Updatable) Current metric need to be included as dimension or not
+        :param pulumi.Input[bool] is_hidden: (Updatable) Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+        :param pulumi.Input[str] metric_category: (Updatable) Metric category
+        :param pulumi.Input[str] unit: (Updatable) Unit of metric value
+        """
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        if compute_expression is not None:
+            pulumi.set(__self__, "compute_expression", compute_expression)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_dimension is not None:
+            pulumi.set(__self__, "is_dimension", is_dimension)
+        if is_hidden is not None:
+            pulumi.set(__self__, "is_hidden", is_hidden)
+        if metric_category is not None:
+            pulumi.set(__self__, "metric_category", metric_category)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Data type of value of this metric
+        """
+        return pulumi.get(self, "data_type")
+
+    @data_type.setter
+    def data_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "data_type", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the script file
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="computeExpression")
+    def compute_expression(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Compute Expression to calculate the value of this metric
+        """
+        return pulumi.get(self, "compute_expression")
+
+    @compute_expression.setter
+    def compute_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compute_expression", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Display name of the metric.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="isDimension")
+    def is_dimension(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Current metric need to be included as dimension or not
+        """
+        return pulumi.get(self, "is_dimension")
+
+    @is_dimension.setter
+    def is_dimension(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_dimension", value)
+
+    @property
+    @pulumi.getter(name="isHidden")
+    def is_hidden(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+        """
+        return pulumi.get(self, "is_hidden")
+
+    @is_hidden.setter
+    def is_hidden(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_hidden", value)
+
+    @property
+    @pulumi.getter(name="metricCategory")
+    def metric_category(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Metric category
+        """
+        return pulumi.get(self, "metric_category")
+
+    @metric_category.setter
+    def metric_category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metric_category", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Unit of metric value
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "unit", value)
+
+
+@pulumi.input_type
+class MetricExtensionQueryPropertiesArgs:
+    def __init__(__self__, *,
+                 collection_method: pulumi.Input[str],
+                 arguments: Optional[pulumi.Input[str]] = None,
+                 auto_row_prefix: Optional[pulumi.Input[str]] = None,
+                 command: Optional[pulumi.Input[str]] = None,
+                 delimiter: Optional[pulumi.Input[str]] = None,
+                 identity_metric: Optional[pulumi.Input[str]] = None,
+                 in_param_details: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionQueryPropertiesInParamDetailArgs']]]] = None,
+                 is_metric_service_enabled: Optional[pulumi.Input[bool]] = None,
+                 jmx_attributes: Optional[pulumi.Input[str]] = None,
+                 managed_bean_query: Optional[pulumi.Input[str]] = None,
+                 out_param_details: Optional[pulumi.Input['MetricExtensionQueryPropertiesOutParamDetailsArgs']] = None,
+                 script_details: Optional[pulumi.Input['MetricExtensionQueryPropertiesScriptDetailsArgs']] = None,
+                 sql_details: Optional[pulumi.Input['MetricExtensionQueryPropertiesSqlDetailsArgs']] = None,
+                 sql_type: Optional[pulumi.Input[str]] = None,
+                 starts_with: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] collection_method: (Updatable) Type of possible collection methods.
+        :param pulumi.Input[str] arguments: (Updatable) Arguments required by either command or script
+        :param pulumi.Input[str] auto_row_prefix: (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+        :param pulumi.Input[str] command: (Updatable) OS command to execute without arguments
+        :param pulumi.Input[str] delimiter: (Updatable) Character used to delimit multiple metric values in single line of output
+        :param pulumi.Input[str] identity_metric: (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+        :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionQueryPropertiesInParamDetailArgs']]] in_param_details: (Updatable) List of values and position of PL/SQL procedure IN parameters
+        :param pulumi.Input[bool] is_metric_service_enabled: (Updatable) Indicates if Metric Service is enabled on server domain
+        :param pulumi.Input[str] jmx_attributes: (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+        :param pulumi.Input[str] managed_bean_query: (Updatable) JMX Managed Bean Query or Metric Service Table name
+        :param pulumi.Input['MetricExtensionQueryPropertiesOutParamDetailsArgs'] out_param_details: (Updatable) Position and SQL Type of PL/SQL OUT parameter
+        :param pulumi.Input['MetricExtensionQueryPropertiesScriptDetailsArgs'] script_details: (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        :param pulumi.Input['MetricExtensionQueryPropertiesSqlDetailsArgs'] sql_details: (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+        :param pulumi.Input[str] sql_type: (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+        :param pulumi.Input[str] starts_with: (Updatable) String prefix used to identify metric output of the OS Command
+        """
+        pulumi.set(__self__, "collection_method", collection_method)
+        if arguments is not None:
+            pulumi.set(__self__, "arguments", arguments)
+        if auto_row_prefix is not None:
+            pulumi.set(__self__, "auto_row_prefix", auto_row_prefix)
+        if command is not None:
+            pulumi.set(__self__, "command", command)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if identity_metric is not None:
+            pulumi.set(__self__, "identity_metric", identity_metric)
+        if in_param_details is not None:
+            pulumi.set(__self__, "in_param_details", in_param_details)
+        if is_metric_service_enabled is not None:
+            pulumi.set(__self__, "is_metric_service_enabled", is_metric_service_enabled)
+        if jmx_attributes is not None:
+            pulumi.set(__self__, "jmx_attributes", jmx_attributes)
+        if managed_bean_query is not None:
+            pulumi.set(__self__, "managed_bean_query", managed_bean_query)
+        if out_param_details is not None:
+            pulumi.set(__self__, "out_param_details", out_param_details)
+        if script_details is not None:
+            pulumi.set(__self__, "script_details", script_details)
+        if sql_details is not None:
+            pulumi.set(__self__, "sql_details", sql_details)
+        if sql_type is not None:
+            pulumi.set(__self__, "sql_type", sql_type)
+        if starts_with is not None:
+            pulumi.set(__self__, "starts_with", starts_with)
+
+    @property
+    @pulumi.getter(name="collectionMethod")
+    def collection_method(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Type of possible collection methods.
+        """
+        return pulumi.get(self, "collection_method")
+
+    @collection_method.setter
+    def collection_method(self, value: pulumi.Input[str]):
+        pulumi.set(self, "collection_method", value)
+
+    @property
+    @pulumi.getter
+    def arguments(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Arguments required by either command or script
+        """
+        return pulumi.get(self, "arguments")
+
+    @arguments.setter
+    def arguments(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "arguments", value)
+
+    @property
+    @pulumi.getter(name="autoRowPrefix")
+    def auto_row_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+        """
+        return pulumi.get(self, "auto_row_prefix")
+
+    @auto_row_prefix.setter
+    def auto_row_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_row_prefix", value)
+
+    @property
+    @pulumi.getter
+    def command(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OS command to execute without arguments
+        """
+        return pulumi.get(self, "command")
+
+    @command.setter
+    def command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "command", value)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Character used to delimit multiple metric values in single line of output
+        """
+        return pulumi.get(self, "delimiter")
+
+    @delimiter.setter
+    def delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "delimiter", value)
+
+    @property
+    @pulumi.getter(name="identityMetric")
+    def identity_metric(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+        """
+        return pulumi.get(self, "identity_metric")
+
+    @identity_metric.setter
+    def identity_metric(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "identity_metric", value)
+
+    @property
+    @pulumi.getter(name="inParamDetails")
+    def in_param_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionQueryPropertiesInParamDetailArgs']]]]:
+        """
+        (Updatable) List of values and position of PL/SQL procedure IN parameters
+        """
+        return pulumi.get(self, "in_param_details")
+
+    @in_param_details.setter
+    def in_param_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionQueryPropertiesInParamDetailArgs']]]]):
+        pulumi.set(self, "in_param_details", value)
+
+    @property
+    @pulumi.getter(name="isMetricServiceEnabled")
+    def is_metric_service_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates if Metric Service is enabled on server domain
+        """
+        return pulumi.get(self, "is_metric_service_enabled")
+
+    @is_metric_service_enabled.setter
+    def is_metric_service_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_metric_service_enabled", value)
+
+    @property
+    @pulumi.getter(name="jmxAttributes")
+    def jmx_attributes(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+        """
+        return pulumi.get(self, "jmx_attributes")
+
+    @jmx_attributes.setter
+    def jmx_attributes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "jmx_attributes", value)
+
+    @property
+    @pulumi.getter(name="managedBeanQuery")
+    def managed_bean_query(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) JMX Managed Bean Query or Metric Service Table name
+        """
+        return pulumi.get(self, "managed_bean_query")
+
+    @managed_bean_query.setter
+    def managed_bean_query(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "managed_bean_query", value)
+
+    @property
+    @pulumi.getter(name="outParamDetails")
+    def out_param_details(self) -> Optional[pulumi.Input['MetricExtensionQueryPropertiesOutParamDetailsArgs']]:
+        """
+        (Updatable) Position and SQL Type of PL/SQL OUT parameter
+        """
+        return pulumi.get(self, "out_param_details")
+
+    @out_param_details.setter
+    def out_param_details(self, value: Optional[pulumi.Input['MetricExtensionQueryPropertiesOutParamDetailsArgs']]):
+        pulumi.set(self, "out_param_details", value)
+
+    @property
+    @pulumi.getter(name="scriptDetails")
+    def script_details(self) -> Optional[pulumi.Input['MetricExtensionQueryPropertiesScriptDetailsArgs']]:
+        """
+        (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+        """
+        return pulumi.get(self, "script_details")
+
+    @script_details.setter
+    def script_details(self, value: Optional[pulumi.Input['MetricExtensionQueryPropertiesScriptDetailsArgs']]):
+        pulumi.set(self, "script_details", value)
+
+    @property
+    @pulumi.getter(name="sqlDetails")
+    def sql_details(self) -> Optional[pulumi.Input['MetricExtensionQueryPropertiesSqlDetailsArgs']]:
+        """
+        (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+        """
+        return pulumi.get(self, "sql_details")
+
+    @sql_details.setter
+    def sql_details(self, value: Optional[pulumi.Input['MetricExtensionQueryPropertiesSqlDetailsArgs']]):
+        pulumi.set(self, "sql_details", value)
+
+    @property
+    @pulumi.getter(name="sqlType")
+    def sql_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+        """
+        return pulumi.get(self, "sql_type")
+
+    @sql_type.setter
+    def sql_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sql_type", value)
+
+    @property
+    @pulumi.getter(name="startsWith")
+    def starts_with(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) String prefix used to identify metric output of the OS Command
+        """
+        return pulumi.get(self, "starts_with")
+
+    @starts_with.setter
+    def starts_with(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "starts_with", value)
+
+
+@pulumi.input_type
+class MetricExtensionQueryPropertiesInParamDetailArgs:
+    def __init__(__self__, *,
+                 in_param_position: pulumi.Input[int],
+                 in_param_value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[int] in_param_position: (Updatable) Position of IN parameter
+        :param pulumi.Input[str] in_param_value: (Updatable) Value of IN parameter
+        """
+        pulumi.set(__self__, "in_param_position", in_param_position)
+        pulumi.set(__self__, "in_param_value", in_param_value)
+
+    @property
+    @pulumi.getter(name="inParamPosition")
+    def in_param_position(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Position of IN parameter
+        """
+        return pulumi.get(self, "in_param_position")
+
+    @in_param_position.setter
+    def in_param_position(self, value: pulumi.Input[int]):
+        pulumi.set(self, "in_param_position", value)
+
+    @property
+    @pulumi.getter(name="inParamValue")
+    def in_param_value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Value of IN parameter
+        """
+        return pulumi.get(self, "in_param_value")
+
+    @in_param_value.setter
+    def in_param_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "in_param_value", value)
+
+
+@pulumi.input_type
+class MetricExtensionQueryPropertiesOutParamDetailsArgs:
+    def __init__(__self__, *,
+                 out_param_position: pulumi.Input[int],
+                 out_param_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[int] out_param_position: (Updatable) Position of PL/SQL procedure OUT parameter
+        :param pulumi.Input[str] out_param_type: (Updatable) SQL Type of PL/SQL procedure OUT parameter
+        """
+        pulumi.set(__self__, "out_param_position", out_param_position)
+        pulumi.set(__self__, "out_param_type", out_param_type)
+
+    @property
+    @pulumi.getter(name="outParamPosition")
+    def out_param_position(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Position of PL/SQL procedure OUT parameter
+        """
+        return pulumi.get(self, "out_param_position")
+
+    @out_param_position.setter
+    def out_param_position(self, value: pulumi.Input[int]):
+        pulumi.set(self, "out_param_position", value)
+
+    @property
+    @pulumi.getter(name="outParamType")
+    def out_param_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) SQL Type of PL/SQL procedure OUT parameter
+        """
+        return pulumi.get(self, "out_param_type")
+
+    @out_param_type.setter
+    def out_param_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "out_param_type", value)
+
+
+@pulumi.input_type
+class MetricExtensionQueryPropertiesScriptDetailsArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[str],
+                 name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] content: (Updatable) Sql statement or script file content as base64 encoded string
+        :param pulumi.Input[str] name: (Updatable) Name of the script file
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Sql statement or script file content as base64 encoded string
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[str]):
+        pulumi.set(self, "content", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the script file
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class MetricExtensionQueryPropertiesSqlDetailsArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[str],
+                 script_file_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] content: (Updatable) Sql statement or script file content as base64 encoded string
+        :param pulumi.Input[str] script_file_name: (Updatable) If a script needs to be executed, then provide file name of the script
+        """
+        pulumi.set(__self__, "content", content)
+        if script_file_name is not None:
+            pulumi.set(__self__, "script_file_name", script_file_name)
+
+    @property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Sql statement or script file content as base64 encoded string
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[str]):
+        pulumi.set(self, "content", value)
+
+    @property
+    @pulumi.getter(name="scriptFileName")
+    def script_file_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) If a script needs to be executed, then provide file name of the script
+        """
+        return pulumi.get(self, "script_file_name")
+
+    @script_file_name.setter
+    def script_file_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "script_file_name", value)
 
 
 @pulumi.input_type
@@ -989,6 +1575,260 @@ class MonitoredResourcePropertyArgs:
 
 
 @pulumi.input_type
+class MonitoredResourceTaskTaskDetailsArgs:
+    def __init__(__self__, *,
+                 namespace: pulumi.Input[str],
+                 source: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 availability_proxy_metric_collection_interval: Optional[pulumi.Input[int]] = None,
+                 availability_proxy_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 resource_group: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] namespace: Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+        :param pulumi.Input[str] source: Source from where the metrics pushed to telemetry. Possible values:
+               * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+               * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+        :param pulumi.Input[str] type: Task type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[int] availability_proxy_metric_collection_interval: Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_proxy_metrics: List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        :param pulumi.Input[str] resource_group: The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+        """
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        if availability_proxy_metric_collection_interval is not None:
+            pulumi.set(__self__, "availability_proxy_metric_collection_interval", availability_proxy_metric_collection_interval)
+        if availability_proxy_metrics is not None:
+            pulumi.set(__self__, "availability_proxy_metrics", availability_proxy_metrics)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[str]:
+        """
+        Source from where the metrics pushed to telemetry. Possible values:
+        * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+        * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Task type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="availabilityProxyMetricCollectionInterval")
+    def availability_proxy_metric_collection_interval(self) -> Optional[pulumi.Input[int]]:
+        """
+        Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+        """
+        return pulumi.get(self, "availability_proxy_metric_collection_interval")
+
+    @availability_proxy_metric_collection_interval.setter
+    def availability_proxy_metric_collection_interval(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "availability_proxy_metric_collection_interval", value)
+
+    @property
+    @pulumi.getter(name="availabilityProxyMetrics")
+    def availability_proxy_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        """
+        return pulumi.get(self, "availability_proxy_metrics")
+
+    @availability_proxy_metrics.setter
+    def availability_proxy_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "availability_proxy_metrics", value)
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @resource_group.setter
+    def resource_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_group", value)
+
+
+@pulumi.input_type
+class MonitoredResourceTypeMetadataArgs:
+    def __init__(__self__, *,
+                 format: pulumi.Input[str],
+                 agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 required_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 unique_property_sets: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]]] = None,
+                 valid_properties_for_creates: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 valid_properties_for_updates: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 valid_property_values: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+        """
+        :param pulumi.Input[str] format: (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+               * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] agent_properties: (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] required_properties: (Updatable) List of required properties for resource type.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]] unique_property_sets: (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_properties_for_creates: (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_properties_for_updates: (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+        :param pulumi.Input[Mapping[str, Any]] valid_property_values: (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+        """
+        pulumi.set(__self__, "format", format)
+        if agent_properties is not None:
+            pulumi.set(__self__, "agent_properties", agent_properties)
+        if required_properties is not None:
+            pulumi.set(__self__, "required_properties", required_properties)
+        if unique_property_sets is not None:
+            pulumi.set(__self__, "unique_property_sets", unique_property_sets)
+        if valid_properties_for_creates is not None:
+            pulumi.set(__self__, "valid_properties_for_creates", valid_properties_for_creates)
+        if valid_properties_for_updates is not None:
+            pulumi.set(__self__, "valid_properties_for_updates", valid_properties_for_updates)
+        if valid_property_values is not None:
+            pulumi.set(__self__, "valid_property_values", valid_property_values)
+
+    @property
+    @pulumi.getter
+    def format(self) -> pulumi.Input[str]:
+        """
+        (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+        * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: pulumi.Input[str]):
+        pulumi.set(self, "format", value)
+
+    @property
+    @pulumi.getter(name="agentProperties")
+    def agent_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+        """
+        return pulumi.get(self, "agent_properties")
+
+    @agent_properties.setter
+    def agent_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "agent_properties", value)
+
+    @property
+    @pulumi.getter(name="requiredProperties")
+    def required_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of required properties for resource type.
+        """
+        return pulumi.get(self, "required_properties")
+
+    @required_properties.setter
+    def required_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "required_properties", value)
+
+    @property
+    @pulumi.getter(name="uniquePropertySets")
+    def unique_property_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]]]:
+        """
+        (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+        """
+        return pulumi.get(self, "unique_property_sets")
+
+    @unique_property_sets.setter
+    def unique_property_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]]]):
+        pulumi.set(self, "unique_property_sets", value)
+
+    @property
+    @pulumi.getter(name="validPropertiesForCreates")
+    def valid_properties_for_creates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+        """
+        return pulumi.get(self, "valid_properties_for_creates")
+
+    @valid_properties_for_creates.setter
+    def valid_properties_for_creates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "valid_properties_for_creates", value)
+
+    @property
+    @pulumi.getter(name="validPropertiesForUpdates")
+    def valid_properties_for_updates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+        """
+        return pulumi.get(self, "valid_properties_for_updates")
+
+    @valid_properties_for_updates.setter
+    def valid_properties_for_updates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "valid_properties_for_updates", value)
+
+    @property
+    @pulumi.getter(name="validPropertyValues")
+    def valid_property_values(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+        """
+        return pulumi.get(self, "valid_property_values")
+
+    @valid_property_values.setter
+    def valid_property_values(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "valid_property_values", value)
+
+
+@pulumi.input_type
+class MonitoredResourceTypeMetadataUniquePropertySetArgs:
+    def __init__(__self__, *,
+                 properties: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] properties: (Updatable) List of properties.
+        """
+        pulumi.set(__self__, "properties", properties)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) List of properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @properties.setter
+    def properties(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "properties", value)
+
+
+@pulumi.input_type
 class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1106,6 +1946,7 @@ class MonitoredResourcesListMemberItemArgs:
                  external_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
                  resource_display_name: Optional[pulumi.Input[str]] = None,
                  resource_id: Optional[pulumi.Input[str]] = None,
@@ -1119,6 +1960,7 @@ class MonitoredResourcesListMemberItemArgs:
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: Monitored Resource Host Name.
+        :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] parent_id: Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] resource_display_name: Monitored resource display name.
         :param pulumi.Input[str] resource_id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1137,6 +1979,8 @@ class MonitoredResourcesListMemberItemArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if parent_id is not None:
             pulumi.set(__self__, "parent_id", parent_id)
         if resource_display_name is not None:
@@ -1211,6 +2055,18 @@ class MonitoredResourcesListMemberItemArgs:
     @host_name.setter
     def host_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        License edition of the monitored resource.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
 
     @property
     @pulumi.getter(name="parentId")
@@ -1513,12 +2369,14 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs:
 @pulumi.input_type
 class MonitoredResourcesSearchItemArgs:
     def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgs']]]] = None,
@@ -1528,12 +2386,14 @@ class MonitoredResourcesSearchItemArgs:
                  time_updated: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Monitored resource display name.
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgs']]] properties: List of monitored resource properties.
@@ -1547,6 +2407,8 @@ class MonitoredResourcesSearchItemArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -1559,6 +2421,8 @@ class MonitoredResourcesSearchItemArgs:
             pulumi.set(__self__, "host_name", host_name)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
@@ -1575,6 +2439,18 @@ class MonitoredResourcesSearchItemArgs:
             pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1647,6 +2523,18 @@ class MonitoredResourcesSearchItemArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        License edition of the monitored resource.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
 
     @property
     @pulumi.getter(name="managementAgentId")
@@ -1789,6 +2677,274 @@ class MonitoredResourcesSearchItemPropertyArgs:
 
 
 @pulumi.input_type
+class GetBaselineableMetricsEvaluateItemArgs:
+    def __init__(__self__, *,
+                 data_points: Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs'],
+                 dimensions: Mapping[str, Any],
+                 evaluation_data_points: Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs'],
+                 training_data_points: Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs']):
+        """
+        :param Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs'] data_points: list of anomaly data points for the metric
+        :param Mapping[str, Any] dimensions: list of dimensions for the metric
+        :param Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs'] evaluation_data_points: list of data points for the metric for evaluation of anomalies
+        :param Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs'] training_data_points: list of data points for the metric for training of baseline
+        """
+        pulumi.set(__self__, "data_points", data_points)
+        pulumi.set(__self__, "dimensions", dimensions)
+        pulumi.set(__self__, "evaluation_data_points", evaluation_data_points)
+        pulumi.set(__self__, "training_data_points", training_data_points)
+
+    @property
+    @pulumi.getter(name="dataPoints")
+    def data_points(self) -> Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs']:
+        """
+        list of anomaly data points for the metric
+        """
+        return pulumi.get(self, "data_points")
+
+    @data_points.setter
+    def data_points(self, value: Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs']):
+        pulumi.set(self, "data_points", value)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Mapping[str, Any]:
+        """
+        list of dimensions for the metric
+        """
+        return pulumi.get(self, "dimensions")
+
+    @dimensions.setter
+    def dimensions(self, value: Mapping[str, Any]):
+        pulumi.set(self, "dimensions", value)
+
+    @property
+    @pulumi.getter(name="evaluationDataPoints")
+    def evaluation_data_points(self) -> Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs']:
+        """
+        list of data points for the metric for evaluation of anomalies
+        """
+        return pulumi.get(self, "evaluation_data_points")
+
+    @evaluation_data_points.setter
+    def evaluation_data_points(self, value: Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs']):
+        pulumi.set(self, "evaluation_data_points", value)
+
+    @property
+    @pulumi.getter(name="trainingDataPoints")
+    def training_data_points(self) -> Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs']:
+        """
+        list of data points for the metric for training of baseline
+        """
+        return pulumi.get(self, "training_data_points")
+
+    @training_data_points.setter
+    def training_data_points(self, value: Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs']):
+        pulumi.set(self, "training_data_points", value)
+
+
+@pulumi.input_type
+class GetBaselineableMetricsEvaluateItemDataPointArgs:
+    def __init__(__self__, *,
+                 anomaly: float,
+                 high: float,
+                 low: float,
+                 timestamp: str,
+                 value: float):
+        """
+        :param float anomaly: if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+        :param float high: upper threshold for the metric value
+        :param float low: lower threshold for the metric value
+        :param str timestamp: timestamp of when the metric was collected
+        :param float value: value for the metric data point
+        """
+        pulumi.set(__self__, "anomaly", anomaly)
+        pulumi.set(__self__, "high", high)
+        pulumi.set(__self__, "low", low)
+        pulumi.set(__self__, "timestamp", timestamp)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def anomaly(self) -> float:
+        """
+        if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+        """
+        return pulumi.get(self, "anomaly")
+
+    @anomaly.setter
+    def anomaly(self, value: float):
+        pulumi.set(self, "anomaly", value)
+
+    @property
+    @pulumi.getter
+    def high(self) -> float:
+        """
+        upper threshold for the metric value
+        """
+        return pulumi.get(self, "high")
+
+    @high.setter
+    def high(self, value: float):
+        pulumi.set(self, "high", value)
+
+    @property
+    @pulumi.getter
+    def low(self) -> float:
+        """
+        lower threshold for the metric value
+        """
+        return pulumi.get(self, "low")
+
+    @low.setter
+    def low(self, value: float):
+        pulumi.set(self, "low", value)
+
+    @property
+    @pulumi.getter
+    def timestamp(self) -> str:
+        """
+        timestamp of when the metric was collected
+        """
+        return pulumi.get(self, "timestamp")
+
+    @timestamp.setter
+    def timestamp(self, value: str):
+        pulumi.set(self, "timestamp", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        """
+        value for the metric data point
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: float):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs:
+    def __init__(__self__, *,
+                 timestamp: str,
+                 value: float):
+        """
+        :param str timestamp: timestamp of when the metric was collected
+        :param float value: value for the metric data point
+        """
+        pulumi.set(__self__, "timestamp", timestamp)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def timestamp(self) -> str:
+        """
+        timestamp of when the metric was collected
+        """
+        return pulumi.get(self, "timestamp")
+
+    @timestamp.setter
+    def timestamp(self, value: str):
+        pulumi.set(self, "timestamp", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        """
+        value for the metric data point
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: float):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetBaselineableMetricsEvaluateItemTrainingDataPointArgs:
+    def __init__(__self__, *,
+                 timestamp: str,
+                 value: float):
+        """
+        :param str timestamp: timestamp of when the metric was collected
+        :param float value: value for the metric data point
+        """
+        pulumi.set(__self__, "timestamp", timestamp)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def timestamp(self) -> str:
+        """
+        timestamp of when the metric was collected
+        """
+        return pulumi.get(self, "timestamp")
+
+    @timestamp.setter
+    def timestamp(self, value: str):
+        pulumi.set(self, "timestamp", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        """
+        value for the metric data point
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: float):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetBaselineableMetricsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Metric Name
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Metric Name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetConfigsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -1885,6 +3041,186 @@ class GetDiscoveryJobsFilterArgs:
     def name(self) -> str:
         """
         A filter to return only discovery jobs that match the entire resource name given.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetMetricExtensionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return resources based on name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return resources based on name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetMonitoredResourceTasksFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Name of the task.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the task.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetMonitoredResourceTypesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return monitored resource types that match exactly with the resource type name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return monitored resource types that match exactly with the resource type name given.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetMonitoredResourcesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return resources that match exact resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return resources that match exact resource name.
         """
         return pulumi.get(self, "name")
 

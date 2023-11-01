@@ -60,6 +60,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
 
+        /// <summary>
+        /// Whether to enable monitoring via the Database Management service.
+        /// </summary>
+        [Input("databaseManagement")]
+        public Input<string>? DatabaseManagement { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 

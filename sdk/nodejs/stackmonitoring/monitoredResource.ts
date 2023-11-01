@@ -83,6 +83,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     hostName: _var.monitored_resource_host_name,
+ *     license: _var.monitored_resource_license,
  *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
  *     properties: [{
  *         name: _var.monitored_resource_properties_name,
@@ -177,6 +178,10 @@ export class MonitoredResource extends pulumi.CustomResource {
      */
     public readonly hostName!: pulumi.Output<string | undefined>;
     /**
+     * (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+     */
+    public readonly license!: pulumi.Output<string>;
+    /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly managementAgentId!: pulumi.Output<string | undefined>;
@@ -246,6 +251,7 @@ export class MonitoredResource extends pulumi.CustomResource {
             resourceInputs["externalResourceId"] = state ? state.externalResourceId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostName"] = state ? state.hostName : undefined;
+            resourceInputs["license"] = state ? state.license : undefined;
             resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["properties"] = state ? state.properties : undefined;
@@ -276,6 +282,7 @@ export class MonitoredResource extends pulumi.CustomResource {
             resourceInputs["externalResourceId"] = args ? args.externalResourceId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostName"] = args ? args.hostName : undefined;
+            resourceInputs["license"] = args ? args.license : undefined;
             resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["properties"] = args ? args.properties : undefined;
@@ -344,6 +351,10 @@ export interface MonitoredResourceState {
      * (Updatable) Host name of the monitored resource.
      */
     hostName?: pulumi.Input<string>;
+    /**
+     * (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+     */
+    license?: pulumi.Input<string>;
     /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -442,6 +453,10 @@ export interface MonitoredResourceArgs {
      * (Updatable) Host name of the monitored resource.
      */
     hostName?: pulumi.Input<string>;
+    /**
+     * (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+     */
+    license?: pulumi.Input<string>;
     /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

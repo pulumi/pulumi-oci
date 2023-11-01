@@ -114,6 +114,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///             { "bar-key", "value" },
     ///         },
     ///         HostName = @var.Monitored_resource_host_name,
+    ///         License = @var.Monitored_resource_license,
     ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
     ///         Properties = new[]
     ///         {
@@ -211,6 +212,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("hostName")]
         public Output<string?> HostName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+        /// </summary>
+        [Output("license")]
+        public Output<string> License { get; private set; } = null!;
 
         /// <summary>
         /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -419,6 +426,12 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? HostName { get; set; }
 
         /// <summary>
+        /// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
+
+        /// <summary>
         /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("managementAgentId")]
@@ -561,6 +574,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
+
+        /// <summary>
+        /// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
 
         /// <summary>
         /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

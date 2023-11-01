@@ -32,7 +32,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan identified by *drPlanId*.
+     * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
      * ```java
@@ -71,7 +71,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan identified by *drPlanId*.
+     * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
      * ```java
@@ -110,7 +110,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan identified by *drPlanId*.
+     * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
      * ```java
@@ -149,7 +149,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan identified by *drPlanId*.
+     * Get details for the DR plan identified by *drPlanId*.
      * 
      * ## Example Usage
      * ```java
@@ -188,7 +188,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+     * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
      * ```java
@@ -227,7 +227,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+     * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
      * ```java
@@ -266,7 +266,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+     * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
      * ```java
@@ -305,7 +305,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+     * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * 
      * ## Example Usage
      * ```java
@@ -344,7 +344,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get a summary list of all DR Plan Executions for a DR Protection Group.
+     * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -387,7 +387,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get a summary list of all DR Plan Executions for a DR Protection Group.
+     * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -430,7 +430,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get a summary list of all DR Plan Executions for a DR Protection Group.
+     * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -473,7 +473,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get a summary list of all DR Plan Executions for a DR Protection Group.
+     * Get a summary list of all DR plan executions for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -516,7 +516,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Plans for a DR Protection Group.
+     * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -559,7 +559,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Plans for a DR Protection Group.
+     * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -602,7 +602,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Plans for a DR Protection Group.
+     * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -645,7 +645,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Plans for a DR Protection Group.
+     * Get a summary list of all DR plans for a DR protection group.
      * 
      * ## Example Usage
      * ```java
@@ -688,7 +688,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get the DR Protection Group identified by *drProtectionGroupId*.
+     * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
      * ```java
@@ -727,7 +727,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get the DR Protection Group identified by *drProtectionGroupId*.
+     * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
      * ```java
@@ -766,7 +766,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get the DR Protection Group identified by *drProtectionGroupId*.
+     * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
      * ```java
@@ -805,7 +805,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Get the DR Protection Group identified by *drProtectionGroupId*.
+     * Get the DR protection group identified by *drProtectionGroupId*.
      * 
      * ## Example Usage
      * ```java
@@ -844,7 +844,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Protection Groups in a compartment.
+     * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
      * ```java
@@ -872,6 +872,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
      *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());
@@ -887,7 +888,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Protection Groups in a compartment.
+     * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
      * ```java
@@ -915,6 +916,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
      *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());
@@ -930,7 +932,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Protection Groups in a compartment.
+     * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
      * ```java
@@ -958,6 +960,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
      *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());
@@ -973,7 +976,7 @@ public final class DisasterRecoveryFunctions {
     /**
      * This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
      * 
-     * Gets a summary list of all DR Protection Groups in a compartment.
+     * Get a summary list of all DR protection groups in a compartment.
      * 
      * ## Example Usage
      * ```java
@@ -1001,6 +1004,7 @@ public final class DisasterRecoveryFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.dr_protection_group_display_name())
      *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
      *             .role(var_.dr_protection_group_role())
      *             .state(var_.dr_protection_group_state())
      *             .build());

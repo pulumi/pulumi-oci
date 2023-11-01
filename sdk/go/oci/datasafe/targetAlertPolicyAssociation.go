@@ -76,7 +76,7 @@ type TargetAlertPolicyAssociation struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+	// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringOutput `pulumi:"policyId"`
@@ -147,7 +147,7 @@ type targetAlertPolicyAssociationState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+	// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
 	PolicyId *string `pulumi:"policyId"`
@@ -177,7 +177,7 @@ type TargetAlertPolicyAssociationState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+	// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled pulumi.BoolPtrInput
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringPtrInput
@@ -211,7 +211,7 @@ type targetAlertPolicyAssociationArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+	// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
 	PolicyId string `pulumi:"policyId"`
@@ -234,7 +234,7 @@ type TargetAlertPolicyAssociationArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+	// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled pulumi.BoolInput
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringInput
@@ -381,7 +381,7 @@ func (o TargetAlertPolicyAssociationOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
 func (o TargetAlertPolicyAssociationOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }

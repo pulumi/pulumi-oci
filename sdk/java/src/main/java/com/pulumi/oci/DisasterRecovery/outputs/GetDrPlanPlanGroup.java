@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanPlanGroup {
     /**
-     * @return The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     private String displayName;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     private String id;
     /**
-     * @return The list of steps in this plan group.
+     * @return The list of steps in the group.
      * 
      */
     private List<GetDrPlanPlanGroupStep> steps;
     /**
-     * @return The type of this DR Plan.
+     * @return The type of the DR plan.
      * 
      */
     private String type;
 
     private GetDrPlanPlanGroup() {}
     /**
-     * @return The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The list of steps in this plan group.
+     * @return The list of steps in the group.
      * 
      */
     public List<GetDrPlanPlanGroupStep> steps() {
         return this.steps;
     }
     /**
-     * @return The type of this DR Plan.
+     * @return The type of the DR plan.
      * 
      */
     public String type() {

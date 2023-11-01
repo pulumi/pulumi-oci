@@ -88,7 +88,7 @@ type GetSecurityAssessmentsArgs struct {
 	// A filter to return only resources that match the specified display name.
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetSecurityAssessmentsFilter `pulumi:"filters"`
-	// A filter to return only security assessments that are set as baseline.
+	// A filter to return only the security assessments that are set as a baseline.
 	IsBaseline *bool `pulumi:"isBaseline"`
 	// A filter to return only security assessments of type save schedule.
 	IsScheduleAssessment *bool `pulumi:"isScheduleAssessment"`
@@ -164,7 +164,7 @@ type GetSecurityAssessmentsOutputArgs struct {
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput                  `pulumi:"displayName"`
 	Filters     GetSecurityAssessmentsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only security assessments that are set as baseline.
+	// A filter to return only the security assessments that are set as a baseline.
 	IsBaseline pulumi.BoolPtrInput `pulumi:"isBaseline"`
 	// A filter to return only security assessments of type save schedule.
 	IsScheduleAssessment pulumi.BoolPtrInput `pulumi:"isScheduleAssessment"`

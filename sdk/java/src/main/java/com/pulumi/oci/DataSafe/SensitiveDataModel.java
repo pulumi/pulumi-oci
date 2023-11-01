@@ -176,14 +176,14 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
         return this.isAppDefinedRelationDiscoveryEnabled;
     }
     /**
-     * Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+     * Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
     @Export(name="isIncludeAllSchemas", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIncludeAllSchemas;
 
     /**
-     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
     public Output<Boolean> isIncludeAllSchemas() {

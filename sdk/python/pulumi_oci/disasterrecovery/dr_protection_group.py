@@ -26,18 +26,18 @@ class DrProtectionGroupArgs:
                  members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None):
         """
         The set of arguments for constructing a DrProtectionGroup resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
-        :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
-        :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
+        :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR Protection Group members.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR protection group members.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -57,7 +57,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -69,7 +69,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         """
         return pulumi.get(self, "display_name")
 
@@ -81,7 +81,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter(name="logLocation")
     def log_location(self) -> pulumi.Input['DrProtectionGroupLogLocationArgs']:
         """
-        (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+        (Updatable) The details for creating an object storage log location for a DR protection group.
         """
         return pulumi.get(self, "log_location")
 
@@ -93,7 +93,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter
     def association(self) -> Optional[pulumi.Input['DrProtectionGroupAssociationArgs']]:
         """
-        The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+        The details for associating a DR protection group with a peer DR protection group.
         """
         return pulumi.get(self, "association")
 
@@ -105,7 +105,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -133,7 +133,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -145,7 +145,7 @@ class DrProtectionGroupArgs:
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]]:
         """
-        (Updatable) A list of DR Protection Group members.
+        (Updatable) A list of DR protection group members.
         """
         return pulumi.get(self, "members")
 
@@ -164,6 +164,7 @@ class _DrProtectionGroupState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  life_cycle_details: Optional[pulumi.Input[str]] = None,
+                 lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
                  log_location: Optional[pulumi.Input['DrProtectionGroupLogLocationArgs']] = None,
                  members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None,
                  peer_id: Optional[pulumi.Input[str]] = None,
@@ -175,26 +176,27 @@ class _DrProtectionGroupState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DrProtectionGroup resources.
-        :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] life_cycle_details: A message describing the DR Protection Group's current state in more detail.
-        :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
-        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR Protection Group members.
-        :param pulumi.Input[str] peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
-        :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
-        :param pulumi.Input[str] role: The role of this DR Protection Group.
-        :param pulumi.Input[str] state: The current state of the DR Protection Group.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] time_updated: The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] life_cycle_details: A message describing the DR protection group's current state in more detail.
+        :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the DR protection group.
+        :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR protection group members.
+        :param pulumi.Input[str] peer_id: The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+        :param pulumi.Input[str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
+        :param pulumi.Input[str] role: The role of the DR protection group.  Example: `STANDBY`
+        :param pulumi.Input[str] state: The current state of the DR protection group.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[str] time_created: The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] time_updated: The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         if association is not None:
             pulumi.set(__self__, "association", association)
@@ -210,6 +212,8 @@ class _DrProtectionGroupState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if life_cycle_details is not None:
             pulumi.set(__self__, "life_cycle_details", life_cycle_details)
+        if lifecycle_sub_state is not None:
+            pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         if log_location is not None:
             pulumi.set(__self__, "log_location", log_location)
         if members is not None:
@@ -233,7 +237,7 @@ class _DrProtectionGroupState:
     @pulumi.getter
     def association(self) -> Optional[pulumi.Input['DrProtectionGroupAssociationArgs']]:
         """
-        The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+        The details for associating a DR protection group with a peer DR protection group.
         """
         return pulumi.get(self, "association")
 
@@ -245,7 +249,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -257,7 +261,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -285,7 +289,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         """
         return pulumi.get(self, "display_name")
 
@@ -297,7 +301,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -309,7 +313,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="lifeCycleDetails")
     def life_cycle_details(self) -> Optional[pulumi.Input[str]]:
         """
-        A message describing the DR Protection Group's current state in more detail.
+        A message describing the DR protection group's current state in more detail.
         """
         return pulumi.get(self, "life_cycle_details")
 
@@ -318,10 +322,22 @@ class _DrProtectionGroupState:
         pulumi.set(self, "life_cycle_details", value)
 
     @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current sub-state of the DR protection group.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
+
+    @lifecycle_sub_state.setter
+    def lifecycle_sub_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_sub_state", value)
+
+    @property
     @pulumi.getter(name="logLocation")
     def log_location(self) -> Optional[pulumi.Input['DrProtectionGroupLogLocationArgs']]:
         """
-        (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+        (Updatable) The details for creating an object storage log location for a DR protection group.
         """
         return pulumi.get(self, "log_location")
 
@@ -333,7 +349,7 @@ class _DrProtectionGroupState:
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]]:
         """
-        (Updatable) A list of DR Protection Group members.
+        (Updatable) A list of DR protection group members.
         """
         return pulumi.get(self, "members")
 
@@ -345,7 +361,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="peerId")
     def peer_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_id")
 
@@ -357,7 +373,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="peerRegion")
     def peer_region(self) -> Optional[pulumi.Input[str]]:
         """
-        The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        The region of the peer DR protection group.  Example: `us-ashburn-1`
         """
         return pulumi.get(self, "peer_region")
 
@@ -369,7 +385,7 @@ class _DrProtectionGroupState:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
         """
-        The role of this DR Protection Group.
+        The role of the DR protection group.  Example: `STANDBY`
         """
         return pulumi.get(self, "role")
 
@@ -381,7 +397,7 @@ class _DrProtectionGroupState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the DR Protection Group.
+        The current state of the DR protection group.
         """
         return pulumi.get(self, "state")
 
@@ -393,7 +409,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -405,7 +421,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -417,7 +433,7 @@ class _DrProtectionGroupState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -443,56 +459,22 @@ class DrProtectionGroup(pulumi.CustomResource):
         """
         This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
-        Create a new DR Protection Group.
+        Create a DR protection group.
 
-        ## Example Usage
+        ## Create
+
+        Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
 
         ```python
         import pulumi
-        import pulumi_oci as oci
+        ```
 
-        test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("testDrProtectionGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["dr_protection_group_display_name"],
-            log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
-                bucket=var["dr_protection_group_log_location_bucket"],
-                namespace=var["dr_protection_group_log_location_namespace"],
-            ),
-            association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
-                role=var["dr_protection_group_association_role"],
-                peer_id=oci_blockchain_peer["test_peer"]["id"],
-                peer_region=var["dr_protection_group_association_peer_region"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
-                member_id=oci_disaster_recovery_member["test_member"]["id"],
-                member_type=var["dr_protection_group_members_member_type"],
-                destination_capacity_reservation_id=oci_disaster_recovery_destination_capacity_reservation["test_destination_capacity_reservation"]["id"],
-                destination_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-                destination_dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                is_movable=var["dr_protection_group_members_is_movable"],
-                is_retain_fault_domain=var["dr_protection_group_members_is_retain_fault_domain"],
-                password_vault_secret_id=oci_vault_secret["test_secret"]["id"],
-                vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mapping_destination_nsg_id_list"],
-                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address"],
-                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label"],
-                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
-                )],
-                vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mappings_destination_nsg_id_list"],
-                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address"],
-                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label"],
-                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
-                )],
-            )])
+        ## Delete
+
+        Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
+
+        ```python
+        import pulumi
         ```
 
         ## Import
@@ -505,18 +487,18 @@ class DrProtectionGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]] members: (Updatable) A list of DR Protection Group members.
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]] members: (Updatable) A list of DR protection group members.
         """
         ...
     @overload
@@ -527,56 +509,22 @@ class DrProtectionGroup(pulumi.CustomResource):
         """
         This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
-        Create a new DR Protection Group.
+        Create a DR protection group.
 
-        ## Example Usage
+        ## Create
+
+        Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
 
         ```python
         import pulumi
-        import pulumi_oci as oci
+        ```
 
-        test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("testDrProtectionGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["dr_protection_group_display_name"],
-            log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
-                bucket=var["dr_protection_group_log_location_bucket"],
-                namespace=var["dr_protection_group_log_location_namespace"],
-            ),
-            association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
-                role=var["dr_protection_group_association_role"],
-                peer_id=oci_blockchain_peer["test_peer"]["id"],
-                peer_region=var["dr_protection_group_association_peer_region"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
-                member_id=oci_disaster_recovery_member["test_member"]["id"],
-                member_type=var["dr_protection_group_members_member_type"],
-                destination_capacity_reservation_id=oci_disaster_recovery_destination_capacity_reservation["test_destination_capacity_reservation"]["id"],
-                destination_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-                destination_dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                is_movable=var["dr_protection_group_members_is_movable"],
-                is_retain_fault_domain=var["dr_protection_group_members_is_retain_fault_domain"],
-                password_vault_secret_id=oci_vault_secret["test_secret"]["id"],
-                vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mapping_destination_nsg_id_list"],
-                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address"],
-                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label"],
-                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
-                )],
-                vnic_mappings=[oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
-                    destination_nsg_id_lists=var["dr_protection_group_members_vnic_mappings_destination_nsg_id_list"],
-                    destination_primary_private_ip_address=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address"],
-                    destination_primary_private_ip_hostname_label=var["dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label"],
-                    destination_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    source_vnic_id=oci_core_vnic["test_vnic"]["id"],
-                )],
-            )])
+        ## Delete
+
+        Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
+
+        ```python
+        import pulumi
         ```
 
         ## Import
@@ -634,6 +582,7 @@ class DrProtectionGroup(pulumi.CustomResource):
             __props__.__dict__["log_location"] = log_location
             __props__.__dict__["members"] = members
             __props__.__dict__["life_cycle_details"] = None
+            __props__.__dict__["lifecycle_sub_state"] = None
             __props__.__dict__["peer_id"] = None
             __props__.__dict__["peer_region"] = None
             __props__.__dict__["role"] = None
@@ -658,6 +607,7 @@ class DrProtectionGroup(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             life_cycle_details: Optional[pulumi.Input[str]] = None,
+            lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
             log_location: Optional[pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']]] = None,
             members: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]]] = None,
             peer_id: Optional[pulumi.Input[str]] = None,
@@ -674,26 +624,27 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[pulumi.InputType['DrProtectionGroupAssociationArgs']] association: The details for associating a DR protection group with a peer DR protection group.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] life_cycle_details: A message describing the DR Protection Group's current state in more detail.
-        :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]] members: (Updatable) A list of DR Protection Group members.
-        :param pulumi.Input[str] peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
-        :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
-        :param pulumi.Input[str] role: The role of this DR Protection Group.
-        :param pulumi.Input[str] state: The current state of the DR Protection Group.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] time_updated: The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] life_cycle_details: A message describing the DR protection group's current state in more detail.
+        :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the DR protection group.
+        :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrProtectionGroupMemberArgs']]]] members: (Updatable) A list of DR protection group members.
+        :param pulumi.Input[str] peer_id: The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+        :param pulumi.Input[str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
+        :param pulumi.Input[str] role: The role of the DR protection group.  Example: `STANDBY`
+        :param pulumi.Input[str] state: The current state of the DR protection group.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[str] time_created: The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        :param pulumi.Input[str] time_updated: The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -706,6 +657,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["life_cycle_details"] = life_cycle_details
+        __props__.__dict__["lifecycle_sub_state"] = lifecycle_sub_state
         __props__.__dict__["log_location"] = log_location
         __props__.__dict__["members"] = members
         __props__.__dict__["peer_id"] = peer_id
@@ -721,7 +673,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter
     def association(self) -> pulumi.Output['outputs.DrProtectionGroupAssociation']:
         """
-        The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+        The details for associating a DR protection group with a peer DR protection group.
         """
         return pulumi.get(self, "association")
 
@@ -729,7 +681,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -737,7 +689,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -757,7 +709,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         """
         return pulumi.get(self, "display_name")
 
@@ -765,7 +717,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -773,15 +725,23 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="lifeCycleDetails")
     def life_cycle_details(self) -> pulumi.Output[str]:
         """
-        A message describing the DR Protection Group's current state in more detail.
+        A message describing the DR protection group's current state in more detail.
         """
         return pulumi.get(self, "life_cycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> pulumi.Output[str]:
+        """
+        The current sub-state of the DR protection group.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="logLocation")
     def log_location(self) -> pulumi.Output['outputs.DrProtectionGroupLogLocation']:
         """
-        (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+        (Updatable) The details for creating an object storage log location for a DR protection group.
         """
         return pulumi.get(self, "log_location")
 
@@ -789,7 +749,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter
     def members(self) -> pulumi.Output[Sequence['outputs.DrProtectionGroupMember']]:
         """
-        (Updatable) A list of DR Protection Group members.
+        (Updatable) A list of DR protection group members.
         """
         return pulumi.get(self, "members")
 
@@ -797,7 +757,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="peerId")
     def peer_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_id")
 
@@ -805,7 +765,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="peerRegion")
     def peer_region(self) -> pulumi.Output[str]:
         """
-        The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        The region of the peer DR protection group.  Example: `us-ashburn-1`
         """
         return pulumi.get(self, "peer_region")
 
@@ -813,7 +773,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter
     def role(self) -> pulumi.Output[str]:
         """
-        The role of this DR Protection Group.
+        The role of the DR protection group.  Example: `STANDBY`
         """
         return pulumi.get(self, "role")
 
@@ -821,7 +781,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the DR Protection Group.
+        The current state of the DR protection group.
         """
         return pulumi.get(self, "state")
 
@@ -829,7 +789,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -837,7 +797,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -845,7 +805,7 @@ class DrProtectionGroup(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_updated")
 

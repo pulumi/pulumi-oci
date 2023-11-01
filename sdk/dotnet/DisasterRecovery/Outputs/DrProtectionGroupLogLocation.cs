@@ -14,15 +14,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrProtectionGroupLogLocation
     {
         /// <summary>
-        /// (Updatable) The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+        /// (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+        /// The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         /// </summary>
         public readonly string? Object;
 

@@ -19,14 +19,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     public static final DrPlanExecutionGroupExecutionArgs Empty = new DrPlanExecutionGroupExecutionArgs();
 
     /**
-     * (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -34,14 +34,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * The total duration in seconds taken to complete step execution.  Example: `35`
+     * The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     @Import(name="executionDurationInSec")
     private @Nullable Output<Integer> executionDurationInSec;
 
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     public Optional<Output<Integer>> executionDurationInSec() {
@@ -49,14 +49,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -79,14 +79,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     @Import(name="statusDetails")
     private @Nullable Output<String> statusDetails;
 
     /**
-     * @return Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     public Optional<Output<String>> statusDetails() {
@@ -94,14 +94,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * A list of details of each step executed in this group.
+     * A list of step executions in the group.
      * 
      */
     @Import(name="stepExecutions")
     private @Nullable Output<List<DrPlanExecutionGroupExecutionStepExecutionArgs>> stepExecutions;
 
     /**
-     * @return A list of details of each step executed in this group.
+     * @return A list of step executions in the group.
      * 
      */
     public Optional<Output<List<DrPlanExecutionGroupExecutionStepExecutionArgs>>> stepExecutions() {
@@ -109,14 +109,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeEnded")
     private @Nullable Output<String> timeEnded;
 
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeEnded() {
@@ -124,14 +124,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeStarted")
     private @Nullable Output<String> timeStarted;
 
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeStarted() {
@@ -139,14 +139,14 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
     }
 
     /**
-     * The plan group type.
+     * The group type.  Example: `BUILT_IN`
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return The plan group type.
+     * @return The group type.  Example: `BUILT_IN`
      * 
      */
     public Optional<Output<String>> type() {
@@ -186,7 +186,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param executionDurationInSec The total duration in seconds taken to complete step execution.  Example: `35`
+         * @param executionDurationInSec The total duration in seconds taken to complete the step execution.  Example: `35`
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param executionDurationInSec The total duration in seconds taken to complete step execution.  Example: `35`
+         * @param executionDurationInSec The total duration in seconds taken to complete the step execution.  Example: `35`
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param statusDetails Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+         * @param statusDetails Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param statusDetails Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+         * @param statusDetails Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param stepExecutions A list of details of each step executed in this group.
+         * @param stepExecutions A list of step executions in the group.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param stepExecutions A list of details of each step executed in this group.
+         * @param stepExecutions A list of step executions in the group.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param stepExecutions A list of details of each step executed in this group.
+         * @param stepExecutions A list of step executions in the group.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param timeEnded The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeEnded The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param timeEnded The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeEnded The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param timeStarted The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeStarted The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param timeStarted The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeStarted The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param type The plan group type.
+         * @param type The group type.  Example: `BUILT_IN`
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class DrPlanExecutionGroupExecutionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param type The plan group type.
+         * @param type The group type.  Example: `BUILT_IN`
          * 
          * @return builder
          * 

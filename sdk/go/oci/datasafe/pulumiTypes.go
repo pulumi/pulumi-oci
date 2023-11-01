@@ -945,6 +945,426 @@ func (o DataSafeConfigurationGlobalSettingArrayOutput) Index(i pulumi.IntInput) 
 	}).(DataSafeConfigurationGlobalSettingOutput)
 }
 
+type DatabaseSecurityConfigManagementSqlFirewallConfig struct {
+	ExcludeJob            *string `pulumi:"excludeJob"`
+	Status                *string `pulumi:"status"`
+	TimeStatusUpdated     *string `pulumi:"timeStatusUpdated"`
+	ViolationLogAutoPurge *string `pulumi:"violationLogAutoPurge"`
+}
+
+// DatabaseSecurityConfigManagementSqlFirewallConfigInput is an input type that accepts DatabaseSecurityConfigManagementSqlFirewallConfigArgs and DatabaseSecurityConfigManagementSqlFirewallConfigOutput values.
+// You can construct a concrete instance of `DatabaseSecurityConfigManagementSqlFirewallConfigInput` via:
+//
+//	DatabaseSecurityConfigManagementSqlFirewallConfigArgs{...}
+type DatabaseSecurityConfigManagementSqlFirewallConfigInput interface {
+	pulumi.Input
+
+	ToDatabaseSecurityConfigManagementSqlFirewallConfigOutput() DatabaseSecurityConfigManagementSqlFirewallConfigOutput
+	ToDatabaseSecurityConfigManagementSqlFirewallConfigOutputWithContext(context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigOutput
+}
+
+type DatabaseSecurityConfigManagementSqlFirewallConfigArgs struct {
+	ExcludeJob            pulumi.StringPtrInput `pulumi:"excludeJob"`
+	Status                pulumi.StringPtrInput `pulumi:"status"`
+	TimeStatusUpdated     pulumi.StringPtrInput `pulumi:"timeStatusUpdated"`
+	ViolationLogAutoPurge pulumi.StringPtrInput `pulumi:"violationLogAutoPurge"`
+}
+
+func (DatabaseSecurityConfigManagementSqlFirewallConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseSecurityConfigManagementSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i DatabaseSecurityConfigManagementSqlFirewallConfigArgs) ToDatabaseSecurityConfigManagementSqlFirewallConfigOutput() DatabaseSecurityConfigManagementSqlFirewallConfigOutput {
+	return i.ToDatabaseSecurityConfigManagementSqlFirewallConfigOutputWithContext(context.Background())
+}
+
+func (i DatabaseSecurityConfigManagementSqlFirewallConfigArgs) ToDatabaseSecurityConfigManagementSqlFirewallConfigOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementSqlFirewallConfigOutput)
+}
+
+func (i DatabaseSecurityConfigManagementSqlFirewallConfigArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseSecurityConfigManagementSqlFirewallConfig] {
+	return pulumix.Output[DatabaseSecurityConfigManagementSqlFirewallConfig]{
+		OutputState: i.ToDatabaseSecurityConfigManagementSqlFirewallConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i DatabaseSecurityConfigManagementSqlFirewallConfigArgs) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput() DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return i.ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseSecurityConfigManagementSqlFirewallConfigArgs) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementSqlFirewallConfigOutput).ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(ctx)
+}
+
+// DatabaseSecurityConfigManagementSqlFirewallConfigPtrInput is an input type that accepts DatabaseSecurityConfigManagementSqlFirewallConfigArgs, DatabaseSecurityConfigManagementSqlFirewallConfigPtr and DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput values.
+// You can construct a concrete instance of `DatabaseSecurityConfigManagementSqlFirewallConfigPtrInput` via:
+//
+//	        DatabaseSecurityConfigManagementSqlFirewallConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseSecurityConfigManagementSqlFirewallConfigPtrInput interface {
+	pulumi.Input
+
+	ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput() DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput
+	ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput
+}
+
+type databaseSecurityConfigManagementSqlFirewallConfigPtrType DatabaseSecurityConfigManagementSqlFirewallConfigArgs
+
+func DatabaseSecurityConfigManagementSqlFirewallConfigPtr(v *DatabaseSecurityConfigManagementSqlFirewallConfigArgs) DatabaseSecurityConfigManagementSqlFirewallConfigPtrInput {
+	return (*databaseSecurityConfigManagementSqlFirewallConfigPtrType)(v)
+}
+
+func (*databaseSecurityConfigManagementSqlFirewallConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseSecurityConfigManagementSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i *databaseSecurityConfigManagementSqlFirewallConfigPtrType) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput() DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return i.ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *databaseSecurityConfigManagementSqlFirewallConfigPtrType) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput)
+}
+
+func (i *databaseSecurityConfigManagementSqlFirewallConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigManagementSqlFirewallConfig] {
+	return pulumix.Output[*DatabaseSecurityConfigManagementSqlFirewallConfig]{
+		OutputState: i.ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DatabaseSecurityConfigManagementSqlFirewallConfigOutput struct{ *pulumi.OutputState }
+
+func (DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseSecurityConfigManagementSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ToDatabaseSecurityConfigManagementSqlFirewallConfigOutput() DatabaseSecurityConfigManagementSqlFirewallConfigOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ToDatabaseSecurityConfigManagementSqlFirewallConfigOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput() DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return o.ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseSecurityConfigManagementSqlFirewallConfig) *DatabaseSecurityConfigManagementSqlFirewallConfig {
+		return &v
+	}).(DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseSecurityConfigManagementSqlFirewallConfig] {
+	return pulumix.Output[DatabaseSecurityConfigManagementSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ExcludeJob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.ExcludeJob }).(pulumi.StringPtrOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigOutput) ViolationLogAutoPurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigManagementSqlFirewallConfig) *string { return v.ViolationLogAutoPurge }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseSecurityConfigManagementSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput() DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ToDatabaseSecurityConfigManagementSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigManagementSqlFirewallConfig] {
+	return pulumix.Output[*DatabaseSecurityConfigManagementSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) Elem() DatabaseSecurityConfigManagementSqlFirewallConfigOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) DatabaseSecurityConfigManagementSqlFirewallConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseSecurityConfigManagementSqlFirewallConfig
+		return ret
+	}).(DatabaseSecurityConfigManagementSqlFirewallConfigOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ExcludeJob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeJob
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeStatusUpdated
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput) ViolationLogAutoPurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagementSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ViolationLogAutoPurge
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatabaseSecurityConfigSqlFirewallConfig struct {
+	// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob *string `pulumi:"excludeJob"`
+	// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+	Status *string `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated *string `pulumi:"timeStatusUpdated"`
+	// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge *string `pulumi:"violationLogAutoPurge"`
+}
+
+// DatabaseSecurityConfigSqlFirewallConfigInput is an input type that accepts DatabaseSecurityConfigSqlFirewallConfigArgs and DatabaseSecurityConfigSqlFirewallConfigOutput values.
+// You can construct a concrete instance of `DatabaseSecurityConfigSqlFirewallConfigInput` via:
+//
+//	DatabaseSecurityConfigSqlFirewallConfigArgs{...}
+type DatabaseSecurityConfigSqlFirewallConfigInput interface {
+	pulumi.Input
+
+	ToDatabaseSecurityConfigSqlFirewallConfigOutput() DatabaseSecurityConfigSqlFirewallConfigOutput
+	ToDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(context.Context) DatabaseSecurityConfigSqlFirewallConfigOutput
+}
+
+type DatabaseSecurityConfigSqlFirewallConfigArgs struct {
+	// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob pulumi.StringPtrInput `pulumi:"excludeJob"`
+	// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringPtrInput `pulumi:"timeStatusUpdated"`
+	// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge pulumi.StringPtrInput `pulumi:"violationLogAutoPurge"`
+}
+
+func (DatabaseSecurityConfigSqlFirewallConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i DatabaseSecurityConfigSqlFirewallConfigArgs) ToDatabaseSecurityConfigSqlFirewallConfigOutput() DatabaseSecurityConfigSqlFirewallConfigOutput {
+	return i.ToDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(context.Background())
+}
+
+func (i DatabaseSecurityConfigSqlFirewallConfigArgs) ToDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx context.Context) DatabaseSecurityConfigSqlFirewallConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigSqlFirewallConfigOutput)
+}
+
+func (i DatabaseSecurityConfigSqlFirewallConfigArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[DatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: i.ToDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i DatabaseSecurityConfigSqlFirewallConfigArgs) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutput() DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return i.ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseSecurityConfigSqlFirewallConfigArgs) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigSqlFirewallConfigOutput).ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(ctx)
+}
+
+// DatabaseSecurityConfigSqlFirewallConfigPtrInput is an input type that accepts DatabaseSecurityConfigSqlFirewallConfigArgs, DatabaseSecurityConfigSqlFirewallConfigPtr and DatabaseSecurityConfigSqlFirewallConfigPtrOutput values.
+// You can construct a concrete instance of `DatabaseSecurityConfigSqlFirewallConfigPtrInput` via:
+//
+//	        DatabaseSecurityConfigSqlFirewallConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseSecurityConfigSqlFirewallConfigPtrInput interface {
+	pulumi.Input
+
+	ToDatabaseSecurityConfigSqlFirewallConfigPtrOutput() DatabaseSecurityConfigSqlFirewallConfigPtrOutput
+	ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(context.Context) DatabaseSecurityConfigSqlFirewallConfigPtrOutput
+}
+
+type databaseSecurityConfigSqlFirewallConfigPtrType DatabaseSecurityConfigSqlFirewallConfigArgs
+
+func DatabaseSecurityConfigSqlFirewallConfigPtr(v *DatabaseSecurityConfigSqlFirewallConfigArgs) DatabaseSecurityConfigSqlFirewallConfigPtrInput {
+	return (*databaseSecurityConfigSqlFirewallConfigPtrType)(v)
+}
+
+func (*databaseSecurityConfigSqlFirewallConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i *databaseSecurityConfigSqlFirewallConfigPtrType) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutput() DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return i.ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *databaseSecurityConfigSqlFirewallConfigPtrType) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigSqlFirewallConfigPtrOutput)
+}
+
+func (i *databaseSecurityConfigSqlFirewallConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[*DatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: i.ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DatabaseSecurityConfigSqlFirewallConfigOutput struct{ *pulumi.OutputState }
+
+func (DatabaseSecurityConfigSqlFirewallConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) ToDatabaseSecurityConfigSqlFirewallConfigOutput() DatabaseSecurityConfigSqlFirewallConfigOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) ToDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx context.Context) DatabaseSecurityConfigSqlFirewallConfigOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutput() DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return o.ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseSecurityConfigSqlFirewallConfig) *DatabaseSecurityConfigSqlFirewallConfig {
+		return &v
+	}).(DatabaseSecurityConfigSqlFirewallConfigPtrOutput)
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[DatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) ExcludeJob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigSqlFirewallConfig) *string { return v.ExcludeJob }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigSqlFirewallConfig) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigSqlFirewallConfig) *string { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+func (o DatabaseSecurityConfigSqlFirewallConfigOutput) ViolationLogAutoPurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseSecurityConfigSqlFirewallConfig) *string { return v.ViolationLogAutoPurge }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseSecurityConfigSqlFirewallConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseSecurityConfigSqlFirewallConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutput() DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) ToDatabaseSecurityConfigSqlFirewallConfigPtrOutputWithContext(ctx context.Context) DatabaseSecurityConfigSqlFirewallConfigPtrOutput {
+	return o
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[*DatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) Elem() DatabaseSecurityConfigSqlFirewallConfigOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigSqlFirewallConfig) DatabaseSecurityConfigSqlFirewallConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseSecurityConfigSqlFirewallConfig
+		return ret
+	}).(DatabaseSecurityConfigSqlFirewallConfigOutput)
+}
+
+// (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) ExcludeJob() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeJob
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeStatusUpdated
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+func (o DatabaseSecurityConfigSqlFirewallConfigPtrOutput) ViolationLogAutoPurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigSqlFirewallConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ViolationLogAutoPurge
+	}).(pulumi.StringPtrOutput)
+}
+
 type DiscoveryJobsResultModifiedAttribute struct {
 	// Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
 	AppDefinedChildColumnKeys []string `pulumi:"appDefinedChildColumnKeys"`
@@ -15060,6 +15480,827 @@ func (o GetDataSafePrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetDataSafePrivateEndpointsFilterOutput)
 }
 
+type GetDatabaseSecurityConfigSqlFirewallConfig struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob string `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status string `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge string `pulumi:"violationLogAutoPurge"`
+}
+
+// GetDatabaseSecurityConfigSqlFirewallConfigInput is an input type that accepts GetDatabaseSecurityConfigSqlFirewallConfigArgs and GetDatabaseSecurityConfigSqlFirewallConfigOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigSqlFirewallConfigInput` via:
+//
+//	GetDatabaseSecurityConfigSqlFirewallConfigArgs{...}
+type GetDatabaseSecurityConfigSqlFirewallConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigSqlFirewallConfigOutput() GetDatabaseSecurityConfigSqlFirewallConfigOutput
+	ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(context.Context) GetDatabaseSecurityConfigSqlFirewallConfigOutput
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigArgs struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob pulumi.StringInput `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge pulumi.StringInput `pulumi:"violationLogAutoPurge"`
+}
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigSqlFirewallConfigOutput() GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return i.ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigSqlFirewallConfigOutput)
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[GetDatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: i.ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDatabaseSecurityConfigSqlFirewallConfigArrayInput is an input type that accepts GetDatabaseSecurityConfigSqlFirewallConfigArray and GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigSqlFirewallConfigArrayInput` via:
+//
+//	GetDatabaseSecurityConfigSqlFirewallConfigArray{ GetDatabaseSecurityConfigSqlFirewallConfigArgs{...} }
+type GetDatabaseSecurityConfigSqlFirewallConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput
+	ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigArray []GetDatabaseSecurityConfigSqlFirewallConfigInput
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArray) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return i.ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArray) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput)
+}
+
+func (i GetDatabaseSecurityConfigSqlFirewallConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: i.ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigOutput() GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[GetDatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Specifies whether the firewall should include or exclude the database internal job activities.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ExcludeJob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.ExcludeJob }).(pulumi.StringOutput)
+}
+
+// Specifies if the firewall is enabled or disabled on the target database.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+}
+
+// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+func (o GetDatabaseSecurityConfigSqlFirewallConfigOutput) ViolationLogAutoPurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigSqlFirewallConfig) string { return v.ViolationLogAutoPurge }).(pulumi.StringOutput)
+}
+
+type GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigSqlFirewallConfig] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigSqlFirewallConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigSqlFirewallConfig {
+		return vs[0].([]GetDatabaseSecurityConfigSqlFirewallConfig)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigSqlFirewallConfigOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection struct {
+	Items []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs{...}
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs struct {
+	Items GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput)
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection] {
+	return pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection]{
+		OutputState: i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray{ GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs{...} }
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput)
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection]{
+		OutputState: i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection] {
+	return pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput) Items() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection) []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem {
+		return v.Items
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection {
+		return vs[0].([]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+	DatabaseSecurityConfigId string `pulumi:"databaseSecurityConfigId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the database security config.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the database security config.
+	Id string `pulumi:"id"`
+	// Details about the current state of the database security config in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	RefreshTrigger   int    `pulumi:"refreshTrigger"`
+	// The SQL firewall related configurations.
+	SqlFirewallConfigs []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig `pulumi:"sqlFirewallConfigs"`
+	// The current state of the database security configuration.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The time that the database security config was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the database security config was refreshed, in the format defined by RFC3339.
+	TimeLastRefreshed string `pulumi:"timeLastRefreshed"`
+	// The date and time the database security configuration was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs{...}
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+	DatabaseSecurityConfigId pulumi.StringInput `pulumi:"databaseSecurityConfigId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the database security config.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the database security config.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the database security config in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	RefreshTrigger   pulumi.IntInput    `pulumi:"refreshTrigger"`
+	// The SQL firewall related configurations.
+	SqlFirewallConfigs GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput `pulumi:"sqlFirewallConfigs"`
+	// The current state of the database security configuration.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The time that the database security config was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the database security config was refreshed, in the format defined by RFC3339.
+	TimeLastRefreshed pulumi.StringInput `pulumi:"timeLastRefreshed"`
+	// The date and time the database security configuration was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput)
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem] {
+	return pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem]{
+		OutputState: i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray{ GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs{...} }
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput)
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem]{
+		OutputState: i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem] {
+	return pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) DatabaseSecurityConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string {
+		return v.DatabaseSecurityConfigId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The description of the database security config.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the database security config.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the database security config in Data Safe.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
+// The SQL firewall related configurations.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) SqlFirewallConfigs() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig {
+		return v.SqlFirewallConfigs
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput)
+}
+
+// The current state of the database security configuration.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The time that the database security config was created, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time the database security config was refreshed, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TimeLastRefreshed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string {
+		return v.TimeLastRefreshed
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the database security configuration was last updated, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem {
+		return vs[0].([]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob string `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status string `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge string `pulumi:"violationLogAutoPurge"`
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs{...}
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs struct {
+	// Specifies whether the firewall should include or exclude the database internal job activities.
+	ExcludeJob pulumi.StringInput `pulumi:"excludeJob"`
+	// Specifies if the firewall is enabled or disabled on the target database.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+	// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+	ViolationLogAutoPurge pulumi.StringInput `pulumi:"violationLogAutoPurge"`
+}
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput)
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig] {
+	return pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig]{
+		OutputState: i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput is an input type that accepts GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray and GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray{ GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs{...} }
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput
+	ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray []GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput)
+}
+
+func (i GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig]{
+		OutputState: i.ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig] {
+	return pulumix.Output[GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Specifies whether the firewall should include or exclude the database internal job activities.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ExcludeJob() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.ExcludeJob
+	}).(pulumi.StringOutput)
+}
+
+// Specifies if the firewall is enabled or disabled on the target database.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The most recent time when the firewall status is updated, in the format defined by RFC3339.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.TimeStatusUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput) ViolationLogAutoPurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig) string {
+		return v.ViolationLogAutoPurge
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput() GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) ToGetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig {
+		return vs[0].([]GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput)
+}
+
+type GetDatabaseSecurityConfigsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseSecurityConfigsFilterInput is an input type that accepts GetDatabaseSecurityConfigsFilterArgs and GetDatabaseSecurityConfigsFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsFilterInput` via:
+//
+//	GetDatabaseSecurityConfigsFilterArgs{...}
+type GetDatabaseSecurityConfigsFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsFilterOutput() GetDatabaseSecurityConfigsFilterOutput
+	ToGetDatabaseSecurityConfigsFilterOutputWithContext(context.Context) GetDatabaseSecurityConfigsFilterOutput
+}
+
+type GetDatabaseSecurityConfigsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseSecurityConfigsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsFilterArgs) ToGetDatabaseSecurityConfigsFilterOutput() GetDatabaseSecurityConfigsFilterOutput {
+	return i.ToGetDatabaseSecurityConfigsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsFilterArgs) ToGetDatabaseSecurityConfigsFilterOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsFilterOutput)
+}
+
+func (i GetDatabaseSecurityConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsFilter] {
+	return pulumix.Output[GetDatabaseSecurityConfigsFilter]{
+		OutputState: i.ToGetDatabaseSecurityConfigsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDatabaseSecurityConfigsFilterArrayInput is an input type that accepts GetDatabaseSecurityConfigsFilterArray and GetDatabaseSecurityConfigsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSecurityConfigsFilterArrayInput` via:
+//
+//	GetDatabaseSecurityConfigsFilterArray{ GetDatabaseSecurityConfigsFilterArgs{...} }
+type GetDatabaseSecurityConfigsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSecurityConfigsFilterArrayOutput() GetDatabaseSecurityConfigsFilterArrayOutput
+	ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(context.Context) GetDatabaseSecurityConfigsFilterArrayOutput
+}
+
+type GetDatabaseSecurityConfigsFilterArray []GetDatabaseSecurityConfigsFilterInput
+
+func (GetDatabaseSecurityConfigsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseSecurityConfigsFilterArray) ToGetDatabaseSecurityConfigsFilterArrayOutput() GetDatabaseSecurityConfigsFilterArrayOutput {
+	return i.ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSecurityConfigsFilterArray) ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSecurityConfigsFilterArrayOutput)
+}
+
+func (i GetDatabaseSecurityConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsFilter] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsFilter]{
+		OutputState: i.ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDatabaseSecurityConfigsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) ToGetDatabaseSecurityConfigsFilterOutput() GetDatabaseSecurityConfigsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) ToGetDatabaseSecurityConfigsFilterOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsFilter] {
+	return pulumix.Output[GetDatabaseSecurityConfigsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseSecurityConfigsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseSecurityConfigsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSecurityConfigsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSecurityConfigsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseSecurityConfigsFilterArrayOutput) ToGetDatabaseSecurityConfigsFilterArrayOutput() GetDatabaseSecurityConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterArrayOutput) ToGetDatabaseSecurityConfigsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSecurityConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseSecurityConfigsFilter] {
+	return pulumix.Output[[]GetDatabaseSecurityConfigsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDatabaseSecurityConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseSecurityConfigsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSecurityConfigsFilter {
+		return vs[0].([]GetDatabaseSecurityConfigsFilter)[vs[1].(int)]
+	}).(GetDatabaseSecurityConfigsFilterOutput)
+}
+
 type GetDiscoveryAnalyticItem struct {
 	// The total count for the aggregation metric.
 	Count string `pulumi:"count"`
@@ -20681,7 +21922,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItem struct {
 	PostMaskingScript string `pulumi:"postMaskingScript"`
 	// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
 	PreMaskingScript string `pulumi:"preMaskingScript"`
-	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 	Recompile string `pulumi:"recompile"`
 	// A filter to return only the resources that match the specified lifecycle states.
 	State string `pulumi:"state"`
@@ -20730,7 +21971,7 @@ type GetMaskingPoliciesMaskingPolicyCollectionItemArgs struct {
 	PostMaskingScript pulumi.StringInput `pulumi:"postMaskingScript"`
 	// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
 	PreMaskingScript pulumi.StringInput `pulumi:"preMaskingScript"`
-	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+	// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 	Recompile pulumi.StringInput `pulumi:"recompile"`
 	// A filter to return only the resources that match the specified lifecycle states.
 	State pulumi.StringInput `pulumi:"state"`
@@ -20880,7 +22121,7 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) PreMaskingScript() 
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.PreMaskingScript }).(pulumi.StringOutput)
 }
 
-// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
+// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) Recompile() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) string { return v.Recompile }).(pulumi.StringOutput)
 }
@@ -33227,7 +34468,7 @@ type GetSecurityAssessmentFindingsFinding struct {
 	Details []string `pulumi:"details"`
 	// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
 	Key string `pulumi:"key"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References []GetSecurityAssessmentFindingsFindingReference `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks string `pulumi:"remarks"`
@@ -33259,7 +34500,7 @@ type GetSecurityAssessmentFindingsFindingArgs struct {
 	Details pulumi.StringArrayInput `pulumi:"details"`
 	// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
 	Key pulumi.StringInput `pulumi:"key"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References GetSecurityAssessmentFindingsFindingReferenceArrayInput `pulumi:"references"`
 	// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
 	Remarks pulumi.StringInput `pulumi:"remarks"`
@@ -33357,7 +34598,7 @@ func (o GetSecurityAssessmentFindingsFindingOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// An optional filter to return only findings containing the specified reference.
+// An optional filter to return only findings that match the specified reference.
 func (o GetSecurityAssessmentFindingsFindingOutput) References() GetSecurityAssessmentFindingsFindingReferenceArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) []GetSecurityAssessmentFindingsFindingReference {
 		return v.References
@@ -34982,7 +36223,7 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets []string `pulumi:"ignoredTargets"`
-	// A filter to return only security assessments that are set as baseline.
+	// A filter to return only the security assessments that are set as a baseline.
 	IsBaseline bool `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
 	IsDeviatedFromBaseline bool `pulumi:"isDeviatedFromBaseline"`
@@ -35008,11 +36249,11 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	TargetIds []string `pulumi:"targetIds"`
 	// The version of the target database.
 	TargetVersion string `pulumi:"targetVersion"`
-	// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed string `pulumi:"timeLastAssessed"`
-	// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return only security asessments that were created by either user or system.
 	TriggeredBy string `pulumi:"triggeredBy"`
@@ -35048,7 +36289,7 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	IgnoredAssessmentIds pulumi.StringArrayInput `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets pulumi.StringArrayInput `pulumi:"ignoredTargets"`
-	// A filter to return only security assessments that are set as baseline.
+	// A filter to return only the security assessments that are set as a baseline.
 	IsBaseline pulumi.BoolInput `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
 	IsDeviatedFromBaseline pulumi.BoolInput `pulumi:"isDeviatedFromBaseline"`
@@ -35074,11 +36315,11 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
 	// The version of the target database.
 	TargetVersion pulumi.StringInput `pulumi:"targetVersion"`
-	// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed pulumi.StringInput `pulumi:"timeLastAssessed"`
-	// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return only security asessments that were created by either user or system.
 	TriggeredBy pulumi.StringInput `pulumi:"triggeredBy"`
@@ -35195,7 +36436,7 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) IgnoredTargets() pulumi.
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) []string { return v.IgnoredTargets }).(pulumi.StringArrayOutput)
 }
 
-// A filter to return only security assessments that are set as baseline.
+// A filter to return only the security assessments that are set as a baseline.
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) IsBaseline() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) bool { return v.IsBaseline }).(pulumi.BoolOutput)
 }
@@ -35262,17 +36503,17 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) TargetVersion() pulumi.S
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TargetVersion }).(pulumi.StringOutput)
 }
 
-// The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
-// The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -36674,6 +37915,1695 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessmentStatisticPass {
 		return vs[0].([]GetSecurityAssessmentsSecurityAssessmentStatisticPass)[vs[1].(int)]
 	}).(GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput)
+}
+
+type GetSecurityPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPoliciesFilterInput is an input type that accepts GetSecurityPoliciesFilterArgs and GetSecurityPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesFilterInput` via:
+//
+//	GetSecurityPoliciesFilterArgs{...}
+type GetSecurityPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput
+	ToGetSecurityPoliciesFilterOutputWithContext(context.Context) GetSecurityPoliciesFilterOutput
+}
+
+type GetSecurityPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput {
+	return i.ToGetSecurityPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterOutput)
+}
+
+func (i GetSecurityPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesFilter] {
+	return pulumix.Output[GetSecurityPoliciesFilter]{
+		OutputState: i.ToGetSecurityPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPoliciesFilterArrayInput is an input type that accepts GetSecurityPoliciesFilterArray and GetSecurityPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesFilterArrayInput` via:
+//
+//	GetSecurityPoliciesFilterArray{ GetSecurityPoliciesFilterArgs{...} }
+type GetSecurityPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput
+	ToGetSecurityPoliciesFilterArrayOutputWithContext(context.Context) GetSecurityPoliciesFilterArrayOutput
+}
+
+type GetSecurityPoliciesFilterArray []GetSecurityPoliciesFilterInput
+
+func (GetSecurityPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesFilterArray) ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput {
+	return i.ToGetSecurityPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesFilterArray) ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterArrayOutput)
+}
+
+func (i GetSecurityPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesFilter] {
+	return pulumix.Output[[]GetSecurityPoliciesFilter]{
+		OutputState: i.ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesFilter] {
+	return pulumix.Output[GetSecurityPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesFilter] {
+	return pulumix.Output[[]GetSecurityPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesFilter {
+		return vs[0].([]GetSecurityPoliciesFilter)[vs[1].(int)]
+	}).(GetSecurityPoliciesFilterOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollection struct {
+	Items []GetSecurityPoliciesSecurityPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArgs and GetSecurityPoliciesSecurityPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionArgs{...}
+type GetSecurityPoliciesSecurityPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArgs struct {
+	Items GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionOutput)
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection] {
+	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection]{
+		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArray and GetSecurityPoliciesSecurityPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionArrayInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionArray{ GetSecurityPoliciesSecurityPolicyCollectionArgs{...} }
+type GetSecurityPoliciesSecurityPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArray []GetSecurityPoliciesSecurityPolicyCollectionInput
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput)
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection] {
+	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection]{
+		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection] {
+	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) Items() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollection) []GetSecurityPoliciesSecurityPolicyCollectionItem {
+		return v.Items
+	}).(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection] {
+	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesSecurityPolicyCollection {
+		return vs[0].([]GetSecurityPoliciesSecurityPolicyCollection)[vs[1].(int)]
+	}).(GetSecurityPoliciesSecurityPolicyCollectionOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the security policy.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the security policy.
+	Id string `pulumi:"id"`
+	// Details about the current state of the security policy in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The current state of the security policy.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time that the security policy was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the security policy was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionItemInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArgs and GetSecurityPoliciesSecurityPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...}
+type GetSecurityPoliciesSecurityPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the security policy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the security policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the security policy in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// The current state of the security policy.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time that the security policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the security policy was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemOutput)
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem] {
+	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem]{
+		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArray and GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput` via:
+//
+//	GetSecurityPoliciesSecurityPolicyCollectionItemArray{ GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...} }
+type GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArray []GetSecurityPoliciesSecurityPolicyCollectionItemInput
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput)
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem] {
+	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem]{
+		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem] {
+	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description of the security policy.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the security policy.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the security policy in Data Safe.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// The current state of the security policy.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time that the security policy was created, in the format defined by RFC3339.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time the security policy was updated, in the format defined by RFC3339.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem] {
+	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesSecurityPolicyCollectionItem {
+		return vs[0].([]GetSecurityPoliciesSecurityPolicyCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPoliciesSecurityPolicyCollectionItemOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL firewall policy entry type.
+	EntryType string `pulumi:"entryType"`
+	// The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated string `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL firewall policy entry type.
+	EntryType pulumi.StringInput `pulumi:"entryType"`
+	// The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated pulumi.StringInput `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The security policy entry type. Allowed values:
+// * FIREWALL_POLICY - The SQL firewall policy entry type.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) EntryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail) string { return v.EntryType }).(pulumi.StringOutput)
+}
+
+// The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) TimeGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail) string { return v.TimeGenerated }).(pulumi.StringOutput)
+}
+
+// The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail) string {
+		return v.TimeStatusUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection struct {
+	Items []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs struct {
+	Items GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput) Items() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection) []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem struct {
+	// The current state of the security policy deployment.
+	DeploymentStatus string `pulumi:"deploymentStatus"`
+	// Details specific to the security policy entry.
+	EntryDetails []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail `pulumi:"entryDetails"`
+	// Unique id of the security policy entry state.
+	Id string `pulumi:"id"`
+	// The OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId string `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified security policy entry OCID.
+	SecurityPolicyEntryId string `pulumi:"securityPolicyEntryId"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs struct {
+	// The current state of the security policy deployment.
+	DeploymentStatus pulumi.StringInput `pulumi:"deploymentStatus"`
+	// Details specific to the security policy entry.
+	EntryDetails GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput `pulumi:"entryDetails"`
+	// Unique id of the security policy entry state.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId pulumi.StringInput `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified security policy entry OCID.
+	SecurityPolicyEntryId pulumi.StringInput `pulumi:"securityPolicyEntryId"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The current state of the security policy deployment.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) DeploymentStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.DeploymentStatus
+	}).(pulumi.StringOutput)
+}
+
+// Details specific to the security policy entry.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) EntryDetails() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail {
+		return v.EntryDetails
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput)
+}
+
+// Unique id of the security policy entry state.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the security policy deployment resource.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) SecurityPolicyDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.SecurityPolicyDeploymentId
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified security policy entry OCID.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput) SecurityPolicyEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem) string {
+		return v.SecurityPolicyEntryId
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL firewall policy entry type.
+	EntryType string `pulumi:"entryType"`
+	// The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated string `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs{...}
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs struct {
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL firewall policy entry type.
+	EntryType pulumi.StringInput `pulumi:"entryType"`
+	// The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+	TimeGenerated pulumi.StringInput `pulumi:"timeGenerated"`
+	// The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+}
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput is an input type that accepts GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray and GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray{ GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs{...} }
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput
+	ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail]{
+		OutputState: i.ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail] {
+	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The security policy entry type. Allowed values:
+// * FIREWALL_POLICY - The SQL firewall policy entry type.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) EntryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail) string {
+		return v.EntryType
+	}).(pulumi.StringOutput)
+}
+
+// The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) TimeGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail) string {
+		return v.TimeGenerated
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput) TimeStatusUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail) string {
+		return v.TimeStatusUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput() GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail {
+		return vs[0].([]GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput)
+}
+
+type GetSecurityPolicyDeploymentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPolicyDeploymentsFilterInput is an input type that accepts GetSecurityPolicyDeploymentsFilterArgs and GetSecurityPolicyDeploymentsFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsFilterInput` via:
+//
+//	GetSecurityPolicyDeploymentsFilterArgs{...}
+type GetSecurityPolicyDeploymentsFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsFilterOutput() GetSecurityPolicyDeploymentsFilterOutput
+	ToGetSecurityPolicyDeploymentsFilterOutputWithContext(context.Context) GetSecurityPolicyDeploymentsFilterOutput
+}
+
+type GetSecurityPolicyDeploymentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPolicyDeploymentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArgs) ToGetSecurityPolicyDeploymentsFilterOutput() GetSecurityPolicyDeploymentsFilterOutput {
+	return i.ToGetSecurityPolicyDeploymentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArgs) ToGetSecurityPolicyDeploymentsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsFilterOutput)
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentsFilter] {
+	return pulumix.Output[GetSecurityPolicyDeploymentsFilter]{
+		OutputState: i.ToGetSecurityPolicyDeploymentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentsFilterArrayInput is an input type that accepts GetSecurityPolicyDeploymentsFilterArray and GetSecurityPolicyDeploymentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsFilterArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentsFilterArray{ GetSecurityPolicyDeploymentsFilterArgs{...} }
+type GetSecurityPolicyDeploymentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsFilterArrayOutput() GetSecurityPolicyDeploymentsFilterArrayOutput
+	ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentsFilterArrayOutput
+}
+
+type GetSecurityPolicyDeploymentsFilterArray []GetSecurityPolicyDeploymentsFilterInput
+
+func (GetSecurityPolicyDeploymentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArray) ToGetSecurityPolicyDeploymentsFilterArrayOutput() GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArray) ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsFilterArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentsFilter] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentsFilter]{
+		OutputState: i.ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) ToGetSecurityPolicyDeploymentsFilterOutput() GetSecurityPolicyDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) ToGetSecurityPolicyDeploymentsFilterOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentsFilter] {
+	return pulumix.Output[GetSecurityPolicyDeploymentsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPolicyDeploymentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsFilterArrayOutput) ToGetSecurityPolicyDeploymentsFilterArrayOutput() GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterArrayOutput) ToGetSecurityPolicyDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentsFilter] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentsFilter {
+		return vs[0].([]GetSecurityPolicyDeploymentsFilter)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentsFilterOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection struct {
+	Items []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs{...}
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs struct {
+	Items GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput)
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection] {
+	return pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection]{
+		OutputState: i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray{ GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs{...} }
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection]{
+		OutputState: i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection] {
+	return pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput) Items() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection) []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem {
+		return v.Items
+	}).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection {
+		return vs[0].([]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the security policy deployment.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the security policy deployment.
+	Id string `pulumi:"id"`
+	// Details about the current state of the security policy deployment in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId string `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The current state of the security policy deployment.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The time that the security policy deployment was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs{...}
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the security policy deployment.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the security policy deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the security policy deployment in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+	SecurityPolicyDeploymentId pulumi.StringInput `pulumi:"securityPolicyDeploymentId"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// The current state of the security policy deployment.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The time that the security policy deployment was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput)
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem] {
+	return pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem]{
+		OutputState: i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput is an input type that accepts GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray and GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput` via:
+//
+//	GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray{ GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs{...} }
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput
+	ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray []GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput)
+}
+
+func (i GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem]{
+		OutputState: i.ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem] {
+	return pulumix.Output[GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The description of the security policy deployment.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the security policy deployment.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the security policy deployment in Data Safe.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SecurityPolicyDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.SecurityPolicyDeploymentId
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.SecurityPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the security policy deployment.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The time that the security policy deployment was created, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput() GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) ToGetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem] {
+	return pulumix.Output[[]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem {
+		return vs[0].([]GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput)
 }
 
 type GetSensitiveDataModelSensitiveObjectsFilter struct {
@@ -38299,7 +41229,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
-	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 	IsIncludeAllSchemas bool `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
 	IsIncludeAllSensitiveTypes bool `pulumi:"isIncludeAllSensitiveTypes"`
@@ -38349,7 +41279,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled pulumi.BoolInput `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
-	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 	IsIncludeAllSchemas pulumi.BoolInput `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
 	IsIncludeAllSensitiveTypes pulumi.BoolInput `pulumi:"isIncludeAllSensitiveTypes"`
@@ -38486,7 +41416,7 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) IsAppDefin
 	}).(pulumi.BoolOutput)
 }
 
-// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
+// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) IsIncludeAllSchemas() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) bool { return v.IsIncludeAllSchemas }).(pulumi.BoolOutput)
 }
@@ -39105,6 +42035,4995 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput) Index(i pulumi.
 	}).(GetSensitiveTypesSensitiveTypeCollectionItemOutput)
 }
 
+type GetSqlCollectionAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlCollectionAnalyticsFilterInput is an input type that accepts GetSqlCollectionAnalyticsFilterArgs and GetSqlCollectionAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsFilterInput` via:
+//
+//	GetSqlCollectionAnalyticsFilterArgs{...}
+type GetSqlCollectionAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsFilterOutput() GetSqlCollectionAnalyticsFilterOutput
+	ToGetSqlCollectionAnalyticsFilterOutputWithContext(context.Context) GetSqlCollectionAnalyticsFilterOutput
+}
+
+type GetSqlCollectionAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlCollectionAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsFilterArgs) ToGetSqlCollectionAnalyticsFilterOutput() GetSqlCollectionAnalyticsFilterOutput {
+	return i.ToGetSqlCollectionAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsFilterArgs) ToGetSqlCollectionAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsFilterOutput)
+}
+
+func (i GetSqlCollectionAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsFilter] {
+	return pulumix.Output[GetSqlCollectionAnalyticsFilter]{
+		OutputState: i.ToGetSqlCollectionAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionAnalyticsFilterArrayInput is an input type that accepts GetSqlCollectionAnalyticsFilterArray and GetSqlCollectionAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsFilterArrayInput` via:
+//
+//	GetSqlCollectionAnalyticsFilterArray{ GetSqlCollectionAnalyticsFilterArgs{...} }
+type GetSqlCollectionAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsFilterArrayOutput() GetSqlCollectionAnalyticsFilterArrayOutput
+	ToGetSqlCollectionAnalyticsFilterArrayOutputWithContext(context.Context) GetSqlCollectionAnalyticsFilterArrayOutput
+}
+
+type GetSqlCollectionAnalyticsFilterArray []GetSqlCollectionAnalyticsFilterInput
+
+func (GetSqlCollectionAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsFilterArray) ToGetSqlCollectionAnalyticsFilterArrayOutput() GetSqlCollectionAnalyticsFilterArrayOutput {
+	return i.ToGetSqlCollectionAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsFilterArray) ToGetSqlCollectionAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsFilterArrayOutput)
+}
+
+func (i GetSqlCollectionAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsFilter]{
+		OutputState: i.ToGetSqlCollectionAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsFilterOutput) ToGetSqlCollectionAnalyticsFilterOutput() GetSqlCollectionAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsFilterOutput) ToGetSqlCollectionAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsFilter] {
+	return pulumix.Output[GetSqlCollectionAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlCollectionAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlCollectionAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlCollectionAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsFilterArrayOutput) ToGetSqlCollectionAnalyticsFilterArrayOutput() GetSqlCollectionAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsFilterArrayOutput) ToGetSqlCollectionAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionAnalyticsFilter {
+		return vs[0].([]GetSqlCollectionAnalyticsFilter)[vs[1].(int)]
+	}).(GetSqlCollectionAnalyticsFilterOutput)
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionInput is an input type that accepts GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs and GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionInput` via:
+//
+//	GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs{...}
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutputWithContext(context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput {
+	return i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput)
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection] {
+	return pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection]{
+		OutputState: i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayInput is an input type that accepts GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray and GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayInput` via:
+//
+//	GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray{ GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs{...} }
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutputWithContext(context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionInput
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput {
+	return i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput)
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection]{
+		OutputState: i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection] {
+	return pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The aggregated data point items.
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput) Items() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection) []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection {
+		return vs[0].([]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection)[vs[1].(int)]
+	}).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput)
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem struct {
+	// The dimensions available for SQL collection analytics.
+	Dimensions []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlCollectionAnalyticCount string `pulumi:"sqlCollectionAnalyticCount"`
+}
+
+// GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemInput is an input type that accepts GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs and GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemInput` via:
+//
+//	GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs{...}
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutputWithContext(context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs struct {
+	// The dimensions available for SQL collection analytics.
+	Dimensions GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlCollectionAnalyticCount pulumi.StringInput `pulumi:"sqlCollectionAnalyticCount"`
+}
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput {
+	return i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput)
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayInput is an input type that accepts GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray and GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray{ GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs{...} }
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemInput
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput)
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The dimensions available for SQL collection analytics.
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput) Dimensions() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem) []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The total count of the aggregated metric.
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput) SqlCollectionAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem) string {
+		return v.SqlCollectionAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem {
+		return vs[0].([]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput)
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension struct {
+	// The current state of the SQL collection.
+	State string `pulumi:"state"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionInput is an input type that accepts GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs and GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs{...}
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs struct {
+	// The current state of the SQL collection.
+	State pulumi.StringInput `pulumi:"state"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput)
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray and GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray{ GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs{...} }
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionInput
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+func (i GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The current state of the SQL collection.
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput() GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSqlCollectionLogInsightsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlCollectionLogInsightsFilterInput is an input type that accepts GetSqlCollectionLogInsightsFilterArgs and GetSqlCollectionLogInsightsFilterOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsFilterInput` via:
+//
+//	GetSqlCollectionLogInsightsFilterArgs{...}
+type GetSqlCollectionLogInsightsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsFilterOutput() GetSqlCollectionLogInsightsFilterOutput
+	ToGetSqlCollectionLogInsightsFilterOutputWithContext(context.Context) GetSqlCollectionLogInsightsFilterOutput
+}
+
+type GetSqlCollectionLogInsightsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlCollectionLogInsightsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsFilter)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsFilterArgs) ToGetSqlCollectionLogInsightsFilterOutput() GetSqlCollectionLogInsightsFilterOutput {
+	return i.ToGetSqlCollectionLogInsightsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsFilterArgs) ToGetSqlCollectionLogInsightsFilterOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsFilterOutput)
+}
+
+func (i GetSqlCollectionLogInsightsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsFilter] {
+	return pulumix.Output[GetSqlCollectionLogInsightsFilter]{
+		OutputState: i.ToGetSqlCollectionLogInsightsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionLogInsightsFilterArrayInput is an input type that accepts GetSqlCollectionLogInsightsFilterArray and GetSqlCollectionLogInsightsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsFilterArrayInput` via:
+//
+//	GetSqlCollectionLogInsightsFilterArray{ GetSqlCollectionLogInsightsFilterArgs{...} }
+type GetSqlCollectionLogInsightsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsFilterArrayOutput() GetSqlCollectionLogInsightsFilterArrayOutput
+	ToGetSqlCollectionLogInsightsFilterArrayOutputWithContext(context.Context) GetSqlCollectionLogInsightsFilterArrayOutput
+}
+
+type GetSqlCollectionLogInsightsFilterArray []GetSqlCollectionLogInsightsFilterInput
+
+func (GetSqlCollectionLogInsightsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsFilter)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsFilterArray) ToGetSqlCollectionLogInsightsFilterArrayOutput() GetSqlCollectionLogInsightsFilterArrayOutput {
+	return i.ToGetSqlCollectionLogInsightsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsFilterArray) ToGetSqlCollectionLogInsightsFilterArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsFilterArrayOutput)
+}
+
+func (i GetSqlCollectionLogInsightsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsFilter] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsFilter]{
+		OutputState: i.ToGetSqlCollectionLogInsightsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionLogInsightsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsFilter)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsFilterOutput) ToGetSqlCollectionLogInsightsFilterOutput() GetSqlCollectionLogInsightsFilterOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsFilterOutput) ToGetSqlCollectionLogInsightsFilterOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsFilterOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsFilter] {
+	return pulumix.Output[GetSqlCollectionLogInsightsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionLogInsightsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlCollectionLogInsightsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlCollectionLogInsightsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlCollectionLogInsightsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsFilter)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsFilterArrayOutput) ToGetSqlCollectionLogInsightsFilterArrayOutput() GetSqlCollectionLogInsightsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsFilterArrayOutput) ToGetSqlCollectionLogInsightsFilterArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsFilter] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionLogInsightsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionLogInsightsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionLogInsightsFilter {
+		return vs[0].([]GetSqlCollectionLogInsightsFilter)[vs[1].(int)]
+	}).(GetSqlCollectionLogInsightsFilterOutput)
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionInput is an input type that accepts GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs and GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionInput` via:
+//
+//	GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs{...}
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutputWithContext(context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput {
+	return i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput)
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection] {
+	return pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection]{
+		OutputState: i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayInput is an input type that accepts GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray and GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayInput` via:
+//
+//	GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray{ GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs{...} }
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutputWithContext(context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionInput
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput {
+	return i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput)
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection]{
+		OutputState: i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection] {
+	return pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The aggregated data point items.
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput) Items() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection) []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem {
+		return v.Items
+	}).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput)
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection {
+		return vs[0].([]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection)[vs[1].(int)]
+	}).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput)
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem struct {
+	// The dimensions available for SQL collection analytics.
+	Dimensions []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension `pulumi:"dimensions"`
+	// Name of the aggregation.
+	MetricName string `pulumi:"metricName"`
+	// Total count of aggregated value.
+	SqlCollectionLogInsightCount string `pulumi:"sqlCollectionLogInsightCount"`
+	// An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnded string `pulumi:"timeEnded"`
+	// An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemInput is an input type that accepts GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs and GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemInput` via:
+//
+//	GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs{...}
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutputWithContext(context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs struct {
+	// The dimensions available for SQL collection analytics.
+	Dimensions GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// Name of the aggregation.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// Total count of aggregated value.
+	SqlCollectionLogInsightCount pulumi.StringInput `pulumi:"sqlCollectionLogInsightCount"`
+	// An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput {
+	return i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput)
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem] {
+	return pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem]{
+		OutputState: i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayInput is an input type that accepts GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray and GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayInput` via:
+//
+//	GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray{ GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs{...} }
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutputWithContext(context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemInput
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput {
+	return i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput)
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem]{
+		OutputState: i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem] {
+	return pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The dimensions available for SQL collection analytics.
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) Dimensions() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem) []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput)
+}
+
+// Name of the aggregation.
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// Total count of aggregated value.
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) SqlCollectionLogInsightCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem) string {
+		return v.SqlCollectionLogInsightCount
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem {
+		return vs[0].([]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem)[vs[1].(int)]
+	}).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput)
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension struct {
+	// The IP addresses for the SQL collection.
+	ClientIp string `pulumi:"clientIp"`
+	// The operating system user names for the SQL collection.
+	ClientOsUserName string `pulumi:"clientOsUserName"`
+	// The allowed client programs for the SQL collection.
+	ClientProgram string `pulumi:"clientProgram"`
+}
+
+// GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionInput is an input type that accepts GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs and GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionInput` via:
+//
+//	GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs{...}
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutputWithContext(context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs struct {
+	// The IP addresses for the SQL collection.
+	ClientIp pulumi.StringInput `pulumi:"clientIp"`
+	// The operating system user names for the SQL collection.
+	ClientOsUserName pulumi.StringInput `pulumi:"clientOsUserName"`
+	// The allowed client programs for the SQL collection.
+	ClientProgram pulumi.StringInput `pulumi:"clientProgram"`
+}
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput {
+	return i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput)
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension] {
+	return pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension]{
+		OutputState: i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayInput is an input type that accepts GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray and GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray{ GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs{...} }
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput
+	ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray []GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionInput
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput)
+}
+
+func (i GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension]{
+		OutputState: i.ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension] {
+	return pulumix.Output[GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The IP addresses for the SQL collection.
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput) ClientIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension) string {
+		return v.ClientIp
+	}).(pulumi.StringOutput)
+}
+
+// The operating system user names for the SQL collection.
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput) ClientOsUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension) string {
+		return v.ClientOsUserName
+	}).(pulumi.StringOutput)
+}
+
+// The allowed client programs for the SQL collection.
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput) ClientProgram() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension) string {
+		return v.ClientProgram
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput() GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput) ToGetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension {
+		return vs[0].([]GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput)
+}
+
+type GetSqlCollectionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlCollectionsFilterInput is an input type that accepts GetSqlCollectionsFilterArgs and GetSqlCollectionsFilterOutput values.
+// You can construct a concrete instance of `GetSqlCollectionsFilterInput` via:
+//
+//	GetSqlCollectionsFilterArgs{...}
+type GetSqlCollectionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionsFilterOutput() GetSqlCollectionsFilterOutput
+	ToGetSqlCollectionsFilterOutputWithContext(context.Context) GetSqlCollectionsFilterOutput
+}
+
+type GetSqlCollectionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlCollectionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionsFilter)(nil)).Elem()
+}
+
+func (i GetSqlCollectionsFilterArgs) ToGetSqlCollectionsFilterOutput() GetSqlCollectionsFilterOutput {
+	return i.ToGetSqlCollectionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionsFilterArgs) ToGetSqlCollectionsFilterOutputWithContext(ctx context.Context) GetSqlCollectionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionsFilterOutput)
+}
+
+func (i GetSqlCollectionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsFilter] {
+	return pulumix.Output[GetSqlCollectionsFilter]{
+		OutputState: i.ToGetSqlCollectionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionsFilterArrayInput is an input type that accepts GetSqlCollectionsFilterArray and GetSqlCollectionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionsFilterArrayInput` via:
+//
+//	GetSqlCollectionsFilterArray{ GetSqlCollectionsFilterArgs{...} }
+type GetSqlCollectionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionsFilterArrayOutput() GetSqlCollectionsFilterArrayOutput
+	ToGetSqlCollectionsFilterArrayOutputWithContext(context.Context) GetSqlCollectionsFilterArrayOutput
+}
+
+type GetSqlCollectionsFilterArray []GetSqlCollectionsFilterInput
+
+func (GetSqlCollectionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionsFilter)(nil)).Elem()
+}
+
+func (i GetSqlCollectionsFilterArray) ToGetSqlCollectionsFilterArrayOutput() GetSqlCollectionsFilterArrayOutput {
+	return i.ToGetSqlCollectionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionsFilterArray) ToGetSqlCollectionsFilterArrayOutputWithContext(ctx context.Context) GetSqlCollectionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionsFilterArrayOutput)
+}
+
+func (i GetSqlCollectionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionsFilter] {
+	return pulumix.Output[[]GetSqlCollectionsFilter]{
+		OutputState: i.ToGetSqlCollectionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionsFilter)(nil)).Elem()
+}
+
+func (o GetSqlCollectionsFilterOutput) ToGetSqlCollectionsFilterOutput() GetSqlCollectionsFilterOutput {
+	return o
+}
+
+func (o GetSqlCollectionsFilterOutput) ToGetSqlCollectionsFilterOutputWithContext(ctx context.Context) GetSqlCollectionsFilterOutput {
+	return o
+}
+
+func (o GetSqlCollectionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsFilter] {
+	return pulumix.Output[GetSqlCollectionsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlCollectionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlCollectionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlCollectionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionsFilter)(nil)).Elem()
+}
+
+func (o GetSqlCollectionsFilterArrayOutput) ToGetSqlCollectionsFilterArrayOutput() GetSqlCollectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionsFilterArrayOutput) ToGetSqlCollectionsFilterArrayOutputWithContext(ctx context.Context) GetSqlCollectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionsFilter] {
+	return pulumix.Output[[]GetSqlCollectionsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionsFilter {
+		return vs[0].([]GetSqlCollectionsFilter)[vs[1].(int)]
+	}).(GetSqlCollectionsFilterOutput)
+}
+
+type GetSqlCollectionsSqlCollectionCollection struct {
+	Items []GetSqlCollectionsSqlCollectionCollectionItem `pulumi:"items"`
+}
+
+// GetSqlCollectionsSqlCollectionCollectionInput is an input type that accepts GetSqlCollectionsSqlCollectionCollectionArgs and GetSqlCollectionsSqlCollectionCollectionOutput values.
+// You can construct a concrete instance of `GetSqlCollectionsSqlCollectionCollectionInput` via:
+//
+//	GetSqlCollectionsSqlCollectionCollectionArgs{...}
+type GetSqlCollectionsSqlCollectionCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionsSqlCollectionCollectionOutput() GetSqlCollectionsSqlCollectionCollectionOutput
+	ToGetSqlCollectionsSqlCollectionCollectionOutputWithContext(context.Context) GetSqlCollectionsSqlCollectionCollectionOutput
+}
+
+type GetSqlCollectionsSqlCollectionCollectionArgs struct {
+	Items GetSqlCollectionsSqlCollectionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlCollectionsSqlCollectionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollection)(nil)).Elem()
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionArgs) ToGetSqlCollectionsSqlCollectionCollectionOutput() GetSqlCollectionsSqlCollectionCollectionOutput {
+	return i.ToGetSqlCollectionsSqlCollectionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionArgs) ToGetSqlCollectionsSqlCollectionCollectionOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionsSqlCollectionCollectionOutput)
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsSqlCollectionCollection] {
+	return pulumix.Output[GetSqlCollectionsSqlCollectionCollection]{
+		OutputState: i.ToGetSqlCollectionsSqlCollectionCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionsSqlCollectionCollectionArrayInput is an input type that accepts GetSqlCollectionsSqlCollectionCollectionArray and GetSqlCollectionsSqlCollectionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionsSqlCollectionCollectionArrayInput` via:
+//
+//	GetSqlCollectionsSqlCollectionCollectionArray{ GetSqlCollectionsSqlCollectionCollectionArgs{...} }
+type GetSqlCollectionsSqlCollectionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionsSqlCollectionCollectionArrayOutput() GetSqlCollectionsSqlCollectionCollectionArrayOutput
+	ToGetSqlCollectionsSqlCollectionCollectionArrayOutputWithContext(context.Context) GetSqlCollectionsSqlCollectionCollectionArrayOutput
+}
+
+type GetSqlCollectionsSqlCollectionCollectionArray []GetSqlCollectionsSqlCollectionCollectionInput
+
+func (GetSqlCollectionsSqlCollectionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionsSqlCollectionCollection)(nil)).Elem()
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionArray) ToGetSqlCollectionsSqlCollectionCollectionArrayOutput() GetSqlCollectionsSqlCollectionCollectionArrayOutput {
+	return i.ToGetSqlCollectionsSqlCollectionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionArray) ToGetSqlCollectionsSqlCollectionCollectionArrayOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionsSqlCollectionCollectionArrayOutput)
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionsSqlCollectionCollection] {
+	return pulumix.Output[[]GetSqlCollectionsSqlCollectionCollection]{
+		OutputState: i.ToGetSqlCollectionsSqlCollectionCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionsSqlCollectionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionsSqlCollectionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollection)(nil)).Elem()
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionOutput) ToGetSqlCollectionsSqlCollectionCollectionOutput() GetSqlCollectionsSqlCollectionCollectionOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionOutput) ToGetSqlCollectionsSqlCollectionCollectionOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsSqlCollectionCollection] {
+	return pulumix.Output[GetSqlCollectionsSqlCollectionCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionOutput) Items() GetSqlCollectionsSqlCollectionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollection) []GetSqlCollectionsSqlCollectionCollectionItem {
+		return v.Items
+	}).(GetSqlCollectionsSqlCollectionCollectionItemArrayOutput)
+}
+
+type GetSqlCollectionsSqlCollectionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionsSqlCollectionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionsSqlCollectionCollection)(nil)).Elem()
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionArrayOutput) ToGetSqlCollectionsSqlCollectionCollectionArrayOutput() GetSqlCollectionsSqlCollectionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionArrayOutput) ToGetSqlCollectionsSqlCollectionCollectionArrayOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionsSqlCollectionCollection] {
+	return pulumix.Output[[]GetSqlCollectionsSqlCollectionCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionsSqlCollectionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionsSqlCollectionCollection {
+		return vs[0].([]GetSqlCollectionsSqlCollectionCollection)[vs[1].(int)]
+	}).(GetSqlCollectionsSqlCollectionCollectionOutput)
+}
+
+type GetSqlCollectionsSqlCollectionCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only items that match the specified user name.
+	DbUserName string `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the SQL collection.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags                     map[string]interface{} `pulumi:"freeformTags"`
+	GenerateSqlFirewallPolicyTrigger bool                   `pulumi:"generateSqlFirewallPolicyTrigger"`
+	// The OCID of the SQL collection.
+	Id string `pulumi:"id"`
+	// Details about the current state of the SQL collection in Data Safe.
+	LifecycleDetails          string `pulumi:"lifecycleDetails"`
+	PurgeLogsTrigger          bool   `pulumi:"purgeLogsTrigger"`
+	RefreshLogInsightsTrigger bool   `pulumi:"refreshLogInsightsTrigger"`
+	// Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel     string `pulumi:"sqlLevel"`
+	StartTrigger bool   `pulumi:"startTrigger"`
+	// The current state of the SQL collection.
+	State string `pulumi:"state"`
+	// Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
+	Status      string `pulumi:"status"`
+	StopTrigger bool   `pulumi:"stopTrigger"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The time that the SQL collection was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
+	TimeLastStarted string `pulumi:"timeLastStarted"`
+	// The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
+	TimeLastStopped string `pulumi:"timeLastStopped"`
+	// The last date and time the SQL collection was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSqlCollectionsSqlCollectionCollectionItemInput is an input type that accepts GetSqlCollectionsSqlCollectionCollectionItemArgs and GetSqlCollectionsSqlCollectionCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlCollectionsSqlCollectionCollectionItemInput` via:
+//
+//	GetSqlCollectionsSqlCollectionCollectionItemArgs{...}
+type GetSqlCollectionsSqlCollectionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionsSqlCollectionCollectionItemOutput() GetSqlCollectionsSqlCollectionCollectionItemOutput
+	ToGetSqlCollectionsSqlCollectionCollectionItemOutputWithContext(context.Context) GetSqlCollectionsSqlCollectionCollectionItemOutput
+}
+
+type GetSqlCollectionsSqlCollectionCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only items that match the specified user name.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the SQL collection.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags                     pulumi.MapInput  `pulumi:"freeformTags"`
+	GenerateSqlFirewallPolicyTrigger pulumi.BoolInput `pulumi:"generateSqlFirewallPolicyTrigger"`
+	// The OCID of the SQL collection.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the SQL collection in Data Safe.
+	LifecycleDetails          pulumi.StringInput `pulumi:"lifecycleDetails"`
+	PurgeLogsTrigger          pulumi.BoolInput   `pulumi:"purgeLogsTrigger"`
+	RefreshLogInsightsTrigger pulumi.BoolInput   `pulumi:"refreshLogInsightsTrigger"`
+	// Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel     pulumi.StringInput `pulumi:"sqlLevel"`
+	StartTrigger pulumi.BoolInput   `pulumi:"startTrigger"`
+	// The current state of the SQL collection.
+	State pulumi.StringInput `pulumi:"state"`
+	// Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
+	Status      pulumi.StringInput `pulumi:"status"`
+	StopTrigger pulumi.BoolInput   `pulumi:"stopTrigger"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The time that the SQL collection was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
+	TimeLastStarted pulumi.StringInput `pulumi:"timeLastStarted"`
+	// The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
+	TimeLastStopped pulumi.StringInput `pulumi:"timeLastStopped"`
+	// The last date and time the SQL collection was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSqlCollectionsSqlCollectionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionItemArgs) ToGetSqlCollectionsSqlCollectionCollectionItemOutput() GetSqlCollectionsSqlCollectionCollectionItemOutput {
+	return i.ToGetSqlCollectionsSqlCollectionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionItemArgs) ToGetSqlCollectionsSqlCollectionCollectionItemOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionsSqlCollectionCollectionItemOutput)
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsSqlCollectionCollectionItem] {
+	return pulumix.Output[GetSqlCollectionsSqlCollectionCollectionItem]{
+		OutputState: i.ToGetSqlCollectionsSqlCollectionCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlCollectionsSqlCollectionCollectionItemArrayInput is an input type that accepts GetSqlCollectionsSqlCollectionCollectionItemArray and GetSqlCollectionsSqlCollectionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlCollectionsSqlCollectionCollectionItemArrayInput` via:
+//
+//	GetSqlCollectionsSqlCollectionCollectionItemArray{ GetSqlCollectionsSqlCollectionCollectionItemArgs{...} }
+type GetSqlCollectionsSqlCollectionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutput() GetSqlCollectionsSqlCollectionCollectionItemArrayOutput
+	ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutputWithContext(context.Context) GetSqlCollectionsSqlCollectionCollectionItemArrayOutput
+}
+
+type GetSqlCollectionsSqlCollectionCollectionItemArray []GetSqlCollectionsSqlCollectionCollectionItemInput
+
+func (GetSqlCollectionsSqlCollectionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionsSqlCollectionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionItemArray) ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutput() GetSqlCollectionsSqlCollectionCollectionItemArrayOutput {
+	return i.ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionItemArray) ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlCollectionsSqlCollectionCollectionItemArrayOutput)
+}
+
+func (i GetSqlCollectionsSqlCollectionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionsSqlCollectionCollectionItem] {
+	return pulumix.Output[[]GetSqlCollectionsSqlCollectionCollectionItem]{
+		OutputState: i.ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlCollectionsSqlCollectionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionsSqlCollectionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) ToGetSqlCollectionsSqlCollectionCollectionItemOutput() GetSqlCollectionsSqlCollectionCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) ToGetSqlCollectionsSqlCollectionCollectionItemOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsSqlCollectionCollectionItem] {
+	return pulumix.Output[GetSqlCollectionsSqlCollectionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A filter to return only items that match the specified user name.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description of the SQL collection.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) GenerateSqlFirewallPolicyTrigger() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) bool { return v.GenerateSqlFirewallPolicyTrigger }).(pulumi.BoolOutput)
+}
+
+// The OCID of the SQL collection.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the SQL collection in Data Safe.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) PurgeLogsTrigger() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) bool { return v.PurgeLogsTrigger }).(pulumi.BoolOutput)
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) RefreshLogInsightsTrigger() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) bool { return v.RefreshLogInsightsTrigger }).(pulumi.BoolOutput)
+}
+
+// Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.SqlLevel }).(pulumi.StringOutput)
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) StartTrigger() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) bool { return v.StartTrigger }).(pulumi.BoolOutput)
+}
+
+// The current state of the SQL collection.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) StopTrigger() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) bool { return v.StopTrigger }).(pulumi.BoolOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The time that the SQL collection was created, in the format defined by RFC3339.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) TimeLastStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.TimeLastStarted }).(pulumi.StringOutput)
+}
+
+// The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) TimeLastStopped() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.TimeLastStopped }).(pulumi.StringOutput)
+}
+
+// The last date and time the SQL collection was updated, in the format defined by RFC3339.
+func (o GetSqlCollectionsSqlCollectionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlCollectionsSqlCollectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSqlCollectionsSqlCollectionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlCollectionsSqlCollectionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlCollectionsSqlCollectionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemArrayOutput) ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutput() GetSqlCollectionsSqlCollectionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemArrayOutput) ToGetSqlCollectionsSqlCollectionCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlCollectionsSqlCollectionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlCollectionsSqlCollectionCollectionItem] {
+	return pulumix.Output[[]GetSqlCollectionsSqlCollectionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlCollectionsSqlCollectionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlCollectionsSqlCollectionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlCollectionsSqlCollectionCollectionItem {
+		return vs[0].([]GetSqlCollectionsSqlCollectionCollectionItem)[vs[1].(int)]
+	}).(GetSqlCollectionsSqlCollectionCollectionItemOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsFilterInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsFilterArgs and GetSqlFirewallAllowedSqlAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsFilterInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsFilterArgs{...}
+type GetSqlFirewallAllowedSqlAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsFilterOutput() GetSqlFirewallAllowedSqlAnalyticsFilterOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsFilterOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsFilterOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallAllowedSqlAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsFilterArgs) ToGetSqlFirewallAllowedSqlAnalyticsFilterOutput() GetSqlFirewallAllowedSqlAnalyticsFilterOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsFilterArgs) ToGetSqlFirewallAllowedSqlAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsFilterOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsFilter] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsFilter]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsFilterArrayInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsFilterArray and GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsFilterArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsFilterArray{ GetSqlFirewallAllowedSqlAnalyticsFilterArgs{...} }
+type GetSqlFirewallAllowedSqlAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput() GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsFilterArray []GetSqlFirewallAllowedSqlAnalyticsFilterInput
+
+func (GetSqlFirewallAllowedSqlAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsFilterArray) ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput() GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsFilterArray) ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsFilter]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterOutput) ToGetSqlFirewallAllowedSqlAnalyticsFilterOutput() GetSqlFirewallAllowedSqlAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterOutput) ToGetSqlFirewallAllowedSqlAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsFilter] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput() GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlAnalyticsFilter {
+		return vs[0].([]GetSqlFirewallAllowedSqlAnalyticsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlAnalyticsFilterOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs{...}
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray{ GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs{...} }
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The aggregated data point items.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput) Items() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection) []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection {
+		return vs[0].([]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem struct {
+	// The dimensions available for SQL firewall allow SQL analytics.
+	Dimensions []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallAllowedSqlAnalyticCount string `pulumi:"sqlFirewallAllowedSqlAnalyticCount"`
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs{...}
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs struct {
+	// The dimensions available for SQL firewall allow SQL analytics.
+	Dimensions GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallAllowedSqlAnalyticCount pulumi.StringInput `pulumi:"sqlFirewallAllowedSqlAnalyticCount"`
+}
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray{ GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs{...} }
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The dimensions available for SQL firewall allow SQL analytics.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) Dimensions() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem) []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The total count of the aggregated metric.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput) SqlFirewallAllowedSqlAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem) string {
+		return v.SqlFirewallAllowedSqlAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem {
+		return vs[0].([]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension struct {
+	// The database user name.
+	DbUserName string `pulumi:"dbUserName"`
+	// The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The current state of the SQL firewall allowed SQL.
+	State string `pulumi:"state"`
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs{...}
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs struct {
+	// The database user name.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+	SqlFirewallPolicyId pulumi.StringInput `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The current state of the SQL firewall allowed SQL.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray and GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray{ GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs{...} }
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The database user name.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.DbUserName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) SqlFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.SqlFirewallPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.SqlLevel
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSqlFirewallAllowedSqlsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallAllowedSqlsFilterInput is an input type that accepts GetSqlFirewallAllowedSqlsFilterArgs and GetSqlFirewallAllowedSqlsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsFilterInput` via:
+//
+//	GetSqlFirewallAllowedSqlsFilterArgs{...}
+type GetSqlFirewallAllowedSqlsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsFilterOutput() GetSqlFirewallAllowedSqlsFilterOutput
+	ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsFilterOutput
+}
+
+type GetSqlFirewallAllowedSqlsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallAllowedSqlsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArgs) ToGetSqlFirewallAllowedSqlsFilterOutput() GetSqlFirewallAllowedSqlsFilterOutput {
+	return i.ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArgs) ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsFilterOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsFilter] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlsFilter]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallAllowedSqlsFilterArrayInput is an input type that accepts GetSqlFirewallAllowedSqlsFilterArray and GetSqlFirewallAllowedSqlsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsFilterArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlsFilterArray{ GetSqlFirewallAllowedSqlsFilterArgs{...} }
+type GetSqlFirewallAllowedSqlsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsFilterArrayOutput() GetSqlFirewallAllowedSqlsFilterArrayOutput
+	ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsFilterArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlsFilterArray []GetSqlFirewallAllowedSqlsFilterInput
+
+func (GetSqlFirewallAllowedSqlsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArray) ToGetSqlFirewallAllowedSqlsFilterArrayOutput() GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArray) ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsFilterArrayOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlsFilter] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlsFilter]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallAllowedSqlsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) ToGetSqlFirewallAllowedSqlsFilterOutput() GetSqlFirewallAllowedSqlsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) ToGetSqlFirewallAllowedSqlsFilterOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsFilter] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterArrayOutput) ToGetSqlFirewallAllowedSqlsFilterArrayOutput() GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterArrayOutput) ToGetSqlFirewallAllowedSqlsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlsFilter] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlsFilter {
+		return vs[0].([]GetSqlFirewallAllowedSqlsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlsFilterOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection struct {
+	// Array of SQL firewall allowed SQL statements.
+	Items []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs{...}
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs struct {
+	// Array of SQL firewall allowed SQL statements.
+	Items GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray{ GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs{...} }
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Array of SQL firewall allowed SQL statements.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput) Items() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection) []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection {
+		return vs[0].([]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentUser string `pulumi:"currentUser"`
+	// The database user name.
+	DbUserName string `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the SQL firewall allowed SQL.
+	Description string `pulumi:"description"`
+	// The display name of the SQL firewall allowed SQL.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the SQL firewall allowed SQL.
+	Id string `pulumi:"id"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects []string `pulumi:"sqlAccessedObjects"`
+	// The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The SQL text of the SQL firewall allowed SQL.
+	SqlText string `pulumi:"sqlText"`
+	// The current state of the SQL firewall allowed SQL.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the the SQL firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+	TimeCollected string `pulumi:"timeCollected"`
+	// The last date and time the SQL firewall allowed SQL was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Version of the associated SQL firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+	Version float64 `pulumi:"version"`
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs{...}
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentUser pulumi.StringInput `pulumi:"currentUser"`
+	// The database user name.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the SQL firewall allowed SQL.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The display name of the SQL firewall allowed SQL.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the SQL firewall allowed SQL.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects pulumi.StringArrayInput `pulumi:"sqlAccessedObjects"`
+	// The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+	SqlFirewallPolicyId pulumi.StringInput `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The SQL text of the SQL firewall allowed SQL.
+	SqlText pulumi.StringInput `pulumi:"sqlText"`
+	// The current state of the SQL firewall allowed SQL.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the the SQL firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+	TimeCollected pulumi.StringInput `pulumi:"timeCollected"`
+	// The last date and time the SQL firewall allowed SQL was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Version of the associated SQL firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+	Version pulumi.Float64Input `pulumi:"version"`
+}
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput is an input type that accepts GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray and GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray{ GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs{...} }
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput
+	ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput)
+}
+
+func (i GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem]{
+		OutputState: i.ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem] {
+	return pulumix.Output[GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the user that SQL was executed as.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) CurrentUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.CurrentUser }).(pulumi.StringOutput)
+}
+
+// The database user name.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The description of the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The display name of the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The objects accessed by the SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlAccessedObjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) []string {
+		return v.SqlAccessedObjects
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string {
+		return v.SqlFirewallPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.SqlLevel }).(pulumi.StringOutput)
+}
+
+// The SQL text of the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SqlText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.SqlText }).(pulumi.StringOutput)
+}
+
+// The current state of the SQL firewall allowed SQL.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The time the the SQL firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) TimeCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.TimeCollected }).(pulumi.StringOutput)
+}
+
+// The last date and time the SQL firewall allowed SQL was updated, in the format defined by RFC3339.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Version of the associated SQL firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput) Version() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem) float64 { return v.Version }).(pulumi.Float64Output)
+}
+
+type GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput() GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) ToGetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem {
+		return vs[0].([]GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput)
+}
+
+type GetSqlFirewallPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallPoliciesFilterInput is an input type that accepts GetSqlFirewallPoliciesFilterArgs and GetSqlFirewallPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesFilterInput` via:
+//
+//	GetSqlFirewallPoliciesFilterArgs{...}
+type GetSqlFirewallPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesFilterOutput() GetSqlFirewallPoliciesFilterOutput
+	ToGetSqlFirewallPoliciesFilterOutputWithContext(context.Context) GetSqlFirewallPoliciesFilterOutput
+}
+
+type GetSqlFirewallPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesFilterArgs) ToGetSqlFirewallPoliciesFilterOutput() GetSqlFirewallPoliciesFilterOutput {
+	return i.ToGetSqlFirewallPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesFilterArgs) ToGetSqlFirewallPoliciesFilterOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesFilterOutput)
+}
+
+func (i GetSqlFirewallPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPoliciesFilter] {
+	return pulumix.Output[GetSqlFirewallPoliciesFilter]{
+		OutputState: i.ToGetSqlFirewallPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallPoliciesFilterArrayInput is an input type that accepts GetSqlFirewallPoliciesFilterArray and GetSqlFirewallPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesFilterArrayInput` via:
+//
+//	GetSqlFirewallPoliciesFilterArray{ GetSqlFirewallPoliciesFilterArgs{...} }
+type GetSqlFirewallPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesFilterArrayOutput() GetSqlFirewallPoliciesFilterArrayOutput
+	ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(context.Context) GetSqlFirewallPoliciesFilterArrayOutput
+}
+
+type GetSqlFirewallPoliciesFilterArray []GetSqlFirewallPoliciesFilterInput
+
+func (GetSqlFirewallPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesFilterArray) ToGetSqlFirewallPoliciesFilterArrayOutput() GetSqlFirewallPoliciesFilterArrayOutput {
+	return i.ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesFilterArray) ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesFilterArrayOutput)
+}
+
+func (i GetSqlFirewallPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPoliciesFilter] {
+	return pulumix.Output[[]GetSqlFirewallPoliciesFilter]{
+		OutputState: i.ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) ToGetSqlFirewallPoliciesFilterOutput() GetSqlFirewallPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) ToGetSqlFirewallPoliciesFilterOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPoliciesFilter] {
+	return pulumix.Output[GetSqlFirewallPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesFilterArrayOutput) ToGetSqlFirewallPoliciesFilterArrayOutput() GetSqlFirewallPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterArrayOutput) ToGetSqlFirewallPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPoliciesFilter] {
+	return pulumix.Output[[]GetSqlFirewallPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPoliciesFilter {
+		return vs[0].([]GetSqlFirewallPoliciesFilter)[vs[1].(int)]
+	}).(GetSqlFirewallPoliciesFilterOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollection struct {
+	Items []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs{...}
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs struct {
+	Items GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput)
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollection] {
+	return pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollection]{
+		OutputState: i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray{ GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs{...} }
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput)
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection] {
+	return pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection]{
+		OutputState: i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollection] {
+	return pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput) Items() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollection) []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection] {
+	return pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPoliciesSqlFirewallPolicyCollection {
+		return vs[0].([]GetSqlFirewallPoliciesSqlFirewallPolicyCollection)[vs[1].(int)]
+	}).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem struct {
+	// The list of allowed ip addresses for the SQL firewall policy.
+	AllowedClientIps []string `pulumi:"allowedClientIps"`
+	// The list of allowed operating system user names for the SQL firewall policy.
+	AllowedClientOsUsernames []string `pulumi:"allowedClientOsUsernames"`
+	// The list of allowed client programs for the SQL firewall policy.
+	AllowedClientPrograms []string `pulumi:"allowedClientPrograms"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only items that match the specified user name.
+	DbUserName string `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the SQL firewall policy.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Specifies the SQL firewall policy enforcement option.
+	EnforcementScope string `pulumi:"enforcementScope"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the SQL firewall policy.
+	Id string `pulumi:"id"`
+	// Details about the current state of the SQL firewall policy in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// An optional filter to return only resources that match the specified OCID of the SQL firewall policy resource.
+	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The current state of the SQL firewall policy.
+	State string `pulumi:"state"`
+	// Specifies whether the SQL firewall policy is enabled or disabled.
+	Status string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified violation action.
+	ViolationAction string `pulumi:"violationAction"`
+	// Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+	ViolationAudit string `pulumi:"violationAudit"`
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs{...}
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs struct {
+	// The list of allowed ip addresses for the SQL firewall policy.
+	AllowedClientIps pulumi.StringArrayInput `pulumi:"allowedClientIps"`
+	// The list of allowed operating system user names for the SQL firewall policy.
+	AllowedClientOsUsernames pulumi.StringArrayInput `pulumi:"allowedClientOsUsernames"`
+	// The list of allowed client programs for the SQL firewall policy.
+	AllowedClientPrograms pulumi.StringArrayInput `pulumi:"allowedClientPrograms"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only items that match the specified user name.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the SQL firewall policy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Specifies the SQL firewall policy enforcement option.
+	EnforcementScope pulumi.StringInput `pulumi:"enforcementScope"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the SQL firewall policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details about the current state of the SQL firewall policy in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// An optional filter to return only resources that match the specified OCID of the SQL firewall policy resource.
+	SqlFirewallPolicyId pulumi.StringInput `pulumi:"sqlFirewallPolicyId"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The current state of the SQL firewall policy.
+	State pulumi.StringInput `pulumi:"state"`
+	// Specifies whether the SQL firewall policy is enabled or disabled.
+	Status pulumi.StringInput `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified violation action.
+	ViolationAction pulumi.StringInput `pulumi:"violationAction"`
+	// Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+	ViolationAudit pulumi.StringInput `pulumi:"violationAudit"`
+}
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput)
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem] {
+	return pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem]{
+		OutputState: i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput is an input type that accepts GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray and GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray{ GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs{...} }
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput
+	ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray []GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput)
+}
+
+func (i GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem]{
+		OutputState: i.ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem] {
+	return pulumix.Output[GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The list of allowed ip addresses for the SQL firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) AllowedClientIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) []string { return v.AllowedClientIps }).(pulumi.StringArrayOutput)
+}
+
+// The list of allowed operating system user names for the SQL firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) AllowedClientOsUsernames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) []string {
+		return v.AllowedClientOsUsernames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The list of allowed client programs for the SQL firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) AllowedClientPrograms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) []string { return v.AllowedClientPrograms }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A filter to return only items that match the specified user name.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The description of the SQL firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Specifies the SQL firewall policy enforcement option.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) EnforcementScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.EnforcementScope }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the SQL firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details about the current state of the SQL firewall policy in Data Safe.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the SQL firewall policy resource.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SqlFirewallPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.SqlFirewallPolicyId }).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.SqlLevel }).(pulumi.StringOutput)
+}
+
+// The current state of the SQL firewall policy.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Specifies whether the SQL firewall policy is enabled or disabled.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified violation action.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ViolationAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.ViolationAction }).(pulumi.StringOutput)
+}
+
+// Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput) ViolationAudit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem) string { return v.ViolationAudit }).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput() GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) ToGetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem {
+		return vs[0].([]GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallPolicyAnalyticsFilterInput is an input type that accepts GetSqlFirewallPolicyAnalyticsFilterArgs and GetSqlFirewallPolicyAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsFilterInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsFilterArgs{...}
+type GetSqlFirewallPolicyAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsFilterOutput() GetSqlFirewallPolicyAnalyticsFilterOutput
+	ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsFilterOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArgs) ToGetSqlFirewallPolicyAnalyticsFilterOutput() GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArgs) ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsFilterOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsFilter] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsFilter]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallPolicyAnalyticsFilterArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsFilterArray and GetSqlFirewallPolicyAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsFilterArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsFilterArray{ GetSqlFirewallPolicyAnalyticsFilterArgs{...} }
+type GetSqlFirewallPolicyAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsFilterArrayOutput() GetSqlFirewallPolicyAnalyticsFilterArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsFilterArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterArray []GetSqlFirewallPolicyAnalyticsFilterInput
+
+func (GetSqlFirewallPolicyAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArray) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutput() GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArray) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsFilterArrayOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsFilter]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) ToGetSqlFirewallPolicyAnalyticsFilterOutput() GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) ToGetSqlFirewallPolicyAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsFilter] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterArrayOutput) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutput() GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterArrayOutput) ToGetSqlFirewallPolicyAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPolicyAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsFilter {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsFilterOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs{...}
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray{ GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs{...} }
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The aggregated data point items.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput) Items() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection) []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem struct {
+	// The dimensions available for SQL firewall policy analytics.
+	Dimensions []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallPolicyAnalyticCount string `pulumi:"sqlFirewallPolicyAnalyticCount"`
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs{...}
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs struct {
+	// The dimensions available for SQL firewall policy analytics.
+	Dimensions GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The total count of the aggregated metric.
+	SqlFirewallPolicyAnalyticCount pulumi.StringInput `pulumi:"sqlFirewallPolicyAnalyticCount"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray{ GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs{...} }
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The dimensions available for SQL firewall policy analytics.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) Dimensions() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem) []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The total count of the aggregated metric.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput) SqlFirewallPolicyAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem) string {
+		return v.SqlFirewallPolicyAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension struct {
+	// Specifies the SQL firewall policy enforcement option.
+	EnforcementScope string `pulumi:"enforcementScope"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The current state of the SQL firewall policy.
+	State string `pulumi:"state"`
+	// Specifies the mode in which the SQL firewall policy is enabled.
+	ViolationAction string `pulumi:"violationAction"`
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs{...}
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs struct {
+	// Specifies the SQL firewall policy enforcement option.
+	EnforcementScope pulumi.StringInput `pulumi:"enforcementScope"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// The current state of the SQL firewall policy.
+	State pulumi.StringInput `pulumi:"state"`
+	// Specifies the mode in which the SQL firewall policy is enabled.
+	ViolationAction pulumi.StringInput `pulumi:"violationAction"`
+}
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray and GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray{ GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs{...} }
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray []GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+func (i GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Specifies the SQL firewall policy enforcement option.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) EnforcementScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.EnforcementScope
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.SecurityPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the SQL firewall policy.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the mode in which the SQL firewall policy is enabled.
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput) ViolationAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension) string {
+		return v.ViolationAction
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallViolationAnalyticsFilterInput is an input type that accepts GetSqlFirewallViolationAnalyticsFilterArgs and GetSqlFirewallViolationAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsFilterInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsFilterArgs{...}
+type GetSqlFirewallViolationAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsFilterOutput() GetSqlFirewallViolationAnalyticsFilterOutput
+	ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsFilterOutput
+}
+
+type GetSqlFirewallViolationAnalyticsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallViolationAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArgs) ToGetSqlFirewallViolationAnalyticsFilterOutput() GetSqlFirewallViolationAnalyticsFilterOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArgs) ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsFilterOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsFilter] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsFilter]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallViolationAnalyticsFilterArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsFilterArray and GetSqlFirewallViolationAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsFilterArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsFilterArray{ GetSqlFirewallViolationAnalyticsFilterArgs{...} }
+type GetSqlFirewallViolationAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsFilterArrayOutput() GetSqlFirewallViolationAnalyticsFilterArrayOutput
+	ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsFilterArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsFilterArray []GetSqlFirewallViolationAnalyticsFilterInput
+
+func (GetSqlFirewallViolationAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArray) ToGetSqlFirewallViolationAnalyticsFilterArrayOutput() GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArray) ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsFilterArrayOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsFilter]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallViolationAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) ToGetSqlFirewallViolationAnalyticsFilterOutput() GetSqlFirewallViolationAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) ToGetSqlFirewallViolationAnalyticsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsFilter] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterArrayOutput) ToGetSqlFirewallViolationAnalyticsFilterArrayOutput() GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterArrayOutput) ToGetSqlFirewallViolationAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsFilter] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsFilter {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsFilterOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection struct {
+	// The aggregated data point items.
+	Items []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs{...}
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs struct {
+	// The aggregated data point items.
+	Items GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray{ GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs{...} }
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The aggregated data point items.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput) Items() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection) []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem struct {
+	// The details of the aggregation dimensions used for summarizing SQL violations.
+	Dimensions []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension `pulumi:"dimensions"`
+	// The display name of aggregation field.
+	DisplayName string `pulumi:"displayName"`
+	// The name of the aggregation.
+	MetricName string `pulumi:"metricName"`
+	// Total count of aggregated value.
+	SqlFirewallViolationAnalyticCount string `pulumi:"sqlFirewallViolationAnalyticCount"`
+	// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnded string `pulumi:"timeEnded"`
+	// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs{...}
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs struct {
+	// The details of the aggregation dimensions used for summarizing SQL violations.
+	Dimensions GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput `pulumi:"dimensions"`
+	// The display name of aggregation field.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The name of the aggregation.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// Total count of aggregated value.
+	SqlFirewallViolationAnalyticCount pulumi.StringInput `pulumi:"sqlFirewallViolationAnalyticCount"`
+	// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray{ GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs{...} }
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The details of the aggregation dimensions used for summarizing SQL violations.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) Dimensions() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension {
+		return v.Dimensions
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+// The display name of aggregation field.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the aggregation.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.MetricName
+	}).(pulumi.StringOutput)
+}
+
+// Total count of aggregated value.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) SqlFirewallViolationAnalyticCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.SqlFirewallViolationAnalyticCount
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension struct {
+	// The IP address of the host from which the session was spawned.
+	ClientIps []string `pulumi:"clientIps"`
+	// The name of the operating system user for the database session.
+	ClientOsUserNames []string `pulumi:"clientOsUserNames"`
+	// The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
+	ClientPrograms []string `pulumi:"clientPrograms"`
+	// The name of the database user.
+	DbUserNames []string `pulumi:"dbUserNames"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTimes []string `pulumi:"operationTimes"`
+	// The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
+	Operations []string `pulumi:"operations"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevels []string `pulumi:"sqlLevels"`
+	// The OCID of the target database.
+	TargetIds []string `pulumi:"targetIds"`
+	// The name of the target database.
+	TargetNames []string `pulumi:"targetNames"`
+	// The action taken for this SQL violation.
+	ViolationActions []string `pulumi:"violationActions"`
+	// Indicates whether SQL or context violation.
+	ViolationCauses []string `pulumi:"violationCauses"`
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs{...}
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs struct {
+	// The IP address of the host from which the session was spawned.
+	ClientIps pulumi.StringArrayInput `pulumi:"clientIps"`
+	// The name of the operating system user for the database session.
+	ClientOsUserNames pulumi.StringArrayInput `pulumi:"clientOsUserNames"`
+	// The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
+	ClientPrograms pulumi.StringArrayInput `pulumi:"clientPrograms"`
+	// The name of the database user.
+	DbUserNames pulumi.StringArrayInput `pulumi:"dbUserNames"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTimes pulumi.StringArrayInput `pulumi:"operationTimes"`
+	// The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
+	Operations pulumi.StringArrayInput `pulumi:"operations"`
+	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevels pulumi.StringArrayInput `pulumi:"sqlLevels"`
+	// The OCID of the target database.
+	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
+	// The name of the target database.
+	TargetNames pulumi.StringArrayInput `pulumi:"targetNames"`
+	// The action taken for this SQL violation.
+	ViolationActions pulumi.StringArrayInput `pulumi:"violationActions"`
+	// Indicates whether SQL or context violation.
+	ViolationCauses pulumi.StringArrayInput `pulumi:"violationCauses"`
+}
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray and GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput` via:
+//
+//	GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray{ GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs{...} }
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput
+	ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray []GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput)
+}
+
+func (i GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The IP address of the host from which the session was spawned.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ClientIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ClientIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the operating system user for the database session.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ClientOsUserNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ClientOsUserNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ClientPrograms() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ClientPrograms
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the database user.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) DbUserNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.DbUserNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The time of the SQL violation occurrence in the target database.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) OperationTimes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.OperationTimes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) Operations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.Operations
+	}).(pulumi.StringArrayOutput)
+}
+
+// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) SqlLevels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.SqlLevels
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the target database.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.TargetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the target database.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) TargetNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.TargetNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// The action taken for this SQL violation.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ViolationActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ViolationActions
+	}).(pulumi.StringArrayOutput)
+}
+
+// Indicates whether SQL or context violation.
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput) ViolationCauses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension) []string {
+		return v.ViolationCauses
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput() GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) ToGetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension {
+		return vs[0].([]GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension)[vs[1].(int)]
+	}).(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput)
+}
+
+type GetSqlFirewallViolationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSqlFirewallViolationsFilterInput is an input type that accepts GetSqlFirewallViolationsFilterArgs and GetSqlFirewallViolationsFilterOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsFilterInput` via:
+//
+//	GetSqlFirewallViolationsFilterArgs{...}
+type GetSqlFirewallViolationsFilterInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsFilterOutput() GetSqlFirewallViolationsFilterOutput
+	ToGetSqlFirewallViolationsFilterOutputWithContext(context.Context) GetSqlFirewallViolationsFilterOutput
+}
+
+type GetSqlFirewallViolationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSqlFirewallViolationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsFilterArgs) ToGetSqlFirewallViolationsFilterOutput() GetSqlFirewallViolationsFilterOutput {
+	return i.ToGetSqlFirewallViolationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsFilterArgs) ToGetSqlFirewallViolationsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsFilterOutput)
+}
+
+func (i GetSqlFirewallViolationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationsFilter] {
+	return pulumix.Output[GetSqlFirewallViolationsFilter]{
+		OutputState: i.ToGetSqlFirewallViolationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallViolationsFilterArrayInput is an input type that accepts GetSqlFirewallViolationsFilterArray and GetSqlFirewallViolationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsFilterArrayInput` via:
+//
+//	GetSqlFirewallViolationsFilterArray{ GetSqlFirewallViolationsFilterArgs{...} }
+type GetSqlFirewallViolationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsFilterArrayOutput() GetSqlFirewallViolationsFilterArrayOutput
+	ToGetSqlFirewallViolationsFilterArrayOutputWithContext(context.Context) GetSqlFirewallViolationsFilterArrayOutput
+}
+
+type GetSqlFirewallViolationsFilterArray []GetSqlFirewallViolationsFilterInput
+
+func (GetSqlFirewallViolationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsFilterArray) ToGetSqlFirewallViolationsFilterArrayOutput() GetSqlFirewallViolationsFilterArrayOutput {
+	return i.ToGetSqlFirewallViolationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsFilterArray) ToGetSqlFirewallViolationsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsFilterArrayOutput)
+}
+
+func (i GetSqlFirewallViolationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationsFilter] {
+	return pulumix.Output[[]GetSqlFirewallViolationsFilter]{
+		OutputState: i.ToGetSqlFirewallViolationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallViolationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) ToGetSqlFirewallViolationsFilterOutput() GetSqlFirewallViolationsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) ToGetSqlFirewallViolationsFilterOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationsFilter] {
+	return pulumix.Output[GetSqlFirewallViolationsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSqlFirewallViolationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSqlFirewallViolationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsFilter)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsFilterArrayOutput) ToGetSqlFirewallViolationsFilterArrayOutput() GetSqlFirewallViolationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterArrayOutput) ToGetSqlFirewallViolationsFilterArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsFilterArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationsFilter] {
+	return pulumix.Output[[]GetSqlFirewallViolationsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationsFilter {
+		return vs[0].([]GetSqlFirewallViolationsFilter)[vs[1].(int)]
+	}).(GetSqlFirewallViolationsFilterOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollection struct {
+	// Array of SQL violation summary.
+	Items []GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem `pulumi:"items"`
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs and GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs{...}
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs struct {
+	// Array of SQL violation summary.
+	Items GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput)
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollection] {
+	return pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollection]{
+		OutputState: i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray and GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray{ GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs{...} }
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray []GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput)
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollection] {
+	return pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollection]{
+		OutputState: i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollection] {
+	return pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Array of SQL violation summary.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput) Items() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollection) []GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
+		return v.Items
+	}).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollection)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollection] {
+	return pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationsSqlFirewallViolationsCollection {
+		return vs[0].([]GetSqlFirewallViolationsSqlFirewallViolationsCollection)[vs[1].(int)]
+	}).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem struct {
+	// The IP address of the host machine from which the session was generated.
+	ClientIp string `pulumi:"clientIp"`
+	// The name of the operating system user for the database session.
+	ClientOsUserName string `pulumi:"clientOsUserName"`
+	// The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+	ClientProgram string `pulumi:"clientProgram"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentDbUserName string `pulumi:"currentDbUserName"`
+	// The name of the database user.
+	DbUserName string `pulumi:"dbUserName"`
+	// The OCID of the SQL violation.
+	Id string `pulumi:"id"`
+	// The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+	Operation string `pulumi:"operation"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTime string `pulumi:"operationTime"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects string `pulumi:"sqlAccessedObjects"`
+	// Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel string `pulumi:"sqlLevel"`
+	// The SQL text caught by the firewall.
+	SqlText string `pulumi:"sqlText"`
+	// The OCID of the target database.
+	TargetId string `pulumi:"targetId"`
+	// The name of the target database.
+	TargetName string `pulumi:"targetName"`
+	// The timestamp when this SQL violation was collected from the target database by Data Safe.
+	TimeCollected string `pulumi:"timeCollected"`
+	// The action taken for this SQL violation.
+	ViolationAction string `pulumi:"violationAction"`
+	// Indicates whether SQL or context violation.
+	ViolationCause string `pulumi:"violationCause"`
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs and GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs{...}
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs struct {
+	// The IP address of the host machine from which the session was generated.
+	ClientIp pulumi.StringInput `pulumi:"clientIp"`
+	// The name of the operating system user for the database session.
+	ClientOsUserName pulumi.StringInput `pulumi:"clientOsUserName"`
+	// The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+	ClientProgram pulumi.StringInput `pulumi:"clientProgram"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name of the user that SQL was executed as.
+	CurrentDbUserName pulumi.StringInput `pulumi:"currentDbUserName"`
+	// The name of the database user.
+	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
+	// The OCID of the SQL violation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+	Operation pulumi.StringInput `pulumi:"operation"`
+	// The time of the SQL violation occurrence in the target database.
+	OperationTime pulumi.StringInput `pulumi:"operationTime"`
+	// The objects accessed by the SQL.
+	SqlAccessedObjects pulumi.StringInput `pulumi:"sqlAccessedObjects"`
+	// Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+	SqlLevel pulumi.StringInput `pulumi:"sqlLevel"`
+	// The SQL text caught by the firewall.
+	SqlText pulumi.StringInput `pulumi:"sqlText"`
+	// The OCID of the target database.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The name of the target database.
+	TargetName pulumi.StringInput `pulumi:"targetName"`
+	// The timestamp when this SQL violation was collected from the target database by Data Safe.
+	TimeCollected pulumi.StringInput `pulumi:"timeCollected"`
+	// The action taken for this SQL violation.
+	ViolationAction pulumi.StringInput `pulumi:"violationAction"`
+	// Indicates whether SQL or context violation.
+	ViolationCause pulumi.StringInput `pulumi:"violationCause"`
+}
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput)
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput is an input type that accepts GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray and GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput` via:
+//
+//	GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray{ GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs{...} }
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput
+	ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray []GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput)
+}
+
+func (i GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem]{
+		OutputState: i.ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem] {
+	return pulumix.Output[GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The IP address of the host machine from which the session was generated.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ClientIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ClientIp }).(pulumi.StringOutput)
+}
+
+// The name of the operating system user for the database session.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ClientOsUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ClientOsUserName }).(pulumi.StringOutput)
+}
+
+// The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ClientProgram() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ClientProgram }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name of the user that SQL was executed as.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) CurrentDbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.CurrentDbUserName }).(pulumi.StringOutput)
+}
+
+// The name of the database user.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) DbUserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.DbUserName }).(pulumi.StringOutput)
+}
+
+// The OCID of the SQL violation.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.Operation }).(pulumi.StringOutput)
+}
+
+// The time of the SQL violation occurrence in the target database.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) OperationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.OperationTime }).(pulumi.StringOutput)
+}
+
+// The objects accessed by the SQL.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) SqlAccessedObjects() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string {
+		return v.SqlAccessedObjects
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) SqlLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.SqlLevel }).(pulumi.StringOutput)
+}
+
+// The SQL text caught by the firewall.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) SqlText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.SqlText }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The name of the target database.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) TargetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.TargetName }).(pulumi.StringOutput)
+}
+
+// The timestamp when this SQL violation was collected from the target database by Data Safe.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) TimeCollected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.TimeCollected }).(pulumi.StringOutput)
+}
+
+// The action taken for this SQL violation.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ViolationAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ViolationAction }).(pulumi.StringOutput)
+}
+
+// Indicates whether SQL or context violation.
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput) ViolationCause() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem) string { return v.ViolationCause }).(pulumi.StringOutput)
+}
+
+type GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)(nil)).Elem()
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput() GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) ToGetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutputWithContext(ctx context.Context) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem] {
+	return pulumix.Output[[]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
+		return vs[0].([]GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem)[vs[1].(int)]
+	}).(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput)
+}
+
 type GetTargetAlertPolicyAssociationsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -39368,7 +47287,7 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem 
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id string `pulumi:"id"`
-	// Indicates if the target-alert policy association is enabled or disabled.
+	// Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
 	PolicyId string `pulumi:"policyId"`
@@ -39408,7 +47327,7 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemA
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Indicates if the target-alert policy association is enabled or disabled.
+	// Indicates if the target-alert policy association is enabled or disabled by user.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringInput `pulumi:"policyId"`
@@ -39533,7 +47452,7 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates if the target-alert policy association is enabled or disabled.
+// Indicates if the target-alert policy association is enabled or disabled by user.
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) bool {
 		return v.IsEnabled
@@ -43652,7 +51571,7 @@ type GetUserAssessmentProfilesProfile struct {
 	TargetId string `pulumi:"targetId"`
 	// The OCID of the user assessment.
 	UserAssessmentId string `pulumi:"userAssessmentId"`
-	// The number of users having a given profile.
+	// The number of users that have a given profile.
 	UserCount int `pulumi:"userCount"`
 }
 
@@ -43720,7 +51639,7 @@ type GetUserAssessmentProfilesProfileArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The OCID of the user assessment.
 	UserAssessmentId pulumi.StringInput `pulumi:"userAssessmentId"`
-	// The number of users having a given profile.
+	// The number of users that have a given profile.
 	UserCount pulumi.IntInput `pulumi:"userCount"`
 }
 
@@ -43923,7 +51842,7 @@ func (o GetUserAssessmentProfilesProfileOutput) UserAssessmentId() pulumi.String
 	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) string { return v.UserAssessmentId }).(pulumi.StringOutput)
 }
 
-// The number of users having a given profile.
+// The number of users that have a given profile.
 func (o GetUserAssessmentProfilesProfileOutput) UserCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) int { return v.UserCount }).(pulumi.IntOutput)
 }
@@ -44460,11 +52379,11 @@ type GetUserAssessmentUsersUser struct {
 	Key string `pulumi:"key"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
-	// The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastLogin string `pulumi:"timeLastLogin"`
-	// The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimePasswordChanged string `pulumi:"timePasswordChanged"`
-	// The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUserCreated string `pulumi:"timeUserCreated"`
 	// A filter to return only items that match the specified user category.
 	UserCategory string `pulumi:"userCategory"`
@@ -44498,11 +52417,11 @@ type GetUserAssessmentUsersUserArgs struct {
 	Key pulumi.StringInput `pulumi:"key"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastLogin pulumi.StringInput `pulumi:"timeLastLogin"`
-	// The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimePasswordChanged pulumi.StringInput `pulumi:"timePasswordChanged"`
-	// The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUserCreated pulumi.StringInput `pulumi:"timeUserCreated"`
 	// A filter to return only items that match the specified user category.
 	UserCategory pulumi.StringInput `pulumi:"userCategory"`
@@ -44608,17 +52527,17 @@ func (o GetUserAssessmentUsersUserOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentUsersUserOutput) TimeLastLogin() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimeLastLogin }).(pulumi.StringOutput)
 }
 
-// The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentUsersUserOutput) TimePasswordChanged() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimePasswordChanged }).(pulumi.StringOutput)
 }
 
-// The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentUsersUserOutput) TimeUserCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersUser) string { return v.TimeUserCreated }).(pulumi.StringOutput)
 }
@@ -44971,11 +52890,11 @@ type GetUserAssessmentsUserAssessment struct {
 	TargetId string `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
-	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed string `pulumi:"timeLastAssessed"`
-	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return user assessments that were created by either the system or by a user only.
 	TriggeredBy string `pulumi:"triggeredBy"`
@@ -45033,11 +52952,11 @@ type GetUserAssessmentsUserAssessmentArgs struct {
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
-	// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastAssessed pulumi.StringInput `pulumi:"timeLastAssessed"`
-	// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return user assessments that were created by either the system or by a user only.
 	TriggeredBy pulumi.StringInput `pulumi:"triggeredBy"`
@@ -45211,17 +53130,17 @@ func (o GetUserAssessmentsUserAssessmentOutput) TargetIds() pulumi.StringArrayOu
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
-// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentsUserAssessmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentsUserAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
 }
 
-// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetUserAssessmentsUserAssessmentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -45406,6 +53325,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AuditProfileAuditTrailArrayInput)(nil)).Elem(), AuditProfileAuditTrailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataSafeConfigurationGlobalSettingInput)(nil)).Elem(), DataSafeConfigurationGlobalSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataSafeConfigurationGlobalSettingArrayInput)(nil)).Elem(), DataSafeConfigurationGlobalSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseSecurityConfigManagementSqlFirewallConfigInput)(nil)).Elem(), DatabaseSecurityConfigManagementSqlFirewallConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseSecurityConfigManagementSqlFirewallConfigPtrInput)(nil)).Elem(), DatabaseSecurityConfigManagementSqlFirewallConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseSecurityConfigSqlFirewallConfigInput)(nil)).Elem(), DatabaseSecurityConfigSqlFirewallConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseSecurityConfigSqlFirewallConfigPtrInput)(nil)).Elem(), DatabaseSecurityConfigSqlFirewallConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobsResultModifiedAttributeInput)(nil)).Elem(), DiscoveryJobsResultModifiedAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobsResultModifiedAttributeArrayInput)(nil)).Elem(), DiscoveryJobsResultModifiedAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LibraryMasingFormatFormatEntryInput)(nil)).Elem(), LibraryMasingFormatFormatEntryArgs{})
@@ -45566,6 +53489,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayInput)(nil)).Elem(), GetDataSafePrivateEndpointsDataSafePrivateEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSafePrivateEndpointsFilterInput)(nil)).Elem(), GetDataSafePrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSafePrivateEndpointsFilterArrayInput)(nil)).Elem(), GetDataSafePrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfigInput)(nil)).Elem(), GetDatabaseSecurityConfigSqlFirewallConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigSqlFirewallConfigArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigSqlFirewallConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsFilterInput)(nil)).Elem(), GetDatabaseSecurityConfigsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSecurityConfigsFilterArrayInput)(nil)).Elem(), GetDatabaseSecurityConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryAnalyticItemInput)(nil)).Elem(), GetDiscoveryAnalyticItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryAnalyticItemArrayInput)(nil)).Elem(), GetDiscoveryAnalyticItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryAnalyticItemDimensionInput)(nil)).Elem(), GetDiscoveryAnalyticItemDimensionArgs{})
@@ -45824,6 +53757,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticPassInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput)(nil)).Elem(), GetSecurityAssessmentsSecurityAssessmentStatisticPassArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesFilterInput)(nil)).Elem(), GetSecurityPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesFilterArrayInput)(nil)).Elem(), GetSecurityPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionArrayInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItemInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsFilterInput)(nil)).Elem(), GetSecurityPolicyDeploymentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsFilterArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayInput)(nil)).Elem(), GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsFilterArrayInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionInput)(nil)).Elem(), GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs{})
@@ -45854,6 +53809,70 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesSensitiveTypeCollectionArrayInput)(nil)).Elem(), GetSensitiveTypesSensitiveTypeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesSensitiveTypeCollectionItemInput)(nil)).Elem(), GetSensitiveTypesSensitiveTypeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSensitiveTypesSensitiveTypeCollectionItemArrayInput)(nil)).Elem(), GetSensitiveTypesSensitiveTypeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsFilterInput)(nil)).Elem(), GetSqlCollectionAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsFilterArrayInput)(nil)).Elem(), GetSqlCollectionAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionInput)(nil)).Elem(), GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayInput)(nil)).Elem(), GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemInput)(nil)).Elem(), GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsFilterInput)(nil)).Elem(), GetSqlCollectionLogInsightsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsFilterArrayInput)(nil)).Elem(), GetSqlCollectionLogInsightsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionInput)(nil)).Elem(), GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayInput)(nil)).Elem(), GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemInput)(nil)).Elem(), GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayInput)(nil)).Elem(), GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionInput)(nil)).Elem(), GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionsFilterInput)(nil)).Elem(), GetSqlCollectionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionsFilterArrayInput)(nil)).Elem(), GetSqlCollectionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollectionInput)(nil)).Elem(), GetSqlCollectionsSqlCollectionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollectionArrayInput)(nil)).Elem(), GetSqlCollectionsSqlCollectionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollectionItemInput)(nil)).Elem(), GetSqlCollectionsSqlCollectionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlCollectionsSqlCollectionCollectionItemArrayInput)(nil)).Elem(), GetSqlCollectionsSqlCollectionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsFilterInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsFilterArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilterInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsFilterArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesFilterInput)(nil)).Elem(), GetSqlFirewallPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesFilterArrayInput)(nil)).Elem(), GetSqlFirewallPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilterInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsFilterArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilterInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsFilterArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayInput)(nil)).Elem(), GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsFilterInput)(nil)).Elem(), GetSqlFirewallViolationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsFilterArrayInput)(nil)).Elem(), GetSqlFirewallViolationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayInput)(nil)).Elem(), GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsFilterInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsFilterArrayInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionInput)(nil)).Elem(), GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs{})
@@ -45944,6 +53963,10 @@ func init() {
 	pulumi.RegisterOutputType(AuditProfileAuditTrailArrayOutput{})
 	pulumi.RegisterOutputType(DataSafeConfigurationGlobalSettingOutput{})
 	pulumi.RegisterOutputType(DataSafeConfigurationGlobalSettingArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseSecurityConfigManagementSqlFirewallConfigOutput{})
+	pulumi.RegisterOutputType(DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseSecurityConfigSqlFirewallConfigOutput{})
+	pulumi.RegisterOutputType(DatabaseSecurityConfigSqlFirewallConfigPtrOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobsResultModifiedAttributeOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobsResultModifiedAttributeArrayOutput{})
 	pulumi.RegisterOutputType(LibraryMasingFormatFormatEntryOutput{})
@@ -46104,6 +54127,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetDataSafePrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetDataSafePrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigSqlFirewallConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigSqlFirewallConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSecurityConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryAnalyticItemOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryAnalyticItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryAnalyticItemDimensionOutput{})
@@ -46362,6 +54395,28 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput{})
 	pulumi.RegisterOutputType(GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput{})
@@ -46392,6 +54447,70 @@ func init() {
 	pulumi.RegisterOutputType(GetSensitiveTypesSensitiveTypeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesSensitiveTypeCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionsSqlCollectionCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionsSqlCollectionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionsSqlCollectionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlCollectionsSqlCollectionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPoliciesSqlFirewallPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsFilterOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsFilterOutput{})
 	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput{})

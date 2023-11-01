@@ -24,6 +24,11 @@ public final class GetDiscoveryJobDiscoveryDetail {
      */
     private List<GetDiscoveryJobDiscoveryDetailCredential> credentials;
     /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    private String license;
+    /**
      * @return Property Details
      * 
      */
@@ -58,6 +63,13 @@ public final class GetDiscoveryJobDiscoveryDetail {
      */
     public List<GetDiscoveryJobDiscoveryDetailCredential> credentials() {
         return this.credentials;
+    }
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public String license() {
+        return this.license;
     }
     /**
      * @return Property Details
@@ -99,6 +111,7 @@ public final class GetDiscoveryJobDiscoveryDetail {
     public static final class Builder {
         private String agentId;
         private List<GetDiscoveryJobDiscoveryDetailCredential> credentials;
+        private String license;
         private List<GetDiscoveryJobDiscoveryDetailProperty> properties;
         private String resourceName;
         private String resourceType;
@@ -108,6 +121,7 @@ public final class GetDiscoveryJobDiscoveryDetail {
     	      Objects.requireNonNull(defaults);
     	      this.agentId = defaults.agentId;
     	      this.credentials = defaults.credentials;
+    	      this.license = defaults.license;
     	      this.properties = defaults.properties;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
@@ -126,6 +140,11 @@ public final class GetDiscoveryJobDiscoveryDetail {
         }
         public Builder credentials(GetDiscoveryJobDiscoveryDetailCredential... credentials) {
             return credentials(List.of(credentials));
+        }
+        @CustomType.Setter
+        public Builder license(String license) {
+            this.license = Objects.requireNonNull(license);
+            return this;
         }
         @CustomType.Setter
         public Builder properties(List<GetDiscoveryJobDiscoveryDetailProperty> properties) {
@@ -157,6 +176,7 @@ public final class GetDiscoveryJobDiscoveryDetail {
             final var o = new GetDiscoveryJobDiscoveryDetail();
             o.agentId = agentId;
             o.credentials = credentials;
+            o.license = license;
             o.properties = properties;
             o.resourceName = resourceName;
             o.resourceType = resourceType;

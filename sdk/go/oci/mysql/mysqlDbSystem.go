@@ -55,6 +55,7 @@ import (
 //				ConfigurationId:     pulumi.Any(oci_audit_configuration.Test_configuration.Id),
 //				CrashRecovery:       pulumi.Any(_var.Mysql_db_system_crash_recovery),
 //				DataStorageSizeInGb: pulumi.Any(_var.Mysql_db_system_data_storage_size_in_gb),
+//				DatabaseManagement:  pulumi.Any(_var.Mysql_db_system_database_management),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -129,6 +130,8 @@ type MysqlDbSystem struct {
 	CurrentPlacements MysqlDbSystemCurrentPlacementArrayOutput `pulumi:"currentPlacements"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) Whether to enable monitoring via the Database Management service.
+	DatabaseManagement pulumi.StringOutput `pulumi:"databaseManagement"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -268,6 +271,8 @@ type mysqlDbSystemState struct {
 	CurrentPlacements []MysqlDbSystemCurrentPlacement `pulumi:"currentPlacements"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) Whether to enable monitoring via the Database Management service.
+	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -359,6 +364,8 @@ type MysqlDbSystemState struct {
 	CurrentPlacements MysqlDbSystemCurrentPlacementArrayInput
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntPtrInput
+	// (Updatable) Whether to enable monitoring via the Database Management service.
+	DatabaseManagement pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -450,6 +457,8 @@ type mysqlDbSystemArgs struct {
 	CrashRecovery *string `pulumi:"crashRecovery"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) Whether to enable monitoring via the Database Management service.
+	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -524,6 +533,8 @@ type MysqlDbSystemArgs struct {
 	CrashRecovery pulumi.StringPtrInput
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntPtrInput
+	// (Updatable) Whether to enable monitoring via the Database Management service.
+	DatabaseManagement pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -739,6 +750,11 @@ func (o MysqlDbSystemOutput) CurrentPlacements() MysqlDbSystemCurrentPlacementAr
 // (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 func (o MysqlDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// (Updatable) Whether to enable monitoring via the Database Management service.
+func (o MysqlDbSystemOutput) DatabaseManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.DatabaseManagement }).(pulumi.StringOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`

@@ -126,7 +126,7 @@ type GetUserAssessmentUsersArgs struct {
 // A collection of values returned by getUserAssessmentUsers.
 type GetUserAssessmentUsersResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
-	// The user account status.
+	// The status of the user account.
 	AccountStatus *string `pulumi:"accountStatus"`
 	// The user authentication method.
 	AuthenticationType     *string                        `pulumi:"authenticationType"`
@@ -250,7 +250,7 @@ func (o GetUserAssessmentUsersResultOutput) AccessLevel() pulumi.StringPtrOutput
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-// The user account status.
+// The status of the user account.
 func (o GetUserAssessmentUsersResultOutput) AccountStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.AccountStatus }).(pulumi.StringPtrOutput)
 }

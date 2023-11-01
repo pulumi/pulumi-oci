@@ -77,6 +77,8 @@ type LookupMysqlDbSystemResult struct {
 	CurrentPlacements []GetMysqlDbSystemCurrentPlacement `pulumi:"currentPlacements"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagement string `pulumi:"databaseManagement"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -222,6 +224,11 @@ func (o LookupMysqlDbSystemResultOutput) CurrentPlacements() GetMysqlDbSystemCur
 // Initial size of the data volume in GiBs that will be created and attached.
 func (o LookupMysqlDbSystemResultOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Whether to enable monitoring via the Database Management service.
+func (o LookupMysqlDbSystemResultOutput) DatabaseManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.DatabaseManagement }).(pulumi.StringOutput)
 }
 
 // The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.

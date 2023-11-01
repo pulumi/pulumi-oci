@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
  * 
- * Creates a new DR Plan of the specified DR Plan type.
+ * Create a DR plan of the specified DR plan type.
  * 
  * ## Example Usage
  * ```java
@@ -68,189 +68,189 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DisasterRecovery/drPlan:DrPlan")
 public class DrPlan extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
     /**
-     * (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Export(name="drProtectionGroupId", refs={String.class}, tree="[0]")
     private Output<String> drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Output<String> drProtectionGroupId() {
         return this.drProtectionGroupId;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * A message describing the DR Plan&#39;s current state in more detail.
+     * A message describing the DR plan&#39;s current state in more detail.
      * 
      */
     @Export(name="lifeCycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifeCycleDetails;
 
     /**
-     * @return A message describing the DR Plan&#39;s current state in more detail.
+     * @return A message describing the DR plan&#39;s current state in more detail.
      * 
      */
     public Output<String> lifeCycleDetails() {
         return this.lifeCycleDetails;
     }
     /**
-     * The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Export(name="peerDrProtectionGroupId", refs={String.class}, tree="[0]")
     private Output<String> peerDrProtectionGroupId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Output<String> peerDrProtectionGroupId() {
         return this.peerDrProtectionGroupId;
     }
     /**
-     * The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+     * The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Export(name="peerRegion", refs={String.class}, tree="[0]")
     private Output<String> peerRegion;
 
     /**
-     * @return The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+     * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public Output<String> peerRegion() {
         return this.peerRegion;
     }
     /**
-     * The list of groups in this DR Plan.
+     * The list of groups in this DR plan.
      * 
      */
     @Export(name="planGroups", refs={List.class,DrPlanPlanGroup.class}, tree="[0,1]")
     private Output<List<DrPlanPlanGroup>> planGroups;
 
     /**
-     * @return The list of groups in this DR Plan.
+     * @return The list of groups in this DR plan.
      * 
      */
     public Output<List<DrPlanPlanGroup>> planGroups() {
         return this.planGroups;
     }
     /**
-     * The current state of the DR Plan.
+     * The current state of the DR plan.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the DR Plan.
+     * @return The current state of the DR plan.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
     }
     /**
-     * The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * The type of DR Plan to be created.
+     * The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -260,7 +260,7 @@ public class DrPlan extends com.pulumi.resources.CustomResource {
     private Output<String> type;
 
     /**
-     * @return The type of DR Plan to be created.
+     * @return The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
  *     compartmentId: _var.compartment_id,
  *     configurationId: _var.mysql_configuration_id,
+ *     databaseManagements: _var.mysql_db_system_database_management,
  *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
  *     displayName: _var.mysql_db_system_display_name,
  *     isHeatWaveClusterAttached: _var.mysql_db_system_is_heat_wave_cluster_attached,
@@ -35,6 +36,7 @@ export function getMysqlDbSystems(args: GetMysqlDbSystemsArgs, opts?: pulumi.Inv
     return pulumi.runtime.invoke("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", {
         "compartmentId": args.compartmentId,
         "configurationId": args.configurationId,
+        "databaseManagements": args.databaseManagements,
         "dbSystemId": args.dbSystemId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -56,6 +58,10 @@ export interface GetMysqlDbSystemsArgs {
      * The requested Configuration instance.
      */
     configurationId?: string;
+    /**
+     * Filter DB Systems by their Database Management configuration.
+     */
+    databaseManagements?: string[];
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -91,6 +97,10 @@ export interface GetMysqlDbSystemsResult {
      * The OCID of the Configuration to be used for Instances in this DB System.
      */
     readonly configurationId?: string;
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     */
+    readonly databaseManagements?: string[];
     /**
      * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      */
@@ -133,6 +143,7 @@ export interface GetMysqlDbSystemsResult {
  * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
  *     compartmentId: _var.compartment_id,
  *     configurationId: _var.mysql_configuration_id,
+ *     databaseManagements: _var.mysql_db_system_database_management,
  *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
  *     displayName: _var.mysql_db_system_display_name,
  *     isHeatWaveClusterAttached: _var.mysql_db_system_is_heat_wave_cluster_attached,
@@ -157,6 +168,10 @@ export interface GetMysqlDbSystemsOutputArgs {
      * The requested Configuration instance.
      */
     configurationId?: pulumi.Input<string>;
+    /**
+     * Filter DB Systems by their Database Management configuration.
+     */
+    databaseManagements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

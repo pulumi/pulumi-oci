@@ -76,7 +76,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -84,7 +84,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -92,7 +92,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+        The display name of the group.  Example: `DATABASE_SWITCHOVER`
         """
         return pulumi.get(self, "display_name")
 
@@ -105,7 +105,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> str:
         """
-        The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
@@ -113,7 +113,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -121,7 +121,7 @@ class GetDrPlanResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+        The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         """
         return pulumi.get(self, "id")
 
@@ -129,7 +129,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="lifeCycleDetails")
     def life_cycle_details(self) -> str:
         """
-        A message describing the DR Plan's current state in more detail.
+        A message describing the DR plan's current state in more detail.
         """
         return pulumi.get(self, "life_cycle_details")
 
@@ -137,7 +137,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> str:
         """
-        The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_dr_protection_group_id")
 
@@ -145,7 +145,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="peerRegion")
     def peer_region(self) -> str:
         """
-        The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+        The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         """
         return pulumi.get(self, "peer_region")
 
@@ -153,7 +153,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="planGroups")
     def plan_groups(self) -> Sequence['outputs.GetDrPlanPlanGroupResult']:
         """
-        The list of groups in this DR Plan.
+        The list of groups in this DR plan.
         """
         return pulumi.get(self, "plan_groups")
 
@@ -161,7 +161,7 @@ class GetDrPlanResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DR Plan.
+        The current state of the DR plan.
         """
         return pulumi.get(self, "state")
 
@@ -169,7 +169,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -177,7 +177,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -185,7 +185,7 @@ class GetDrPlanResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -193,7 +193,7 @@ class GetDrPlanResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of this DR Plan.
+        The type of the DR plan.
         """
         return pulumi.get(self, "type")
 
@@ -227,7 +227,7 @@ def get_dr_plan(dr_plan_id: Optional[str] = None,
     """
     This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Get details for the DR Plan identified by *drPlanId*.
+    Get details for the DR plan identified by *drPlanId*.
 
     ## Example Usage
 
@@ -239,7 +239,7 @@ def get_dr_plan(dr_plan_id: Optional[str] = None,
     ```
 
 
-    :param str dr_plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+    :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
     """
     __args__ = dict()
     __args__['drPlanId'] = dr_plan_id
@@ -271,7 +271,7 @@ def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Get details for the DR Plan identified by *drPlanId*.
+    Get details for the DR plan identified by *drPlanId*.
 
     ## Example Usage
 
@@ -283,6 +283,6 @@ def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str dr_plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+    :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
     """
     ...

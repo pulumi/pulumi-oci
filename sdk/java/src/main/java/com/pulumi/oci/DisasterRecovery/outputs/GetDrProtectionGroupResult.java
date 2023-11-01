@@ -18,79 +18,84 @@ import java.util.Objects;
 public final class GetDrProtectionGroupResult {
     private List<GetDrProtectionGroupAssociation> associations;
     /**
-     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     private String compartmentId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
     private Integer disassociateTrigger;
     /**
-     * @return The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * @return The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     private String displayName;
     private String drProtectionGroupId;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private String id;
     /**
-     * @return A message describing the DR Protection Group&#39;s current state in more detail.
+     * @return A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
     private String lifeCycleDetails;
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The current sub-state of the DR protection group.
+     * 
+     */
+    private String lifecycleSubState;
+    /**
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     private List<GetDrProtectionGroupLogLocation> logLocations;
     /**
-     * @return A list of DR Protection Group members.
+     * @return A list of DR protection group members.
      * 
      */
     private List<GetDrProtectionGroupMember> members;
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private String peerId;
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     private String peerRegion;
     /**
-     * @return The role of the DR Protection Group.
+     * @return The role of the DR protection group.
      * 
      */
     private String role;
     /**
-     * @return The current state of the DR Protection Group.
+     * @return The current state of the DR protection group.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeUpdated;
@@ -100,14 +105,14 @@ public final class GetDrProtectionGroupResult {
         return this.associations;
     }
     /**
-     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
@@ -117,7 +122,7 @@ public final class GetDrProtectionGroupResult {
         return this.disassociateTrigger;
     }
     /**
-     * @return The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * @return The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     public String displayName() {
@@ -127,84 +132,91 @@ public final class GetDrProtectionGroupResult {
         return this.drProtectionGroupId;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message describing the DR Protection Group&#39;s current state in more detail.
+     * @return A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
     public String lifeCycleDetails() {
         return this.lifeCycleDetails;
     }
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The current sub-state of the DR protection group.
+     * 
+     */
+    public String lifecycleSubState() {
+        return this.lifecycleSubState;
+    }
+    /**
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     public List<GetDrProtectionGroupLogLocation> logLocations() {
         return this.logLocations;
     }
     /**
-     * @return A list of DR Protection Group members.
+     * @return A list of DR protection group members.
      * 
      */
     public List<GetDrProtectionGroupMember> members() {
         return this.members;
     }
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String peerId() {
         return this.peerId;
     }
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public String peerRegion() {
         return this.peerRegion;
     }
     /**
-     * @return The role of the DR Protection Group.
+     * @return The role of the DR protection group.
      * 
      */
     public String role() {
         return this.role;
     }
     /**
-     * @return The current state of the DR Protection Group.
+     * @return The current state of the DR protection group.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeUpdated() {
@@ -229,6 +241,7 @@ public final class GetDrProtectionGroupResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifeCycleDetails;
+        private String lifecycleSubState;
         private List<GetDrProtectionGroupLogLocation> logLocations;
         private List<GetDrProtectionGroupMember> members;
         private String peerId;
@@ -250,6 +263,7 @@ public final class GetDrProtectionGroupResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifeCycleDetails = defaults.lifeCycleDetails;
+    	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.logLocations = defaults.logLocations;
     	      this.members = defaults.members;
     	      this.peerId = defaults.peerId;
@@ -307,6 +321,11 @@ public final class GetDrProtectionGroupResult {
         @CustomType.Setter
         public Builder lifeCycleDetails(String lifeCycleDetails) {
             this.lifeCycleDetails = Objects.requireNonNull(lifeCycleDetails);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleSubState(String lifecycleSubState) {
+            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
             return this;
         }
         @CustomType.Setter
@@ -371,6 +390,7 @@ public final class GetDrProtectionGroupResult {
             o.freeformTags = freeformTags;
             o.id = id;
             o.lifeCycleDetails = lifeCycleDetails;
+            o.lifecycleSubState = lifecycleSubState;
             o.logLocations = logLocations;
             o.members = members;
             o.peerId = peerId;

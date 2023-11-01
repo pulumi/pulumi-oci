@@ -79,6 +79,10 @@ export interface GetMysqlDbSystemResult {
      */
     readonly dataStorageSizeInGb: number;
     /**
+     * Whether to enable monitoring via the Database Management service.
+     */
+    readonly databaseManagement: string;
+    /**
      * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      */
     readonly dbSystemId: string;

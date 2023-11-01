@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+        /// Get details for the DR plan execution identified by *drPlanExecutionId*.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+        /// Get details for the DR plan execution identified by *drPlanExecutionId*.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlanExecutionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+        /// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
         /// </summary>
         [Input("drPlanExecutionId", required: true)]
         public string DrPlanExecutionId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlanExecutionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+        /// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
         /// </summary>
         [Input("drPlanExecutionId", required: true)]
         public Input<string> DrPlanExecutionId { get; set; } = null!;
@@ -106,24 +106,24 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlanExecutionResult
     {
         /// <summary>
-        /// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+        /// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
         /// </summary>
         public readonly string DisplayName;
         public readonly string DrPlanExecutionId;
         /// <summary>
-        /// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string DrProtectionGroupId;
         /// <summary>
-        /// The total duration in seconds taken to complete step execution.  Example: `35`
+        /// The total duration in seconds taken to complete the step execution.  Example: `35`
         /// </summary>
         public readonly int ExecutionDurationInSec;
         /// <summary>
@@ -131,63 +131,63 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanExecutionExecutionOptionResult> ExecutionOptions;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// A list of groups executed in this DR Plan Execution.
+        /// A list of groups executed in this DR plan execution.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanExecutionGroupExecutionResult> GroupExecutions;
         /// <summary>
-        /// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+        /// A message describing the DR plan execution's current state in more detail.
         /// </summary>
         public readonly string LifeCycleDetails;
         /// <summary>
-        /// Information about an Object Storage log location for a DR Protection Group.
+        /// The details of an object storage log location for a DR protection group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanExecutionLogLocationResult> LogLocations;
         /// <summary>
-        /// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string PeerDrProtectionGroupId;
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         public readonly string PeerRegion;
         /// <summary>
-        /// The type of the DR Plan executed.
+        /// The type of the DR plan executed.
         /// </summary>
         public readonly string PlanExecutionType;
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         public readonly string PlanId;
         /// <summary>
-        /// The current state of the DR Plan Execution.
+        /// The current state of the DR plan execution.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeEnded;
         /// <summary>
-        /// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeStarted;
         /// <summary>
-        /// The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeUpdated;
 

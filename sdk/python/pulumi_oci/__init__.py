@@ -177,6 +177,8 @@ if typing.TYPE_CHECKING:
     optimizer = __optimizer
     import pulumi_oci.osmanagement as __osmanagement
     osmanagement = __osmanagement
+    import pulumi_oci.osmanagementhub as __osmanagementhub
+    osmanagementhub = __osmanagementhub
     import pulumi_oci.ospgateway as __ospgateway
     ospgateway = __ospgateway
     import pulumi_oci.osubbillingschedule as __osubbillingschedule
@@ -312,6 +314,7 @@ else:
     opsi = _utilities.lazy_import('pulumi_oci.opsi')
     optimizer = _utilities.lazy_import('pulumi_oci.optimizer')
     osmanagement = _utilities.lazy_import('pulumi_oci.osmanagement')
+    osmanagementhub = _utilities.lazy_import('pulumi_oci.osmanagementhub')
     ospgateway = _utilities.lazy_import('pulumi_oci.ospgateway')
     osubbillingschedule = _utilities.lazy_import('pulumi_oci.osubbillingschedule')
     osuborganizationsubscription = _utilities.lazy_import('pulumi_oci.osuborganizationsubscription')
@@ -1807,6 +1810,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/databaseSecurityConfig",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig": "DatabaseSecurityConfig"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/databaseSecurityConfigManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/databaseSecurityConfigManagement:DatabaseSecurityConfigManagement": "DatabaseSecurityConfigManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/discoveryJobsResult",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -1895,6 +1914,38 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/securityPolicy",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/securityPolicy:SecurityPolicy": "SecurityPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/securityPolicyDeployment",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment": "SecurityPolicyDeployment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/securityPolicyDeploymentManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement": "SecurityPolicyDeploymentManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/securityPolicyManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement": "SecurityPolicyManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/sensitiveDataModel",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -1939,6 +1990,30 @@ _utilities.register(
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline": "SetUserAssessmentBaseline"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/sqlCollection",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sqlCollection:SqlCollection": "SqlCollection"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/sqlFirewallPolicy",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy": "SqlFirewallPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/sqlFirewallPolicyManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement": "SqlFirewallPolicyManagement"
   }
  },
  {
@@ -4615,6 +4690,46 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "OsManagementHub/lifecycleEnvironment",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment": "LifecycleEnvironment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managedInstanceGroup",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup": "ManagedInstanceGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/managementStation",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/managementStation:ManagementStation": "ManagementStation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/profile",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/profile:Profile": "Profile"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "OsManagementHub/softwareSource",
+  "fqn": "pulumi_oci.osmanagementhub",
+  "classes": {
+   "oci:OsManagementHub/softwareSource:SoftwareSource": "SoftwareSource"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "OspGateway/addressActionVerification",
   "fqn": "pulumi_oci.ospgateway",
   "classes": {
@@ -4767,6 +4882,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "StackMonitoring/baselineableMetric",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/baselineableMetric:BaselineableMetric": "BaselineableMetric"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "StackMonitoring/config",
   "fqn": "pulumi_oci.stackmonitoring",
   "classes": {
@@ -4783,10 +4906,50 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "StackMonitoring/metricExtension",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/metricExtension:MetricExtension": "MetricExtension"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement": "MetricExtensionMetricExtensionOnGivenResourcesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/metricExtensionsTestManagement",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement": "MetricExtensionsTestManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "StackMonitoring/monitoredResource",
   "fqn": "pulumi_oci.stackmonitoring",
   "classes": {
    "oci:StackMonitoring/monitoredResource:MonitoredResource": "MonitoredResource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/monitoredResourceTask",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask": "MonitoredResourceTask"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "StackMonitoring/monitoredResourceType",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/monitoredResourceType:MonitoredResourceType": "MonitoredResourceType"
   }
  },
  {

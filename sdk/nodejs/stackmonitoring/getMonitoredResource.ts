@@ -88,6 +88,10 @@ export interface GetMonitoredResourceResult {
      */
     readonly id: string;
     /**
+     * License edition of the monitored resource.
+     */
+    readonly license: string;
+    /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly managementAgentId: string;

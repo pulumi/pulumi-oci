@@ -14,23 +14,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrProtectionGroupMemberVnicMappingResult
     {
         /// <summary>
-        /// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+        /// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
         /// </summary>
         public readonly ImmutableArray<string> DestinationNsgIdLists;
         /// <summary>
-        /// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+        /// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
         /// </summary>
         public readonly string DestinationPrimaryPrivateIpAddress;
         /// <summary>
-        /// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+        /// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
         /// </summary>
         public readonly string DestinationPrimaryPrivateIpHostnameLabel;
         /// <summary>
-        /// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
         /// </summary>
         public readonly string DestinationSubnetId;
         /// <summary>
-        /// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         /// </summary>
         public readonly string SourceVnicId;
 

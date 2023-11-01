@@ -80,6 +80,7 @@ import javax.annotation.Nullable;
  *             .configurationId(oci_audit_configuration.test_configuration().id())
  *             .crashRecovery(var_.mysql_db_system_crash_recovery())
  *             .dataStorageSizeInGb(var_.mysql_db_system_data_storage_size_in_gb())
+ *             .databaseManagement(var_.mysql_db_system_database_management())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .deletionPolicies(MysqlDbSystemDeletionPolicyArgs.builder()
  *                 .automaticBackupRetention(var_.mysql_db_system_deletion_policy_automatic_backup_retention())
@@ -266,6 +267,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * (Updatable) Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    @Export(name="databaseManagement", refs={String.class}, tree="[0]")
+    private Output<String> databaseManagement;
+
+    /**
+     * @return (Updatable) Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    public Output<String> databaseManagement() {
+        return this.databaseManagement;
     }
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`

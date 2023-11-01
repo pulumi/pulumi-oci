@@ -22,7 +22,7 @@ class GetDrProtectionGroupResult:
     """
     A collection of values returned by getDrProtectionGroup.
     """
-    def __init__(__self__, associations=None, compartment_id=None, defined_tags=None, disassociate_trigger=None, display_name=None, dr_protection_group_id=None, freeform_tags=None, id=None, life_cycle_details=None, log_locations=None, members=None, peer_id=None, peer_region=None, role=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, associations=None, compartment_id=None, defined_tags=None, disassociate_trigger=None, display_name=None, dr_protection_group_id=None, freeform_tags=None, id=None, life_cycle_details=None, lifecycle_sub_state=None, log_locations=None, members=None, peer_id=None, peer_region=None, role=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if associations and not isinstance(associations, list):
             raise TypeError("Expected argument 'associations' to be a list")
         pulumi.set(__self__, "associations", associations)
@@ -50,6 +50,9 @@ class GetDrProtectionGroupResult:
         if life_cycle_details and not isinstance(life_cycle_details, str):
             raise TypeError("Expected argument 'life_cycle_details' to be a str")
         pulumi.set(__self__, "life_cycle_details", life_cycle_details)
+        if lifecycle_sub_state and not isinstance(lifecycle_sub_state, str):
+            raise TypeError("Expected argument 'lifecycle_sub_state' to be a str")
+        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         if log_locations and not isinstance(log_locations, list):
             raise TypeError("Expected argument 'log_locations' to be a list")
         pulumi.set(__self__, "log_locations", log_locations)
@@ -87,7 +90,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         """
         return pulumi.get(self, "compartment_id")
 
@@ -95,7 +98,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -108,7 +111,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        The display name of the DR protection group.  Example: `EBS PHX Group`
         """
         return pulumi.get(self, "display_name")
 
@@ -121,7 +124,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -129,7 +132,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "id")
 
@@ -137,15 +140,23 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="lifeCycleDetails")
     def life_cycle_details(self) -> str:
         """
-        A message describing the DR Protection Group's current state in more detail.
+        A message describing the DR protection group's current state in more detail.
         """
         return pulumi.get(self, "life_cycle_details")
+
+    @property
+    @pulumi.getter(name="lifecycleSubState")
+    def lifecycle_sub_state(self) -> str:
+        """
+        The current sub-state of the DR protection group.
+        """
+        return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="logLocations")
     def log_locations(self) -> Sequence['outputs.GetDrProtectionGroupLogLocationResult']:
         """
-        Information about an Object Storage log location for a DR Protection Group.
+        The details of an object storage log location for a DR protection group.
         """
         return pulumi.get(self, "log_locations")
 
@@ -153,7 +164,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter
     def members(self) -> Sequence['outputs.GetDrProtectionGroupMemberResult']:
         """
-        A list of DR Protection Group members.
+        A list of DR protection group members.
         """
         return pulumi.get(self, "members")
 
@@ -161,7 +172,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="peerId")
     def peer_id(self) -> str:
         """
-        The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_id")
 
@@ -169,7 +180,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="peerRegion")
     def peer_region(self) -> str:
         """
-        The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        The region of the peer DR protection group.  Example: `us-ashburn-1`
         """
         return pulumi.get(self, "peer_region")
 
@@ -177,7 +188,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter
     def role(self) -> str:
         """
-        The role of the DR Protection Group.
+        The role of the DR protection group.
         """
         return pulumi.get(self, "role")
 
@@ -185,7 +196,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DR Protection Group.
+        The current state of the DR protection group.
         """
         return pulumi.get(self, "state")
 
@@ -193,7 +204,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -201,7 +212,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -209,7 +220,7 @@ class GetDrProtectionGroupResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -229,6 +240,7 @@ class AwaitableGetDrProtectionGroupResult(GetDrProtectionGroupResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             life_cycle_details=self.life_cycle_details,
+            lifecycle_sub_state=self.lifecycle_sub_state,
             log_locations=self.log_locations,
             members=self.members,
             peer_id=self.peer_id,
@@ -245,7 +257,7 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
     """
     This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Get the DR Protection Group identified by *drProtectionGroupId*.
+    Get the DR protection group identified by *drProtectionGroupId*.
 
     ## Example Usage
 
@@ -257,7 +269,7 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
     ```
 
 
-    :param str dr_protection_group_id: The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+    :param str dr_protection_group_id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
     """
     __args__ = dict()
     __args__['drProtectionGroupId'] = dr_protection_group_id
@@ -274,6 +286,7 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         life_cycle_details=pulumi.get(__ret__, 'life_cycle_details'),
+        lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         log_locations=pulumi.get(__ret__, 'log_locations'),
         members=pulumi.get(__ret__, 'members'),
         peer_id=pulumi.get(__ret__, 'peer_id'),
@@ -291,7 +304,7 @@ def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input
     """
     This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Get the DR Protection Group identified by *drProtectionGroupId*.
+    Get the DR protection group identified by *drProtectionGroupId*.
 
     ## Example Usage
 
@@ -303,6 +316,6 @@ def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input
     ```
 
 
-    :param str dr_protection_group_id: The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+    :param str dr_protection_group_id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
     """
     ...

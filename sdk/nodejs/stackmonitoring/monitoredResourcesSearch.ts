@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     fields: _var.monitored_resources_search_fields,
  *     hostName: _var.monitored_resources_search_host_name,
  *     hostNameContains: _var.monitored_resources_search_host_name_contains,
+ *     license: _var.monitored_resources_search_license,
  *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
  *     nameContains: _var.monitored_resources_search_name_contains,
  *     propertyEquals: _var.monitored_resources_search_property_equals,
@@ -102,6 +103,10 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchItem[]>;
     /**
+     * License edition of the monitored resource.
+     */
+    public readonly license!: pulumi.Output<string>;
+    /**
      * A filter to return resources with matching management agent id.
      */
     public readonly managementAgentId!: pulumi.Output<string | undefined>;
@@ -178,6 +183,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
             resourceInputs["hostName"] = state ? state.hostName : undefined;
             resourceInputs["hostNameContains"] = state ? state.hostNameContains : undefined;
             resourceInputs["items"] = state ? state.items : undefined;
+            resourceInputs["license"] = state ? state.license : undefined;
             resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["nameContains"] = state ? state.nameContains : undefined;
@@ -200,6 +206,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
             resourceInputs["fields"] = args ? args.fields : undefined;
             resourceInputs["hostName"] = args ? args.hostName : undefined;
             resourceInputs["hostNameContains"] = args ? args.hostNameContains : undefined;
+            resourceInputs["license"] = args ? args.license : undefined;
             resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["nameContains"] = args ? args.nameContains : undefined;
@@ -250,6 +257,10 @@ export interface MonitoredResourcesSearchState {
      * List of monitored resources.
      */
     items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchItem>[]>;
+    /**
+     * License edition of the monitored resource.
+     */
+    license?: pulumi.Input<string>;
     /**
      * A filter to return resources with matching management agent id.
      */
@@ -336,6 +347,10 @@ export interface MonitoredResourcesSearchArgs {
      * A filter to return resources with host name pattern.
      */
     hostNameContains?: pulumi.Input<string>;
+    /**
+     * License edition of the monitored resource.
+     */
+    license?: pulumi.Input<string>;
     /**
      * A filter to return resources with matching management agent id.
      */

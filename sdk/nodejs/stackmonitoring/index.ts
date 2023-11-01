@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { BaselineableMetricArgs, BaselineableMetricState } from "./baselineableMetric";
+export type BaselineableMetric = import("./baselineableMetric").BaselineableMetric;
+export const BaselineableMetric: typeof import("./baselineableMetric").BaselineableMetric = null as any;
+utilities.lazyLoad(exports, ["BaselineableMetric"], () => require("./baselineableMetric"));
+
 export { ConfigArgs, ConfigState } from "./config";
 export type Config = import("./config").Config;
 export const Config: typeof import("./config").Config = null as any;
@@ -14,6 +19,21 @@ export { DiscoveryJobArgs, DiscoveryJobState } from "./discoveryJob";
 export type DiscoveryJob = import("./discoveryJob").DiscoveryJob;
 export const DiscoveryJob: typeof import("./discoveryJob").DiscoveryJob = null as any;
 utilities.lazyLoad(exports, ["DiscoveryJob"], () => require("./discoveryJob"));
+
+export { GetBaselineableMetricArgs, GetBaselineableMetricResult, GetBaselineableMetricOutputArgs } from "./getBaselineableMetric";
+export const getBaselineableMetric: typeof import("./getBaselineableMetric").getBaselineableMetric = null as any;
+export const getBaselineableMetricOutput: typeof import("./getBaselineableMetric").getBaselineableMetricOutput = null as any;
+utilities.lazyLoad(exports, ["getBaselineableMetric","getBaselineableMetricOutput"], () => require("./getBaselineableMetric"));
+
+export { GetBaselineableMetricsArgs, GetBaselineableMetricsResult, GetBaselineableMetricsOutputArgs } from "./getBaselineableMetrics";
+export const getBaselineableMetrics: typeof import("./getBaselineableMetrics").getBaselineableMetrics = null as any;
+export const getBaselineableMetricsOutput: typeof import("./getBaselineableMetrics").getBaselineableMetricsOutput = null as any;
+utilities.lazyLoad(exports, ["getBaselineableMetrics","getBaselineableMetricsOutput"], () => require("./getBaselineableMetrics"));
+
+export { GetBaselineableMetricsEvaluateArgs, GetBaselineableMetricsEvaluateResult, GetBaselineableMetricsEvaluateOutputArgs } from "./getBaselineableMetricsEvaluate";
+export const getBaselineableMetricsEvaluate: typeof import("./getBaselineableMetricsEvaluate").getBaselineableMetricsEvaluate = null as any;
+export const getBaselineableMetricsEvaluateOutput: typeof import("./getBaselineableMetricsEvaluate").getBaselineableMetricsEvaluateOutput = null as any;
+utilities.lazyLoad(exports, ["getBaselineableMetricsEvaluate","getBaselineableMetricsEvaluateOutput"], () => require("./getBaselineableMetricsEvaluate"));
 
 export { GetConfigArgs, GetConfigResult, GetConfigOutputArgs } from "./getConfig";
 export const getConfig: typeof import("./getConfig").getConfig = null as any;
@@ -40,15 +60,75 @@ export const getDiscoveryJobs: typeof import("./getDiscoveryJobs").getDiscoveryJ
 export const getDiscoveryJobsOutput: typeof import("./getDiscoveryJobs").getDiscoveryJobsOutput = null as any;
 utilities.lazyLoad(exports, ["getDiscoveryJobs","getDiscoveryJobsOutput"], () => require("./getDiscoveryJobs"));
 
+export { GetMetricExtensionArgs, GetMetricExtensionResult, GetMetricExtensionOutputArgs } from "./getMetricExtension";
+export const getMetricExtension: typeof import("./getMetricExtension").getMetricExtension = null as any;
+export const getMetricExtensionOutput: typeof import("./getMetricExtension").getMetricExtensionOutput = null as any;
+utilities.lazyLoad(exports, ["getMetricExtension","getMetricExtensionOutput"], () => require("./getMetricExtension"));
+
+export { GetMetricExtensionsArgs, GetMetricExtensionsResult, GetMetricExtensionsOutputArgs } from "./getMetricExtensions";
+export const getMetricExtensions: typeof import("./getMetricExtensions").getMetricExtensions = null as any;
+export const getMetricExtensionsOutput: typeof import("./getMetricExtensions").getMetricExtensionsOutput = null as any;
+utilities.lazyLoad(exports, ["getMetricExtensions","getMetricExtensionsOutput"], () => require("./getMetricExtensions"));
+
 export { GetMonitoredResourceArgs, GetMonitoredResourceResult, GetMonitoredResourceOutputArgs } from "./getMonitoredResource";
 export const getMonitoredResource: typeof import("./getMonitoredResource").getMonitoredResource = null as any;
 export const getMonitoredResourceOutput: typeof import("./getMonitoredResource").getMonitoredResourceOutput = null as any;
 utilities.lazyLoad(exports, ["getMonitoredResource","getMonitoredResourceOutput"], () => require("./getMonitoredResource"));
 
+export { GetMonitoredResourceTaskArgs, GetMonitoredResourceTaskResult, GetMonitoredResourceTaskOutputArgs } from "./getMonitoredResourceTask";
+export const getMonitoredResourceTask: typeof import("./getMonitoredResourceTask").getMonitoredResourceTask = null as any;
+export const getMonitoredResourceTaskOutput: typeof import("./getMonitoredResourceTask").getMonitoredResourceTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoredResourceTask","getMonitoredResourceTaskOutput"], () => require("./getMonitoredResourceTask"));
+
+export { GetMonitoredResourceTasksArgs, GetMonitoredResourceTasksResult, GetMonitoredResourceTasksOutputArgs } from "./getMonitoredResourceTasks";
+export const getMonitoredResourceTasks: typeof import("./getMonitoredResourceTasks").getMonitoredResourceTasks = null as any;
+export const getMonitoredResourceTasksOutput: typeof import("./getMonitoredResourceTasks").getMonitoredResourceTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoredResourceTasks","getMonitoredResourceTasksOutput"], () => require("./getMonitoredResourceTasks"));
+
+export { GetMonitoredResourceTypeArgs, GetMonitoredResourceTypeResult, GetMonitoredResourceTypeOutputArgs } from "./getMonitoredResourceType";
+export const getMonitoredResourceType: typeof import("./getMonitoredResourceType").getMonitoredResourceType = null as any;
+export const getMonitoredResourceTypeOutput: typeof import("./getMonitoredResourceType").getMonitoredResourceTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoredResourceType","getMonitoredResourceTypeOutput"], () => require("./getMonitoredResourceType"));
+
+export { GetMonitoredResourceTypesArgs, GetMonitoredResourceTypesResult, GetMonitoredResourceTypesOutputArgs } from "./getMonitoredResourceTypes";
+export const getMonitoredResourceTypes: typeof import("./getMonitoredResourceTypes").getMonitoredResourceTypes = null as any;
+export const getMonitoredResourceTypesOutput: typeof import("./getMonitoredResourceTypes").getMonitoredResourceTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoredResourceTypes","getMonitoredResourceTypesOutput"], () => require("./getMonitoredResourceTypes"));
+
+export { GetMonitoredResourcesArgs, GetMonitoredResourcesResult, GetMonitoredResourcesOutputArgs } from "./getMonitoredResources";
+export const getMonitoredResources: typeof import("./getMonitoredResources").getMonitoredResources = null as any;
+export const getMonitoredResourcesOutput: typeof import("./getMonitoredResources").getMonitoredResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoredResources","getMonitoredResourcesOutput"], () => require("./getMonitoredResources"));
+
+export { MetricExtensionArgs, MetricExtensionState } from "./metricExtension";
+export type MetricExtension = import("./metricExtension").MetricExtension;
+export const MetricExtension: typeof import("./metricExtension").MetricExtension = null as any;
+utilities.lazyLoad(exports, ["MetricExtension"], () => require("./metricExtension"));
+
+export { MetricExtensionMetricExtensionOnGivenResourcesManagementArgs, MetricExtensionMetricExtensionOnGivenResourcesManagementState } from "./metricExtensionMetricExtensionOnGivenResourcesManagement";
+export type MetricExtensionMetricExtensionOnGivenResourcesManagement = import("./metricExtensionMetricExtensionOnGivenResourcesManagement").MetricExtensionMetricExtensionOnGivenResourcesManagement;
+export const MetricExtensionMetricExtensionOnGivenResourcesManagement: typeof import("./metricExtensionMetricExtensionOnGivenResourcesManagement").MetricExtensionMetricExtensionOnGivenResourcesManagement = null as any;
+utilities.lazyLoad(exports, ["MetricExtensionMetricExtensionOnGivenResourcesManagement"], () => require("./metricExtensionMetricExtensionOnGivenResourcesManagement"));
+
+export { MetricExtensionsTestManagementArgs, MetricExtensionsTestManagementState } from "./metricExtensionsTestManagement";
+export type MetricExtensionsTestManagement = import("./metricExtensionsTestManagement").MetricExtensionsTestManagement;
+export const MetricExtensionsTestManagement: typeof import("./metricExtensionsTestManagement").MetricExtensionsTestManagement = null as any;
+utilities.lazyLoad(exports, ["MetricExtensionsTestManagement"], () => require("./metricExtensionsTestManagement"));
+
 export { MonitoredResourceArgs, MonitoredResourceState } from "./monitoredResource";
 export type MonitoredResource = import("./monitoredResource").MonitoredResource;
 export const MonitoredResource: typeof import("./monitoredResource").MonitoredResource = null as any;
 utilities.lazyLoad(exports, ["MonitoredResource"], () => require("./monitoredResource"));
+
+export { MonitoredResourceTaskArgs, MonitoredResourceTaskState } from "./monitoredResourceTask";
+export type MonitoredResourceTask = import("./monitoredResourceTask").MonitoredResourceTask;
+export const MonitoredResourceTask: typeof import("./monitoredResourceTask").MonitoredResourceTask = null as any;
+utilities.lazyLoad(exports, ["MonitoredResourceTask"], () => require("./monitoredResourceTask"));
+
+export { MonitoredResourceTypeArgs, MonitoredResourceTypeState } from "./monitoredResourceType";
+export type MonitoredResourceType = import("./monitoredResourceType").MonitoredResourceType;
+export const MonitoredResourceType: typeof import("./monitoredResourceType").MonitoredResourceType = null as any;
+utilities.lazyLoad(exports, ["MonitoredResourceType"], () => require("./monitoredResourceType"));
 
 export { MonitoredResourcesAssociateMonitoredResourceArgs, MonitoredResourcesAssociateMonitoredResourceState } from "./monitoredResourcesAssociateMonitoredResource";
 export type MonitoredResourcesAssociateMonitoredResource = import("./monitoredResourcesAssociateMonitoredResource").MonitoredResourcesAssociateMonitoredResource;
@@ -75,12 +155,24 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:StackMonitoring/baselineableMetric:BaselineableMetric":
+                return new BaselineableMetric(name, <any>undefined, { urn })
             case "oci:StackMonitoring/config:Config":
                 return new Config(name, <any>undefined, { urn })
             case "oci:StackMonitoring/discoveryJob:DiscoveryJob":
                 return new DiscoveryJob(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/metricExtension:MetricExtension":
+                return new MetricExtension(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement":
+                return new MetricExtensionMetricExtensionOnGivenResourcesManagement(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement":
+                return new MetricExtensionsTestManagement(name, <any>undefined, { urn })
             case "oci:StackMonitoring/monitoredResource:MonitoredResource":
                 return new MonitoredResource(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask":
+                return new MonitoredResourceTask(name, <any>undefined, { urn })
+            case "oci:StackMonitoring/monitoredResourceType:MonitoredResourceType":
+                return new MonitoredResourceType(name, <any>undefined, { urn })
             case "oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource":
                 return new MonitoredResourcesAssociateMonitoredResource(name, <any>undefined, { urn })
             case "oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember":
@@ -94,9 +186,15 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/baselineableMetric", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/config", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/discoveryJob", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/metricExtension", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/metricExtensionsTestManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResource", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourceTask", _module)
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourceType", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesAssociateMonitoredResource", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesListMember", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesSearch", _module)

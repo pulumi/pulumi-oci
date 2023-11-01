@@ -17,14 +17,14 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
     public static final GetDrPlanExecutionsPlainArgs Empty = new GetDrPlanExecutionsPlainArgs();
 
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     public Optional<String> displayName() {
@@ -32,14 +32,14 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+     * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      * 
      */
     @Import(name="drPlanExecutionId")
     private @Nullable String drPlanExecutionId;
 
     /**
-     * @return The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+     * @return The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      * 
      */
     public Optional<String> drPlanExecutionId() {
@@ -47,14 +47,14 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The DR Plan Execution type.
+     * The DR plan execution type.
      * 
      */
     @Import(name="drPlanExecutionType")
     private @Nullable String drPlanExecutionType;
 
     /**
-     * @return The DR Plan Execution type.
+     * @return The DR plan execution type.
      * 
      */
     public Optional<String> drPlanExecutionType() {
@@ -62,14 +62,14 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId", required=true)
     private String drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * @return The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String drProtectionGroupId() {
@@ -84,14 +84,14 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * A filter to return only DR Plan Executions that match the given lifecycleState.
+     * A filter to return only DR plan executions that match the given lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only DR Plan Executions that match the given lifecycleState.
+     * @return A filter to return only DR plan executions that match the given lifecycle state.
      * 
      */
     public Optional<String> state() {
@@ -128,7 +128,7 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+         * @param displayName A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param drPlanExecutionId The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+         * @param drPlanExecutionId The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param drPlanExecutionType The DR Plan Execution type.
+         * @param drPlanExecutionType The DR plan execution type.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+         * @param drProtectionGroupId The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class GetDrPlanExecutionsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param state A filter to return only DR Plan Executions that match the given lifecycleState.
+         * @param state A filter to return only DR plan executions that match the given lifecycle state.
          * 
          * @return builder
          * 

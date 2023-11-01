@@ -56,14 +56,14 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
     }
 
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     @Import(name="findingKey")
     private @Nullable Output<String> findingKey;
 
     /**
-     * @return Each finding has a key. This key is same for the finding across targets
+     * @return Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     public Optional<Output<String>> findingKey() {
@@ -71,14 +71,14 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
     }
 
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      * 
      */
     @Import(name="references")
     private @Nullable Output<String> references;
 
     /**
-     * @return An optional filter to return only findings containing the specified reference.
+     * @return An optional filter to return only findings that match the specified reference.
      * 
      */
     public Optional<Output<String>> references() {
@@ -201,7 +201,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param findingKey Each finding has a key. This key is same for the finding across targets
+         * @param findingKey Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param findingKey Each finding has a key. This key is same for the finding across targets
+         * @param findingKey Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param references An optional filter to return only findings containing the specified reference.
+         * @param references An optional filter to return only findings that match the specified reference.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param references An optional filter to return only findings containing the specified reference.
+         * @param references An optional filter to return only findings that match the specified reference.
          * 
          * @return builder
          * 

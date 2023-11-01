@@ -10,38 +10,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanExecutionLogLocation {
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
      * 
      */
     private String bucket;
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     private String namespace;
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
      * 
      */
     private String object;
 
     private GetDrPlanExecutionLogLocation() {}
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
      * 
      */
     public String bucket() {
         return this.bucket;
     }
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
      * 
      */
     public String object() {

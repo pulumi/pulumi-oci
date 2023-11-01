@@ -41,6 +41,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DataSafeConfiguration{}
 	case "oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint":
 		r = &DataSafePrivateEndpoint{}
+	case "oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig":
+		r = &DatabaseSecurityConfig{}
+	case "oci:DataSafe/databaseSecurityConfigManagement:DatabaseSecurityConfigManagement":
+		r = &DatabaseSecurityConfigManagement{}
 	case "oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult":
 		r = &DiscoveryJobsResult{}
 	case "oci:DataSafe/discoveryMod:DiscoveryMod":
@@ -63,6 +67,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SdmMaskingPolicyDifference{}
 	case "oci:DataSafe/securityAssessment:SecurityAssessment":
 		r = &SecurityAssessment{}
+	case "oci:DataSafe/securityPolicy:SecurityPolicy":
+		r = &SecurityPolicy{}
+	case "oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment":
+		r = &SecurityPolicyDeployment{}
+	case "oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement":
+		r = &SecurityPolicyDeploymentManagement{}
+	case "oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement":
+		r = &SecurityPolicyManagement{}
 	case "oci:DataSafe/sensitiveDataModel:SensitiveDataModel":
 		r = &SensitiveDataModel{}
 	case "oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults":
@@ -75,6 +87,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SetSecurityAssessmentBaseline{}
 	case "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline":
 		r = &SetUserAssessmentBaseline{}
+	case "oci:DataSafe/sqlCollection:SqlCollection":
+		r = &SqlCollection{}
+	case "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy":
+		r = &SqlFirewallPolicy{}
+	case "oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement":
+		r = &SqlFirewallPolicyManagement{}
 	case "oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation":
 		r = &TargetAlertPolicyAssociation{}
 	case "oci:DataSafe/targetDatabase:TargetDatabase":
@@ -150,6 +168,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/databaseSecurityConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/databaseSecurityConfigManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/discoveryJobsResult",
 		&module{version},
 	)
@@ -205,6 +233,26 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/securityPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/securityPolicyDeployment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/securityPolicyDeploymentManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/securityPolicyManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/sensitiveDataModel",
 		&module{version},
 	)
@@ -231,6 +279,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/setUserAssessmentBaseline",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/sqlCollection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/sqlFirewallPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/sqlFirewallPolicyManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -15,22 +15,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanExecutionGroupExecutionStepExecution {
     /**
-     * @return (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     private @Nullable Integer executionDurationInSec;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     private @Nullable String groupId;
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     private @Nullable List<DrPlanExecutionGroupExecutionStepExecutionLogLocation> logLocations;
@@ -40,55 +40,55 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
      */
     private @Nullable String status;
     /**
-     * @return Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     private @Nullable String statusDetails;
     /**
-     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
      * 
      */
     private @Nullable String stepId;
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private @Nullable String timeEnded;
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private @Nullable String timeStarted;
     /**
-     * @return The plan group type.
+     * @return The group type.  Example: `BUILT_IN`
      * 
      */
     private @Nullable String type;
 
     private DrPlanExecutionGroupExecutionStepExecution() {}
     /**
-     * @return (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     public Optional<Integer> executionDurationInSec() {
         return Optional.ofNullable(this.executionDurationInSec);
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     public Optional<String> groupId() {
         return Optional.ofNullable(this.groupId);
     }
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     public List<DrPlanExecutionGroupExecutionStepExecutionLogLocation> logLocations() {
@@ -102,35 +102,35 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     public Optional<String> statusDetails() {
         return Optional.ofNullable(this.statusDetails);
     }
     /**
-     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public Optional<String> stepId() {
         return Optional.ofNullable(this.stepId);
     }
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<String> timeEnded() {
         return Optional.ofNullable(this.timeEnded);
     }
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<String> timeStarted() {
         return Optional.ofNullable(this.timeStarted);
     }
     /**
-     * @return The plan group type.
+     * @return The group type.  Example: `BUILT_IN`
      * 
      */
     public Optional<String> type() {

@@ -20,14 +20,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     public static final DrPlanState Empty = new DrPlanState();
 
     /**
-     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -35,14 +35,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -50,14 +50,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -65,14 +65,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId")
     private @Nullable Output<String> drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> drProtectionGroupId() {
@@ -80,14 +80,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -95,14 +95,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A message describing the DR Plan&#39;s current state in more detail.
+     * A message describing the DR plan&#39;s current state in more detail.
      * 
      */
     @Import(name="lifeCycleDetails")
     private @Nullable Output<String> lifeCycleDetails;
 
     /**
-     * @return A message describing the DR Plan&#39;s current state in more detail.
+     * @return A message describing the DR plan&#39;s current state in more detail.
      * 
      */
     public Optional<Output<String>> lifeCycleDetails() {
@@ -110,14 +110,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="peerDrProtectionGroupId")
     private @Nullable Output<String> peerDrProtectionGroupId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> peerDrProtectionGroupId() {
@@ -125,14 +125,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+     * The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Import(name="peerRegion")
     private @Nullable Output<String> peerRegion;
 
     /**
-     * @return The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+     * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public Optional<Output<String>> peerRegion() {
@@ -140,14 +140,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of groups in this DR Plan.
+     * The list of groups in this DR plan.
      * 
      */
     @Import(name="planGroups")
     private @Nullable Output<List<DrPlanPlanGroupArgs>> planGroups;
 
     /**
-     * @return The list of groups in this DR Plan.
+     * @return The list of groups in this DR plan.
      * 
      */
     public Optional<Output<List<DrPlanPlanGroupArgs>>> planGroups() {
@@ -155,14 +155,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the DR Plan.
+     * The current state of the DR plan.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DR Plan.
+     * @return The current state of the DR plan.
      * 
      */
     public Optional<Output<String>> state() {
@@ -170,14 +170,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,Object>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> systemTags() {
@@ -185,14 +185,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -200,14 +200,14 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -215,7 +215,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of DR Plan to be created.
+     * The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -225,7 +225,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of DR Plan to be created.
+     * @return The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -273,7 +273,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param drProtectionGroupId The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param drProtectionGroupId The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifeCycleDetails A message describing the DR Plan&#39;s current state in more detail.
+         * @param lifeCycleDetails A message describing the DR plan&#39;s current state in more detail.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifeCycleDetails A message describing the DR Plan&#39;s current state in more detail.
+         * @param lifeCycleDetails A message describing the DR plan&#39;s current state in more detail.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param peerDrProtectionGroupId The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param peerDrProtectionGroupId The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param peerDrProtectionGroupId The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param peerDrProtectionGroupId The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+         * @param peerRegion The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+         * @param peerRegion The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param planGroups The list of groups in this DR Plan.
+         * @param planGroups The list of groups in this DR plan.
          * 
          * @return builder
          * 
@@ -452,7 +452,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param planGroups The list of groups in this DR Plan.
+         * @param planGroups The list of groups in this DR plan.
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param planGroups The list of groups in this DR Plan.
+         * @param planGroups The list of groups in this DR plan.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the DR Plan.
+         * @param state The current state of the DR plan.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the DR Plan.
+         * @param state The current state of the DR plan.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeCreated The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -525,7 +525,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeCreated The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeUpdated The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -546,7 +546,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeUpdated The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -570,7 +570,7 @@ public final class DrPlanState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

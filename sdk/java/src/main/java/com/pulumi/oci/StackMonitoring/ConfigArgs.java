@@ -94,39 +94,54 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
-    @Import(name="isEnabled", required=true)
-    private Output<Boolean> isEnabled;
+    @Import(name="isEnabled")
+    private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * @return (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
+    public Optional<Output<Boolean>> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
 
     /**
-     * The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) License edition.
      * 
      */
-    @Import(name="resourceType", required=true)
-    private Output<String> resourceType;
+    @Import(name="license")
+    private @Nullable Output<String> license;
 
     /**
-     * @return The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+     * @return (Updatable) License edition.
+     * 
+     */
+    public Optional<Output<String>> license() {
+        return Optional.ofNullable(this.license);
+    }
+
+    /**
+     * The type of resource to configure for automatic promotion.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> resourceType() {
-        return this.resourceType;
+    @Import(name="resourceType")
+    private @Nullable Output<String> resourceType;
+
+    /**
+     * @return The type of resource to configure for automatic promotion.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
 
     private ConfigArgs() {}
@@ -138,6 +153,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.license = $.license;
         this.resourceType = $.resourceType;
     }
 
@@ -265,18 +281,18 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnabled (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+         * @param isEnabled (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
          * 
          * @return builder
          * 
          */
-        public Builder isEnabled(Output<Boolean> isEnabled) {
+        public Builder isEnabled(@Nullable Output<Boolean> isEnabled) {
             $.isEnabled = isEnabled;
             return this;
         }
 
         /**
-         * @param isEnabled (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+         * @param isEnabled (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
          * 
          * @return builder
          * 
@@ -286,7 +302,28 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceType The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+         * @param license (Updatable) License edition.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(@Nullable Output<String> license) {
+            $.license = license;
+            return this;
+        }
+
+        /**
+         * @param license (Updatable) License edition.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(String license) {
+            return license(Output.of(license));
+        }
+
+        /**
+         * @param resourceType The type of resource to configure for automatic promotion.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -294,13 +331,13 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder resourceType(Output<String> resourceType) {
+        public Builder resourceType(@Nullable Output<String> resourceType) {
             $.resourceType = resourceType;
             return this;
         }
 
         /**
-         * @param resourceType The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+         * @param resourceType The type of resource to configure for automatic promotion.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -315,8 +352,6 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         public ConfigArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.configType = Objects.requireNonNull($.configType, "expected parameter 'configType' to be non-null");
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
-            $.resourceType = Objects.requireNonNull($.resourceType, "expected parameter 'resourceType' to be non-null");
             return $;
         }
     }

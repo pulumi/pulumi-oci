@@ -88,7 +88,7 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+     * (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
@@ -202,7 +202,7 @@ export interface TargetAlertPolicyAssociationState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+     * (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
@@ -260,7 +260,7 @@ export interface TargetAlertPolicyAssociationArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+     * (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
      */
     isEnabled: pulumi.Input<boolean>;
     /**

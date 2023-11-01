@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .configType(var_.config_config_type())
  *             .isEnabled(var_.config_is_enabled())
  *             .resourceType(var_.config_resource_type())
+ *             .license(var_.config_license())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .displayName(var_.config_display_name())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
@@ -145,21 +146,35 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * @return (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     public Output<Boolean> isEnabled() {
         return this.isEnabled;
     }
     /**
-     * The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+     * (Updatable) License edition.
+     * 
+     */
+    @Export(name="license", refs={String.class}, tree="[0]")
+    private Output<String> license;
+
+    /**
+     * @return (Updatable) License edition.
+     * 
+     */
+    public Output<String> license() {
+        return this.license;
+    }
+    /**
+     * The type of resource to configure for automatic promotion.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,7 +184,7 @@ public class Config extends com.pulumi.resources.CustomResource {
     private Output<String> resourceType;
 
     /**
-     * @return The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+     * @return The type of resource to configure for automatic promotion.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

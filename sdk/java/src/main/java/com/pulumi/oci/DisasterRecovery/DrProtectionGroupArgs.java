@@ -23,14 +23,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     public static final DrProtectionGroupArgs Empty = new DrProtectionGroupArgs();
 
     /**
-     * The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+     * The details for associating a DR protection group with a peer DR protection group.
      * 
      */
     @Import(name="association")
     private @Nullable Output<DrProtectionGroupAssociationArgs> association;
 
     /**
-     * @return The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+     * @return The details for associating a DR protection group with a peer DR protection group.
      * 
      */
     public Optional<Output<DrProtectionGroupAssociationArgs>> association() {
@@ -38,14 +38,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Output<String> compartmentId() {
@@ -53,14 +53,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -89,14 +89,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * @return (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     public Output<String> displayName() {
@@ -104,14 +104,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -119,14 +119,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+     * (Updatable) The details for creating an object storage log location for a DR protection group.
      * 
      */
     @Import(name="logLocation", required=true)
     private Output<DrProtectionGroupLogLocationArgs> logLocation;
 
     /**
-     * @return (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+     * @return (Updatable) The details for creating an object storage log location for a DR protection group.
      * 
      */
     public Output<DrProtectionGroupLogLocationArgs> logLocation() {
@@ -134,14 +134,14 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A list of DR Protection Group members.
+     * (Updatable) A list of DR protection group members.
      * 
      */
     @Import(name="members")
     private @Nullable Output<List<DrProtectionGroupMemberArgs>> members;
 
     /**
-     * @return (Updatable) A list of DR Protection Group members.
+     * @return (Updatable) A list of DR protection group members.
      * 
      */
     public Optional<Output<List<DrProtectionGroupMemberArgs>>> members() {
@@ -180,7 +180,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param association The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+         * @param association The details for associating a DR protection group with a peer DR protection group.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param association The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+         * @param association The details for associating a DR protection group with a peer DR protection group.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+         * @param displayName (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+         * @param displayName (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param logLocation (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+         * @param logLocation (Updatable) The details for creating an object storage log location for a DR protection group.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param logLocation (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+         * @param logLocation (Updatable) The details for creating an object storage log location for a DR protection group.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param members (Updatable) A list of DR Protection Group members.
+         * @param members (Updatable) A list of DR protection group members.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param members (Updatable) A list of DR Protection Group members.
+         * @param members (Updatable) A list of DR protection group members.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class DrProtectionGroupArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param members (Updatable) A list of DR Protection Group members.
+         * @param members (Updatable) A list of DR protection group members.
          * 
          * @return builder
          * 

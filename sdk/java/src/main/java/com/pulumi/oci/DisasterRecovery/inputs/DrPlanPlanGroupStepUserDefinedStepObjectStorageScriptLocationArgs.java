@@ -16,14 +16,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
     public static final DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs Empty = new DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs();
 
     /**
-     * The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+     * The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -31,14 +31,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
     }
 
     /**
-     * The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -46,14 +46,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
     }
 
     /**
-     * The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+     * The object name inside the object storage bucket.  Example: `validate_app_start.sh`
      * 
      */
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+     * @return The object name inside the object storage bucket.  Example: `validate_app_start.sh`
      * 
      */
     public Optional<Output<String>> object() {
@@ -87,7 +87,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param bucket The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+         * @param bucket The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param bucket The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+         * @param bucket The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param namespace The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * @param namespace The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param namespace The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * @param namespace The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param object The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+         * @param object The object name inside the object storage bucket.  Example: `validate_app_start.sh`
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param object The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+         * @param object The object name inside the object storage bucket.  Example: `validate_app_start.sh`
          * 
          * @return builder
          * 

@@ -7,6 +7,12 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluatePlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetConfigPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
@@ -17,18 +23,660 @@ import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcePlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypePlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesPlainArgs;
+import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetConfigResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetConfigsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobLogsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobsResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTaskResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTasksResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypeResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypesResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourcesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class StackMonitoringFunctions {
+    /**
+     * This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get the Baseline-able metric for the given id
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBaselineableMetricResult> getBaselineableMetric(GetBaselineableMetricArgs args) {
+        return getBaselineableMetric(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get the Baseline-able metric for the given id
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBaselineableMetricResult> getBaselineableMetricPlain(GetBaselineableMetricPlainArgs args) {
+        return getBaselineableMetricPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get the Baseline-able metric for the given id
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBaselineableMetricResult> getBaselineableMetric(GetBaselineableMetricArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", TypeShape.of(GetBaselineableMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get the Baseline-able metric for the given id
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBaselineableMetricResult> getBaselineableMetricPlain(GetBaselineableMetricPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getBaselineableMetric:getBaselineableMetric", TypeShape.of(GetBaselineableMetricResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List of summary of baseline-able metrics for a given resource group if specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
+     *             .name(var_.baselineable_metric_name())
+     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBaselineableMetricsResult> getBaselineableMetrics() {
+        return getBaselineableMetrics(GetBaselineableMetricsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List of summary of baseline-able metrics for a given resource group if specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
+     *             .name(var_.baselineable_metric_name())
+     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBaselineableMetricsResult> getBaselineableMetricsPlain() {
+        return getBaselineableMetricsPlain(GetBaselineableMetricsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List of summary of baseline-able metrics for a given resource group if specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
+     *             .name(var_.baselineable_metric_name())
+     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBaselineableMetricsResult> getBaselineableMetrics(GetBaselineableMetricsArgs args) {
+        return getBaselineableMetrics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List of summary of baseline-able metrics for a given resource group if specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
+     *             .name(var_.baselineable_metric_name())
+     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBaselineableMetricsResult> getBaselineableMetricsPlain(GetBaselineableMetricsPlainArgs args) {
+        return getBaselineableMetricsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List of summary of baseline-able metrics for a given resource group if specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
+     *             .name(var_.baselineable_metric_name())
+     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBaselineableMetricsResult> getBaselineableMetrics(GetBaselineableMetricsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", TypeShape.of(GetBaselineableMetricsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * List of summary of baseline-able metrics for a given resource group if specified.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
+     *             .name(var_.baselineable_metric_name())
+     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBaselineableMetricsResult> getBaselineableMetricsPlain(GetBaselineableMetricsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getBaselineableMetrics:getBaselineableMetrics", TypeShape.of(GetBaselineableMetricsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Evaluates metric for anomalies for the given data points
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
+     *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .build())
+     *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .build())
+     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .build())
+     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs args) {
+        return getBaselineableMetricsEvaluate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Evaluates metric for anomalies for the given data points
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
+     *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .build())
+     *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .build())
+     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .build())
+     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluatePlain(GetBaselineableMetricsEvaluatePlainArgs args) {
+        return getBaselineableMetricsEvaluatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Evaluates metric for anomalies for the given data points
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
+     *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .build())
+     *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .build())
+     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .build())
+     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", TypeShape.of(GetBaselineableMetricsEvaluateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Evaluates metric for anomalies for the given data points
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
+     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
+     *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .build())
+     *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
+     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
+     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .build())
+     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .build())
+     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetBaselineableMetricsEvaluateResult> getBaselineableMetricsEvaluatePlain(GetBaselineableMetricsEvaluatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getBaselineableMetricsEvaluate:getBaselineableMetricsEvaluate", TypeShape.of(GetBaselineableMetricsEvaluateResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
      * 
@@ -830,6 +1478,338 @@ public final class StackMonitoringFunctions {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", TypeShape.of(GetDiscoveryJobsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Metric Extension by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
+     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMetricExtensionResult> getMetricExtension(GetMetricExtensionArgs args) {
+        return getMetricExtension(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Metric Extension by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
+     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMetricExtensionResult> getMetricExtensionPlain(GetMetricExtensionPlainArgs args) {
+        return getMetricExtensionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Metric Extension by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
+     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMetricExtensionResult> getMetricExtension(GetMetricExtensionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMetricExtension:getMetricExtension", TypeShape.of(GetMetricExtensionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a Metric Extension by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
+     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMetricExtensionResult> getMetricExtensionPlain(GetMetricExtensionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMetricExtension:getMetricExtension", TypeShape.of(GetMetricExtensionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of metric extensions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .name(var_.metric_extension_name())
+     *             .resourceType(var_.metric_extension_resource_type())
+     *             .state(var_.metric_extension_state())
+     *             .status(var_.metric_extension_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMetricExtensionsResult> getMetricExtensions(GetMetricExtensionsArgs args) {
+        return getMetricExtensions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of metric extensions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .name(var_.metric_extension_name())
+     *             .resourceType(var_.metric_extension_resource_type())
+     *             .state(var_.metric_extension_state())
+     *             .status(var_.metric_extension_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMetricExtensionsResult> getMetricExtensionsPlain(GetMetricExtensionsPlainArgs args) {
+        return getMetricExtensionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of metric extensions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .name(var_.metric_extension_name())
+     *             .resourceType(var_.metric_extension_resource_type())
+     *             .state(var_.metric_extension_state())
+     *             .status(var_.metric_extension_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMetricExtensionsResult> getMetricExtensions(GetMetricExtensionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", TypeShape.of(GetMetricExtensionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of metric extensions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .name(var_.metric_extension_name())
+     *             .resourceType(var_.metric_extension_resource_type())
+     *             .state(var_.metric_extension_state())
+     *             .status(var_.metric_extension_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMetricExtensionsResult> getMetricExtensionsPlain(GetMetricExtensionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMetricExtensions:getMetricExtensions", TypeShape.of(GetMetricExtensionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
      * 
      * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -984,5 +1964,841 @@ public final class StackMonitoringFunctions {
      */
     public static CompletableFuture<GetMonitoredResourceResult> getMonitoredResourcePlain(GetMonitoredResourcePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", TypeShape.of(GetMonitoredResourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
+     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTaskResult> getMonitoredResourceTask(GetMonitoredResourceTaskArgs args) {
+        return getMonitoredResourceTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
+     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTaskResult> getMonitoredResourceTaskPlain(GetMonitoredResourceTaskPlainArgs args) {
+        return getMonitoredResourceTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
+     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTaskResult> getMonitoredResourceTask(GetMonitoredResourceTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", TypeShape.of(GetMonitoredResourceTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets stack monitoring resource task details by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
+     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTaskResult> getMonitoredResourceTaskPlain(GetMonitoredResourceTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", TypeShape.of(GetMonitoredResourceTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of stack monitoring resource tasks in the compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .status(var_.monitored_resource_task_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTasksResult> getMonitoredResourceTasks(GetMonitoredResourceTasksArgs args) {
+        return getMonitoredResourceTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of stack monitoring resource tasks in the compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .status(var_.monitored_resource_task_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTasksResult> getMonitoredResourceTasksPlain(GetMonitoredResourceTasksPlainArgs args) {
+        return getMonitoredResourceTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of stack monitoring resource tasks in the compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .status(var_.monitored_resource_task_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTasksResult> getMonitoredResourceTasks(GetMonitoredResourceTasksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", TypeShape.of(GetMonitoredResourceTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of stack monitoring resource tasks in the compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .status(var_.monitored_resource_task_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTasksResult> getMonitoredResourceTasksPlain(GetMonitoredResourceTasksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResourceTasks:getMonitoredResourceTasks", TypeShape.of(GetMonitoredResourceTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
+     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTypeResult> getMonitoredResourceType(GetMonitoredResourceTypeArgs args) {
+        return getMonitoredResourceType(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
+     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTypeResult> getMonitoredResourceTypePlain(GetMonitoredResourceTypePlainArgs args) {
+        return getMonitoredResourceTypePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
+     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTypeResult> getMonitoredResourceType(GetMonitoredResourceTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType", TypeShape.of(GetMonitoredResourceTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
+     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTypeResult> getMonitoredResourceTypePlain(GetMonitoredResourceTypePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResourceType:getMonitoredResourceType", TypeShape.of(GetMonitoredResourceTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns list of resource types accessible to the customer.
+     * There are two types of resource types - System resource types and User resource types.
+     * System resource types are available out of the box in the stack monitoring resource service
+     * and are accessible to all the tenant users. User resource types are created in the context
+     * of a tenancy and are visible only for the tenancy. By default, both System resource types
+     * and User resource types are returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
+     *             .fields(var_.monitored_resource_type_fields())
+     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
+     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
+     *             .name(var_.monitored_resource_type_name())
+     *             .status(var_.monitored_resource_type_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTypesResult> getMonitoredResourceTypes(GetMonitoredResourceTypesArgs args) {
+        return getMonitoredResourceTypes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns list of resource types accessible to the customer.
+     * There are two types of resource types - System resource types and User resource types.
+     * System resource types are available out of the box in the stack monitoring resource service
+     * and are accessible to all the tenant users. User resource types are created in the context
+     * of a tenancy and are visible only for the tenancy. By default, both System resource types
+     * and User resource types are returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
+     *             .fields(var_.monitored_resource_type_fields())
+     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
+     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
+     *             .name(var_.monitored_resource_type_name())
+     *             .status(var_.monitored_resource_type_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTypesResult> getMonitoredResourceTypesPlain(GetMonitoredResourceTypesPlainArgs args) {
+        return getMonitoredResourceTypesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns list of resource types accessible to the customer.
+     * There are two types of resource types - System resource types and User resource types.
+     * System resource types are available out of the box in the stack monitoring resource service
+     * and are accessible to all the tenant users. User resource types are created in the context
+     * of a tenancy and are visible only for the tenancy. By default, both System resource types
+     * and User resource types are returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
+     *             .fields(var_.monitored_resource_type_fields())
+     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
+     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
+     *             .name(var_.monitored_resource_type_name())
+     *             .status(var_.monitored_resource_type_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourceTypesResult> getMonitoredResourceTypes(GetMonitoredResourceTypesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes", TypeShape.of(GetMonitoredResourceTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns list of resource types accessible to the customer.
+     * There are two types of resource types - System resource types and User resource types.
+     * System resource types are available out of the box in the stack monitoring resource service
+     * and are accessible to all the tenant users. User resource types are created in the context
+     * of a tenancy and are visible only for the tenancy. By default, both System resource types
+     * and User resource types are returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
+     *             .fields(var_.monitored_resource_type_fields())
+     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
+     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
+     *             .name(var_.monitored_resource_type_name())
+     *             .status(var_.monitored_resource_type_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourceTypesResult> getMonitoredResourceTypesPlain(GetMonitoredResourceTypesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResourceTypes:getMonitoredResourceTypes", TypeShape.of(GetMonitoredResourceTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of monitored resources.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.monitored_resource_name())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourcesResult> getMonitoredResources(GetMonitoredResourcesArgs args) {
+        return getMonitoredResources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of monitored resources.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.monitored_resource_name())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourcesResult> getMonitoredResourcesPlain(GetMonitoredResourcesPlainArgs args) {
+        return getMonitoredResourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of monitored resources.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.monitored_resource_name())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMonitoredResourcesResult> getMonitoredResources(GetMonitoredResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getMonitoredResources:getMonitoredResources", TypeShape.of(GetMonitoredResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Returns a list of monitored resources.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.monitored_resource_name())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMonitoredResourcesResult> getMonitoredResourcesPlain(GetMonitoredResourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getMonitoredResources:getMonitoredResources", TypeShape.of(GetMonitoredResourcesResult.class), args, Utilities.withVersion(options));
     }
 }

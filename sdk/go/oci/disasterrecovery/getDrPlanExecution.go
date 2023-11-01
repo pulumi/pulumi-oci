@@ -14,7 +14,7 @@ import (
 
 // This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
 //
-// Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+// Get details for the DR plan execution identified by *drPlanExecutionId*.
 //
 // ## Example Usage
 //
@@ -53,54 +53,54 @@ func LookupDrPlanExecution(ctx *pulumi.Context, args *LookupDrPlanExecutionArgs,
 
 // A collection of arguments for invoking getDrPlanExecution.
 type LookupDrPlanExecutionArgs struct {
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	DrPlanExecutionId string `pulumi:"drPlanExecutionId"`
 }
 
 // A collection of values returned by getDrPlanExecution.
 type LookupDrPlanExecutionResult struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 	DisplayName       string `pulumi:"displayName"`
 	DrPlanExecutionId string `pulumi:"drPlanExecutionId"`
-	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
 	// The options for a plan execution.
 	ExecutionOptions []GetDrPlanExecutionExecutionOption `pulumi:"executionOptions"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A list of groups executed in this DR Plan Execution.
+	// A list of groups executed in this DR plan execution.
 	GroupExecutions []GetDrPlanExecutionGroupExecution `pulumi:"groupExecutions"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	Id string `pulumi:"id"`
-	// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrPlanExecutionLogLocation `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The type of the DR Plan executed.
+	// The type of the DR plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	PlanId string `pulumi:"planId"`
-	// The current state of the DR Plan Execution.
+	// The current state of the DR plan execution.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted string `pulumi:"timeStarted"`
-	// The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -119,7 +119,7 @@ func LookupDrPlanExecutionOutput(ctx *pulumi.Context, args LookupDrPlanExecution
 
 // A collection of arguments for invoking getDrPlanExecution.
 type LookupDrPlanExecutionOutputArgs struct {
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	DrPlanExecutionId pulumi.StringInput `pulumi:"drPlanExecutionId"`
 }
 
@@ -148,17 +148,17 @@ func (o LookupDrPlanExecutionResultOutput) ToOutput(ctx context.Context) pulumix
 	}
 }
 
-// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o LookupDrPlanExecutionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupDrPlanExecutionResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 func (o LookupDrPlanExecutionResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -167,12 +167,12 @@ func (o LookupDrPlanExecutionResultOutput) DrPlanExecutionId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.DrPlanExecutionId }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o LookupDrPlanExecutionResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o LookupDrPlanExecutionResultOutput) ExecutionDurationInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
 }
@@ -182,77 +182,77 @@ func (o LookupDrPlanExecutionResultOutput) ExecutionOptions() GetDrPlanExecution
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) []GetDrPlanExecutionExecutionOption { return v.ExecutionOptions }).(GetDrPlanExecutionExecutionOptionArrayOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 func (o LookupDrPlanExecutionResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A list of groups executed in this DR Plan Execution.
+// A list of groups executed in this DR plan execution.
 func (o LookupDrPlanExecutionResultOutput) GroupExecutions() GetDrPlanExecutionGroupExecutionArrayOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) []GetDrPlanExecutionGroupExecution { return v.GroupExecutions }).(GetDrPlanExecutionGroupExecutionArrayOutput)
 }
 
-// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 func (o LookupDrPlanExecutionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+// A message describing the DR plan execution's current state in more detail.
 func (o LookupDrPlanExecutionResultOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// Information about an Object Storage log location for a DR Protection Group.
+// The details of an object storage log location for a DR protection group.
 func (o LookupDrPlanExecutionResultOutput) LogLocations() GetDrPlanExecutionLogLocationArrayOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) []GetDrPlanExecutionLogLocation { return v.LogLocations }).(GetDrPlanExecutionLogLocationArrayOutput)
 }
 
-// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o LookupDrPlanExecutionResultOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 func (o LookupDrPlanExecutionResultOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The type of the DR Plan executed.
+// The type of the DR plan executed.
 func (o LookupDrPlanExecutionResultOutput) PlanExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.PlanExecutionType }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 func (o LookupDrPlanExecutionResultOutput) PlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.PlanId }).(pulumi.StringOutput)
 }
 
-// The current state of the DR Plan Execution.
+// The current state of the DR plan execution.
 func (o LookupDrPlanExecutionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupDrPlanExecutionResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o LookupDrPlanExecutionResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o LookupDrPlanExecutionResultOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o LookupDrPlanExecutionResultOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
 
-// The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o LookupDrPlanExecutionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

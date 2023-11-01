@@ -32,6 +32,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///         Fields = @var.Monitored_resources_search_fields,
     ///         HostName = @var.Monitored_resources_search_host_name,
     ///         HostNameContains = @var.Monitored_resources_search_host_name_contains,
+    ///         License = @var.Monitored_resources_search_license,
     ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
     ///         NameContains = @var.Monitored_resources_search_name_contains,
     ///         PropertyEquals = @var.Monitored_resources_search_property_equals,
@@ -99,6 +100,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.MonitoredResourcesSearchItem>> Items { get; private set; } = null!;
+
+        /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        [Output("license")]
+        public Output<string> License { get; private set; } = null!;
 
         /// <summary>
         /// A filter to return resources with matching management agent id.
@@ -273,6 +280,12 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? HostNameContains { get; set; }
 
         /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
+
+        /// <summary>
         /// A filter to return resources with matching management agent id.
         /// </summary>
         [Input("managementAgentId")]
@@ -423,6 +436,12 @@ namespace Pulumi.Oci.StackMonitoring
             get => _items ?? (_items = new InputList<Inputs.MonitoredResourcesSearchItemGetArgs>());
             set => _items = value;
         }
+
+        /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
 
         /// <summary>
         /// A filter to return resources with matching management agent id.

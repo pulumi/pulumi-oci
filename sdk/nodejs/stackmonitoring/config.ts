@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *     configType: _var.config_config_type,
  *     isEnabled: _var.config_is_enabled,
  *     resourceType: _var.config_resource_type,
+ *     license: _var.config_license,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -93,11 +94,15 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
-     * The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+     * (Updatable) License edition.
+     */
+    public readonly license!: pulumi.Output<string>;
+    /**
+     * The type of resource to configure for automatic promotion.
      *
      *
      * ** IMPORTANT **
@@ -140,6 +145,7 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
+            resourceInputs["license"] = state ? state.license : undefined;
             resourceInputs["resourceType"] = state ? state.resourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -153,18 +159,13 @@ export class Config extends pulumi.CustomResource {
             if ((!args || args.configType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'configType'");
             }
-            if ((!args || args.isEnabled === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'isEnabled'");
-            }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'resourceType'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["configType"] = args ? args.configType : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
+            resourceInputs["license"] = args ? args.license : undefined;
             resourceInputs["resourceType"] = args ? args.resourceType : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -201,11 +202,15 @@ export interface ConfigState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+     * (Updatable) License edition.
+     */
+    license?: pulumi.Input<string>;
+    /**
+     * The type of resource to configure for automatic promotion.
      *
      *
      * ** IMPORTANT **
@@ -255,15 +260,19 @@ export interface ConfigArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      */
-    isEnabled: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean>;
     /**
-     * The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+     * (Updatable) License edition.
+     */
+    license?: pulumi.Input<string>;
+    /**
+     * The type of resource to configure for automatic promotion.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceType: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string>;
 }

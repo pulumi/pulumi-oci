@@ -21,12 +21,24 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:StackMonitoring/baselineableMetric:BaselineableMetric":
+		r = &BaselineableMetric{}
 	case "oci:StackMonitoring/config:Config":
 		r = &Config{}
 	case "oci:StackMonitoring/discoveryJob:DiscoveryJob":
 		r = &DiscoveryJob{}
+	case "oci:StackMonitoring/metricExtension:MetricExtension":
+		r = &MetricExtension{}
+	case "oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement":
+		r = &MetricExtensionMetricExtensionOnGivenResourcesManagement{}
+	case "oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement":
+		r = &MetricExtensionsTestManagement{}
 	case "oci:StackMonitoring/monitoredResource:MonitoredResource":
 		r = &MonitoredResource{}
+	case "oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask":
+		r = &MonitoredResourceTask{}
+	case "oci:StackMonitoring/monitoredResourceType:MonitoredResourceType":
+		r = &MonitoredResourceType{}
 	case "oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource":
 		r = &MonitoredResourcesAssociateMonitoredResource{}
 	case "oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember":
@@ -50,6 +62,11 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"oci",
+		"StackMonitoring/baselineableMetric",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"StackMonitoring/config",
 		&module{version},
 	)
@@ -60,7 +77,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"StackMonitoring/metricExtension",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/metricExtensionsTestManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"StackMonitoring/monitoredResource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/monitoredResourceTask",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"StackMonitoring/monitoredResourceType",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

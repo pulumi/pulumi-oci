@@ -66,6 +66,11 @@ public final class GetMysqlDbSystemResult {
      */
     private Integer dataStorageSizeInGb;
     /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    private String databaseManagement;
+    /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
@@ -259,6 +264,13 @@ public final class GetMysqlDbSystemResult {
      */
     public Integer dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    public String databaseManagement() {
+        return this.databaseManagement;
     }
     /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
@@ -465,6 +477,7 @@ public final class GetMysqlDbSystemResult {
         private String crashRecovery;
         private List<GetMysqlDbSystemCurrentPlacement> currentPlacements;
         private Integer dataStorageSizeInGb;
+        private String databaseManagement;
         private String dbSystemId;
         private Map<String,Object> definedTags;
         private List<GetMysqlDbSystemDeletionPolicy> deletionPolicies;
@@ -505,6 +518,7 @@ public final class GetMysqlDbSystemResult {
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.currentPlacements = defaults.currentPlacements;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.databaseManagement = defaults.databaseManagement;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
@@ -591,6 +605,11 @@ public final class GetMysqlDbSystemResult {
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseManagement(String databaseManagement) {
+            this.databaseManagement = Objects.requireNonNull(databaseManagement);
             return this;
         }
         @CustomType.Setter
@@ -758,6 +777,7 @@ public final class GetMysqlDbSystemResult {
             o.crashRecovery = crashRecovery;
             o.currentPlacements = currentPlacements;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.databaseManagement = databaseManagement;
             o.dbSystemId = dbSystemId;
             o.definedTags = definedTags;
             o.deletionPolicies = deletionPolicies;

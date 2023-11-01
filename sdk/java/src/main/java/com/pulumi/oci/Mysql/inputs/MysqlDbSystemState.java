@@ -188,6 +188,21 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    @Import(name="databaseManagement")
+    private @Nullable Output<String> databaseManagement;
+
+    /**
+     * @return (Updatable) Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    public Optional<Output<String>> databaseManagement() {
+        return Optional.ofNullable(this.databaseManagement);
+    }
+
+    /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -603,6 +618,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.crashRecovery = $.crashRecovery;
         this.currentPlacements = $.currentPlacements;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
+        this.databaseManagement = $.databaseManagement;
         this.definedTags = $.definedTags;
         this.deletionPolicies = $.deletionPolicies;
         this.description = $.description;
@@ -884,6 +900,27 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             return dataStorageSizeInGb(Output.of(dataStorageSizeInGb));
+        }
+
+        /**
+         * @param databaseManagement (Updatable) Whether to enable monitoring via the Database Management service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagement(@Nullable Output<String> databaseManagement) {
+            $.databaseManagement = databaseManagement;
+            return this;
+        }
+
+        /**
+         * @param databaseManagement (Updatable) Whether to enable monitoring via the Database Management service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagement(String databaseManagement) {
+            return databaseManagement(Output.of(databaseManagement));
         }
 
         /**

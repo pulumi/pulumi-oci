@@ -72,6 +72,11 @@ public final class GetMonitoredResourceResult {
      */
     private String id;
     /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    private String license;
+    /**
      * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -204,6 +209,13 @@ public final class GetMonitoredResourceResult {
         return this.id;
     }
     /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public String license() {
+        return this.license;
+    }
+    /**
      * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -299,6 +311,7 @@ public final class GetMonitoredResourceResult {
         private Map<String,Object> freeformTags;
         private String hostName;
         private String id;
+        private String license;
         private String managementAgentId;
         private String monitoredResourceId;
         private String name;
@@ -326,6 +339,7 @@ public final class GetMonitoredResourceResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
+    	      this.license = defaults.license;
     	      this.managementAgentId = defaults.managementAgentId;
     	      this.monitoredResourceId = defaults.monitoredResourceId;
     	      this.name = defaults.name;
@@ -420,6 +434,11 @@ public final class GetMonitoredResourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder license(String license) {
+            this.license = Objects.requireNonNull(license);
+            return this;
+        }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
@@ -492,6 +511,7 @@ public final class GetMonitoredResourceResult {
             o.freeformTags = freeformTags;
             o.hostName = hostName;
             o.id = id;
+            o.license = license;
             o.managementAgentId = managementAgentId;
             o.monitoredResourceId = monitoredResourceId;
             o.name = name;

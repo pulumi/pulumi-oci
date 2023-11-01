@@ -14,6 +14,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourcesSearchItem
     {
         /// <summary>
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string? CompartmentId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
@@ -37,6 +41,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        public readonly string? License;
         /// <summary>
         /// A filter to return resources with matching management agent id.
         /// </summary>
@@ -76,6 +84,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
         [OutputConstructor]
         private MonitoredResourcesSearchItem(
+            string? compartmentId,
+
             ImmutableDictionary<string, object>? definedTags,
 
             string? displayName,
@@ -87,6 +97,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             string? hostName,
 
             string? id,
+
+            string? license,
 
             string? managementAgentId,
 
@@ -104,12 +116,14 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string? type)
         {
+            CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
             ExternalId = externalId;
             FreeformTags = freeformTags;
             HostName = hostName;
             Id = id;
+            License = license;
             ManagementAgentId = managementAgentId;
             Name = name;
             Properties = properties;

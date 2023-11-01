@@ -35,6 +35,7 @@ import * as utilities from "../utilities";
  *                 },
  *             }],
  *         },
+ *         license: _var.discovery_job_discovery_details_license,
  *         tags: {
  *             propertiesMap: _var.discovery_job_discovery_details_tags_properties_map,
  *         },

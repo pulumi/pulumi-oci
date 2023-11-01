@@ -163,14 +163,14 @@ public class DiscoveryMod extends com.pulumi.resources.CustomResource {
         return this.isAppDefinedRelationDiscoveryEnabled;
     }
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
     @Export(name="isIncludeAllSchemas", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIncludeAllSchemas;
 
     /**
-     * @return Indicates if all the schemas should be scanned by the discovery job. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+     * @return Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
     public Output<Boolean> isIncludeAllSchemas() {

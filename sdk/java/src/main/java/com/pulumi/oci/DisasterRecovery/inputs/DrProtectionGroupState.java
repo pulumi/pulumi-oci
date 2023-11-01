@@ -23,14 +23,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     public static final DrProtectionGroupState Empty = new DrProtectionGroupState();
 
     /**
-     * The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+     * The details for associating a DR protection group with a peer DR protection group.
      * 
      */
     @Import(name="association")
     private @Nullable Output<DrProtectionGroupAssociationArgs> association;
 
     /**
-     * @return The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+     * @return The details for associating a DR protection group with a peer DR protection group.
      * 
      */
     public Optional<Output<DrProtectionGroupAssociationArgs>> association() {
@@ -38,14 +38,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -53,14 +53,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -89,14 +89,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * @return (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -104,14 +104,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -119,14 +119,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * A message describing the DR Protection Group&#39;s current state in more detail.
+     * A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
     @Import(name="lifeCycleDetails")
     private @Nullable Output<String> lifeCycleDetails;
 
     /**
-     * @return A message describing the DR Protection Group&#39;s current state in more detail.
+     * @return A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
     public Optional<Output<String>> lifeCycleDetails() {
@@ -134,14 +134,29 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+     * The current sub-state of the DR protection group.
+     * 
+     */
+    @Import(name="lifecycleSubState")
+    private @Nullable Output<String> lifecycleSubState;
+
+    /**
+     * @return The current sub-state of the DR protection group.
+     * 
+     */
+    public Optional<Output<String>> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
+    }
+
+    /**
+     * (Updatable) The details for creating an object storage log location for a DR protection group.
      * 
      */
     @Import(name="logLocation")
     private @Nullable Output<DrProtectionGroupLogLocationArgs> logLocation;
 
     /**
-     * @return (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+     * @return (Updatable) The details for creating an object storage log location for a DR protection group.
      * 
      */
     public Optional<Output<DrProtectionGroupLogLocationArgs>> logLocation() {
@@ -149,14 +164,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) A list of DR Protection Group members.
+     * (Updatable) A list of DR protection group members.
      * 
      */
     @Import(name="members")
     private @Nullable Output<List<DrProtectionGroupMemberArgs>> members;
 
     /**
-     * @return (Updatable) A list of DR Protection Group members.
+     * @return (Updatable) A list of DR protection group members.
      * 
      */
     public Optional<Output<List<DrProtectionGroupMemberArgs>>> members() {
@@ -164,14 +179,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="peerId")
     private @Nullable Output<String> peerId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> peerId() {
@@ -179,14 +194,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Import(name="peerRegion")
     private @Nullable Output<String> peerRegion;
 
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public Optional<Output<String>> peerRegion() {
@@ -194,14 +209,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The role of this DR Protection Group.
+     * The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The role of this DR Protection Group.
+     * @return The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     public Optional<Output<String>> role() {
@@ -209,14 +224,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The current state of the DR Protection Group.
+     * The current state of the DR protection group.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DR Protection Group.
+     * @return The current state of the DR protection group.
      * 
      */
     public Optional<Output<String>> state() {
@@ -224,14 +239,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,Object>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> systemTags() {
@@ -239,14 +254,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -254,14 +269,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -278,6 +293,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lifeCycleDetails = $.lifeCycleDetails;
+        this.lifecycleSubState = $.lifecycleSubState;
         this.logLocation = $.logLocation;
         this.members = $.members;
         this.peerId = $.peerId;
@@ -308,7 +324,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param association The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+         * @param association The details for associating a DR protection group with a peer DR protection group.
          * 
          * @return builder
          * 
@@ -319,7 +335,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param association The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+         * @param association The details for associating a DR protection group with a peer DR protection group.
          * 
          * @return builder
          * 
@@ -329,7 +345,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -340,7 +356,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -350,7 +366,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -361,7 +377,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -398,7 +414,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+         * @param displayName (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
          * 
          * @return builder
          * 
@@ -409,7 +425,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+         * @param displayName (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
          * 
          * @return builder
          * 
@@ -419,7 +435,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -430,7 +446,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -440,7 +456,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param lifeCycleDetails A message describing the DR Protection Group&#39;s current state in more detail.
+         * @param lifeCycleDetails A message describing the DR protection group&#39;s current state in more detail.
          * 
          * @return builder
          * 
@@ -451,7 +467,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param lifeCycleDetails A message describing the DR Protection Group&#39;s current state in more detail.
+         * @param lifeCycleDetails A message describing the DR protection group&#39;s current state in more detail.
          * 
          * @return builder
          * 
@@ -461,7 +477,28 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param logLocation (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+         * @param lifecycleSubState The current sub-state of the DR protection group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(@Nullable Output<String> lifecycleSubState) {
+            $.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+
+        /**
+         * @param lifecycleSubState The current sub-state of the DR protection group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(String lifecycleSubState) {
+            return lifecycleSubState(Output.of(lifecycleSubState));
+        }
+
+        /**
+         * @param logLocation (Updatable) The details for creating an object storage log location for a DR protection group.
          * 
          * @return builder
          * 
@@ -472,7 +509,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param logLocation (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+         * @param logLocation (Updatable) The details for creating an object storage log location for a DR protection group.
          * 
          * @return builder
          * 
@@ -482,7 +519,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param members (Updatable) A list of DR Protection Group members.
+         * @param members (Updatable) A list of DR protection group members.
          * 
          * @return builder
          * 
@@ -493,7 +530,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param members (Updatable) A list of DR Protection Group members.
+         * @param members (Updatable) A list of DR protection group members.
          * 
          * @return builder
          * 
@@ -503,7 +540,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param members (Updatable) A list of DR Protection Group members.
+         * @param members (Updatable) A list of DR protection group members.
          * 
          * @return builder
          * 
@@ -513,7 +550,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param peerId The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -524,7 +561,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param peerId The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -534,7 +571,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+         * @param peerRegion The region of the peer DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -545,7 +582,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+         * @param peerRegion The region of the peer DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -555,7 +592,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param role The role of this DR Protection Group.
+         * @param role The role of the DR protection group.  Example: `STANDBY`
          * 
          * @return builder
          * 
@@ -566,7 +603,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param role The role of this DR Protection Group.
+         * @param role The role of the DR protection group.  Example: `STANDBY`
          * 
          * @return builder
          * 
@@ -576,7 +613,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state The current state of the DR Protection Group.
+         * @param state The current state of the DR protection group.
          * 
          * @return builder
          * 
@@ -587,7 +624,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state The current state of the DR Protection Group.
+         * @param state The current state of the DR protection group.
          * 
          * @return builder
          * 
@@ -597,7 +634,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
          * 
@@ -608,7 +645,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
          * 
@@ -618,7 +655,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeCreated The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeCreated The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -629,7 +666,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeCreated The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeCreated The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -639,7 +676,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeUpdated The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeUpdated The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -650,7 +687,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeUpdated The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeUpdated The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 

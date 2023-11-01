@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DisasterRecovery
     /// <summary>
     /// This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
     /// 
-    /// Creates a new DR Plan of the specified DR Plan type.
+    /// Create a DR plan of the specified DR plan type.
     /// 
     /// ## Example Usage
     /// 
@@ -54,85 +54,85 @@ namespace Pulumi.Oci.DisasterRecovery
     public partial class DrPlan : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        /// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("drProtectionGroupId")]
         public Output<string> DrProtectionGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the DR Plan's current state in more detail.
+        /// A message describing the DR plan's current state in more detail.
         /// </summary>
         [Output("lifeCycleDetails")]
         public Output<string> LifeCycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("peerDrProtectionGroupId")]
         public Output<string> PeerDrProtectionGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+        /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Output("peerRegion")]
         public Output<string> PeerRegion { get; private set; } = null!;
 
         /// <summary>
-        /// The list of groups in this DR Plan.
+        /// The list of groups in this DR plan.
         /// </summary>
         [Output("planGroups")]
         public Output<ImmutableArray<Outputs.DrPlanPlanGroup>> PlanGroups { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the DR Plan.
+        /// The current state of the DR plan.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The type of DR Plan to be created. 
+        /// The type of DR plan to be created. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -200,13 +200,13 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        /// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId", required: true)]
         public Input<string> DrProtectionGroupId { get; set; } = null!;
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The type of DR Plan to be created. 
+        /// The type of DR plan to be created. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -242,7 +242,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class DrPlanState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -251,7 +251,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -260,13 +260,13 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        /// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId")]
         public Input<string>? DrProtectionGroupId { get; set; }
@@ -275,7 +275,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -284,19 +284,19 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// A message describing the DR Plan's current state in more detail.
+        /// A message describing the DR plan's current state in more detail.
         /// </summary>
         [Input("lifeCycleDetails")]
         public Input<string>? LifeCycleDetails { get; set; }
 
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("peerDrProtectionGroupId")]
         public Input<string>? PeerDrProtectionGroupId { get; set; }
 
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+        /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Input("peerRegion")]
         public Input<string>? PeerRegion { get; set; }
@@ -305,7 +305,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputList<Inputs.DrPlanPlanGroupGetArgs>? _planGroups;
 
         /// <summary>
-        /// The list of groups in this DR Plan.
+        /// The list of groups in this DR plan.
         /// </summary>
         public InputList<Inputs.DrPlanPlanGroupGetArgs> PlanGroups
         {
@@ -314,7 +314,7 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The current state of the DR Plan.
+        /// The current state of the DR plan.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -323,7 +323,7 @@ namespace Pulumi.Oci.DisasterRecovery
         private InputMap<object>? _systemTags;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public InputMap<object> SystemTags
         {
@@ -332,19 +332,19 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The type of DR Plan to be created. 
+        /// The type of DR plan to be created. 
         /// 
         /// 
         /// ** IMPORTANT **

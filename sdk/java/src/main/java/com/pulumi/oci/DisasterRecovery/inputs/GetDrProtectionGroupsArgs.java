@@ -18,14 +18,14 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
     public static final GetDrProtectionGroupsArgs Empty = new GetDrProtectionGroupsArgs();
 
     /**
-     * The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * @return The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Output<String> compartmentId() {
@@ -33,14 +33,14 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -48,14 +48,14 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId")
     private @Nullable Output<String> drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * @return The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> drProtectionGroupId() {
@@ -70,14 +70,29 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The DR Protection Group Role.
+     * A filter to return only DR protection groups that match the given lifecycle sub-state.
+     * 
+     */
+    @Import(name="lifecycleSubState")
+    private @Nullable Output<String> lifecycleSubState;
+
+    /**
+     * @return A filter to return only DR protection groups that match the given lifecycle sub-state.
+     * 
+     */
+    public Optional<Output<String>> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
+    }
+
+    /**
+     * The DR protection group Role.
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The DR Protection Group Role.
+     * @return The DR protection group Role.
      * 
      */
     public Optional<Output<String>> role() {
@@ -85,14 +100,14 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * A filter to return only DR Protection Groups that match the given lifecycleState.
+     * A filter to return only DR protection groups that match the given lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only DR Protection Groups that match the given lifecycleState.
+     * @return A filter to return only DR protection groups that match the given lifecycle state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -106,6 +121,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         this.displayName = $.displayName;
         this.drProtectionGroupId = $.drProtectionGroupId;
         this.filters = $.filters;
+        this.lifecycleSubState = $.lifecycleSubState;
         this.role = $.role;
         this.state = $.state;
     }
@@ -129,7 +145,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -140,7 +156,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+         * @param compartmentId The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -150,7 +166,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+         * @param displayName A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
          * 
          * @return builder
          * 
@@ -161,7 +177,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+         * @param displayName A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
          * 
          * @return builder
          * 
@@ -171,7 +187,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+         * @param drProtectionGroupId The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -182,7 +198,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+         * @param drProtectionGroupId The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -205,7 +221,28 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param role The DR Protection Group Role.
+         * @param lifecycleSubState A filter to return only DR protection groups that match the given lifecycle sub-state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(@Nullable Output<String> lifecycleSubState) {
+            $.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+
+        /**
+         * @param lifecycleSubState A filter to return only DR protection groups that match the given lifecycle sub-state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleSubState(String lifecycleSubState) {
+            return lifecycleSubState(Output.of(lifecycleSubState));
+        }
+
+        /**
+         * @param role The DR protection group Role.
          * 
          * @return builder
          * 
@@ -216,7 +253,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param role The DR Protection Group Role.
+         * @param role The DR protection group Role.
          * 
          * @return builder
          * 
@@ -226,7 +263,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param state A filter to return only DR Protection Groups that match the given lifecycleState.
+         * @param state A filter to return only DR protection groups that match the given lifecycle state.
          * 
          * @return builder
          * 
@@ -237,7 +274,7 @@ public final class GetDrProtectionGroupsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param state A filter to return only DR Protection Groups that match the given lifecycleState.
+         * @param state A filter to return only DR protection groups that match the given lifecycle state.
          * 
          * @return builder
          * 

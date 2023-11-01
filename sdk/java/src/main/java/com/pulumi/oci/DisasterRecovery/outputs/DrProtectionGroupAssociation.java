@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupAssociation {
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private @Nullable String peerId;
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     private @Nullable String peerRegion;
     /**
-     * @return The role of this DR Protection Group.
+     * @return The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     private String role;
 
     private DrProtectionGroupAssociation() {}
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<String> peerId() {
         return Optional.ofNullable(this.peerId);
     }
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public Optional<String> peerRegion() {
         return Optional.ofNullable(this.peerRegion);
     }
     /**
-     * @return The role of this DR Protection Group.
+     * @return The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     public String role() {

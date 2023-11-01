@@ -39,6 +39,11 @@ public final class MonitoredResourcesListMemberItem {
      */
     private @Nullable String hostName;
     /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    private @Nullable String license;
+    /**
      * @return Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -111,6 +116,13 @@ public final class MonitoredResourcesListMemberItem {
         return Optional.ofNullable(this.hostName);
     }
     /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Optional<String> license() {
+        return Optional.ofNullable(this.license);
+    }
+    /**
      * @return Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -174,6 +186,7 @@ public final class MonitoredResourcesListMemberItem {
         private @Nullable String externalId;
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String hostName;
+        private @Nullable String license;
         private @Nullable String parentId;
         private @Nullable String resourceDisplayName;
         private @Nullable String resourceId;
@@ -189,6 +202,7 @@ public final class MonitoredResourcesListMemberItem {
     	      this.externalId = defaults.externalId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
+    	      this.license = defaults.license;
     	      this.parentId = defaults.parentId;
     	      this.resourceDisplayName = defaults.resourceDisplayName;
     	      this.resourceId = defaults.resourceId;
@@ -221,6 +235,11 @@ public final class MonitoredResourcesListMemberItem {
         @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
             this.hostName = hostName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder license(@Nullable String license) {
+            this.license = license;
             return this;
         }
         @CustomType.Setter
@@ -265,6 +284,7 @@ public final class MonitoredResourcesListMemberItem {
             o.externalId = externalId;
             o.freeformTags = freeformTags;
             o.hostName = hostName;
+            o.license = license;
             o.parentId = parentId;
             o.resourceDisplayName = resourceDisplayName;
             o.resourceId = resourceId;

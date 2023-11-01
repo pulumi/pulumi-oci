@@ -22,7 +22,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, database_management=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
         if admin_password and not isinstance(admin_password, str):
             raise TypeError("Expected argument 'admin_password' to be a str")
         pulumi.set(__self__, "admin_password", admin_password)
@@ -53,6 +53,9 @@ class GetMysqlDbSystemResult:
         if data_storage_size_in_gb and not isinstance(data_storage_size_in_gb, int):
             raise TypeError("Expected argument 'data_storage_size_in_gb' to be a int")
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if database_management and not isinstance(database_management, str):
+            raise TypeError("Expected argument 'database_management' to be a str")
+        pulumi.set(__self__, "database_management", database_management)
         if db_system_id and not isinstance(db_system_id, str):
             raise TypeError("Expected argument 'db_system_id' to be a str")
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -208,6 +211,14 @@ class GetMysqlDbSystemResult:
         Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
+
+    @property
+    @pulumi.getter(name="databaseManagement")
+    def database_management(self) -> str:
+        """
+        Whether to enable monitoring via the Database Management service.
+        """
+        return pulumi.get(self, "database_management")
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -439,6 +450,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             crash_recovery=self.crash_recovery,
             current_placements=self.current_placements,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
+            database_management=self.database_management,
             db_system_id=self.db_system_id,
             defined_tags=self.defined_tags,
             deletion_policies=self.deletion_policies,
@@ -503,6 +515,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         crash_recovery=pulumi.get(__ret__, 'crash_recovery'),
         current_placements=pulumi.get(__ret__, 'current_placements'),
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
+        database_management=pulumi.get(__ret__, 'database_management'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         deletion_policies=pulumi.get(__ret__, 'deletion_policies'),

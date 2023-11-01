@@ -69,7 +69,7 @@ type LookupMaskingPoliciesMaskingColumnResult struct {
 	// The data type of the masking column.
 	DataType string `pulumi:"dataType"`
 	Id       string `pulumi:"id"`
-	// Indicates if data masking is enabled for the masking column.
+	// Indicates whether data masking is enabled for the masking column.
 	IsMaskingEnabled bool `pulumi:"isMaskingEnabled"`
 	// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
 	Key string `pulumi:"key"`
@@ -163,7 +163,7 @@ func (o LookupMaskingPoliciesMaskingColumnResultOutput) Id() pulumi.StringOutput
 	return o.ApplyT(func(v LookupMaskingPoliciesMaskingColumnResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates if data masking is enabled for the masking column.
+// Indicates whether data masking is enabled for the masking column.
 func (o LookupMaskingPoliciesMaskingColumnResultOutput) IsMaskingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupMaskingPoliciesMaskingColumnResult) bool { return v.IsMaskingEnabled }).(pulumi.BoolOutput)
 }

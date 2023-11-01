@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get details for the DR Plan identified by *drPlanId*.
+ * Get details for the DR plan identified by *drPlanId*.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getDrPlan(args: GetDrPlanArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetDrPlanArgs {
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
     drPlanId: string;
 }
@@ -45,71 +45,71 @@ export interface GetDrPlanArgs {
  */
 export interface GetDrPlanResult {
     /**
-     * The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+     * The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     readonly compartmentId: string;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * The display name of the group.  Example: `DATABASE_SWITCHOVER`
      */
     readonly displayName: string;
     readonly drPlanId: string;
     /**
-     * The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+     * The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
      */
     readonly drProtectionGroupId: string;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+     * The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      */
     readonly id: string;
     /**
-     * A message describing the DR Plan's current state in more detail.
+     * A message describing the DR plan's current state in more detail.
      */
     readonly lifeCycleDetails: string;
     /**
-     * The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+     * The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     readonly peerDrProtectionGroupId: string;
     /**
-     * The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+     * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
     readonly peerRegion: string;
     /**
-     * The list of groups in this DR Plan.
+     * The list of groups in this DR plan.
      */
     readonly planGroups: outputs.DisasterRecovery.GetDrPlanPlanGroup[];
     /**
-     * The current state of the DR Plan.
+     * The current state of the DR plan.
      */
     readonly state: string;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeCreated: string;
     /**
-     * The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeUpdated: string;
     /**
-     * The type of this DR Plan.
+     * The type of the DR plan.
      */
     readonly type: string;
 }
 /**
  * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get details for the DR Plan identified by *drPlanId*.
+ * Get details for the DR plan identified by *drPlanId*.
  *
  * ## Example Usage
  *
@@ -131,7 +131,7 @@ export function getDrPlanOutput(args: GetDrPlanOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetDrPlanOutputArgs {
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
     drPlanId: pulumi.Input<string>;
 }

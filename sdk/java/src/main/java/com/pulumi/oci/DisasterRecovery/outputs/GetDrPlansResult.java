@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDrPlansResult {
     /**
-     * @return The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     private @Nullable String displayName;
@@ -27,7 +27,7 @@ public final class GetDrPlansResult {
     private @Nullable String drPlanId;
     private @Nullable String drPlanType;
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     private String drProtectionGroupId;
@@ -38,14 +38,14 @@ public final class GetDrPlansResult {
      */
     private String id;
     /**
-     * @return The current state of the DR Plan.
+     * @return The current state of the DR plan.
      * 
      */
     private @Nullable String state;
 
     private GetDrPlansResult() {}
     /**
-     * @return The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     public Optional<String> displayName() {
@@ -65,7 +65,7 @@ public final class GetDrPlansResult {
         return Optional.ofNullable(this.drPlanType);
     }
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     public String drProtectionGroupId() {
@@ -82,7 +82,7 @@ public final class GetDrPlansResult {
         return this.id;
     }
     /**
-     * @return The current state of the DR Plan.
+     * @return The current state of the DR plan.
      * 
      */
     public Optional<String> state() {

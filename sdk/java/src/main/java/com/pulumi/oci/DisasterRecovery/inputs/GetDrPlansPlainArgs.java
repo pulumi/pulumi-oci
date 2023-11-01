@@ -17,14 +17,14 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetDrPlansPlainArgs Empty = new GetDrPlansPlainArgs();
 
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     public Optional<String> displayName() {
@@ -32,14 +32,14 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     @Import(name="drPlanId")
     private @Nullable String drPlanId;
 
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * @return The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     public Optional<String> drPlanId() {
@@ -47,14 +47,14 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The DR Plan type.
+     * The DR plan type.
      * 
      */
     @Import(name="drPlanType")
     private @Nullable String drPlanType;
 
     /**
-     * @return The DR Plan type.
+     * @return The DR plan type.
      * 
      */
     public Optional<String> drPlanType() {
@@ -62,14 +62,14 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId", required=true)
     private String drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * @return The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String drProtectionGroupId() {
@@ -84,14 +84,14 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only DR Plans that match the given lifecycleState.
+     * A filter to return only DR plans that match the given lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only DR Plans that match the given lifecycleState.
+     * @return A filter to return only DR plans that match the given lifecycle state.
      * 
      */
     public Optional<String> state() {
@@ -128,7 +128,7 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+         * @param displayName A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param drPlanId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+         * @param drPlanId The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param drPlanType The DR Plan type.
+         * @param drPlanType The DR plan type.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+         * @param drProtectionGroupId The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class GetDrPlansPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only DR Plans that match the given lifecycleState.
+         * @param state A filter to return only DR plans that match the given lifecycle state.
          * 
          * @return builder
          * 

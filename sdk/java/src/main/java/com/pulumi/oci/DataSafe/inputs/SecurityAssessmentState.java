@@ -331,14 +331,14 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -346,14 +346,14 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeLastAssessed")
     private @Nullable Output<String> timeLastAssessed;
 
     /**
-     * @return The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeLastAssessed() {
@@ -361,14 +361,14 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -924,7 +924,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeCreated The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -935,7 +935,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeCreated The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -945,7 +945,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeLastAssessed The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeLastAssessed The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -956,7 +956,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeLastAssessed The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeLastAssessed The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -966,7 +966,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeUpdated The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUpdated The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -977,7 +977,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeUpdated The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUpdated The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 

@@ -53,7 +53,7 @@ class GetDrPlanExecutionsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The display name of the step.  Example: `DATABASE_SWITCHOVER`
+        The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
         """
         return pulumi.get(self, "display_name")
 
@@ -79,7 +79,7 @@ class GetDrPlanExecutionsResult:
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> str:
         """
-        The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
@@ -100,7 +100,7 @@ class GetDrPlanExecutionsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the DR Plan Execution.
+        The current state of the DR plan execution.
         """
         return pulumi.get(self, "state")
 
@@ -131,7 +131,7 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
     """
     This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Get a summary list of all DR Plan Executions for a DR Protection Group.
+    Get a summary list of all DR plan executions for a DR protection group.
 
     ## Example Usage
 
@@ -147,11 +147,11 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
     ```
 
 
-    :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
-    :param str dr_plan_execution_id: The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
-    :param str dr_plan_execution_type: The DR Plan Execution type.
-    :param str dr_protection_group_id: The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
-    :param str state: A filter to return only DR Plan Executions that match the given lifecycleState.
+    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+    :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
+    :param str dr_plan_execution_type: The DR plan execution type.
+    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    :param str state: A filter to return only DR plan executions that match the given lifecycle state.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -185,7 +185,7 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
     """
     This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Get a summary list of all DR Plan Executions for a DR Protection Group.
+    Get a summary list of all DR plan executions for a DR protection group.
 
     ## Example Usage
 
@@ -201,10 +201,10 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
     ```
 
 
-    :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
-    :param str dr_plan_execution_id: The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
-    :param str dr_plan_execution_type: The DR Plan Execution type.
-    :param str dr_protection_group_id: The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
-    :param str state: A filter to return only DR Plan Executions that match the given lifecycleState.
+    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+    :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
+    :param str dr_plan_execution_type: The DR plan execution type.
+    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    :param str state: A filter to return only DR plan executions that match the given lifecycle state.
     """
     ...

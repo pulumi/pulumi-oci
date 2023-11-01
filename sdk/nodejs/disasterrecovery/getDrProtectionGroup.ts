@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get the DR Protection Group identified by *drProtectionGroupId*.
+ * Get the DR protection group identified by *drProtectionGroupId*.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getDrProtectionGroup(args: GetDrProtectionGroupArgs, opts?: pulu
  */
 export interface GetDrProtectionGroupArgs {
     /**
-     * The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: string;
 }
@@ -46,72 +46,76 @@ export interface GetDrProtectionGroupArgs {
 export interface GetDrProtectionGroupResult {
     readonly associations: outputs.DisasterRecovery.GetDrProtectionGroupAssociation[];
     /**
-     * The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+     * The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     readonly compartmentId: string;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: any};
     readonly disassociateTrigger: number;
     /**
-     * The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * The display name of the DR protection group.  Example: `EBS PHX Group`
      */
     readonly displayName: string;
     readonly drProtectionGroupId: string;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+     * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     readonly id: string;
     /**
-     * A message describing the DR Protection Group's current state in more detail.
+     * A message describing the DR protection group's current state in more detail.
      */
     readonly lifeCycleDetails: string;
     /**
-     * Information about an Object Storage log location for a DR Protection Group.
+     * The current sub-state of the DR protection group.
+     */
+    readonly lifecycleSubState: string;
+    /**
+     * The details of an object storage log location for a DR protection group.
      */
     readonly logLocations: outputs.DisasterRecovery.GetDrProtectionGroupLogLocation[];
     /**
-     * A list of DR Protection Group members.
+     * A list of DR protection group members.
      */
     readonly members: outputs.DisasterRecovery.GetDrProtectionGroupMember[];
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+     * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     readonly peerId: string;
     /**
-     * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * The region of the peer DR protection group.  Example: `us-ashburn-1`
      */
     readonly peerRegion: string;
     /**
-     * The role of the DR Protection Group.
+     * The role of the DR protection group.
      */
     readonly role: string;
     /**
-     * The current state of the DR Protection Group.
+     * The current state of the DR protection group.
      */
     readonly state: string;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeCreated: string;
     /**
-     * The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get the DR Protection Group identified by *drProtectionGroupId*.
+ * Get the DR protection group identified by *drProtectionGroupId*.
  *
  * ## Example Usage
  *
@@ -133,7 +137,7 @@ export function getDrProtectionGroupOutput(args: GetDrProtectionGroupOutputArgs,
  */
 export interface GetDrProtectionGroupOutputArgs {
     /**
-     * The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: pulumi.Input<string>;
 }

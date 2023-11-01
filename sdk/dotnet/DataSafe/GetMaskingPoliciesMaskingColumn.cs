@@ -133,7 +133,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly string DataType;
         public readonly string Id;
         /// <summary>
-        /// Indicates if data masking is enabled for the masking column.
+        /// Indicates whether data masking is enabled for the masking column.
         /// </summary>
         public readonly bool IsMaskingEnabled;
         /// <summary>

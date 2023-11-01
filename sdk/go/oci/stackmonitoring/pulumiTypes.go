@@ -19,6 +19,8 @@ type DiscoveryJobDiscoveryDetails struct {
 	AgentId string `pulumi:"agentId"`
 	// List of DiscoveryJob Credential Details.
 	Credentials *DiscoveryJobDiscoveryDetailsCredentials `pulumi:"credentials"`
+	// License edition of the monitored resource.
+	License *string `pulumi:"license"`
 	// Property Details
 	Properties DiscoveryJobDiscoveryDetailsProperties `pulumi:"properties"`
 	// The Name of resource type
@@ -45,6 +47,8 @@ type DiscoveryJobDiscoveryDetailsArgs struct {
 	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// List of DiscoveryJob Credential Details.
 	Credentials DiscoveryJobDiscoveryDetailsCredentialsPtrInput `pulumi:"credentials"`
+	// License edition of the monitored resource.
+	License pulumi.StringPtrInput `pulumi:"license"`
 	// Property Details
 	Properties DiscoveryJobDiscoveryDetailsPropertiesInput `pulumi:"properties"`
 	// The Name of resource type
@@ -160,6 +164,11 @@ func (o DiscoveryJobDiscoveryDetailsOutput) Credentials() DiscoveryJobDiscoveryD
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetails) *DiscoveryJobDiscoveryDetailsCredentials { return v.Credentials }).(DiscoveryJobDiscoveryDetailsCredentialsPtrOutput)
 }
 
+// License edition of the monitored resource.
+func (o DiscoveryJobDiscoveryDetailsOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DiscoveryJobDiscoveryDetails) *string { return v.License }).(pulumi.StringPtrOutput)
+}
+
 // Property Details
 func (o DiscoveryJobDiscoveryDetailsOutput) Properties() DiscoveryJobDiscoveryDetailsPropertiesOutput {
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetails) DiscoveryJobDiscoveryDetailsProperties { return v.Properties }).(DiscoveryJobDiscoveryDetailsPropertiesOutput)
@@ -228,6 +237,16 @@ func (o DiscoveryJobDiscoveryDetailsPtrOutput) Credentials() DiscoveryJobDiscove
 		}
 		return v.Credentials
 	}).(DiscoveryJobDiscoveryDetailsCredentialsPtrOutput)
+}
+
+// License edition of the monitored resource.
+func (o DiscoveryJobDiscoveryDetailsPtrOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryJobDiscoveryDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.License
+	}).(pulumi.StringPtrOutput)
 }
 
 // Property Details
@@ -960,6 +979,1414 @@ func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) PropertiesMap() pulumi.MapOut
 		}
 		return v.PropertiesMap
 	}).(pulumi.MapOutput)
+}
+
+type MetricExtensionEnabledOnResource struct {
+	// The OCID of the resource on which Metric Extension is enabled
+	ResourceId *string `pulumi:"resourceId"`
+}
+
+// MetricExtensionEnabledOnResourceInput is an input type that accepts MetricExtensionEnabledOnResourceArgs and MetricExtensionEnabledOnResourceOutput values.
+// You can construct a concrete instance of `MetricExtensionEnabledOnResourceInput` via:
+//
+//	MetricExtensionEnabledOnResourceArgs{...}
+type MetricExtensionEnabledOnResourceInput interface {
+	pulumi.Input
+
+	ToMetricExtensionEnabledOnResourceOutput() MetricExtensionEnabledOnResourceOutput
+	ToMetricExtensionEnabledOnResourceOutputWithContext(context.Context) MetricExtensionEnabledOnResourceOutput
+}
+
+type MetricExtensionEnabledOnResourceArgs struct {
+	// The OCID of the resource on which Metric Extension is enabled
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+}
+
+func (MetricExtensionEnabledOnResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (i MetricExtensionEnabledOnResourceArgs) ToMetricExtensionEnabledOnResourceOutput() MetricExtensionEnabledOnResourceOutput {
+	return i.ToMetricExtensionEnabledOnResourceOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionEnabledOnResourceArgs) ToMetricExtensionEnabledOnResourceOutputWithContext(ctx context.Context) MetricExtensionEnabledOnResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionEnabledOnResourceOutput)
+}
+
+func (i MetricExtensionEnabledOnResourceArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionEnabledOnResource] {
+	return pulumix.Output[MetricExtensionEnabledOnResource]{
+		OutputState: i.ToMetricExtensionEnabledOnResourceOutputWithContext(ctx).OutputState,
+	}
+}
+
+// MetricExtensionEnabledOnResourceArrayInput is an input type that accepts MetricExtensionEnabledOnResourceArray and MetricExtensionEnabledOnResourceArrayOutput values.
+// You can construct a concrete instance of `MetricExtensionEnabledOnResourceArrayInput` via:
+//
+//	MetricExtensionEnabledOnResourceArray{ MetricExtensionEnabledOnResourceArgs{...} }
+type MetricExtensionEnabledOnResourceArrayInput interface {
+	pulumi.Input
+
+	ToMetricExtensionEnabledOnResourceArrayOutput() MetricExtensionEnabledOnResourceArrayOutput
+	ToMetricExtensionEnabledOnResourceArrayOutputWithContext(context.Context) MetricExtensionEnabledOnResourceArrayOutput
+}
+
+type MetricExtensionEnabledOnResourceArray []MetricExtensionEnabledOnResourceInput
+
+func (MetricExtensionEnabledOnResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (i MetricExtensionEnabledOnResourceArray) ToMetricExtensionEnabledOnResourceArrayOutput() MetricExtensionEnabledOnResourceArrayOutput {
+	return i.ToMetricExtensionEnabledOnResourceArrayOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionEnabledOnResourceArray) ToMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx context.Context) MetricExtensionEnabledOnResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionEnabledOnResourceArrayOutput)
+}
+
+func (i MetricExtensionEnabledOnResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionEnabledOnResource] {
+	return pulumix.Output[[]MetricExtensionEnabledOnResource]{
+		OutputState: i.ToMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MetricExtensionEnabledOnResourceOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionEnabledOnResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (o MetricExtensionEnabledOnResourceOutput) ToMetricExtensionEnabledOnResourceOutput() MetricExtensionEnabledOnResourceOutput {
+	return o
+}
+
+func (o MetricExtensionEnabledOnResourceOutput) ToMetricExtensionEnabledOnResourceOutputWithContext(ctx context.Context) MetricExtensionEnabledOnResourceOutput {
+	return o
+}
+
+func (o MetricExtensionEnabledOnResourceOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionEnabledOnResource] {
+	return pulumix.Output[MetricExtensionEnabledOnResource]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the resource on which Metric Extension is enabled
+func (o MetricExtensionEnabledOnResourceOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionEnabledOnResource) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+type MetricExtensionEnabledOnResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionEnabledOnResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (o MetricExtensionEnabledOnResourceArrayOutput) ToMetricExtensionEnabledOnResourceArrayOutput() MetricExtensionEnabledOnResourceArrayOutput {
+	return o
+}
+
+func (o MetricExtensionEnabledOnResourceArrayOutput) ToMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx context.Context) MetricExtensionEnabledOnResourceArrayOutput {
+	return o
+}
+
+func (o MetricExtensionEnabledOnResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionEnabledOnResource] {
+	return pulumix.Output[[]MetricExtensionEnabledOnResource]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MetricExtensionEnabledOnResourceArrayOutput) Index(i pulumi.IntInput) MetricExtensionEnabledOnResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MetricExtensionEnabledOnResource {
+		return vs[0].([]MetricExtensionEnabledOnResource)[vs[1].(int)]
+	}).(MetricExtensionEnabledOnResourceOutput)
+}
+
+type MetricExtensionMetricList struct {
+	// (Updatable) Compute Expression to calculate the value of this metric
+	ComputeExpression *string `pulumi:"computeExpression"`
+	// (Updatable) Data type of value of this metric
+	DataType string `pulumi:"dataType"`
+	// (Updatable) Display name of the metric.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Current metric need to be included as dimension or not
+	IsDimension *bool `pulumi:"isDimension"`
+	// (Updatable) Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+	IsHidden *bool `pulumi:"isHidden"`
+	// (Updatable) Metric category
+	MetricCategory *string `pulumi:"metricCategory"`
+	// (Updatable) Name of the script file
+	Name string `pulumi:"name"`
+	// (Updatable) Unit of metric value
+	Unit *string `pulumi:"unit"`
+}
+
+// MetricExtensionMetricListInput is an input type that accepts MetricExtensionMetricListArgs and MetricExtensionMetricListOutput values.
+// You can construct a concrete instance of `MetricExtensionMetricListInput` via:
+//
+//	MetricExtensionMetricListArgs{...}
+type MetricExtensionMetricListInput interface {
+	pulumi.Input
+
+	ToMetricExtensionMetricListOutput() MetricExtensionMetricListOutput
+	ToMetricExtensionMetricListOutputWithContext(context.Context) MetricExtensionMetricListOutput
+}
+
+type MetricExtensionMetricListArgs struct {
+	// (Updatable) Compute Expression to calculate the value of this metric
+	ComputeExpression pulumi.StringPtrInput `pulumi:"computeExpression"`
+	// (Updatable) Data type of value of this metric
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// (Updatable) Display name of the metric.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Current metric need to be included as dimension or not
+	IsDimension pulumi.BoolPtrInput `pulumi:"isDimension"`
+	// (Updatable) Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+	IsHidden pulumi.BoolPtrInput `pulumi:"isHidden"`
+	// (Updatable) Metric category
+	MetricCategory pulumi.StringPtrInput `pulumi:"metricCategory"`
+	// (Updatable) Name of the script file
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Unit of metric value
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
+}
+
+func (MetricExtensionMetricListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionMetricList)(nil)).Elem()
+}
+
+func (i MetricExtensionMetricListArgs) ToMetricExtensionMetricListOutput() MetricExtensionMetricListOutput {
+	return i.ToMetricExtensionMetricListOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionMetricListArgs) ToMetricExtensionMetricListOutputWithContext(ctx context.Context) MetricExtensionMetricListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMetricListOutput)
+}
+
+func (i MetricExtensionMetricListArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionMetricList] {
+	return pulumix.Output[MetricExtensionMetricList]{
+		OutputState: i.ToMetricExtensionMetricListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// MetricExtensionMetricListArrayInput is an input type that accepts MetricExtensionMetricListArray and MetricExtensionMetricListArrayOutput values.
+// You can construct a concrete instance of `MetricExtensionMetricListArrayInput` via:
+//
+//	MetricExtensionMetricListArray{ MetricExtensionMetricListArgs{...} }
+type MetricExtensionMetricListArrayInput interface {
+	pulumi.Input
+
+	ToMetricExtensionMetricListArrayOutput() MetricExtensionMetricListArrayOutput
+	ToMetricExtensionMetricListArrayOutputWithContext(context.Context) MetricExtensionMetricListArrayOutput
+}
+
+type MetricExtensionMetricListArray []MetricExtensionMetricListInput
+
+func (MetricExtensionMetricListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricExtensionMetricList)(nil)).Elem()
+}
+
+func (i MetricExtensionMetricListArray) ToMetricExtensionMetricListArrayOutput() MetricExtensionMetricListArrayOutput {
+	return i.ToMetricExtensionMetricListArrayOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionMetricListArray) ToMetricExtensionMetricListArrayOutputWithContext(ctx context.Context) MetricExtensionMetricListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMetricListArrayOutput)
+}
+
+func (i MetricExtensionMetricListArray) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionMetricList] {
+	return pulumix.Output[[]MetricExtensionMetricList]{
+		OutputState: i.ToMetricExtensionMetricListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MetricExtensionMetricListOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionMetricListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionMetricList)(nil)).Elem()
+}
+
+func (o MetricExtensionMetricListOutput) ToMetricExtensionMetricListOutput() MetricExtensionMetricListOutput {
+	return o
+}
+
+func (o MetricExtensionMetricListOutput) ToMetricExtensionMetricListOutputWithContext(ctx context.Context) MetricExtensionMetricListOutput {
+	return o
+}
+
+func (o MetricExtensionMetricListOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionMetricList] {
+	return pulumix.Output[MetricExtensionMetricList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Compute Expression to calculate the value of this metric
+func (o MetricExtensionMetricListOutput) ComputeExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) *string { return v.ComputeExpression }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Data type of value of this metric
+func (o MetricExtensionMetricListOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Display name of the metric.
+func (o MetricExtensionMetricListOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Current metric need to be included as dimension or not
+func (o MetricExtensionMetricListOutput) IsDimension() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) *bool { return v.IsDimension }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+func (o MetricExtensionMetricListOutput) IsHidden() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) *bool { return v.IsHidden }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Metric category
+func (o MetricExtensionMetricListOutput) MetricCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) *string { return v.MetricCategory }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the script file
+func (o MetricExtensionMetricListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Unit of metric value
+func (o MetricExtensionMetricListOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionMetricList) *string { return v.Unit }).(pulumi.StringPtrOutput)
+}
+
+type MetricExtensionMetricListArrayOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionMetricListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricExtensionMetricList)(nil)).Elem()
+}
+
+func (o MetricExtensionMetricListArrayOutput) ToMetricExtensionMetricListArrayOutput() MetricExtensionMetricListArrayOutput {
+	return o
+}
+
+func (o MetricExtensionMetricListArrayOutput) ToMetricExtensionMetricListArrayOutputWithContext(ctx context.Context) MetricExtensionMetricListArrayOutput {
+	return o
+}
+
+func (o MetricExtensionMetricListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionMetricList] {
+	return pulumix.Output[[]MetricExtensionMetricList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MetricExtensionMetricListArrayOutput) Index(i pulumi.IntInput) MetricExtensionMetricListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MetricExtensionMetricList {
+		return vs[0].([]MetricExtensionMetricList)[vs[1].(int)]
+	}).(MetricExtensionMetricListOutput)
+}
+
+type MetricExtensionQueryProperties struct {
+	// (Updatable) Arguments required by either command or script
+	Arguments *string `pulumi:"arguments"`
+	// (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+	AutoRowPrefix *string `pulumi:"autoRowPrefix"`
+	// (Updatable) Type of possible collection methods.
+	CollectionMethod string `pulumi:"collectionMethod"`
+	// (Updatable) OS command to execute without arguments
+	Command *string `pulumi:"command"`
+	// (Updatable) Character used to delimit multiple metric values in single line of output
+	Delimiter *string `pulumi:"delimiter"`
+	// (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+	IdentityMetric *string `pulumi:"identityMetric"`
+	// (Updatable) List of values and position of PL/SQL procedure IN parameters
+	InParamDetails []MetricExtensionQueryPropertiesInParamDetail `pulumi:"inParamDetails"`
+	// (Updatable) Indicates if Metric Service is enabled on server domain
+	IsMetricServiceEnabled *bool `pulumi:"isMetricServiceEnabled"`
+	// (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+	JmxAttributes *string `pulumi:"jmxAttributes"`
+	// (Updatable) JMX Managed Bean Query or Metric Service Table name
+	ManagedBeanQuery *string `pulumi:"managedBeanQuery"`
+	// (Updatable) Position and SQL Type of PL/SQL OUT parameter
+	OutParamDetails *MetricExtensionQueryPropertiesOutParamDetails `pulumi:"outParamDetails"`
+	// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	ScriptDetails *MetricExtensionQueryPropertiesScriptDetails `pulumi:"scriptDetails"`
+	// (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+	SqlDetails *MetricExtensionQueryPropertiesSqlDetails `pulumi:"sqlDetails"`
+	// (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+	SqlType *string `pulumi:"sqlType"`
+	// (Updatable) String prefix used to identify metric output of the OS Command
+	StartsWith *string `pulumi:"startsWith"`
+}
+
+// MetricExtensionQueryPropertiesInput is an input type that accepts MetricExtensionQueryPropertiesArgs and MetricExtensionQueryPropertiesOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesInput` via:
+//
+//	MetricExtensionQueryPropertiesArgs{...}
+type MetricExtensionQueryPropertiesInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesOutput() MetricExtensionQueryPropertiesOutput
+	ToMetricExtensionQueryPropertiesOutputWithContext(context.Context) MetricExtensionQueryPropertiesOutput
+}
+
+type MetricExtensionQueryPropertiesArgs struct {
+	// (Updatable) Arguments required by either command or script
+	Arguments pulumi.StringPtrInput `pulumi:"arguments"`
+	// (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+	AutoRowPrefix pulumi.StringPtrInput `pulumi:"autoRowPrefix"`
+	// (Updatable) Type of possible collection methods.
+	CollectionMethod pulumi.StringInput `pulumi:"collectionMethod"`
+	// (Updatable) OS command to execute without arguments
+	Command pulumi.StringPtrInput `pulumi:"command"`
+	// (Updatable) Character used to delimit multiple metric values in single line of output
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+	IdentityMetric pulumi.StringPtrInput `pulumi:"identityMetric"`
+	// (Updatable) List of values and position of PL/SQL procedure IN parameters
+	InParamDetails MetricExtensionQueryPropertiesInParamDetailArrayInput `pulumi:"inParamDetails"`
+	// (Updatable) Indicates if Metric Service is enabled on server domain
+	IsMetricServiceEnabled pulumi.BoolPtrInput `pulumi:"isMetricServiceEnabled"`
+	// (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+	JmxAttributes pulumi.StringPtrInput `pulumi:"jmxAttributes"`
+	// (Updatable) JMX Managed Bean Query or Metric Service Table name
+	ManagedBeanQuery pulumi.StringPtrInput `pulumi:"managedBeanQuery"`
+	// (Updatable) Position and SQL Type of PL/SQL OUT parameter
+	OutParamDetails MetricExtensionQueryPropertiesOutParamDetailsPtrInput `pulumi:"outParamDetails"`
+	// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	ScriptDetails MetricExtensionQueryPropertiesScriptDetailsPtrInput `pulumi:"scriptDetails"`
+	// (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+	SqlDetails MetricExtensionQueryPropertiesSqlDetailsPtrInput `pulumi:"sqlDetails"`
+	// (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+	SqlType pulumi.StringPtrInput `pulumi:"sqlType"`
+	// (Updatable) String prefix used to identify metric output of the OS Command
+	StartsWith pulumi.StringPtrInput `pulumi:"startsWith"`
+}
+
+func (MetricExtensionQueryPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryProperties)(nil)).Elem()
+}
+
+func (i MetricExtensionQueryPropertiesArgs) ToMetricExtensionQueryPropertiesOutput() MetricExtensionQueryPropertiesOutput {
+	return i.ToMetricExtensionQueryPropertiesOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesArgs) ToMetricExtensionQueryPropertiesOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutput)
+}
+
+func (i MetricExtensionQueryPropertiesArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryProperties] {
+	return pulumix.Output[MetricExtensionQueryProperties]{
+		OutputState: i.ToMetricExtensionQueryPropertiesOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MetricExtensionQueryPropertiesArgs) ToMetricExtensionQueryPropertiesPtrOutput() MetricExtensionQueryPropertiesPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesArgs) ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutput).ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx)
+}
+
+// MetricExtensionQueryPropertiesPtrInput is an input type that accepts MetricExtensionQueryPropertiesArgs, MetricExtensionQueryPropertiesPtr and MetricExtensionQueryPropertiesPtrOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesPtrInput` via:
+//
+//	        MetricExtensionQueryPropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type MetricExtensionQueryPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesPtrOutput() MetricExtensionQueryPropertiesPtrOutput
+	ToMetricExtensionQueryPropertiesPtrOutputWithContext(context.Context) MetricExtensionQueryPropertiesPtrOutput
+}
+
+type metricExtensionQueryPropertiesPtrType MetricExtensionQueryPropertiesArgs
+
+func MetricExtensionQueryPropertiesPtr(v *MetricExtensionQueryPropertiesArgs) MetricExtensionQueryPropertiesPtrInput {
+	return (*metricExtensionQueryPropertiesPtrType)(v)
+}
+
+func (*metricExtensionQueryPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryProperties)(nil)).Elem()
+}
+
+func (i *metricExtensionQueryPropertiesPtrType) ToMetricExtensionQueryPropertiesPtrOutput() MetricExtensionQueryPropertiesPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *metricExtensionQueryPropertiesPtrType) ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesPtrOutput)
+}
+
+func (i *metricExtensionQueryPropertiesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryProperties] {
+	return pulumix.Output[*MetricExtensionQueryProperties]{
+		OutputState: i.ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MetricExtensionQueryPropertiesOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryProperties)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesOutput) ToMetricExtensionQueryPropertiesOutput() MetricExtensionQueryPropertiesOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesOutput) ToMetricExtensionQueryPropertiesOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesOutput) ToMetricExtensionQueryPropertiesPtrOutput() MetricExtensionQueryPropertiesPtrOutput {
+	return o.ToMetricExtensionQueryPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o MetricExtensionQueryPropertiesOutput) ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MetricExtensionQueryProperties) *MetricExtensionQueryProperties {
+		return &v
+	}).(MetricExtensionQueryPropertiesPtrOutput)
+}
+
+func (o MetricExtensionQueryPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryProperties] {
+	return pulumix.Output[MetricExtensionQueryProperties]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Arguments required by either command or script
+func (o MetricExtensionQueryPropertiesOutput) Arguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.Arguments }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+func (o MetricExtensionQueryPropertiesOutput) AutoRowPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.AutoRowPrefix }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of possible collection methods.
+func (o MetricExtensionQueryPropertiesOutput) CollectionMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) string { return v.CollectionMethod }).(pulumi.StringOutput)
+}
+
+// (Updatable) OS command to execute without arguments
+func (o MetricExtensionQueryPropertiesOutput) Command() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.Command }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Character used to delimit multiple metric values in single line of output
+func (o MetricExtensionQueryPropertiesOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+func (o MetricExtensionQueryPropertiesOutput) IdentityMetric() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.IdentityMetric }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of values and position of PL/SQL procedure IN parameters
+func (o MetricExtensionQueryPropertiesOutput) InParamDetails() MetricExtensionQueryPropertiesInParamDetailArrayOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) []MetricExtensionQueryPropertiesInParamDetail {
+		return v.InParamDetails
+	}).(MetricExtensionQueryPropertiesInParamDetailArrayOutput)
+}
+
+// (Updatable) Indicates if Metric Service is enabled on server domain
+func (o MetricExtensionQueryPropertiesOutput) IsMetricServiceEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *bool { return v.IsMetricServiceEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+func (o MetricExtensionQueryPropertiesOutput) JmxAttributes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.JmxAttributes }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JMX Managed Bean Query or Metric Service Table name
+func (o MetricExtensionQueryPropertiesOutput) ManagedBeanQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.ManagedBeanQuery }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Position and SQL Type of PL/SQL OUT parameter
+func (o MetricExtensionQueryPropertiesOutput) OutParamDetails() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesOutParamDetails {
+		return v.OutParamDetails
+	}).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
+}
+
+// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+func (o MetricExtensionQueryPropertiesOutput) ScriptDetails() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesScriptDetails {
+		return v.ScriptDetails
+	}).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
+}
+
+// (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+func (o MetricExtensionQueryPropertiesOutput) SqlDetails() MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesSqlDetails { return v.SqlDetails }).(MetricExtensionQueryPropertiesSqlDetailsPtrOutput)
+}
+
+// (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+func (o MetricExtensionQueryPropertiesOutput) SqlType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.SqlType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) String prefix used to identify metric output of the OS Command
+func (o MetricExtensionQueryPropertiesOutput) StartsWith() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryProperties) *string { return v.StartsWith }).(pulumi.StringPtrOutput)
+}
+
+type MetricExtensionQueryPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryProperties)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesPtrOutput) ToMetricExtensionQueryPropertiesPtrOutput() MetricExtensionQueryPropertiesPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesPtrOutput) ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryProperties] {
+	return pulumix.Output[*MetricExtensionQueryProperties]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MetricExtensionQueryPropertiesPtrOutput) Elem() MetricExtensionQueryPropertiesOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) MetricExtensionQueryProperties {
+		if v != nil {
+			return *v
+		}
+		var ret MetricExtensionQueryProperties
+		return ret
+	}).(MetricExtensionQueryPropertiesOutput)
+}
+
+// (Updatable) Arguments required by either command or script
+func (o MetricExtensionQueryPropertiesPtrOutput) Arguments() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Arguments
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+func (o MetricExtensionQueryPropertiesPtrOutput) AutoRowPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRowPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of possible collection methods.
+func (o MetricExtensionQueryPropertiesPtrOutput) CollectionMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CollectionMethod
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OS command to execute without arguments
+func (o MetricExtensionQueryPropertiesPtrOutput) Command() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Command
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Character used to delimit multiple metric values in single line of output
+func (o MetricExtensionQueryPropertiesPtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+func (o MetricExtensionQueryPropertiesPtrOutput) IdentityMetric() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IdentityMetric
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of values and position of PL/SQL procedure IN parameters
+func (o MetricExtensionQueryPropertiesPtrOutput) InParamDetails() MetricExtensionQueryPropertiesInParamDetailArrayOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) []MetricExtensionQueryPropertiesInParamDetail {
+		if v == nil {
+			return nil
+		}
+		return v.InParamDetails
+	}).(MetricExtensionQueryPropertiesInParamDetailArrayOutput)
+}
+
+// (Updatable) Indicates if Metric Service is enabled on server domain
+func (o MetricExtensionQueryPropertiesPtrOutput) IsMetricServiceEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMetricServiceEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+func (o MetricExtensionQueryPropertiesPtrOutput) JmxAttributes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JmxAttributes
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JMX Managed Bean Query or Metric Service Table name
+func (o MetricExtensionQueryPropertiesPtrOutput) ManagedBeanQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ManagedBeanQuery
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Position and SQL Type of PL/SQL OUT parameter
+func (o MetricExtensionQueryPropertiesPtrOutput) OutParamDetails() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesOutParamDetails {
+		if v == nil {
+			return nil
+		}
+		return v.OutParamDetails
+	}).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
+}
+
+// (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+func (o MetricExtensionQueryPropertiesPtrOutput) ScriptDetails() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesScriptDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptDetails
+	}).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
+}
+
+// (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+func (o MetricExtensionQueryPropertiesPtrOutput) SqlDetails() MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *MetricExtensionQueryPropertiesSqlDetails {
+		if v == nil {
+			return nil
+		}
+		return v.SqlDetails
+	}).(MetricExtensionQueryPropertiesSqlDetailsPtrOutput)
+}
+
+// (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+func (o MetricExtensionQueryPropertiesPtrOutput) SqlType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) String prefix used to identify metric output of the OS Command
+func (o MetricExtensionQueryPropertiesPtrOutput) StartsWith() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StartsWith
+	}).(pulumi.StringPtrOutput)
+}
+
+type MetricExtensionQueryPropertiesInParamDetail struct {
+	// (Updatable) Position of IN parameter
+	InParamPosition int `pulumi:"inParamPosition"`
+	// (Updatable) Value of IN parameter
+	InParamValue string `pulumi:"inParamValue"`
+}
+
+// MetricExtensionQueryPropertiesInParamDetailInput is an input type that accepts MetricExtensionQueryPropertiesInParamDetailArgs and MetricExtensionQueryPropertiesInParamDetailOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesInParamDetailInput` via:
+//
+//	MetricExtensionQueryPropertiesInParamDetailArgs{...}
+type MetricExtensionQueryPropertiesInParamDetailInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesInParamDetailOutput() MetricExtensionQueryPropertiesInParamDetailOutput
+	ToMetricExtensionQueryPropertiesInParamDetailOutputWithContext(context.Context) MetricExtensionQueryPropertiesInParamDetailOutput
+}
+
+type MetricExtensionQueryPropertiesInParamDetailArgs struct {
+	// (Updatable) Position of IN parameter
+	InParamPosition pulumi.IntInput `pulumi:"inParamPosition"`
+	// (Updatable) Value of IN parameter
+	InParamValue pulumi.StringInput `pulumi:"inParamValue"`
+}
+
+func (MetricExtensionQueryPropertiesInParamDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesInParamDetail)(nil)).Elem()
+}
+
+func (i MetricExtensionQueryPropertiesInParamDetailArgs) ToMetricExtensionQueryPropertiesInParamDetailOutput() MetricExtensionQueryPropertiesInParamDetailOutput {
+	return i.ToMetricExtensionQueryPropertiesInParamDetailOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesInParamDetailArgs) ToMetricExtensionQueryPropertiesInParamDetailOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesInParamDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesInParamDetailOutput)
+}
+
+func (i MetricExtensionQueryPropertiesInParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesInParamDetail] {
+	return pulumix.Output[MetricExtensionQueryPropertiesInParamDetail]{
+		OutputState: i.ToMetricExtensionQueryPropertiesInParamDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// MetricExtensionQueryPropertiesInParamDetailArrayInput is an input type that accepts MetricExtensionQueryPropertiesInParamDetailArray and MetricExtensionQueryPropertiesInParamDetailArrayOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesInParamDetailArrayInput` via:
+//
+//	MetricExtensionQueryPropertiesInParamDetailArray{ MetricExtensionQueryPropertiesInParamDetailArgs{...} }
+type MetricExtensionQueryPropertiesInParamDetailArrayInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesInParamDetailArrayOutput() MetricExtensionQueryPropertiesInParamDetailArrayOutput
+	ToMetricExtensionQueryPropertiesInParamDetailArrayOutputWithContext(context.Context) MetricExtensionQueryPropertiesInParamDetailArrayOutput
+}
+
+type MetricExtensionQueryPropertiesInParamDetailArray []MetricExtensionQueryPropertiesInParamDetailInput
+
+func (MetricExtensionQueryPropertiesInParamDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricExtensionQueryPropertiesInParamDetail)(nil)).Elem()
+}
+
+func (i MetricExtensionQueryPropertiesInParamDetailArray) ToMetricExtensionQueryPropertiesInParamDetailArrayOutput() MetricExtensionQueryPropertiesInParamDetailArrayOutput {
+	return i.ToMetricExtensionQueryPropertiesInParamDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesInParamDetailArray) ToMetricExtensionQueryPropertiesInParamDetailArrayOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesInParamDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesInParamDetailArrayOutput)
+}
+
+func (i MetricExtensionQueryPropertiesInParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail] {
+	return pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail]{
+		OutputState: i.ToMetricExtensionQueryPropertiesInParamDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MetricExtensionQueryPropertiesInParamDetailOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesInParamDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesInParamDetail)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesInParamDetailOutput) ToMetricExtensionQueryPropertiesInParamDetailOutput() MetricExtensionQueryPropertiesInParamDetailOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesInParamDetailOutput) ToMetricExtensionQueryPropertiesInParamDetailOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesInParamDetailOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesInParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesInParamDetail] {
+	return pulumix.Output[MetricExtensionQueryPropertiesInParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Position of IN parameter
+func (o MetricExtensionQueryPropertiesInParamDetailOutput) InParamPosition() pulumi.IntOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesInParamDetail) int { return v.InParamPosition }).(pulumi.IntOutput)
+}
+
+// (Updatable) Value of IN parameter
+func (o MetricExtensionQueryPropertiesInParamDetailOutput) InParamValue() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesInParamDetail) string { return v.InParamValue }).(pulumi.StringOutput)
+}
+
+type MetricExtensionQueryPropertiesInParamDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesInParamDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetricExtensionQueryPropertiesInParamDetail)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) ToMetricExtensionQueryPropertiesInParamDetailArrayOutput() MetricExtensionQueryPropertiesInParamDetailArrayOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) ToMetricExtensionQueryPropertiesInParamDetailArrayOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesInParamDetailArrayOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail] {
+	return pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) Index(i pulumi.IntInput) MetricExtensionQueryPropertiesInParamDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MetricExtensionQueryPropertiesInParamDetail {
+		return vs[0].([]MetricExtensionQueryPropertiesInParamDetail)[vs[1].(int)]
+	}).(MetricExtensionQueryPropertiesInParamDetailOutput)
+}
+
+type MetricExtensionQueryPropertiesOutParamDetails struct {
+	// (Updatable) Position of PL/SQL procedure OUT parameter
+	OutParamPosition int `pulumi:"outParamPosition"`
+	// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+	OutParamType string `pulumi:"outParamType"`
+}
+
+// MetricExtensionQueryPropertiesOutParamDetailsInput is an input type that accepts MetricExtensionQueryPropertiesOutParamDetailsArgs and MetricExtensionQueryPropertiesOutParamDetailsOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesOutParamDetailsInput` via:
+//
+//	MetricExtensionQueryPropertiesOutParamDetailsArgs{...}
+type MetricExtensionQueryPropertiesOutParamDetailsInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesOutParamDetailsOutput() MetricExtensionQueryPropertiesOutParamDetailsOutput
+	ToMetricExtensionQueryPropertiesOutParamDetailsOutputWithContext(context.Context) MetricExtensionQueryPropertiesOutParamDetailsOutput
+}
+
+type MetricExtensionQueryPropertiesOutParamDetailsArgs struct {
+	// (Updatable) Position of PL/SQL procedure OUT parameter
+	OutParamPosition pulumi.IntInput `pulumi:"outParamPosition"`
+	// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+	OutParamType pulumi.StringInput `pulumi:"outParamType"`
+}
+
+func (MetricExtensionQueryPropertiesOutParamDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesOutParamDetails)(nil)).Elem()
+}
+
+func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToMetricExtensionQueryPropertiesOutParamDetailsOutput() MetricExtensionQueryPropertiesOutParamDetailsOutput {
+	return i.ToMetricExtensionQueryPropertiesOutParamDetailsOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToMetricExtensionQueryPropertiesOutParamDetailsOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutParamDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutParamDetailsOutput)
+}
+
+func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails] {
+	return pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails]{
+		OutputState: i.ToMetricExtensionQueryPropertiesOutParamDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutput() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutParamDetailsOutput).ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx)
+}
+
+// MetricExtensionQueryPropertiesOutParamDetailsPtrInput is an input type that accepts MetricExtensionQueryPropertiesOutParamDetailsArgs, MetricExtensionQueryPropertiesOutParamDetailsPtr and MetricExtensionQueryPropertiesOutParamDetailsPtrOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesOutParamDetailsPtrInput` via:
+//
+//	        MetricExtensionQueryPropertiesOutParamDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MetricExtensionQueryPropertiesOutParamDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutput() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput
+	ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(context.Context) MetricExtensionQueryPropertiesOutParamDetailsPtrOutput
+}
+
+type metricExtensionQueryPropertiesOutParamDetailsPtrType MetricExtensionQueryPropertiesOutParamDetailsArgs
+
+func MetricExtensionQueryPropertiesOutParamDetailsPtr(v *MetricExtensionQueryPropertiesOutParamDetailsArgs) MetricExtensionQueryPropertiesOutParamDetailsPtrInput {
+	return (*metricExtensionQueryPropertiesOutParamDetailsPtrType)(v)
+}
+
+func (*metricExtensionQueryPropertiesOutParamDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryPropertiesOutParamDetails)(nil)).Elem()
+}
+
+func (i *metricExtensionQueryPropertiesOutParamDetailsPtrType) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutput() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *metricExtensionQueryPropertiesOutParamDetailsPtrType) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
+}
+
+func (i *metricExtensionQueryPropertiesOutParamDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails] {
+	return pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails]{
+		OutputState: i.ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MetricExtensionQueryPropertiesOutParamDetailsOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesOutParamDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesOutParamDetails)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToMetricExtensionQueryPropertiesOutParamDetailsOutput() MetricExtensionQueryPropertiesOutParamDetailsOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToMetricExtensionQueryPropertiesOutParamDetailsOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutParamDetailsOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutput() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return o.ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MetricExtensionQueryPropertiesOutParamDetails) *MetricExtensionQueryPropertiesOutParamDetails {
+		return &v
+	}).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails] {
+	return pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Position of PL/SQL procedure OUT parameter
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) OutParamPosition() pulumi.IntOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesOutParamDetails) int { return v.OutParamPosition }).(pulumi.IntOutput)
+}
+
+// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) OutParamType() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesOutParamDetails) string { return v.OutParamType }).(pulumi.StringOutput)
+}
+
+type MetricExtensionQueryPropertiesOutParamDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryPropertiesOutParamDetails)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutput() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails] {
+	return pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) Elem() MetricExtensionQueryPropertiesOutParamDetailsOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesOutParamDetails) MetricExtensionQueryPropertiesOutParamDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MetricExtensionQueryPropertiesOutParamDetails
+		return ret
+	}).(MetricExtensionQueryPropertiesOutParamDetailsOutput)
+}
+
+// (Updatable) Position of PL/SQL procedure OUT parameter
+func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamPosition() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesOutParamDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.OutParamPosition
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) SQL Type of PL/SQL procedure OUT parameter
+func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesOutParamDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OutParamType
+	}).(pulumi.StringPtrOutput)
+}
+
+type MetricExtensionQueryPropertiesScriptDetails struct {
+	// (Updatable) Sql statement or script file content as base64 encoded string
+	Content string `pulumi:"content"`
+	// (Updatable) Name of the script file
+	Name string `pulumi:"name"`
+}
+
+// MetricExtensionQueryPropertiesScriptDetailsInput is an input type that accepts MetricExtensionQueryPropertiesScriptDetailsArgs and MetricExtensionQueryPropertiesScriptDetailsOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesScriptDetailsInput` via:
+//
+//	MetricExtensionQueryPropertiesScriptDetailsArgs{...}
+type MetricExtensionQueryPropertiesScriptDetailsInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesScriptDetailsOutput() MetricExtensionQueryPropertiesScriptDetailsOutput
+	ToMetricExtensionQueryPropertiesScriptDetailsOutputWithContext(context.Context) MetricExtensionQueryPropertiesScriptDetailsOutput
+}
+
+type MetricExtensionQueryPropertiesScriptDetailsArgs struct {
+	// (Updatable) Sql statement or script file content as base64 encoded string
+	Content pulumi.StringInput `pulumi:"content"`
+	// (Updatable) Name of the script file
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (MetricExtensionQueryPropertiesScriptDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesScriptDetails)(nil)).Elem()
+}
+
+func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToMetricExtensionQueryPropertiesScriptDetailsOutput() MetricExtensionQueryPropertiesScriptDetailsOutput {
+	return i.ToMetricExtensionQueryPropertiesScriptDetailsOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToMetricExtensionQueryPropertiesScriptDetailsOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesScriptDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesScriptDetailsOutput)
+}
+
+func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesScriptDetails] {
+	return pulumix.Output[MetricExtensionQueryPropertiesScriptDetails]{
+		OutputState: i.ToMetricExtensionQueryPropertiesScriptDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutput() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesScriptDetailsOutput).ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx)
+}
+
+// MetricExtensionQueryPropertiesScriptDetailsPtrInput is an input type that accepts MetricExtensionQueryPropertiesScriptDetailsArgs, MetricExtensionQueryPropertiesScriptDetailsPtr and MetricExtensionQueryPropertiesScriptDetailsPtrOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesScriptDetailsPtrInput` via:
+//
+//	        MetricExtensionQueryPropertiesScriptDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MetricExtensionQueryPropertiesScriptDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesScriptDetailsPtrOutput() MetricExtensionQueryPropertiesScriptDetailsPtrOutput
+	ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(context.Context) MetricExtensionQueryPropertiesScriptDetailsPtrOutput
+}
+
+type metricExtensionQueryPropertiesScriptDetailsPtrType MetricExtensionQueryPropertiesScriptDetailsArgs
+
+func MetricExtensionQueryPropertiesScriptDetailsPtr(v *MetricExtensionQueryPropertiesScriptDetailsArgs) MetricExtensionQueryPropertiesScriptDetailsPtrInput {
+	return (*metricExtensionQueryPropertiesScriptDetailsPtrType)(v)
+}
+
+func (*metricExtensionQueryPropertiesScriptDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryPropertiesScriptDetails)(nil)).Elem()
+}
+
+func (i *metricExtensionQueryPropertiesScriptDetailsPtrType) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutput() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *metricExtensionQueryPropertiesScriptDetailsPtrType) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
+}
+
+func (i *metricExtensionQueryPropertiesScriptDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails] {
+	return pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails]{
+		OutputState: i.ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MetricExtensionQueryPropertiesScriptDetailsOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesScriptDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesScriptDetails)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToMetricExtensionQueryPropertiesScriptDetailsOutput() MetricExtensionQueryPropertiesScriptDetailsOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToMetricExtensionQueryPropertiesScriptDetailsOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesScriptDetailsOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutput() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return o.ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MetricExtensionQueryPropertiesScriptDetails) *MetricExtensionQueryPropertiesScriptDetails {
+		return &v
+	}).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesScriptDetails] {
+	return pulumix.Output[MetricExtensionQueryPropertiesScriptDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Sql statement or script file content as base64 encoded string
+func (o MetricExtensionQueryPropertiesScriptDetailsOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesScriptDetails) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// (Updatable) Name of the script file
+func (o MetricExtensionQueryPropertiesScriptDetailsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesScriptDetails) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type MetricExtensionQueryPropertiesScriptDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesScriptDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryPropertiesScriptDetails)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutput() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails] {
+	return pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Elem() MetricExtensionQueryPropertiesScriptDetailsOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesScriptDetails) MetricExtensionQueryPropertiesScriptDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MetricExtensionQueryPropertiesScriptDetails
+		return ret
+	}).(MetricExtensionQueryPropertiesScriptDetailsOutput)
+}
+
+// (Updatable) Sql statement or script file content as base64 encoded string
+func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesScriptDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the script file
+func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesScriptDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type MetricExtensionQueryPropertiesSqlDetails struct {
+	// (Updatable) Sql statement or script file content as base64 encoded string
+	Content string `pulumi:"content"`
+	// (Updatable) If a script needs to be executed, then provide file name of the script
+	ScriptFileName *string `pulumi:"scriptFileName"`
+}
+
+// MetricExtensionQueryPropertiesSqlDetailsInput is an input type that accepts MetricExtensionQueryPropertiesSqlDetailsArgs and MetricExtensionQueryPropertiesSqlDetailsOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesSqlDetailsInput` via:
+//
+//	MetricExtensionQueryPropertiesSqlDetailsArgs{...}
+type MetricExtensionQueryPropertiesSqlDetailsInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesSqlDetailsOutput() MetricExtensionQueryPropertiesSqlDetailsOutput
+	ToMetricExtensionQueryPropertiesSqlDetailsOutputWithContext(context.Context) MetricExtensionQueryPropertiesSqlDetailsOutput
+}
+
+type MetricExtensionQueryPropertiesSqlDetailsArgs struct {
+	// (Updatable) Sql statement or script file content as base64 encoded string
+	Content pulumi.StringInput `pulumi:"content"`
+	// (Updatable) If a script needs to be executed, then provide file name of the script
+	ScriptFileName pulumi.StringPtrInput `pulumi:"scriptFileName"`
+}
+
+func (MetricExtensionQueryPropertiesSqlDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesSqlDetails)(nil)).Elem()
+}
+
+func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToMetricExtensionQueryPropertiesSqlDetailsOutput() MetricExtensionQueryPropertiesSqlDetailsOutput {
+	return i.ToMetricExtensionQueryPropertiesSqlDetailsOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToMetricExtensionQueryPropertiesSqlDetailsOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesSqlDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesSqlDetailsOutput)
+}
+
+func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesSqlDetails] {
+	return pulumix.Output[MetricExtensionQueryPropertiesSqlDetails]{
+		OutputState: i.ToMetricExtensionQueryPropertiesSqlDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutput() MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesSqlDetailsOutput).ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx)
+}
+
+// MetricExtensionQueryPropertiesSqlDetailsPtrInput is an input type that accepts MetricExtensionQueryPropertiesSqlDetailsArgs, MetricExtensionQueryPropertiesSqlDetailsPtr and MetricExtensionQueryPropertiesSqlDetailsPtrOutput values.
+// You can construct a concrete instance of `MetricExtensionQueryPropertiesSqlDetailsPtrInput` via:
+//
+//	        MetricExtensionQueryPropertiesSqlDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MetricExtensionQueryPropertiesSqlDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMetricExtensionQueryPropertiesSqlDetailsPtrOutput() MetricExtensionQueryPropertiesSqlDetailsPtrOutput
+	ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(context.Context) MetricExtensionQueryPropertiesSqlDetailsPtrOutput
+}
+
+type metricExtensionQueryPropertiesSqlDetailsPtrType MetricExtensionQueryPropertiesSqlDetailsArgs
+
+func MetricExtensionQueryPropertiesSqlDetailsPtr(v *MetricExtensionQueryPropertiesSqlDetailsArgs) MetricExtensionQueryPropertiesSqlDetailsPtrInput {
+	return (*metricExtensionQueryPropertiesSqlDetailsPtrType)(v)
+}
+
+func (*metricExtensionQueryPropertiesSqlDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryPropertiesSqlDetails)(nil)).Elem()
+}
+
+func (i *metricExtensionQueryPropertiesSqlDetailsPtrType) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutput() MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return i.ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *metricExtensionQueryPropertiesSqlDetailsPtrType) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesSqlDetailsPtrOutput)
+}
+
+func (i *metricExtensionQueryPropertiesSqlDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails] {
+	return pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails]{
+		OutputState: i.ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MetricExtensionQueryPropertiesSqlDetailsOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesSqlDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetricExtensionQueryPropertiesSqlDetails)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ToMetricExtensionQueryPropertiesSqlDetailsOutput() MetricExtensionQueryPropertiesSqlDetailsOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ToMetricExtensionQueryPropertiesSqlDetailsOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesSqlDetailsOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutput() MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return o.ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MetricExtensionQueryPropertiesSqlDetails) *MetricExtensionQueryPropertiesSqlDetails {
+		return &v
+	}).(MetricExtensionQueryPropertiesSqlDetailsPtrOutput)
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesSqlDetails] {
+	return pulumix.Output[MetricExtensionQueryPropertiesSqlDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Sql statement or script file content as base64 encoded string
+func (o MetricExtensionQueryPropertiesSqlDetailsOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesSqlDetails) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// (Updatable) If a script needs to be executed, then provide file name of the script
+func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ScriptFileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetricExtensionQueryPropertiesSqlDetails) *string { return v.ScriptFileName }).(pulumi.StringPtrOutput)
+}
+
+type MetricExtensionQueryPropertiesSqlDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MetricExtensionQueryPropertiesSqlDetails)(nil)).Elem()
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutput() MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
+	return o
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails] {
+	return pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) Elem() MetricExtensionQueryPropertiesSqlDetailsOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesSqlDetails) MetricExtensionQueryPropertiesSqlDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MetricExtensionQueryPropertiesSqlDetails
+		return ret
+	}).(MetricExtensionQueryPropertiesSqlDetailsOutput)
+}
+
+// (Updatable) Sql statement or script file content as base64 encoded string
+func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesSqlDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If a script needs to be executed, then provide file name of the script
+func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ScriptFileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionQueryPropertiesSqlDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptFileName
+	}).(pulumi.StringPtrOutput)
 }
 
 type MonitoredResourceAdditionalAlias struct {
@@ -2742,6 +4169,684 @@ func (o MonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) Monitored
 	}).(MonitoredResourcePropertyOutput)
 }
 
+type MonitoredResourceTaskTaskDetails struct {
+	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+	AvailabilityProxyMetricCollectionInterval *int `pulumi:"availabilityProxyMetricCollectionInterval"`
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
+	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+	Namespace string `pulumi:"namespace"`
+	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// Source from where the metrics pushed to telemetry. Possible values:
+	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	Source string `pulumi:"source"`
+	// Task type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type string `pulumi:"type"`
+}
+
+// MonitoredResourceTaskTaskDetailsInput is an input type that accepts MonitoredResourceTaskTaskDetailsArgs and MonitoredResourceTaskTaskDetailsOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsInput` via:
+//
+//	MonitoredResourceTaskTaskDetailsArgs{...}
+type MonitoredResourceTaskTaskDetailsInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsOutput() MonitoredResourceTaskTaskDetailsOutput
+	ToMonitoredResourceTaskTaskDetailsOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsOutput
+}
+
+type MonitoredResourceTaskTaskDetailsArgs struct {
+	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+	AvailabilityProxyMetricCollectionInterval pulumi.IntPtrInput `pulumi:"availabilityProxyMetricCollectionInterval"`
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
+	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// Source from where the metrics pushed to telemetry. Possible values:
+	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Task type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MonitoredResourceTaskTaskDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetails)(nil)).Elem()
+}
+
+func (i MonitoredResourceTaskTaskDetailsArgs) ToMonitoredResourceTaskTaskDetailsOutput() MonitoredResourceTaskTaskDetailsOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsArgs) ToMonitoredResourceTaskTaskDetailsOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsOutput)
+}
+
+func (i MonitoredResourceTaskTaskDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTaskTaskDetails] {
+	return pulumix.Output[MonitoredResourceTaskTaskDetails]{
+		OutputState: i.ToMonitoredResourceTaskTaskDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MonitoredResourceTaskTaskDetailsArgs) ToMonitoredResourceTaskTaskDetailsPtrOutput() MonitoredResourceTaskTaskDetailsPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTaskTaskDetailsArgs) ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsOutput).ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTaskTaskDetailsPtrInput is an input type that accepts MonitoredResourceTaskTaskDetailsArgs, MonitoredResourceTaskTaskDetailsPtr and MonitoredResourceTaskTaskDetailsPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTaskTaskDetailsPtrInput` via:
+//
+//	        MonitoredResourceTaskTaskDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTaskTaskDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTaskTaskDetailsPtrOutput() MonitoredResourceTaskTaskDetailsPtrOutput
+	ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(context.Context) MonitoredResourceTaskTaskDetailsPtrOutput
+}
+
+type monitoredResourceTaskTaskDetailsPtrType MonitoredResourceTaskTaskDetailsArgs
+
+func MonitoredResourceTaskTaskDetailsPtr(v *MonitoredResourceTaskTaskDetailsArgs) MonitoredResourceTaskTaskDetailsPtrInput {
+	return (*monitoredResourceTaskTaskDetailsPtrType)(v)
+}
+
+func (*monitoredResourceTaskTaskDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetails)(nil)).Elem()
+}
+
+func (i *monitoredResourceTaskTaskDetailsPtrType) ToMonitoredResourceTaskTaskDetailsPtrOutput() MonitoredResourceTaskTaskDetailsPtrOutput {
+	return i.ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTaskTaskDetailsPtrType) ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsPtrOutput)
+}
+
+func (i *monitoredResourceTaskTaskDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTaskTaskDetails] {
+	return pulumix.Output[*MonitoredResourceTaskTaskDetails]{
+		OutputState: i.ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MonitoredResourceTaskTaskDetailsOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTaskTaskDetails)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsOutput) ToMonitoredResourceTaskTaskDetailsOutput() MonitoredResourceTaskTaskDetailsOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsOutput) ToMonitoredResourceTaskTaskDetailsOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsOutput) ToMonitoredResourceTaskTaskDetailsPtrOutput() MonitoredResourceTaskTaskDetailsPtrOutput {
+	return o.ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTaskTaskDetailsOutput) ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetails) *MonitoredResourceTaskTaskDetails {
+		return &v
+	}).(MonitoredResourceTaskTaskDetailsPtrOutput)
+}
+
+func (o MonitoredResourceTaskTaskDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTaskTaskDetails] {
+	return pulumix.Output[MonitoredResourceTaskTaskDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+func (o MonitoredResourceTaskTaskDetailsOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *int { return v.AvailabilityProxyMetricCollectionInterval }).(pulumi.IntPtrOutput)
+}
+
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+func (o MonitoredResourceTaskTaskDetailsOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
+}
+
+// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+func (o MonitoredResourceTaskTaskDetailsOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+func (o MonitoredResourceTaskTaskDetailsOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+// Source from where the metrics pushed to telemetry. Possible values:
+// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+func (o MonitoredResourceTaskTaskDetailsOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// Task type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MonitoredResourceTaskTaskDetailsOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MonitoredResourceTaskTaskDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTaskTaskDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTaskTaskDetails)(nil)).Elem()
+}
+
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ToMonitoredResourceTaskTaskDetailsPtrOutput() MonitoredResourceTaskTaskDetailsPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTaskTaskDetails] {
+	return pulumix.Output[*MonitoredResourceTaskTaskDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) Elem() MonitoredResourceTaskTaskDetailsOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) MonitoredResourceTaskTaskDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTaskTaskDetails
+		return ret
+	}).(MonitoredResourceTaskTaskDetailsOutput)
+}
+
+// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AvailabilityProxyMetricCollectionInterval
+	}).(pulumi.IntPtrOutput)
+}
+
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AvailabilityProxyMetrics
+	}).(pulumi.StringArrayOutput)
+}
+
+// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// Source from where the metrics pushed to telemetry. Possible values:
+// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Source
+	}).(pulumi.StringPtrOutput)
+}
+
+// Task type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type MonitoredResourceTypeMetadata struct {
+	// (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+	AgentProperties []string `pulumi:"agentProperties"`
+	// (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+	// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+	Format string `pulumi:"format"`
+	// (Updatable) List of required properties for resource type.
+	RequiredProperties []string `pulumi:"requiredProperties"`
+	// (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+	UniquePropertySets []MonitoredResourceTypeMetadataUniquePropertySet `pulumi:"uniquePropertySets"`
+	// (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+	ValidPropertiesForCreates []string `pulumi:"validPropertiesForCreates"`
+	// (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
+	// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+	ValidPropertyValues map[string]interface{} `pulumi:"validPropertyValues"`
+}
+
+// MonitoredResourceTypeMetadataInput is an input type that accepts MonitoredResourceTypeMetadataArgs and MonitoredResourceTypeMetadataOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeMetadataInput` via:
+//
+//	MonitoredResourceTypeMetadataArgs{...}
+type MonitoredResourceTypeMetadataInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeMetadataOutput() MonitoredResourceTypeMetadataOutput
+	ToMonitoredResourceTypeMetadataOutputWithContext(context.Context) MonitoredResourceTypeMetadataOutput
+}
+
+type MonitoredResourceTypeMetadataArgs struct {
+	// (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+	AgentProperties pulumi.StringArrayInput `pulumi:"agentProperties"`
+	// (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+	// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+	Format pulumi.StringInput `pulumi:"format"`
+	// (Updatable) List of required properties for resource type.
+	RequiredProperties pulumi.StringArrayInput `pulumi:"requiredProperties"`
+	// (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+	UniquePropertySets MonitoredResourceTypeMetadataUniquePropertySetArrayInput `pulumi:"uniquePropertySets"`
+	// (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+	ValidPropertiesForCreates pulumi.StringArrayInput `pulumi:"validPropertiesForCreates"`
+	// (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
+	// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+	ValidPropertyValues pulumi.MapInput `pulumi:"validPropertyValues"`
+}
+
+func (MonitoredResourceTypeMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeMetadataArgs) ToMonitoredResourceTypeMetadataOutput() MonitoredResourceTypeMetadataOutput {
+	return i.ToMonitoredResourceTypeMetadataOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeMetadataArgs) ToMonitoredResourceTypeMetadataOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataOutput)
+}
+
+func (i MonitoredResourceTypeMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadata] {
+	return pulumix.Output[MonitoredResourceTypeMetadata]{
+		OutputState: i.ToMonitoredResourceTypeMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MonitoredResourceTypeMetadataArgs) ToMonitoredResourceTypeMetadataPtrOutput() MonitoredResourceTypeMetadataPtrOutput {
+	return i.ToMonitoredResourceTypeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeMetadataArgs) ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataOutput).ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx)
+}
+
+// MonitoredResourceTypeMetadataPtrInput is an input type that accepts MonitoredResourceTypeMetadataArgs, MonitoredResourceTypeMetadataPtr and MonitoredResourceTypeMetadataPtrOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeMetadataPtrInput` via:
+//
+//	        MonitoredResourceTypeMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type MonitoredResourceTypeMetadataPtrInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeMetadataPtrOutput() MonitoredResourceTypeMetadataPtrOutput
+	ToMonitoredResourceTypeMetadataPtrOutputWithContext(context.Context) MonitoredResourceTypeMetadataPtrOutput
+}
+
+type monitoredResourceTypeMetadataPtrType MonitoredResourceTypeMetadataArgs
+
+func MonitoredResourceTypeMetadataPtr(v *MonitoredResourceTypeMetadataArgs) MonitoredResourceTypeMetadataPtrInput {
+	return (*monitoredResourceTypeMetadataPtrType)(v)
+}
+
+func (*monitoredResourceTypeMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (i *monitoredResourceTypeMetadataPtrType) ToMonitoredResourceTypeMetadataPtrOutput() MonitoredResourceTypeMetadataPtrOutput {
+	return i.ToMonitoredResourceTypeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *monitoredResourceTypeMetadataPtrType) ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataPtrOutput)
+}
+
+func (i *monitoredResourceTypeMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTypeMetadata] {
+	return pulumix.Output[*MonitoredResourceTypeMetadata]{
+		OutputState: i.ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MonitoredResourceTypeMetadataOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeMetadataOutput) ToMonitoredResourceTypeMetadataOutput() MonitoredResourceTypeMetadataOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataOutput) ToMonitoredResourceTypeMetadataOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataOutput) ToMonitoredResourceTypeMetadataPtrOutput() MonitoredResourceTypeMetadataPtrOutput {
+	return o.ToMonitoredResourceTypeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o MonitoredResourceTypeMetadataOutput) ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTypeMetadata) *MonitoredResourceTypeMetadata {
+		return &v
+	}).(MonitoredResourceTypeMetadataPtrOutput)
+}
+
+func (o MonitoredResourceTypeMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadata] {
+	return pulumix.Output[MonitoredResourceTypeMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+func (o MonitoredResourceTypeMetadataOutput) AgentProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) []string { return v.AgentProperties }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+func (o MonitoredResourceTypeMetadataOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) string { return v.Format }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of required properties for resource type.
+func (o MonitoredResourceTypeMetadataOutput) RequiredProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) []string { return v.RequiredProperties }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+func (o MonitoredResourceTypeMetadataOutput) UniquePropertySets() MonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) []MonitoredResourceTypeMetadataUniquePropertySet {
+		return v.UniquePropertySets
+	}).(MonitoredResourceTypeMetadataUniquePropertySetArrayOutput)
+}
+
+// (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+func (o MonitoredResourceTypeMetadataOutput) ValidPropertiesForCreates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) []string { return v.ValidPropertiesForCreates }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+func (o MonitoredResourceTypeMetadataOutput) ValidPropertiesForUpdates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) []string { return v.ValidPropertiesForUpdates }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+func (o MonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.MapOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) map[string]interface{} { return v.ValidPropertyValues }).(pulumi.MapOutput)
+}
+
+type MonitoredResourceTypeMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeMetadataPtrOutput) ToMonitoredResourceTypeMetadataPtrOutput() MonitoredResourceTypeMetadataPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataPtrOutput) ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataPtrOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTypeMetadata] {
+	return pulumix.Output[*MonitoredResourceTypeMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MonitoredResourceTypeMetadataPtrOutput) Elem() MonitoredResourceTypeMetadataOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) MonitoredResourceTypeMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret MonitoredResourceTypeMetadata
+		return ret
+	}).(MonitoredResourceTypeMetadataOutput)
+}
+
+// (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+func (o MonitoredResourceTypeMetadataPtrOutput) AgentProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AgentProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+func (o MonitoredResourceTypeMetadataPtrOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Format
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of required properties for resource type.
+func (o MonitoredResourceTypeMetadataPtrOutput) RequiredProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.RequiredProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+func (o MonitoredResourceTypeMetadataPtrOutput) UniquePropertySets() MonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) []MonitoredResourceTypeMetadataUniquePropertySet {
+		if v == nil {
+			return nil
+		}
+		return v.UniquePropertySets
+	}).(MonitoredResourceTypeMetadataUniquePropertySetArrayOutput)
+}
+
+// (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+func (o MonitoredResourceTypeMetadataPtrOutput) ValidPropertiesForCreates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ValidPropertiesForCreates
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+func (o MonitoredResourceTypeMetadataPtrOutput) ValidPropertiesForUpdates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ValidPropertiesForUpdates
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+func (o MonitoredResourceTypeMetadataPtrOutput) ValidPropertyValues() pulumi.MapOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.ValidPropertyValues
+	}).(pulumi.MapOutput)
+}
+
+type MonitoredResourceTypeMetadataUniquePropertySet struct {
+	// (Updatable) List of properties.
+	Properties []string `pulumi:"properties"`
+}
+
+// MonitoredResourceTypeMetadataUniquePropertySetInput is an input type that accepts MonitoredResourceTypeMetadataUniquePropertySetArgs and MonitoredResourceTypeMetadataUniquePropertySetOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeMetadataUniquePropertySetInput` via:
+//
+//	MonitoredResourceTypeMetadataUniquePropertySetArgs{...}
+type MonitoredResourceTypeMetadataUniquePropertySetInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeMetadataUniquePropertySetOutput() MonitoredResourceTypeMetadataUniquePropertySetOutput
+	ToMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(context.Context) MonitoredResourceTypeMetadataUniquePropertySetOutput
+}
+
+type MonitoredResourceTypeMetadataUniquePropertySetArgs struct {
+	// (Updatable) List of properties.
+	Properties pulumi.StringArrayInput `pulumi:"properties"`
+}
+
+func (MonitoredResourceTypeMetadataUniquePropertySetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeMetadataUniquePropertySetArgs) ToMonitoredResourceTypeMetadataUniquePropertySetOutput() MonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return i.ToMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeMetadataUniquePropertySetArgs) ToMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataUniquePropertySetOutput)
+}
+
+func (i MonitoredResourceTypeMetadataUniquePropertySetArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: i.ToMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx).OutputState,
+	}
+}
+
+// MonitoredResourceTypeMetadataUniquePropertySetArrayInput is an input type that accepts MonitoredResourceTypeMetadataUniquePropertySetArray and MonitoredResourceTypeMetadataUniquePropertySetArrayOutput values.
+// You can construct a concrete instance of `MonitoredResourceTypeMetadataUniquePropertySetArrayInput` via:
+//
+//	MonitoredResourceTypeMetadataUniquePropertySetArray{ MonitoredResourceTypeMetadataUniquePropertySetArgs{...} }
+type MonitoredResourceTypeMetadataUniquePropertySetArrayInput interface {
+	pulumi.Input
+
+	ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutput() MonitoredResourceTypeMetadataUniquePropertySetArrayOutput
+	ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(context.Context) MonitoredResourceTypeMetadataUniquePropertySetArrayOutput
+}
+
+type MonitoredResourceTypeMetadataUniquePropertySetArray []MonitoredResourceTypeMetadataUniquePropertySetInput
+
+func (MonitoredResourceTypeMetadataUniquePropertySetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (i MonitoredResourceTypeMetadataUniquePropertySetArray) ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutput() MonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return i.ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(context.Background())
+}
+
+func (i MonitoredResourceTypeMetadataUniquePropertySetArray) ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataUniquePropertySetArrayOutput)
+}
+
+func (i MonitoredResourceTypeMetadataUniquePropertySetArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: i.ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MonitoredResourceTypeMetadataUniquePropertySetOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeMetadataUniquePropertySetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeMetadataUniquePropertySetOutput) ToMonitoredResourceTypeMetadataUniquePropertySetOutput() MonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataUniquePropertySetOutput) ToMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataUniquePropertySetOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) List of properties.
+func (o MonitoredResourceTypeMetadataUniquePropertySetOutput) Properties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadataUniquePropertySet) []string { return v.Properties }).(pulumi.StringArrayOutput)
+}
+
+type MonitoredResourceTypeMetadataUniquePropertySetArrayOutput struct{ *pulumi.OutputState }
+
+func (MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutput() MonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return o
+}
+
+func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceTypeMetadataUniquePropertySet {
+		return vs[0].([]MonitoredResourceTypeMetadataUniquePropertySet)[vs[1].(int)]
+	}).(MonitoredResourceTypeMetadataUniquePropertySetOutput)
+}
+
 type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -3035,6 +5140,8 @@ type MonitoredResourcesListMemberItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Monitored Resource Host Name.
 	HostName *string `pulumi:"hostName"`
+	// License edition of the monitored resource.
+	License *string `pulumi:"license"`
 	// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ParentId *string `pulumi:"parentId"`
 	// Monitored resource display name.
@@ -3073,6 +5180,8 @@ type MonitoredResourcesListMemberItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Monitored Resource Host Name.
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
+	// License edition of the monitored resource.
+	License pulumi.StringPtrInput `pulumi:"license"`
 	// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ParentId pulumi.StringPtrInput `pulumi:"parentId"`
 	// Monitored resource display name.
@@ -3181,6 +5290,11 @@ func (o MonitoredResourcesListMemberItemOutput) FreeformTags() pulumi.MapOutput 
 // Monitored Resource Host Name.
 func (o MonitoredResourcesListMemberItemOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.HostName }).(pulumi.StringPtrOutput)
+}
+
+// License edition of the monitored resource.
+func (o MonitoredResourcesListMemberItemOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.License }).(pulumi.StringPtrOutput)
 }
 
 // Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -3695,6 +5809,8 @@ func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) 
 }
 
 type MonitoredResourcesSearchItem struct {
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Monitored resource display name.
@@ -3707,6 +5823,8 @@ type MonitoredResourcesSearchItem struct {
 	HostName *string `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id *string `pulumi:"id"`
+	// License edition of the monitored resource.
+	License *string `pulumi:"license"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -3740,6 +5858,8 @@ type MonitoredResourcesSearchItemInput interface {
 }
 
 type MonitoredResourcesSearchItemArgs struct {
+	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Monitored resource display name.
@@ -3752,6 +5872,8 @@ type MonitoredResourcesSearchItemArgs struct {
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringPtrInput `pulumi:"id"`
+	// License edition of the monitored resource.
+	License pulumi.StringPtrInput `pulumi:"license"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -3842,6 +5964,11 @@ func (o MonitoredResourcesSearchItemOutput) ToOutput(ctx context.Context) pulumi
 	}
 }
 
+// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourcesSearchItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o MonitoredResourcesSearchItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -3870,6 +5997,11 @@ func (o MonitoredResourcesSearchItemOutput) HostName() pulumi.StringPtrOutput {
 // Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o MonitoredResourcesSearchItemOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// License edition of the monitored resource.
+func (o MonitoredResourcesSearchItemOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.License }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources with matching management agent id.
@@ -4071,6 +6203,1249 @@ func (o MonitoredResourcesSearchItemPropertyArrayOutput) Index(i pulumi.IntInput
 	}).(MonitoredResourcesSearchItemPropertyOutput)
 }
 
+type GetBaselineableMetricsBaselineableMetricSummaryCollection struct {
+	Items []GetBaselineableMetricsBaselineableMetricSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetBaselineableMetricsBaselineableMetricSummaryCollectionInput is an input type that accepts GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs and GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsBaselineableMetricSummaryCollectionInput` via:
+//
+//	GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs{...}
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutputWithContext(context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs struct {
+	Items GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollection)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput {
+	return i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput)
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection] {
+	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection]{
+		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayInput is an input type that accepts GetBaselineableMetricsBaselineableMetricSummaryCollectionArray and GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayInput` via:
+//
+//	GetBaselineableMetricsBaselineableMetricSummaryCollectionArray{ GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs{...} }
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutputWithContext(context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionArray []GetBaselineableMetricsBaselineableMetricSummaryCollectionInput
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsBaselineableMetricSummaryCollection)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArray) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput {
+	return i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArray) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput)
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection] {
+	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection]{
+		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollection)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection] {
+	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) Items() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollection) []GetBaselineableMetricsBaselineableMetricSummaryCollectionItem {
+		return v.Items
+	}).(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput)
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsBaselineableMetricSummaryCollection)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection] {
+	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsBaselineableMetricSummaryCollection {
+		return vs[0].([]GetBaselineableMetricsBaselineableMetricSummaryCollection)[vs[1].(int)]
+	}).(GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput)
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionItem struct {
+	// metric column name
+	Column string `pulumi:"column"`
+	// The ID of the compartment in which data is listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Created user id
+	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// OCID of the metric
+	Id string `pulumi:"id"`
+	// Is the metric created out of box, default false
+	IsOutOfBox bool `pulumi:"isOutOfBox"`
+	// last Updated user id
+	LastUpdatedBy string `pulumi:"lastUpdatedBy"`
+	// Metric Name
+	Name string `pulumi:"name"`
+	// namespace of the metric
+	Namespace string `pulumi:"namespace"`
+	// Resource Group
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// The current lifecycle state of the metric extension
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// OCID of the tenancy
+	TenancyId string `pulumi:"tenancyId"`
+	// creation date
+	TimeCreated string `pulumi:"timeCreated"`
+	// last updated time
+	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+}
+
+// GetBaselineableMetricsBaselineableMetricSummaryCollectionItemInput is an input type that accepts GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs and GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsBaselineableMetricSummaryCollectionItemInput` via:
+//
+//	GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs{...}
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutputWithContext(context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs struct {
+	// metric column name
+	Column pulumi.StringInput `pulumi:"column"`
+	// The ID of the compartment in which data is listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Created user id
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// OCID of the metric
+	Id pulumi.StringInput `pulumi:"id"`
+	// Is the metric created out of box, default false
+	IsOutOfBox pulumi.BoolInput `pulumi:"isOutOfBox"`
+	// last Updated user id
+	LastUpdatedBy pulumi.StringInput `pulumi:"lastUpdatedBy"`
+	// Metric Name
+	Name pulumi.StringInput `pulumi:"name"`
+	// namespace of the metric
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Resource Group
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// The current lifecycle state of the metric extension
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// OCID of the tenancy
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// creation date
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// last updated time
+	TimeLastUpdated pulumi.StringInput `pulumi:"timeLastUpdated"`
+}
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput {
+	return i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput)
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
+	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
+		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayInput is an input type that accepts GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray and GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayInput` via:
+//
+//	GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray{ GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs{...} }
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput
+	ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutputWithContext(context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray []GetBaselineableMetricsBaselineableMetricSummaryCollectionItemInput
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput {
+	return i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput)
+}
+
+func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
+	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
+		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
+	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// metric column name
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Column() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.Column }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which data is listed.
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Created user id
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// OCID of the metric
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Is the metric created out of box, default false
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) IsOutOfBox() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) bool { return v.IsOutOfBox }).(pulumi.BoolOutput)
+}
+
+// last Updated user id
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) LastUpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
+}
+
+// Metric Name
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// namespace of the metric
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Resource Group
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the metric extension
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// OCID of the tenancy
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.TenancyId }).(pulumi.StringOutput)
+}
+
+// creation date
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// last updated time
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) TimeLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
+}
+
+type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
+	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsBaselineableMetricSummaryCollectionItem {
+		return vs[0].([]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem)[vs[1].(int)]
+	}).(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput)
+}
+
+type GetBaselineableMetricsEvaluateDataPoint struct {
+	// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+	Anomaly float64 `pulumi:"anomaly"`
+	// upper threshold for the metric value
+	High float64 `pulumi:"high"`
+	// lower threshold for the metric value
+	Low float64 `pulumi:"low"`
+	// timestamp of when the metric was collected
+	Timestamp string `pulumi:"timestamp"`
+	// value for the metric data point
+	Value float64 `pulumi:"value"`
+}
+
+// GetBaselineableMetricsEvaluateDataPointInput is an input type that accepts GetBaselineableMetricsEvaluateDataPointArgs and GetBaselineableMetricsEvaluateDataPointOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateDataPointInput` via:
+//
+//	GetBaselineableMetricsEvaluateDataPointArgs{...}
+type GetBaselineableMetricsEvaluateDataPointInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateDataPointOutput() GetBaselineableMetricsEvaluateDataPointOutput
+	ToGetBaselineableMetricsEvaluateDataPointOutputWithContext(context.Context) GetBaselineableMetricsEvaluateDataPointOutput
+}
+
+type GetBaselineableMetricsEvaluateDataPointArgs struct {
+	// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+	Anomaly pulumi.Float64Input `pulumi:"anomaly"`
+	// upper threshold for the metric value
+	High pulumi.Float64Input `pulumi:"high"`
+	// lower threshold for the metric value
+	Low pulumi.Float64Input `pulumi:"low"`
+	// timestamp of when the metric was collected
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	// value for the metric data point
+	Value pulumi.Float64Input `pulumi:"value"`
+}
+
+func (GetBaselineableMetricsEvaluateDataPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateDataPointArgs) ToGetBaselineableMetricsEvaluateDataPointOutput() GetBaselineableMetricsEvaluateDataPointOutput {
+	return i.ToGetBaselineableMetricsEvaluateDataPointOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateDataPointArgs) ToGetBaselineableMetricsEvaluateDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateDataPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateDataPointOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateDataPointOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsEvaluateDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateDataPointArray and GetBaselineableMetricsEvaluateDataPointArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateDataPointArrayInput` via:
+//
+//	GetBaselineableMetricsEvaluateDataPointArray{ GetBaselineableMetricsEvaluateDataPointArgs{...} }
+type GetBaselineableMetricsEvaluateDataPointArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateDataPointArrayOutput() GetBaselineableMetricsEvaluateDataPointArrayOutput
+	ToGetBaselineableMetricsEvaluateDataPointArrayOutputWithContext(context.Context) GetBaselineableMetricsEvaluateDataPointArrayOutput
+}
+
+type GetBaselineableMetricsEvaluateDataPointArray []GetBaselineableMetricsEvaluateDataPointInput
+
+func (GetBaselineableMetricsEvaluateDataPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateDataPointArray) ToGetBaselineableMetricsEvaluateDataPointArrayOutput() GetBaselineableMetricsEvaluateDataPointArrayOutput {
+	return i.ToGetBaselineableMetricsEvaluateDataPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateDataPointArray) ToGetBaselineableMetricsEvaluateDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateDataPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateDataPointArrayOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateDataPointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsEvaluateDataPointOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateDataPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateDataPointOutput) ToGetBaselineableMetricsEvaluateDataPointOutput() GetBaselineableMetricsEvaluateDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateDataPointOutput) ToGetBaselineableMetricsEvaluateDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+func (o GetBaselineableMetricsEvaluateDataPointOutput) Anomaly() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateDataPoint) float64 { return v.Anomaly }).(pulumi.Float64Output)
+}
+
+// upper threshold for the metric value
+func (o GetBaselineableMetricsEvaluateDataPointOutput) High() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateDataPoint) float64 { return v.High }).(pulumi.Float64Output)
+}
+
+// lower threshold for the metric value
+func (o GetBaselineableMetricsEvaluateDataPointOutput) Low() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateDataPoint) float64 { return v.Low }).(pulumi.Float64Output)
+}
+
+// timestamp of when the metric was collected
+func (o GetBaselineableMetricsEvaluateDataPointOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateDataPoint) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// value for the metric data point
+func (o GetBaselineableMetricsEvaluateDataPointOutput) Value() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateDataPoint) float64 { return v.Value }).(pulumi.Float64Output)
+}
+
+type GetBaselineableMetricsEvaluateDataPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateDataPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) ToGetBaselineableMetricsEvaluateDataPointArrayOutput() GetBaselineableMetricsEvaluateDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) ToGetBaselineableMetricsEvaluateDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateDataPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsEvaluateDataPoint {
+		return vs[0].([]GetBaselineableMetricsEvaluateDataPoint)[vs[1].(int)]
+	}).(GetBaselineableMetricsEvaluateDataPointOutput)
+}
+
+type GetBaselineableMetricsEvaluateItem struct {
+	// list of anomaly data points for the metric
+	DataPoints []GetBaselineableMetricsEvaluateItemDataPoint `pulumi:"dataPoints"`
+	// list of dimensions for the metric
+	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	// list of data points for the metric for evaluation of anomalies
+	EvaluationDataPoints []GetBaselineableMetricsEvaluateItemEvaluationDataPoint `pulumi:"evaluationDataPoints"`
+	// list of data points for the metric for training of baseline
+	TrainingDataPoints []GetBaselineableMetricsEvaluateItemTrainingDataPoint `pulumi:"trainingDataPoints"`
+}
+
+// GetBaselineableMetricsEvaluateItemInput is an input type that accepts GetBaselineableMetricsEvaluateItemArgs and GetBaselineableMetricsEvaluateItemOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemArgs{...}
+type GetBaselineableMetricsEvaluateItemInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemOutput() GetBaselineableMetricsEvaluateItemOutput
+	ToGetBaselineableMetricsEvaluateItemOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemOutput
+}
+
+type GetBaselineableMetricsEvaluateItemArgs struct {
+	// list of anomaly data points for the metric
+	DataPoints GetBaselineableMetricsEvaluateItemDataPointArrayInput `pulumi:"dataPoints"`
+	// list of dimensions for the metric
+	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	// list of data points for the metric for evaluation of anomalies
+	EvaluationDataPoints GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput `pulumi:"evaluationDataPoints"`
+	// list of data points for the metric for training of baseline
+	TrainingDataPoints GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput `pulumi:"trainingDataPoints"`
+}
+
+func (GetBaselineableMetricsEvaluateItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItem)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemArgs) ToGetBaselineableMetricsEvaluateItemOutput() GetBaselineableMetricsEvaluateItemOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemArgs) ToGetBaselineableMetricsEvaluateItemOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItem] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItem]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsEvaluateItemArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemArray and GetBaselineableMetricsEvaluateItemArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemArrayInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemArray{ GetBaselineableMetricsEvaluateItemArgs{...} }
+type GetBaselineableMetricsEvaluateItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemArrayOutput() GetBaselineableMetricsEvaluateItemArrayOutput
+	ToGetBaselineableMetricsEvaluateItemArrayOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemArrayOutput
+}
+
+type GetBaselineableMetricsEvaluateItemArray []GetBaselineableMetricsEvaluateItemInput
+
+func (GetBaselineableMetricsEvaluateItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItem)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemArray) ToGetBaselineableMetricsEvaluateItemArrayOutput() GetBaselineableMetricsEvaluateItemArrayOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemArray) ToGetBaselineableMetricsEvaluateItemArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemArrayOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItem] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItem]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsEvaluateItemOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItem)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemOutput) ToGetBaselineableMetricsEvaluateItemOutput() GetBaselineableMetricsEvaluateItemOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemOutput) ToGetBaselineableMetricsEvaluateItemOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItem] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// list of anomaly data points for the metric
+func (o GetBaselineableMetricsEvaluateItemOutput) DataPoints() GetBaselineableMetricsEvaluateItemDataPointArrayOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItem) []GetBaselineableMetricsEvaluateItemDataPoint {
+		return v.DataPoints
+	}).(GetBaselineableMetricsEvaluateItemDataPointArrayOutput)
+}
+
+// list of dimensions for the metric
+func (o GetBaselineableMetricsEvaluateItemOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItem) map[string]interface{} { return v.Dimensions }).(pulumi.MapOutput)
+}
+
+// list of data points for the metric for evaluation of anomalies
+func (o GetBaselineableMetricsEvaluateItemOutput) EvaluationDataPoints() GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItem) []GetBaselineableMetricsEvaluateItemEvaluationDataPoint {
+		return v.EvaluationDataPoints
+	}).(GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput)
+}
+
+// list of data points for the metric for training of baseline
+func (o GetBaselineableMetricsEvaluateItemOutput) TrainingDataPoints() GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItem) []GetBaselineableMetricsEvaluateItemTrainingDataPoint {
+		return v.TrainingDataPoints
+	}).(GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput)
+}
+
+type GetBaselineableMetricsEvaluateItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItem)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemArrayOutput) ToGetBaselineableMetricsEvaluateItemArrayOutput() GetBaselineableMetricsEvaluateItemArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemArrayOutput) ToGetBaselineableMetricsEvaluateItemArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItem] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsEvaluateItemArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsEvaluateItem {
+		return vs[0].([]GetBaselineableMetricsEvaluateItem)[vs[1].(int)]
+	}).(GetBaselineableMetricsEvaluateItemOutput)
+}
+
+type GetBaselineableMetricsEvaluateItemDataPoint struct {
+	// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+	Anomaly float64 `pulumi:"anomaly"`
+	// upper threshold for the metric value
+	High float64 `pulumi:"high"`
+	// lower threshold for the metric value
+	Low float64 `pulumi:"low"`
+	// timestamp of when the metric was collected
+	Timestamp string `pulumi:"timestamp"`
+	// value for the metric data point
+	Value float64 `pulumi:"value"`
+}
+
+// GetBaselineableMetricsEvaluateItemDataPointInput is an input type that accepts GetBaselineableMetricsEvaluateItemDataPointArgs and GetBaselineableMetricsEvaluateItemDataPointOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemDataPointInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemDataPointArgs{...}
+type GetBaselineableMetricsEvaluateItemDataPointInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemDataPointOutput() GetBaselineableMetricsEvaluateItemDataPointOutput
+	ToGetBaselineableMetricsEvaluateItemDataPointOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemDataPointOutput
+}
+
+type GetBaselineableMetricsEvaluateItemDataPointArgs struct {
+	// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+	Anomaly pulumi.Float64Input `pulumi:"anomaly"`
+	// upper threshold for the metric value
+	High pulumi.Float64Input `pulumi:"high"`
+	// lower threshold for the metric value
+	Low pulumi.Float64Input `pulumi:"low"`
+	// timestamp of when the metric was collected
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	// value for the metric data point
+	Value pulumi.Float64Input `pulumi:"value"`
+}
+
+func (GetBaselineableMetricsEvaluateItemDataPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItemDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemDataPointArgs) ToGetBaselineableMetricsEvaluateItemDataPointOutput() GetBaselineableMetricsEvaluateItemDataPointOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemDataPointOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemDataPointArgs) ToGetBaselineableMetricsEvaluateItemDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemDataPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemDataPointOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemDataPointOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsEvaluateItemDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemDataPointArray and GetBaselineableMetricsEvaluateItemDataPointArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemDataPointArrayInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemDataPointArray{ GetBaselineableMetricsEvaluateItemDataPointArgs{...} }
+type GetBaselineableMetricsEvaluateItemDataPointArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemDataPointArrayOutput() GetBaselineableMetricsEvaluateItemDataPointArrayOutput
+	ToGetBaselineableMetricsEvaluateItemDataPointArrayOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemDataPointArrayOutput
+}
+
+type GetBaselineableMetricsEvaluateItemDataPointArray []GetBaselineableMetricsEvaluateItemDataPointInput
+
+func (GetBaselineableMetricsEvaluateItemDataPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItemDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemDataPointArray) ToGetBaselineableMetricsEvaluateItemDataPointArrayOutput() GetBaselineableMetricsEvaluateItemDataPointArrayOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemDataPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemDataPointArray) ToGetBaselineableMetricsEvaluateItemDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemDataPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemDataPointArrayOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemDataPointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsEvaluateItemDataPointOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemDataPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItemDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) ToGetBaselineableMetricsEvaluateItemDataPointOutput() GetBaselineableMetricsEvaluateItemDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) ToGetBaselineableMetricsEvaluateItemDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) Anomaly() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemDataPoint) float64 { return v.Anomaly }).(pulumi.Float64Output)
+}
+
+// upper threshold for the metric value
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) High() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemDataPoint) float64 { return v.High }).(pulumi.Float64Output)
+}
+
+// lower threshold for the metric value
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) Low() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemDataPoint) float64 { return v.Low }).(pulumi.Float64Output)
+}
+
+// timestamp of when the metric was collected
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemDataPoint) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// value for the metric data point
+func (o GetBaselineableMetricsEvaluateItemDataPointOutput) Value() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemDataPoint) float64 { return v.Value }).(pulumi.Float64Output)
+}
+
+type GetBaselineableMetricsEvaluateItemDataPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemDataPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItemDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemDataPointArrayOutput() GetBaselineableMetricsEvaluateItemDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemDataPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsEvaluateItemDataPoint {
+		return vs[0].([]GetBaselineableMetricsEvaluateItemDataPoint)[vs[1].(int)]
+	}).(GetBaselineableMetricsEvaluateItemDataPointOutput)
+}
+
+type GetBaselineableMetricsEvaluateItemEvaluationDataPoint struct {
+	// timestamp of when the metric was collected
+	Timestamp string `pulumi:"timestamp"`
+	// value for the metric data point
+	Value float64 `pulumi:"value"`
+}
+
+// GetBaselineableMetricsEvaluateItemEvaluationDataPointInput is an input type that accepts GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs and GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemEvaluationDataPointInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs{...}
+type GetBaselineableMetricsEvaluateItemEvaluationDataPointInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutput() GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput
+	ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput
+}
+
+type GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs struct {
+	// timestamp of when the metric was collected
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	// value for the metric data point
+	Value pulumi.Float64Input `pulumi:"value"`
+}
+
+func (GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItemEvaluationDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutput() GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemEvaluationDataPointArray and GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemEvaluationDataPointArray{ GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs{...} }
+type GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput() GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput
+	ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput
+}
+
+type GetBaselineableMetricsEvaluateItemEvaluationDataPointArray []GetBaselineableMetricsEvaluateItemEvaluationDataPointInput
+
+func (GetBaselineableMetricsEvaluateItemEvaluationDataPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArray) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput() GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArray) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItemEvaluationDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutput() GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+// timestamp of when the metric was collected
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemEvaluationDataPoint) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// value for the metric data point
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) Value() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemEvaluationDataPoint) float64 { return v.Value }).(pulumi.Float64Output)
+}
+
+type GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput() GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsEvaluateItemEvaluationDataPoint {
+		return vs[0].([]GetBaselineableMetricsEvaluateItemEvaluationDataPoint)[vs[1].(int)]
+	}).(GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput)
+}
+
+type GetBaselineableMetricsEvaluateItemTrainingDataPoint struct {
+	// timestamp of when the metric was collected
+	Timestamp string `pulumi:"timestamp"`
+	// value for the metric data point
+	Value float64 `pulumi:"value"`
+}
+
+// GetBaselineableMetricsEvaluateItemTrainingDataPointInput is an input type that accepts GetBaselineableMetricsEvaluateItemTrainingDataPointArgs and GetBaselineableMetricsEvaluateItemTrainingDataPointOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemTrainingDataPointInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemTrainingDataPointArgs{...}
+type GetBaselineableMetricsEvaluateItemTrainingDataPointInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutput() GetBaselineableMetricsEvaluateItemTrainingDataPointOutput
+	ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointOutput
+}
+
+type GetBaselineableMetricsEvaluateItemTrainingDataPointArgs struct {
+	// timestamp of when the metric was collected
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	// value for the metric data point
+	Value pulumi.Float64Input `pulumi:"value"`
+}
+
+func (GetBaselineableMetricsEvaluateItemTrainingDataPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItemTrainingDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArgs) ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutput() GetBaselineableMetricsEvaluateItemTrainingDataPointOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArgs) ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemTrainingDataPointOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemTrainingDataPointArray and GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput` via:
+//
+//	GetBaselineableMetricsEvaluateItemTrainingDataPointArray{ GetBaselineableMetricsEvaluateItemTrainingDataPointArgs{...} }
+type GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput() GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput
+	ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutputWithContext(context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput
+}
+
+type GetBaselineableMetricsEvaluateItemTrainingDataPointArray []GetBaselineableMetricsEvaluateItemTrainingDataPointInput
+
+func (GetBaselineableMetricsEvaluateItemTrainingDataPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItemTrainingDataPoint)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArray) ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput() GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput {
+	return i.ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArray) ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput)
+}
+
+func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
+		OutputState: i.ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsEvaluateItemTrainingDataPointOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsEvaluateItemTrainingDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutput() GetBaselineableMetricsEvaluateItemTrainingDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
+	return pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+// timestamp of when the metric was collected
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemTrainingDataPoint) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+// value for the metric data point
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) Value() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItemTrainingDataPoint) float64 { return v.Value }).(pulumi.Float64Output)
+}
+
+type GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsEvaluateItemTrainingDataPoint)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput() GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
+	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemTrainingDataPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsEvaluateItemTrainingDataPoint {
+		return vs[0].([]GetBaselineableMetricsEvaluateItemTrainingDataPoint)[vs[1].(int)]
+	}).(GetBaselineableMetricsEvaluateItemTrainingDataPointOutput)
+}
+
+type GetBaselineableMetricsFilter struct {
+	// Metric Name
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBaselineableMetricsFilterInput is an input type that accepts GetBaselineableMetricsFilterArgs and GetBaselineableMetricsFilterOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsFilterInput` via:
+//
+//	GetBaselineableMetricsFilterArgs{...}
+type GetBaselineableMetricsFilterInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsFilterOutput() GetBaselineableMetricsFilterOutput
+	ToGetBaselineableMetricsFilterOutputWithContext(context.Context) GetBaselineableMetricsFilterOutput
+}
+
+type GetBaselineableMetricsFilterArgs struct {
+	// Metric Name
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBaselineableMetricsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsFilter)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsFilterArgs) ToGetBaselineableMetricsFilterOutput() GetBaselineableMetricsFilterOutput {
+	return i.ToGetBaselineableMetricsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsFilterArgs) ToGetBaselineableMetricsFilterOutputWithContext(ctx context.Context) GetBaselineableMetricsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsFilterOutput)
+}
+
+func (i GetBaselineableMetricsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsFilter] {
+	return pulumix.Output[GetBaselineableMetricsFilter]{
+		OutputState: i.ToGetBaselineableMetricsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetBaselineableMetricsFilterArrayInput is an input type that accepts GetBaselineableMetricsFilterArray and GetBaselineableMetricsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBaselineableMetricsFilterArrayInput` via:
+//
+//	GetBaselineableMetricsFilterArray{ GetBaselineableMetricsFilterArgs{...} }
+type GetBaselineableMetricsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBaselineableMetricsFilterArrayOutput() GetBaselineableMetricsFilterArrayOutput
+	ToGetBaselineableMetricsFilterArrayOutputWithContext(context.Context) GetBaselineableMetricsFilterArrayOutput
+}
+
+type GetBaselineableMetricsFilterArray []GetBaselineableMetricsFilterInput
+
+func (GetBaselineableMetricsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsFilter)(nil)).Elem()
+}
+
+func (i GetBaselineableMetricsFilterArray) ToGetBaselineableMetricsFilterArrayOutput() GetBaselineableMetricsFilterArrayOutput {
+	return i.ToGetBaselineableMetricsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBaselineableMetricsFilterArray) ToGetBaselineableMetricsFilterArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsFilterArrayOutput)
+}
+
+func (i GetBaselineableMetricsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsFilter] {
+	return pulumix.Output[[]GetBaselineableMetricsFilter]{
+		OutputState: i.ToGetBaselineableMetricsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetBaselineableMetricsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBaselineableMetricsFilter)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsFilterOutput) ToGetBaselineableMetricsFilterOutput() GetBaselineableMetricsFilterOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsFilterOutput) ToGetBaselineableMetricsFilterOutputWithContext(ctx context.Context) GetBaselineableMetricsFilterOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsFilter] {
+	return pulumix.Output[GetBaselineableMetricsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Metric Name
+func (o GetBaselineableMetricsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBaselineableMetricsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBaselineableMetricsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBaselineableMetricsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBaselineableMetricsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBaselineableMetricsFilter)(nil)).Elem()
+}
+
+func (o GetBaselineableMetricsFilterArrayOutput) ToGetBaselineableMetricsFilterArrayOutput() GetBaselineableMetricsFilterArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsFilterArrayOutput) ToGetBaselineableMetricsFilterArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsFilterArrayOutput {
+	return o
+}
+
+func (o GetBaselineableMetricsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsFilter] {
+	return pulumix.Output[[]GetBaselineableMetricsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetBaselineableMetricsFilterArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsFilter {
+		return vs[0].([]GetBaselineableMetricsFilter)[vs[1].(int)]
+	}).(GetBaselineableMetricsFilterOutput)
+}
+
 type GetConfigsConfigCollection struct {
 	Items []GetConfigsConfigCollectionItem `pulumi:"items"`
 }
@@ -4202,8 +7577,10 @@ type GetConfigsConfigCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id string `pulumi:"id"`
-	// True if automatic promotion is enabled, false if it is not enabled.
+	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// License edition.
+	License string `pulumi:"license"`
 	// The type of resource to configure for automatic promotion.
 	ResourceType string `pulumi:"resourceType"`
 	// The current state of the Config.
@@ -4240,8 +7617,10 @@ type GetConfigsConfigCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
-	// True if automatic promotion is enabled, false if it is not enabled.
+	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// License edition.
+	License pulumi.StringInput `pulumi:"license"`
 	// The type of resource to configure for automatic promotion.
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The current state of the Config.
@@ -4353,9 +7732,14 @@ func (o GetConfigsConfigCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// True if automatic promotion is enabled, false if it is not enabled.
+// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 func (o GetConfigsConfigCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// License edition.
+func (o GetConfigsConfigCollectionItemOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.License }).(pulumi.StringOutput)
 }
 
 // The type of resource to configure for automatic promotion.
@@ -4544,6 +7928,8 @@ type GetDiscoveryJobDiscoveryDetail struct {
 	AgentId string `pulumi:"agentId"`
 	// List of DiscoveryJOb Credential Details.
 	Credentials []GetDiscoveryJobDiscoveryDetailCredential `pulumi:"credentials"`
+	// License edition of the monitored resource.
+	License string `pulumi:"license"`
 	// Property Details
 	Properties []GetDiscoveryJobDiscoveryDetailProperty `pulumi:"properties"`
 	// The Name of resource type
@@ -4570,6 +7956,8 @@ type GetDiscoveryJobDiscoveryDetailArgs struct {
 	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// List of DiscoveryJOb Credential Details.
 	Credentials GetDiscoveryJobDiscoveryDetailCredentialArrayInput `pulumi:"credentials"`
+	// License edition of the monitored resource.
+	License pulumi.StringInput `pulumi:"license"`
 	// Property Details
 	Properties GetDiscoveryJobDiscoveryDetailPropertyArrayInput `pulumi:"properties"`
 	// The Name of resource type
@@ -4659,6 +8047,11 @@ func (o GetDiscoveryJobDiscoveryDetailOutput) Credentials() GetDiscoveryJobDisco
 	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetail) []GetDiscoveryJobDiscoveryDetailCredential {
 		return v.Credentials
 	}).(GetDiscoveryJobDiscoveryDetailCredentialArrayOutput)
+}
+
+// License edition of the monitored resource.
+func (o GetDiscoveryJobDiscoveryDetailOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetail) string { return v.License }).(pulumi.StringOutput)
 }
 
 // Property Details
@@ -6231,6 +9624,2745 @@ func (o GetDiscoveryJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscovery
 	}).(GetDiscoveryJobsFilterOutput)
 }
 
+type GetMetricExtensionEnabledOnResource struct {
+	// The OCID of the resource on which Metric Extension is enabled
+	ResourceId string `pulumi:"resourceId"`
+}
+
+// GetMetricExtensionEnabledOnResourceInput is an input type that accepts GetMetricExtensionEnabledOnResourceArgs and GetMetricExtensionEnabledOnResourceOutput values.
+// You can construct a concrete instance of `GetMetricExtensionEnabledOnResourceInput` via:
+//
+//	GetMetricExtensionEnabledOnResourceArgs{...}
+type GetMetricExtensionEnabledOnResourceInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionEnabledOnResourceOutput() GetMetricExtensionEnabledOnResourceOutput
+	ToGetMetricExtensionEnabledOnResourceOutputWithContext(context.Context) GetMetricExtensionEnabledOnResourceOutput
+}
+
+type GetMetricExtensionEnabledOnResourceArgs struct {
+	// The OCID of the resource on which Metric Extension is enabled
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+}
+
+func (GetMetricExtensionEnabledOnResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (i GetMetricExtensionEnabledOnResourceArgs) ToGetMetricExtensionEnabledOnResourceOutput() GetMetricExtensionEnabledOnResourceOutput {
+	return i.ToGetMetricExtensionEnabledOnResourceOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionEnabledOnResourceArgs) ToGetMetricExtensionEnabledOnResourceOutputWithContext(ctx context.Context) GetMetricExtensionEnabledOnResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionEnabledOnResourceOutput)
+}
+
+func (i GetMetricExtensionEnabledOnResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionEnabledOnResource] {
+	return pulumix.Output[GetMetricExtensionEnabledOnResource]{
+		OutputState: i.ToGetMetricExtensionEnabledOnResourceOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionEnabledOnResourceArrayInput is an input type that accepts GetMetricExtensionEnabledOnResourceArray and GetMetricExtensionEnabledOnResourceArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionEnabledOnResourceArrayInput` via:
+//
+//	GetMetricExtensionEnabledOnResourceArray{ GetMetricExtensionEnabledOnResourceArgs{...} }
+type GetMetricExtensionEnabledOnResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionEnabledOnResourceArrayOutput() GetMetricExtensionEnabledOnResourceArrayOutput
+	ToGetMetricExtensionEnabledOnResourceArrayOutputWithContext(context.Context) GetMetricExtensionEnabledOnResourceArrayOutput
+}
+
+type GetMetricExtensionEnabledOnResourceArray []GetMetricExtensionEnabledOnResourceInput
+
+func (GetMetricExtensionEnabledOnResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (i GetMetricExtensionEnabledOnResourceArray) ToGetMetricExtensionEnabledOnResourceArrayOutput() GetMetricExtensionEnabledOnResourceArrayOutput {
+	return i.ToGetMetricExtensionEnabledOnResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionEnabledOnResourceArray) ToGetMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx context.Context) GetMetricExtensionEnabledOnResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionEnabledOnResourceArrayOutput)
+}
+
+func (i GetMetricExtensionEnabledOnResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionEnabledOnResource] {
+	return pulumix.Output[[]GetMetricExtensionEnabledOnResource]{
+		OutputState: i.ToGetMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionEnabledOnResourceOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionEnabledOnResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (o GetMetricExtensionEnabledOnResourceOutput) ToGetMetricExtensionEnabledOnResourceOutput() GetMetricExtensionEnabledOnResourceOutput {
+	return o
+}
+
+func (o GetMetricExtensionEnabledOnResourceOutput) ToGetMetricExtensionEnabledOnResourceOutputWithContext(ctx context.Context) GetMetricExtensionEnabledOnResourceOutput {
+	return o
+}
+
+func (o GetMetricExtensionEnabledOnResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionEnabledOnResource] {
+	return pulumix.Output[GetMetricExtensionEnabledOnResource]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the resource on which Metric Extension is enabled
+func (o GetMetricExtensionEnabledOnResourceOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionEnabledOnResource) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionEnabledOnResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionEnabledOnResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionEnabledOnResource)(nil)).Elem()
+}
+
+func (o GetMetricExtensionEnabledOnResourceArrayOutput) ToGetMetricExtensionEnabledOnResourceArrayOutput() GetMetricExtensionEnabledOnResourceArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionEnabledOnResourceArrayOutput) ToGetMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx context.Context) GetMetricExtensionEnabledOnResourceArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionEnabledOnResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionEnabledOnResource] {
+	return pulumix.Output[[]GetMetricExtensionEnabledOnResource]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionEnabledOnResourceArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionEnabledOnResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionEnabledOnResource {
+		return vs[0].([]GetMetricExtensionEnabledOnResource)[vs[1].(int)]
+	}).(GetMetricExtensionEnabledOnResourceOutput)
+}
+
+type GetMetricExtensionMetricList struct {
+	// Compute Expression to calculate the value of this metric
+	ComputeExpression string `pulumi:"computeExpression"`
+	// Data type of value of this metric
+	DataType string `pulumi:"dataType"`
+	// Display name of the metric.
+	DisplayName string `pulumi:"displayName"`
+	// Current metric need to be included as dimension or not
+	IsDimension bool `pulumi:"isDimension"`
+	// Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+	IsHidden bool `pulumi:"isHidden"`
+	// Metric category
+	MetricCategory string `pulumi:"metricCategory"`
+	// Name of the script file
+	Name string `pulumi:"name"`
+	// Unit of metric value
+	Unit string `pulumi:"unit"`
+}
+
+// GetMetricExtensionMetricListInput is an input type that accepts GetMetricExtensionMetricListArgs and GetMetricExtensionMetricListOutput values.
+// You can construct a concrete instance of `GetMetricExtensionMetricListInput` via:
+//
+//	GetMetricExtensionMetricListArgs{...}
+type GetMetricExtensionMetricListInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionMetricListOutput() GetMetricExtensionMetricListOutput
+	ToGetMetricExtensionMetricListOutputWithContext(context.Context) GetMetricExtensionMetricListOutput
+}
+
+type GetMetricExtensionMetricListArgs struct {
+	// Compute Expression to calculate the value of this metric
+	ComputeExpression pulumi.StringInput `pulumi:"computeExpression"`
+	// Data type of value of this metric
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Display name of the metric.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Current metric need to be included as dimension or not
+	IsDimension pulumi.BoolInput `pulumi:"isDimension"`
+	// Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+	IsHidden pulumi.BoolInput `pulumi:"isHidden"`
+	// Metric category
+	MetricCategory pulumi.StringInput `pulumi:"metricCategory"`
+	// Name of the script file
+	Name pulumi.StringInput `pulumi:"name"`
+	// Unit of metric value
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetMetricExtensionMetricListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionMetricList)(nil)).Elem()
+}
+
+func (i GetMetricExtensionMetricListArgs) ToGetMetricExtensionMetricListOutput() GetMetricExtensionMetricListOutput {
+	return i.ToGetMetricExtensionMetricListOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionMetricListArgs) ToGetMetricExtensionMetricListOutputWithContext(ctx context.Context) GetMetricExtensionMetricListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionMetricListOutput)
+}
+
+func (i GetMetricExtensionMetricListArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionMetricList] {
+	return pulumix.Output[GetMetricExtensionMetricList]{
+		OutputState: i.ToGetMetricExtensionMetricListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionMetricListArrayInput is an input type that accepts GetMetricExtensionMetricListArray and GetMetricExtensionMetricListArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionMetricListArrayInput` via:
+//
+//	GetMetricExtensionMetricListArray{ GetMetricExtensionMetricListArgs{...} }
+type GetMetricExtensionMetricListArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionMetricListArrayOutput() GetMetricExtensionMetricListArrayOutput
+	ToGetMetricExtensionMetricListArrayOutputWithContext(context.Context) GetMetricExtensionMetricListArrayOutput
+}
+
+type GetMetricExtensionMetricListArray []GetMetricExtensionMetricListInput
+
+func (GetMetricExtensionMetricListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionMetricList)(nil)).Elem()
+}
+
+func (i GetMetricExtensionMetricListArray) ToGetMetricExtensionMetricListArrayOutput() GetMetricExtensionMetricListArrayOutput {
+	return i.ToGetMetricExtensionMetricListArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionMetricListArray) ToGetMetricExtensionMetricListArrayOutputWithContext(ctx context.Context) GetMetricExtensionMetricListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionMetricListArrayOutput)
+}
+
+func (i GetMetricExtensionMetricListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionMetricList] {
+	return pulumix.Output[[]GetMetricExtensionMetricList]{
+		OutputState: i.ToGetMetricExtensionMetricListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionMetricListOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionMetricListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionMetricList)(nil)).Elem()
+}
+
+func (o GetMetricExtensionMetricListOutput) ToGetMetricExtensionMetricListOutput() GetMetricExtensionMetricListOutput {
+	return o
+}
+
+func (o GetMetricExtensionMetricListOutput) ToGetMetricExtensionMetricListOutputWithContext(ctx context.Context) GetMetricExtensionMetricListOutput {
+	return o
+}
+
+func (o GetMetricExtensionMetricListOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionMetricList] {
+	return pulumix.Output[GetMetricExtensionMetricList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Compute Expression to calculate the value of this metric
+func (o GetMetricExtensionMetricListOutput) ComputeExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) string { return v.ComputeExpression }).(pulumi.StringOutput)
+}
+
+// Data type of value of this metric
+func (o GetMetricExtensionMetricListOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// Display name of the metric.
+func (o GetMetricExtensionMetricListOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Current metric need to be included as dimension or not
+func (o GetMetricExtensionMetricListOutput) IsDimension() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) bool { return v.IsDimension }).(pulumi.BoolOutput)
+}
+
+// Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+func (o GetMetricExtensionMetricListOutput) IsHidden() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) bool { return v.IsHidden }).(pulumi.BoolOutput)
+}
+
+// Metric category
+func (o GetMetricExtensionMetricListOutput) MetricCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) string { return v.MetricCategory }).(pulumi.StringOutput)
+}
+
+// Name of the script file
+func (o GetMetricExtensionMetricListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Unit of metric value
+func (o GetMetricExtensionMetricListOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionMetricList) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionMetricListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionMetricListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionMetricList)(nil)).Elem()
+}
+
+func (o GetMetricExtensionMetricListArrayOutput) ToGetMetricExtensionMetricListArrayOutput() GetMetricExtensionMetricListArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionMetricListArrayOutput) ToGetMetricExtensionMetricListArrayOutputWithContext(ctx context.Context) GetMetricExtensionMetricListArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionMetricListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionMetricList] {
+	return pulumix.Output[[]GetMetricExtensionMetricList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionMetricListArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionMetricListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionMetricList {
+		return vs[0].([]GetMetricExtensionMetricList)[vs[1].(int)]
+	}).(GetMetricExtensionMetricListOutput)
+}
+
+type GetMetricExtensionQueryProperty struct {
+	// Arguments required by either command or script
+	Arguments string `pulumi:"arguments"`
+	// Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+	AutoRowPrefix string `pulumi:"autoRowPrefix"`
+	// Type of possible collection methods.
+	CollectionMethod string `pulumi:"collectionMethod"`
+	// OS command to execute without arguments
+	Command string `pulumi:"command"`
+	// Character used to delimit multiple metric values in single line of output
+	Delimiter string `pulumi:"delimiter"`
+	// Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+	IdentityMetric string `pulumi:"identityMetric"`
+	// List of values and position of PL/SQL procedure IN parameters
+	InParamDetails []GetMetricExtensionQueryPropertyInParamDetail `pulumi:"inParamDetails"`
+	// Indicates if Metric Service is enabled on server domain
+	IsMetricServiceEnabled bool `pulumi:"isMetricServiceEnabled"`
+	// List of JMX attributes or Metric Service Table columns separated by semi-colon
+	JmxAttributes string `pulumi:"jmxAttributes"`
+	// JMX Managed Bean Query or Metric Service Table name
+	ManagedBeanQuery string `pulumi:"managedBeanQuery"`
+	// Position and SQL Type of PL/SQL OUT parameter
+	OutParamDetails []GetMetricExtensionQueryPropertyOutParamDetail `pulumi:"outParamDetails"`
+	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	ScriptDetails []GetMetricExtensionQueryPropertyScriptDetail `pulumi:"scriptDetails"`
+	// Details of Sql content which needs to execute to collect Metric Extension data
+	SqlDetails []GetMetricExtensionQueryPropertySqlDetail `pulumi:"sqlDetails"`
+	// Type of SQL data collection method i.e. either a Statement or SQL Script File
+	SqlType string `pulumi:"sqlType"`
+	// String prefix used to identify metric output of the OS Command
+	StartsWith string `pulumi:"startsWith"`
+}
+
+// GetMetricExtensionQueryPropertyInput is an input type that accepts GetMetricExtensionQueryPropertyArgs and GetMetricExtensionQueryPropertyOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyInput` via:
+//
+//	GetMetricExtensionQueryPropertyArgs{...}
+type GetMetricExtensionQueryPropertyInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyOutput() GetMetricExtensionQueryPropertyOutput
+	ToGetMetricExtensionQueryPropertyOutputWithContext(context.Context) GetMetricExtensionQueryPropertyOutput
+}
+
+type GetMetricExtensionQueryPropertyArgs struct {
+	// Arguments required by either command or script
+	Arguments pulumi.StringInput `pulumi:"arguments"`
+	// Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+	AutoRowPrefix pulumi.StringInput `pulumi:"autoRowPrefix"`
+	// Type of possible collection methods.
+	CollectionMethod pulumi.StringInput `pulumi:"collectionMethod"`
+	// OS command to execute without arguments
+	Command pulumi.StringInput `pulumi:"command"`
+	// Character used to delimit multiple metric values in single line of output
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+	IdentityMetric pulumi.StringInput `pulumi:"identityMetric"`
+	// List of values and position of PL/SQL procedure IN parameters
+	InParamDetails GetMetricExtensionQueryPropertyInParamDetailArrayInput `pulumi:"inParamDetails"`
+	// Indicates if Metric Service is enabled on server domain
+	IsMetricServiceEnabled pulumi.BoolInput `pulumi:"isMetricServiceEnabled"`
+	// List of JMX attributes or Metric Service Table columns separated by semi-colon
+	JmxAttributes pulumi.StringInput `pulumi:"jmxAttributes"`
+	// JMX Managed Bean Query or Metric Service Table name
+	ManagedBeanQuery pulumi.StringInput `pulumi:"managedBeanQuery"`
+	// Position and SQL Type of PL/SQL OUT parameter
+	OutParamDetails GetMetricExtensionQueryPropertyOutParamDetailArrayInput `pulumi:"outParamDetails"`
+	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	ScriptDetails GetMetricExtensionQueryPropertyScriptDetailArrayInput `pulumi:"scriptDetails"`
+	// Details of Sql content which needs to execute to collect Metric Extension data
+	SqlDetails GetMetricExtensionQueryPropertySqlDetailArrayInput `pulumi:"sqlDetails"`
+	// Type of SQL data collection method i.e. either a Statement or SQL Script File
+	SqlType pulumi.StringInput `pulumi:"sqlType"`
+	// String prefix used to identify metric output of the OS Command
+	StartsWith pulumi.StringInput `pulumi:"startsWith"`
+}
+
+func (GetMetricExtensionQueryPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryProperty)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyArgs) ToGetMetricExtensionQueryPropertyOutput() GetMetricExtensionQueryPropertyOutput {
+	return i.ToGetMetricExtensionQueryPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyArgs) ToGetMetricExtensionQueryPropertyOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryProperty] {
+	return pulumix.Output[GetMetricExtensionQueryProperty]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionQueryPropertyArrayInput is an input type that accepts GetMetricExtensionQueryPropertyArray and GetMetricExtensionQueryPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyArrayInput` via:
+//
+//	GetMetricExtensionQueryPropertyArray{ GetMetricExtensionQueryPropertyArgs{...} }
+type GetMetricExtensionQueryPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyArrayOutput() GetMetricExtensionQueryPropertyArrayOutput
+	ToGetMetricExtensionQueryPropertyArrayOutputWithContext(context.Context) GetMetricExtensionQueryPropertyArrayOutput
+}
+
+type GetMetricExtensionQueryPropertyArray []GetMetricExtensionQueryPropertyInput
+
+func (GetMetricExtensionQueryPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryProperty)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyArray) ToGetMetricExtensionQueryPropertyArrayOutput() GetMetricExtensionQueryPropertyArrayOutput {
+	return i.ToGetMetricExtensionQueryPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyArray) ToGetMetricExtensionQueryPropertyArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyArrayOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryProperty] {
+	return pulumix.Output[[]GetMetricExtensionQueryProperty]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionQueryPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryProperty)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyOutput) ToGetMetricExtensionQueryPropertyOutput() GetMetricExtensionQueryPropertyOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyOutput) ToGetMetricExtensionQueryPropertyOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryProperty] {
+	return pulumix.Output[GetMetricExtensionQueryProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Arguments required by either command or script
+func (o GetMetricExtensionQueryPropertyOutput) Arguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.Arguments }).(pulumi.StringOutput)
+}
+
+// Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+func (o GetMetricExtensionQueryPropertyOutput) AutoRowPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.AutoRowPrefix }).(pulumi.StringOutput)
+}
+
+// Type of possible collection methods.
+func (o GetMetricExtensionQueryPropertyOutput) CollectionMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.CollectionMethod }).(pulumi.StringOutput)
+}
+
+// OS command to execute without arguments
+func (o GetMetricExtensionQueryPropertyOutput) Command() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.Command }).(pulumi.StringOutput)
+}
+
+// Character used to delimit multiple metric values in single line of output
+func (o GetMetricExtensionQueryPropertyOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+func (o GetMetricExtensionQueryPropertyOutput) IdentityMetric() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.IdentityMetric }).(pulumi.StringOutput)
+}
+
+// List of values and position of PL/SQL procedure IN parameters
+func (o GetMetricExtensionQueryPropertyOutput) InParamDetails() GetMetricExtensionQueryPropertyInParamDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) []GetMetricExtensionQueryPropertyInParamDetail {
+		return v.InParamDetails
+	}).(GetMetricExtensionQueryPropertyInParamDetailArrayOutput)
+}
+
+// Indicates if Metric Service is enabled on server domain
+func (o GetMetricExtensionQueryPropertyOutput) IsMetricServiceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) bool { return v.IsMetricServiceEnabled }).(pulumi.BoolOutput)
+}
+
+// List of JMX attributes or Metric Service Table columns separated by semi-colon
+func (o GetMetricExtensionQueryPropertyOutput) JmxAttributes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.JmxAttributes }).(pulumi.StringOutput)
+}
+
+// JMX Managed Bean Query or Metric Service Table name
+func (o GetMetricExtensionQueryPropertyOutput) ManagedBeanQuery() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.ManagedBeanQuery }).(pulumi.StringOutput)
+}
+
+// Position and SQL Type of PL/SQL OUT parameter
+func (o GetMetricExtensionQueryPropertyOutput) OutParamDetails() GetMetricExtensionQueryPropertyOutParamDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) []GetMetricExtensionQueryPropertyOutParamDetail {
+		return v.OutParamDetails
+	}).(GetMetricExtensionQueryPropertyOutParamDetailArrayOutput)
+}
+
+// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+func (o GetMetricExtensionQueryPropertyOutput) ScriptDetails() GetMetricExtensionQueryPropertyScriptDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) []GetMetricExtensionQueryPropertyScriptDetail {
+		return v.ScriptDetails
+	}).(GetMetricExtensionQueryPropertyScriptDetailArrayOutput)
+}
+
+// Details of Sql content which needs to execute to collect Metric Extension data
+func (o GetMetricExtensionQueryPropertyOutput) SqlDetails() GetMetricExtensionQueryPropertySqlDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) []GetMetricExtensionQueryPropertySqlDetail {
+		return v.SqlDetails
+	}).(GetMetricExtensionQueryPropertySqlDetailArrayOutput)
+}
+
+// Type of SQL data collection method i.e. either a Statement or SQL Script File
+func (o GetMetricExtensionQueryPropertyOutput) SqlType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.SqlType }).(pulumi.StringOutput)
+}
+
+// String prefix used to identify metric output of the OS Command
+func (o GetMetricExtensionQueryPropertyOutput) StartsWith() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryProperty) string { return v.StartsWith }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionQueryPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryProperty)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyArrayOutput) ToGetMetricExtensionQueryPropertyArrayOutput() GetMetricExtensionQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyArrayOutput) ToGetMetricExtensionQueryPropertyArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryProperty] {
+	return pulumix.Output[[]GetMetricExtensionQueryProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionQueryProperty {
+		return vs[0].([]GetMetricExtensionQueryProperty)[vs[1].(int)]
+	}).(GetMetricExtensionQueryPropertyOutput)
+}
+
+type GetMetricExtensionQueryPropertyInParamDetail struct {
+	// Position of IN parameter
+	InParamPosition int `pulumi:"inParamPosition"`
+	// Value of IN parameter
+	InParamValue string `pulumi:"inParamValue"`
+}
+
+// GetMetricExtensionQueryPropertyInParamDetailInput is an input type that accepts GetMetricExtensionQueryPropertyInParamDetailArgs and GetMetricExtensionQueryPropertyInParamDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyInParamDetailInput` via:
+//
+//	GetMetricExtensionQueryPropertyInParamDetailArgs{...}
+type GetMetricExtensionQueryPropertyInParamDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyInParamDetailOutput() GetMetricExtensionQueryPropertyInParamDetailOutput
+	ToGetMetricExtensionQueryPropertyInParamDetailOutputWithContext(context.Context) GetMetricExtensionQueryPropertyInParamDetailOutput
+}
+
+type GetMetricExtensionQueryPropertyInParamDetailArgs struct {
+	// Position of IN parameter
+	InParamPosition pulumi.IntInput `pulumi:"inParamPosition"`
+	// Value of IN parameter
+	InParamValue pulumi.StringInput `pulumi:"inParamValue"`
+}
+
+func (GetMetricExtensionQueryPropertyInParamDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyInParamDetailArgs) ToGetMetricExtensionQueryPropertyInParamDetailOutput() GetMetricExtensionQueryPropertyInParamDetailOutput {
+	return i.ToGetMetricExtensionQueryPropertyInParamDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyInParamDetailArgs) ToGetMetricExtensionQueryPropertyInParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyInParamDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyInParamDetailOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyInParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyInParamDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionQueryPropertyInParamDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertyInParamDetailArray and GetMetricExtensionQueryPropertyInParamDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyInParamDetailArrayInput` via:
+//
+//	GetMetricExtensionQueryPropertyInParamDetailArray{ GetMetricExtensionQueryPropertyInParamDetailArgs{...} }
+type GetMetricExtensionQueryPropertyInParamDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyInParamDetailArrayOutput() GetMetricExtensionQueryPropertyInParamDetailArrayOutput
+	ToGetMetricExtensionQueryPropertyInParamDetailArrayOutputWithContext(context.Context) GetMetricExtensionQueryPropertyInParamDetailArrayOutput
+}
+
+type GetMetricExtensionQueryPropertyInParamDetailArray []GetMetricExtensionQueryPropertyInParamDetailInput
+
+func (GetMetricExtensionQueryPropertyInParamDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyInParamDetailArray) ToGetMetricExtensionQueryPropertyInParamDetailArrayOutput() GetMetricExtensionQueryPropertyInParamDetailArrayOutput {
+	return i.ToGetMetricExtensionQueryPropertyInParamDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyInParamDetailArray) ToGetMetricExtensionQueryPropertyInParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyInParamDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyInParamDetailArrayOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyInParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyInParamDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionQueryPropertyInParamDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyInParamDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyInParamDetailOutput) ToGetMetricExtensionQueryPropertyInParamDetailOutput() GetMetricExtensionQueryPropertyInParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyInParamDetailOutput) ToGetMetricExtensionQueryPropertyInParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyInParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyInParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Position of IN parameter
+func (o GetMetricExtensionQueryPropertyInParamDetailOutput) InParamPosition() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertyInParamDetail) int { return v.InParamPosition }).(pulumi.IntOutput)
+}
+
+// Value of IN parameter
+func (o GetMetricExtensionQueryPropertyInParamDetailOutput) InParamValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertyInParamDetail) string { return v.InParamValue }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionQueryPropertyInParamDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyInParamDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) ToGetMetricExtensionQueryPropertyInParamDetailArrayOutput() GetMetricExtensionQueryPropertyInParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) ToGetMetricExtensionQueryPropertyInParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyInParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyInParamDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionQueryPropertyInParamDetail {
+		return vs[0].([]GetMetricExtensionQueryPropertyInParamDetail)[vs[1].(int)]
+	}).(GetMetricExtensionQueryPropertyInParamDetailOutput)
+}
+
+type GetMetricExtensionQueryPropertyOutParamDetail struct {
+	// Position of PL/SQL procedure OUT parameter
+	OutParamPosition int `pulumi:"outParamPosition"`
+	// SQL Type of PL/SQL procedure OUT parameter
+	OutParamType string `pulumi:"outParamType"`
+}
+
+// GetMetricExtensionQueryPropertyOutParamDetailInput is an input type that accepts GetMetricExtensionQueryPropertyOutParamDetailArgs and GetMetricExtensionQueryPropertyOutParamDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyOutParamDetailInput` via:
+//
+//	GetMetricExtensionQueryPropertyOutParamDetailArgs{...}
+type GetMetricExtensionQueryPropertyOutParamDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyOutParamDetailOutput() GetMetricExtensionQueryPropertyOutParamDetailOutput
+	ToGetMetricExtensionQueryPropertyOutParamDetailOutputWithContext(context.Context) GetMetricExtensionQueryPropertyOutParamDetailOutput
+}
+
+type GetMetricExtensionQueryPropertyOutParamDetailArgs struct {
+	// Position of PL/SQL procedure OUT parameter
+	OutParamPosition pulumi.IntInput `pulumi:"outParamPosition"`
+	// SQL Type of PL/SQL procedure OUT parameter
+	OutParamType pulumi.StringInput `pulumi:"outParamType"`
+}
+
+func (GetMetricExtensionQueryPropertyOutParamDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyOutParamDetailArgs) ToGetMetricExtensionQueryPropertyOutParamDetailOutput() GetMetricExtensionQueryPropertyOutParamDetailOutput {
+	return i.ToGetMetricExtensionQueryPropertyOutParamDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyOutParamDetailArgs) ToGetMetricExtensionQueryPropertyOutParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutParamDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyOutParamDetailOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyOutParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyOutParamDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionQueryPropertyOutParamDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertyOutParamDetailArray and GetMetricExtensionQueryPropertyOutParamDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyOutParamDetailArrayInput` via:
+//
+//	GetMetricExtensionQueryPropertyOutParamDetailArray{ GetMetricExtensionQueryPropertyOutParamDetailArgs{...} }
+type GetMetricExtensionQueryPropertyOutParamDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutput() GetMetricExtensionQueryPropertyOutParamDetailArrayOutput
+	ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutputWithContext(context.Context) GetMetricExtensionQueryPropertyOutParamDetailArrayOutput
+}
+
+type GetMetricExtensionQueryPropertyOutParamDetailArray []GetMetricExtensionQueryPropertyOutParamDetailInput
+
+func (GetMetricExtensionQueryPropertyOutParamDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyOutParamDetailArray) ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutput() GetMetricExtensionQueryPropertyOutParamDetailArrayOutput {
+	return i.ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyOutParamDetailArray) ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutParamDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyOutParamDetailArrayOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyOutParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionQueryPropertyOutParamDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyOutParamDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) ToGetMetricExtensionQueryPropertyOutParamDetailOutput() GetMetricExtensionQueryPropertyOutParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) ToGetMetricExtensionQueryPropertyOutParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Position of PL/SQL procedure OUT parameter
+func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) OutParamPosition() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertyOutParamDetail) int { return v.OutParamPosition }).(pulumi.IntOutput)
+}
+
+// SQL Type of PL/SQL procedure OUT parameter
+func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) OutParamType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertyOutParamDetail) string { return v.OutParamType }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionQueryPropertyOutParamDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutput() GetMetricExtensionQueryPropertyOutParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyOutParamDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionQueryPropertyOutParamDetail {
+		return vs[0].([]GetMetricExtensionQueryPropertyOutParamDetail)[vs[1].(int)]
+	}).(GetMetricExtensionQueryPropertyOutParamDetailOutput)
+}
+
+type GetMetricExtensionQueryPropertyScriptDetail struct {
+	// Sql statement or script file content as base64 encoded string
+	Content string `pulumi:"content"`
+	// Name of the script file
+	Name string `pulumi:"name"`
+}
+
+// GetMetricExtensionQueryPropertyScriptDetailInput is an input type that accepts GetMetricExtensionQueryPropertyScriptDetailArgs and GetMetricExtensionQueryPropertyScriptDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyScriptDetailInput` via:
+//
+//	GetMetricExtensionQueryPropertyScriptDetailArgs{...}
+type GetMetricExtensionQueryPropertyScriptDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyScriptDetailOutput() GetMetricExtensionQueryPropertyScriptDetailOutput
+	ToGetMetricExtensionQueryPropertyScriptDetailOutputWithContext(context.Context) GetMetricExtensionQueryPropertyScriptDetailOutput
+}
+
+type GetMetricExtensionQueryPropertyScriptDetailArgs struct {
+	// Sql statement or script file content as base64 encoded string
+	Content pulumi.StringInput `pulumi:"content"`
+	// Name of the script file
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetMetricExtensionQueryPropertyScriptDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyScriptDetailArgs) ToGetMetricExtensionQueryPropertyScriptDetailOutput() GetMetricExtensionQueryPropertyScriptDetailOutput {
+	return i.ToGetMetricExtensionQueryPropertyScriptDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyScriptDetailArgs) ToGetMetricExtensionQueryPropertyScriptDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyScriptDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyScriptDetailOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyScriptDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyScriptDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionQueryPropertyScriptDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertyScriptDetailArray and GetMetricExtensionQueryPropertyScriptDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertyScriptDetailArrayInput` via:
+//
+//	GetMetricExtensionQueryPropertyScriptDetailArray{ GetMetricExtensionQueryPropertyScriptDetailArgs{...} }
+type GetMetricExtensionQueryPropertyScriptDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertyScriptDetailArrayOutput() GetMetricExtensionQueryPropertyScriptDetailArrayOutput
+	ToGetMetricExtensionQueryPropertyScriptDetailArrayOutputWithContext(context.Context) GetMetricExtensionQueryPropertyScriptDetailArrayOutput
+}
+
+type GetMetricExtensionQueryPropertyScriptDetailArray []GetMetricExtensionQueryPropertyScriptDetailInput
+
+func (GetMetricExtensionQueryPropertyScriptDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertyScriptDetailArray) ToGetMetricExtensionQueryPropertyScriptDetailArrayOutput() GetMetricExtensionQueryPropertyScriptDetailArrayOutput {
+	return i.ToGetMetricExtensionQueryPropertyScriptDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertyScriptDetailArray) ToGetMetricExtensionQueryPropertyScriptDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyScriptDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyScriptDetailArrayOutput)
+}
+
+func (i GetMetricExtensionQueryPropertyScriptDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertyScriptDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionQueryPropertyScriptDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyScriptDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyScriptDetailOutput) ToGetMetricExtensionQueryPropertyScriptDetailOutput() GetMetricExtensionQueryPropertyScriptDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyScriptDetailOutput) ToGetMetricExtensionQueryPropertyScriptDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyScriptDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyScriptDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Sql statement or script file content as base64 encoded string
+func (o GetMetricExtensionQueryPropertyScriptDetailOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertyScriptDetail) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Name of the script file
+func (o GetMetricExtensionQueryPropertyScriptDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertyScriptDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionQueryPropertyScriptDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertyScriptDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) ToGetMetricExtensionQueryPropertyScriptDetailArrayOutput() GetMetricExtensionQueryPropertyScriptDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) ToGetMetricExtensionQueryPropertyScriptDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyScriptDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyScriptDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionQueryPropertyScriptDetail {
+		return vs[0].([]GetMetricExtensionQueryPropertyScriptDetail)[vs[1].(int)]
+	}).(GetMetricExtensionQueryPropertyScriptDetailOutput)
+}
+
+type GetMetricExtensionQueryPropertySqlDetail struct {
+	// Sql statement or script file content as base64 encoded string
+	Content string `pulumi:"content"`
+	// If a script needs to be executed, then provide file name of the script
+	ScriptFileName string `pulumi:"scriptFileName"`
+}
+
+// GetMetricExtensionQueryPropertySqlDetailInput is an input type that accepts GetMetricExtensionQueryPropertySqlDetailArgs and GetMetricExtensionQueryPropertySqlDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertySqlDetailInput` via:
+//
+//	GetMetricExtensionQueryPropertySqlDetailArgs{...}
+type GetMetricExtensionQueryPropertySqlDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertySqlDetailOutput() GetMetricExtensionQueryPropertySqlDetailOutput
+	ToGetMetricExtensionQueryPropertySqlDetailOutputWithContext(context.Context) GetMetricExtensionQueryPropertySqlDetailOutput
+}
+
+type GetMetricExtensionQueryPropertySqlDetailArgs struct {
+	// Sql statement or script file content as base64 encoded string
+	Content pulumi.StringInput `pulumi:"content"`
+	// If a script needs to be executed, then provide file name of the script
+	ScriptFileName pulumi.StringInput `pulumi:"scriptFileName"`
+}
+
+func (GetMetricExtensionQueryPropertySqlDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertySqlDetailArgs) ToGetMetricExtensionQueryPropertySqlDetailOutput() GetMetricExtensionQueryPropertySqlDetailOutput {
+	return i.ToGetMetricExtensionQueryPropertySqlDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertySqlDetailArgs) ToGetMetricExtensionQueryPropertySqlDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertySqlDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertySqlDetailOutput)
+}
+
+func (i GetMetricExtensionQueryPropertySqlDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertySqlDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertySqlDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertySqlDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionQueryPropertySqlDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertySqlDetailArray and GetMetricExtensionQueryPropertySqlDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionQueryPropertySqlDetailArrayInput` via:
+//
+//	GetMetricExtensionQueryPropertySqlDetailArray{ GetMetricExtensionQueryPropertySqlDetailArgs{...} }
+type GetMetricExtensionQueryPropertySqlDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionQueryPropertySqlDetailArrayOutput() GetMetricExtensionQueryPropertySqlDetailArrayOutput
+	ToGetMetricExtensionQueryPropertySqlDetailArrayOutputWithContext(context.Context) GetMetricExtensionQueryPropertySqlDetailArrayOutput
+}
+
+type GetMetricExtensionQueryPropertySqlDetailArray []GetMetricExtensionQueryPropertySqlDetailInput
+
+func (GetMetricExtensionQueryPropertySqlDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionQueryPropertySqlDetailArray) ToGetMetricExtensionQueryPropertySqlDetailArrayOutput() GetMetricExtensionQueryPropertySqlDetailArrayOutput {
+	return i.ToGetMetricExtensionQueryPropertySqlDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionQueryPropertySqlDetailArray) ToGetMetricExtensionQueryPropertySqlDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertySqlDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertySqlDetailArrayOutput)
+}
+
+func (i GetMetricExtensionQueryPropertySqlDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail]{
+		OutputState: i.ToGetMetricExtensionQueryPropertySqlDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionQueryPropertySqlDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertySqlDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertySqlDetailOutput) ToGetMetricExtensionQueryPropertySqlDetailOutput() GetMetricExtensionQueryPropertySqlDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertySqlDetailOutput) ToGetMetricExtensionQueryPropertySqlDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertySqlDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertySqlDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertySqlDetail] {
+	return pulumix.Output[GetMetricExtensionQueryPropertySqlDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Sql statement or script file content as base64 encoded string
+func (o GetMetricExtensionQueryPropertySqlDetailOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertySqlDetail) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// If a script needs to be executed, then provide file name of the script
+func (o GetMetricExtensionQueryPropertySqlDetailOutput) ScriptFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionQueryPropertySqlDetail) string { return v.ScriptFileName }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionQueryPropertySqlDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionQueryPropertySqlDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) ToGetMetricExtensionQueryPropertySqlDetailArrayOutput() GetMetricExtensionQueryPropertySqlDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) ToGetMetricExtensionQueryPropertySqlDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertySqlDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail] {
+	return pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertySqlDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionQueryPropertySqlDetail {
+		return vs[0].([]GetMetricExtensionQueryPropertySqlDetail)[vs[1].(int)]
+	}).(GetMetricExtensionQueryPropertySqlDetailOutput)
+}
+
+type GetMetricExtensionsFilter struct {
+	// A filter to return resources based on name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMetricExtensionsFilterInput is an input type that accepts GetMetricExtensionsFilterArgs and GetMetricExtensionsFilterOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsFilterInput` via:
+//
+//	GetMetricExtensionsFilterArgs{...}
+type GetMetricExtensionsFilterInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsFilterOutput() GetMetricExtensionsFilterOutput
+	ToGetMetricExtensionsFilterOutputWithContext(context.Context) GetMetricExtensionsFilterOutput
+}
+
+type GetMetricExtensionsFilterArgs struct {
+	// A filter to return resources based on name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMetricExtensionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsFilter)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsFilterArgs) ToGetMetricExtensionsFilterOutput() GetMetricExtensionsFilterOutput {
+	return i.ToGetMetricExtensionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsFilterArgs) ToGetMetricExtensionsFilterOutputWithContext(ctx context.Context) GetMetricExtensionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsFilterOutput)
+}
+
+func (i GetMetricExtensionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsFilter] {
+	return pulumix.Output[GetMetricExtensionsFilter]{
+		OutputState: i.ToGetMetricExtensionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsFilterArrayInput is an input type that accepts GetMetricExtensionsFilterArray and GetMetricExtensionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsFilterArrayInput` via:
+//
+//	GetMetricExtensionsFilterArray{ GetMetricExtensionsFilterArgs{...} }
+type GetMetricExtensionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsFilterArrayOutput() GetMetricExtensionsFilterArrayOutput
+	ToGetMetricExtensionsFilterArrayOutputWithContext(context.Context) GetMetricExtensionsFilterArrayOutput
+}
+
+type GetMetricExtensionsFilterArray []GetMetricExtensionsFilterInput
+
+func (GetMetricExtensionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsFilter)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsFilterArray) ToGetMetricExtensionsFilterArrayOutput() GetMetricExtensionsFilterArrayOutput {
+	return i.ToGetMetricExtensionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsFilterArray) ToGetMetricExtensionsFilterArrayOutputWithContext(ctx context.Context) GetMetricExtensionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsFilterArrayOutput)
+}
+
+func (i GetMetricExtensionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsFilter] {
+	return pulumix.Output[[]GetMetricExtensionsFilter]{
+		OutputState: i.ToGetMetricExtensionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsFilter)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsFilterOutput) ToGetMetricExtensionsFilterOutput() GetMetricExtensionsFilterOutput {
+	return o
+}
+
+func (o GetMetricExtensionsFilterOutput) ToGetMetricExtensionsFilterOutputWithContext(ctx context.Context) GetMetricExtensionsFilterOutput {
+	return o
+}
+
+func (o GetMetricExtensionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsFilter] {
+	return pulumix.Output[GetMetricExtensionsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return resources based on name.
+func (o GetMetricExtensionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMetricExtensionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMetricExtensionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMetricExtensionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMetricExtensionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsFilter)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsFilterArrayOutput) ToGetMetricExtensionsFilterArrayOutput() GetMetricExtensionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsFilterArrayOutput) ToGetMetricExtensionsFilterArrayOutputWithContext(ctx context.Context) GetMetricExtensionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsFilter] {
+	return pulumix.Output[[]GetMetricExtensionsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsFilterArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsFilter {
+		return vs[0].([]GetMetricExtensionsFilter)[vs[1].(int)]
+	}).(GetMetricExtensionsFilterOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollection struct {
+	Items []GetMetricExtensionsMetricExtensionCollectionItem `pulumi:"items"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionArgs and GetMetricExtensionsMetricExtensionCollectionOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionOutput() GetMetricExtensionsMetricExtensionCollectionOutput
+	ToGetMetricExtensionsMetricExtensionCollectionOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionArgs struct {
+	Items GetMetricExtensionsMetricExtensionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollection)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionArgs) ToGetMetricExtensionsMetricExtensionCollectionOutput() GetMetricExtensionsMetricExtensionCollectionOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionArgs) ToGetMetricExtensionsMetricExtensionCollectionOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollection] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollection]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionArray and GetMetricExtensionsMetricExtensionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionArray{ GetMetricExtensionsMetricExtensionCollectionArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionArrayOutput() GetMetricExtensionsMetricExtensionCollectionArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionArray []GetMetricExtensionsMetricExtensionCollectionInput
+
+func (GetMetricExtensionsMetricExtensionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollection)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionArray) ToGetMetricExtensionsMetricExtensionCollectionArrayOutput() GetMetricExtensionsMetricExtensionCollectionArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionArray) ToGetMetricExtensionsMetricExtensionCollectionArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollection)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionOutput) ToGetMetricExtensionsMetricExtensionCollectionOutput() GetMetricExtensionsMetricExtensionCollectionOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionOutput) ToGetMetricExtensionsMetricExtensionCollectionOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollection] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionOutput) Items() GetMetricExtensionsMetricExtensionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollection) []GetMetricExtensionsMetricExtensionCollectionItem {
+		return v.Items
+	}).(GetMetricExtensionsMetricExtensionCollectionItemArrayOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollection)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionArrayOutput() GetMetricExtensionsMetricExtensionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollection {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollection)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItem struct {
+	// Type of possible collection methods.
+	CollectionMethod string `pulumi:"collectionMethod"`
+	// Schedule of metric extension should use RFC 5545 format > recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
+	CollectionRecurrences string `pulumi:"collectionRecurrences"`
+	// The ID of the compartment in which data is listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Created by user
+	CreatedBy string `pulumi:"createdBy"`
+	// Description of the metric extension.
+	Description string `pulumi:"description"`
+	// Display name of the metric.
+	DisplayName string `pulumi:"displayName"`
+	// List of resource objects on which this metric extension is enabled.
+	EnabledOnResources []GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource `pulumi:"enabledOnResources"`
+	// Count of resources on which this metric extension is enabled.
+	EnabledOnResourcesCount int `pulumi:"enabledOnResourcesCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+	Id string `pulumi:"id"`
+	// Last updated by user
+	LastUpdatedBy string `pulumi:"lastUpdatedBy"`
+	// List of metrics which are part of this metric extension
+	MetricLists []GetMetricExtensionsMetricExtensionCollectionItemMetricList `pulumi:"metricLists"`
+	// A filter to return resources based on name.
+	Name           string `pulumi:"name"`
+	PublishTrigger bool   `pulumi:"publishTrigger"`
+	// Collection method and query properties details of metric extension
+	QueryProperties []GetMetricExtensionsMetricExtensionCollectionItemQueryProperty `pulumi:"queryProperties"`
+	// A filter to return resources based on resource type.
+	ResourceType string `pulumi:"resourceType"`
+	// The URI path that the user can do a GET on to access the metric extension metadata
+	ResourceUri string `pulumi:"resourceUri"`
+	// A filter to return metric extensions based on Lifecycle State
+	State string `pulumi:"state"`
+	// A filter to return resources based on status e.g. Draft or Published
+	Status string `pulumi:"status"`
+	// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	TenantId string `pulumi:"tenantId"`
+	// Metric Extension creation time. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Metric Extension update time. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemArgs and GetMetricExtensionsMetricExtensionCollectionItemOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemOutput() GetMetricExtensionsMetricExtensionCollectionItemOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemArgs struct {
+	// Type of possible collection methods.
+	CollectionMethod pulumi.StringInput `pulumi:"collectionMethod"`
+	// Schedule of metric extension should use RFC 5545 format > recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
+	CollectionRecurrences pulumi.StringInput `pulumi:"collectionRecurrences"`
+	// The ID of the compartment in which data is listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Created by user
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Description of the metric extension.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Display name of the metric.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// List of resource objects on which this metric extension is enabled.
+	EnabledOnResources GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput `pulumi:"enabledOnResources"`
+	// Count of resources on which this metric extension is enabled.
+	EnabledOnResourcesCount pulumi.IntInput `pulumi:"enabledOnResourcesCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+	Id pulumi.StringInput `pulumi:"id"`
+	// Last updated by user
+	LastUpdatedBy pulumi.StringInput `pulumi:"lastUpdatedBy"`
+	// List of metrics which are part of this metric extension
+	MetricLists GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayInput `pulumi:"metricLists"`
+	// A filter to return resources based on name.
+	Name           pulumi.StringInput `pulumi:"name"`
+	PublishTrigger pulumi.BoolInput   `pulumi:"publishTrigger"`
+	// Collection method and query properties details of metric extension
+	QueryProperties GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayInput `pulumi:"queryProperties"`
+	// A filter to return resources based on resource type.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The URI path that the user can do a GET on to access the metric extension metadata
+	ResourceUri pulumi.StringInput `pulumi:"resourceUri"`
+	// A filter to return metric extensions based on Lifecycle State
+	State pulumi.StringInput `pulumi:"state"`
+	// A filter to return resources based on status e.g. Draft or Published
+	Status pulumi.StringInput `pulumi:"status"`
+	// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// Metric Extension creation time. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Metric Extension update time. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemArgs) ToGetMetricExtensionsMetricExtensionCollectionItemOutput() GetMetricExtensionsMetricExtensionCollectionItemOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemArgs) ToGetMetricExtensionsMetricExtensionCollectionItemOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemArray and GetMetricExtensionsMetricExtensionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemArray{ GetMetricExtensionsMetricExtensionCollectionItemArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemArray []GetMetricExtensionsMetricExtensionCollectionItemInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemArray) ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemArray) ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ToGetMetricExtensionsMetricExtensionCollectionItemOutput() GetMetricExtensionsMetricExtensionCollectionItemOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ToGetMetricExtensionsMetricExtensionCollectionItemOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Type of possible collection methods.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) CollectionMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.CollectionMethod }).(pulumi.StringOutput)
+}
+
+// Schedule of metric extension should use RFC 5545 format > recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) CollectionRecurrences() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.CollectionRecurrences }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which data is listed.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Created by user
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Description of the metric extension.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Display name of the metric.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// List of resource objects on which this metric extension is enabled.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) EnabledOnResources() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) []GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource {
+		return v.EnabledOnResources
+	}).(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput)
+}
+
+// Count of resources on which this metric extension is enabled.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) EnabledOnResourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) int { return v.EnabledOnResourcesCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Last updated by user
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) LastUpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
+}
+
+// List of metrics which are part of this metric extension
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) MetricLists() GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) []GetMetricExtensionsMetricExtensionCollectionItemMetricList {
+		return v.MetricLists
+	}).(GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput)
+}
+
+// A filter to return resources based on name.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) PublishTrigger() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) bool { return v.PublishTrigger }).(pulumi.BoolOutput)
+}
+
+// Collection method and query properties details of metric extension
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) QueryProperties() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) []GetMetricExtensionsMetricExtensionCollectionItemQueryProperty {
+		return v.QueryProperties
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput)
+}
+
+// A filter to return resources based on resource type.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The URI path that the user can do a GET on to access the metric extension metadata
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ResourceUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.ResourceUri }).(pulumi.StringOutput)
+}
+
+// A filter to return metric extensions based on Lifecycle State
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A filter to return resources based on status e.g. Draft or Published
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// Metric Extension creation time. An RFC3339 formatted datetime string.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Metric Extension update time. An RFC3339 formatted datetime string.
+func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItem {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItem)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource struct {
+	// The OCID of the resource on which Metric Extension is enabled
+	ResourceId string `pulumi:"resourceId"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs and GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs struct {
+	// The OCID of the resource on which Metric Extension is enabled
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray and GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray{ GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray []GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the resource on which Metric Extension is enabled
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemMetricList struct {
+	// Compute Expression to calculate the value of this metric
+	ComputeExpression string `pulumi:"computeExpression"`
+	// Data type of value of this metric
+	DataType string `pulumi:"dataType"`
+	// Display name of the metric.
+	DisplayName string `pulumi:"displayName"`
+	// Current metric need to be included as dimension or not
+	IsDimension bool `pulumi:"isDimension"`
+	// Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+	IsHidden bool `pulumi:"isHidden"`
+	// Metric category
+	MetricCategory string `pulumi:"metricCategory"`
+	// A filter to return resources based on name.
+	Name string `pulumi:"name"`
+	// Unit of metric value
+	Unit string `pulumi:"unit"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemMetricListInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs and GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemMetricListInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemMetricListInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutput() GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs struct {
+	// Compute Expression to calculate the value of this metric
+	ComputeExpression pulumi.StringInput `pulumi:"computeExpression"`
+	// Data type of value of this metric
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Display name of the metric.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Current metric need to be included as dimension or not
+	IsDimension pulumi.BoolInput `pulumi:"isDimension"`
+	// Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+	IsHidden pulumi.BoolInput `pulumi:"isHidden"`
+	// Metric category
+	MetricCategory pulumi.StringInput `pulumi:"metricCategory"`
+	// A filter to return resources based on name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Unit of metric value
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemMetricList)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutput() GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemMetricListArray and GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemMetricListArray{ GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemMetricListArray []GetMetricExtensionsMetricExtensionCollectionItemMetricListInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemMetricListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemMetricList)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArray) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArray) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemMetricList)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutput() GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Compute Expression to calculate the value of this metric
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ComputeExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) string { return v.ComputeExpression }).(pulumi.StringOutput)
+}
+
+// Data type of value of this metric
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// Display name of the metric.
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Current metric need to be included as dimension or not
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) IsDimension() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) bool { return v.IsDimension }).(pulumi.BoolOutput)
+}
+
+// Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) IsHidden() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) bool { return v.IsHidden }).(pulumi.BoolOutput)
+}
+
+// Metric category
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) MetricCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) string { return v.MetricCategory }).(pulumi.StringOutput)
+}
+
+// A filter to return resources based on name.
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Unit of metric value
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemMetricList) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemMetricList)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemMetricList {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemMetricList)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryProperty struct {
+	// Arguments required by either command or script
+	Arguments string `pulumi:"arguments"`
+	// Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+	AutoRowPrefix string `pulumi:"autoRowPrefix"`
+	// Type of possible collection methods.
+	CollectionMethod string `pulumi:"collectionMethod"`
+	// OS command to execute without arguments
+	Command string `pulumi:"command"`
+	// Character used to delimit multiple metric values in single line of output
+	Delimiter string `pulumi:"delimiter"`
+	// Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+	IdentityMetric string `pulumi:"identityMetric"`
+	// List of values and position of PL/SQL procedure IN parameters
+	InParamDetails []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail `pulumi:"inParamDetails"`
+	// Indicates if Metric Service is enabled on server domain
+	IsMetricServiceEnabled bool `pulumi:"isMetricServiceEnabled"`
+	// List of JMX attributes or Metric Service Table columns separated by semi-colon
+	JmxAttributes string `pulumi:"jmxAttributes"`
+	// JMX Managed Bean Query or Metric Service Table name
+	ManagedBeanQuery string `pulumi:"managedBeanQuery"`
+	// Position and SQL Type of PL/SQL OUT parameter
+	OutParamDetails []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail `pulumi:"outParamDetails"`
+	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	ScriptDetails []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail `pulumi:"scriptDetails"`
+	// Details of Sql content which needs to execute to collect Metric Extension data
+	SqlDetails []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail `pulumi:"sqlDetails"`
+	// Type of SQL data collection method i.e. either a Statement or SQL Script File
+	SqlType string `pulumi:"sqlType"`
+	// String prefix used to identify metric output of the OS Command
+	StartsWith string `pulumi:"startsWith"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs struct {
+	// Arguments required by either command or script
+	Arguments pulumi.StringInput `pulumi:"arguments"`
+	// Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+	AutoRowPrefix pulumi.StringInput `pulumi:"autoRowPrefix"`
+	// Type of possible collection methods.
+	CollectionMethod pulumi.StringInput `pulumi:"collectionMethod"`
+	// OS command to execute without arguments
+	Command pulumi.StringInput `pulumi:"command"`
+	// Character used to delimit multiple metric values in single line of output
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+	IdentityMetric pulumi.StringInput `pulumi:"identityMetric"`
+	// List of values and position of PL/SQL procedure IN parameters
+	InParamDetails GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayInput `pulumi:"inParamDetails"`
+	// Indicates if Metric Service is enabled on server domain
+	IsMetricServiceEnabled pulumi.BoolInput `pulumi:"isMetricServiceEnabled"`
+	// List of JMX attributes or Metric Service Table columns separated by semi-colon
+	JmxAttributes pulumi.StringInput `pulumi:"jmxAttributes"`
+	// JMX Managed Bean Query or Metric Service Table name
+	ManagedBeanQuery pulumi.StringInput `pulumi:"managedBeanQuery"`
+	// Position and SQL Type of PL/SQL OUT parameter
+	OutParamDetails GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput `pulumi:"outParamDetails"`
+	// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+	ScriptDetails GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput `pulumi:"scriptDetails"`
+	// Details of Sql content which needs to execute to collect Metric Extension data
+	SqlDetails GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput `pulumi:"sqlDetails"`
+	// Type of SQL data collection method i.e. either a Statement or SQL Script File
+	SqlType pulumi.StringInput `pulumi:"sqlType"`
+	// String prefix used to identify metric output of the OS Command
+	StartsWith pulumi.StringInput `pulumi:"startsWith"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray{ GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Arguments required by either command or script
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) Arguments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.Arguments }).(pulumi.StringOutput)
+}
+
+// Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) AutoRowPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.AutoRowPrefix }).(pulumi.StringOutput)
+}
+
+// Type of possible collection methods.
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) CollectionMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string {
+		return v.CollectionMethod
+	}).(pulumi.StringOutput)
+}
+
+// OS command to execute without arguments
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) Command() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.Command }).(pulumi.StringOutput)
+}
+
+// Character used to delimit multiple metric values in single line of output
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) IdentityMetric() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.IdentityMetric }).(pulumi.StringOutput)
+}
+
+// List of values and position of PL/SQL procedure IN parameters
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) InParamDetails() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail {
+		return v.InParamDetails
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput)
+}
+
+// Indicates if Metric Service is enabled on server domain
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) IsMetricServiceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) bool {
+		return v.IsMetricServiceEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// List of JMX attributes or Metric Service Table columns separated by semi-colon
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) JmxAttributes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.JmxAttributes }).(pulumi.StringOutput)
+}
+
+// JMX Managed Bean Query or Metric Service Table name
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ManagedBeanQuery() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string {
+		return v.ManagedBeanQuery
+	}).(pulumi.StringOutput)
+}
+
+// Position and SQL Type of PL/SQL OUT parameter
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) OutParamDetails() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail {
+		return v.OutParamDetails
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput)
+}
+
+// Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ScriptDetails() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail {
+		return v.ScriptDetails
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput)
+}
+
+// Details of Sql content which needs to execute to collect Metric Extension data
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) SqlDetails() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail {
+		return v.SqlDetails
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput)
+}
+
+// Type of SQL data collection method i.e. either a Statement or SQL Script File
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) SqlType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.SqlType }).(pulumi.StringOutput)
+}
+
+// String prefix used to identify metric output of the OS Command
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) StartsWith() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryProperty) string { return v.StartsWith }).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemQueryProperty {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail struct {
+	// Position of IN parameter
+	InParamPosition int `pulumi:"inParamPosition"`
+	// Value of IN parameter
+	InParamValue string `pulumi:"inParamValue"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs struct {
+	// Position of IN parameter
+	InParamPosition pulumi.IntInput `pulumi:"inParamPosition"`
+	// Value of IN parameter
+	InParamValue pulumi.StringInput `pulumi:"inParamValue"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray{ GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Position of IN parameter
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) InParamPosition() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail) int {
+		return v.InParamPosition
+	}).(pulumi.IntOutput)
+}
+
+// Value of IN parameter
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) InParamValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail) string {
+		return v.InParamValue
+	}).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail struct {
+	// Position of PL/SQL procedure OUT parameter
+	OutParamPosition int `pulumi:"outParamPosition"`
+	// SQL Type of PL/SQL procedure OUT parameter
+	OutParamType string `pulumi:"outParamType"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs struct {
+	// Position of PL/SQL procedure OUT parameter
+	OutParamPosition pulumi.IntInput `pulumi:"outParamPosition"`
+	// SQL Type of PL/SQL procedure OUT parameter
+	OutParamType pulumi.StringInput `pulumi:"outParamType"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray{ GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Position of PL/SQL procedure OUT parameter
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) OutParamPosition() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail) int {
+		return v.OutParamPosition
+	}).(pulumi.IntOutput)
+}
+
+// SQL Type of PL/SQL procedure OUT parameter
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) OutParamType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail) string {
+		return v.OutParamType
+	}).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail struct {
+	// Sql statement or script file content as base64 encoded string
+	Content string `pulumi:"content"`
+	// A filter to return resources based on name.
+	Name string `pulumi:"name"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs struct {
+	// Sql statement or script file content as base64 encoded string
+	Content pulumi.StringInput `pulumi:"content"`
+	// A filter to return resources based on name.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray{ GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Sql statement or script file content as base64 encoded string
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail) string {
+		return v.Content
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources based on name.
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail struct {
+	// Sql statement or script file content as base64 encoded string
+	Content string `pulumi:"content"`
+	// If a script needs to be executed, then provide file name of the script
+	ScriptFileName string `pulumi:"scriptFileName"`
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs{...}
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs struct {
+	// Sql statement or script file content as base64 encoded string
+	Content pulumi.StringInput `pulumi:"content"`
+	// If a script needs to be executed, then provide file name of the script
+	ScriptFileName pulumi.StringInput `pulumi:"scriptFileName"`
+}
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput values.
+// You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput` via:
+//
+//	GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray{ GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs{...} }
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput
+	ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutputWithContext(context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray []GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailInput
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput {
+	return i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput)
+}
+
+func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
+		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
+	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Sql statement or script file content as base64 encoded string
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail) string {
+		return v.Content
+	}).(pulumi.StringOutput)
+}
+
+// If a script needs to be executed, then provide file name of the script
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ScriptFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail) string {
+		return v.ScriptFileName
+	}).(pulumi.StringOutput)
+}
+
+type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail)(nil)).Elem()
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput() GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput {
+	return o
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
+	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail {
+		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail)[vs[1].(int)]
+	}).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput)
+}
+
 type GetMonitoredResourceAdditionalAlias struct {
 	// Monitored Resource Alias Reference Source Credential.
 	Credentials []GetMonitoredResourceAdditionalAliasCredential `pulumi:"credentials"`
@@ -7724,6 +13856,4063 @@ func (o GetMonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) GetMon
 	}).(GetMonitoredResourcePropertyOutput)
 }
 
+type GetMonitoredResourceTaskTaskDetail struct {
+	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
+	// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
+	Namespace string `pulumi:"namespace"`
+	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Source from where the metrics pushed to telemetry. Possible values:
+	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	Source string `pulumi:"source"`
+	// Task type.
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoredResourceTaskTaskDetailInput is an input type that accepts GetMonitoredResourceTaskTaskDetailArgs and GetMonitoredResourceTaskTaskDetailOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailArgs{...}
+type GetMonitoredResourceTaskTaskDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailOutput() GetMonitoredResourceTaskTaskDetailOutput
+	ToGetMonitoredResourceTaskTaskDetailOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailArgs struct {
+	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
+	// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Source from where the metrics pushed to telemetry. Possible values:
+	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Task type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoredResourceTaskTaskDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetail)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailArgs) ToGetMonitoredResourceTaskTaskDetailOutput() GetMonitoredResourceTaskTaskDetailOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailArgs) ToGetMonitoredResourceTaskTaskDetailOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailOutput)
+}
+
+func (i GetMonitoredResourceTaskTaskDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTaskTaskDetail] {
+	return pulumix.Output[GetMonitoredResourceTaskTaskDetail]{
+		OutputState: i.ToGetMonitoredResourceTaskTaskDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTaskTaskDetailArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailArray and GetMonitoredResourceTaskTaskDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailArrayInput` via:
+//
+//	GetMonitoredResourceTaskTaskDetailArray{ GetMonitoredResourceTaskTaskDetailArgs{...} }
+type GetMonitoredResourceTaskTaskDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTaskTaskDetailArrayOutput() GetMonitoredResourceTaskTaskDetailArrayOutput
+	ToGetMonitoredResourceTaskTaskDetailArrayOutputWithContext(context.Context) GetMonitoredResourceTaskTaskDetailArrayOutput
+}
+
+type GetMonitoredResourceTaskTaskDetailArray []GetMonitoredResourceTaskTaskDetailInput
+
+func (GetMonitoredResourceTaskTaskDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetail)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTaskTaskDetailArray) ToGetMonitoredResourceTaskTaskDetailArrayOutput() GetMonitoredResourceTaskTaskDetailArrayOutput {
+	return i.ToGetMonitoredResourceTaskTaskDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTaskTaskDetailArray) ToGetMonitoredResourceTaskTaskDetailArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailArrayOutput)
+}
+
+func (i GetMonitoredResourceTaskTaskDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTaskTaskDetail] {
+	return pulumix.Output[[]GetMonitoredResourceTaskTaskDetail]{
+		OutputState: i.ToGetMonitoredResourceTaskTaskDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTaskTaskDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTaskTaskDetail)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailOutput) ToGetMonitoredResourceTaskTaskDetailOutput() GetMonitoredResourceTaskTaskDetailOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailOutput) ToGetMonitoredResourceTaskTaskDetailOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTaskTaskDetail] {
+	return pulumix.Output[GetMonitoredResourceTaskTaskDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+func (o GetMonitoredResourceTaskTaskDetailOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) int { return v.AvailabilityProxyMetricCollectionInterval }).(pulumi.IntOutput)
+}
+
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+func (o GetMonitoredResourceTaskTaskDetailOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
+}
+
+// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
+func (o GetMonitoredResourceTaskTaskDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Source from where the metrics pushed to telemetry. Possible values:
+// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+func (o GetMonitoredResourceTaskTaskDetailOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// Task type.
+func (o GetMonitoredResourceTaskTaskDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTaskTaskDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTaskTaskDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTaskTaskDetail)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTaskTaskDetailArrayOutput) ToGetMonitoredResourceTaskTaskDetailArrayOutput() GetMonitoredResourceTaskTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailArrayOutput) ToGetMonitoredResourceTaskTaskDetailArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTaskTaskDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTaskTaskDetail] {
+	return pulumix.Output[[]GetMonitoredResourceTaskTaskDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTaskTaskDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetail {
+		return vs[0].([]GetMonitoredResourceTaskTaskDetail)[vs[1].(int)]
+	}).(GetMonitoredResourceTaskTaskDetailOutput)
+}
+
+type GetMonitoredResourceTasksFilter struct {
+	// Name of the task.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMonitoredResourceTasksFilterInput is an input type that accepts GetMonitoredResourceTasksFilterArgs and GetMonitoredResourceTasksFilterOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksFilterInput` via:
+//
+//	GetMonitoredResourceTasksFilterArgs{...}
+type GetMonitoredResourceTasksFilterInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksFilterOutput() GetMonitoredResourceTasksFilterOutput
+	ToGetMonitoredResourceTasksFilterOutputWithContext(context.Context) GetMonitoredResourceTasksFilterOutput
+}
+
+type GetMonitoredResourceTasksFilterArgs struct {
+	// Name of the task.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMonitoredResourceTasksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksFilter)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksFilterArgs) ToGetMonitoredResourceTasksFilterOutput() GetMonitoredResourceTasksFilterOutput {
+	return i.ToGetMonitoredResourceTasksFilterOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksFilterArgs) ToGetMonitoredResourceTasksFilterOutputWithContext(ctx context.Context) GetMonitoredResourceTasksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksFilterOutput)
+}
+
+func (i GetMonitoredResourceTasksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksFilter] {
+	return pulumix.Output[GetMonitoredResourceTasksFilter]{
+		OutputState: i.ToGetMonitoredResourceTasksFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTasksFilterArrayInput is an input type that accepts GetMonitoredResourceTasksFilterArray and GetMonitoredResourceTasksFilterArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksFilterArrayInput` via:
+//
+//	GetMonitoredResourceTasksFilterArray{ GetMonitoredResourceTasksFilterArgs{...} }
+type GetMonitoredResourceTasksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksFilterArrayOutput() GetMonitoredResourceTasksFilterArrayOutput
+	ToGetMonitoredResourceTasksFilterArrayOutputWithContext(context.Context) GetMonitoredResourceTasksFilterArrayOutput
+}
+
+type GetMonitoredResourceTasksFilterArray []GetMonitoredResourceTasksFilterInput
+
+func (GetMonitoredResourceTasksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksFilter)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksFilterArray) ToGetMonitoredResourceTasksFilterArrayOutput() GetMonitoredResourceTasksFilterArrayOutput {
+	return i.ToGetMonitoredResourceTasksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksFilterArray) ToGetMonitoredResourceTasksFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksFilterArrayOutput)
+}
+
+func (i GetMonitoredResourceTasksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksFilter] {
+	return pulumix.Output[[]GetMonitoredResourceTasksFilter]{
+		OutputState: i.ToGetMonitoredResourceTasksFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTasksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksFilter)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksFilterOutput) ToGetMonitoredResourceTasksFilterOutput() GetMonitoredResourceTasksFilterOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksFilterOutput) ToGetMonitoredResourceTasksFilterOutputWithContext(ctx context.Context) GetMonitoredResourceTasksFilterOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksFilter] {
+	return pulumix.Output[GetMonitoredResourceTasksFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Name of the task.
+func (o GetMonitoredResourceTasksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMonitoredResourceTasksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMonitoredResourceTasksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTasksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksFilter)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksFilterArrayOutput) ToGetMonitoredResourceTasksFilterArrayOutput() GetMonitoredResourceTasksFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksFilterArrayOutput) ToGetMonitoredResourceTasksFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksFilter] {
+	return pulumix.Output[[]GetMonitoredResourceTasksFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTasksFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksFilter {
+		return vs[0].([]GetMonitoredResourceTasksFilter)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksFilterOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollection struct {
+	Items []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem `pulumi:"items"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs struct {
+	Items GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollection)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput)
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
+	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
+		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollection)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput)
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
+	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
+		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollection)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
+	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) Items() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollection) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem {
+		return v.Items
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollection)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
+	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollection {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollection)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id string `pulumi:"id"`
+	// Name of the task.
+	Name string `pulumi:"name"`
+	// The current state of the stack monitoring resource task.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The request details for the performing the task.
+	TaskDetails []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail `pulumi:"taskDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	TenantId string `pulumi:"tenantId"`
+	// The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
+	WorkRequestIds []string `pulumi:"workRequestIds"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id pulumi.StringInput `pulumi:"id"`
+	// Name of the task.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The current state of the stack monitoring resource task.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The request details for the performing the task.
+	TaskDetails GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput `pulumi:"taskDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
+	WorkRequestIds pulumi.StringArrayInput `pulumi:"workRequestIds"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput)
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
+	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
+		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput)
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
+	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
+		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
+	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Name of the task.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The current state of the stack monitoring resource task.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The request details for the performing the task.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) TaskDetails() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail {
+		return v.TaskDetails
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) WorkRequestIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) []string {
+		return v.WorkRequestIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
+	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail struct {
+	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
+	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+	Namespace string `pulumi:"namespace"`
+	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Source from where the metrics pushed to telemetry. Possible values:
+	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	Source string `pulumi:"source"`
+	// Task type.
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs{...}
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs struct {
+	// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
+	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
+	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Source from where the metrics pushed to telemetry. Possible values:
+	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Task type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput)
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
+	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
+		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput` via:
+//
+//	GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray{ GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs{...} }
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput
+	ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutputWithContext(context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInput
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput {
+	return i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput)
+}
+
+func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
+	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
+		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
+	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) AvailabilityProxyMetricCollectionInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) int {
+		return v.AvailabilityProxyMetricCollectionInterval
+	}).(pulumi.IntOutput)
+}
+
+// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) AvailabilityProxyMetrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) []string {
+		return v.AvailabilityProxyMetrics
+	}).(pulumi.StringArrayOutput)
+}
+
+// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+// Source from where the metrics pushed to telemetry. Possible values:
+// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// Task type.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
+	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail {
+		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail)[vs[1].(int)]
+	}).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput)
+}
+
+type GetMonitoredResourceTypeMetadata struct {
+	// List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+	AgentProperties []string `pulumi:"agentProperties"`
+	// ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+	// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+	Format string `pulumi:"format"`
+	// List of required properties for resource type.
+	RequiredProperties []string `pulumi:"requiredProperties"`
+	// List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+	UniquePropertySets []GetMonitoredResourceTypeMetadataUniquePropertySet `pulumi:"uniquePropertySets"`
+	// List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+	ValidPropertiesForCreates []string `pulumi:"validPropertiesForCreates"`
+	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
+	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+	ValidPropertyValues map[string]interface{} `pulumi:"validPropertyValues"`
+}
+
+// GetMonitoredResourceTypeMetadataInput is an input type that accepts GetMonitoredResourceTypeMetadataArgs and GetMonitoredResourceTypeMetadataOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeMetadataInput` via:
+//
+//	GetMonitoredResourceTypeMetadataArgs{...}
+type GetMonitoredResourceTypeMetadataInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeMetadataOutput() GetMonitoredResourceTypeMetadataOutput
+	ToGetMonitoredResourceTypeMetadataOutputWithContext(context.Context) GetMonitoredResourceTypeMetadataOutput
+}
+
+type GetMonitoredResourceTypeMetadataArgs struct {
+	// List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+	AgentProperties pulumi.StringArrayInput `pulumi:"agentProperties"`
+	// ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+	// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+	Format pulumi.StringInput `pulumi:"format"`
+	// List of required properties for resource type.
+	RequiredProperties pulumi.StringArrayInput `pulumi:"requiredProperties"`
+	// List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+	UniquePropertySets GetMonitoredResourceTypeMetadataUniquePropertySetArrayInput `pulumi:"uniquePropertySets"`
+	// List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+	ValidPropertiesForCreates pulumi.StringArrayInput `pulumi:"validPropertiesForCreates"`
+	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
+	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+	ValidPropertyValues pulumi.MapInput `pulumi:"validPropertyValues"`
+}
+
+func (GetMonitoredResourceTypeMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeMetadataArgs) ToGetMonitoredResourceTypeMetadataOutput() GetMonitoredResourceTypeMetadataOutput {
+	return i.ToGetMonitoredResourceTypeMetadataOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeMetadataArgs) ToGetMonitoredResourceTypeMetadataOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataOutput)
+}
+
+func (i GetMonitoredResourceTypeMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadata] {
+	return pulumix.Output[GetMonitoredResourceTypeMetadata]{
+		OutputState: i.ToGetMonitoredResourceTypeMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTypeMetadataArrayInput is an input type that accepts GetMonitoredResourceTypeMetadataArray and GetMonitoredResourceTypeMetadataArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeMetadataArrayInput` via:
+//
+//	GetMonitoredResourceTypeMetadataArray{ GetMonitoredResourceTypeMetadataArgs{...} }
+type GetMonitoredResourceTypeMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeMetadataArrayOutput() GetMonitoredResourceTypeMetadataArrayOutput
+	ToGetMonitoredResourceTypeMetadataArrayOutputWithContext(context.Context) GetMonitoredResourceTypeMetadataArrayOutput
+}
+
+type GetMonitoredResourceTypeMetadataArray []GetMonitoredResourceTypeMetadataInput
+
+func (GetMonitoredResourceTypeMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeMetadataArray) ToGetMonitoredResourceTypeMetadataArrayOutput() GetMonitoredResourceTypeMetadataArrayOutput {
+	return i.ToGetMonitoredResourceTypeMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeMetadataArray) ToGetMonitoredResourceTypeMetadataArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataArrayOutput)
+}
+
+func (i GetMonitoredResourceTypeMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadata] {
+	return pulumix.Output[[]GetMonitoredResourceTypeMetadata]{
+		OutputState: i.ToGetMonitoredResourceTypeMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTypeMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeMetadataOutput) ToGetMonitoredResourceTypeMetadataOutput() GetMonitoredResourceTypeMetadataOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataOutput) ToGetMonitoredResourceTypeMetadataOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadata] {
+	return pulumix.Output[GetMonitoredResourceTypeMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+func (o GetMonitoredResourceTypeMetadataOutput) AgentProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) []string { return v.AgentProperties }).(pulumi.StringArrayOutput)
+}
+
+// ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+func (o GetMonitoredResourceTypeMetadataOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) string { return v.Format }).(pulumi.StringOutput)
+}
+
+// List of required properties for resource type.
+func (o GetMonitoredResourceTypeMetadataOutput) RequiredProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) []string { return v.RequiredProperties }).(pulumi.StringArrayOutput)
+}
+
+// List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+func (o GetMonitoredResourceTypeMetadataOutput) UniquePropertySets() GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) []GetMonitoredResourceTypeMetadataUniquePropertySet {
+		return v.UniquePropertySets
+	}).(GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput)
+}
+
+// List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertiesForCreates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) []string { return v.ValidPropertiesForCreates }).(pulumi.StringArrayOutput)
+}
+
+// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertiesForUpdates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) []string { return v.ValidPropertiesForUpdates }).(pulumi.StringArrayOutput)
+}
+
+// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) map[string]interface{} { return v.ValidPropertyValues }).(pulumi.MapOutput)
+}
+
+type GetMonitoredResourceTypeMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeMetadata)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeMetadataArrayOutput) ToGetMonitoredResourceTypeMetadataArrayOutput() GetMonitoredResourceTypeMetadataArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataArrayOutput) ToGetMonitoredResourceTypeMetadataArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadata] {
+	return pulumix.Output[[]GetMonitoredResourceTypeMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypeMetadataArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeMetadata {
+		return vs[0].([]GetMonitoredResourceTypeMetadata)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeMetadataOutput)
+}
+
+type GetMonitoredResourceTypeMetadataUniquePropertySet struct {
+	// List of properties.
+	Properties []string `pulumi:"properties"`
+}
+
+// GetMonitoredResourceTypeMetadataUniquePropertySetInput is an input type that accepts GetMonitoredResourceTypeMetadataUniquePropertySetArgs and GetMonitoredResourceTypeMetadataUniquePropertySetOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeMetadataUniquePropertySetInput` via:
+//
+//	GetMonitoredResourceTypeMetadataUniquePropertySetArgs{...}
+type GetMonitoredResourceTypeMetadataUniquePropertySetInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeMetadataUniquePropertySetOutput() GetMonitoredResourceTypeMetadataUniquePropertySetOutput
+	ToGetMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetOutput
+}
+
+type GetMonitoredResourceTypeMetadataUniquePropertySetArgs struct {
+	// List of properties.
+	Properties pulumi.StringArrayInput `pulumi:"properties"`
+}
+
+func (GetMonitoredResourceTypeMetadataUniquePropertySetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeMetadataUniquePropertySetArgs) ToGetMonitoredResourceTypeMetadataUniquePropertySetOutput() GetMonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return i.ToGetMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeMetadataUniquePropertySetArgs) ToGetMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataUniquePropertySetOutput)
+}
+
+func (i GetMonitoredResourceTypeMetadataUniquePropertySetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: i.ToGetMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTypeMetadataUniquePropertySetArrayInput is an input type that accepts GetMonitoredResourceTypeMetadataUniquePropertySetArray and GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypeMetadataUniquePropertySetArrayInput` via:
+//
+//	GetMonitoredResourceTypeMetadataUniquePropertySetArray{ GetMonitoredResourceTypeMetadataUniquePropertySetArgs{...} }
+type GetMonitoredResourceTypeMetadataUniquePropertySetArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput() GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput
+	ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput
+}
+
+type GetMonitoredResourceTypeMetadataUniquePropertySetArray []GetMonitoredResourceTypeMetadataUniquePropertySetInput
+
+func (GetMonitoredResourceTypeMetadataUniquePropertySetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypeMetadataUniquePropertySetArray) ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput() GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return i.ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypeMetadataUniquePropertySetArray) ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput)
+}
+
+func (i GetMonitoredResourceTypeMetadataUniquePropertySetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: i.ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTypeMetadataUniquePropertySetOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ToGetMonitoredResourceTypeMetadataUniquePropertySetOutput() GetMonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ToGetMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of properties.
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetOutput) Properties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadataUniquePropertySet) []string { return v.Properties }).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypeMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput() GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet] {
+	return pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeMetadataUniquePropertySetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeMetadataUniquePropertySet {
+		return vs[0].([]GetMonitoredResourceTypeMetadataUniquePropertySet)[vs[1].(int)]
+	}).(GetMonitoredResourceTypeMetadataUniquePropertySetOutput)
+}
+
+type GetMonitoredResourceTypesFilter struct {
+	// A filter to return monitored resource types that match exactly with the resource type name given.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMonitoredResourceTypesFilterInput is an input type that accepts GetMonitoredResourceTypesFilterArgs and GetMonitoredResourceTypesFilterOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesFilterInput` via:
+//
+//	GetMonitoredResourceTypesFilterArgs{...}
+type GetMonitoredResourceTypesFilterInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesFilterOutput() GetMonitoredResourceTypesFilterOutput
+	ToGetMonitoredResourceTypesFilterOutputWithContext(context.Context) GetMonitoredResourceTypesFilterOutput
+}
+
+type GetMonitoredResourceTypesFilterArgs struct {
+	// A filter to return monitored resource types that match exactly with the resource type name given.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMonitoredResourceTypesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesFilter)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesFilterArgs) ToGetMonitoredResourceTypesFilterOutput() GetMonitoredResourceTypesFilterOutput {
+	return i.ToGetMonitoredResourceTypesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesFilterArgs) ToGetMonitoredResourceTypesFilterOutputWithContext(ctx context.Context) GetMonitoredResourceTypesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesFilterOutput)
+}
+
+func (i GetMonitoredResourceTypesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesFilter] {
+	return pulumix.Output[GetMonitoredResourceTypesFilter]{
+		OutputState: i.ToGetMonitoredResourceTypesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTypesFilterArrayInput is an input type that accepts GetMonitoredResourceTypesFilterArray and GetMonitoredResourceTypesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesFilterArrayInput` via:
+//
+//	GetMonitoredResourceTypesFilterArray{ GetMonitoredResourceTypesFilterArgs{...} }
+type GetMonitoredResourceTypesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesFilterArrayOutput() GetMonitoredResourceTypesFilterArrayOutput
+	ToGetMonitoredResourceTypesFilterArrayOutputWithContext(context.Context) GetMonitoredResourceTypesFilterArrayOutput
+}
+
+type GetMonitoredResourceTypesFilterArray []GetMonitoredResourceTypesFilterInput
+
+func (GetMonitoredResourceTypesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesFilter)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesFilterArray) ToGetMonitoredResourceTypesFilterArrayOutput() GetMonitoredResourceTypesFilterArrayOutput {
+	return i.ToGetMonitoredResourceTypesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesFilterArray) ToGetMonitoredResourceTypesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesFilterArrayOutput)
+}
+
+func (i GetMonitoredResourceTypesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesFilter] {
+	return pulumix.Output[[]GetMonitoredResourceTypesFilter]{
+		OutputState: i.ToGetMonitoredResourceTypesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTypesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesFilter)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesFilterOutput) ToGetMonitoredResourceTypesFilterOutput() GetMonitoredResourceTypesFilterOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesFilterOutput) ToGetMonitoredResourceTypesFilterOutputWithContext(ctx context.Context) GetMonitoredResourceTypesFilterOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesFilter] {
+	return pulumix.Output[GetMonitoredResourceTypesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return monitored resource types that match exactly with the resource type name given.
+func (o GetMonitoredResourceTypesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMonitoredResourceTypesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMonitoredResourceTypesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTypesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesFilter)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesFilterArrayOutput) ToGetMonitoredResourceTypesFilterArrayOutput() GetMonitoredResourceTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesFilterArrayOutput) ToGetMonitoredResourceTypesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesFilter] {
+	return pulumix.Output[[]GetMonitoredResourceTypesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypesFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesFilter {
+		return vs[0].([]GetMonitoredResourceTypesFilter)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesFilterOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollection struct {
+	Items []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem `pulumi:"items"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs struct {
+	Items GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollection)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollection)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollection)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) Items() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollection) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem {
+		return v.Items
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollection)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollection {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollection)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A friendly description.
+	Description string `pulumi:"description"`
+	// Monitored resource type display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id string `pulumi:"id"`
+	// The metadata details for resource type.
+	Metadatas []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata `pulumi:"metadatas"`
+	// A filter to return monitored resource types that has the matching namespace.
+	MetricNamespace string `pulumi:"metricNamespace"`
+	// A filter to return monitored resource types that match exactly with the resource type name given.
+	Name string `pulumi:"name"`
+	// Lifecycle state of the monitored resource type.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A friendly description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Monitored resource type display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id pulumi.StringInput `pulumi:"id"`
+	// The metadata details for resource type.
+	Metadatas GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput `pulumi:"metadatas"`
+	// A filter to return monitored resource types that has the matching namespace.
+	MetricNamespace pulumi.StringInput `pulumi:"metricNamespace"`
+	// A filter to return monitored resource types that match exactly with the resource type name given.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Lifecycle state of the monitored resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A friendly description.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Monitored resource type display name.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The metadata details for resource type.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Metadatas() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata {
+		return v.Metadatas
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput)
+}
+
+// A filter to return monitored resource types that has the matching namespace.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) MetricNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.MetricNamespace }).(pulumi.StringOutput)
+}
+
+// A filter to return monitored resource types that match exactly with the resource type name given.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Lifecycle state of the monitored resource type.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata struct {
+	// List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+	AgentProperties []string `pulumi:"agentProperties"`
+	// ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+	// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+	Format string `pulumi:"format"`
+	// List of required properties for resource type.
+	RequiredProperties []string `pulumi:"requiredProperties"`
+	// List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+	UniquePropertySets []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet `pulumi:"uniquePropertySets"`
+	// List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+	ValidPropertiesForCreates []string `pulumi:"validPropertiesForCreates"`
+	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
+	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+	ValidPropertyValues map[string]interface{} `pulumi:"validPropertyValues"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs struct {
+	// List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+	AgentProperties pulumi.StringArrayInput `pulumi:"agentProperties"`
+	// ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+	// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+	Format pulumi.StringInput `pulumi:"format"`
+	// List of required properties for resource type.
+	RequiredProperties pulumi.StringArrayInput `pulumi:"requiredProperties"`
+	// List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+	UniquePropertySets GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayInput `pulumi:"uniquePropertySets"`
+	// List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+	ValidPropertiesForCreates pulumi.StringArrayInput `pulumi:"validPropertiesForCreates"`
+	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
+	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+	ValidPropertyValues pulumi.MapInput `pulumi:"validPropertyValues"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) AgentProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) []string {
+		return v.AgentProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+// * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) string { return v.Format }).(pulumi.StringOutput)
+}
+
+// List of required properties for resource type.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) RequiredProperties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) []string {
+		return v.RequiredProperties
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) UniquePropertySets() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet {
+		return v.UniquePropertySets
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput)
+}
+
+// List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ValidPropertiesForCreates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) []string {
+		return v.ValidPropertiesForCreates
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ValidPropertiesForUpdates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) []string {
+		return v.ValidPropertiesForUpdates
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ValidPropertyValues() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) map[string]interface{} {
+		return v.ValidPropertyValues
+	}).(pulumi.MapOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet struct {
+	// List of properties.
+	Properties []string `pulumi:"properties"`
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs{...}
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs struct {
+	// List of properties.
+	Properties pulumi.StringArrayInput `pulumi:"properties"`
+}
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayInput` via:
+//
+//	GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray{ GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs{...} }
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput
+	ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutputWithContext(context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray []GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetInput
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput {
+	return i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput)
+}
+
+func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
+		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
+	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of properties.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) Properties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet) []string {
+		return v.Properties
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet)(nil)).Elem()
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
+	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet {
+		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet)[vs[1].(int)]
+	}).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput)
+}
+
+type GetMonitoredResourcesFilter struct {
+	// A filter to return resources that match exact resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMonitoredResourcesFilterInput is an input type that accepts GetMonitoredResourcesFilterArgs and GetMonitoredResourcesFilterOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesFilterInput` via:
+//
+//	GetMonitoredResourcesFilterArgs{...}
+type GetMonitoredResourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesFilterOutput() GetMonitoredResourcesFilterOutput
+	ToGetMonitoredResourcesFilterOutputWithContext(context.Context) GetMonitoredResourcesFilterOutput
+}
+
+type GetMonitoredResourcesFilterArgs struct {
+	// A filter to return resources that match exact resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMonitoredResourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesFilter)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesFilterArgs) ToGetMonitoredResourcesFilterOutput() GetMonitoredResourcesFilterOutput {
+	return i.ToGetMonitoredResourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesFilterArgs) ToGetMonitoredResourcesFilterOutputWithContext(ctx context.Context) GetMonitoredResourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesFilterOutput)
+}
+
+func (i GetMonitoredResourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesFilter] {
+	return pulumix.Output[GetMonitoredResourcesFilter]{
+		OutputState: i.ToGetMonitoredResourcesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesFilterArrayInput is an input type that accepts GetMonitoredResourcesFilterArray and GetMonitoredResourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesFilterArrayInput` via:
+//
+//	GetMonitoredResourcesFilterArray{ GetMonitoredResourcesFilterArgs{...} }
+type GetMonitoredResourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesFilterArrayOutput() GetMonitoredResourcesFilterArrayOutput
+	ToGetMonitoredResourcesFilterArrayOutputWithContext(context.Context) GetMonitoredResourcesFilterArrayOutput
+}
+
+type GetMonitoredResourcesFilterArray []GetMonitoredResourcesFilterInput
+
+func (GetMonitoredResourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesFilter)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesFilterArray) ToGetMonitoredResourcesFilterArrayOutput() GetMonitoredResourcesFilterArrayOutput {
+	return i.ToGetMonitoredResourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesFilterArray) ToGetMonitoredResourcesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesFilterArrayOutput)
+}
+
+func (i GetMonitoredResourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesFilter] {
+	return pulumix.Output[[]GetMonitoredResourcesFilter]{
+		OutputState: i.ToGetMonitoredResourcesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesFilter)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesFilterOutput) ToGetMonitoredResourcesFilterOutput() GetMonitoredResourcesFilterOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesFilterOutput) ToGetMonitoredResourcesFilterOutputWithContext(ctx context.Context) GetMonitoredResourcesFilterOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesFilter] {
+	return pulumix.Output[GetMonitoredResourcesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMonitoredResourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMonitoredResourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMonitoredResourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesFilter)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesFilterArrayOutput) ToGetMonitoredResourcesFilterArrayOutput() GetMonitoredResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesFilterArrayOutput) ToGetMonitoredResourcesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesFilter] {
+	return pulumix.Output[[]GetMonitoredResourcesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesFilter {
+		return vs[0].([]GetMonitoredResourcesFilter)[vs[1].(int)]
+	}).(GetMonitoredResourcesFilterOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollection struct {
+	Items []GetMonitoredResourcesMonitoredResourceCollectionItem `pulumi:"items"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionArgs and GetMonitoredResourcesMonitoredResourceCollectionOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionOutput() GetMonitoredResourcesMonitoredResourceCollectionOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionArgs struct {
+	Items GetMonitoredResourcesMonitoredResourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollection)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionArgs) ToGetMonitoredResourcesMonitoredResourceCollectionOutput() GetMonitoredResourcesMonitoredResourceCollectionOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionArgs) ToGetMonitoredResourcesMonitoredResourceCollectionOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionArray and GetMonitoredResourcesMonitoredResourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionArray{ GetMonitoredResourcesMonitoredResourceCollectionArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionArray []GetMonitoredResourcesMonitoredResourceCollectionInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollection)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionArray) ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionArray) ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollection)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) ToGetMonitoredResourcesMonitoredResourceCollectionOutput() GetMonitoredResourcesMonitoredResourceCollectionOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) ToGetMonitoredResourcesMonitoredResourceCollectionOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) Items() GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollection) []GetMonitoredResourcesMonitoredResourceCollectionItem {
+		return v.Items
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollection)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollection {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollection)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItem struct {
+	AdditionalAliases     []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias      `pulumi:"additionalAliases"`
+	AdditionalCredentials []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential `pulumi:"additionalCredentials"`
+	// Monitored Resource Alias Credential Details
+	Aliases []GetMonitoredResourcesMonitoredResourceCollectionItemAlias `pulumi:"aliases"`
+	// The ID of the compartment in which data is listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Monitored Resource Credential Details.
+	Credentials []GetMonitoredResourcesMonitoredResourceCollectionItemCredential `pulumi:"credentials"`
+	// Connection details for the database.
+	DatabaseConnectionDetails []GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail `pulumi:"databaseConnectionDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Monitored resource display name.
+	DisplayName string `pulumi:"displayName"`
+	// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
+	ExternalId         string `pulumi:"externalId"`
+	ExternalResourceId string `pulumi:"externalResourceId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Monitored resource host name.
+	HostName string `pulumi:"hostName"`
+	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id      string `pulumi:"id"`
+	License string `pulumi:"license"`
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties []GetMonitoredResourcesMonitoredResourceCollectionItemProperty `pulumi:"properties"`
+	// Time zone in the form of tz database canonical zone ID.
+	ResourceTimeZone string `pulumi:"resourceTimeZone"`
+	// Lifecycle state of the monitored resource.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenantId string `pulumi:"tenantId"`
+	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Monitored Resource Type.
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemArgs and GetMonitoredResourcesMonitoredResourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemOutput() GetMonitoredResourcesMonitoredResourceCollectionItemOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemArgs struct {
+	AdditionalAliases     GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayInput      `pulumi:"additionalAliases"`
+	AdditionalCredentials GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayInput `pulumi:"additionalCredentials"`
+	// Monitored Resource Alias Credential Details
+	Aliases GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayInput `pulumi:"aliases"`
+	// The ID of the compartment in which data is listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Monitored Resource Credential Details.
+	Credentials GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayInput `pulumi:"credentials"`
+	// Connection details for the database.
+	DatabaseConnectionDetails GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput `pulumi:"databaseConnectionDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Monitored resource display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
+	ExternalId         pulumi.StringInput `pulumi:"externalId"`
+	ExternalResourceId pulumi.StringInput `pulumi:"externalResourceId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Monitored resource host name.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	Id      pulumi.StringInput `pulumi:"id"`
+	License pulumi.StringInput `pulumi:"license"`
+	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput `pulumi:"properties"`
+	// Time zone in the form of tz database canonical zone ID.
+	ResourceTimeZone pulumi.StringInput `pulumi:"resourceTimeZone"`
+	// Lifecycle state of the monitored resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Monitored Resource Type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemOutput() GetMonitoredResourcesMonitoredResourceCollectionItemOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemArray and GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemArray{ GetMonitoredResourcesMonitoredResourceCollectionItemArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemArray []GetMonitoredResourcesMonitoredResourceCollectionItemInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemOutput() GetMonitoredResourcesMonitoredResourceCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) AdditionalAliases() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias {
+		return v.AdditionalAliases
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput)
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) AdditionalCredentials() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential {
+		return v.AdditionalCredentials
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput)
+}
+
+// Monitored Resource Alias Credential Details
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) Aliases() GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) []GetMonitoredResourcesMonitoredResourceCollectionItemAlias {
+		return v.Aliases
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput)
+}
+
+// The ID of the compartment in which data is listed.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Monitored Resource Credential Details.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) Credentials() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) []GetMonitoredResourcesMonitoredResourceCollectionItemCredential {
+		return v.Credentials
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput)
+}
+
+// Connection details for the database.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) DatabaseConnectionDetails() GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) []GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail {
+		return v.DatabaseConnectionDetails
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Monitored resource display name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ExternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.ExternalId }).(pulumi.StringOutput)
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ExternalResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.ExternalResourceId }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Monitored resource host name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.License }).(pulumi.StringOutput)
+}
+
+// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of monitored resource properties.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) Properties() GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) []GetMonitoredResourcesMonitoredResourceCollectionItemProperty {
+		return v.Properties
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput)
+}
+
+// Time zone in the form of tz database canonical zone ID.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ResourceTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.ResourceTimeZone }).(pulumi.StringOutput)
+}
+
+// Lifecycle state of the monitored resource.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Monitored Resource Type.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItem {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItem)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias struct {
+	// Monitored Resource Alias Reference Source Credential.
+	Credentials []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential `pulumi:"credentials"`
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs struct {
+	// Monitored Resource Alias Reference Source Credential.
+	Credentials GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayInput `pulumi:"credentials"`
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray{ GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Monitored Resource Alias Reference Source Credential.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) Credentials() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias) []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential {
+		return v.Credentials
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput)
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential struct {
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service string `pulumi:"service"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs struct {
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service pulumi.StringInput `pulumi:"service"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray{ GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential) string {
+		return v.Service
+	}).(pulumi.StringOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential struct {
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType string `pulumi:"credentialType"`
+	// The user-specified textual description of the credential.
+	Description string `pulumi:"description"`
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId string `pulumi:"keyId"`
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty `pulumi:"properties"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+	// Monitored Resource Type.
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs struct {
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The user-specified textual description of the credential.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayInput `pulumi:"properties"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Monitored Resource Type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray{ GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+// * PLAINTEXT - The credential properties will have credentials in plain text format.
+// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The user-specified textual description of the credential.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential) string {
+		return v.KeyId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of monitored resource properties.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) Properties() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential) []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty {
+		return v.Properties
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// Monitored Resource Type.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty struct {
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// Property Value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs struct {
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property Value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray{ GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray []GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Property Value.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAlias struct {
+	// Monitored Resource Alias Reference Source Credential.
+	Credentials []GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential `pulumi:"credentials"`
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAliasInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs and GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAliasInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs struct {
+	// Monitored Resource Alias Reference Source Credential.
+	Credentials GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayInput `pulumi:"credentials"`
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAlias)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray and GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray{ GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray []GetMonitoredResourcesMonitoredResourceCollectionItemAliasInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAlias)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Monitored Resource Alias Reference Source Credential.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) Credentials() GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAlias) []GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential {
+		return v.Credentials
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput)
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAlias) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAlias) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemAlias {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemAlias)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential struct {
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service string `pulumi:"service"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs and GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs struct {
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+	Service pulumi.StringInput `pulumi:"service"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray{ GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray []GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential) string { return v.Service }).(pulumi.StringOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredential struct {
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType string `pulumi:"credentialType"`
+	// The user-specified textual description of the credential.
+	Description string `pulumi:"description"`
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId string `pulumi:"keyId"`
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties []GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty `pulumi:"properties"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source string `pulumi:"source"`
+	// Monitored Resource Type.
+	Type string `pulumi:"type"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemCredentialInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs and GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemCredentialInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs struct {
+	// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+	// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+	// * PLAINTEXT - The credential properties will have credentials in plain text format.
+	// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The user-specified textual description of the credential.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// List of monitored resource properties.
+	Properties GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayInput `pulumi:"properties"`
+	// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	Source pulumi.StringInput `pulumi:"source"`
+	// Monitored Resource Type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray{ GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray []GetMonitoredResourcesMonitoredResourceCollectionItemCredentialInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+// * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential.
+// * PLAINTEXT - The credential properties will have credentials in plain text format.
+// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredential) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The user-specified textual description of the credential.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredential) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredential) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredential) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of monitored resource properties.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) Properties() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredential) []GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty {
+		return v.Properties
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput)
+}
+
+// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredential) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// Monitored Resource Type.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredential) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemCredential {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemCredential)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty struct {
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// Property Value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs and GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs struct {
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property Value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray and GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray{ GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray []GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Property Value.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail struct {
+	// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ConnectorId string `pulumi:"connectorId"`
+	// dbId of the database.
+	DbId string `pulumi:"dbId"`
+	// UniqueName used for database connection requests.
+	DbUniqueName string `pulumi:"dbUniqueName"`
+	// Listener Port number used for connection requests.
+	Port int `pulumi:"port"`
+	// Protocol used in DB connection string when connecting to external database service.
+	Protocol string `pulumi:"protocol"`
+	// Service name used for connection requests.
+	ServiceName string `pulumi:"serviceName"`
+	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SslSecretId string `pulumi:"sslSecretId"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs and GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput() GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs struct {
+	// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ConnectorId pulumi.StringInput `pulumi:"connectorId"`
+	// dbId of the database.
+	DbId pulumi.StringInput `pulumi:"dbId"`
+	// UniqueName used for database connection requests.
+	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
+	// Listener Port number used for connection requests.
+	Port pulumi.IntInput `pulumi:"port"`
+	// Protocol used in DB connection string when connecting to external database service.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// Service name used for connection requests.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput() GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray and GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray{ GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray []GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput() GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail) string {
+		return v.ConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// dbId of the database.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) DbId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail) string {
+		return v.DbId
+	}).(pulumi.StringOutput)
+}
+
+// UniqueName used for database connection requests.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail) string {
+		return v.DbUniqueName
+	}).(pulumi.StringOutput)
+}
+
+// Listener Port number used for connection requests.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail) int {
+		return v.Port
+	}).(pulumi.IntOutput)
+}
+
+// Protocol used in DB connection string when connecting to external database service.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail) string {
+		return v.Protocol
+	}).(pulumi.StringOutput)
+}
+
+// Service name used for connection requests.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) SslSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail) string {
+		return v.SslSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemProperty struct {
+	// A filter to return resources that match exact resource name.
+	Name string `pulumi:"name"`
+	// Property Value.
+	Value string `pulumi:"value"`
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemPropertyInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs and GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemPropertyInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs{...}
+type GetMonitoredResourcesMonitoredResourceCollectionItemPropertyInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs struct {
+	// A filter to return resources that match exact resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Property Value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray and GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput values.
+// You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput` via:
+//
+//	GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray{ GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs{...} }
+type GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput
+	ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutputWithContext(context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray []GetMonitoredResourcesMonitoredResourceCollectionItemPropertyInput
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty)(nil)).Elem()
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput {
+	return i.ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput)
+}
+
+func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
+		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput() GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
+	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+// A filter to return resources that match exact resource name.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Property Value.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItemProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty)(nil)).Elem()
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput() GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput {
+	return o
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
+	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemProperty {
+		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemProperty)[vs[1].(int)]
+	}).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsArgs{})
@@ -7736,6 +17925,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsPropertiesPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsTagsInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsTagsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DiscoveryJobDiscoveryDetailsTagsPtrInput)(nil)).Elem(), DiscoveryJobDiscoveryDetailsTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionEnabledOnResourceInput)(nil)).Elem(), MetricExtensionEnabledOnResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionEnabledOnResourceArrayInput)(nil)).Elem(), MetricExtensionEnabledOnResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionMetricListInput)(nil)).Elem(), MetricExtensionMetricListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionMetricListArrayInput)(nil)).Elem(), MetricExtensionMetricListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesInput)(nil)).Elem(), MetricExtensionQueryPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesPtrInput)(nil)).Elem(), MetricExtensionQueryPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesInParamDetailInput)(nil)).Elem(), MetricExtensionQueryPropertiesInParamDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesInParamDetailArrayInput)(nil)).Elem(), MetricExtensionQueryPropertiesInParamDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesOutParamDetailsInput)(nil)).Elem(), MetricExtensionQueryPropertiesOutParamDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesOutParamDetailsPtrInput)(nil)).Elem(), MetricExtensionQueryPropertiesOutParamDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesScriptDetailsInput)(nil)).Elem(), MetricExtensionQueryPropertiesScriptDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesScriptDetailsPtrInput)(nil)).Elem(), MetricExtensionQueryPropertiesScriptDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesSqlDetailsInput)(nil)).Elem(), MetricExtensionQueryPropertiesSqlDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetricExtensionQueryPropertiesSqlDetailsPtrInput)(nil)).Elem(), MetricExtensionQueryPropertiesSqlDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalAliasInput)(nil)).Elem(), MonitoredResourceAdditionalAliasArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalAliasArrayInput)(nil)).Elem(), MonitoredResourceAdditionalAliasArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceAdditionalAliasCredentialInput)(nil)).Elem(), MonitoredResourceAdditionalAliasCredentialArgs{})
@@ -7755,6 +17958,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceDatabaseConnectionDetailsPtrInput)(nil)).Elem(), MonitoredResourceDatabaseConnectionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcePropertyInput)(nil)).Elem(), MonitoredResourcePropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcePropertyArrayInput)(nil)).Elem(), MonitoredResourcePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTaskTaskDetailsPtrInput)(nil)).Elem(), MonitoredResourceTaskTaskDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeMetadataInput)(nil)).Elem(), MonitoredResourceTypeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeMetadataPtrInput)(nil)).Elem(), MonitoredResourceTypeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeMetadataUniquePropertySetInput)(nil)).Elem(), MonitoredResourceTypeMetadataUniquePropertySetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourceTypeMetadataUniquePropertySetArrayInput)(nil)).Elem(), MonitoredResourceTypeMetadataUniquePropertySetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailInput)(nil)).Elem(), MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput)(nil)).Elem(), MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailInput)(nil)).Elem(), MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs{})
@@ -7771,6 +17980,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionInput)(nil)).Elem(), GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayInput)(nil)).Elem(), GetBaselineableMetricsBaselineableMetricSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionItemInput)(nil)).Elem(), GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayInput)(nil)).Elem(), GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateDataPointInput)(nil)).Elem(), GetBaselineableMetricsEvaluateDataPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateDataPointArrayInput)(nil)).Elem(), GetBaselineableMetricsEvaluateDataPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemArrayInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemDataPointInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemDataPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemDataPointArrayInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemDataPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemEvaluationDataPointInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemEvaluationDataPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemTrainingDataPointInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemTrainingDataPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput)(nil)).Elem(), GetBaselineableMetricsEvaluateItemTrainingDataPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsFilterInput)(nil)).Elem(), GetBaselineableMetricsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBaselineableMetricsFilterArrayInput)(nil)).Elem(), GetBaselineableMetricsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionInput)(nil)).Elem(), GetConfigsConfigCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionArrayInput)(nil)).Elem(), GetConfigsConfigCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInput)(nil)).Elem(), GetConfigsConfigCollectionItemArgs{})
@@ -7801,6 +18026,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput)(nil)).Elem(), GetDiscoveryJobsDiscoveryJobCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsFilterInput)(nil)).Elem(), GetDiscoveryJobsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobsFilterArrayInput)(nil)).Elem(), GetDiscoveryJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionEnabledOnResourceInput)(nil)).Elem(), GetMetricExtensionEnabledOnResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionEnabledOnResourceArrayInput)(nil)).Elem(), GetMetricExtensionEnabledOnResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionMetricListInput)(nil)).Elem(), GetMetricExtensionMetricListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionMetricListArrayInput)(nil)).Elem(), GetMetricExtensionMetricListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyInput)(nil)).Elem(), GetMetricExtensionQueryPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyArrayInput)(nil)).Elem(), GetMetricExtensionQueryPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyInParamDetailInput)(nil)).Elem(), GetMetricExtensionQueryPropertyInParamDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyInParamDetailArrayInput)(nil)).Elem(), GetMetricExtensionQueryPropertyInParamDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyOutParamDetailInput)(nil)).Elem(), GetMetricExtensionQueryPropertyOutParamDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyOutParamDetailArrayInput)(nil)).Elem(), GetMetricExtensionQueryPropertyOutParamDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyScriptDetailInput)(nil)).Elem(), GetMetricExtensionQueryPropertyScriptDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertyScriptDetailArrayInput)(nil)).Elem(), GetMetricExtensionQueryPropertyScriptDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertySqlDetailInput)(nil)).Elem(), GetMetricExtensionQueryPropertySqlDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionQueryPropertySqlDetailArrayInput)(nil)).Elem(), GetMetricExtensionQueryPropertySqlDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsFilterInput)(nil)).Elem(), GetMetricExtensionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsFilterArrayInput)(nil)).Elem(), GetMetricExtensionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemMetricListInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemMetricListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput)(nil)).Elem(), GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalAliasInput)(nil)).Elem(), GetMonitoredResourceAdditionalAliasArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalAliasArrayInput)(nil)).Elem(), GetMonitoredResourceAdditionalAliasArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceAdditionalAliasCredentialInput)(nil)).Elem(), GetMonitoredResourceAdditionalAliasCredentialArgs{})
@@ -7821,6 +18080,56 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceDatabaseConnectionDetailArrayInput)(nil)).Elem(), GetMonitoredResourceDatabaseConnectionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcePropertyInput)(nil)).Elem(), GetMonitoredResourcePropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcePropertyArrayInput)(nil)).Elem(), GetMonitoredResourcePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTaskTaskDetailArrayInput)(nil)).Elem(), GetMonitoredResourceTaskTaskDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksFilterInput)(nil)).Elem(), GetMonitoredResourceTasksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksFilterArrayInput)(nil)).Elem(), GetMonitoredResourceTasksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput)(nil)).Elem(), GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeMetadataInput)(nil)).Elem(), GetMonitoredResourceTypeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeMetadataArrayInput)(nil)).Elem(), GetMonitoredResourceTypeMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeMetadataUniquePropertySetInput)(nil)).Elem(), GetMonitoredResourceTypeMetadataUniquePropertySetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypeMetadataUniquePropertySetArrayInput)(nil)).Elem(), GetMonitoredResourceTypeMetadataUniquePropertySetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesFilterInput)(nil)).Elem(), GetMonitoredResourceTypesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesFilterArrayInput)(nil)).Elem(), GetMonitoredResourceTypesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayInput)(nil)).Elem(), GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesFilterInput)(nil)).Elem(), GetMonitoredResourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesFilterArrayInput)(nil)).Elem(), GetMonitoredResourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAliasInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredentialInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemPropertyInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput)(nil)).Elem(), GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsCredentialsOutput{})
@@ -7832,6 +18141,20 @@ func init() {
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsTagsOutput{})
 	pulumi.RegisterOutputType(DiscoveryJobDiscoveryDetailsTagsPtrOutput{})
+	pulumi.RegisterOutputType(MetricExtensionEnabledOnResourceOutput{})
+	pulumi.RegisterOutputType(MetricExtensionEnabledOnResourceArrayOutput{})
+	pulumi.RegisterOutputType(MetricExtensionMetricListOutput{})
+	pulumi.RegisterOutputType(MetricExtensionMetricListArrayOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesInParamDetailOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesInParamDetailArrayOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesOutParamDetailsOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesScriptDetailsOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesScriptDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesSqlDetailsOutput{})
+	pulumi.RegisterOutputType(MetricExtensionQueryPropertiesSqlDetailsPtrOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceAdditionalAliasOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceAdditionalAliasArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourceAdditionalAliasCredentialOutput{})
@@ -7851,6 +18174,12 @@ func init() {
 	pulumi.RegisterOutputType(MonitoredResourceDatabaseConnectionDetailsPtrOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcePropertyOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcePropertyArrayOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTaskTaskDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeMetadataOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeMetadataPtrOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeMetadataUniquePropertySetOutput{})
+	pulumi.RegisterOutputType(MonitoredResourceTypeMetadataUniquePropertySetArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput{})
@@ -7867,6 +18196,22 @@ func init() {
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateDataPointOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateDataPointArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemDataPointOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemDataPointArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemTrainingDataPointOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsFilterOutput{})
+	pulumi.RegisterOutputType(GetBaselineableMetricsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOutput{})
@@ -7897,6 +18242,40 @@ func init() {
 	pulumi.RegisterOutputType(GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobsFilterOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionEnabledOnResourceOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionEnabledOnResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionMetricListOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionMetricListArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyInParamDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyInParamDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyOutParamDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyOutParamDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyScriptDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertyScriptDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertySqlDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionQueryPropertySqlDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsFilterOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput{})
+	pulumi.RegisterOutputType(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalAliasOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalAliasArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourceAdditionalAliasCredentialOutput{})
@@ -7917,4 +18296,54 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitoredResourceDatabaseConnectionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourcePropertyOutput{})
 	pulumi.RegisterOutputType(GetMonitoredResourcePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTaskTaskDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksFilterOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeMetadataOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeMetadataUniquePropertySetOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesFilterOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput{})
+	pulumi.RegisterOutputType(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput{})
 }

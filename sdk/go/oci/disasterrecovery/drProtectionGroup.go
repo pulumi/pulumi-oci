@@ -15,74 +15,44 @@ import (
 
 // This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
 //
-// Create a new DR Protection Group.
+// Create a DR protection group.
 //
-// ## Example Usage
+// ## Create
+//
+// Create DR Protection Group resource with a default value of `disassociateTrigger` property, e.g.
 //
 // ```go
 // package main
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DisasterRecovery"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DisasterRecovery.NewDrProtectionGroup(ctx, "testDrProtectionGroup", &DisasterRecovery.DrProtectionGroupArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Dr_protection_group_display_name),
-//				LogLocation: &disasterrecovery.DrProtectionGroupLogLocationArgs{
-//					Bucket:    pulumi.Any(_var.Dr_protection_group_log_location_bucket),
-//					Namespace: pulumi.Any(_var.Dr_protection_group_log_location_namespace),
-//				},
-//				Association: &disasterrecovery.DrProtectionGroupAssociationArgs{
-//					Role:       pulumi.Any(_var.Dr_protection_group_association_role),
-//					PeerId:     pulumi.Any(oci_blockchain_peer.Test_peer.Id),
-//					PeerRegion: pulumi.Any(_var.Dr_protection_group_association_peer_region),
-//				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
-//				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
-//				},
-//				Members: disasterrecovery.DrProtectionGroupMemberArray{
-//					&disasterrecovery.DrProtectionGroupMemberArgs{
-//						MemberId:                         pulumi.Any(oci_disaster_recovery_member.Test_member.Id),
-//						MemberType:                       pulumi.Any(_var.Dr_protection_group_members_member_type),
-//						DestinationCapacityReservationId: pulumi.Any(oci_disaster_recovery_destination_capacity_reservation.Test_destination_capacity_reservation.Id),
-//						DestinationCompartmentId:         pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//						DestinationDedicatedVmHostId:     pulumi.Any(oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id),
-//						IsMovable:                        pulumi.Any(_var.Dr_protection_group_members_is_movable),
-//						IsRetainFaultDomain:              pulumi.Any(_var.Dr_protection_group_members_is_retain_fault_domain),
-//						PasswordVaultSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
-//						VnicMappings: disasterrecovery.DrProtectionGroupMemberVnicMappingArray{
-//							&disasterrecovery.DrProtectionGroupMemberVnicMappingArgs{
-//								DestinationNsgIdLists:                    pulumi.Any(_var.Dr_protection_group_members_vnic_mapping_destination_nsg_id_list),
-//								DestinationPrimaryPrivateIpAddress:       pulumi.Any(_var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address),
-//								DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(_var.Dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label),
-//								DestinationSubnetId:                      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//								SourceVnicId:                             pulumi.Any(oci_core_vnic.Test_vnic.Id),
-//							},
-//						},
-//						VnicMappings: disasterrecovery.DrProtectionGroupMemberVnicMappingArray{
-//							&disasterrecovery.DrProtectionGroupMemberVnicMappingArgs{
-//								DestinationNsgIdLists:                    pulumi.Any(_var.Dr_protection_group_members_vnic_mappings_destination_nsg_id_list),
-//								DestinationPrimaryPrivateIpAddress:       pulumi.Any(_var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address),
-//								DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(_var.Dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label),
-//								DestinationSubnetId:                      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//								SourceVnicId:                             pulumi.Any(oci_core_vnic.Test_vnic.Id),
-//							},
-//						},
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Delete
+//
+// Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociateTrigger` property to trigger Disassociate, e.g.
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
 //			return nil
 //		})
 //	}
@@ -101,40 +71,42 @@ import (
 type DrProtectionGroup struct {
 	pulumi.CustomResourceState
 
-	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+	// The details for associating a DR protection group with a peer DR protection group.
 	Association DrProtectionGroupAssociationOutput `pulumi:"association"`
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger pulumi.IntPtrOutput `pulumi:"disassociateTrigger"`
-	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+	// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// A message describing the DR Protection Group's current state in more detail.
+	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails pulumi.StringOutput `pulumi:"lifeCycleDetails"`
-	// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+	// The current sub-state of the DR protection group.
+	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
+	// (Updatable) The details for creating an object storage log location for a DR protection group.
 	LogLocation DrProtectionGroupLogLocationOutput `pulumi:"logLocation"`
-	// (Updatable) A list of DR Protection Group members.
+	// (Updatable) A list of DR protection group members.
 	Members DrProtectionGroupMemberArrayOutput `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId pulumi.StringOutput `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
-	// The role of this DR Protection Group.
+	// The role of the DR protection group.  Example: `STANDBY`
 	Role pulumi.StringOutput `pulumi:"role"`
-	// The current state of the DR Protection Group.
+	// The current state of the DR protection group.
 	State pulumi.StringOutput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -177,78 +149,82 @@ func GetDrProtectionGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DrProtectionGroup resources.
 type drProtectionGroupState struct {
-	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+	// The details for associating a DR protection group with a peer DR protection group.
 	Association *DrProtectionGroupAssociation `pulumi:"association"`
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger *int `pulumi:"disassociateTrigger"`
-	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+	// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A message describing the DR Protection Group's current state in more detail.
+	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
-	// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+	// The current sub-state of the DR protection group.
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
+	// (Updatable) The details for creating an object storage log location for a DR protection group.
 	LogLocation *DrProtectionGroupLogLocation `pulumi:"logLocation"`
-	// (Updatable) A list of DR Protection Group members.
+	// (Updatable) A list of DR protection group members.
 	Members []DrProtectionGroupMember `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId *string `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
-	// The role of this DR Protection Group.
+	// The role of the DR protection group.  Example: `STANDBY`
 	Role *string `pulumi:"role"`
-	// The current state of the DR Protection Group.
+	// The current state of the DR protection group.
 	State *string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type DrProtectionGroupState struct {
-	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+	// The details for associating a DR protection group with a peer DR protection group.
 	Association DrProtectionGroupAssociationPtrInput
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger pulumi.IntPtrInput
-	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+	// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// A message describing the DR Protection Group's current state in more detail.
+	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails pulumi.StringPtrInput
-	// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+	// The current sub-state of the DR protection group.
+	LifecycleSubState pulumi.StringPtrInput
+	// (Updatable) The details for creating an object storage log location for a DR protection group.
 	LogLocation DrProtectionGroupLogLocationPtrInput
-	// (Updatable) A list of DR Protection Group members.
+	// (Updatable) A list of DR protection group members.
 	Members DrProtectionGroupMemberArrayInput
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId pulumi.StringPtrInput
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput
-	// The role of this DR Protection Group.
+	// The role of the DR protection group.  Example: `STANDBY`
 	Role pulumi.StringPtrInput
-	// The current state of the DR Protection Group.
+	// The current state of the DR protection group.
 	State pulumi.StringPtrInput
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -257,47 +233,47 @@ func (DrProtectionGroupState) ElementType() reflect.Type {
 }
 
 type drProtectionGroupArgs struct {
-	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+	// The details for associating a DR protection group with a peer DR protection group.
 	Association *DrProtectionGroupAssociation `pulumi:"association"`
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger *int `pulumi:"disassociateTrigger"`
-	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+	// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+	// (Updatable) The details for creating an object storage log location for a DR protection group.
 	LogLocation DrProtectionGroupLogLocation `pulumi:"logLocation"`
-	// (Updatable) A list of DR Protection Group members.
+	// (Updatable) A list of DR protection group members.
 	Members []DrProtectionGroupMember `pulumi:"members"`
 }
 
 // The set of arguments for constructing a DrProtectionGroup resource.
 type DrProtectionGroupArgs struct {
-	// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+	// The details for associating a DR protection group with a peer DR protection group.
 	Association DrProtectionGroupAssociationPtrInput
-	// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger pulumi.IntPtrInput
-	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+	// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
 	DisplayName pulumi.StringInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+	// (Updatable) The details for creating an object storage log location for a DR protection group.
 	LogLocation DrProtectionGroupLogLocationInput
-	// (Updatable) A list of DR Protection Group members.
+	// (Updatable) A list of DR protection group members.
 	Members DrProtectionGroupMemberArrayInput
 }
 
@@ -412,17 +388,17 @@ func (o DrProtectionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*D
 	}
 }
 
-// The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+// The details for associating a DR protection group with a peer DR protection group.
 func (o DrProtectionGroupOutput) Association() DrProtectionGroupAssociationOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) DrProtectionGroupAssociationOutput { return v.Association }).(DrProtectionGroupAssociationOutput)
 }
 
-// (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o DrProtectionGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 func (o DrProtectionGroupOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -435,62 +411,67 @@ func (o DrProtectionGroupOutput) DisassociateTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.IntPtrOutput { return v.DisassociateTrigger }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+// (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
 func (o DrProtectionGroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 func (o DrProtectionGroupOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A message describing the DR Protection Group's current state in more detail.
+// A message describing the DR protection group's current state in more detail.
 func (o DrProtectionGroupOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+// The current sub-state of the DR protection group.
+func (o DrProtectionGroupOutput) LifecycleSubState() pulumi.StringOutput {
+	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
+// (Updatable) The details for creating an object storage log location for a DR protection group.
 func (o DrProtectionGroupOutput) LogLocation() DrProtectionGroupLogLocationOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) DrProtectionGroupLogLocationOutput { return v.LogLocation }).(DrProtectionGroupLogLocationOutput)
 }
 
-// (Updatable) A list of DR Protection Group members.
+// (Updatable) A list of DR protection group members.
 func (o DrProtectionGroupOutput) Members() DrProtectionGroupMemberArrayOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) DrProtectionGroupMemberArrayOutput { return v.Members }).(DrProtectionGroupMemberArrayOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o DrProtectionGroupOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.PeerId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group.  Example: `us-ashburn-1`
 func (o DrProtectionGroupOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The role of this DR Protection Group.
+// The role of the DR protection group.  Example: `STANDBY`
 func (o DrProtectionGroupOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
 }
 
-// The current state of the DR Protection Group.
+// The current state of the DR protection group.
 func (o DrProtectionGroupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DrProtectionGroupOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrProtectionGroupOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrProtectionGroupOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

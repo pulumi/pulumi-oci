@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+ * Get details for the DR plan execution identified by *drPlanExecutionId*.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getDrPlanExecution(args: GetDrPlanExecutionArgs, opts?: pulumi.I
  */
 export interface GetDrPlanExecutionArgs {
     /**
-     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+     * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     drPlanExecutionId: string;
 }
@@ -45,24 +45,24 @@ export interface GetDrPlanExecutionArgs {
  */
 export interface GetDrPlanExecutionResult {
     /**
-     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+     * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     readonly compartmentId: string;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * The display name of the step.  Example: `DATABASE_SWITCHOVER`
+     * The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
      */
     readonly displayName: string;
     readonly drPlanExecutionId: string;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+     * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     readonly drProtectionGroupId: string;
     /**
-     * The total duration in seconds taken to complete step execution.  Example: `35`
+     * The total duration in seconds taken to complete the step execution.  Example: `35`
      */
     readonly executionDurationInSec: number;
     /**
@@ -70,70 +70,70 @@ export interface GetDrPlanExecutionResult {
      */
     readonly executionOptions: outputs.DisasterRecovery.GetDrPlanExecutionExecutionOption[];
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * A list of groups executed in this DR Plan Execution.
+     * A list of groups executed in this DR plan execution.
      */
     readonly groupExecutions: outputs.DisasterRecovery.GetDrPlanExecutionGroupExecution[];
     /**
-     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+     * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     readonly id: string;
     /**
-     * A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+     * A message describing the DR plan execution's current state in more detail.
      */
     readonly lifeCycleDetails: string;
     /**
-     * Information about an Object Storage log location for a DR Protection Group.
+     * The details of an object storage log location for a DR protection group.
      */
     readonly logLocations: outputs.DisasterRecovery.GetDrPlanExecutionLogLocation[];
     /**
-     * The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+     * The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     readonly peerDrProtectionGroupId: string;
     /**
-     * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
     readonly peerRegion: string;
     /**
-     * The type of the DR Plan executed.
+     * The type of the DR plan executed.
      */
     readonly planExecutionType: string;
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
     readonly planId: string;
     /**
-     * The current state of the DR Plan Execution.
+     * The current state of the DR plan execution.
      */
     readonly state: string;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeCreated: string;
     /**
-     * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeEnded: string;
     /**
-     * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeStarted: string;
     /**
-     * The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+ * Get details for the DR plan execution identified by *drPlanExecutionId*.
  *
  * ## Example Usage
  *
@@ -155,7 +155,7 @@ export function getDrPlanExecutionOutput(args: GetDrPlanExecutionOutputArgs, opt
  */
 export interface GetDrPlanExecutionOutputArgs {
     /**
-     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+     * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     drPlanExecutionId: pulumi.Input<string>;
 }

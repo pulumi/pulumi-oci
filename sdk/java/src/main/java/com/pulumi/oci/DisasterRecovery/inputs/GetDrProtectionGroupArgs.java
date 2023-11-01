@@ -14,14 +14,14 @@ public final class GetDrProtectionGroupArgs extends com.pulumi.resources.InvokeA
     public static final GetDrProtectionGroupArgs Empty = new GetDrProtectionGroupArgs();
 
     /**
-     * The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId", required=true)
     private Output<String> drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * @return The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Output<String> drProtectionGroupId() {
@@ -53,7 +53,7 @@ public final class GetDrProtectionGroupArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+         * @param drProtectionGroupId The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -64,7 +64,7 @@ public final class GetDrProtectionGroupArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+         * @param drProtectionGroupId The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 

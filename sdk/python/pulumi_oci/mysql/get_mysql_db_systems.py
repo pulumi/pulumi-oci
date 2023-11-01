@@ -23,13 +23,16 @@ class GetMysqlDbSystemsResult:
     """
     A collection of values returned by getMysqlDbSystems.
     """
-    def __init__(__self__, compartment_id=None, configuration_id=None, db_system_id=None, db_systems=None, display_name=None, filters=None, id=None, is_heat_wave_cluster_attached=None, is_up_to_date=None, state=None):
+    def __init__(__self__, compartment_id=None, configuration_id=None, database_managements=None, db_system_id=None, db_systems=None, display_name=None, filters=None, id=None, is_heat_wave_cluster_attached=None, is_up_to_date=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if configuration_id and not isinstance(configuration_id, str):
             raise TypeError("Expected argument 'configuration_id' to be a str")
         pulumi.set(__self__, "configuration_id", configuration_id)
+        if database_managements and not isinstance(database_managements, list):
+            raise TypeError("Expected argument 'database_managements' to be a list")
+        pulumi.set(__self__, "database_managements", database_managements)
         if db_system_id and not isinstance(db_system_id, str):
             raise TypeError("Expected argument 'db_system_id' to be a str")
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -70,6 +73,14 @@ class GetMysqlDbSystemsResult:
         The OCID of the Configuration to be used for Instances in this DB System.
         """
         return pulumi.get(self, "configuration_id")
+
+    @property
+    @pulumi.getter(name="databaseManagements")
+    def database_managements(self) -> Optional[Sequence[str]]:
+        """
+        Whether to enable monitoring via the Database Management service.
+        """
+        return pulumi.get(self, "database_managements")
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -138,6 +149,7 @@ class AwaitableGetMysqlDbSystemsResult(GetMysqlDbSystemsResult):
         return GetMysqlDbSystemsResult(
             compartment_id=self.compartment_id,
             configuration_id=self.configuration_id,
+            database_managements=self.database_managements,
             db_system_id=self.db_system_id,
             db_systems=self.db_systems,
             display_name=self.display_name,
@@ -150,6 +162,7 @@ class AwaitableGetMysqlDbSystemsResult(GetMysqlDbSystemsResult):
 
 def get_mysql_db_systems(compartment_id: Optional[str] = None,
                          configuration_id: Optional[str] = None,
+                         database_managements: Optional[Sequence[str]] = None,
                          db_system_id: Optional[str] = None,
                          display_name: Optional[str] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetMysqlDbSystemsFilterArgs']]] = None,
@@ -171,6 +184,7 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
 
     test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=var["compartment_id"],
         configuration_id=var["mysql_configuration_id"],
+        database_managements=var["mysql_db_system_database_management"],
         db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
         display_name=var["mysql_db_system_display_name"],
         is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
@@ -181,6 +195,7 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str configuration_id: The requested Configuration instance.
+    :param Sequence[str] database_managements: Filter DB Systems by their Database Management configuration.
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only the resource matching the given display name exactly.
     :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
@@ -190,6 +205,7 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['configurationId'] = configuration_id
+    __args__['databaseManagements'] = database_managements
     __args__['dbSystemId'] = db_system_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -202,6 +218,7 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
     return AwaitableGetMysqlDbSystemsResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         configuration_id=pulumi.get(__ret__, 'configuration_id'),
+        database_managements=pulumi.get(__ret__, 'database_managements'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         db_systems=pulumi.get(__ret__, 'db_systems'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -215,6 +232,7 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_mysql_db_systems)
 def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                 configuration_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                database_managements: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMysqlDbSystemsFilterArgs']]]]] = None,
@@ -236,6 +254,7 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=var["compartment_id"],
         configuration_id=var["mysql_configuration_id"],
+        database_managements=var["mysql_db_system_database_management"],
         db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
         display_name=var["mysql_db_system_display_name"],
         is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
@@ -246,6 +265,7 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str configuration_id: The requested Configuration instance.
+    :param Sequence[str] database_managements: Filter DB Systems by their Database Management configuration.
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str display_name: A filter to return only the resource matching the given display name exactly.
     :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption {
     /**
-     * @return A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+     * @return A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
      * 
      */
     private Boolean arePrechecksEnabled;
@@ -21,14 +21,14 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOpti
      */
     private Boolean areWarningsIgnored;
     /**
-     * @return The type of the DR Plan executed.
+     * @return The type of the DR plan executed.
      * 
      */
     private String planExecutionType;
 
     private GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption() {}
     /**
-     * @return A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+     * @return A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
      * 
      */
     public Boolean arePrechecksEnabled() {
@@ -42,7 +42,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOpti
         return this.areWarningsIgnored;
     }
     /**
-     * @return The type of the DR Plan executed.
+     * @return The type of the DR plan executed.
      * 
      */
     public String planExecutionType() {

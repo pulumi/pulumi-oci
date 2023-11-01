@@ -56,7 +56,7 @@ import (
 type SetUserAssessmentBaseline struct {
 	pulumi.CustomResourceState
 
-	// The list of user assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayOutput `pulumi:"assessmentIds"`
 	// The OCID of the user assessment.
 	//
@@ -98,7 +98,7 @@ func GetSetUserAssessmentBaseline(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SetUserAssessmentBaseline resources.
 type setUserAssessmentBaselineState struct {
-	// The list of user assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the user assessment.
 	//
@@ -108,7 +108,7 @@ type setUserAssessmentBaselineState struct {
 }
 
 type SetUserAssessmentBaselineState struct {
-	// The list of user assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the user assessment.
 	//
@@ -122,7 +122,7 @@ func (SetUserAssessmentBaselineState) ElementType() reflect.Type {
 }
 
 type setUserAssessmentBaselineArgs struct {
-	// The list of user assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the user assessment.
 	//
@@ -133,7 +133,7 @@ type setUserAssessmentBaselineArgs struct {
 
 // The set of arguments for constructing a SetUserAssessmentBaseline resource.
 type SetUserAssessmentBaselineArgs struct {
-	// The list of user assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the user assessment.
 	//
@@ -253,7 +253,7 @@ func (o SetUserAssessmentBaselineOutput) ToOutput(ctx context.Context) pulumix.O
 	}
 }
 
-// The list of user assessment OCIDs that need to be updated while setting the baseline.
+// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 func (o SetUserAssessmentBaselineOutput) AssessmentIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SetUserAssessmentBaseline) pulumi.StringArrayOutput { return v.AssessmentIds }).(pulumi.StringArrayOutput)
 }

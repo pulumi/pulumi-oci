@@ -14,63 +14,63 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlansDrPlanCollectionItemResult
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+        /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+        /// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string DrProtectionGroupId;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the DR Plan's current state in more detail.
+        /// A message describing the DR plan's current state in more detail.
         /// </summary>
         public readonly string LifeCycleDetails;
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string PeerDrProtectionGroupId;
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+        /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         public readonly string PeerRegion;
         /// <summary>
-        /// The list of groups in this DR Plan.
+        /// The list of groups in this DR plan.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlansDrPlanCollectionItemPlanGroupResult> PlanGroups;
         /// <summary>
-        /// A filter to return only DR Plans that match the given lifecycleState.
+        /// A filter to return only DR plans that match the given lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The type of this DR Plan.
+        /// The type of the DR plan.
         /// </summary>
         public readonly string Type;
 

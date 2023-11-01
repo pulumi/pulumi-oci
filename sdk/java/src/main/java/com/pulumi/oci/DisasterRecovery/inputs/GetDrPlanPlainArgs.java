@@ -13,14 +13,14 @@ public final class GetDrPlanPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetDrPlanPlainArgs Empty = new GetDrPlanPlainArgs();
 
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     @Import(name="drPlanId", required=true)
     private String drPlanId;
 
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * @return The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     public String drPlanId() {
@@ -52,7 +52,7 @@ public final class GetDrPlanPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param drPlanId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+         * @param drPlanId The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
          * 
          * @return builder
          * 

@@ -23,7 +23,7 @@ class SetSecurityAssessmentBaselineArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: List of security assessment OCIDs that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         """
         pulumi.set(__self__, "security_assessment_id", security_assessment_id)
         if assessment_ids is not None:
@@ -49,7 +49,7 @@ class SetSecurityAssessmentBaselineArgs:
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of security assessment OCIDs that need to be updated while setting the baseline.
+        The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         """
         return pulumi.get(self, "assessment_ids")
 
@@ -65,7 +65,7 @@ class _SetSecurityAssessmentBaselineState:
                  security_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SetSecurityAssessmentBaseline resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: List of security assessment OCIDs that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
                
                
@@ -81,7 +81,7 @@ class _SetSecurityAssessmentBaselineState:
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of security assessment OCIDs that need to be updated while setting the baseline.
+        The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         """
         return pulumi.get(self, "assessment_ids")
 
@@ -140,7 +140,7 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: List of security assessment OCIDs that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
                
                
@@ -226,7 +226,7 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: List of security assessment OCIDs that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
                
                
@@ -245,7 +245,7 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of security assessment OCIDs that need to be updated while setting the baseline.
+        The list of OCIDs for the security assessments that need to be updated while setting the baseline.
         """
         return pulumi.get(self, "assessment_ids")
 

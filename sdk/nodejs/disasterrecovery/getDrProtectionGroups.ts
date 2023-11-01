@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Gets a summary list of all DR Protection Groups in a compartment.
+ * Get a summary list of all DR protection groups in a compartment.
  *
  * ## Example Usage
  *
@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.dr_protection_group_display_name,
  *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
+ *     lifecycleSubState: _var.dr_protection_group_lifecycle_sub_state,
  *     role: _var.dr_protection_group_role,
  *     state: _var.dr_protection_group_state,
  * });
@@ -34,6 +35,7 @@ export function getDrProtectionGroups(args: GetDrProtectionGroupsArgs, opts?: pu
         "displayName": args.displayName,
         "drProtectionGroupId": args.drProtectionGroupId,
         "filters": args.filters,
+        "lifecycleSubState": args.lifecycleSubState,
         "role": args.role,
         "state": args.state,
     }, opts);
@@ -44,24 +46,28 @@ export function getDrProtectionGroups(args: GetDrProtectionGroupsArgs, opts?: pu
  */
 export interface GetDrProtectionGroupsArgs {
     /**
-     * The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     compartmentId: string;
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
     displayName?: string;
     /**
-     * The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId?: string;
     filters?: inputs.DisasterRecovery.GetDrProtectionGroupsFilter[];
     /**
-     * The DR Protection Group Role.
+     * A filter to return only DR protection groups that match the given lifecycle sub-state.
+     */
+    lifecycleSubState?: string;
+    /**
+     * The DR protection group Role.
      */
     role?: string;
     /**
-     * A filter to return only DR Protection Groups that match the given lifecycleState.
+     * A filter to return only DR protection groups that match the given lifecycle state.
      */
     state?: string;
 }
@@ -71,11 +77,11 @@ export interface GetDrProtectionGroupsArgs {
  */
 export interface GetDrProtectionGroupsResult {
     /**
-     * The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+     * The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     readonly compartmentId: string;
     /**
-     * The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * The display name of the DR protection group.  Example: `EBS PHX Group`
      */
     readonly displayName?: string;
     /**
@@ -89,18 +95,22 @@ export interface GetDrProtectionGroupsResult {
      */
     readonly id: string;
     /**
-     * The role of the DR Protection Group.
+     * The current sub-state of the DR protection group.
+     */
+    readonly lifecycleSubState?: string;
+    /**
+     * The role of the DR protection group.
      */
     readonly role?: string;
     /**
-     * The current state of the DR Protection Group.
+     * The current state of the DR protection group.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Gets a summary list of all DR Protection Groups in a compartment.
+ * Get a summary list of all DR protection groups in a compartment.
  *
  * ## Example Usage
  *
@@ -112,6 +122,7 @@ export interface GetDrProtectionGroupsResult {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.dr_protection_group_display_name,
  *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
+ *     lifecycleSubState: _var.dr_protection_group_lifecycle_sub_state,
  *     role: _var.dr_protection_group_role,
  *     state: _var.dr_protection_group_state,
  * });
@@ -126,24 +137,28 @@ export function getDrProtectionGroupsOutput(args: GetDrProtectionGroupsOutputArg
  */
 export interface GetDrProtectionGroupsOutputArgs {
     /**
-     * The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+     * The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrProtectionGroupsFilterArgs>[]>;
     /**
-     * The DR Protection Group Role.
+     * A filter to return only DR protection groups that match the given lifecycle sub-state.
+     */
+    lifecycleSubState?: pulumi.Input<string>;
+    /**
+     * The DR protection group Role.
      */
     role?: pulumi.Input<string>;
     /**
-     * A filter to return only DR Protection Groups that match the given lifecycleState.
+     * A filter to return only DR protection groups that match the given lifecycle state.
      */
     state?: pulumi.Input<string>;
 }

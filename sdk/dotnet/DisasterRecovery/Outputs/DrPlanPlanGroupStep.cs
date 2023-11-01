@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrPlanPlanGroupStep
     {
         /// <summary>
-        /// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        /// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -22,11 +22,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? ErrorMode;
         /// <summary>
-        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         /// </summary>
         public readonly string? GroupId;
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>
-        /// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         /// </summary>
         public readonly string? MemberId;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly int? Timeout;
         /// <summary>
-        /// The type of DR Plan to be created. 
+        /// The type of DR plan to be created. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// The details for a user-defined step in a DR Plan.
+        /// The details for a user-defined step in a DR plan.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrPlanPlanGroupStepUserDefinedStep> UserDefinedSteps;
 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrPlanPlanGroupStepUserDefinedStepArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
         /// </summary>
         [Input("functionId")]
         public Input<string>? FunctionId { get; set; }
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<Inputs.DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs>? _objectStorageScriptLocations;
 
         /// <summary>
-        /// Information about an Object Storage script location for a user-defined step in a DR Plan.
+        /// The details of an object storage script location for a user-defined step in a DR plan.
         /// </summary>
         public InputList<Inputs.DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs> ObjectStorageScriptLocations
         {
@@ -49,13 +49,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? RunAsUser { get; set; }
 
         /// <summary>
-        /// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the instance on which this script or command should be executed.
         /// </summary>
         [Input("runOnInstanceId")]
         public Input<string>? RunOnInstanceId { get; set; }
 
         /// <summary>
-        /// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+        /// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
         /// </summary>
         [Input("runOnInstanceRegion")]
         public Input<string>? RunOnInstanceRegion { get; set; }
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? ScriptCommand { get; set; }
 
         /// <summary>
-        /// The type of the step.
+        /// The type of the user-defined step.
         /// </summary>
         [Input("stepType")]
         public Input<string>? StepType { get; set; }

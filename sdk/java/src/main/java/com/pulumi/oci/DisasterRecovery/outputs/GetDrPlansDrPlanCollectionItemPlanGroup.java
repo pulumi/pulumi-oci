@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlansDrPlanCollectionItemPlanGroup {
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     private String displayName;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     private String id;
     /**
-     * @return The list of steps in this plan group.
+     * @return The list of steps in the group.
      * 
      */
     private List<GetDrPlansDrPlanCollectionItemPlanGroupStep> steps;
     /**
-     * @return The type of this DR Plan.
+     * @return The type of the DR plan.
      * 
      */
     private String type;
 
     private GetDrPlansDrPlanCollectionItemPlanGroup() {}
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The list of steps in this plan group.
+     * @return The list of steps in the group.
      * 
      */
     public List<GetDrPlansDrPlanCollectionItemPlanGroupStep> steps() {
         return this.steps;
     }
     /**
-     * @return The type of this DR Plan.
+     * @return The type of the DR plan.
      * 
      */
     public String type() {

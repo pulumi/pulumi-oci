@@ -151,6 +151,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        public readonly string License;
+        /// <summary>
         /// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string ManagementAgentId;
@@ -220,6 +224,8 @@ namespace Pulumi.Oci.StackMonitoring
 
             string id,
 
+            string license,
+
             string managementAgentId,
 
             string monitoredResourceId,
@@ -255,6 +261,7 @@ namespace Pulumi.Oci.StackMonitoring
             FreeformTags = freeformTags;
             HostName = hostName;
             Id = id;
+            License = license;
             ManagementAgentId = managementAgentId;
             MonitoredResourceId = monitoredResourceId;
             Name = name;

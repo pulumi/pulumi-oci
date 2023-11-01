@@ -43,7 +43,7 @@ public final class GetTargetAlertPolicyAssociationResult {
      */
     private String id;
     /**
-     * @return Indicates if the target-alert policy association is enabled or disabled.
+     * @return Indicates if the target-alert policy association is enabled or disabled by user.
      * 
      */
     private Boolean isEnabled;
@@ -123,7 +123,7 @@ public final class GetTargetAlertPolicyAssociationResult {
         return this.id;
     }
     /**
-     * @return Indicates if the target-alert policy association is enabled or disabled.
+     * @return Indicates if the target-alert policy association is enabled or disabled by user.
      * 
      */
     public Boolean isEnabled() {

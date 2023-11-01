@@ -140,6 +140,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>
+        /// Whether to enable monitoring via the Database Management service.
+        /// </summary>
+        public readonly string DatabaseManagement;
+        /// <summary>
         /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
         public readonly string DbSystemId;
@@ -267,6 +271,8 @@ namespace Pulumi.Oci.Mysql
 
             int dataStorageSizeInGb,
 
+            string databaseManagement,
+
             string dbSystemId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -331,6 +337,7 @@ namespace Pulumi.Oci.Mysql
             CrashRecovery = crashRecovery;
             CurrentPlacements = currentPlacements;
             DataStorageSizeInGb = dataStorageSizeInGb;
+            DatabaseManagement = databaseManagement;
             DbSystemId = dbSystemId;
             DefinedTags = definedTags;
             DeletionPolicies = deletionPolicies;

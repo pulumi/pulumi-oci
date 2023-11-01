@@ -16,14 +16,14 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
     public static final DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs Empty = new DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs();
 
     /**
-     * The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+     * The bucket name inside the object storage namespace.  Example: `operation_logs`
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -31,14 +31,14 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
     }
 
     /**
-     * The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -46,14 +46,14 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
     }
 
     /**
-     * The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+     * The object name inside the object storage bucket.  Example: `switchover_plan_executions`
      * 
      */
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
      * 
      */
     public Optional<Output<String>> object() {
@@ -87,7 +87,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
         }
 
         /**
-         * @param bucket The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+         * @param bucket The bucket name inside the object storage namespace.  Example: `operation_logs`
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
         }
 
         /**
-         * @param bucket The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+         * @param bucket The bucket name inside the object storage namespace.  Example: `operation_logs`
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
         }
 
         /**
-         * @param namespace The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * @param namespace The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
         }
 
         /**
-         * @param namespace The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * @param namespace The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
         }
 
         /**
-         * @param object The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+         * @param object The object name inside the object storage bucket.  Example: `switchover_plan_executions`
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs ext
         }
 
         /**
-         * @param object The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+         * @param object The object name inside the object storage bucket.  Example: `switchover_plan_executions`
          * 
          * @return builder
          * 

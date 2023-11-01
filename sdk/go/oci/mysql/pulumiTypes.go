@@ -1303,6 +1303,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	CrashRecovery *string `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -1365,6 +1367,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	CrashRecovery pulumi.StringPtrInput `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagement pulumi.StringPtrInput `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -1503,6 +1507,11 @@ func (o MysqlBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringPtrOutpu
 // Initial size of the data volume in GiBs that will be created and attached.
 func (o MysqlBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
+}
+
+// Whether to enable monitoring via the Database Management service.
+func (o MysqlBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.DatabaseManagement }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9536,6 +9545,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	CrashRecovery string `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -9598,6 +9609,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -9738,6 +9751,11 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringOutpu
 // Initial size of the data volume in GiBs that will be created and attached.
 func (o GetMysqlBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Whether to enable monitoring via the Database Management service.
+func (o GetMysqlBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.DatabaseManagement }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -10895,6 +10913,8 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	CrashRecovery string `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -10957,6 +10977,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -11097,6 +11119,11 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.Stri
 // Initial size of the data volume in GiBs that will be created and attached.
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Whether to enable monitoring via the Database Management service.
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.DatabaseManagement }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -16785,6 +16812,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	CurrentPlacements []GetMysqlDbSystemsDbSystemCurrentPlacement `pulumi:"currentPlacements"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	// Filter DB Systems by their Database Management configuration.
+	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -16868,6 +16897,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	CurrentPlacements GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput `pulumi:"currentPlacements"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	// Filter DB Systems by their Database Management configuration.
+	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
@@ -17038,6 +17069,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) CurrentPlacements() GetMysqlDbSystemsDb
 // Initial size of the data volume in GiBs that will be created and attached.
 func (o GetMysqlDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// Filter DB Systems by their Database Management configuration.
+func (o GetMysqlDbSystemsDbSystemOutput) DatabaseManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.DatabaseManagement }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

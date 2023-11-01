@@ -67,6 +67,7 @@ import javax.annotation.Nullable;
  *                             .build())
  *                         .build())
  *                     .build())
+ *                 .license(var_.discovery_job_discovery_details_license())
  *                 .tags(DiscoveryJobDiscoveryDetailsTagsArgs.builder()
  *                     .propertiesMap(var_.discovery_job_discovery_details_tags_properties_map())
  *                     .build())

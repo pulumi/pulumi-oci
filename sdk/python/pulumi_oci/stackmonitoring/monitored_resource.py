@@ -29,6 +29,7 @@ class MonitoredResourceArgs:
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
@@ -52,6 +53,7 @@ class MonitoredResourceArgs:
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
+        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
@@ -81,6 +83,8 @@ class MonitoredResourceArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
@@ -251,6 +255,18 @@ class MonitoredResourceArgs:
         pulumi.set(self, "host_name", value)
 
     @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
+
+    @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -314,6 +330,7 @@ class _MonitoredResourceState:
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
@@ -338,6 +355,7 @@ class _MonitoredResourceState:
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
+        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
@@ -377,6 +395,8 @@ class _MonitoredResourceState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
@@ -543,6 +563,18 @@ class _MonitoredResourceState:
         pulumi.set(self, "host_name", value)
 
     @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
+
+    @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -684,6 +716,7 @@ class MonitoredResource(pulumi.CustomResource):
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]]] = None,
@@ -767,6 +800,7 @@ class MonitoredResource(pulumi.CustomResource):
                 "bar-key": "value",
             },
             host_name=var["monitored_resource_host_name"],
+            license=var["monitored_resource_license"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
                 name=var["monitored_resource_properties_name"],
@@ -797,6 +831,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
+        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]] properties: (Updatable) List of monitored resource properties.
@@ -890,6 +925,7 @@ class MonitoredResource(pulumi.CustomResource):
                 "bar-key": "value",
             },
             host_name=var["monitored_resource_host_name"],
+            license=var["monitored_resource_license"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
                 name=var["monitored_resource_properties_name"],
@@ -933,6 +969,7 @@ class MonitoredResource(pulumi.CustomResource):
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]]] = None,
@@ -961,6 +998,7 @@ class MonitoredResource(pulumi.CustomResource):
             __props__.__dict__["external_resource_id"] = external_resource_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["host_name"] = host_name
+            __props__.__dict__["license"] = license
             __props__.__dict__["management_agent_id"] = management_agent_id
             __props__.__dict__["name"] = name
             __props__.__dict__["properties"] = properties
@@ -995,6 +1033,7 @@ class MonitoredResource(pulumi.CustomResource):
             external_resource_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             host_name: Optional[pulumi.Input[str]] = None,
+            license: Optional[pulumi.Input[str]] = None,
             management_agent_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]]] = None,
@@ -1024,6 +1063,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
+        :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]] properties: (Updatable) List of monitored resource properties.
@@ -1055,6 +1095,7 @@ class MonitoredResource(pulumi.CustomResource):
         __props__.__dict__["external_resource_id"] = external_resource_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["host_name"] = host_name
+        __props__.__dict__["license"] = license
         __props__.__dict__["management_agent_id"] = management_agent_id
         __props__.__dict__["name"] = name
         __props__.__dict__["properties"] = properties
@@ -1162,6 +1203,14 @@ class MonitoredResource(pulumi.CustomResource):
         (Updatable) Host name of the monitored resource.
         """
         return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def license(self) -> pulumi.Output[str]:
+        """
+        (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+        """
+        return pulumi.get(self, "license")
 
     @property
     @pulumi.getter(name="managementAgentId")

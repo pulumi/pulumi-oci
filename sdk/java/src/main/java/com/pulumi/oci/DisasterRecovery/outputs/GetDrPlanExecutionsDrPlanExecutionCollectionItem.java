@@ -17,27 +17,27 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
     /**
-     * @return The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     private String compartmentId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     private String displayName;
     /**
-     * @return The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * @return The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private String drProtectionGroupId;
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     private Integer executionDurationInSec;
@@ -47,112 +47,112 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
      */
     private List<GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption> executionOptions;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return A list of groups executed in this DR Plan Execution.
+     * @return A list of groups executed in this DR plan execution.
      * 
      */
     private List<GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution> groupExecutions;
     /**
-     * @return The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      * 
      */
     private String id;
     /**
-     * @return A message describing the DR Plan Execution&#39;s current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+     * @return A message describing the DR plan execution&#39;s current state in more detail.
      * 
      */
     private String lifeCycleDetails;
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     private List<GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation> logLocations;
     /**
-     * @return The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private String peerDrProtectionGroupId;
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     private String peerRegion;
     /**
-     * @return The type of the DR Plan executed.
+     * @return The type of the DR plan executed.
      * 
      */
     private String planExecutionType;
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     private String planId;
     /**
-     * @return A filter to return only DR Plan Executions that match the given lifecycleState.
+     * @return A filter to return only DR plan executions that match the given lifecycle state.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeEnded;
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeStarted;
     /**
-     * @return The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeUpdated;
 
     private GetDrPlanExecutionsDrPlanExecutionCollectionItem() {}
     /**
-     * @return The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * @return The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String drProtectionGroupId() {
         return this.drProtectionGroupId;
     }
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     public Integer executionDurationInSec() {
@@ -166,105 +166,105 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
         return this.executionOptions;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * @return A list of groups executed in this DR Plan Execution.
+     * @return A list of groups executed in this DR plan execution.
      * 
      */
     public List<GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution> groupExecutions() {
         return this.groupExecutions;
     }
     /**
-     * @return The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message describing the DR Plan Execution&#39;s current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+     * @return A message describing the DR plan execution&#39;s current state in more detail.
      * 
      */
     public String lifeCycleDetails() {
         return this.lifeCycleDetails;
     }
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     public List<GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation> logLocations() {
         return this.logLocations;
     }
     /**
-     * @return The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String peerDrProtectionGroupId() {
         return this.peerDrProtectionGroupId;
     }
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public String peerRegion() {
         return this.peerRegion;
     }
     /**
-     * @return The type of the DR Plan executed.
+     * @return The type of the DR plan executed.
      * 
      */
     public String planExecutionType() {
         return this.planExecutionType;
     }
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     public String planId() {
         return this.planId;
     }
     /**
-     * @return A filter to return only DR Plan Executions that match the given lifecycleState.
+     * @return A filter to return only DR plan executions that match the given lifecycle state.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeEnded() {
         return this.timeEnded;
     }
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeStarted() {
         return this.timeStarted;
     }
     /**
-     * @return The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeUpdated() {

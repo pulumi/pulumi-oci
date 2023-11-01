@@ -15,6 +15,8 @@ __all__ = [
     'AuditPolicyAuditSpecificationArgs',
     'AuditProfileAuditTrailArgs',
     'DataSafeConfigurationGlobalSettingArgs',
+    'DatabaseSecurityConfigManagementSqlFirewallConfigArgs',
+    'DatabaseSecurityConfigSqlFirewallConfigArgs',
     'DiscoveryJobsResultModifiedAttributeArgs',
     'LibraryMasingFormatFormatEntryArgs',
     'MaskingPoliciesMaskingColumnMaskingFormatArgs',
@@ -47,6 +49,7 @@ __all__ = [
     'GetAuditProfilesFilterArgs',
     'GetAuditTrailsFilterArgs',
     'GetDataSafePrivateEndpointsFilterArgs',
+    'GetDatabaseSecurityConfigsFilterArgs',
     'GetDiscoveryAnalyticsFilterArgs',
     'GetDiscoveryJobsResultsFilterArgs',
     'GetLibraryMaskingFormatsFilterArgs',
@@ -66,11 +69,23 @@ __all__ = [
     'GetSecurityAssessmentFindingFilterArgs',
     'GetSecurityAssessmentFindingsFilterArgs',
     'GetSecurityAssessmentsFilterArgs',
+    'GetSecurityPoliciesFilterArgs',
+    'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs',
+    'GetSecurityPolicyDeploymentsFilterArgs',
     'GetSensitiveDataModelSensitiveObjectsFilterArgs',
     'GetSensitiveDataModelSensitiveSchemasFilterArgs',
     'GetSensitiveDataModelsFilterArgs',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgs',
     'GetSensitiveTypesFilterArgs',
+    'GetSqlCollectionAnalyticsFilterArgs',
+    'GetSqlCollectionLogInsightsFilterArgs',
+    'GetSqlCollectionsFilterArgs',
+    'GetSqlFirewallAllowedSqlAnalyticsFilterArgs',
+    'GetSqlFirewallAllowedSqlsFilterArgs',
+    'GetSqlFirewallPoliciesFilterArgs',
+    'GetSqlFirewallPolicyAnalyticsFilterArgs',
+    'GetSqlFirewallViolationAnalyticsFilterArgs',
+    'GetSqlFirewallViolationsFilterArgs',
     'GetTargetAlertPolicyAssociationsFilterArgs',
     'GetTargetDatabaseRoleFilterArgs',
     'GetTargetDatabaseRolesFilterArgs',
@@ -774,6 +789,130 @@ class DataSafeConfigurationGlobalSettingArgs:
     @online_retention_period.setter
     def online_retention_period(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "online_retention_period", value)
+
+
+@pulumi.input_type
+class DatabaseSecurityConfigManagementSqlFirewallConfigArgs:
+    def __init__(__self__, *,
+                 exclude_job: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 time_status_updated: Optional[pulumi.Input[str]] = None,
+                 violation_log_auto_purge: Optional[pulumi.Input[str]] = None):
+        if exclude_job is not None:
+            pulumi.set(__self__, "exclude_job", exclude_job)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_status_updated is not None:
+            pulumi.set(__self__, "time_status_updated", time_status_updated)
+        if violation_log_auto_purge is not None:
+            pulumi.set(__self__, "violation_log_auto_purge", violation_log_auto_purge)
+
+    @property
+    @pulumi.getter(name="excludeJob")
+    def exclude_job(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "exclude_job")
+
+    @exclude_job.setter
+    def exclude_job(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exclude_job", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="timeStatusUpdated")
+    def time_status_updated(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "time_status_updated")
+
+    @time_status_updated.setter
+    def time_status_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_status_updated", value)
+
+    @property
+    @pulumi.getter(name="violationLogAutoPurge")
+    def violation_log_auto_purge(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "violation_log_auto_purge")
+
+    @violation_log_auto_purge.setter
+    def violation_log_auto_purge(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "violation_log_auto_purge", value)
+
+
+@pulumi.input_type
+class DatabaseSecurityConfigSqlFirewallConfigArgs:
+    def __init__(__self__, *,
+                 exclude_job: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 time_status_updated: Optional[pulumi.Input[str]] = None,
+                 violation_log_auto_purge: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] exclude_job: (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        :param pulumi.Input[str] status: (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+        :param pulumi.Input[str] time_status_updated: The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        :param pulumi.Input[str] violation_log_auto_purge: (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
+        if exclude_job is not None:
+            pulumi.set(__self__, "exclude_job", exclude_job)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_status_updated is not None:
+            pulumi.set(__self__, "time_status_updated", time_status_updated)
+        if violation_log_auto_purge is not None:
+            pulumi.set(__self__, "violation_log_auto_purge", violation_log_auto_purge)
+
+    @property
+    @pulumi.getter(name="excludeJob")
+    def exclude_job(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        """
+        return pulumi.get(self, "exclude_job")
+
+    @exclude_job.setter
+    def exclude_job(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exclude_job", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="timeStatusUpdated")
+    def time_status_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The most recent time when the firewall status is updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_status_updated")
+
+    @time_status_updated.setter
+    def time_status_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_status_updated", value)
+
+    @property
+    @pulumi.getter(name="violationLogAutoPurge")
+    def violation_log_auto_purge(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+        """
+        return pulumi.get(self, "violation_log_auto_purge")
+
+    @violation_log_auto_purge.setter
+    def violation_log_auto_purge(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "violation_log_auto_purge", value)
 
 
 @pulumi.input_type
@@ -3765,6 +3904,45 @@ class GetDataSafePrivateEndpointsFilterArgs:
 
 
 @pulumi.input_type
+class GetDatabaseSecurityConfigsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetDiscoveryAnalyticsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -4512,6 +4690,123 @@ class GetSecurityAssessmentsFilterArgs:
 
 
 @pulumi.input_type
+class GetSecurityPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPolicyDeploymentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetSensitiveDataModelSensitiveObjectsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -4669,6 +4964,357 @@ class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
 
 @pulumi.input_type
 class GetSensitiveTypesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlCollectionAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlCollectionLogInsightsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlCollectionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlFirewallAllowedSqlAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlFirewallAllowedSqlsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlFirewallPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlFirewallPolicyAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlFirewallViolationAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSqlFirewallViolationsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

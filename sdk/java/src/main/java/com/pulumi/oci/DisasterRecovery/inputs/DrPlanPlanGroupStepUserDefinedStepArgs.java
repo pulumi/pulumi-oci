@@ -18,14 +18,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     public static final DrPlanPlanGroupStepUserDefinedStepArgs Empty = new DrPlanPlanGroupStepUserDefinedStepArgs();
 
     /**
-     * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> functionId() {
@@ -48,14 +48,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     }
 
     /**
-     * Information about an Object Storage script location for a user-defined step in a DR Plan.
+     * The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
     @Import(name="objectStorageScriptLocations")
     private @Nullable Output<List<DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs>> objectStorageScriptLocations;
 
     /**
-     * @return Information about an Object Storage script location for a user-defined step in a DR Plan.
+     * @return The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
     public Optional<Output<List<DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs>>> objectStorageScriptLocations() {
@@ -93,14 +93,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     }
 
     /**
-     * The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the instance on which this script or command should be executed.
      * 
      */
     @Import(name="runOnInstanceId")
     private @Nullable Output<String> runOnInstanceId;
 
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the instance on which this script or command should be executed.
      * 
      */
     public Optional<Output<String>> runOnInstanceId() {
@@ -108,14 +108,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     }
 
     /**
-     * The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+     * The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
     @Import(name="runOnInstanceRegion")
     private @Nullable Output<String> runOnInstanceRegion;
 
     /**
-     * @return The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+     * @return The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
     public Optional<Output<String>> runOnInstanceRegion() {
@@ -138,14 +138,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     }
 
     /**
-     * The type of the step.
+     * The type of the user-defined step.
      * 
      */
     @Import(name="stepType")
     private @Nullable Output<String> stepType;
 
     /**
-     * @return The type of the step.
+     * @return The type of the user-defined step.
      * 
      */
     public Optional<Output<String>> stepType() {
@@ -185,7 +185,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param functionId The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param objectStorageScriptLocations Information about an Object Storage script location for a user-defined step in a DR Plan.
+         * @param objectStorageScriptLocations The details of an object storage script location for a user-defined step in a DR plan.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param objectStorageScriptLocations Information about an Object Storage script location for a user-defined step in a DR Plan.
+         * @param objectStorageScriptLocations The details of an object storage script location for a user-defined step in a DR plan.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param objectStorageScriptLocations Information about an Object Storage script location for a user-defined step in a DR Plan.
+         * @param objectStorageScriptLocations The details of an object storage script location for a user-defined step in a DR plan.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runOnInstanceId The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param runOnInstanceId The OCID of the instance on which this script or command should be executed.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runOnInstanceId The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param runOnInstanceId The OCID of the instance on which this script or command should be executed.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runOnInstanceRegion The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+         * @param runOnInstanceRegion The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runOnInstanceRegion The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+         * @param runOnInstanceRegion The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param stepType The type of the step.
+         * @param stepType The type of the user-defined step.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param stepType The type of the step.
+         * @param stepType The type of the user-defined step.
          * 
          * @return builder
          * 

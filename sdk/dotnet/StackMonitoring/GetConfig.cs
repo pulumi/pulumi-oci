@@ -131,9 +131,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// True if automatic promotion is enabled, false if it is not enabled.
+        /// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
         /// </summary>
         public readonly bool IsEnabled;
+        /// <summary>
+        /// License edition.
+        /// </summary>
+        public readonly string License;
         /// <summary>
         /// The type of resource to configure for automatic promotion.
         /// </summary>
@@ -173,6 +177,8 @@ namespace Pulumi.Oci.StackMonitoring
 
             bool isEnabled,
 
+            string license,
+
             string resourceType,
 
             string state,
@@ -191,6 +197,7 @@ namespace Pulumi.Oci.StackMonitoring
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
+            License = license;
             ResourceType = resourceType;
             State = state;
             SystemTags = systemTags;

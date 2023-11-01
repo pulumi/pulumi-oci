@@ -13,19 +13,19 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrPlanExecutionGroupExecutionStepExecutionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+        /// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The total duration in seconds taken to complete step execution.  Example: `35`
+        /// The total duration in seconds taken to complete the step execution.  Example: `35`
         /// </summary>
         [Input("executionDurationInSec")]
         public Input<int>? ExecutionDurationInSec { get; set; }
 
         /// <summary>
-        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<Inputs.DrPlanExecutionGroupExecutionStepExecutionLogLocationGetArgs>? _logLocations;
 
         /// <summary>
-        /// Information about an Object Storage log location for a DR Protection Group.
+        /// The details of an object storage log location for a DR protection group.
         /// </summary>
         public InputList<Inputs.DrPlanExecutionGroupExecutionStepExecutionLogLocationGetArgs> LogLocations
         {
@@ -49,31 +49,31 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+        /// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
         /// </summary>
         [Input("statusDetails")]
         public Input<string>? StatusDetails { get; set; }
 
         /// <summary>
-        /// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
         /// </summary>
         [Input("stepId")]
         public Input<string>? StepId { get; set; }
 
         /// <summary>
-        /// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Input("timeEnded")]
         public Input<string>? TimeEnded { get; set; }
 
         /// <summary>
-        /// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Input("timeStarted")]
         public Input<string>? TimeStarted { get; set; }
 
         /// <summary>
-        /// The plan group type.
+        /// The group type.  Example: `BUILT_IN`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

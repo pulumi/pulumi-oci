@@ -72,8 +72,10 @@ type LookupConfigResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id string `pulumi:"id"`
-	// True if automatic promotion is enabled, false if it is not enabled.
+	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// License edition.
+	License string `pulumi:"license"`
 	// The type of resource to configure for automatic promotion.
 	ResourceType string `pulumi:"resourceType"`
 	// The current state of the configuration.
@@ -164,9 +166,14 @@ func (o LookupConfigResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// True if automatic promotion is enabled, false if it is not enabled.
+// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
 func (o LookupConfigResultOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConfigResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// License edition.
+func (o LookupConfigResultOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.License }).(pulumi.StringOutput)
 }
 
 // The type of resource to configure for automatic promotion.

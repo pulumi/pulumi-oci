@@ -18,14 +18,14 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
     public static final DrPlanPlanGroupArgs Empty = new DrPlanPlanGroupArgs();
 
     /**
-     * (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -33,14 +33,14 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public Optional<Output<String>> id() {
@@ -48,14 +48,14 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The list of steps in this plan group.
+     * The list of steps in the group.
      * 
      */
     @Import(name="steps")
     private @Nullable Output<List<DrPlanPlanGroupStepArgs>> steps;
 
     /**
-     * @return The list of steps in this plan group.
+     * @return The list of steps in the group.
      * 
      */
     public Optional<Output<List<DrPlanPlanGroupStepArgs>>> steps() {
@@ -63,7 +63,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The type of DR Plan to be created.
+     * The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73,7 +73,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of DR Plan to be created.
+     * @return The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,7 +111,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+         * @param id The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+         * @param id The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param steps The list of steps in this plan group.
+         * @param steps The list of steps in the group.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param steps The list of steps in this plan group.
+         * @param steps The list of steps in the group.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param steps The list of steps in this plan group.
+         * @param steps The list of steps in the group.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -198,7 +198,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -51,6 +51,7 @@ import (
 //							},
 //						},
 //					},
+//					License: pulumi.Any(_var.Discovery_job_discovery_details_license),
 //					Tags: &stackmonitoring.DiscoveryJobDiscoveryDetailsTagsArgs{
 //						PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_tags_properties_map),
 //					},

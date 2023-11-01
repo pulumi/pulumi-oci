@@ -53,7 +53,7 @@ class GetDrPlansResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+        The display name of the group.  Example: `DATABASE_SWITCHOVER`
         """
         return pulumi.get(self, "display_name")
 
@@ -79,7 +79,7 @@ class GetDrPlansResult:
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> str:
         """
-        The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
         """
         return pulumi.get(self, "dr_protection_group_id")
 
@@ -100,7 +100,7 @@ class GetDrPlansResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the DR Plan.
+        The current state of the DR plan.
         """
         return pulumi.get(self, "state")
 
@@ -131,7 +131,7 @@ def get_dr_plans(display_name: Optional[str] = None,
     """
     This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Gets a summary list of all DR Plans for a DR Protection Group.
+    Get a summary list of all DR plans for a DR protection group.
 
     ## Example Usage
 
@@ -147,11 +147,11 @@ def get_dr_plans(display_name: Optional[str] = None,
     ```
 
 
-    :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
-    :param str dr_plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
-    :param str dr_plan_type: The DR Plan type.
-    :param str dr_protection_group_id: The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
-    :param str state: A filter to return only DR Plans that match the given lifecycleState.
+    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+    :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
+    :param str dr_plan_type: The DR plan type.
+    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    :param str state: A filter to return only DR plans that match the given lifecycle state.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -185,7 +185,7 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
     """
     This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
 
-    Gets a summary list of all DR Plans for a DR Protection Group.
+    Get a summary list of all DR plans for a DR protection group.
 
     ## Example Usage
 
@@ -201,10 +201,10 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
     ```
 
 
-    :param str display_name: A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
-    :param str dr_plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
-    :param str dr_plan_type: The DR Plan type.
-    :param str dr_protection_group_id: The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
-    :param str state: A filter to return only DR Plans that match the given lifecycleState.
+    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+    :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
+    :param str dr_plan_type: The DR plan type.
+    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+    :param str state: A filter to return only DR plans that match the given lifecycle state.
     """
     ...

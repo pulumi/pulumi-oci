@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Get details for the DR Plan identified by *drPlanId*.
+        /// Get details for the DR plan identified by *drPlanId*.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Get details for the DR Plan identified by *drPlanId*.
+        /// Get details for the DR plan identified by *drPlanId*.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlanArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+        /// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         [Input("drPlanId", required: true)]
         public string DrPlanId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlanInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+        /// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         [Input("drPlanId", required: true)]
         public Input<string> DrPlanId { get; set; } = null!;
@@ -106,64 +106,64 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlanResult
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+        /// The display name of the group.  Example: `DATABASE_SWITCHOVER`
         /// </summary>
         public readonly string DisplayName;
         public readonly string DrPlanId;
         /// <summary>
-        /// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         public readonly string DrProtectionGroupId;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the DR Plan's current state in more detail.
+        /// A message describing the DR plan's current state in more detail.
         /// </summary>
         public readonly string LifeCycleDetails;
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string PeerDrProtectionGroupId;
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+        /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         public readonly string PeerRegion;
         /// <summary>
-        /// The list of groups in this DR Plan.
+        /// The list of groups in this DR plan.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanPlanGroupResult> PlanGroups;
         /// <summary>
-        /// The current state of the DR Plan.
+        /// The current state of the DR plan.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The type of this DR Plan.
+        /// The type of the DR plan.
         /// </summary>
         public readonly string Type;
 

@@ -26,6 +26,11 @@ public final class GetMysqlDbSystemsResult {
      */
     private @Nullable String configurationId;
     /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    private @Nullable List<String> databaseManagements;
+    /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
@@ -72,6 +77,13 @@ public final class GetMysqlDbSystemsResult {
      */
     public Optional<String> configurationId() {
         return Optional.ofNullable(this.configurationId);
+    }
+    /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    public List<String> databaseManagements() {
+        return this.databaseManagements == null ? List.of() : this.databaseManagements;
     }
     /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
@@ -133,6 +145,7 @@ public final class GetMysqlDbSystemsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String configurationId;
+        private @Nullable List<String> databaseManagements;
         private @Nullable String dbSystemId;
         private List<GetMysqlDbSystemsDbSystem> dbSystems;
         private @Nullable String displayName;
@@ -146,6 +159,7 @@ public final class GetMysqlDbSystemsResult {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.configurationId = defaults.configurationId;
+    	      this.databaseManagements = defaults.databaseManagements;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.dbSystems = defaults.dbSystems;
     	      this.displayName = defaults.displayName;
@@ -165,6 +179,14 @@ public final class GetMysqlDbSystemsResult {
         public Builder configurationId(@Nullable String configurationId) {
             this.configurationId = configurationId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder databaseManagements(@Nullable List<String> databaseManagements) {
+            this.databaseManagements = databaseManagements;
+            return this;
+        }
+        public Builder databaseManagements(String... databaseManagements) {
+            return databaseManagements(List.of(databaseManagements));
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
@@ -216,6 +238,7 @@ public final class GetMysqlDbSystemsResult {
             final var o = new GetMysqlDbSystemsResult();
             o.compartmentId = compartmentId;
             o.configurationId = configurationId;
+            o.databaseManagements = databaseManagements;
             o.dbSystemId = dbSystemId;
             o.dbSystems = dbSystems;
             o.displayName = displayName;

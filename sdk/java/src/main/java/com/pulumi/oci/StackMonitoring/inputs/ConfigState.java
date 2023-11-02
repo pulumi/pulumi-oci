@@ -94,14 +94,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+     * @return (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -109,7 +109,22 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+     * (Updatable) License edition.
+     * 
+     */
+    @Import(name="license")
+    private @Nullable Output<String> license;
+
+    /**
+     * @return (Updatable) License edition.
+     * 
+     */
+    public Optional<Output<String>> license() {
+        return Optional.ofNullable(this.license);
+    }
+
+    /**
+     * The type of resource to configure for automatic promotion.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -119,7 +134,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+     * @return The type of resource to configure for automatic promotion.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -198,6 +213,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.license = $.license;
         this.resourceType = $.resourceType;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -329,7 +345,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnabled (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+         * @param isEnabled (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
          * 
          * @return builder
          * 
@@ -340,7 +356,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnabled (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+         * @param isEnabled (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
          * 
          * @return builder
          * 
@@ -350,7 +366,28 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceType The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+         * @param license (Updatable) License edition.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(@Nullable Output<String> license) {
+            $.license = license;
+            return this;
+        }
+
+        /**
+         * @param license (Updatable) License edition.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(String license) {
+            return license(Output.of(license));
+        }
+
+        /**
+         * @param resourceType The type of resource to configure for automatic promotion.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -364,7 +401,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceType The type of resource to configure for automatic promotion. The only valid value is `&#34;HOST&#34;`.
+         * @param resourceType The type of resource to configure for automatic promotion.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

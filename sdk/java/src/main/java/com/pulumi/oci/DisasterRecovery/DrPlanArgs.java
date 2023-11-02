@@ -18,14 +18,14 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
     public static final DrPlanArgs Empty = new DrPlanArgs();
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -33,14 +33,14 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     public Output<String> displayName() {
@@ -48,14 +48,14 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId", required=true)
     private Output<String> drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Output<String> drProtectionGroupId() {
@@ -63,14 +63,14 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -78,7 +78,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of DR Plan to be created.
+     * The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -88,7 +88,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> type;
 
     /**
-     * @return The type of DR Plan to be created.
+     * @return The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -127,7 +127,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param drProtectionGroupId The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param drProtectionGroupId The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -225,7 +225,7 @@ public final class DrPlanArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

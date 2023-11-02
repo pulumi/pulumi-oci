@@ -13,14 +13,14 @@ public final class GetDrProtectionGroupPlainArgs extends com.pulumi.resources.In
     public static final GetDrProtectionGroupPlainArgs Empty = new GetDrProtectionGroupPlainArgs();
 
     /**
-     * The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId", required=true)
     private String drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * @return The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String drProtectionGroupId() {
@@ -52,7 +52,7 @@ public final class GetDrProtectionGroupPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+         * @param drProtectionGroupId The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 

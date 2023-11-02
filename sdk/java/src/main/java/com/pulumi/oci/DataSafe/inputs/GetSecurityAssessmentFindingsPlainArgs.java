@@ -55,14 +55,14 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
     }
 
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     @Import(name="findingKey")
     private @Nullable String findingKey;
 
     /**
-     * @return Each finding has a key. This key is same for the finding across targets
+     * @return Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      * 
      */
     public Optional<String> findingKey() {
@@ -70,14 +70,14 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
     }
 
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      * 
      */
     @Import(name="references")
     private @Nullable String references;
 
     /**
-     * @return An optional filter to return only findings containing the specified reference.
+     * @return An optional filter to return only findings that match the specified reference.
      * 
      */
     public Optional<String> references() {
@@ -176,7 +176,7 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         }
 
         /**
-         * @param findingKey Each finding has a key. This key is same for the finding across targets
+         * @param findingKey Each finding in security assessment has an associated key (think of key as a finding&#39;s name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         }
 
         /**
-         * @param references An optional filter to return only findings containing the specified reference.
+         * @param references An optional filter to return only findings that match the specified reference.
          * 
          * @return builder
          * 

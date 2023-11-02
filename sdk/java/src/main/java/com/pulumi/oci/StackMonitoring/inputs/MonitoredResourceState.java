@@ -205,6 +205,21 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+     * 
+     */
+    @Import(name="license")
+    private @Nullable Output<String> license;
+
+    /**
+     * @return (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+     * 
+     */
+    public Optional<Output<String>> license() {
+        return Optional.ofNullable(this.license);
+    }
+
+    /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -375,6 +390,7 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
         this.externalResourceId = $.externalResourceId;
         this.freeformTags = $.freeformTags;
         this.hostName = $.hostName;
+        this.license = $.license;
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
         this.properties = $.properties;
@@ -675,6 +691,27 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
          */
         public Builder hostName(String hostName) {
             return hostName(Output.of(hostName));
+        }
+
+        /**
+         * @param license (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(@Nullable Output<String> license) {
+            $.license = license;
+            return this;
+        }
+
+        /**
+         * @param license (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(String license) {
+            return license(Output.of(license));
         }
 
         /**

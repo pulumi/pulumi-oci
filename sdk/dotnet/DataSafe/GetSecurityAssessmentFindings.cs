@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// List all the findings from all the targets in the specified assessment.
+        /// List all the findings from all the targets in the specified compartment.
         /// </summary>
         public static Task<GetSecurityAssessmentFindingsResult> InvokeAsync(GetSecurityAssessmentFindingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsArgs(), options.WithDefaults());
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// List all the findings from all the targets in the specified assessment.
+        /// List all the findings from all the targets in the specified compartment.
         /// </summary>
         public static Output<GetSecurityAssessmentFindingsResult> Invoke(GetSecurityAssessmentFindingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsInvokeArgs(), options.WithDefaults());
@@ -52,13 +52,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Each finding has a key. This key is same for the finding across targets
+        /// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
         /// </summary>
         [Input("findingKey")]
         public string? FindingKey { get; set; }
 
         /// <summary>
-        /// An optional filter to return only findings containing the specified reference.
+        /// An optional filter to return only findings that match the specified reference.
         /// </summary>
         [Input("references")]
         public string? References { get; set; }
@@ -104,13 +104,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Each finding has a key. This key is same for the finding across targets
+        /// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
         /// </summary>
         [Input("findingKey")]
         public Input<string>? FindingKey { get; set; }
 
         /// <summary>
-        /// An optional filter to return only findings containing the specified reference.
+        /// An optional filter to return only findings that match the specified reference.
         /// </summary>
         [Input("references")]
         public Input<string>? References { get; set; }

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
- * List all the findings from all the targets in the specified assessment.
+ * List all the findings from all the targets in the specified compartment.
  */
 export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFindingsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingsResult> {
 
@@ -39,11 +39,11 @@ export interface GetSecurityAssessmentFindingsArgs {
     compartmentIdInSubtree?: boolean;
     filters?: inputs.DataSafe.GetSecurityAssessmentFindingsFilter[];
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      */
     findingKey?: string;
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      */
     references?: string;
     /**
@@ -85,7 +85,7 @@ export interface GetSecurityAssessmentFindingsResult {
 /**
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
- * List all the findings from all the targets in the specified assessment.
+ * List all the findings from all the targets in the specified compartment.
  */
 export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentFindingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindings(a, opts))
@@ -105,11 +105,11 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingsFilterArgs>[]>;
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      */
     findingKey?: pulumi.Input<string>;
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      */
     references?: pulumi.Input<string>;
     /**

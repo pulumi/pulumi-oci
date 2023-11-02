@@ -21,7 +21,7 @@ class GetConfigResult:
     """
     A collection of values returned by getConfig.
     """
-    def __init__(__self__, compartment_id=None, config_id=None, config_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, resource_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, config_id=None, config_type=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, license=None, resource_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -46,6 +46,9 @@ class GetConfigResult:
         if is_enabled and not isinstance(is_enabled, bool):
             raise TypeError("Expected argument 'is_enabled' to be a bool")
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if license and not isinstance(license, str):
+            raise TypeError("Expected argument 'license' to be a str")
+        pulumi.set(__self__, "license", license)
         if resource_type and not isinstance(resource_type, str):
             raise TypeError("Expected argument 'resource_type' to be a str")
         pulumi.set(__self__, "resource_type", resource_type)
@@ -119,9 +122,17 @@ class GetConfigResult:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        True if automatic promotion is enabled, false if it is not enabled.
+        True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def license(self) -> str:
+        """
+        License edition.
+        """
+        return pulumi.get(self, "license")
 
     @property
     @pulumi.getter(name="resourceType")
@@ -178,6 +189,7 @@ class AwaitableGetConfigResult(GetConfigResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_enabled=self.is_enabled,
+            license=self.license,
             resource_type=self.resource_type,
             state=self.state,
             system_tags=self.system_tags,
@@ -218,6 +230,7 @@ def get_config(config_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
+        license=pulumi.get(__ret__, 'license'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

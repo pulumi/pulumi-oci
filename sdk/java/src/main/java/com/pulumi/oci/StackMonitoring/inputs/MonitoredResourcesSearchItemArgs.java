@@ -20,6 +20,21 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     public static final MonitoredResourcesSearchItemArgs Empty = new MonitoredResourcesSearchItemArgs();
 
     /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -107,6 +122,21 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
      */
     public Optional<Output<String>> id() {
         return Optional.ofNullable(this.id);
+    }
+
+    /**
+     * License edition of the monitored resource.
+     * 
+     */
+    @Import(name="license")
+    private @Nullable Output<String> license;
+
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Optional<Output<String>> license() {
+        return Optional.ofNullable(this.license);
     }
 
     /**
@@ -238,12 +268,14 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     private MonitoredResourcesSearchItemArgs() {}
 
     private MonitoredResourcesSearchItemArgs(MonitoredResourcesSearchItemArgs $) {
+        this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.externalId = $.externalId;
         this.freeformTags = $.freeformTags;
         this.hostName = $.hostName;
         this.id = $.id;
+        this.license = $.license;
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
         this.properties = $.properties;
@@ -270,6 +302,27 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
 
         public Builder(MonitoredResourcesSearchItemArgs defaults) {
             $ = new MonitoredResourcesSearchItemArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
         }
 
         /**
@@ -396,6 +449,27 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
          */
         public Builder id(String id) {
             return id(Output.of(id));
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(@Nullable Output<String> license) {
+            $.license = license;
+            return this;
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(String license) {
+            return license(Output.of(license));
         }
 
         /**

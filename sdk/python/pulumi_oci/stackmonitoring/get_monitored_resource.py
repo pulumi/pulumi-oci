@@ -22,7 +22,7 @@ class GetMonitoredResourceResult:
     """
     A collection of values returned by getMonitoredResource.
     """
-    def __init__(__self__, additional_aliases=None, additional_credentials=None, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_id=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_time_zone=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, additional_aliases=None, additional_credentials=None, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_id=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, license=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_time_zone=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
         if additional_aliases and not isinstance(additional_aliases, list):
             raise TypeError("Expected argument 'additional_aliases' to be a list")
         pulumi.set(__self__, "additional_aliases", additional_aliases)
@@ -62,6 +62,9 @@ class GetMonitoredResourceResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if license and not isinstance(license, str):
+            raise TypeError("Expected argument 'license' to be a str")
+        pulumi.set(__self__, "license", license)
         if management_agent_id and not isinstance(management_agent_id, str):
             raise TypeError("Expected argument 'management_agent_id' to be a str")
         pulumi.set(__self__, "management_agent_id", management_agent_id)
@@ -192,6 +195,14 @@ class GetMonitoredResourceResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def license(self) -> str:
+        """
+        License edition of the monitored resource.
+        """
+        return pulumi.get(self, "license")
+
+    @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> str:
         """
@@ -296,6 +307,7 @@ class AwaitableGetMonitoredResourceResult(GetMonitoredResourceResult):
             freeform_tags=self.freeform_tags,
             host_name=self.host_name,
             id=self.id,
+            license=self.license,
             management_agent_id=self.management_agent_id,
             monitored_resource_id=self.monitored_resource_id,
             name=self.name,
@@ -347,6 +359,7 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host_name=pulumi.get(__ret__, 'host_name'),
         id=pulumi.get(__ret__, 'id'),
+        license=pulumi.get(__ret__, 'license'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         monitored_resource_id=pulumi.get(__ret__, 'monitored_resource_id'),
         name=pulumi.get(__ret__, 'name'),

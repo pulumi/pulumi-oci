@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlanExecutionExecutionOptionResult
     {
         /// <summary>
-        /// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+        /// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
         /// </summary>
         public readonly bool ArePrechecksEnabled;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly bool AreWarningsIgnored;
         /// <summary>
-        /// The type of the DR Plan executed.
+        /// The type of the DR plan executed.
         /// </summary>
         public readonly string PlanExecutionType;
 

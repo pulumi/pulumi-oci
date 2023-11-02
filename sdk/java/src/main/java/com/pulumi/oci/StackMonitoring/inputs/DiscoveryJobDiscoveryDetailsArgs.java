@@ -49,6 +49,21 @@ public final class DiscoveryJobDiscoveryDetailsArgs extends com.pulumi.resources
     }
 
     /**
+     * License edition of the monitored resource.
+     * 
+     */
+    @Import(name="license")
+    private @Nullable Output<String> license;
+
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Optional<Output<String>> license() {
+        return Optional.ofNullable(this.license);
+    }
+
+    /**
      * Property Details
      * 
      */
@@ -113,6 +128,7 @@ public final class DiscoveryJobDiscoveryDetailsArgs extends com.pulumi.resources
     private DiscoveryJobDiscoveryDetailsArgs(DiscoveryJobDiscoveryDetailsArgs $) {
         this.agentId = $.agentId;
         this.credentials = $.credentials;
+        this.license = $.license;
         this.properties = $.properties;
         this.resourceName = $.resourceName;
         this.resourceType = $.resourceType;
@@ -177,6 +193,27 @@ public final class DiscoveryJobDiscoveryDetailsArgs extends com.pulumi.resources
          */
         public Builder credentials(DiscoveryJobDiscoveryDetailsCredentialsArgs credentials) {
             return credentials(Output.of(credentials));
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(@Nullable Output<String> license) {
+            $.license = license;
+            return this;
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(String license) {
+            return license(Output.of(license));
         }
 
         /**

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanPlanGroupStepUserDefinedStep {
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
     private @Nullable String functionId;
@@ -24,7 +24,7 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
      */
     private @Nullable String functionRegion;
     /**
-     * @return Information about an Object Storage script location for a user-defined step in a DR Plan.
+     * @return The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
     private @Nullable List<DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations;
@@ -39,12 +39,12 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
      */
     private @Nullable String runAsUser;
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the instance on which this script or command should be executed.
      * 
      */
     private @Nullable String runOnInstanceId;
     /**
-     * @return The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+     * @return The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
     private @Nullable String runOnInstanceRegion;
@@ -54,14 +54,14 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
      */
     private @Nullable String scriptCommand;
     /**
-     * @return The type of the step.
+     * @return The type of the user-defined step.
      * 
      */
     private @Nullable String stepType;
 
     private DrPlanPlanGroupStepUserDefinedStep() {}
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
     public Optional<String> functionId() {
@@ -75,7 +75,7 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
         return Optional.ofNullable(this.functionRegion);
     }
     /**
-     * @return Information about an Object Storage script location for a user-defined step in a DR Plan.
+     * @return The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
     public List<DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations() {
@@ -96,14 +96,14 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
         return Optional.ofNullable(this.runAsUser);
     }
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the instance on which this script or command should be executed.
      * 
      */
     public Optional<String> runOnInstanceId() {
         return Optional.ofNullable(this.runOnInstanceId);
     }
     /**
-     * @return The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+     * @return The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
     public Optional<String> runOnInstanceRegion() {
@@ -117,7 +117,7 @@ public final class DrPlanPlanGroupStepUserDefinedStep {
         return Optional.ofNullable(this.scriptCommand);
     }
     /**
-     * @return The type of the step.
+     * @return The type of the user-defined step.
      * 
      */
     public Optional<String> stepType() {

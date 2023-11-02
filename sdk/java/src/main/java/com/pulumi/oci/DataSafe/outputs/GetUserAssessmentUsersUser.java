@@ -36,17 +36,17 @@ public final class GetUserAssessmentUsersUser {
      */
     private String targetId;
     /**
-     * @return The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeLastLogin;
     /**
-     * @return The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timePasswordChanged;
     /**
-     * @return The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeUserCreated;
@@ -108,21 +108,21 @@ public final class GetUserAssessmentUsersUser {
         return this.targetId;
     }
     /**
-     * @return The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeLastLogin() {
         return this.timeLastLogin;
     }
     /**
-     * @return The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timePasswordChanged() {
         return this.timePasswordChanged;
     }
     /**
-     * @return The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeUserCreated() {

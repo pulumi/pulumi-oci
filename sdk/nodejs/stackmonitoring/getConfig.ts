@@ -68,9 +68,13 @@ export interface GetConfigResult {
      */
     readonly id: string;
     /**
-     * True if automatic promotion is enabled, false if it is not enabled.
+     * True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
      */
     readonly isEnabled: boolean;
+    /**
+     * License edition.
+     */
+    readonly license: string;
     /**
      * The type of resource to configure for automatic promotion.
      */

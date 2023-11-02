@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets the details of the comparison report on the security assessments submitted for comparison.
+        /// Gets the details of the comparison report for the security assessments submitted for comparison.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets the details of the comparison report on the security assessments submitted for comparison.
+        /// Gets the details of the comparison report for the security assessments submitted for comparison.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetSecurityAssessmentComparisonArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the baseline security assessment.
+        /// The OCID of the security assessment baseline.
         /// </summary>
         [Input("comparisonSecurityAssessmentId", required: true)]
         public string ComparisonSecurityAssessmentId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetSecurityAssessmentComparisonInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the baseline security assessment.
+        /// The OCID of the security assessment baseline.
         /// </summary>
         [Input("comparisonSecurityAssessmentId", required: true)]
         public Input<string> ComparisonSecurityAssessmentId { get; set; } = null!;

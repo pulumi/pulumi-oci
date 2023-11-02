@@ -55,6 +55,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? HostName { get; set; }
 
         /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
+
+        /// <summary>
         /// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("parentId")]

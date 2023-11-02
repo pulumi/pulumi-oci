@@ -17444,6 +17444,32 @@ export namespace DataSafe {
         onlineRetentionPeriod?: pulumi.Input<number>;
     }
 
+    export interface DatabaseSecurityConfigManagementSqlFirewallConfig {
+        excludeJob?: pulumi.Input<string>;
+        status?: pulumi.Input<string>;
+        timeStatusUpdated?: pulumi.Input<string>;
+        violationLogAutoPurge?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseSecurityConfigSqlFirewallConfig {
+        /**
+         * (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+         */
+        excludeJob?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The most recent time when the firewall status is updated, in the format defined by RFC3339.
+         */
+        timeStatusUpdated?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
+         */
+        violationLogAutoPurge?: pulumi.Input<string>;
+    }
+
     export interface DiscoveryJobsResultModifiedAttribute {
         /**
          * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -17582,6 +17608,18 @@ export namespace DataSafe {
     }
 
     export interface GetDataSafePrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatabaseSecurityConfigsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatabaseSecurityConfigsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -17821,6 +17859,42 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSecurityPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSecurityPolicyDeploymentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityPolicyDeploymentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSensitiveDataModelSensitiveObjectsFilter {
         name: string;
         regex?: boolean;
@@ -17876,6 +17950,114 @@ export namespace DataSafe {
     }
 
     export interface GetSensitiveTypesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlCollectionAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlCollectionAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlCollectionLogInsightsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlCollectionLogInsightsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlCollectionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlCollectionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallAllowedSqlAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallAllowedSqlAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallAllowedSqlsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallAllowedSqlsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallPolicyAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallPolicyAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallViolationAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallViolationAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSqlFirewallViolationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSqlFirewallViolationsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -25124,6 +25306,54 @@ export namespace DatabaseManagement {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagedMySqlDatabaseConfigurationDataFilter {
+        /**
+         * The name of variable
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedMySqlDatabaseConfigurationDataFilterArgs {
+        /**
+         * The name of variable
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedMySqlDatabaseSqlDataFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedMySqlDatabaseSqlDataFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedMySqlDatabasesFilter {
+        /**
+         * The name of the Managed MySQL Database.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedMySqlDatabasesFilterArgs {
+        /**
+         * The name of the Managed MySQL Database.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface ManagedDatabaseGroupManagedDatabase {
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -27591,15 +27821,15 @@ export namespace DisasterRecovery {
 
     export interface DrPlanExecutionGroupExecution {
         /**
-         * (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The total duration in seconds taken to complete step execution.  Example: `35`
+         * The total duration in seconds taken to complete the step execution.  Example: `35`
          */
         executionDurationInSec?: pulumi.Input<number>;
         /**
-         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
          */
         groupId?: pulumi.Input<string>;
         /**
@@ -27607,42 +27837,42 @@ export namespace DisasterRecovery {
          */
         status?: pulumi.Input<string>;
         /**
-         * Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+         * Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
          */
         statusDetails?: pulumi.Input<string>;
         /**
-         * A list of details of each step executed in this group.
+         * A list of step executions in the group.
          */
         stepExecutions?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionGroupExecutionStepExecution>[]>;
         /**
-         * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          */
         timeEnded?: pulumi.Input<string>;
         /**
-         * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          */
         timeStarted?: pulumi.Input<string>;
         /**
-         * The plan group type.
+         * The group type.  Example: `BUILT_IN`
          */
         type?: pulumi.Input<string>;
     }
 
     export interface DrPlanExecutionGroupExecutionStepExecution {
         /**
-         * (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The total duration in seconds taken to complete step execution.  Example: `35`
+         * The total duration in seconds taken to complete the step execution.  Example: `35`
          */
         executionDurationInSec?: pulumi.Input<number>;
         /**
-         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
          */
         groupId?: pulumi.Input<string>;
         /**
-         * Information about an Object Storage log location for a DR Protection Group.
+         * The details of an object storage log location for a DR protection group.
          */
         logLocations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionGroupExecutionStepExecutionLogLocation>[]>;
         /**
@@ -27650,72 +27880,72 @@ export namespace DisasterRecovery {
          */
         status?: pulumi.Input<string>;
         /**
-         * Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+         * Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
          */
         statusDetails?: pulumi.Input<string>;
         /**
-         * The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+         * The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
          */
         stepId?: pulumi.Input<string>;
         /**
-         * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          */
         timeEnded?: pulumi.Input<string>;
         /**
-         * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          */
         timeStarted?: pulumi.Input<string>;
         /**
-         * The plan group type.
+         * The group type.  Example: `BUILT_IN`
          */
         type?: pulumi.Input<string>;
     }
 
     export interface DrPlanExecutionGroupExecutionStepExecutionLogLocation {
         /**
-         * The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+         * The bucket name inside the object storage namespace.  Example: `operationLogs`
          */
         bucket?: pulumi.Input<string>;
         /**
-         * The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          */
         namespace?: pulumi.Input<string>;
         /**
-         * The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+         * The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
          */
         object?: pulumi.Input<string>;
     }
 
     export interface DrPlanExecutionLogLocation {
         /**
-         * The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+         * The bucket name inside the object storage namespace.  Example: `operationLogs`
          */
         bucket?: pulumi.Input<string>;
         /**
-         * The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          */
         namespace?: pulumi.Input<string>;
         /**
-         * The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+         * The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
          */
         object?: pulumi.Input<string>;
     }
 
     export interface DrPlanPlanGroup {
         /**
-         * (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+         * The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
          */
         id?: pulumi.Input<string>;
         /**
-         * The list of steps in this plan group.
+         * The list of steps in the group.
          */
         steps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroupStep>[]>;
         /**
-         * The type of DR Plan to be created. 
+         * The type of DR plan to be created. 
          *
          *
          * ** IMPORTANT **
@@ -27726,7 +27956,7 @@ export namespace DisasterRecovery {
 
     export interface DrPlanPlanGroupStep {
         /**
-         * (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -27734,11 +27964,11 @@ export namespace DisasterRecovery {
          */
         errorMode?: pulumi.Input<string>;
         /**
-         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+         * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
          */
         groupId?: pulumi.Input<string>;
         /**
-         * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+         * The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
          */
         id?: pulumi.Input<string>;
         /**
@@ -27746,7 +27976,7 @@ export namespace DisasterRecovery {
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+         * The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
          */
         memberId?: pulumi.Input<string>;
         /**
@@ -27754,7 +27984,7 @@ export namespace DisasterRecovery {
          */
         timeout?: pulumi.Input<number>;
         /**
-         * The type of DR Plan to be created. 
+         * The type of DR plan to be created. 
          *
          *
          * ** IMPORTANT **
@@ -27762,14 +27992,14 @@ export namespace DisasterRecovery {
          */
         type?: pulumi.Input<string>;
         /**
-         * The details for a user-defined step in a DR Plan.
+         * The details for a user-defined step in a DR plan.
          */
         userDefinedSteps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroupStepUserDefinedStep>[]>;
     }
 
     export interface DrPlanPlanGroupStepUserDefinedStep {
         /**
-         * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+         * The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
          */
         functionId?: pulumi.Input<string>;
         /**
@@ -27777,7 +28007,7 @@ export namespace DisasterRecovery {
          */
         functionRegion?: pulumi.Input<string>;
         /**
-         * Information about an Object Storage script location for a user-defined step in a DR Plan.
+         * The details of an object storage script location for a user-defined step in a DR plan.
          */
         objectStorageScriptLocations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation>[]>;
         /**
@@ -27789,11 +28019,11 @@ export namespace DisasterRecovery {
          */
         runAsUser?: pulumi.Input<string>;
         /**
-         * The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+         * The OCID of the instance on which this script or command should be executed.
          */
         runOnInstanceId?: pulumi.Input<string>;
         /**
-         * The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+         * The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
          */
         runOnInstanceRegion?: pulumi.Input<string>;
         /**
@@ -27801,79 +28031,111 @@ export namespace DisasterRecovery {
          */
         scriptCommand?: pulumi.Input<string>;
         /**
-         * The type of the step.
+         * The type of the user-defined step.
          */
         stepType?: pulumi.Input<string>;
     }
 
     export interface DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation {
         /**
-         * The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+         * The bucket name inside the object storage namespace.  Example: `customDrScripts`
          */
         bucket?: pulumi.Input<string>;
         /**
-         * The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          */
         namespace?: pulumi.Input<string>;
         /**
-         * The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+         * The object name inside the object storage bucket.  Example: `validate_app_start.sh`
          */
         object?: pulumi.Input<string>;
     }
 
     export interface DrProtectionGroupAssociation {
         /**
-         * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+         * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          */
         peerId?: pulumi.Input<string>;
         /**
-         * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+         * The region of the peer DR protection group.  Example: `us-ashburn-1`
          */
         peerRegion?: pulumi.Input<string>;
         /**
-         * The role of this DR Protection Group.
+         * The role of the DR protection group.  Example: `STANDBY`
          */
         role: pulumi.Input<string>;
     }
 
     export interface DrProtectionGroupLogLocation {
         /**
-         * (Updatable) The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+         * (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
          */
         bucket: pulumi.Input<string>;
         /**
-         * (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+         * (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
          */
         namespace: pulumi.Input<string>;
         /**
-         * The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+         * The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
          */
         object?: pulumi.Input<string>;
     }
 
     export interface DrProtectionGroupMember {
         /**
-         * (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+         * (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+         */
+        backendSetMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBackendSetMapping>[]>;
+        /**
+         * (Updatable) A list of operations performed on block volumes used by the compute instance.
+         */
+        blockVolumeOperations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeOperation>[]>;
+        /**
+         * (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+         */
+        destinationAvailabilityDomain?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
          */
         destinationCapacityReservationId?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+         * (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
          */
         destinationCompartmentId?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
+         * (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
          */
         destinationDedicatedVmHostId?: pulumi.Input<string>;
         /**
-         * (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+         * (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+         */
+        destinationLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+         */
+        destinationNetworkLoadBalancerId?: pulumi.Input<string>;
+        /**
+         * (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+         */
+        exportMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberExportMapping>[]>;
+        /**
+         * (Updatable) A list of operations performed on file systems used by the compute instance.
+         */
+        fileSystemOperations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberFileSystemOperation>[]>;
+        /**
+         * (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
          */
         isMovable?: pulumi.Input<boolean>;
         /**
-         * (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+         * (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
          */
         isRetainFaultDomain?: pulumi.Input<boolean>;
         /**
-         * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+         * (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+         */
+        isStartStopEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
          */
         memberId: pulumi.Input<string>;
         /**
@@ -27881,38 +28143,130 @@ export namespace DisasterRecovery {
          */
         memberType: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+         * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          */
         passwordVaultSecretId?: pulumi.Input<string>;
         /**
-         * (Updatable) A list of Compute Instance VNIC mappings.
+         * (Updatable) A list of compute instance VNIC mappings.
          */
         vnicMapping?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberVnicMapping>[]>;
         /**
-         * (Updatable) A list of Compute Instance VNIC mappings.
+         * (Updatable) A list of compute instance VNIC mappings.
          */
         vnicMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberVnicMapping>[]>;
     }
 
+    export interface DrProtectionGroupMemberBackendSetMapping {
+        /**
+         * (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+         */
+        destinationBackendSetName?: pulumi.Input<string>;
+        /**
+         * (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+         */
+        isBackendSetForNonMovable?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+         */
+        sourceBackendSetName?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberBlockVolumeOperation {
+        /**
+         * (Updatable) The details for creating a block volume attachment.
+         */
+        attachmentDetails?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails>;
+        /**
+         * (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+         */
+        blockVolumeId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The details for creating a file system mount.
+         */
+        mountDetails?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberBlockVolumeOperationMountDetails>;
+    }
+
+    export interface DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails {
+        /**
+         * (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+         */
+        volumeAttachmentReferenceInstanceId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberBlockVolumeOperationMountDetails {
+        /**
+         * (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+         */
+        mountPoint?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberExportMapping {
+        /**
+         * (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+         */
+        destinationMountTargetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+         */
+        exportId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberFileSystemOperation {
+        /**
+         * (Updatable) The export path of the file system.  Example: `/fs-export-path`
+         */
+        exportPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) The details for creating a file system mount.
+         */
+        mountDetails?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberFileSystemOperationMountDetails>;
+        /**
+         * (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+         */
+        mountPoint?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The details for creating a file system unmount.
+         */
+        unmountDetails?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberFileSystemOperationUnmountDetails>;
+    }
+
+    export interface DrProtectionGroupMemberFileSystemOperationMountDetails {
+        /**
+         * (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+         */
+        mountTargetId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberFileSystemOperationUnmountDetails {
+        /**
+         * (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+         */
+        mountTargetId?: pulumi.Input<string>;
+    }
+
     export interface DrProtectionGroupMemberVnicMapping {
         /**
-         * (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+         * (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
          */
         destinationNsgIdLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+         * (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
          */
         destinationPrimaryPrivateIpAddress?: pulumi.Input<string>;
         /**
-         * (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+         * (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
          */
         destinationPrimaryPrivateIpHostnameLabel?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+         * (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
          */
         destinationSubnetId?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+         * (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
          */
         sourceVnicId?: pulumi.Input<string>;
     }
@@ -54547,6 +54901,10 @@ export namespace Mysql {
          */
         dataStorageSizeInGb?: pulumi.Input<number>;
         /**
+         * Whether to enable monitoring via the Database Management service.
+         */
+        databaseManagement?: pulumi.Input<string>;
+        /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -57955,6 +58313,561 @@ export namespace OsManagement {
     }
 }
 
+export namespace OsManagementHub {
+    export interface GetLifecycleEnvironmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetLifecycleEnvironmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetLifecycleStagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetLifecycleStagesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceGroupAvailableModulesFilter {
+        /**
+         * The resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceGroupAvailableModulesFilterArgs {
+        /**
+         * The resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceGroupAvailablePackagesFilter {
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceGroupAvailablePackagesFilterArgs {
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceGroupAvailableSoftwareSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagementStationMirrorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagementStationMirrorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagementStationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagementStationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetProfilesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetProfilesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwareSourceModuleStreamProfilesFilter {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourceModuleStreamProfilesFilterArgs {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwareSourceModuleStreamsFilter {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourceModuleStreamsFilterArgs {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwareSourcePackageGroupsFilter {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourcePackageGroupsFilterArgs {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwareSourceSoftwarePackagesFilter {
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourceSoftwarePackagesFilterArgs {
+        /**
+         * Unique identifier for the package. NOTE - This is not an OCID.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwareSourceVendorsFilter {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourceVendorsFilterArgs {
+        /**
+         * The name of the entity to be queried.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwareSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface LifecycleEnvironmentManagedInstanceId {
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface LifecycleEnvironmentStage {
+        /**
+         * The CPU architecture of the managed instance(s) in the lifecycle environment.
+         */
+        archType?: pulumi.Input<string>;
+        /**
+         * The OCID of the tenancy containing the lifecycle environment.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The OCID of the lifecycle environment for the lifecycle stage.
+         */
+        lifecycleEnvironmentId?: pulumi.Input<string>;
+        /**
+         * The list of managed instances specified lifecycle stage.
+         */
+        managedInstanceIds?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentStageManagedInstanceId>[]>;
+        /**
+         * The operating system type of the managed instance(s) in the lifecycle environment.
+         */
+        osFamily?: pulumi.Input<string>;
+        /**
+         * User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+         */
+        rank: pulumi.Input<number>;
+        /**
+         * Identifying information for the specified software source.
+         */
+        softwareSourceIds?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentStageSoftwareSourceId>[]>;
+        /**
+         * The current state of the lifecycle environment.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+         */
+        timeModified?: pulumi.Input<string>;
+        /**
+         * The software source vendor name.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        vendorName?: pulumi.Input<string>;
+    }
+
+    export interface LifecycleEnvironmentStageManagedInstanceId {
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface LifecycleEnvironmentStageSoftwareSourceId {
+        /**
+         * (Updatable) User specified information about the lifecycle environment.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Type of the software source.
+         */
+        softwareSourceType?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupSoftwareSource {
+        /**
+         * (Updatable) Details about the managed instance group.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Type of the software source.
+         */
+        softwareSourceType?: pulumi.Input<string>;
+    }
+
+    export interface ManagementStationMirror {
+        /**
+         * (Updatable) Directory for the mirroring
+         */
+        directory: pulumi.Input<string>;
+        /**
+         * (Updatable) Port that the proxy will use
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        port: pulumi.Input<string>;
+        /**
+         * (Updatable) Local path for the sslcert
+         */
+        sslcert?: pulumi.Input<string>;
+        /**
+         * (Updatable) Default sslport for the mirror
+         */
+        sslport: pulumi.Input<string>;
+    }
+
+    export interface ManagementStationMirrorSyncStatus {
+        /**
+         * Total of mirrors in 'failed' state
+         */
+        failed?: pulumi.Input<number>;
+        /**
+         * Total of mirrors in 'queued' state
+         */
+        queued?: pulumi.Input<number>;
+        /**
+         * Total of mirrors in 'synced' state
+         */
+        synced?: pulumi.Input<number>;
+        /**
+         * Total of mirrors in 'syncing' state
+         */
+        syncing?: pulumi.Input<number>;
+        /**
+         * Total of mirrors in 'failed' state
+         */
+        unsynced?: pulumi.Input<number>;
+    }
+
+    export interface ManagementStationProxy {
+        /**
+         * (Updatable) URL that the proxy will forward to
+         */
+        forward?: pulumi.Input<string>;
+        /**
+         * (Updatable) List of hosts
+         */
+        hosts?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) To enable or disable the proxy (default true)
+         */
+        isEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Port that the proxy will use
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        port?: pulumi.Input<string>;
+    }
+
+    export interface ProfileLifecycleEnvironment {
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface ProfileLifecycleStage {
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface ProfileManagedInstanceGroup {
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface ProfileSoftwareSource {
+        /**
+         * (Updatable) The description of the registration profile.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The OCID of the software source.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Type of the software source.
+         */
+        softwareSourceType?: pulumi.Input<string>;
+    }
+
+    export interface SoftwareSourceCustomSoftwareSourceFilter {
+        /**
+         * (Updatable) The list of module stream/profile filters.
+         */
+        moduleStreamProfileFilters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter>[]>;
+        /**
+         * (Updatable) The list of package filters.
+         */
+        packageFilters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilterPackageFilter>[]>;
+        /**
+         * (Updatable) The list of group filters.
+         */
+        packageGroupFilters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter>[]>;
+    }
+
+    export interface SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter {
+        /**
+         * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         */
+        filterType: pulumi.Input<string>;
+        /**
+         * (Updatable) Module name.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * (Updatable) Profile name.
+         */
+        profileName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Stream name.
+         */
+        streamName?: pulumi.Input<string>;
+    }
+
+    export interface SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
+        /**
+         * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         */
+        filterType: pulumi.Input<string>;
+        /**
+         * (Updatable) The package name.
+         */
+        packageName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The package name pattern.
+         */
+        packageNamePattern?: pulumi.Input<string>;
+        /**
+         * (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
+         */
+        packageVersion?: pulumi.Input<string>;
+    }
+
+    export interface SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter {
+        /**
+         * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         */
+        filterType: pulumi.Input<string>;
+        /**
+         * (Updatable) List of package group names.
+         */
+        packageGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface SoftwareSourceVendorSoftwareSource {
+        /**
+         * (Updatable) User friendly name.
+         */
+        displayName: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the resource that is immutable on creation.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        id: pulumi.Input<string>;
+    }
+}
+
 export namespace OspGateway {
     export interface AddressActionVerificationAddress {
         /**
@@ -59728,6 +60641,10 @@ export namespace StackMonitoring {
          */
         credentials?: pulumi.Input<inputs.StackMonitoring.DiscoveryJobDiscoveryDetailsCredentials>;
         /**
+         * License edition of the monitored resource.
+         */
+        license?: pulumi.Input<string>;
+        /**
          * Property Details
          */
         properties: pulumi.Input<inputs.StackMonitoring.DiscoveryJobDiscoveryDetailsProperties>;
@@ -59788,6 +60705,152 @@ export namespace StackMonitoring {
         propertiesMap?: pulumi.Input<{[key: string]: any}>;
     }
 
+    export interface GetBaselineableMetricsEvaluateItem {
+        /**
+         * list of anomaly data points for the metric
+         */
+        dataPoints?: inputs.StackMonitoring.GetBaselineableMetricsEvaluateItemDataPoint[];
+        /**
+         * list of dimensions for the metric
+         */
+        dimensions?: {[key: string]: any};
+        /**
+         * list of data points for the metric for evaluation of anomalies
+         */
+        evaluationDataPoints: inputs.StackMonitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPoint[];
+        /**
+         * list of data points for the metric for training of baseline
+         */
+        trainingDataPoints: inputs.StackMonitoring.GetBaselineableMetricsEvaluateItemTrainingDataPoint[];
+    }
+
+    export interface GetBaselineableMetricsEvaluateItemArgs {
+        /**
+         * list of anomaly data points for the metric
+         */
+        dataPoints?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetBaselineableMetricsEvaluateItemDataPointArgs>[]>;
+        /**
+         * list of dimensions for the metric
+         */
+        dimensions?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * list of data points for the metric for evaluation of anomalies
+         */
+        evaluationDataPoints: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs>[]>;
+        /**
+         * list of data points for the metric for training of baseline
+         */
+        trainingDataPoints: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs>[]>;
+    }
+
+    export interface GetBaselineableMetricsEvaluateItemDataPoint {
+        /**
+         * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+         */
+        anomaly?: number;
+        /**
+         * upper threshold for the metric value
+         */
+        high?: number;
+        /**
+         * lower threshold for the metric value
+         */
+        low?: number;
+        /**
+         * timestamp of when the metric was collected
+         */
+        timestamp?: string;
+        /**
+         * value for the metric data point
+         */
+        value?: number;
+    }
+
+    export interface GetBaselineableMetricsEvaluateItemDataPointArgs {
+        /**
+         * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
+         */
+        anomaly?: pulumi.Input<number>;
+        /**
+         * upper threshold for the metric value
+         */
+        high?: pulumi.Input<number>;
+        /**
+         * lower threshold for the metric value
+         */
+        low?: pulumi.Input<number>;
+        /**
+         * timestamp of when the metric was collected
+         */
+        timestamp?: pulumi.Input<string>;
+        /**
+         * value for the metric data point
+         */
+        value?: pulumi.Input<number>;
+    }
+
+    export interface GetBaselineableMetricsEvaluateItemEvaluationDataPoint {
+        /**
+         * timestamp of when the metric was collected
+         */
+        timestamp: string;
+        /**
+         * value for the metric data point
+         */
+        value: number;
+    }
+
+    export interface GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs {
+        /**
+         * timestamp of when the metric was collected
+         */
+        timestamp: pulumi.Input<string>;
+        /**
+         * value for the metric data point
+         */
+        value: pulumi.Input<number>;
+    }
+
+    export interface GetBaselineableMetricsEvaluateItemTrainingDataPoint {
+        /**
+         * timestamp of when the metric was collected
+         */
+        timestamp: string;
+        /**
+         * value for the metric data point
+         */
+        value: number;
+    }
+
+    export interface GetBaselineableMetricsEvaluateItemTrainingDataPointArgs {
+        /**
+         * timestamp of when the metric was collected
+         */
+        timestamp: pulumi.Input<string>;
+        /**
+         * value for the metric data point
+         */
+        value: pulumi.Input<number>;
+    }
+
+    export interface GetBaselineableMetricsFilter {
+        /**
+         * Metric Name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBaselineableMetricsFilterArgs {
+        /**
+         * Metric Name
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetConfigsFilter {
         name: string;
         regex?: boolean;
@@ -59828,6 +60891,227 @@ export namespace StackMonitoring {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMetricExtensionsFilter {
+        /**
+         * A filter to return resources based on name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMetricExtensionsFilterArgs {
+        /**
+         * A filter to return resources based on name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMonitoredResourceTasksFilter {
+        /**
+         * Name of the task.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMonitoredResourceTasksFilterArgs {
+        /**
+         * Name of the task.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMonitoredResourceTypesFilter {
+        /**
+         * A filter to return monitored resource types that match exactly with the resource type name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMonitoredResourceTypesFilterArgs {
+        /**
+         * A filter to return monitored resource types that match exactly with the resource type name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMonitoredResourcesFilter {
+        /**
+         * A filter to return resources that match exact resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMonitoredResourcesFilterArgs {
+        /**
+         * A filter to return resources that match exact resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface MetricExtensionEnabledOnResource {
+        /**
+         * The OCID of the resource on which Metric Extension is enabled
+         */
+        resourceId?: pulumi.Input<string>;
+    }
+
+    export interface MetricExtensionMetricList {
+        /**
+         * (Updatable) Compute Expression to calculate the value of this metric
+         */
+        computeExpression?: pulumi.Input<string>;
+        /**
+         * (Updatable) Data type of value of this metric
+         */
+        dataType: pulumi.Input<string>;
+        /**
+         * (Updatable) Display name of the metric.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Current metric need to be included as dimension or not
+         */
+        isDimension?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Flag to marks whether a metric has to be uploaded or not. When isHidden = false > Metric is uploaded, isHidden = true > Metric is NOT uploaded
+         */
+        isHidden?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Metric category
+         */
+        metricCategory?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the script file
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Unit of metric value
+         */
+        unit?: pulumi.Input<string>;
+    }
+
+    export interface MetricExtensionQueryProperties {
+        /**
+         * (Updatable) Arguments required by either command or script
+         */
+        arguments?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
+         */
+        autoRowPrefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of possible collection methods.
+         */
+        collectionMethod: pulumi.Input<string>;
+        /**
+         * (Updatable) OS command to execute without arguments
+         */
+        command?: pulumi.Input<string>;
+        /**
+         * (Updatable) Character used to delimit multiple metric values in single line of output
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
+         */
+        identityMetric?: pulumi.Input<string>;
+        /**
+         * (Updatable) List of values and position of PL/SQL procedure IN parameters
+         */
+        inParamDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryPropertiesInParamDetail>[]>;
+        /**
+         * (Updatable) Indicates if Metric Service is enabled on server domain
+         */
+        isMetricServiceEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) List of JMX attributes or Metric Service Table columns separated by semi-colon
+         */
+        jmxAttributes?: pulumi.Input<string>;
+        /**
+         * (Updatable) JMX Managed Bean Query or Metric Service Table name
+         */
+        managedBeanQuery?: pulumi.Input<string>;
+        /**
+         * (Updatable) Position and SQL Type of PL/SQL OUT parameter
+         */
+        outParamDetails?: pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryPropertiesOutParamDetails>;
+        /**
+         * (Updatable) Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+         */
+        scriptDetails?: pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryPropertiesScriptDetails>;
+        /**
+         * (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
+         */
+        sqlDetails?: pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryPropertiesSqlDetails>;
+        /**
+         * (Updatable) Type of SQL data collection method i.e. either a Statement or SQL Script File
+         */
+        sqlType?: pulumi.Input<string>;
+        /**
+         * (Updatable) String prefix used to identify metric output of the OS Command
+         */
+        startsWith?: pulumi.Input<string>;
+    }
+
+    export interface MetricExtensionQueryPropertiesInParamDetail {
+        /**
+         * (Updatable) Position of IN parameter
+         */
+        inParamPosition: pulumi.Input<number>;
+        /**
+         * (Updatable) Value of IN parameter
+         */
+        inParamValue: pulumi.Input<string>;
+    }
+
+    export interface MetricExtensionQueryPropertiesOutParamDetails {
+        /**
+         * (Updatable) Position of PL/SQL procedure OUT parameter
+         */
+        outParamPosition: pulumi.Input<number>;
+        /**
+         * (Updatable) SQL Type of PL/SQL procedure OUT parameter
+         */
+        outParamType: pulumi.Input<string>;
+    }
+
+    export interface MetricExtensionQueryPropertiesScriptDetails {
+        /**
+         * (Updatable) Sql statement or script file content as base64 encoded string
+         */
+        content: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the script file
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface MetricExtensionQueryPropertiesSqlDetails {
+        /**
+         * (Updatable) Sql statement or script file content as base64 encoded string
+         */
+        content: pulumi.Input<string>;
+        /**
+         * (Updatable) If a script needs to be executed, then provide file name of the script
+         */
+        scriptFileName?: pulumi.Input<string>;
     }
 
     export interface MonitoredResourceAdditionalAlias {
@@ -60030,6 +61314,78 @@ export namespace StackMonitoring {
         value?: pulumi.Input<string>;
     }
 
+    export interface MonitoredResourceTaskTaskDetails {
+        /**
+         * Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
+         */
+        availabilityProxyMetricCollectionInterval?: pulumi.Input<number>;
+        /**
+         * List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+         */
+        availabilityProxyMetrics?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+         */
+        resourceGroup?: pulumi.Input<string>;
+        /**
+         * Source from where the metrics pushed to telemetry. Possible values:
+         * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
+         * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         */
+        source: pulumi.Input<string>;
+        /**
+         * Task type.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface MonitoredResourceTypeMetadata {
+        /**
+         * (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
+         */
+        agentProperties?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
+         * * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
+         */
+        format: pulumi.Input<string>;
+        /**
+         * (Updatable) List of required properties for resource type.
+         */
+        requiredProperties?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
+         */
+        uniquePropertySets?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeMetadataUniquePropertySet>[]>;
+        /**
+         * (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
+         */
+        validPropertiesForCreates?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
+         */
+        validPropertiesForUpdates?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+         */
+        validPropertyValues?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface MonitoredResourceTypeMetadataUniquePropertySet {
+        /**
+         * (Updatable) List of properties.
+         */
+        properties: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail {
         /**
          * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -60081,6 +61437,10 @@ export namespace StackMonitoring {
          * Monitored Resource Host Name.
          */
         hostName?: pulumi.Input<string>;
+        /**
+         * License edition of the monitored resource.
+         */
+        license?: pulumi.Input<string>;
         /**
          * Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -60170,6 +61530,10 @@ export namespace StackMonitoring {
 
     export interface MonitoredResourcesSearchItem {
         /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -60193,6 +61557,10 @@ export namespace StackMonitoring {
          * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         id?: pulumi.Input<string>;
+        /**
+         * License edition of the monitored resource.
+         */
+        license?: pulumi.Input<string>;
         /**
          * A filter to return resources with matching management agent id.
          */

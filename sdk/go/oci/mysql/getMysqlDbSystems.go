@@ -34,6 +34,7 @@ import (
 //			_, err := Mysql.GetMysqlDbSystems(ctx, &mysql.GetMysqlDbSystemsArgs{
 //				CompartmentId:             _var.Compartment_id,
 //				ConfigurationId:           pulumi.StringRef(_var.Mysql_configuration_id),
+//				DatabaseManagements:       _var.Mysql_db_system_database_management,
 //				DbSystemId:                pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
 //				DisplayName:               pulumi.StringRef(_var.Mysql_db_system_display_name),
 //				IsHeatWaveClusterAttached: pulumi.BoolRef(_var.Mysql_db_system_is_heat_wave_cluster_attached),
@@ -64,6 +65,8 @@ type GetMysqlDbSystemsArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The requested Configuration instance.
 	ConfigurationId *string `pulumi:"configurationId"`
+	// Filter DB Systems by their Database Management configuration.
+	DatabaseManagements []string `pulumi:"databaseManagements"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// A filter to return only the resource matching the given display name exactly.
@@ -83,6 +86,8 @@ type GetMysqlDbSystemsResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
 	ConfigurationId *string `pulumi:"configurationId"`
+	// Whether to enable monitoring via the Database Management service.
+	DatabaseManagements []string `pulumi:"databaseManagements"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// The list of db_systems.
@@ -118,6 +123,8 @@ type GetMysqlDbSystemsOutputArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The requested Configuration instance.
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
+	// Filter DB Systems by their Database Management configuration.
+	DatabaseManagements pulumi.StringArrayInput `pulumi:"databaseManagements"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// A filter to return only the resource matching the given display name exactly.
@@ -164,6 +171,11 @@ func (o GetMysqlDbSystemsResultOutput) CompartmentId() pulumi.StringOutput {
 // The OCID of the Configuration to be used for Instances in this DB System.
 func (o GetMysqlDbSystemsResultOutput) ConfigurationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsResult) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
+}
+
+// Whether to enable monitoring via the Database Management service.
+func (o GetMysqlDbSystemsResultOutput) DatabaseManagements() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsResult) []string { return v.DatabaseManagements }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.

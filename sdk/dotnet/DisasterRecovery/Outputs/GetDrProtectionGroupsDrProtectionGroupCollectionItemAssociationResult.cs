@@ -14,15 +14,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult
     {
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string PeerId;
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         public readonly string PeerRegion;
         /// <summary>
-        /// The DR Protection Group Role.
+        /// The DR protection group Role.
         /// </summary>
         public readonly string Role;
 

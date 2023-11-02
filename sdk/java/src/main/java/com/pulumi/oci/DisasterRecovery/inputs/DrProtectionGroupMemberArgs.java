@@ -5,6 +5,10 @@ package com.pulumi.oci.DisasterRecovery.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackendSetMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVnicMappingArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -19,14 +23,59 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     public static final DrProtectionGroupMemberArgs Empty = new DrProtectionGroupMemberArgs();
 
     /**
-     * (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+     * 
+     */
+    @Import(name="backendSetMappings")
+    private @Nullable Output<List<DrProtectionGroupMemberBackendSetMappingArgs>> backendSetMappings;
+
+    /**
+     * @return (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberBackendSetMappingArgs>>> backendSetMappings() {
+        return Optional.ofNullable(this.backendSetMappings);
+    }
+
+    /**
+     * (Updatable) A list of operations performed on block volumes used by the compute instance.
+     * 
+     */
+    @Import(name="blockVolumeOperations")
+    private @Nullable Output<List<DrProtectionGroupMemberBlockVolumeOperationArgs>> blockVolumeOperations;
+
+    /**
+     * @return (Updatable) A list of operations performed on block volumes used by the compute instance.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberBlockVolumeOperationArgs>>> blockVolumeOperations() {
+        return Optional.ofNullable(this.blockVolumeOperations);
+    }
+
+    /**
+     * (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+     * 
+     */
+    @Import(name="destinationAvailabilityDomain")
+    private @Nullable Output<String> destinationAvailabilityDomain;
+
+    /**
+     * @return (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+     * 
+     */
+    public Optional<Output<String>> destinationAvailabilityDomain() {
+        return Optional.ofNullable(this.destinationAvailabilityDomain);
+    }
+
+    /**
+     * (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
      * 
      */
     @Import(name="destinationCapacityReservationId")
     private @Nullable Output<String> destinationCapacityReservationId;
 
     /**
-     * @return (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> destinationCapacityReservationId() {
@@ -34,14 +83,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Import(name="destinationCompartmentId")
     private @Nullable Output<String> destinationCompartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> destinationCompartmentId() {
@@ -49,14 +98,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
      * 
      */
     @Import(name="destinationDedicatedVmHostId")
     private @Nullable Output<String> destinationDedicatedVmHostId;
 
     /**
-     * @return (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> destinationDedicatedVmHostId() {
@@ -64,14 +113,74 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+     * (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+     * 
+     */
+    @Import(name="destinationLoadBalancerId")
+    private @Nullable Output<String> destinationLoadBalancerId;
+
+    /**
+     * @return (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> destinationLoadBalancerId() {
+        return Optional.ofNullable(this.destinationLoadBalancerId);
+    }
+
+    /**
+     * (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+     * 
+     */
+    @Import(name="destinationNetworkLoadBalancerId")
+    private @Nullable Output<String> destinationNetworkLoadBalancerId;
+
+    /**
+     * @return (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> destinationNetworkLoadBalancerId() {
+        return Optional.ofNullable(this.destinationNetworkLoadBalancerId);
+    }
+
+    /**
+     * (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+     * 
+     */
+    @Import(name="exportMappings")
+    private @Nullable Output<List<DrProtectionGroupMemberExportMappingArgs>> exportMappings;
+
+    /**
+     * @return (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberExportMappingArgs>>> exportMappings() {
+        return Optional.ofNullable(this.exportMappings);
+    }
+
+    /**
+     * (Updatable) A list of operations performed on file systems used by the compute instance.
+     * 
+     */
+    @Import(name="fileSystemOperations")
+    private @Nullable Output<List<DrProtectionGroupMemberFileSystemOperationArgs>> fileSystemOperations;
+
+    /**
+     * @return (Updatable) A list of operations performed on file systems used by the compute instance.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberFileSystemOperationArgs>>> fileSystemOperations() {
+        return Optional.ofNullable(this.fileSystemOperations);
+    }
+
+    /**
+     * (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
      * 
      */
     @Import(name="isMovable")
     private @Nullable Output<Boolean> isMovable;
 
     /**
-     * @return (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+     * @return (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
      * 
      */
     public Optional<Output<Boolean>> isMovable() {
@@ -79,14 +188,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
      * 
      */
     @Import(name="isRetainFaultDomain")
     private @Nullable Output<Boolean> isRetainFaultDomain;
 
     /**
-     * @return (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * @return (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
      * 
      */
     public Optional<Output<Boolean>> isRetainFaultDomain() {
@@ -94,14 +203,29 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+     * 
+     */
+    @Import(name="isStartStopEnabled")
+    private @Nullable Output<Boolean> isStartStopEnabled;
+
+    /**
+     * @return (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+     * 
+     */
+    public Optional<Output<Boolean>> isStartStopEnabled() {
+        return Optional.ofNullable(this.isStartStopEnabled);
+    }
+
+    /**
+     * (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
     @Import(name="memberId", required=true)
     private Output<String> memberId;
 
     /**
-     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
     public Output<String> memberId() {
@@ -124,14 +248,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     @Import(name="passwordVaultSecretId")
     private @Nullable Output<String> passwordVaultSecretId;
 
     /**
-     * @return (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> passwordVaultSecretId() {
@@ -139,14 +263,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) A list of Compute Instance VNIC mappings.
+     * (Updatable) A list of compute instance VNIC mappings.
      * 
      */
     @Import(name="vnicMapping")
     private @Nullable Output<List<DrProtectionGroupMemberVnicMappingArgs>> vnicMapping;
 
     /**
-     * @return (Updatable) A list of Compute Instance VNIC mappings.
+     * @return (Updatable) A list of compute instance VNIC mappings.
      * 
      */
     public Optional<Output<List<DrProtectionGroupMemberVnicMappingArgs>>> vnicMapping() {
@@ -154,14 +278,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) A list of Compute Instance VNIC mappings.
+     * (Updatable) A list of compute instance VNIC mappings.
      * 
      */
     @Import(name="vnicMappings")
     private @Nullable Output<List<DrProtectionGroupMemberVnicMappingArgs>> vnicMappings;
 
     /**
-     * @return (Updatable) A list of Compute Instance VNIC mappings.
+     * @return (Updatable) A list of compute instance VNIC mappings.
      * 
      */
     public Optional<Output<List<DrProtectionGroupMemberVnicMappingArgs>>> vnicMappings() {
@@ -171,11 +295,19 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     private DrProtectionGroupMemberArgs() {}
 
     private DrProtectionGroupMemberArgs(DrProtectionGroupMemberArgs $) {
+        this.backendSetMappings = $.backendSetMappings;
+        this.blockVolumeOperations = $.blockVolumeOperations;
+        this.destinationAvailabilityDomain = $.destinationAvailabilityDomain;
         this.destinationCapacityReservationId = $.destinationCapacityReservationId;
         this.destinationCompartmentId = $.destinationCompartmentId;
         this.destinationDedicatedVmHostId = $.destinationDedicatedVmHostId;
+        this.destinationLoadBalancerId = $.destinationLoadBalancerId;
+        this.destinationNetworkLoadBalancerId = $.destinationNetworkLoadBalancerId;
+        this.exportMappings = $.exportMappings;
+        this.fileSystemOperations = $.fileSystemOperations;
         this.isMovable = $.isMovable;
         this.isRetainFaultDomain = $.isRetainFaultDomain;
+        this.isStartStopEnabled = $.isStartStopEnabled;
         this.memberId = $.memberId;
         this.memberType = $.memberType;
         this.passwordVaultSecretId = $.passwordVaultSecretId;
@@ -202,7 +334,90 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCapacityReservationId (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param backendSetMappings (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendSetMappings(@Nullable Output<List<DrProtectionGroupMemberBackendSetMappingArgs>> backendSetMappings) {
+            $.backendSetMappings = backendSetMappings;
+            return this;
+        }
+
+        /**
+         * @param backendSetMappings (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendSetMappings(List<DrProtectionGroupMemberBackendSetMappingArgs> backendSetMappings) {
+            return backendSetMappings(Output.of(backendSetMappings));
+        }
+
+        /**
+         * @param backendSetMappings (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendSetMappings(DrProtectionGroupMemberBackendSetMappingArgs... backendSetMappings) {
+            return backendSetMappings(List.of(backendSetMappings));
+        }
+
+        /**
+         * @param blockVolumeOperations (Updatable) A list of operations performed on block volumes used by the compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockVolumeOperations(@Nullable Output<List<DrProtectionGroupMemberBlockVolumeOperationArgs>> blockVolumeOperations) {
+            $.blockVolumeOperations = blockVolumeOperations;
+            return this;
+        }
+
+        /**
+         * @param blockVolumeOperations (Updatable) A list of operations performed on block volumes used by the compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockVolumeOperations(List<DrProtectionGroupMemberBlockVolumeOperationArgs> blockVolumeOperations) {
+            return blockVolumeOperations(Output.of(blockVolumeOperations));
+        }
+
+        /**
+         * @param blockVolumeOperations (Updatable) A list of operations performed on block volumes used by the compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockVolumeOperations(DrProtectionGroupMemberBlockVolumeOperationArgs... blockVolumeOperations) {
+            return blockVolumeOperations(List.of(blockVolumeOperations));
+        }
+
+        /**
+         * @param destinationAvailabilityDomain (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationAvailabilityDomain(@Nullable Output<String> destinationAvailabilityDomain) {
+            $.destinationAvailabilityDomain = destinationAvailabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param destinationAvailabilityDomain (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationAvailabilityDomain(String destinationAvailabilityDomain) {
+            return destinationAvailabilityDomain(Output.of(destinationAvailabilityDomain));
+        }
+
+        /**
+         * @param destinationCapacityReservationId (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -213,7 +428,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCapacityReservationId (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param destinationCapacityReservationId (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -223,7 +438,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCompartmentId (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param destinationCompartmentId (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -234,7 +449,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationCompartmentId (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param destinationCompartmentId (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -244,7 +459,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationDedicatedVmHostId (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param destinationDedicatedVmHostId (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -255,7 +470,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param destinationDedicatedVmHostId (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param destinationDedicatedVmHostId (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -265,7 +480,111 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isMovable (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+         * @param destinationLoadBalancerId (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationLoadBalancerId(@Nullable Output<String> destinationLoadBalancerId) {
+            $.destinationLoadBalancerId = destinationLoadBalancerId;
+            return this;
+        }
+
+        /**
+         * @param destinationLoadBalancerId (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationLoadBalancerId(String destinationLoadBalancerId) {
+            return destinationLoadBalancerId(Output.of(destinationLoadBalancerId));
+        }
+
+        /**
+         * @param destinationNetworkLoadBalancerId (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationNetworkLoadBalancerId(@Nullable Output<String> destinationNetworkLoadBalancerId) {
+            $.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
+            return this;
+        }
+
+        /**
+         * @param destinationNetworkLoadBalancerId (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationNetworkLoadBalancerId(String destinationNetworkLoadBalancerId) {
+            return destinationNetworkLoadBalancerId(Output.of(destinationNetworkLoadBalancerId));
+        }
+
+        /**
+         * @param exportMappings (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exportMappings(@Nullable Output<List<DrProtectionGroupMemberExportMappingArgs>> exportMappings) {
+            $.exportMappings = exportMappings;
+            return this;
+        }
+
+        /**
+         * @param exportMappings (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exportMappings(List<DrProtectionGroupMemberExportMappingArgs> exportMappings) {
+            return exportMappings(Output.of(exportMappings));
+        }
+
+        /**
+         * @param exportMappings (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exportMappings(DrProtectionGroupMemberExportMappingArgs... exportMappings) {
+            return exportMappings(List.of(exportMappings));
+        }
+
+        /**
+         * @param fileSystemOperations (Updatable) A list of operations performed on file systems used by the compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemOperations(@Nullable Output<List<DrProtectionGroupMemberFileSystemOperationArgs>> fileSystemOperations) {
+            $.fileSystemOperations = fileSystemOperations;
+            return this;
+        }
+
+        /**
+         * @param fileSystemOperations (Updatable) A list of operations performed on file systems used by the compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemOperations(List<DrProtectionGroupMemberFileSystemOperationArgs> fileSystemOperations) {
+            return fileSystemOperations(Output.of(fileSystemOperations));
+        }
+
+        /**
+         * @param fileSystemOperations (Updatable) A list of operations performed on file systems used by the compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemOperations(DrProtectionGroupMemberFileSystemOperationArgs... fileSystemOperations) {
+            return fileSystemOperations(List.of(fileSystemOperations));
+        }
+
+        /**
+         * @param isMovable (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
          * 
          * @return builder
          * 
@@ -276,7 +595,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isMovable (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+         * @param isMovable (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
          * 
          * @return builder
          * 
@@ -286,7 +605,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isRetainFaultDomain (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+         * @param isRetainFaultDomain (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
          * 
          * @return builder
          * 
@@ -297,7 +616,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isRetainFaultDomain (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+         * @param isRetainFaultDomain (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
          * 
          * @return builder
          * 
@@ -307,7 +626,28 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param isStartStopEnabled (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isStartStopEnabled(@Nullable Output<Boolean> isStartStopEnabled) {
+            $.isStartStopEnabled = isStartStopEnabled;
+            return this;
+        }
+
+        /**
+         * @param isStartStopEnabled (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isStartStopEnabled(Boolean isStartStopEnabled) {
+            return isStartStopEnabled(Output.of(isStartStopEnabled));
+        }
+
+        /**
+         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -318,7 +658,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param memberId (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -349,7 +689,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -360,7 +700,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param passwordVaultSecretId (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -370,7 +710,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vnicMapping (Updatable) A list of Compute Instance VNIC mappings.
+         * @param vnicMapping (Updatable) A list of compute instance VNIC mappings.
          * 
          * @return builder
          * 
@@ -381,7 +721,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vnicMapping (Updatable) A list of Compute Instance VNIC mappings.
+         * @param vnicMapping (Updatable) A list of compute instance VNIC mappings.
          * 
          * @return builder
          * 
@@ -391,7 +731,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vnicMapping (Updatable) A list of Compute Instance VNIC mappings.
+         * @param vnicMapping (Updatable) A list of compute instance VNIC mappings.
          * 
          * @return builder
          * 
@@ -401,7 +741,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vnicMappings (Updatable) A list of Compute Instance VNIC mappings.
+         * @param vnicMappings (Updatable) A list of compute instance VNIC mappings.
          * 
          * @return builder
          * 
@@ -412,7 +752,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vnicMappings (Updatable) A list of Compute Instance VNIC mappings.
+         * @param vnicMappings (Updatable) A list of compute instance VNIC mappings.
          * 
          * @return builder
          * 
@@ -422,7 +762,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param vnicMappings (Updatable) A list of Compute Instance VNIC mappings.
+         * @param vnicMappings (Updatable) A list of compute instance VNIC mappings.
          * 
          * @return builder
          * 

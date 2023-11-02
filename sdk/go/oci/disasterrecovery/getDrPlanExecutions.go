@@ -14,7 +14,7 @@ import (
 
 // This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
 //
-// Get a summary list of all DR Plan Executions for a DR Protection Group.
+// Get a summary list of all DR plan executions for a DR protection group.
 //
 // ## Example Usage
 //
@@ -57,33 +57,33 @@ func GetDrPlanExecutions(ctx *pulumi.Context, args *GetDrPlanExecutionsArgs, opt
 
 // A collection of arguments for invoking getDrPlanExecutions.
 type GetDrPlanExecutionsArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName *string `pulumi:"displayName"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	DrPlanExecutionId *string `pulumi:"drPlanExecutionId"`
-	// The DR Plan Execution type.
+	// The DR plan execution type.
 	DrPlanExecutionType *string `pulumi:"drPlanExecutionType"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string                      `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlanExecutionsFilter `pulumi:"filters"`
-	// A filter to return only DR Plan Executions that match the given lifecycleState.
+	// A filter to return only DR plan executions that match the given lifecycle state.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getDrPlanExecutions.
 type GetDrPlanExecutionsResult struct {
-	// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 	DisplayName *string `pulumi:"displayName"`
 	// The list of dr_plan_execution_collection.
 	DrPlanExecutionCollections []GetDrPlanExecutionsDrPlanExecutionCollection `pulumi:"drPlanExecutionCollections"`
 	DrPlanExecutionId          *string                                        `pulumi:"drPlanExecutionId"`
 	DrPlanExecutionType        *string                                        `pulumi:"drPlanExecutionType"`
-	// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string                      `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlanExecutionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The current state of the DR Plan Execution.
+	// The current state of the DR plan execution.
 	State *string `pulumi:"state"`
 }
 
@@ -102,16 +102,16 @@ func GetDrPlanExecutionsOutput(ctx *pulumi.Context, args GetDrPlanExecutionsOutp
 
 // A collection of arguments for invoking getDrPlanExecutions.
 type GetDrPlanExecutionsOutputArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	DrPlanExecutionId pulumi.StringPtrInput `pulumi:"drPlanExecutionId"`
-	// The DR Plan Execution type.
+	// The DR plan execution type.
 	DrPlanExecutionType pulumi.StringPtrInput `pulumi:"drPlanExecutionType"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput                  `pulumi:"drProtectionGroupId"`
 	Filters             GetDrPlanExecutionsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only DR Plan Executions that match the given lifecycleState.
+	// A filter to return only DR plan executions that match the given lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -140,7 +140,7 @@ func (o GetDrPlanExecutionsResultOutput) ToOutput(ctx context.Context) pulumix.O
 	}
 }
 
-// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlanExecutionsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -160,7 +160,7 @@ func (o GetDrPlanExecutionsResultOutput) DrPlanExecutionType() pulumi.StringPtrO
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.DrPlanExecutionType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrPlanExecutionsResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -174,7 +174,7 @@ func (o GetDrPlanExecutionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The current state of the DR Plan Execution.
+// The current state of the DR plan execution.
 func (o GetDrPlanExecutionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

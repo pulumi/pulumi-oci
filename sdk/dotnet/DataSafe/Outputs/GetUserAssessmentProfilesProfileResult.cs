@@ -118,7 +118,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string UserAssessmentId;
         /// <summary>
-        /// The number of users having a given profile.
+        /// The number of users that have a given profile.
         /// </summary>
         public readonly int UserCount;
 

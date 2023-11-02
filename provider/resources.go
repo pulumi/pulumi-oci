@@ -120,6 +120,7 @@ const (
 	opsiMod                         = "Opsi"                         // Opsi
 	optimizerMod                    = "Optimizer"                    // Optimizer
 	osManagementMod                 = "OsManagement"                 // Os Management
+	osManagementHubMod              = "OsManagementHub"              // Os Management Hub
 	ospGatewayMod                   = "OspGateway"                   // Osp Gateway
 	osubBillingScheduleMod          = "OsubBillingSchedule"          // Osub Billing Schedule
 	osubOrganizationSubscriptionMod = "OsubOrganizationSubscription" // Osub Organization Subscription
@@ -234,6 +235,7 @@ var mappedMods = map[string]string{
 	"opsi":                           opsiMod,
 	"optimizer":                      optimizerMod,
 	"osmanagement":                   osManagementMod,
+	"os_management_hub":              osManagementHubMod,
 	"osp_gateway":                    ospGatewayMod,
 	"osub_billing_schedule":          osubBillingScheduleMod,
 	"osub_organization_subscription": osubOrganizationSubscriptionMod,
@@ -2322,6 +2324,10 @@ func Provider() tfbridge.ProviderInfo {
 		"oci_datascience_model_artifact_export",
 		"oci_datascience_model_artifact_import",
 		"oci_objectstorage_namespace_metadata",
+		"oci_data_safe_database_security_config_management",
+		"oci_data_safe_security_policy_deployment_management",
+		"oci_data_safe_security_policy_management",
+		"oci_data_safe_sql_firewall_policy_management",
 	}
 	for _, r := range resourcesMissingDocs {
 		_, ok := prov.Resources[r]

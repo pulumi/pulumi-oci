@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Gets a summary list of all DR Protection Groups in a compartment.
+        /// Get a summary list of all DR protection groups in a compartment.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -33,6 +33,7 @@ namespace Pulumi.Oci.DisasterRecovery
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Dr_protection_group_display_name,
         ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
+        ///         LifecycleSubState = @var.Dr_protection_group_lifecycle_sub_state,
         ///         Role = @var.Dr_protection_group_role,
         ///         State = @var.Dr_protection_group_state,
         ///     });
@@ -48,7 +49,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Gets a summary list of all DR Protection Groups in a compartment.
+        /// Get a summary list of all DR protection groups in a compartment.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.DisasterRecovery
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Dr_protection_group_display_name,
         ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
+        ///         LifecycleSubState = @var.Dr_protection_group_lifecycle_sub_state,
         ///         Role = @var.Dr_protection_group_role,
         ///         State = @var.Dr_protection_group_state,
         ///     });
@@ -84,19 +86,19 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrProtectionGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+        /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+        /// The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId")]
         public string? DrProtectionGroupId { get; set; }
@@ -110,13 +112,19 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The DR Protection Group Role.
+        /// A filter to return only DR protection groups that match the given lifecycle sub-state.
+        /// </summary>
+        [Input("lifecycleSubState")]
+        public string? LifecycleSubState { get; set; }
+
+        /// <summary>
+        /// The DR protection group Role.
         /// </summary>
         [Input("role")]
         public string? Role { get; set; }
 
         /// <summary>
-        /// A filter to return only DR Protection Groups that match the given lifecycleState.
+        /// A filter to return only DR protection groups that match the given lifecycle state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -130,19 +138,19 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrProtectionGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+        /// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+        /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Protection Group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+        /// The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId")]
         public Input<string>? DrProtectionGroupId { get; set; }
@@ -156,13 +164,19 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The DR Protection Group Role.
+        /// A filter to return only DR protection groups that match the given lifecycle sub-state.
+        /// </summary>
+        [Input("lifecycleSubState")]
+        public Input<string>? LifecycleSubState { get; set; }
+
+        /// <summary>
+        /// The DR protection group Role.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }
 
         /// <summary>
-        /// A filter to return only DR Protection Groups that match the given lifecycleState.
+        /// A filter to return only DR protection groups that match the given lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -178,11 +192,11 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrProtectionGroupsResult
     {
         /// <summary>
-        /// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        /// The display name of the DR protection group.  Example: `EBS PHX Group`
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -196,11 +210,15 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The role of the DR Protection Group.
+        /// The current sub-state of the DR protection group.
+        /// </summary>
+        public readonly string? LifecycleSubState;
+        /// <summary>
+        /// The role of the DR protection group.
         /// </summary>
         public readonly string? Role;
         /// <summary>
-        /// The current state of the DR Protection Group.
+        /// The current state of the DR protection group.
         /// </summary>
         public readonly string? State;
 
@@ -218,6 +236,8 @@ namespace Pulumi.Oci.DisasterRecovery
 
             string id,
 
+            string? lifecycleSubState,
+
             string? role,
 
             string? state)
@@ -228,6 +248,7 @@ namespace Pulumi.Oci.DisasterRecovery
             DrProtectionGroupId = drProtectionGroupId;
             Filters = filters;
             Id = id;
+            LifecycleSubState = lifecycleSubState;
             Role = role;
             State = state;
         }

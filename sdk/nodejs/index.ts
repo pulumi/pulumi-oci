@@ -96,6 +96,7 @@ import * as operatoraccesscontrol from "./operatoraccesscontrol";
 import * as opsi from "./opsi";
 import * as optimizer from "./optimizer";
 import * as osmanagement from "./osmanagement";
+import * as osmanagementhub from "./osmanagementhub";
 import * as ospgateway from "./ospgateway";
 import * as osubbillingschedule from "./osubbillingschedule";
 import * as osuborganizationsubscription from "./osuborganizationsubscription";
@@ -208,6 +209,7 @@ export {
     opsi,
     optimizer,
     osmanagement,
+    osmanagementhub,
     ospgateway,
     osubbillingschedule,
     osuborganizationsubscription,

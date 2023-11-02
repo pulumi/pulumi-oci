@@ -127,15 +127,15 @@ export interface GetSecurityAssessmentResult {
      */
     readonly targetVersion: string;
     /**
-     * The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeCreated: string;
     /**
-     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeLastAssessed: string;
     /**
-     * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeUpdated: string;
     /**

@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourcesSearchItem {
     /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private @Nullable String compartmentId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -45,6 +50,11 @@ public final class MonitoredResourcesSearchItem {
      * 
      */
     private @Nullable String id;
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    private @Nullable String license;
     /**
      * @return A filter to return resources with matching management agent id.
      * 
@@ -91,6 +101,13 @@ public final class MonitoredResourcesSearchItem {
 
     private MonitoredResourcesSearchItem() {}
     /**
+     * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -131,6 +148,13 @@ public final class MonitoredResourcesSearchItem {
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
+    }
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Optional<String> license() {
+        return Optional.ofNullable(this.license);
     }
     /**
      * @return A filter to return resources with matching management agent id.
@@ -201,12 +225,14 @@ public final class MonitoredResourcesSearchItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String compartmentId;
         private @Nullable Map<String,Object> definedTags;
         private @Nullable String displayName;
         private @Nullable String externalId;
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String hostName;
         private @Nullable String id;
+        private @Nullable String license;
         private @Nullable String managementAgentId;
         private @Nullable String name;
         private @Nullable List<MonitoredResourcesSearchItemProperty> properties;
@@ -218,12 +244,14 @@ public final class MonitoredResourcesSearchItem {
         public Builder() {}
         public Builder(MonitoredResourcesSearchItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.externalId = defaults.externalId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
     	      this.id = defaults.id;
+    	      this.license = defaults.license;
     	      this.managementAgentId = defaults.managementAgentId;
     	      this.name = defaults.name;
     	      this.properties = defaults.properties;
@@ -234,6 +262,11 @@ public final class MonitoredResourcesSearchItem {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
@@ -262,6 +295,11 @@ public final class MonitoredResourcesSearchItem {
         @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder license(@Nullable String license) {
+            this.license = license;
             return this;
         }
         @CustomType.Setter
@@ -309,12 +347,14 @@ public final class MonitoredResourcesSearchItem {
         }
         public MonitoredResourcesSearchItem build() {
             final var o = new MonitoredResourcesSearchItem();
+            o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.externalId = externalId;
             o.freeformTags = freeformTags;
             o.hostName = hostName;
             o.id = id;
+            o.license = license;
             o.managementAgentId = managementAgentId;
             o.name = name;
             o.properties = properties;

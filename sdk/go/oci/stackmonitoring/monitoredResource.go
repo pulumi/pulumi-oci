@@ -105,6 +105,7 @@ import (
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				HostName:          pulumi.Any(_var.Monitored_resource_host_name),
+//				License:           pulumi.Any(_var.Monitored_resource_license),
 //				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
 //				Properties: stackmonitoring.MonitoredResourcePropertyArray{
 //					&stackmonitoring.MonitoredResourcePropertyArgs{
@@ -159,6 +160,8 @@ type MonitoredResource struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrOutput `pulumi:"hostName"`
+	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+	License pulumi.StringOutput `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
 	// (Updatable) Property Name.
@@ -244,6 +247,8 @@ type monitoredResourceState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Host name of the monitored resource.
 	HostName *string `pulumi:"hostName"`
+	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+	License *string `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// (Updatable) Property Name.
@@ -294,6 +299,8 @@ type MonitoredResourceState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrInput
+	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+	License pulumi.StringPtrInput
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrInput
 	// (Updatable) Property Name.
@@ -348,6 +355,8 @@ type monitoredResourceArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Host name of the monitored resource.
 	HostName *string `pulumi:"hostName"`
+	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+	License *string `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// (Updatable) Property Name.
@@ -389,6 +398,8 @@ type MonitoredResourceArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrInput
+	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+	License pulumi.StringPtrInput
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrInput
 	// (Updatable) Property Name.
@@ -577,6 +588,11 @@ func (o MonitoredResourceOutput) FreeformTags() pulumi.MapOutput {
 // (Updatable) Host name of the monitored resource.
 func (o MonitoredResourceOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringPtrOutput { return v.HostName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+func (o MonitoredResourceOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.License }).(pulumi.StringOutput)
 }
 
 // Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

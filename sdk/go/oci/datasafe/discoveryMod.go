@@ -86,7 +86,7 @@ type DiscoveryMod struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled pulumi.BoolOutput `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
-	// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+	// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSchemas pulumi.BoolOutput `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSensitiveTypes pulumi.BoolOutput `pulumi:"isIncludeAllSensitiveTypes"`
@@ -173,7 +173,7 @@ type discoveryModState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled *bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
-	// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+	// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSchemas *bool `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSensitiveTypes *bool `pulumi:"isIncludeAllSensitiveTypes"`
@@ -225,7 +225,7 @@ type DiscoveryModState struct {
 	FreeformTags pulumi.MapInput
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled pulumi.BoolPtrInput
-	// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+	// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSchemas pulumi.BoolPtrInput
 	// Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSensitiveTypes pulumi.BoolPtrInput
@@ -281,7 +281,7 @@ type discoveryModArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled *bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
-	// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+	// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSchemas *bool `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSensitiveTypes *bool `pulumi:"isIncludeAllSensitiveTypes"`
@@ -312,7 +312,7 @@ type DiscoveryModArgs struct {
 	FreeformTags pulumi.MapInput
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
 	IsAppDefinedRelationDiscoveryEnabled pulumi.BoolPtrInput
-	// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+	// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSchemas pulumi.BoolPtrInput
 	// Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
 	IsIncludeAllSensitiveTypes pulumi.BoolPtrInput
@@ -470,7 +470,7 @@ func (o DiscoveryModOutput) IsAppDefinedRelationDiscoveryEnabled() pulumi.BoolOu
 	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolOutput { return v.IsAppDefinedRelationDiscoveryEnabled }).(pulumi.BoolOutput)
 }
 
-// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
 func (o DiscoveryModOutput) IsIncludeAllSchemas() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolOutput { return v.IsIncludeAllSchemas }).(pulumi.BoolOutput)
 }

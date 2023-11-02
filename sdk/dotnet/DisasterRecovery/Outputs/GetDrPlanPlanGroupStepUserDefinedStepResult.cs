@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlanPlanGroupStepUserDefinedStepResult
     {
         /// <summary>
-        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
         /// </summary>
         public readonly string FunctionId;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string FunctionRegion;
         /// <summary>
-        /// Information about an Object Storage script location for a user-defined step in a DR Plan.
+        /// The details of an object storage script location for a user-defined step in a DR plan.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult> ObjectStorageScriptLocations;
         /// <summary>
@@ -34,11 +34,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string RunAsUser;
         /// <summary>
-        /// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the instance on which this script or command should be executed.
         /// </summary>
         public readonly string RunOnInstanceId;
         /// <summary>
-        /// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+        /// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
         /// </summary>
         public readonly string RunOnInstanceRegion;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string ScriptCommand;
         /// <summary>
-        /// The type of the step.
+        /// The type of the user-defined step.
         /// </summary>
         public readonly string StepType;
 

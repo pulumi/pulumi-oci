@@ -22,6 +22,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly Outputs.DiscoveryJobDiscoveryDetailsCredentials? Credentials;
         /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        public readonly string? License;
+        /// <summary>
         /// Property Details
         /// </summary>
         public readonly Outputs.DiscoveryJobDiscoveryDetailsProperties Properties;
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             Outputs.DiscoveryJobDiscoveryDetailsCredentials? credentials,
 
+            string? license,
+
             Outputs.DiscoveryJobDiscoveryDetailsProperties properties,
 
             string resourceName,
@@ -54,6 +60,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         {
             AgentId = agentId;
             Credentials = credentials;
+            License = license;
             Properties = properties;
             ResourceName = resourceName;
             ResourceType = resourceType;

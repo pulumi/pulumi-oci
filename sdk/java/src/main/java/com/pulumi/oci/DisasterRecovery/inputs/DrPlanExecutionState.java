@@ -23,14 +23,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     public static final DrPlanExecutionState Empty = new DrPlanExecutionState();
 
     /**
-     * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -38,14 +38,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -53,14 +53,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -68,14 +68,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="drProtectionGroupId")
     private @Nullable Output<String> drProtectionGroupId;
 
     /**
-     * @return The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> drProtectionGroupId() {
@@ -83,14 +83,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The total duration in seconds taken to complete step execution.  Example: `35`
+     * The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     @Import(name="executionDurationInSec")
     private @Nullable Output<Integer> executionDurationInSec;
 
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     public Optional<Output<Integer>> executionDurationInSec() {
@@ -113,14 +113,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -128,14 +128,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A list of groups executed in this DR Plan Execution.
+     * A list of groups executed in this DR plan execution.
      * 
      */
     @Import(name="groupExecutions")
     private @Nullable Output<List<DrPlanExecutionGroupExecutionArgs>> groupExecutions;
 
     /**
-     * @return A list of groups executed in this DR Plan Execution.
+     * @return A list of groups executed in this DR plan execution.
      * 
      */
     public Optional<Output<List<DrPlanExecutionGroupExecutionArgs>>> groupExecutions() {
@@ -143,14 +143,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A message describing the DR Plan Execution&#39;s current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+     * A message describing the DR plan execution&#39;s current state in more detail.
      * 
      */
     @Import(name="lifeCycleDetails")
     private @Nullable Output<String> lifeCycleDetails;
 
     /**
-     * @return A message describing the DR Plan Execution&#39;s current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+     * @return A message describing the DR plan execution&#39;s current state in more detail.
      * 
      */
     public Optional<Output<String>> lifeCycleDetails() {
@@ -158,14 +158,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Information about an Object Storage log location for a DR Protection Group.
+     * The details of an object storage log location for a DR protection group.
      * 
      */
     @Import(name="logLocations")
     private @Nullable Output<List<DrPlanExecutionLogLocationArgs>> logLocations;
 
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     public Optional<Output<List<DrPlanExecutionLogLocationArgs>>> logLocations() {
@@ -173,14 +173,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="peerDrProtectionGroupId")
     private @Nullable Output<String> peerDrProtectionGroupId;
 
     /**
-     * @return The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> peerDrProtectionGroupId() {
@@ -188,14 +188,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Import(name="peerRegion")
     private @Nullable Output<String> peerRegion;
 
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public Optional<Output<String>> peerRegion() {
@@ -218,7 +218,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,7 +228,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     private @Nullable Output<String> planId;
 
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -239,14 +239,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The current state of the DR Plan Execution.
+     * The current state of the DR plan execution.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DR Plan Execution.
+     * @return The current state of the DR plan execution.
      * 
      */
     public Optional<Output<String>> state() {
@@ -254,14 +254,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,Object>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> systemTags() {
@@ -269,14 +269,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -284,14 +284,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeEnded")
     private @Nullable Output<String> timeEnded;
 
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeEnded() {
@@ -299,14 +299,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeStarted")
     private @Nullable Output<String> timeStarted;
 
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeStarted() {
@@ -314,14 +314,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -372,7 +372,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param compartmentId The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param drProtectionGroupId The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param drProtectionGroupId The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param drProtectionGroupId The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param executionDurationInSec The total duration in seconds taken to complete step execution.  Example: `35`
+         * @param executionDurationInSec The total duration in seconds taken to complete the step execution.  Example: `35`
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param executionDurationInSec The total duration in seconds taken to complete step execution.  Example: `35`
+         * @param executionDurationInSec The total duration in seconds taken to complete the step execution.  Example: `35`
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param groupExecutions A list of groups executed in this DR Plan Execution.
+         * @param groupExecutions A list of groups executed in this DR plan execution.
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param groupExecutions A list of groups executed in this DR Plan Execution.
+         * @param groupExecutions A list of groups executed in this DR plan execution.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param groupExecutions A list of groups executed in this DR Plan Execution.
+         * @param groupExecutions A list of groups executed in this DR plan execution.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param lifeCycleDetails A message describing the DR Plan Execution&#39;s current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+         * @param lifeCycleDetails A message describing the DR plan execution&#39;s current state in more detail.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param lifeCycleDetails A message describing the DR Plan Execution&#39;s current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+         * @param lifeCycleDetails A message describing the DR plan execution&#39;s current state in more detail.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param logLocations Information about an Object Storage log location for a DR Protection Group.
+         * @param logLocations The details of an object storage log location for a DR protection group.
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param logLocations Information about an Object Storage log location for a DR Protection Group.
+         * @param logLocations The details of an object storage log location for a DR protection group.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param logLocations Information about an Object Storage log location for a DR Protection Group.
+         * @param logLocations The details of an object storage log location for a DR protection group.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param peerDrProtectionGroupId The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param peerDrProtectionGroupId The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param peerDrProtectionGroupId The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param peerDrProtectionGroupId The OCID of peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+         * @param peerRegion The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+         * @param peerRegion The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param planId The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -679,7 +679,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param planId The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -692,7 +692,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the DR Plan Execution.
+         * @param state The current state of the DR plan execution.
          * 
          * @return builder
          * 
@@ -703,7 +703,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the DR Plan Execution.
+         * @param state The current state of the DR plan execution.
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
          * 
@@ -724,7 +724,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
          * 
@@ -734,7 +734,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeCreated The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -745,7 +745,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeCreated The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeEnded The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeEnded The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -766,7 +766,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeEnded The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeEnded The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -776,7 +776,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeStarted The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeStarted The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -787,7 +787,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeStarted The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeStarted The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeUpdated The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeUpdated The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 
@@ -808,7 +808,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeUpdated The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+         * @param timeUpdated The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
          * 
          * @return builder
          * 

@@ -14,7 +14,7 @@ import (
 
 // This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
 //
-// List all the findings from all the targets in the specified assessment.
+// List all the findings from all the targets in the specified compartment.
 func GetSecurityAssessmentFindings(ctx *pulumi.Context, args *GetSecurityAssessmentFindingsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityAssessmentFindingsResult
@@ -32,9 +32,9 @@ type GetSecurityAssessmentFindingsArgs struct {
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
-	// Each finding has a key. This key is same for the finding across targets
+	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
 	FindingKey *string `pulumi:"findingKey"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References *string `pulumi:"references"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
@@ -79,9 +79,9 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree pulumi.BoolPtrInput                           `pulumi:"compartmentIdInSubtree"`
 	Filters                GetSecurityAssessmentFindingsFilterArrayInput `pulumi:"filters"`
-	// Each finding has a key. This key is same for the finding across targets
+	// Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
 	FindingKey pulumi.StringPtrInput `pulumi:"findingKey"`
-	// An optional filter to return only findings containing the specified reference.
+	// An optional filter to return only findings that match the specified reference.
 	References pulumi.StringPtrInput `pulumi:"references"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId pulumi.StringInput `pulumi:"securityAssessmentId"`

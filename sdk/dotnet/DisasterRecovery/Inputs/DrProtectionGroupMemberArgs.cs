@@ -12,38 +12,110 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
 
     public sealed class DrProtectionGroupMemberArgs : global::Pulumi.ResourceArgs
     {
+        [Input("backendSetMappings")]
+        private InputList<Inputs.DrProtectionGroupMemberBackendSetMappingArgs>? _backendSetMappings;
+
         /// <summary>
-        /// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberBackendSetMappingArgs> BackendSetMappings
+        {
+            get => _backendSetMappings ?? (_backendSetMappings = new InputList<Inputs.DrProtectionGroupMemberBackendSetMappingArgs>());
+            set => _backendSetMappings = value;
+        }
+
+        [Input("blockVolumeOperations")]
+        private InputList<Inputs.DrProtectionGroupMemberBlockVolumeOperationArgs>? _blockVolumeOperations;
+
+        /// <summary>
+        /// (Updatable) A list of operations performed on block volumes used by the compute instance.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberBlockVolumeOperationArgs> BlockVolumeOperations
+        {
+            get => _blockVolumeOperations ?? (_blockVolumeOperations = new InputList<Inputs.DrProtectionGroupMemberBlockVolumeOperationArgs>());
+            set => _blockVolumeOperations = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+        /// </summary>
+        [Input("destinationAvailabilityDomain")]
+        public Input<string>? DestinationAvailabilityDomain { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         /// </summary>
         [Input("destinationCapacityReservationId")]
         public Input<string>? DestinationCapacityReservationId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Input("destinationCompartmentId")]
         public Input<string>? DestinationCompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
         /// </summary>
         [Input("destinationDedicatedVmHostId")]
         public Input<string>? DestinationDedicatedVmHostId { get; set; }
 
         /// <summary>
-        /// (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+        /// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        /// </summary>
+        [Input("destinationLoadBalancerId")]
+        public Input<string>? DestinationLoadBalancerId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        /// </summary>
+        [Input("destinationNetworkLoadBalancerId")]
+        public Input<string>? DestinationNetworkLoadBalancerId { get; set; }
+
+        [Input("exportMappings")]
+        private InputList<Inputs.DrProtectionGroupMemberExportMappingArgs>? _exportMappings;
+
+        /// <summary>
+        /// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberExportMappingArgs> ExportMappings
+        {
+            get => _exportMappings ?? (_exportMappings = new InputList<Inputs.DrProtectionGroupMemberExportMappingArgs>());
+            set => _exportMappings = value;
+        }
+
+        [Input("fileSystemOperations")]
+        private InputList<Inputs.DrProtectionGroupMemberFileSystemOperationArgs>? _fileSystemOperations;
+
+        /// <summary>
+        /// (Updatable) A list of operations performed on file systems used by the compute instance.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberFileSystemOperationArgs> FileSystemOperations
+        {
+            get => _fileSystemOperations ?? (_fileSystemOperations = new InputList<Inputs.DrProtectionGroupMemberFileSystemOperationArgs>());
+            set => _fileSystemOperations = value;
+        }
+
+        /// <summary>
+        /// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         /// </summary>
         [Input("isMovable")]
         public Input<bool>? IsMovable { get; set; }
 
         /// <summary>
-        /// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        /// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         /// </summary>
         [Input("isRetainFaultDomain")]
         public Input<bool>? IsRetainFaultDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+        /// </summary>
+        [Input("isStartStopEnabled")]
+        public Input<bool>? IsStartStopEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         /// </summary>
         [Input("memberId", required: true)]
         public Input<string> MemberId { get; set; } = null!;
@@ -58,7 +130,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private Input<string>? _passwordVaultSecretId;
 
         /// <summary>
-        /// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         /// </summary>
         public Input<string>? PasswordVaultSecretId
         {
@@ -74,7 +146,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<Inputs.DrProtectionGroupMemberVnicMappingArgs>? _vnicMapping;
 
         /// <summary>
-        /// (Updatable) A list of Compute Instance VNIC mappings.
+        /// (Updatable) A list of compute instance VNIC mappings.
         /// </summary>
         public InputList<Inputs.DrProtectionGroupMemberVnicMappingArgs> VnicMapping
         {
@@ -86,7 +158,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<Inputs.DrProtectionGroupMemberVnicMappingArgs>? _vnicMappings;
 
         /// <summary>
-        /// (Updatable) A list of Compute Instance VNIC mappings.
+        /// (Updatable) A list of compute instance VNIC mappings.
         /// </summary>
         public InputList<Inputs.DrProtectionGroupMemberVnicMappingArgs> VnicMappings
         {

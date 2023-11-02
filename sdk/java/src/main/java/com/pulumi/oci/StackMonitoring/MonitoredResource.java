@@ -120,6 +120,7 @@ import javax.annotation.Nullable;
  *             .externalId(oci_stack_monitoring_external.test_external().id())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .hostName(var_.monitored_resource_host_name())
+ *             .license(var_.monitored_resource_license())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
  *             .properties(MonitoredResourcePropertyArgs.builder()
  *                 .name(var_.monitored_resource_properties_name())
@@ -310,6 +311,20 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> hostName() {
         return Codegen.optional(this.hostName);
+    }
+    /**
+     * (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+     * 
+     */
+    @Export(name="license", refs={String.class}, tree="[0]")
+    private Output<String> license;
+
+    /**
+     * @return (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
+     * 
+     */
+    public Output<String> license() {
+        return this.license;
     }
     /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

@@ -14,27 +14,59 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrProtectionGroupMember
     {
         /// <summary>
-        /// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DrProtectionGroupMemberBackendSetMapping> BackendSetMappings;
+        /// <summary>
+        /// (Updatable) A list of operations performed on block volumes used by the compute instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DrProtectionGroupMemberBlockVolumeOperation> BlockVolumeOperations;
+        /// <summary>
+        /// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+        /// </summary>
+        public readonly string? DestinationAvailabilityDomain;
+        /// <summary>
+        /// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         /// </summary>
         public readonly string? DestinationCapacityReservationId;
         /// <summary>
-        /// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         public readonly string? DestinationCompartmentId;
         /// <summary>
-        /// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
         /// </summary>
         public readonly string? DestinationDedicatedVmHostId;
         /// <summary>
-        /// (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+        /// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+        /// </summary>
+        public readonly string? DestinationLoadBalancerId;
+        /// <summary>
+        /// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+        /// </summary>
+        public readonly string? DestinationNetworkLoadBalancerId;
+        /// <summary>
+        /// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DrProtectionGroupMemberExportMapping> ExportMappings;
+        /// <summary>
+        /// (Updatable) A list of operations performed on file systems used by the compute instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DrProtectionGroupMemberFileSystemOperation> FileSystemOperations;
+        /// <summary>
+        /// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         /// </summary>
         public readonly bool? IsMovable;
         /// <summary>
-        /// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+        /// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         /// </summary>
         public readonly bool? IsRetainFaultDomain;
         /// <summary>
-        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+        /// </summary>
+        public readonly bool? IsStartStopEnabled;
+        /// <summary>
+        /// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         /// </summary>
         public readonly string MemberId;
         /// <summary>
@@ -42,29 +74,45 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberType;
         /// <summary>
-        /// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         /// </summary>
         public readonly string? PasswordVaultSecretId;
         /// <summary>
-        /// (Updatable) A list of Compute Instance VNIC mappings.
+        /// (Updatable) A list of compute instance VNIC mappings.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> VnicMapping;
         /// <summary>
-        /// (Updatable) A list of Compute Instance VNIC mappings.
+        /// (Updatable) A list of compute instance VNIC mappings.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> VnicMappings;
 
         [OutputConstructor]
         private DrProtectionGroupMember(
+            ImmutableArray<Outputs.DrProtectionGroupMemberBackendSetMapping> backendSetMappings,
+
+            ImmutableArray<Outputs.DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations,
+
+            string? destinationAvailabilityDomain,
+
             string? destinationCapacityReservationId,
 
             string? destinationCompartmentId,
 
             string? destinationDedicatedVmHostId,
 
+            string? destinationLoadBalancerId,
+
+            string? destinationNetworkLoadBalancerId,
+
+            ImmutableArray<Outputs.DrProtectionGroupMemberExportMapping> exportMappings,
+
+            ImmutableArray<Outputs.DrProtectionGroupMemberFileSystemOperation> fileSystemOperations,
+
             bool? isMovable,
 
             bool? isRetainFaultDomain,
+
+            bool? isStartStopEnabled,
 
             string memberId,
 
@@ -76,11 +124,19 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             ImmutableArray<Outputs.DrProtectionGroupMemberVnicMapping> vnicMappings)
         {
+            BackendSetMappings = backendSetMappings;
+            BlockVolumeOperations = blockVolumeOperations;
+            DestinationAvailabilityDomain = destinationAvailabilityDomain;
             DestinationCapacityReservationId = destinationCapacityReservationId;
             DestinationCompartmentId = destinationCompartmentId;
             DestinationDedicatedVmHostId = destinationDedicatedVmHostId;
+            DestinationLoadBalancerId = destinationLoadBalancerId;
+            DestinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
+            ExportMappings = exportMappings;
+            FileSystemOperations = fileSystemOperations;
             IsMovable = isMovable;
             IsRetainFaultDomain = isRetainFaultDomain;
+            IsStartStopEnabled = isStartStopEnabled;
             MemberId = memberId;
             MemberType = memberType;
             PasswordVaultSecretId = passwordVaultSecretId;

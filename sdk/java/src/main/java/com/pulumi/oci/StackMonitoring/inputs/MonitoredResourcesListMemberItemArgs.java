@@ -93,6 +93,21 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
+     * License edition of the monitored resource.
+     * 
+     */
+    @Import(name="license")
+    private @Nullable Output<String> license;
+
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Optional<Output<String>> license() {
+        return Optional.ofNullable(this.license);
+    }
+
+    /**
      * Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -205,6 +220,7 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         this.externalId = $.externalId;
         this.freeformTags = $.freeformTags;
         this.hostName = $.hostName;
+        this.license = $.license;
         this.parentId = $.parentId;
         this.resourceDisplayName = $.resourceDisplayName;
         this.resourceId = $.resourceId;
@@ -335,6 +351,27 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
          */
         public Builder hostName(String hostName) {
             return hostName(Output.of(hostName));
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(@Nullable Output<String> license) {
+            $.license = license;
+            return this;
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(String license) {
+            return license(Output.of(license));
         }
 
         /**

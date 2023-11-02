@@ -25,7 +25,7 @@ class TargetAlertPolicyAssociationArgs:
         """
         The set of arguments for constructing a TargetAlertPolicyAssociation resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the target-alert policy association is created.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] target_id: The OCID of the target.
                
@@ -66,7 +66,7 @@ class TargetAlertPolicyAssociationArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
         """
-        (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -173,7 +173,7 @@ class _TargetAlertPolicyAssociationState:
         :param pulumi.Input[str] description: (Updatable) Describes the target-alert policy association.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -274,7 +274,7 @@ class _TargetAlertPolicyAssociationState:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -414,7 +414,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Describes the target-alert policy association.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] target_id: The OCID of the target.
                
@@ -548,7 +548,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Describes the target-alert policy association.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -622,7 +622,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+        (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
         """
         return pulumi.get(self, "is_enabled")
 

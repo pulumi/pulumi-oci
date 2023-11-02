@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanPlanGroupStep {
     /**
-     * @return (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     private @Nullable String displayName;
@@ -26,12 +26,12 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable String errorMode;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     private @Nullable String groupId;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     private @Nullable String id;
@@ -41,7 +41,7 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
      * 
      */
     private @Nullable String memberId;
@@ -51,7 +51,7 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable Integer timeout;
     /**
-     * @return The type of DR Plan to be created.
+     * @return The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -59,14 +59,14 @@ public final class DrPlanPlanGroupStep {
      */
     private @Nullable String type;
     /**
-     * @return The details for a user-defined step in a DR Plan.
+     * @return The details for a user-defined step in a DR plan.
      * 
      */
     private @Nullable List<DrPlanPlanGroupStepUserDefinedStep> userDefinedSteps;
 
     private DrPlanPlanGroupStep() {}
     /**
-     * @return (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     public Optional<String> displayName() {
@@ -80,14 +80,14 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.errorMode);
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     public Optional<String> groupId() {
         return Optional.ofNullable(this.groupId);
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public Optional<String> id() {
@@ -101,7 +101,7 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
      * 
      */
     public Optional<String> memberId() {
@@ -115,7 +115,7 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.timeout);
     }
     /**
-     * @return The type of DR Plan to be created.
+     * @return The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,7 +125,7 @@ public final class DrPlanPlanGroupStep {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return The details for a user-defined step in a DR Plan.
+     * @return The details for a user-defined step in a DR plan.
      * 
      */
     public List<DrPlanPlanGroupStepUserDefinedStep> userDefinedSteps() {

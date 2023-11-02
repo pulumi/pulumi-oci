@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *     configurationId: oci_audit_configuration.test_configuration.id,
  *     crashRecovery: _var.mysql_db_system_crash_recovery,
  *     dataStorageSizeInGb: _var.mysql_db_system_data_storage_size_in_gb,
+ *     databaseManagement: _var.mysql_db_system_database_management,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -150,6 +151,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     public readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    /**
+     * (Updatable) Whether to enable monitoring via the Database Management service.
+     */
+    public readonly databaseManagement!: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -288,6 +293,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["crashRecovery"] = state ? state.crashRecovery : undefined;
             resourceInputs["currentPlacements"] = state ? state.currentPlacements : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
+            resourceInputs["databaseManagement"] = state ? state.databaseManagement : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deletionPolicies"] = state ? state.deletionPolicies : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -335,6 +341,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["configurationId"] = args ? args.configurationId : undefined;
             resourceInputs["crashRecovery"] = args ? args.crashRecovery : undefined;
             resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
+            resourceInputs["databaseManagement"] = args ? args.databaseManagement : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["deletionPolicies"] = args ? args.deletionPolicies : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -418,6 +425,10 @@ export interface MysqlDbSystemState {
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) Whether to enable monitoring via the Database Management service.
+     */
+    databaseManagement?: pulumi.Input<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -574,6 +585,10 @@ export interface MysqlDbSystemArgs {
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) Whether to enable monitoring via the Database Management service.
+     */
+    databaseManagement?: pulumi.Input<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */

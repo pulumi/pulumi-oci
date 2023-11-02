@@ -130,6 +130,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
+     * Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    @Import(name="databaseManagement")
+    private @Nullable Output<String> databaseManagement;
+
+    /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    public Optional<Output<String>> databaseManagement() {
+        return Optional.ofNullable(this.databaseManagement);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -394,6 +409,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.configurationId = $.configurationId;
         this.crashRecovery = $.crashRecovery;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
+        this.databaseManagement = $.databaseManagement;
         this.definedTags = $.definedTags;
         this.deletionPolicies = $.deletionPolicies;
         this.description = $.description;
@@ -586,6 +602,27 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             return dataStorageSizeInGb(Output.of(dataStorageSizeInGb));
+        }
+
+        /**
+         * @param databaseManagement Whether to enable monitoring via the Database Management service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagement(@Nullable Output<String> databaseManagement) {
+            $.databaseManagement = databaseManagement;
+            return this;
+        }
+
+        /**
+         * @param databaseManagement Whether to enable monitoring via the Database Management service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagement(String databaseManagement) {
+            return databaseManagement(Output.of(databaseManagement));
         }
 
         /**

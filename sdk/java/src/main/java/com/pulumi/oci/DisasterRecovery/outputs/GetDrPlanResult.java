@@ -14,99 +14,99 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanResult {
     /**
-     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     private String compartmentId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     private String displayName;
     private String drPlanId;
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     private String drProtectionGroupId;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     private String id;
     /**
-     * @return A message describing the DR Plan&#39;s current state in more detail.
+     * @return A message describing the DR plan&#39;s current state in more detail.
      * 
      */
     private String lifeCycleDetails;
     /**
-     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private String peerDrProtectionGroupId;
     /**
-     * @return The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+     * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     private String peerRegion;
     /**
-     * @return The list of groups in this DR Plan.
+     * @return The list of groups in this DR plan.
      * 
      */
     private List<GetDrPlanPlanGroup> planGroups;
     /**
-     * @return The current state of the DR Plan.
+     * @return The current state of the DR plan.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeUpdated;
     /**
-     * @return The type of this DR Plan.
+     * @return The type of the DR plan.
      * 
      */
     private String type;
 
     private GetDrPlanResult() {}
     /**
-     * @return The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
     /**
-     * @return The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * @return The display name of the group.  Example: `DATABASE_SWITCHOVER`
      * 
      */
     public String displayName() {
@@ -116,84 +116,84 @@ public final class GetDrPlanResult {
         return this.drPlanId;
     }
     /**
-     * @return The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      */
     public String drProtectionGroupId() {
         return this.drProtectionGroupId;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message describing the DR Plan&#39;s current state in more detail.
+     * @return A message describing the DR plan&#39;s current state in more detail.
      * 
      */
     public String lifeCycleDetails() {
         return this.lifeCycleDetails;
     }
     /**
-     * @return The OCID of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String peerDrProtectionGroupId() {
         return this.peerDrProtectionGroupId;
     }
     /**
-     * @return The region of the peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `us-phoenix-1`
+     * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public String peerRegion() {
         return this.peerRegion;
     }
     /**
-     * @return The list of groups in this DR Plan.
+     * @return The list of groups in this DR plan.
      * 
      */
     public List<GetDrPlanPlanGroup> planGroups() {
         return this.planGroups;
     }
     /**
-     * @return The current state of the DR Plan.
+     * @return The current state of the DR plan.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return The type of this DR Plan.
+     * @return The type of the DR plan.
      * 
      */
     public String type() {

@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanExecutionGroupExecutionStepExecutionLogLocation {
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
      * 
      */
     private @Nullable String bucket;
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     private @Nullable String namespace;
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
      * 
      */
     private @Nullable String object;
 
     private DrPlanExecutionGroupExecutionStepExecutionLogLocation() {}
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
      * 
      */
     public Optional<String> bucket() {
         return Optional.ofNullable(this.bucket);
     }
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     public Optional<String> namespace() {
         return Optional.ofNullable(this.namespace);
     }
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
      * 
      */
     public Optional<String> object() {

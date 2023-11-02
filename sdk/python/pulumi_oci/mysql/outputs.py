@@ -615,6 +615,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             suggest = "crash_recovery"
         elif key == "dataStorageSizeInGb":
             suggest = "data_storage_size_in_gb"
+        elif key == "databaseManagement":
+            suggest = "database_management"
         elif key == "definedTags":
             suggest = "defined_tags"
         elif key == "deletionPolicies":
@@ -659,6 +661,7 @@ class MysqlBackupDbSystemSnapshot(dict):
                  configuration_id: Optional[str] = None,
                  crash_recovery: Optional[str] = None,
                  data_storage_size_in_gb: Optional[int] = None,
+                 database_management: Optional[str] = None,
                  defined_tags: Optional[Mapping[str, Any]] = None,
                  deletion_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDeletionPolicy']] = None,
                  description: Optional[str] = None,
@@ -684,6 +687,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param str database_management: Whether to enable monitoring via the Database Management service.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['MysqlBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: (Updatable) A user-supplied description for the backup.
@@ -716,6 +720,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             pulumi.set(__self__, "crash_recovery", crash_recovery)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if database_management is not None:
+            pulumi.set(__self__, "database_management", database_management)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deletion_policies is not None:
@@ -806,6 +812,14 @@ class MysqlBackupDbSystemSnapshot(dict):
         Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
+
+    @property
+    @pulumi.getter(name="databaseManagement")
+    def database_management(self) -> Optional[str]:
+        """
+        Whether to enable monitoring via the Database Management service.
+        """
+        return pulumi.get(self, "database_management")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -4884,6 +4898,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
                  configuration_id: str,
                  crash_recovery: str,
                  data_storage_size_in_gb: int,
+                 database_management: str,
                  defined_tags: Mapping[str, Any],
                  deletion_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicyResult'],
                  description: str,
@@ -4909,6 +4924,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param str configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param str database_management: Whether to enable monitoring via the Database Management service.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: A user-supplied description for the backup.
@@ -4934,6 +4950,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "configuration_id", configuration_id)
         pulumi.set(__self__, "crash_recovery", crash_recovery)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "database_management", database_management)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deletion_policies", deletion_policies)
         pulumi.set(__self__, "description", description)
@@ -5007,6 +5024,14 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
+
+    @property
+    @pulumi.getter(name="databaseManagement")
+    def database_management(self) -> str:
+        """
+        Whether to enable monitoring via the Database Management service.
+        """
+        return pulumi.get(self, "database_management")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -5626,6 +5651,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
                  configuration_id: str,
                  crash_recovery: str,
                  data_storage_size_in_gb: int,
+                 database_management: str,
                  defined_tags: Mapping[str, Any],
                  deletion_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult'],
                  description: str,
@@ -5651,6 +5677,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         :param str configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param str database_management: Whether to enable monitoring via the Database Management service.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: A user-supplied description for the backup.
@@ -5676,6 +5703,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "configuration_id", configuration_id)
         pulumi.set(__self__, "crash_recovery", crash_recovery)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "database_management", database_management)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deletion_policies", deletion_policies)
         pulumi.set(__self__, "description", description)
@@ -5749,6 +5777,14 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
+
+    @property
+    @pulumi.getter(name="databaseManagement")
+    def database_management(self) -> str:
+        """
+        Whether to enable monitoring via the Database Management service.
+        """
+        return pulumi.get(self, "database_management")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -9076,6 +9112,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  crash_recovery: str,
                  current_placements: Sequence['outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult'],
                  data_storage_size_in_gb: int,
+                 database_management: str,
                  defined_tags: Mapping[str, Any],
                  deletion_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult'],
                  description: str,
@@ -9111,6 +9148,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param Sequence['GetMysqlDbSystemsDbSystemCurrentPlacementArgs'] current_placements: The availability domain and fault domain a DB System is placed in.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
+        :param str database_management: Filter DB Systems by their Database Management configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlDbSystemsDbSystemDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: User-provided data about the DB System.
@@ -9147,6 +9185,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "crash_recovery", crash_recovery)
         pulumi.set(__self__, "current_placements", current_placements)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "database_management", database_management)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deletion_policies", deletion_policies)
         pulumi.set(__self__, "description", description)
@@ -9247,6 +9286,14 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         Initial size of the data volume in GiBs that will be created and attached.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
+
+    @property
+    @pulumi.getter(name="databaseManagement")
+    def database_management(self) -> str:
+        """
+        Filter DB Systems by their Database Management configuration.
+        """
+        return pulumi.get(self, "database_management")
 
     @property
     @pulumi.getter(name="definedTags")

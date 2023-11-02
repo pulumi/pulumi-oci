@@ -19,14 +19,14 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
     public static final DrPlanExecutionArgs Empty = new DrPlanExecutionArgs();
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -34,14 +34,14 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -64,14 +64,14 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -79,7 +79,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -89,7 +89,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
     private Output<String> planId;
 
     /**
-     * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -128,7 +128,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -160,7 +160,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -202,7 +202,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param planId The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,7 +226,7 @@ public final class DrPlanExecutionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param planId The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param planId The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates if the target-alert policy association is enabled or disabled.
+        /// Indicates if the target-alert policy association is enabled or disabled by user.
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

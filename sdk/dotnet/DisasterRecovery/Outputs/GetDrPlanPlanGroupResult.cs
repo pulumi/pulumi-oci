@@ -14,19 +14,19 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlanPlanGroupResult
     {
         /// <summary>
-        /// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+        /// The display name of the group.  Example: `DATABASE_SWITCHOVER`
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The list of steps in this plan group.
+        /// The list of steps in the group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlanPlanGroupStepResult> Steps;
         /// <summary>
-        /// The type of this DR Plan.
+        /// The type of the DR plan.
         /// </summary>
         public readonly string Type;
 

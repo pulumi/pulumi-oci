@@ -48,6 +48,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>
+        /// Filter DB Systems by their Database Management configuration.
+        /// </summary>
+        public readonly string DatabaseManagement;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -171,6 +175,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int dataStorageSizeInGb,
 
+            string databaseManagement,
+
             ImmutableDictionary<string, object> definedTags,
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult> deletionPolicies,
@@ -233,6 +239,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             CrashRecovery = crashRecovery;
             CurrentPlacements = currentPlacements;
             DataStorageSizeInGb = dataStorageSizeInGb;
+            DatabaseManagement = databaseManagement;
             DefinedTags = definedTags;
             DeletionPolicies = deletionPolicies;
             Description = description;

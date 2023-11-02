@@ -125,6 +125,21 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
+     * License edition of the monitored resource.
+     * 
+     */
+    @Import(name="license")
+    private @Nullable Output<String> license;
+
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Optional<Output<String>> license() {
+        return Optional.ofNullable(this.license);
+    }
+
+    /**
      * A filter to return resources with matching management agent id.
      * 
      */
@@ -321,6 +336,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         this.hostName = $.hostName;
         this.hostNameContains = $.hostNameContains;
         this.items = $.items;
+        this.license = $.license;
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
         this.nameContains = $.nameContains;
@@ -527,6 +543,27 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
          */
         public Builder items(MonitoredResourcesSearchItemArgs... items) {
             return items(List.of(items));
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(@Nullable Output<String> license) {
+            $.license = license;
+            return this;
+        }
+
+        /**
+         * @param license License edition of the monitored resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder license(String license) {
+            return license(Output.of(license));
         }
 
         /**

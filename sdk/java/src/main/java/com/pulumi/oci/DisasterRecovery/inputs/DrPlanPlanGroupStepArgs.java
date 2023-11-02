@@ -20,14 +20,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     public static final DrPlanPlanGroupStepArgs Empty = new DrPlanPlanGroupStepArgs();
 
     /**
-     * (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+     * @return (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -50,14 +50,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -65,14 +65,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public Optional<Output<String>> id() {
@@ -95,14 +95,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
      * 
      */
     @Import(name="memberId")
     private @Nullable Output<String> memberId;
 
     /**
-     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> memberId() {
@@ -125,7 +125,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The type of DR Plan to be created.
+     * The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,7 +135,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of DR Plan to be created.
+     * @return The type of DR plan to be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -146,14 +146,14 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The details for a user-defined step in a DR Plan.
+     * The details for a user-defined step in a DR plan.
      * 
      */
     @Import(name="userDefinedSteps")
     private @Nullable Output<List<DrPlanPlanGroupStepUserDefinedStepArgs>> userDefinedSteps;
 
     /**
-     * @return The details for a user-defined step in a DR Plan.
+     * @return The details for a user-defined step in a DR plan.
      * 
      */
     public Optional<Output<List<DrPlanPlanGroupStepUserDefinedStepArgs>>> userDefinedSteps() {
@@ -193,7 +193,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param displayName (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+         * @param displayName (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+         * @param groupId The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+         * @param id The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param id The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+         * @param id The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+         * @param memberId The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -354,7 +354,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type The type of DR Plan to be created.
+         * @param type The type of DR plan to be created.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,7 +367,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param userDefinedSteps The details for a user-defined step in a DR Plan.
+         * @param userDefinedSteps The details for a user-defined step in a DR plan.
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param userDefinedSteps The details for a user-defined step in a DR Plan.
+         * @param userDefinedSteps The details for a user-defined step in a DR plan.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class DrPlanPlanGroupStepArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param userDefinedSteps The details for a user-defined step in a DR Plan.
+         * @param userDefinedSteps The details for a user-defined step in a DR plan.
          * 
          * @return builder
          * 

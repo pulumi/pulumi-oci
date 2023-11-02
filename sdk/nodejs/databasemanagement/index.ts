@@ -545,6 +545,26 @@ export const getManagedDatabasesUserSystemPrivileges: typeof import("./getManage
 export const getManagedDatabasesUserSystemPrivilegesOutput: typeof import("./getManagedDatabasesUserSystemPrivileges").getManagedDatabasesUserSystemPrivilegesOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedDatabasesUserSystemPrivileges","getManagedDatabasesUserSystemPrivilegesOutput"], () => require("./getManagedDatabasesUserSystemPrivileges"));
 
+export { GetManagedMySqlDatabaseArgs, GetManagedMySqlDatabaseResult, GetManagedMySqlDatabaseOutputArgs } from "./getManagedMySqlDatabase";
+export const getManagedMySqlDatabase: typeof import("./getManagedMySqlDatabase").getManagedMySqlDatabase = null as any;
+export const getManagedMySqlDatabaseOutput: typeof import("./getManagedMySqlDatabase").getManagedMySqlDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedMySqlDatabase","getManagedMySqlDatabaseOutput"], () => require("./getManagedMySqlDatabase"));
+
+export { GetManagedMySqlDatabaseConfigurationDataArgs, GetManagedMySqlDatabaseConfigurationDataResult, GetManagedMySqlDatabaseConfigurationDataOutputArgs } from "./getManagedMySqlDatabaseConfigurationData";
+export const getManagedMySqlDatabaseConfigurationData: typeof import("./getManagedMySqlDatabaseConfigurationData").getManagedMySqlDatabaseConfigurationData = null as any;
+export const getManagedMySqlDatabaseConfigurationDataOutput: typeof import("./getManagedMySqlDatabaseConfigurationData").getManagedMySqlDatabaseConfigurationDataOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedMySqlDatabaseConfigurationData","getManagedMySqlDatabaseConfigurationDataOutput"], () => require("./getManagedMySqlDatabaseConfigurationData"));
+
+export { GetManagedMySqlDatabaseSqlDataArgs, GetManagedMySqlDatabaseSqlDataResult, GetManagedMySqlDatabaseSqlDataOutputArgs } from "./getManagedMySqlDatabaseSqlData";
+export const getManagedMySqlDatabaseSqlData: typeof import("./getManagedMySqlDatabaseSqlData").getManagedMySqlDatabaseSqlData = null as any;
+export const getManagedMySqlDatabaseSqlDataOutput: typeof import("./getManagedMySqlDatabaseSqlData").getManagedMySqlDatabaseSqlDataOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedMySqlDatabaseSqlData","getManagedMySqlDatabaseSqlDataOutput"], () => require("./getManagedMySqlDatabaseSqlData"));
+
+export { GetManagedMySqlDatabasesArgs, GetManagedMySqlDatabasesResult, GetManagedMySqlDatabasesOutputArgs } from "./getManagedMySqlDatabases";
+export const getManagedMySqlDatabases: typeof import("./getManagedMySqlDatabases").getManagedMySqlDatabases = null as any;
+export const getManagedMySqlDatabasesOutput: typeof import("./getManagedMySqlDatabases").getManagedMySqlDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedMySqlDatabases","getManagedMySqlDatabasesOutput"], () => require("./getManagedMySqlDatabases"));
+
 export { ManagedDatabaseGroupArgs, ManagedDatabaseGroupState } from "./managedDatabaseGroup";
 export type ManagedDatabaseGroup = import("./managedDatabaseGroup").ManagedDatabaseGroup;
 export const ManagedDatabaseGroup: typeof import("./managedDatabaseGroup").ManagedDatabaseGroup = null as any;

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get a summary list of all DR Plan Executions for a DR Protection Group.
+ * Get a summary list of all DR plan executions for a DR protection group.
  *
  * ## Example Usage
  *
@@ -44,24 +44,24 @@ export function getDrPlanExecutions(args: GetDrPlanExecutionsArgs, opts?: pulumi
  */
 export interface GetDrPlanExecutionsArgs {
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
     displayName?: string;
     /**
-     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+     * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     drPlanExecutionId?: string;
     /**
-     * The DR Plan Execution type.
+     * The DR plan execution type.
      */
     drPlanExecutionType?: string;
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: string;
     filters?: inputs.DisasterRecovery.GetDrPlanExecutionsFilter[];
     /**
-     * A filter to return only DR Plan Executions that match the given lifecycleState.
+     * A filter to return only DR plan executions that match the given lifecycle state.
      */
     state?: string;
 }
@@ -71,7 +71,7 @@ export interface GetDrPlanExecutionsArgs {
  */
 export interface GetDrPlanExecutionsResult {
     /**
-     * The display name of the step.  Example: `DATABASE_SWITCHOVER`
+     * The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
      */
     readonly displayName?: string;
     /**
@@ -81,7 +81,7 @@ export interface GetDrPlanExecutionsResult {
     readonly drPlanExecutionId?: string;
     readonly drPlanExecutionType?: string;
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+     * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     readonly drProtectionGroupId: string;
     readonly filters?: outputs.DisasterRecovery.GetDrPlanExecutionsFilter[];
@@ -90,14 +90,14 @@ export interface GetDrPlanExecutionsResult {
      */
     readonly id: string;
     /**
-     * The current state of the DR Plan Execution.
+     * The current state of the DR plan execution.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Get a summary list of all DR Plan Executions for a DR Protection Group.
+ * Get a summary list of all DR plan executions for a DR protection group.
  *
  * ## Example Usage
  *
@@ -123,24 +123,24 @@ export function getDrPlanExecutionsOutput(args: GetDrPlanExecutionsOutputArgs, o
  */
 export interface GetDrPlanExecutionsOutputArgs {
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+     * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     drPlanExecutionId?: pulumi.Input<string>;
     /**
-     * The DR Plan Execution type.
+     * The DR plan execution type.
      */
     drPlanExecutionType?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrPlanExecutionsFilterArgs>[]>;
     /**
-     * A filter to return only DR Plan Executions that match the given lifecycleState.
+     * A filter to return only DR plan executions that match the given lifecycle state.
      */
     state?: pulumi.Input<string>;
 }

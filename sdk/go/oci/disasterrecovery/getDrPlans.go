@@ -14,7 +14,7 @@ import (
 
 // This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
 //
-// Gets a summary list of all DR Plans for a DR Protection Group.
+// Get a summary list of all DR plans for a DR protection group.
 //
 // ## Example Usage
 //
@@ -57,33 +57,33 @@ func GetDrPlans(ctx *pulumi.Context, args *GetDrPlansArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getDrPlans.
 type GetDrPlansArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName *string `pulumi:"displayName"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	DrPlanId *string `pulumi:"drPlanId"`
-	// The DR Plan type.
+	// The DR plan type.
 	DrPlanType *string `pulumi:"drPlanType"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string             `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlansFilter `pulumi:"filters"`
-	// A filter to return only DR Plans that match the given lifecycleState.
+	// A filter to return only DR plans that match the given lifecycle state.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getDrPlans.
 type GetDrPlansResult struct {
-	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName *string `pulumi:"displayName"`
 	// The list of dr_plan_collection.
 	DrPlanCollections []GetDrPlansDrPlanCollection `pulumi:"drPlanCollections"`
 	DrPlanId          *string                      `pulumi:"drPlanId"`
 	DrPlanType        *string                      `pulumi:"drPlanType"`
-	// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
 	DrProtectionGroupId string             `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlansFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The current state of the DR Plan.
+	// The current state of the DR plan.
 	State *string `pulumi:"state"`
 }
 
@@ -102,16 +102,16 @@ func GetDrPlansOutput(ctx *pulumi.Context, args GetDrPlansOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getDrPlans.
 type GetDrPlansOutputArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	DrPlanId pulumi.StringPtrInput `pulumi:"drPlanId"`
-	// The DR Plan type.
+	// The DR plan type.
 	DrPlanType pulumi.StringPtrInput `pulumi:"drPlanType"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput         `pulumi:"drProtectionGroupId"`
 	Filters             GetDrPlansFilterArrayInput `pulumi:"filters"`
-	// A filter to return only DR Plans that match the given lifecycleState.
+	// A filter to return only DR plans that match the given lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -140,7 +140,7 @@ func (o GetDrPlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[Get
 	}
 }
 
-// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlansResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlansResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -158,7 +158,7 @@ func (o GetDrPlansResultOutput) DrPlanType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlansResult) *string { return v.DrPlanType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
 func (o GetDrPlansResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
@@ -172,7 +172,7 @@ func (o GetDrPlansResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The current state of the DR Plan.
+// The current state of the DR plan.
 func (o GetDrPlansResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlansResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

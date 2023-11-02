@@ -14,15 +14,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult
     {
         /// <summary>
-        /// The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+        /// The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+        /// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
         /// </summary>
         public readonly string Object;
 

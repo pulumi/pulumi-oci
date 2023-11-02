@@ -13,17 +13,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution {
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     private String displayName;
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     private Integer executionDurationInSec;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     private String groupId;
@@ -33,48 +33,48 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
      */
     private String status;
     /**
-     * @return Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     private String statusDetails;
     /**
-     * @return A list of details of each step executed in this group.
+     * @return A list of step executions in the group.
      * 
      */
     private List<GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution> stepExecutions;
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeEnded;
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeStarted;
     /**
-     * @return The plan group type.
+     * @return The group type.  Example: `BUILT_IN`
      * 
      */
     private String type;
 
     private GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution() {}
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     public Integer executionDurationInSec() {
         return this.executionDurationInSec;
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     public String groupId() {
@@ -88,35 +88,35 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
         return this.status;
     }
     /**
-     * @return Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     public String statusDetails() {
         return this.statusDetails;
     }
     /**
-     * @return A list of details of each step executed in this group.
+     * @return A list of step executions in the group.
      * 
      */
     public List<GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution> stepExecutions() {
         return this.stepExecutions;
     }
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeEnded() {
         return this.timeEnded;
     }
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeStarted() {
         return this.timeStarted;
     }
     /**
-     * @return The plan group type.
+     * @return The group type.  Example: `BUILT_IN`
      * 
      */
     public String type() {

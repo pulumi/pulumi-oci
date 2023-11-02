@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDrProtectionGroupsResult {
     /**
-     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     private String compartmentId;
     /**
-     * @return The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * @return The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     private @Nullable String displayName;
@@ -37,26 +37,31 @@ public final class GetDrProtectionGroupsResult {
      */
     private String id;
     /**
-     * @return The role of the DR Protection Group.
+     * @return The current sub-state of the DR protection group.
+     * 
+     */
+    private @Nullable String lifecycleSubState;
+    /**
+     * @return The role of the DR protection group.
      * 
      */
     private @Nullable String role;
     /**
-     * @return The current state of the DR Protection Group.
+     * @return The current state of the DR protection group.
      * 
      */
     private @Nullable String state;
 
     private GetDrProtectionGroupsResult() {}
     /**
-     * @return The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * @return The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     public Optional<String> displayName() {
@@ -83,14 +88,21 @@ public final class GetDrProtectionGroupsResult {
         return this.id;
     }
     /**
-     * @return The role of the DR Protection Group.
+     * @return The current sub-state of the DR protection group.
+     * 
+     */
+    public Optional<String> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
+    }
+    /**
+     * @return The role of the DR protection group.
      * 
      */
     public Optional<String> role() {
         return Optional.ofNullable(this.role);
     }
     /**
-     * @return The current state of the DR Protection Group.
+     * @return The current state of the DR protection group.
      * 
      */
     public Optional<String> state() {
@@ -112,6 +124,7 @@ public final class GetDrProtectionGroupsResult {
         private @Nullable String drProtectionGroupId;
         private @Nullable List<GetDrProtectionGroupsFilter> filters;
         private String id;
+        private @Nullable String lifecycleSubState;
         private @Nullable String role;
         private @Nullable String state;
         public Builder() {}
@@ -123,6 +136,7 @@ public final class GetDrProtectionGroupsResult {
     	      this.drProtectionGroupId = defaults.drProtectionGroupId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.role = defaults.role;
     	      this.state = defaults.state;
         }
@@ -164,6 +178,11 @@ public final class GetDrProtectionGroupsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder role(@Nullable String role) {
             this.role = role;
             return this;
@@ -181,6 +200,7 @@ public final class GetDrProtectionGroupsResult {
             o.drProtectionGroupId = drProtectionGroupId;
             o.filters = filters;
             o.id = id;
+            o.lifecycleSubState = lifecycleSubState;
             o.role = role;
             o.state = state;
             return o;

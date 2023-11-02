@@ -110,17 +110,17 @@ public final class GetUserAssessmentsUserAssessment {
      */
     private List<String> targetIds;
     /**
-     * @return The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeLastAssessed;
     /**
-     * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeUpdated;
@@ -270,21 +270,21 @@ public final class GetUserAssessmentsUserAssessment {
         return this.targetIds;
     }
     /**
-     * @return The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeLastAssessed() {
         return this.timeLastAssessed;
     }
     /**
-     * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeUpdated() {

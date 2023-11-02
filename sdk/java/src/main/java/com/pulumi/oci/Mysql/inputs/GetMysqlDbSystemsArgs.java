@@ -49,6 +49,21 @@ public final class GetMysqlDbSystemsArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * Filter DB Systems by their Database Management configuration.
+     * 
+     */
+    @Import(name="databaseManagements")
+    private @Nullable Output<List<String>> databaseManagements;
+
+    /**
+     * @return Filter DB Systems by their Database Management configuration.
+     * 
+     */
+    public Optional<Output<List<String>>> databaseManagements() {
+        return Optional.ofNullable(this.databaseManagements);
+    }
+
+    /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -135,6 +150,7 @@ public final class GetMysqlDbSystemsArgs extends com.pulumi.resources.InvokeArgs
     private GetMysqlDbSystemsArgs(GetMysqlDbSystemsArgs $) {
         this.compartmentId = $.compartmentId;
         this.configurationId = $.configurationId;
+        this.databaseManagements = $.databaseManagements;
         this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -201,6 +217,37 @@ public final class GetMysqlDbSystemsArgs extends com.pulumi.resources.InvokeArgs
          */
         public Builder configurationId(String configurationId) {
             return configurationId(Output.of(configurationId));
+        }
+
+        /**
+         * @param databaseManagements Filter DB Systems by their Database Management configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagements(@Nullable Output<List<String>> databaseManagements) {
+            $.databaseManagements = databaseManagements;
+            return this;
+        }
+
+        /**
+         * @param databaseManagements Filter DB Systems by their Database Management configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagements(List<String> databaseManagements) {
+            return databaseManagements(Output.of(databaseManagements));
+        }
+
+        /**
+         * @param databaseManagements Filter DB Systems by their Database Management configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagements(String... databaseManagements) {
+            return databaseManagements(List.of(databaseManagements));
         }
 
         /**

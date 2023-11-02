@@ -82,6 +82,8 @@ type LookupMonitoredResourceResult struct {
 	HostName string `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
+	// License edition of the monitored resource.
+	License string `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId   string `pulumi:"managementAgentId"`
 	MonitoredResourceId string `pulumi:"monitoredResourceId"`
@@ -215,6 +217,11 @@ func (o LookupMonitoredResourceResultOutput) HostName() pulumi.StringOutput {
 // Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupMonitoredResourceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// License edition of the monitored resource.
+func (o LookupMonitoredResourceResultOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.License }).(pulumi.StringOutput)
 }
 
 // Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

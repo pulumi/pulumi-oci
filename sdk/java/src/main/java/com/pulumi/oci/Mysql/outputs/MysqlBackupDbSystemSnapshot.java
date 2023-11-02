@@ -56,6 +56,11 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     private @Nullable Integer dataStorageSizeInGb;
     /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    private @Nullable String databaseManagement;
+    /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -190,6 +195,13 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     public Optional<Integer> dataStorageSizeInGb() {
         return Optional.ofNullable(this.dataStorageSizeInGb);
+    }
+    /**
+     * @return Whether to enable monitoring via the Database Management service.
+     * 
+     */
+    public Optional<String> databaseManagement() {
+        return Optional.ofNullable(this.databaseManagement);
     }
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -327,6 +339,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable String configurationId;
         private @Nullable String crashRecovery;
         private @Nullable Integer dataStorageSizeInGb;
+        private @Nullable String databaseManagement;
         private @Nullable Map<String,Object> definedTags;
         private @Nullable List<MysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
         private @Nullable String description;
@@ -354,6 +367,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.configurationId = defaults.configurationId;
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
     	      this.description = defaults.description;
@@ -409,6 +423,11 @@ public final class MysqlBackupDbSystemSnapshot {
         @CustomType.Setter
         public Builder dataStorageSizeInGb(@Nullable Integer dataStorageSizeInGb) {
             this.dataStorageSizeInGb = dataStorageSizeInGb;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseManagement(@Nullable String databaseManagement) {
+            this.databaseManagement = databaseManagement;
             return this;
         }
         @CustomType.Setter
@@ -514,6 +533,7 @@ public final class MysqlBackupDbSystemSnapshot {
             o.configurationId = configurationId;
             o.crashRecovery = crashRecovery;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.databaseManagement = databaseManagement;
             o.definedTags = definedTags;
             o.deletionPolicies = deletionPolicies;
             o.description = description;

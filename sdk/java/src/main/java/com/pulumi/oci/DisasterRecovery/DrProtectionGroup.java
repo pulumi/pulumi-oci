@@ -24,20 +24,17 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
  * 
- * Create a new DR Protection Group.
+ * Create a DR protection group.
  * 
- * ## Example Usage
+ * ## Create
+ * 
+ * Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
  * ```java
  * package generated_program;
  * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.pulumi.oci.DisasterRecovery.DrProtectionGroup;
- * import com.pulumi.oci.DisasterRecovery.DrProtectionGroupArgs;
- * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupLogLocationArgs;
- * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupAssociationArgs;
- * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -51,46 +48,32 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrProtectionGroup = new DrProtectionGroup(&#34;testDrProtectionGroup&#34;, DrProtectionGroupArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.dr_protection_group_display_name())
- *             .logLocation(DrProtectionGroupLogLocationArgs.builder()
- *                 .bucket(var_.dr_protection_group_log_location_bucket())
- *                 .namespace(var_.dr_protection_group_log_location_namespace())
- *                 .build())
- *             .association(DrProtectionGroupAssociationArgs.builder()
- *                 .role(var_.dr_protection_group_association_role())
- *                 .peerId(oci_blockchain_peer.test_peer().id())
- *                 .peerRegion(var_.dr_protection_group_association_peer_region())
- *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .members(DrProtectionGroupMemberArgs.builder()
- *                 .memberId(oci_disaster_recovery_member.test_member().id())
- *                 .memberType(var_.dr_protection_group_members_member_type())
- *                 .destinationCapacityReservationId(oci_disaster_recovery_destination_capacity_reservation.test_destination_capacity_reservation().id())
- *                 .destinationCompartmentId(oci_identity_compartment.test_compartment().id())
- *                 .destinationDedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
- *                 .isMovable(var_.dr_protection_group_members_is_movable())
- *                 .isRetainFaultDomain(var_.dr_protection_group_members_is_retain_fault_domain())
- *                 .passwordVaultSecretId(oci_vault_secret.test_secret().id())
- *                 .vnicMappings(DrProtectionGroupMemberVnicMappingArgs.builder()
- *                     .destinationNsgIdLists(var_.dr_protection_group_members_vnic_mapping_destination_nsg_id_list())
- *                     .destinationPrimaryPrivateIpAddress(var_.dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address())
- *                     .destinationPrimaryPrivateIpHostnameLabel(var_.dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label())
- *                     .destinationSubnetId(oci_core_subnet.test_subnet().id())
- *                     .sourceVnicId(oci_core_vnic.test_vnic().id())
- *                     .build())
- *                 .vnicMappings(DrProtectionGroupMemberVnicMappingArgs.builder()
- *                     .destinationNsgIdLists(var_.dr_protection_group_members_vnic_mappings_destination_nsg_id_list())
- *                     .destinationPrimaryPrivateIpAddress(var_.dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address())
- *                     .destinationPrimaryPrivateIpHostnameLabel(var_.dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label())
- *                     .destinationSubnetId(oci_core_subnet.test_subnet().id())
- *                     .sourceVnicId(oci_core_vnic.test_vnic().id())
- *                     .build())
- *                 .build())
- *             .build());
+ *     }
+ * }
+ * ```
  * 
+ * ## Delete
+ * 
+ * Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
  *     }
  * }
  * ```
@@ -107,42 +90,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup")
 public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
     /**
-     * The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+     * The details for associating a DR protection group with a peer DR protection group.
      * 
      */
     @Export(name="association", refs={DrProtectionGroupAssociation.class}, tree="[0]")
     private Output<DrProtectionGroupAssociation> association;
 
     /**
-     * @return The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+     * @return The details for associating a DR protection group with a peer DR protection group.
      * 
      */
     public Output<DrProtectionGroupAssociation> association() {
         return this.association;
     }
     /**
-     * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -169,168 +152,182 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.disassociateTrigger);
     }
     /**
-     * (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+     * @return (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * A message describing the DR Protection Group&#39;s current state in more detail.
+     * A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
     @Export(name="lifeCycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifeCycleDetails;
 
     /**
-     * @return A message describing the DR Protection Group&#39;s current state in more detail.
+     * @return A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
     public Output<String> lifeCycleDetails() {
         return this.lifeCycleDetails;
     }
     /**
-     * (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+     * The current sub-state of the DR protection group.
+     * 
+     */
+    @Export(name="lifecycleSubState", refs={String.class}, tree="[0]")
+    private Output<String> lifecycleSubState;
+
+    /**
+     * @return The current sub-state of the DR protection group.
+     * 
+     */
+    public Output<String> lifecycleSubState() {
+        return this.lifecycleSubState;
+    }
+    /**
+     * (Updatable) The details for creating an object storage log location for a DR protection group.
      * 
      */
     @Export(name="logLocation", refs={DrProtectionGroupLogLocation.class}, tree="[0]")
     private Output<DrProtectionGroupLogLocation> logLocation;
 
     /**
-     * @return (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
+     * @return (Updatable) The details for creating an object storage log location for a DR protection group.
      * 
      */
     public Output<DrProtectionGroupLogLocation> logLocation() {
         return this.logLocation;
     }
     /**
-     * (Updatable) A list of DR Protection Group members.
+     * (Updatable) A list of DR protection group members.
      * 
      */
     @Export(name="members", refs={List.class,DrProtectionGroupMember.class}, tree="[0,1]")
     private Output<List<DrProtectionGroupMember>> members;
 
     /**
-     * @return (Updatable) A list of DR Protection Group members.
+     * @return (Updatable) A list of DR protection group members.
      * 
      */
     public Output<List<DrProtectionGroupMember>> members() {
         return this.members;
     }
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Export(name="peerId", refs={String.class}, tree="[0]")
     private Output<String> peerId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Output<String> peerId() {
         return this.peerId;
     }
     /**
-     * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Export(name="peerRegion", refs={String.class}, tree="[0]")
     private Output<String> peerRegion;
 
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public Output<String> peerRegion() {
         return this.peerRegion;
     }
     /**
-     * The role of this DR Protection Group.
+     * The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
-     * @return The role of this DR Protection Group.
+     * @return The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     public Output<String> role() {
         return this.role;
     }
     /**
-     * The current state of the DR Protection Group.
+     * The current state of the DR protection group.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the DR Protection Group.
+     * @return The current state of the DR protection group.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
     }
     /**
-     * The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public Output<String> timeUpdated() {

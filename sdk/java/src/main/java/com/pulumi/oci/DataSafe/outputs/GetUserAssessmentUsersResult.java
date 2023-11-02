@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 public final class GetUserAssessmentUsersResult {
     private @Nullable String accessLevel;
     /**
-     * @return The user account status.
+     * @return The status of the user account.
      * 
      */
     private @Nullable String accountStatus;
@@ -74,7 +74,7 @@ public final class GetUserAssessmentUsersResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return The user account status.
+     * @return The status of the user account.
      * 
      */
     public Optional<String> accountStatus() {

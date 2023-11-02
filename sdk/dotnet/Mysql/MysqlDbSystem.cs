@@ -53,6 +53,7 @@ namespace Pulumi.Oci.Mysql
     ///         ConfigurationId = oci_audit_configuration.Test_configuration.Id,
     ///         CrashRecovery = @var.Mysql_db_system_crash_recovery,
     ///         DataStorageSizeInGb = @var.Mysql_db_system_data_storage_size_in_gb,
+    ///         DatabaseManagement = @var.Mysql_db_system_database_management,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -166,6 +167,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("dataStorageSizeInGb")]
         public Output<int> DataStorageSizeInGb { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether to enable monitoring via the Database Management service.
+        /// </summary>
+        [Output("databaseManagement")]
+        public Output<string> DatabaseManagement { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -443,6 +450,12 @@ namespace Pulumi.Oci.Mysql
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
 
+        /// <summary>
+        /// (Updatable) Whether to enable monitoring via the Database Management service.
+        /// </summary>
+        [Input("databaseManagement")]
+        public Input<string>? DatabaseManagement { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -676,6 +689,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether to enable monitoring via the Database Management service.
+        /// </summary>
+        [Input("databaseManagement")]
+        public Input<string>? DatabaseManagement { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

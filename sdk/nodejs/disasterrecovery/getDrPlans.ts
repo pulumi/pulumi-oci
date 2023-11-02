@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Gets a summary list of all DR Plans for a DR Protection Group.
+ * Get a summary list of all DR plans for a DR protection group.
  *
  * ## Example Usage
  *
@@ -44,24 +44,24 @@ export function getDrPlans(args: GetDrPlansArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetDrPlansArgs {
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
     displayName?: string;
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
     drPlanId?: string;
     /**
-     * The DR Plan type.
+     * The DR plan type.
      */
     drPlanType?: string;
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: string;
     filters?: inputs.DisasterRecovery.GetDrPlansFilter[];
     /**
-     * A filter to return only DR Plans that match the given lifecycleState.
+     * A filter to return only DR plans that match the given lifecycle state.
      */
     state?: string;
 }
@@ -71,7 +71,7 @@ export interface GetDrPlansArgs {
  */
 export interface GetDrPlansResult {
     /**
-     * The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+     * The display name of the group.  Example: `DATABASE_SWITCHOVER`
      */
     readonly displayName?: string;
     /**
@@ -81,7 +81,7 @@ export interface GetDrPlansResult {
     readonly drPlanId?: string;
     readonly drPlanType?: string;
     /**
-     * The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+     * The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
      */
     readonly drProtectionGroupId: string;
     readonly filters?: outputs.DisasterRecovery.GetDrPlansFilter[];
@@ -90,14 +90,14 @@ export interface GetDrPlansResult {
      */
     readonly id: string;
     /**
-     * The current state of the DR Plan.
+     * The current state of the DR plan.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
  *
- * Gets a summary list of all DR Plans for a DR Protection Group.
+ * Get a summary list of all DR plans for a DR protection group.
  *
  * ## Example Usage
  *
@@ -123,24 +123,24 @@ export function getDrPlansOutput(args: GetDrPlansOutputArgs, opts?: pulumi.Invok
  */
 export interface GetDrPlansOutputArgs {
     /**
-     * A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
     drPlanId?: pulumi.Input<string>;
     /**
-     * The DR Plan type.
+     * The DR plan type.
      */
     drPlanType?: pulumi.Input<string>;
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+     * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrPlansFilterArgs>[]>;
     /**
-     * A filter to return only DR Plans that match the given lifecycleState.
+     * A filter to return only DR plans that match the given lifecycle state.
      */
     state?: pulumi.Input<string>;
 }

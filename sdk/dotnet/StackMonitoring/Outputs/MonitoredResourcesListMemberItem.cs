@@ -34,6 +34,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? HostName;
         /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        public readonly string? License;
+        /// <summary>
         /// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? ParentId;
@@ -74,6 +78,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string? hostName,
 
+            string? license,
+
             string? parentId,
 
             string? resourceDisplayName,
@@ -93,6 +99,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             ExternalId = externalId;
             FreeformTags = freeformTags;
             HostName = hostName;
+            License = license;
             ParentId = parentId;
             ResourceDisplayName = resourceDisplayName;
             ResourceId = resourceId;

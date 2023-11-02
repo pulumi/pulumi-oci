@@ -51,6 +51,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///                     },
     ///                 },
     ///             },
+    ///             License = @var.Discovery_job_discovery_details_license,
     ///             Tags = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsTagsArgs
     ///             {
     ///                 PropertiesMap = @var.Discovery_job_discovery_details_tags_properties_map,

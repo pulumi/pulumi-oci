@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Get the DR Protection Group identified by *drProtectionGroupId*.
+        /// Get the DR protection group identified by *drProtectionGroupId*.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Get the DR Protection Group identified by *drProtectionGroupId*.
+        /// Get the DR protection group identified by *drProtectionGroupId*.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrProtectionGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+        /// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId", required: true)]
         public string DrProtectionGroupId { get; set; } = null!;
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrProtectionGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+        /// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId", required: true)]
         public Input<string> DrProtectionGroupId { get; set; } = null!;
@@ -107,65 +107,69 @@ namespace Pulumi.Oci.DisasterRecovery
     {
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupAssociationResult> Associations;
         /// <summary>
-        /// The OCID of the compartment containing the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         public readonly int DisassociateTrigger;
         /// <summary>
-        /// The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
+        /// The display name of the DR protection group.  Example: `EBS PHX Group`
         /// </summary>
         public readonly string DisplayName;
         public readonly string DrProtectionGroupId;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the DR Protection Group's current state in more detail.
+        /// A message describing the DR protection group's current state in more detail.
         /// </summary>
         public readonly string LifeCycleDetails;
         /// <summary>
-        /// Information about an Object Storage log location for a DR Protection Group.
+        /// The current sub-state of the DR protection group.
+        /// </summary>
+        public readonly string LifecycleSubState;
+        /// <summary>
+        /// The details of an object storage log location for a DR protection group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupLogLocationResult> LogLocations;
         /// <summary>
-        /// A list of DR Protection Group members.
+        /// A list of DR protection group members.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberResult> Members;
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         public readonly string PeerId;
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         public readonly string PeerRegion;
         /// <summary>
-        /// The role of the DR Protection Group.
+        /// The role of the DR protection group.
         /// </summary>
         public readonly string Role;
         /// <summary>
-        /// The current state of the DR Protection Group.
+        /// The current state of the DR protection group.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+        /// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         public readonly string TimeUpdated;
 
@@ -188,6 +192,8 @@ namespace Pulumi.Oci.DisasterRecovery
             string id,
 
             string lifeCycleDetails,
+
+            string lifecycleSubState,
 
             ImmutableArray<Outputs.GetDrProtectionGroupLogLocationResult> logLocations,
 
@@ -216,6 +222,7 @@ namespace Pulumi.Oci.DisasterRecovery
             FreeformTags = freeformTags;
             Id = id;
             LifeCycleDetails = lifeCycleDetails;
+            LifecycleSubState = lifecycleSubState;
             LogLocations = logLocations;
             Members = members;
             PeerId = peerId;

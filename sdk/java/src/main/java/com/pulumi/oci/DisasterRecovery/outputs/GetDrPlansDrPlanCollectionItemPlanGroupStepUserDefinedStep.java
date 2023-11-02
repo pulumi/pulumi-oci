@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
     private String functionId;
@@ -22,7 +22,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
      */
     private String functionRegion;
     /**
-     * @return Information about an Object Storage script location for a user-defined step in a DR Plan.
+     * @return The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
     private List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations;
@@ -37,12 +37,12 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
      */
     private String runAsUser;
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the instance on which this script or command should be executed.
      * 
      */
     private String runOnInstanceId;
     /**
-     * @return The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+     * @return The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
     private String runOnInstanceRegion;
@@ -52,14 +52,14 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
      */
     private String scriptCommand;
     /**
-     * @return The type of the step.
+     * @return The type of the user-defined step.
      * 
      */
     private String stepType;
 
     private GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep() {}
     /**
-     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
     public String functionId() {
@@ -73,7 +73,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
         return this.functionRegion;
     }
     /**
-     * @return Information about an Object Storage script location for a user-defined step in a DR Plan.
+     * @return The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
     public List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations() {
@@ -94,14 +94,14 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
         return this.runAsUser;
     }
     /**
-     * @return The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the instance on which this script or command should be executed.
      * 
      */
     public String runOnInstanceId() {
         return this.runOnInstanceId;
     }
     /**
-     * @return The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+     * @return The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
     public String runOnInstanceRegion() {
@@ -115,7 +115,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
         return this.scriptCommand;
     }
     /**
-     * @return The type of the step.
+     * @return The type of the user-defined step.
      * 
      */
     public String stepType() {

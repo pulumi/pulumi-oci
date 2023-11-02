@@ -25,6 +25,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<Inputs.DiscoveryJobDiscoveryDetailsCredentialsArgs>? Credentials { get; set; }
 
         /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
+
+        /// <summary>
         /// Property Details
         /// </summary>
         [Input("properties", required: true)]

@@ -94,14 +94,14 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+     * (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+     * @return (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -345,7 +345,7 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
         }
 
         /**
-         * @param isEnabled (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+         * @param isEnabled (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
         }
 
         /**
-         * @param isEnabled (Updatable) Indicates if the target-alert policy association is enabled or disabled.
+         * @param isEnabled (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
          * 
          * @return builder
          * 

@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupMemberVnicMapping {
     /**
-     * @return A list of destination region&#39;s network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+     * @return A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
      * 
      */
     private List<String> destinationNsgIdLists;
     /**
-     * @return The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+     * @return The private IP address to be assigned as the VNIC&#39;s primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
      * 
      */
     private String destinationPrimaryPrivateIpAddress;
     /**
-     * @return The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+     * @return The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     private String destinationPrimaryPrivateIpHostnameLabel;
     /**
-     * @return The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
     private String destinationSubnetId;
     /**
-     * @return The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
      * 
      */
     private String sourceVnicId;
 
     private GetDrProtectionGroupMemberVnicMapping() {}
     /**
-     * @return A list of destination region&#39;s network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+     * @return A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
      * 
      */
     public List<String> destinationNsgIdLists() {
         return this.destinationNsgIdLists;
     }
     /**
-     * @return The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+     * @return The private IP address to be assigned as the VNIC&#39;s primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
      * 
      */
     public String destinationPrimaryPrivateIpAddress() {
         return this.destinationPrimaryPrivateIpAddress;
     }
     /**
-     * @return The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+     * @return The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     public String destinationPrimaryPrivateIpHostnameLabel() {
         return this.destinationPrimaryPrivateIpHostnameLabel;
     }
     /**
-     * @return The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
     public String destinationSubnetId() {
         return this.destinationSubnetId;
     }
     /**
-     * @return The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
      * 
      */
     public String sourceVnicId() {

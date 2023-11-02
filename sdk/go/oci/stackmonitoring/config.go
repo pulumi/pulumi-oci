@@ -42,6 +42,7 @@ import (
 //				ConfigType:    pulumi.Any(_var.Config_config_type),
 //				IsEnabled:     pulumi.Any(_var.Config_is_enabled),
 //				ResourceType:  pulumi.Any(_var.Config_resource_type),
+//				License:       pulumi.Any(_var.Config_license),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -81,9 +82,11 @@ type Config struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
-	// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+	// (Updatable) License edition.
+	License pulumi.StringOutput `pulumi:"license"`
+	// The type of resource to configure for automatic promotion.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -110,12 +113,6 @@ func NewConfig(ctx *pulumi.Context,
 	}
 	if args.ConfigType == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigType'")
-	}
-	if args.IsEnabled == nil {
-		return nil, errors.New("invalid value for required argument 'IsEnabled'")
-	}
-	if args.ResourceType == nil {
-		return nil, errors.New("invalid value for required argument 'ResourceType'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Config
@@ -150,9 +147,11 @@ type configState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+	// (Updatable) License edition.
+	License *string `pulumi:"license"`
+	// The type of resource to configure for automatic promotion.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,9 +177,11 @@ type ConfigState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolPtrInput
-	// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+	// (Updatable) License edition.
+	License pulumi.StringPtrInput
+	// The type of resource to configure for automatic promotion.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -210,13 +211,15 @@ type configArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
-	// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) License edition.
+	License *string `pulumi:"license"`
+	// The type of resource to configure for automatic promotion.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 }
 
 // The set of arguments for constructing a Config resource.
@@ -231,13 +234,15 @@ type ConfigArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
-	IsEnabled pulumi.BoolInput
-	// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+	IsEnabled pulumi.BoolPtrInput
+	// (Updatable) License edition.
+	License pulumi.StringPtrInput
+	// The type of resource to configure for automatic promotion.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceType pulumi.StringInput
+	ResourceType pulumi.StringPtrInput
 }
 
 func (ConfigArgs) ElementType() reflect.Type {
@@ -376,12 +381,17 @@ func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 func (o ConfigOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+// (Updatable) License edition.
+func (o ConfigOutput) License() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.License }).(pulumi.StringOutput)
+}
+
+// The type of resource to configure for automatic promotion.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -350,6 +350,15 @@ __all__ = [
     'GetManagedDatabasesUserSystemPrivilegesFilterResult',
     'GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionResult',
     'GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult',
+    'GetManagedMySqlDatabaseConfigurationDataFilterResult',
+    'GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionResult',
+    'GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemResult',
+    'GetManagedMySqlDatabaseSqlDataFilterResult',
+    'GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult',
+    'GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult',
+    'GetManagedMySqlDatabasesFilterResult',
+    'GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionResult',
+    'GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult',
 ]
 
 @pulumi.output_type
@@ -23235,5 +23244,772 @@ class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult
         A filter to return only resources that match the entire name.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseConfigurationDataFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of variable
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of variable
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemResult']):
+        """
+        :param Sequence['GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs'] items: List of ConfigurationDataSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemResult']:
+        """
+        List of ConfigurationDataSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 default_value: str,
+                 description: str,
+                 host_set: str,
+                 is_configurable: bool,
+                 is_dynamic: bool,
+                 is_init: bool,
+                 max_value: float,
+                 min_value: float,
+                 name: str,
+                 path: str,
+                 possible_values: str,
+                 source: str,
+                 supported_versions: str,
+                 time_set: str,
+                 type: str,
+                 user_set: str,
+                 value: str):
+        """
+        :param str default_value: default value of variable
+        :param str description: Description of the variable
+        :param str host_set: Host from where this value was set. Empty for MySql Database System
+        :param bool is_configurable: Whether this variable is configurable
+        :param bool is_dynamic: Whether variable can be set dynamically or not
+        :param bool is_init: whether variable is set at server startup
+        :param float max_value: Maximum value of variable
+        :param float min_value: Minimum value of variable
+        :param str name: The name of variable
+        :param str path: If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
+        :param str possible_values: Comma separated list of possible values for the variable in value:valueDescription format
+        :param str source: The source from which the variable was most recently set
+        :param str supported_versions: Comma separated list of MySql versions where this variable is supported
+        :param str time_set: Time when value was set
+        :param str type: type of variable
+        :param str user_set: User who set this value. Empty for MySql Database System
+        :param str value: The value of variable
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "host_set", host_set)
+        pulumi.set(__self__, "is_configurable", is_configurable)
+        pulumi.set(__self__, "is_dynamic", is_dynamic)
+        pulumi.set(__self__, "is_init", is_init)
+        pulumi.set(__self__, "max_value", max_value)
+        pulumi.set(__self__, "min_value", min_value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "possible_values", possible_values)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "supported_versions", supported_versions)
+        pulumi.set(__self__, "time_set", time_set)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "user_set", user_set)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        default value of variable
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="hostSet")
+    def host_set(self) -> str:
+        """
+        Host from where this value was set. Empty for MySql Database System
+        """
+        return pulumi.get(self, "host_set")
+
+    @property
+    @pulumi.getter(name="isConfigurable")
+    def is_configurable(self) -> bool:
+        """
+        Whether this variable is configurable
+        """
+        return pulumi.get(self, "is_configurable")
+
+    @property
+    @pulumi.getter(name="isDynamic")
+    def is_dynamic(self) -> bool:
+        """
+        Whether variable can be set dynamically or not
+        """
+        return pulumi.get(self, "is_dynamic")
+
+    @property
+    @pulumi.getter(name="isInit")
+    def is_init(self) -> bool:
+        """
+        whether variable is set at server startup
+        """
+        return pulumi.get(self, "is_init")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> float:
+        """
+        Maximum value of variable
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> float:
+        """
+        Minimum value of variable
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of variable
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter(name="possibleValues")
+    def possible_values(self) -> str:
+        """
+        Comma separated list of possible values for the variable in value:valueDescription format
+        """
+        return pulumi.get(self, "possible_values")
+
+    @property
+    @pulumi.getter
+    def source(self) -> str:
+        """
+        The source from which the variable was most recently set
+        """
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter(name="supportedVersions")
+    def supported_versions(self) -> str:
+        """
+        Comma separated list of MySql versions where this variable is supported
+        """
+        return pulumi.get(self, "supported_versions")
+
+    @property
+    @pulumi.getter(name="timeSet")
+    def time_set(self) -> str:
+        """
+        Time when value was set
+        """
+        return pulumi.get(self, "time_set")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        type of variable
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="userSet")
+    def user_set(self) -> str:
+        """
+        User who set this value. Empty for MySql Database System
+        """
+        return pulumi.get(self, "user_set")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of variable
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseSqlDataFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult']):
+        """
+        :param Sequence['GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs'] items: List of SQLDataSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult']:
+        """
+        List of SQLDataSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 avg_timer_wait: float,
+                 count_star: float,
+                 digest: str,
+                 digest_text: str,
+                 first_seen: str,
+                 last_seen: str,
+                 max_timer_wait: float,
+                 min_timer_wait: float,
+                 quantile95: float,
+                 quantile99: float,
+                 quantile999: float,
+                 schema_name: str,
+                 sum_created_temp_disk_tables: float,
+                 sum_created_temp_tables: float,
+                 sum_errors: float,
+                 sum_lock_time: float,
+                 sum_no_good_index_used: float,
+                 sum_no_index_used: float,
+                 sum_rows_affected: float,
+                 sum_rows_examined: float,
+                 sum_rows_sent: float,
+                 sum_select_full_join: float,
+                 sum_select_full_range_join: float,
+                 sum_select_range: float,
+                 sum_select_range_check: float,
+                 sum_select_scan: float,
+                 sum_sort_merge_passes: float,
+                 sum_sort_range: float,
+                 sum_sort_rows: float,
+                 sum_sort_scan: float,
+                 sum_timer_wait: float,
+                 sum_warnings: float):
+        """
+        :param float avg_timer_wait: The Average Execution Time.
+        :param float count_star: The Number Of Times The Query Has Been Executed.
+        :param str digest: The Digest Of The Normalized Query.
+        :param str digest_text: The Normalized Query.
+        :param str first_seen: When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+        :param str last_seen: When The Query Was Seen The Last Time.
+        :param float max_timer_wait: The Slowest The Query Has Been Executed.
+        :param float min_timer_wait: The Fastest The Query Has Been Executed.
+        :param float quantile95: The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
+        :param float quantile99: The 99th Percentile Of The Query Latency.
+        :param float quantile999: The 99.9th Percentile Of The Query Latency.
+        :param str schema_name: The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+        :param float sum_created_temp_disk_tables: The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+        :param float sum_created_temp_tables: The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+        :param float sum_errors: The Total Number Of Errors That Have Been Encountered Executing The Query.
+        :param float sum_lock_time: The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+        :param float sum_no_good_index_used: The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+        :param float sum_no_index_used: The Total Number Of Times No Index Was Used To Execute The Query.
+        :param float sum_rows_affected: The Total Number Of Rows That Have Been Modified By The Query.
+        :param float sum_rows_examined: The Total Number Of Rows That Have Been Examined By The Query.
+        :param float sum_rows_sent: The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+        :param float sum_select_full_join: The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+        :param float sum_select_full_range_join: The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+        :param float sum_select_range: The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+        :param float sum_select_range_check: The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+        :param float sum_select_scan: The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+        :param float sum_sort_merge_passes: The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+        :param float sum_sort_range: The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+        :param float sum_sort_rows: The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+        :param float sum_sort_scan: The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+        :param float sum_timer_wait: The Total Amount Of Time That Has Been Spent Executing The Query.
+        :param float sum_warnings: The Total Number Of Warnings That Have Been Encountered Executing The Query.
+        """
+        pulumi.set(__self__, "avg_timer_wait", avg_timer_wait)
+        pulumi.set(__self__, "count_star", count_star)
+        pulumi.set(__self__, "digest", digest)
+        pulumi.set(__self__, "digest_text", digest_text)
+        pulumi.set(__self__, "first_seen", first_seen)
+        pulumi.set(__self__, "last_seen", last_seen)
+        pulumi.set(__self__, "max_timer_wait", max_timer_wait)
+        pulumi.set(__self__, "min_timer_wait", min_timer_wait)
+        pulumi.set(__self__, "quantile95", quantile95)
+        pulumi.set(__self__, "quantile99", quantile99)
+        pulumi.set(__self__, "quantile999", quantile999)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "sum_created_temp_disk_tables", sum_created_temp_disk_tables)
+        pulumi.set(__self__, "sum_created_temp_tables", sum_created_temp_tables)
+        pulumi.set(__self__, "sum_errors", sum_errors)
+        pulumi.set(__self__, "sum_lock_time", sum_lock_time)
+        pulumi.set(__self__, "sum_no_good_index_used", sum_no_good_index_used)
+        pulumi.set(__self__, "sum_no_index_used", sum_no_index_used)
+        pulumi.set(__self__, "sum_rows_affected", sum_rows_affected)
+        pulumi.set(__self__, "sum_rows_examined", sum_rows_examined)
+        pulumi.set(__self__, "sum_rows_sent", sum_rows_sent)
+        pulumi.set(__self__, "sum_select_full_join", sum_select_full_join)
+        pulumi.set(__self__, "sum_select_full_range_join", sum_select_full_range_join)
+        pulumi.set(__self__, "sum_select_range", sum_select_range)
+        pulumi.set(__self__, "sum_select_range_check", sum_select_range_check)
+        pulumi.set(__self__, "sum_select_scan", sum_select_scan)
+        pulumi.set(__self__, "sum_sort_merge_passes", sum_sort_merge_passes)
+        pulumi.set(__self__, "sum_sort_range", sum_sort_range)
+        pulumi.set(__self__, "sum_sort_rows", sum_sort_rows)
+        pulumi.set(__self__, "sum_sort_scan", sum_sort_scan)
+        pulumi.set(__self__, "sum_timer_wait", sum_timer_wait)
+        pulumi.set(__self__, "sum_warnings", sum_warnings)
+
+    @property
+    @pulumi.getter(name="avgTimerWait")
+    def avg_timer_wait(self) -> float:
+        """
+        The Average Execution Time.
+        """
+        return pulumi.get(self, "avg_timer_wait")
+
+    @property
+    @pulumi.getter(name="countStar")
+    def count_star(self) -> float:
+        """
+        The Number Of Times The Query Has Been Executed.
+        """
+        return pulumi.get(self, "count_star")
+
+    @property
+    @pulumi.getter
+    def digest(self) -> str:
+        """
+        The Digest Of The Normalized Query.
+        """
+        return pulumi.get(self, "digest")
+
+    @property
+    @pulumi.getter(name="digestText")
+    def digest_text(self) -> str:
+        """
+        The Normalized Query.
+        """
+        return pulumi.get(self, "digest_text")
+
+    @property
+    @pulumi.getter(name="firstSeen")
+    def first_seen(self) -> str:
+        """
+        When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+        """
+        return pulumi.get(self, "first_seen")
+
+    @property
+    @pulumi.getter(name="lastSeen")
+    def last_seen(self) -> str:
+        """
+        When The Query Was Seen The Last Time.
+        """
+        return pulumi.get(self, "last_seen")
+
+    @property
+    @pulumi.getter(name="maxTimerWait")
+    def max_timer_wait(self) -> float:
+        """
+        The Slowest The Query Has Been Executed.
+        """
+        return pulumi.get(self, "max_timer_wait")
+
+    @property
+    @pulumi.getter(name="minTimerWait")
+    def min_timer_wait(self) -> float:
+        """
+        The Fastest The Query Has Been Executed.
+        """
+        return pulumi.get(self, "min_timer_wait")
+
+    @property
+    @pulumi.getter
+    def quantile95(self) -> float:
+        """
+        The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
+        """
+        return pulumi.get(self, "quantile95")
+
+    @property
+    @pulumi.getter
+    def quantile99(self) -> float:
+        """
+        The 99th Percentile Of The Query Latency.
+        """
+        return pulumi.get(self, "quantile99")
+
+    @property
+    @pulumi.getter
+    def quantile999(self) -> float:
+        """
+        The 99.9th Percentile Of The Query Latency.
+        """
+        return pulumi.get(self, "quantile999")
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="sumCreatedTempDiskTables")
+    def sum_created_temp_disk_tables(self) -> float:
+        """
+        The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+        """
+        return pulumi.get(self, "sum_created_temp_disk_tables")
+
+    @property
+    @pulumi.getter(name="sumCreatedTempTables")
+    def sum_created_temp_tables(self) -> float:
+        """
+        The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+        """
+        return pulumi.get(self, "sum_created_temp_tables")
+
+    @property
+    @pulumi.getter(name="sumErrors")
+    def sum_errors(self) -> float:
+        """
+        The Total Number Of Errors That Have Been Encountered Executing The Query.
+        """
+        return pulumi.get(self, "sum_errors")
+
+    @property
+    @pulumi.getter(name="sumLockTime")
+    def sum_lock_time(self) -> float:
+        """
+        The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+        """
+        return pulumi.get(self, "sum_lock_time")
+
+    @property
+    @pulumi.getter(name="sumNoGoodIndexUsed")
+    def sum_no_good_index_used(self) -> float:
+        """
+        The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+        """
+        return pulumi.get(self, "sum_no_good_index_used")
+
+    @property
+    @pulumi.getter(name="sumNoIndexUsed")
+    def sum_no_index_used(self) -> float:
+        """
+        The Total Number Of Times No Index Was Used To Execute The Query.
+        """
+        return pulumi.get(self, "sum_no_index_used")
+
+    @property
+    @pulumi.getter(name="sumRowsAffected")
+    def sum_rows_affected(self) -> float:
+        """
+        The Total Number Of Rows That Have Been Modified By The Query.
+        """
+        return pulumi.get(self, "sum_rows_affected")
+
+    @property
+    @pulumi.getter(name="sumRowsExamined")
+    def sum_rows_examined(self) -> float:
+        """
+        The Total Number Of Rows That Have Been Examined By The Query.
+        """
+        return pulumi.get(self, "sum_rows_examined")
+
+    @property
+    @pulumi.getter(name="sumRowsSent")
+    def sum_rows_sent(self) -> float:
+        """
+        The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+        """
+        return pulumi.get(self, "sum_rows_sent")
+
+    @property
+    @pulumi.getter(name="sumSelectFullJoin")
+    def sum_select_full_join(self) -> float:
+        """
+        The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+        """
+        return pulumi.get(self, "sum_select_full_join")
+
+    @property
+    @pulumi.getter(name="sumSelectFullRangeJoin")
+    def sum_select_full_range_join(self) -> float:
+        """
+        The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+        """
+        return pulumi.get(self, "sum_select_full_range_join")
+
+    @property
+    @pulumi.getter(name="sumSelectRange")
+    def sum_select_range(self) -> float:
+        """
+        The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+        """
+        return pulumi.get(self, "sum_select_range")
+
+    @property
+    @pulumi.getter(name="sumSelectRangeCheck")
+    def sum_select_range_check(self) -> float:
+        """
+        The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+        """
+        return pulumi.get(self, "sum_select_range_check")
+
+    @property
+    @pulumi.getter(name="sumSelectScan")
+    def sum_select_scan(self) -> float:
+        """
+        The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+        """
+        return pulumi.get(self, "sum_select_scan")
+
+    @property
+    @pulumi.getter(name="sumSortMergePasses")
+    def sum_sort_merge_passes(self) -> float:
+        """
+        The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+        """
+        return pulumi.get(self, "sum_sort_merge_passes")
+
+    @property
+    @pulumi.getter(name="sumSortRange")
+    def sum_sort_range(self) -> float:
+        """
+        The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+        """
+        return pulumi.get(self, "sum_sort_range")
+
+    @property
+    @pulumi.getter(name="sumSortRows")
+    def sum_sort_rows(self) -> float:
+        """
+        The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+        """
+        return pulumi.get(self, "sum_sort_rows")
+
+    @property
+    @pulumi.getter(name="sumSortScan")
+    def sum_sort_scan(self) -> float:
+        """
+        The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+        """
+        return pulumi.get(self, "sum_sort_scan")
+
+    @property
+    @pulumi.getter(name="sumTimerWait")
+    def sum_timer_wait(self) -> float:
+        """
+        The Total Amount Of Time That Has Been Spent Executing The Query.
+        """
+        return pulumi.get(self, "sum_timer_wait")
+
+    @property
+    @pulumi.getter(name="sumWarnings")
+    def sum_warnings(self) -> float:
+        """
+        The Total Number Of Warnings That Have Been Encountered Executing The Query.
+        """
+        return pulumi.get(self, "sum_warnings")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the Managed MySQL Database.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the Managed MySQL Database.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 db_name: str,
+                 db_version: str,
+                 id: str,
+                 name: str,
+                 time_created: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str db_name: MySQL Database Name
+        :param str db_version: MySQL Database Version
+        :param str id: The OCID of the Managed MySql Database.
+        :param str name: The name of the Managed MySQL Database.
+        :param str time_created: The date and time the Managed Database was created.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_name", db_name)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> str:
+        """
+        MySQL Database Name
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> str:
+        """
+        MySQL Database Version
+        """
+        return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the Managed MySql Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the Managed MySQL Database.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Managed Database was created.
+        """
+        return pulumi.get(self, "time_created")
 
 

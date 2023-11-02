@@ -12,6 +12,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
 
     public sealed class MonitoredResourcesSearchItemGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -59,6 +65,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
+
+        /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
 
         /// <summary>
         /// A filter to return resources with matching management agent id.

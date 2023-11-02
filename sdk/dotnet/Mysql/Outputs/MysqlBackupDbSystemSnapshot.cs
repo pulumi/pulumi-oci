@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? DataStorageSizeInGb;
         /// <summary>
+        /// Whether to enable monitoring via the Database Management service.
+        /// </summary>
+        public readonly string? DatabaseManagement;
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
@@ -126,6 +130,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int? dataStorageSizeInGb,
 
+            string? databaseManagement,
+
             ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies,
@@ -167,6 +173,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             ConfigurationId = configurationId;
             CrashRecovery = crashRecovery;
             DataStorageSizeInGb = dataStorageSizeInGb;
+            DatabaseManagement = databaseManagement;
             DefinedTags = definedTags;
             DeletionPolicies = deletionPolicies;
             Description = description;

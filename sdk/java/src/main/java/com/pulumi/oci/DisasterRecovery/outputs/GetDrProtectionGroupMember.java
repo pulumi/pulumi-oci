@@ -4,6 +4,10 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBackendSetMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBlockVolumeOperation;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberExportMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSystemOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVnicMapping;
 import java.lang.Boolean;
 import java.lang.String;
@@ -13,32 +17,72 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupMember {
     /**
-     * @return The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return A list of backend set mappings that are used to transfer or update backends during DR.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings;
+    /**
+     * @return Operations performed on a list of block volumes used on the non-movable compute instance.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
+    /**
+     * @return The availability domain of the destination mount target. Example: `BBTh:region-AD`
+     * 
+     */
+    private String destinationAvailabilityDomain;
+    /**
+     * @return The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
      * 
      */
     private String destinationCapacityReservationId;
     /**
-     * @return The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     private String destinationCompartmentId;
     /**
-     * @return The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
      * 
      */
     private String destinationDedicatedVmHostId;
     /**
-     * @return A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+     * @return The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+     * 
+     */
+    private String destinationLoadBalancerId;
+    /**
+     * @return The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+     * 
+     */
+    private String destinationNetworkLoadBalancerId;
+    /**
+     * @return A list of mappings between the primary region file system export and destination region mount target.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberExportMapping> exportMappings;
+    /**
+     * @return Operations performed on a list of file systems used on the non-movable compute instance.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations;
+    /**
+     * @return A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
      * 
      */
     private Boolean isMovable;
     /**
-     * @return A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * @return A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
      * 
      */
     private Boolean isRetainFaultDomain;
     /**
-     * @return The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+     * 
+     */
+    private Boolean isStartStopEnabled;
+    /**
+     * @return The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
     private String memberId;
@@ -48,7 +92,7 @@ public final class GetDrProtectionGroupMember {
      */
     private String memberType;
     /**
-     * @return The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+     * @return The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     private String passwordVaultSecretId;
@@ -65,42 +109,98 @@ public final class GetDrProtectionGroupMember {
 
     private GetDrProtectionGroupMember() {}
     /**
-     * @return The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return A list of backend set mappings that are used to transfer or update backends during DR.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings() {
+        return this.backendSetMappings;
+    }
+    /**
+     * @return Operations performed on a list of block volumes used on the non-movable compute instance.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations() {
+        return this.blockVolumeOperations;
+    }
+    /**
+     * @return The availability domain of the destination mount target. Example: `BBTh:region-AD`
+     * 
+     */
+    public String destinationAvailabilityDomain() {
+        return this.destinationAvailabilityDomain;
+    }
+    /**
+     * @return The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
      * 
      */
     public String destinationCapacityReservationId() {
         return this.destinationCapacityReservationId;
     }
     /**
-     * @return The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
     public String destinationCompartmentId() {
         return this.destinationCompartmentId;
     }
     /**
-     * @return The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
      * 
      */
     public String destinationDedicatedVmHostId() {
         return this.destinationDedicatedVmHostId;
     }
     /**
-     * @return A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+     * @return The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+     * 
+     */
+    public String destinationLoadBalancerId() {
+        return this.destinationLoadBalancerId;
+    }
+    /**
+     * @return The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+     * 
+     */
+    public String destinationNetworkLoadBalancerId() {
+        return this.destinationNetworkLoadBalancerId;
+    }
+    /**
+     * @return A list of mappings between the primary region file system export and destination region mount target.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberExportMapping> exportMappings() {
+        return this.exportMappings;
+    }
+    /**
+     * @return Operations performed on a list of file systems used on the non-movable compute instance.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations() {
+        return this.fileSystemOperations;
+    }
+    /**
+     * @return A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
      * 
      */
     public Boolean isMovable() {
         return this.isMovable;
     }
     /**
-     * @return A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+     * @return A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
      * 
      */
     public Boolean isRetainFaultDomain() {
         return this.isRetainFaultDomain;
     }
     /**
-     * @return The OCID of the member.  Example: `ocid1.instance.oc1.phx.&amp;lt;unique_id&amp;gt;`
+     * @return A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+     * 
+     */
+    public Boolean isStartStopEnabled() {
+        return this.isStartStopEnabled;
+    }
+    /**
+     * @return The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
     public String memberId() {
@@ -114,7 +214,7 @@ public final class GetDrProtectionGroupMember {
         return this.memberType;
     }
     /**
-     * @return The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+     * @return The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
      * 
      */
     public String passwordVaultSecretId() {
@@ -144,11 +244,19 @@ public final class GetDrProtectionGroupMember {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings;
+        private List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
+        private String destinationAvailabilityDomain;
         private String destinationCapacityReservationId;
         private String destinationCompartmentId;
         private String destinationDedicatedVmHostId;
+        private String destinationLoadBalancerId;
+        private String destinationNetworkLoadBalancerId;
+        private List<GetDrProtectionGroupMemberExportMapping> exportMappings;
+        private List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations;
         private Boolean isMovable;
         private Boolean isRetainFaultDomain;
+        private Boolean isStartStopEnabled;
         private String memberId;
         private String memberType;
         private String passwordVaultSecretId;
@@ -157,11 +265,19 @@ public final class GetDrProtectionGroupMember {
         public Builder() {}
         public Builder(GetDrProtectionGroupMember defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backendSetMappings = defaults.backendSetMappings;
+    	      this.blockVolumeOperations = defaults.blockVolumeOperations;
+    	      this.destinationAvailabilityDomain = defaults.destinationAvailabilityDomain;
     	      this.destinationCapacityReservationId = defaults.destinationCapacityReservationId;
     	      this.destinationCompartmentId = defaults.destinationCompartmentId;
     	      this.destinationDedicatedVmHostId = defaults.destinationDedicatedVmHostId;
+    	      this.destinationLoadBalancerId = defaults.destinationLoadBalancerId;
+    	      this.destinationNetworkLoadBalancerId = defaults.destinationNetworkLoadBalancerId;
+    	      this.exportMappings = defaults.exportMappings;
+    	      this.fileSystemOperations = defaults.fileSystemOperations;
     	      this.isMovable = defaults.isMovable;
     	      this.isRetainFaultDomain = defaults.isRetainFaultDomain;
+    	      this.isStartStopEnabled = defaults.isStartStopEnabled;
     	      this.memberId = defaults.memberId;
     	      this.memberType = defaults.memberType;
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
@@ -169,6 +285,27 @@ public final class GetDrProtectionGroupMember {
     	      this.vnicMappings = defaults.vnicMappings;
         }
 
+        @CustomType.Setter
+        public Builder backendSetMappings(List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings) {
+            this.backendSetMappings = Objects.requireNonNull(backendSetMappings);
+            return this;
+        }
+        public Builder backendSetMappings(GetDrProtectionGroupMemberBackendSetMapping... backendSetMappings) {
+            return backendSetMappings(List.of(backendSetMappings));
+        }
+        @CustomType.Setter
+        public Builder blockVolumeOperations(List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations) {
+            this.blockVolumeOperations = Objects.requireNonNull(blockVolumeOperations);
+            return this;
+        }
+        public Builder blockVolumeOperations(GetDrProtectionGroupMemberBlockVolumeOperation... blockVolumeOperations) {
+            return blockVolumeOperations(List.of(blockVolumeOperations));
+        }
+        @CustomType.Setter
+        public Builder destinationAvailabilityDomain(String destinationAvailabilityDomain) {
+            this.destinationAvailabilityDomain = Objects.requireNonNull(destinationAvailabilityDomain);
+            return this;
+        }
         @CustomType.Setter
         public Builder destinationCapacityReservationId(String destinationCapacityReservationId) {
             this.destinationCapacityReservationId = Objects.requireNonNull(destinationCapacityReservationId);
@@ -185,6 +322,32 @@ public final class GetDrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder destinationLoadBalancerId(String destinationLoadBalancerId) {
+            this.destinationLoadBalancerId = Objects.requireNonNull(destinationLoadBalancerId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder destinationNetworkLoadBalancerId(String destinationNetworkLoadBalancerId) {
+            this.destinationNetworkLoadBalancerId = Objects.requireNonNull(destinationNetworkLoadBalancerId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exportMappings(List<GetDrProtectionGroupMemberExportMapping> exportMappings) {
+            this.exportMappings = Objects.requireNonNull(exportMappings);
+            return this;
+        }
+        public Builder exportMappings(GetDrProtectionGroupMemberExportMapping... exportMappings) {
+            return exportMappings(List.of(exportMappings));
+        }
+        @CustomType.Setter
+        public Builder fileSystemOperations(List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations) {
+            this.fileSystemOperations = Objects.requireNonNull(fileSystemOperations);
+            return this;
+        }
+        public Builder fileSystemOperations(GetDrProtectionGroupMemberFileSystemOperation... fileSystemOperations) {
+            return fileSystemOperations(List.of(fileSystemOperations));
+        }
+        @CustomType.Setter
         public Builder isMovable(Boolean isMovable) {
             this.isMovable = Objects.requireNonNull(isMovable);
             return this;
@@ -192,6 +355,11 @@ public final class GetDrProtectionGroupMember {
         @CustomType.Setter
         public Builder isRetainFaultDomain(Boolean isRetainFaultDomain) {
             this.isRetainFaultDomain = Objects.requireNonNull(isRetainFaultDomain);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isStartStopEnabled(Boolean isStartStopEnabled) {
+            this.isStartStopEnabled = Objects.requireNonNull(isStartStopEnabled);
             return this;
         }
         @CustomType.Setter
@@ -227,11 +395,19 @@ public final class GetDrProtectionGroupMember {
         }
         public GetDrProtectionGroupMember build() {
             final var o = new GetDrProtectionGroupMember();
+            o.backendSetMappings = backendSetMappings;
+            o.blockVolumeOperations = blockVolumeOperations;
+            o.destinationAvailabilityDomain = destinationAvailabilityDomain;
             o.destinationCapacityReservationId = destinationCapacityReservationId;
             o.destinationCompartmentId = destinationCompartmentId;
             o.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
+            o.destinationLoadBalancerId = destinationLoadBalancerId;
+            o.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
+            o.exportMappings = exportMappings;
+            o.fileSystemOperations = fileSystemOperations;
             o.isMovable = isMovable;
             o.isRetainFaultDomain = isRetainFaultDomain;
+            o.isStartStopEnabled = isStartStopEnabled;
             o.memberId = memberId;
             o.memberType = memberType;
             o.passwordVaultSecretId = passwordVaultSecretId;

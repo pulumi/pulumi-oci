@@ -15,7 +15,7 @@ import (
 
 // This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
 //
-// Creates a new DR Plan of the specified DR Plan type.
+// Create a DR plan of the specified DR plan type.
 //
 // ## Example Usage
 //
@@ -63,33 +63,33 @@ import (
 type DrPlan struct {
 	pulumi.CustomResourceState
 
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringOutput `pulumi:"drProtectionGroupId"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// A message describing the DR Plan's current state in more detail.
+	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails pulumi.StringOutput `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId pulumi.StringOutput `pulumi:"peerDrProtectionGroupId"`
-	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
-	// The list of groups in this DR Plan.
+	// The list of groups in this DR plan.
 	PlanGroups DrPlanPlanGroupArrayOutput `pulumi:"planGroups"`
-	// The current state of the DR Plan.
+	// The current state of the DR plan.
 	State pulumi.StringOutput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,33 +135,33 @@ func GetDrPlan(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DrPlan resources.
 type drPlanState struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId *string `pulumi:"drProtectionGroupId"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A message describing the DR Plan's current state in more detail.
+	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
-	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
-	// The list of groups in this DR Plan.
+	// The list of groups in this DR plan.
 	PlanGroups []DrPlanPlanGroup `pulumi:"planGroups"`
-	// The current state of the DR Plan.
+	// The current state of the DR plan.
 	State *string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,33 +169,33 @@ type drPlanState struct {
 }
 
 type DrPlanState struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// A message describing the DR Plan's current state in more detail.
+	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails pulumi.StringPtrInput
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId pulumi.StringPtrInput
-	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput
-	// The list of groups in this DR Plan.
+	// The list of groups in this DR plan.
 	PlanGroups DrPlanPlanGroupArrayInput
-	// The current state of the DR Plan.
+	// The current state of the DR plan.
 	State pulumi.StringPtrInput
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringPtrInput
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -207,15 +207,15 @@ func (DrPlanState) ElementType() reflect.Type {
 }
 
 type drPlanArgs struct {
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName string `pulumi:"displayName"`
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -224,15 +224,15 @@ type drPlanArgs struct {
 
 // The set of arguments for constructing a DrPlan resource.
 type DrPlanArgs struct {
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringInput
-	// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -350,72 +350,72 @@ func (o DrPlanOutput) ToOutput(ctx context.Context) pulumix.Output[*DrPlan] {
 	}
 }
 
-// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o DrPlanOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 func (o DrPlanOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 func (o DrPlanOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o DrPlanOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 func (o DrPlanOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A message describing the DR Plan's current state in more detail.
+// A message describing the DR plan's current state in more detail.
 func (o DrPlanOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o DrPlanOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 func (o DrPlanOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The list of groups in this DR Plan.
+// The list of groups in this DR plan.
 func (o DrPlanOutput) PlanGroups() DrPlanPlanGroupArrayOutput {
 	return o.ApplyT(func(v *DrPlan) DrPlanPlanGroupArrayOutput { return v.PlanGroups }).(DrPlanPlanGroupArrayOutput)
 }
 
-// The current state of the DR Plan.
+// The current state of the DR plan.
 func (o DrPlanOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DrPlanOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrPlanOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrPlanOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The type of DR Plan to be created.
+// The type of DR plan to be created.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

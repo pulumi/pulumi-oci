@@ -56,7 +56,7 @@ import (
 type SetSecurityAssessmentBaseline struct {
 	pulumi.CustomResourceState
 
-	// List of security assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the security assessments that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayOutput `pulumi:"assessmentIds"`
 	// The OCID of the security assessment.
 	//
@@ -98,7 +98,7 @@ func GetSetSecurityAssessmentBaseline(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SetSecurityAssessmentBaseline resources.
 type setSecurityAssessmentBaselineState struct {
-	// List of security assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the security assessments that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the security assessment.
 	//
@@ -108,7 +108,7 @@ type setSecurityAssessmentBaselineState struct {
 }
 
 type SetSecurityAssessmentBaselineState struct {
-	// List of security assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the security assessments that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the security assessment.
 	//
@@ -122,7 +122,7 @@ func (SetSecurityAssessmentBaselineState) ElementType() reflect.Type {
 }
 
 type setSecurityAssessmentBaselineArgs struct {
-	// List of security assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the security assessments that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the security assessment.
 	//
@@ -133,7 +133,7 @@ type setSecurityAssessmentBaselineArgs struct {
 
 // The set of arguments for constructing a SetSecurityAssessmentBaseline resource.
 type SetSecurityAssessmentBaselineArgs struct {
-	// List of security assessment OCIDs that need to be updated while setting the baseline.
+	// The list of OCIDs for the security assessments that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the security assessment.
 	//
@@ -253,7 +253,7 @@ func (o SetSecurityAssessmentBaselineOutput) ToOutput(ctx context.Context) pulum
 	}
 }
 
-// List of security assessment OCIDs that need to be updated while setting the baseline.
+// The list of OCIDs for the security assessments that need to be updated while setting the baseline.
 func (o SetSecurityAssessmentBaselineOutput) AssessmentIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SetSecurityAssessmentBaseline) pulumi.StringArrayOutput { return v.AssessmentIds }).(pulumi.StringArrayOutput)
 }

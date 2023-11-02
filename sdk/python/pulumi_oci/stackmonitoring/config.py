@@ -16,35 +16,41 @@ class ConfigArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  config_type: pulumi.Input[str],
-                 is_enabled: pulumi.Input[bool],
-                 resource_type: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
+                 resource_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Config resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
         :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if automatic promotion is enabled, false if it is not enabled.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "resource_type", resource_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -69,34 +75,6 @@ class ConfigArgs:
     @config_type.setter
     def config_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "config_type", value)
-
-    @property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) True if automatic promotion is enabled, false if it is not enabled.
-        """
-        return pulumi.get(self, "is_enabled")
-
-    @is_enabled.setter
-    def is_enabled(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "is_enabled", value)
-
-    @property
-    @pulumi.getter(name="resourceType")
-    def resource_type(self) -> pulumi.Input[str]:
-        """
-        The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "resource_type")
-
-    @resource_type.setter
-    def resource_type(self, value: pulumi.Input[str]):
-        pulumi.set(self, "resource_type", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -134,6 +112,46 @@ class ConfigArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) License edition.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of resource to configure for automatic promotion.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type", value)
+
 
 @pulumi.input_type
 class _ConfigState:
@@ -144,6 +162,7 @@ class _ConfigState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -156,8 +175,9 @@ class _ConfigState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if automatic promotion is enabled, false if it is not enabled.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
                
                
                ** IMPORTANT **
@@ -179,6 +199,8 @@ class _ConfigState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
         if state is not None:
@@ -254,7 +276,7 @@ class _ConfigState:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+        (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -263,10 +285,22 @@ class _ConfigState:
         pulumi.set(self, "is_enabled", value)
 
     @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) License edition.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
+
+    @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        The type of resource to configure for automatic promotion.
 
 
         ** IMPORTANT **
@@ -338,6 +372,7 @@ class Config(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -362,6 +397,7 @@ class Config(pulumi.CustomResource):
             config_type=var["config_config_type"],
             is_enabled=var["config_is_enabled"],
             resource_type=var["config_resource_type"],
+            license=var["config_license"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -386,8 +422,9 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if automatic promotion is enabled, false if it is not enabled.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
                
                
                ** IMPORTANT **
@@ -421,6 +458,7 @@ class Config(pulumi.CustomResource):
             config_type=var["config_config_type"],
             is_enabled=var["config_is_enabled"],
             resource_type=var["config_resource_type"],
+            license=var["config_license"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -459,6 +497,7 @@ class Config(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -478,11 +517,8 @@ class Config(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if is_enabled is None and not opts.urn:
-                raise TypeError("Missing required property 'is_enabled'")
             __props__.__dict__["is_enabled"] = is_enabled
-            if resource_type is None and not opts.urn:
-                raise TypeError("Missing required property 'resource_type'")
+            __props__.__dict__["license"] = license
             __props__.__dict__["resource_type"] = resource_type
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -504,6 +540,7 @@ class Config(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
+            license: Optional[pulumi.Input[str]] = None,
             resource_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -521,8 +558,9 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if automatic promotion is enabled, false if it is not enabled.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
+        :param pulumi.Input[str] license: (Updatable) License edition.
+        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
                
                
                ** IMPORTANT **
@@ -542,6 +580,7 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_enabled"] = is_enabled
+        __props__.__dict__["license"] = license
         __props__.__dict__["resource_type"] = resource_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -593,15 +632,23 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+        (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter
+    def license(self) -> pulumi.Output[str]:
+        """
+        (Updatable) License edition.
+        """
+        return pulumi.get(self, "license")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Output[str]:
         """
-        The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        The type of resource to configure for automatic promotion.
 
 
         ** IMPORTANT **

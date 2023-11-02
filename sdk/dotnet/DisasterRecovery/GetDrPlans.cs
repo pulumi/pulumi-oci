@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Gets a summary list of all DR Plans for a DR Protection Group.
+        /// Get a summary list of all DR plans for a DR protection group.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
         /// 
-        /// Gets a summary list of all DR Plans for a DR Protection Group.
+        /// Get a summary list of all DR plans for a DR protection group.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -84,25 +84,25 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlansArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+        /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+        /// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         [Input("drPlanId")]
         public string? DrPlanId { get; set; }
 
         /// <summary>
-        /// The DR Plan type.
+        /// The DR plan type.
         /// </summary>
         [Input("drPlanType")]
         public string? DrPlanType { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+        /// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId", required: true)]
         public string DrProtectionGroupId { get; set; } = null!;
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// A filter to return only DR Plans that match the given lifecycleState.
+        /// A filter to return only DR plans that match the given lifecycle state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -130,25 +130,25 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlansInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+        /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid`
+        /// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         [Input("drPlanId")]
         public Input<string>? DrPlanId { get; set; }
 
         /// <summary>
-        /// The DR Plan type.
+        /// The DR plan type.
         /// </summary>
         [Input("drPlanType")]
         public Input<string>? DrPlanType { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+        /// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("drProtectionGroupId", required: true)]
         public Input<string> DrProtectionGroupId { get; set; } = null!;
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// A filter to return only DR Plans that match the given lifecycleState.
+        /// A filter to return only DR plans that match the given lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.DisasterRecovery
     public sealed class GetDrPlansResult
     {
         /// <summary>
-        /// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+        /// The display name of the group.  Example: `DATABASE_SWITCHOVER`
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public readonly string? DrPlanId;
         public readonly string? DrPlanType;
         /// <summary>
-        /// The OCID of the DR Protection Group with which this DR Plan is associated.  Example: `ocid1.drplan.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         public readonly string DrProtectionGroupId;
         public readonly ImmutableArray<Outputs.GetDrPlansFilterResult> Filters;
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The current state of the DR Plan.
+        /// The current state of the DR plan.
         /// </summary>
         public readonly string? State;
 

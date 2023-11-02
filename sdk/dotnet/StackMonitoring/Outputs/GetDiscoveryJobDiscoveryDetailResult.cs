@@ -22,6 +22,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailCredentialResult> Credentials;
         /// <summary>
+        /// License edition of the monitored resource.
+        /// </summary>
+        public readonly string License;
+        /// <summary>
         /// Property Details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailPropertyResult> Properties;
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailCredentialResult> credentials,
 
+            string license,
+
             ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailPropertyResult> properties,
 
             string resourceName,
@@ -54,6 +60,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         {
             AgentId = agentId;
             Credentials = credentials;
+            License = license;
             Properties = properties;
             ResourceName = resourceName;
             ResourceType = resourceType;

@@ -25,6 +25,11 @@ public final class DiscoveryJobDiscoveryDetails {
      */
     private @Nullable DiscoveryJobDiscoveryDetailsCredentials credentials;
     /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    private @Nullable String license;
+    /**
      * @return Property Details
      * 
      */
@@ -59,6 +64,13 @@ public final class DiscoveryJobDiscoveryDetails {
      */
     public Optional<DiscoveryJobDiscoveryDetailsCredentials> credentials() {
         return Optional.ofNullable(this.credentials);
+    }
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Optional<String> license() {
+        return Optional.ofNullable(this.license);
     }
     /**
      * @return Property Details
@@ -100,6 +112,7 @@ public final class DiscoveryJobDiscoveryDetails {
     public static final class Builder {
         private String agentId;
         private @Nullable DiscoveryJobDiscoveryDetailsCredentials credentials;
+        private @Nullable String license;
         private DiscoveryJobDiscoveryDetailsProperties properties;
         private String resourceName;
         private String resourceType;
@@ -109,6 +122,7 @@ public final class DiscoveryJobDiscoveryDetails {
     	      Objects.requireNonNull(defaults);
     	      this.agentId = defaults.agentId;
     	      this.credentials = defaults.credentials;
+    	      this.license = defaults.license;
     	      this.properties = defaults.properties;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
@@ -123,6 +137,11 @@ public final class DiscoveryJobDiscoveryDetails {
         @CustomType.Setter
         public Builder credentials(@Nullable DiscoveryJobDiscoveryDetailsCredentials credentials) {
             this.credentials = credentials;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder license(@Nullable String license) {
+            this.license = license;
             return this;
         }
         @CustomType.Setter
@@ -149,6 +168,7 @@ public final class DiscoveryJobDiscoveryDetails {
             final var o = new DiscoveryJobDiscoveryDetails();
             o.agentId = agentId;
             o.credentials = credentials;
+            o.license = license;
             o.properties = properties;
             o.resourceName = resourceName;
             o.resourceType = resourceType;

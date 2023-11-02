@@ -16,14 +16,14 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
     public static final DrProtectionGroupAssociationArgs Empty = new DrProtectionGroupAssociationArgs();
 
     /**
-     * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Import(name="peerId")
     private @Nullable Output<String> peerId;
 
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> peerId() {
@@ -31,14 +31,14 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
     }
 
     /**
-     * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Import(name="peerRegion")
     private @Nullable Output<String> peerRegion;
 
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public Optional<Output<String>> peerRegion() {
@@ -46,14 +46,14 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
     }
 
     /**
-     * The role of this DR Protection Group.
+     * The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     @Import(name="role", required=true)
     private Output<String> role;
 
     /**
-     * @return The role of this DR Protection Group.
+     * @return The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     public Output<String> role() {
@@ -87,7 +87,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param peerId The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param peerId The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+         * @param peerId The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+         * @param peerRegion The region of the peer DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param peerRegion The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+         * @param peerRegion The region of the peer DR protection group.  Example: `us-ashburn-1`
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param role The role of this DR Protection Group.
+         * @param role The role of the DR protection group.  Example: `STANDBY`
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DrProtectionGroupAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param role The role of this DR Protection Group.
+         * @param role The role of the DR protection group.  Example: `STANDBY`
          * 
          * @return builder
          * 

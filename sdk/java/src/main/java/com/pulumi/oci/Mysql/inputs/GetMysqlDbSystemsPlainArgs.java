@@ -48,6 +48,21 @@ public final class GetMysqlDbSystemsPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * Filter DB Systems by their Database Management configuration.
+     * 
+     */
+    @Import(name="databaseManagements")
+    private @Nullable List<String> databaseManagements;
+
+    /**
+     * @return Filter DB Systems by their Database Management configuration.
+     * 
+     */
+    public Optional<List<String>> databaseManagements() {
+        return Optional.ofNullable(this.databaseManagements);
+    }
+
+    /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -134,6 +149,7 @@ public final class GetMysqlDbSystemsPlainArgs extends com.pulumi.resources.Invok
     private GetMysqlDbSystemsPlainArgs(GetMysqlDbSystemsPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.configurationId = $.configurationId;
+        this.databaseManagements = $.databaseManagements;
         this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -180,6 +196,27 @@ public final class GetMysqlDbSystemsPlainArgs extends com.pulumi.resources.Invok
         public Builder configurationId(@Nullable String configurationId) {
             $.configurationId = configurationId;
             return this;
+        }
+
+        /**
+         * @param databaseManagements Filter DB Systems by their Database Management configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagements(@Nullable List<String> databaseManagements) {
+            $.databaseManagements = databaseManagements;
+            return this;
+        }
+
+        /**
+         * @param databaseManagements Filter DB Systems by their Database Management configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseManagements(String... databaseManagements) {
+            return databaseManagements(List.of(databaseManagements));
         }
 
         /**

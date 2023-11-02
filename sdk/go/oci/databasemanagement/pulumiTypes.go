@@ -56132,6 +56132,1635 @@ func (o GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArra
 	}).(GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemOutput)
 }
 
+type GetManagedMySqlDatabaseConfigurationDataFilter struct {
+	// The name of variable
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedMySqlDatabaseConfigurationDataFilterInput is an input type that accepts GetManagedMySqlDatabaseConfigurationDataFilterArgs and GetManagedMySqlDatabaseConfigurationDataFilterOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseConfigurationDataFilterInput` via:
+//
+//	GetManagedMySqlDatabaseConfigurationDataFilterArgs{...}
+type GetManagedMySqlDatabaseConfigurationDataFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseConfigurationDataFilterOutput() GetManagedMySqlDatabaseConfigurationDataFilterOutput
+	ToGetManagedMySqlDatabaseConfigurationDataFilterOutputWithContext(context.Context) GetManagedMySqlDatabaseConfigurationDataFilterOutput
+}
+
+type GetManagedMySqlDatabaseConfigurationDataFilterArgs struct {
+	// The name of variable
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedMySqlDatabaseConfigurationDataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataFilter)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataFilterArgs) ToGetManagedMySqlDatabaseConfigurationDataFilterOutput() GetManagedMySqlDatabaseConfigurationDataFilterOutput {
+	return i.ToGetManagedMySqlDatabaseConfigurationDataFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataFilterArgs) ToGetManagedMySqlDatabaseConfigurationDataFilterOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseConfigurationDataFilterOutput)
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataFilter] {
+	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataFilter]{
+		OutputState: i.ToGetManagedMySqlDatabaseConfigurationDataFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabaseConfigurationDataFilterArrayInput is an input type that accepts GetManagedMySqlDatabaseConfigurationDataFilterArray and GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseConfigurationDataFilterArrayInput` via:
+//
+//	GetManagedMySqlDatabaseConfigurationDataFilterArray{ GetManagedMySqlDatabaseConfigurationDataFilterArgs{...} }
+type GetManagedMySqlDatabaseConfigurationDataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutput() GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput
+	ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutputWithContext(context.Context) GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput
+}
+
+type GetManagedMySqlDatabaseConfigurationDataFilterArray []GetManagedMySqlDatabaseConfigurationDataFilterInput
+
+func (GetManagedMySqlDatabaseConfigurationDataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseConfigurationDataFilter)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataFilterArray) ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutput() GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput {
+	return i.ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataFilterArray) ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput)
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataFilter] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataFilter]{
+		OutputState: i.ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabaseConfigurationDataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseConfigurationDataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataFilter)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterOutput) ToGetManagedMySqlDatabaseConfigurationDataFilterOutput() GetManagedMySqlDatabaseConfigurationDataFilterOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterOutput) ToGetManagedMySqlDatabaseConfigurationDataFilterOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataFilterOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataFilter] {
+	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The name of variable
+func (o GetManagedMySqlDatabaseConfigurationDataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseConfigurationDataFilter)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput) ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutput() GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput) ToGetManagedMySqlDatabaseConfigurationDataFilterArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataFilter] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabaseConfigurationDataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabaseConfigurationDataFilter {
+		return vs[0].([]GetManagedMySqlDatabaseConfigurationDataFilter)[vs[1].(int)]
+	}).(GetManagedMySqlDatabaseConfigurationDataFilterOutput)
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection struct {
+	// List of ConfigurationDataSummary.
+	Items []GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem `pulumi:"items"`
+}
+
+// GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionInput is an input type that accepts GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs and GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionInput` via:
+//
+//	GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs{...}
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutputWithContext(context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs struct {
+	// List of ConfigurationDataSummary.
+	Items GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput {
+	return i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput)
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection] {
+	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection]{
+		OutputState: i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayInput is an input type that accepts GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray and GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayInput` via:
+//
+//	GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray{ GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs{...} }
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutputWithContext(context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray []GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionInput
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput {
+	return i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput)
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection]{
+		OutputState: i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection] {
+	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of ConfigurationDataSummary.
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput) Items() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection) []GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem {
+		return v.Items
+	}).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput)
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection {
+		return vs[0].([]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection)[vs[1].(int)]
+	}).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput)
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem struct {
+	// default value of variable
+	DefaultValue string `pulumi:"defaultValue"`
+	// Description of the variable
+	Description string `pulumi:"description"`
+	// Host from where this value was set. Empty for MySql Database System
+	HostSet string `pulumi:"hostSet"`
+	// Whether this variable is configurable
+	IsConfigurable bool `pulumi:"isConfigurable"`
+	// Whether variable can be set dynamically or not
+	IsDynamic bool `pulumi:"isDynamic"`
+	// whether variable is set at server startup
+	IsInit bool `pulumi:"isInit"`
+	// Maximum value of variable
+	MaxValue float64 `pulumi:"maxValue"`
+	// Minimum value of variable
+	MinValue float64 `pulumi:"minValue"`
+	// The name of variable
+	Name string `pulumi:"name"`
+	// If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
+	Path string `pulumi:"path"`
+	// Comma separated list of possible values for the variable in value:valueDescription format
+	PossibleValues string `pulumi:"possibleValues"`
+	// The source from which the variable was most recently set
+	Source string `pulumi:"source"`
+	// Comma separated list of MySql versions where this variable is supported
+	SupportedVersions string `pulumi:"supportedVersions"`
+	// Time when value was set
+	TimeSet string `pulumi:"timeSet"`
+	// type of variable
+	Type string `pulumi:"type"`
+	// User who set this value. Empty for MySql Database System
+	UserSet string `pulumi:"userSet"`
+	// The value of variable
+	Value string `pulumi:"value"`
+}
+
+// GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemInput is an input type that accepts GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs and GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemInput` via:
+//
+//	GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs{...}
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutputWithContext(context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs struct {
+	// default value of variable
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// Description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// Host from where this value was set. Empty for MySql Database System
+	HostSet pulumi.StringInput `pulumi:"hostSet"`
+	// Whether this variable is configurable
+	IsConfigurable pulumi.BoolInput `pulumi:"isConfigurable"`
+	// Whether variable can be set dynamically or not
+	IsDynamic pulumi.BoolInput `pulumi:"isDynamic"`
+	// whether variable is set at server startup
+	IsInit pulumi.BoolInput `pulumi:"isInit"`
+	// Maximum value of variable
+	MaxValue pulumi.Float64Input `pulumi:"maxValue"`
+	// Minimum value of variable
+	MinValue pulumi.Float64Input `pulumi:"minValue"`
+	// The name of variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
+	Path pulumi.StringInput `pulumi:"path"`
+	// Comma separated list of possible values for the variable in value:valueDescription format
+	PossibleValues pulumi.StringInput `pulumi:"possibleValues"`
+	// The source from which the variable was most recently set
+	Source pulumi.StringInput `pulumi:"source"`
+	// Comma separated list of MySql versions where this variable is supported
+	SupportedVersions pulumi.StringInput `pulumi:"supportedVersions"`
+	// Time when value was set
+	TimeSet pulumi.StringInput `pulumi:"timeSet"`
+	// type of variable
+	Type pulumi.StringInput `pulumi:"type"`
+	// User who set this value. Empty for MySql Database System
+	UserSet pulumi.StringInput `pulumi:"userSet"`
+	// The value of variable
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput {
+	return i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput)
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem] {
+	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem]{
+		OutputState: i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayInput is an input type that accepts GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray and GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayInput` via:
+//
+//	GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray{ GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs{...} }
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput
+	ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutputWithContext(context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray []GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemInput
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput {
+	return i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput)
+}
+
+func (i GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem]{
+		OutputState: i.ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem] {
+	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// default value of variable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// Description of the variable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Host from where this value was set. Empty for MySql Database System
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) HostSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.HostSet
+	}).(pulumi.StringOutput)
+}
+
+// Whether this variable is configurable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) IsConfigurable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) bool {
+		return v.IsConfigurable
+	}).(pulumi.BoolOutput)
+}
+
+// Whether variable can be set dynamically or not
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) IsDynamic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) bool {
+		return v.IsDynamic
+	}).(pulumi.BoolOutput)
+}
+
+// whether variable is set at server startup
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) IsInit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) bool {
+		return v.IsInit
+	}).(pulumi.BoolOutput)
+}
+
+// Maximum value of variable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) MaxValue() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) float64 {
+		return v.MaxValue
+	}).(pulumi.Float64Output)
+}
+
+// Minimum value of variable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) MinValue() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) float64 {
+		return v.MinValue
+	}).(pulumi.Float64Output)
+}
+
+// The name of variable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.Path
+	}).(pulumi.StringOutput)
+}
+
+// Comma separated list of possible values for the variable in value:valueDescription format
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) PossibleValues() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.PossibleValues
+	}).(pulumi.StringOutput)
+}
+
+// The source from which the variable was most recently set
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// Comma separated list of MySql versions where this variable is supported
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) SupportedVersions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.SupportedVersions
+	}).(pulumi.StringOutput)
+}
+
+// Time when value was set
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) TimeSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.TimeSet
+	}).(pulumi.StringOutput)
+}
+
+// type of variable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// User who set this value. Empty for MySql Database System
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) UserSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.UserSet
+	}).(pulumi.StringOutput)
+}
+
+// The value of variable
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput() GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput) ToGetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem {
+		return vs[0].([]GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem)[vs[1].(int)]
+	}).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput)
+}
+
+type GetManagedMySqlDatabaseSqlDataFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedMySqlDatabaseSqlDataFilterInput is an input type that accepts GetManagedMySqlDatabaseSqlDataFilterArgs and GetManagedMySqlDatabaseSqlDataFilterOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseSqlDataFilterInput` via:
+//
+//	GetManagedMySqlDatabaseSqlDataFilterArgs{...}
+type GetManagedMySqlDatabaseSqlDataFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseSqlDataFilterOutput() GetManagedMySqlDatabaseSqlDataFilterOutput
+	ToGetManagedMySqlDatabaseSqlDataFilterOutputWithContext(context.Context) GetManagedMySqlDatabaseSqlDataFilterOutput
+}
+
+type GetManagedMySqlDatabaseSqlDataFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedMySqlDatabaseSqlDataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataFilter)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseSqlDataFilterArgs) ToGetManagedMySqlDatabaseSqlDataFilterOutput() GetManagedMySqlDatabaseSqlDataFilterOutput {
+	return i.ToGetManagedMySqlDatabaseSqlDataFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseSqlDataFilterArgs) ToGetManagedMySqlDatabaseSqlDataFilterOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseSqlDataFilterOutput)
+}
+
+func (i GetManagedMySqlDatabaseSqlDataFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseSqlDataFilter] {
+	return pulumix.Output[GetManagedMySqlDatabaseSqlDataFilter]{
+		OutputState: i.ToGetManagedMySqlDatabaseSqlDataFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabaseSqlDataFilterArrayInput is an input type that accepts GetManagedMySqlDatabaseSqlDataFilterArray and GetManagedMySqlDatabaseSqlDataFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseSqlDataFilterArrayInput` via:
+//
+//	GetManagedMySqlDatabaseSqlDataFilterArray{ GetManagedMySqlDatabaseSqlDataFilterArgs{...} }
+type GetManagedMySqlDatabaseSqlDataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseSqlDataFilterArrayOutput() GetManagedMySqlDatabaseSqlDataFilterArrayOutput
+	ToGetManagedMySqlDatabaseSqlDataFilterArrayOutputWithContext(context.Context) GetManagedMySqlDatabaseSqlDataFilterArrayOutput
+}
+
+type GetManagedMySqlDatabaseSqlDataFilterArray []GetManagedMySqlDatabaseSqlDataFilterInput
+
+func (GetManagedMySqlDatabaseSqlDataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseSqlDataFilter)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseSqlDataFilterArray) ToGetManagedMySqlDatabaseSqlDataFilterArrayOutput() GetManagedMySqlDatabaseSqlDataFilterArrayOutput {
+	return i.ToGetManagedMySqlDatabaseSqlDataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseSqlDataFilterArray) ToGetManagedMySqlDatabaseSqlDataFilterArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseSqlDataFilterArrayOutput)
+}
+
+func (i GetManagedMySqlDatabaseSqlDataFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseSqlDataFilter] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseSqlDataFilter]{
+		OutputState: i.ToGetManagedMySqlDatabaseSqlDataFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabaseSqlDataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseSqlDataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataFilter)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterOutput) ToGetManagedMySqlDatabaseSqlDataFilterOutput() GetManagedMySqlDatabaseSqlDataFilterOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterOutput) ToGetManagedMySqlDatabaseSqlDataFilterOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataFilterOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseSqlDataFilter] {
+	return pulumix.Output[GetManagedMySqlDatabaseSqlDataFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedMySqlDatabaseSqlDataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseSqlDataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseSqlDataFilter)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterArrayOutput) ToGetManagedMySqlDatabaseSqlDataFilterArrayOutput() GetManagedMySqlDatabaseSqlDataFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterArrayOutput) ToGetManagedMySqlDatabaseSqlDataFilterArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseSqlDataFilter] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseSqlDataFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabaseSqlDataFilterArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabaseSqlDataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabaseSqlDataFilter {
+		return vs[0].([]GetManagedMySqlDatabaseSqlDataFilter)[vs[1].(int)]
+	}).(GetManagedMySqlDatabaseSqlDataFilterOutput)
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollection struct {
+	// List of SQLDataSummary.
+	Items []GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem `pulumi:"items"`
+}
+
+// GetManagedMySqlDatabaseSqlDataMySqlDataCollectionInput is an input type that accepts GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs and GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseSqlDataMySqlDataCollectionInput` via:
+//
+//	GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs{...}
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutputWithContext(context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs struct {
+	// List of SQLDataSummary.
+	Items GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollection)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput {
+	return i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput)
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollection] {
+	return pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollection]{
+		OutputState: i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayInput is an input type that accepts GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray and GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayInput` via:
+//
+//	GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray{ GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs{...} }
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutputWithContext(context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray []GetManagedMySqlDatabaseSqlDataMySqlDataCollectionInput
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseSqlDataMySqlDataCollection)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput {
+	return i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput)
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollection] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollection]{
+		OutputState: i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollection)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollection] {
+	return pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of SQLDataSummary.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput) Items() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollection) []GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
+		return v.Items
+	}).(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput)
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseSqlDataMySqlDataCollection)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollection] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabaseSqlDataMySqlDataCollection {
+		return vs[0].([]GetManagedMySqlDatabaseSqlDataMySqlDataCollection)[vs[1].(int)]
+	}).(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput)
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem struct {
+	// The Average Execution Time.
+	AvgTimerWait float64 `pulumi:"avgTimerWait"`
+	// The Number Of Times The Query Has Been Executed.
+	CountStar float64 `pulumi:"countStar"`
+	// The Digest Of The Normalized Query.
+	Digest string `pulumi:"digest"`
+	// The Normalized Query.
+	DigestText string `pulumi:"digestText"`
+	// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+	FirstSeen string `pulumi:"firstSeen"`
+	// When The Query Was Seen The Last Time.
+	LastSeen string `pulumi:"lastSeen"`
+	// The Slowest The Query Has Been Executed.
+	MaxTimerWait float64 `pulumi:"maxTimerWait"`
+	// The Fastest The Query Has Been Executed.
+	MinTimerWait float64 `pulumi:"minTimerWait"`
+	// The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
+	Quantile95 float64 `pulumi:"quantile95"`
+	// The 99th Percentile Of The Query Latency.
+	Quantile99 float64 `pulumi:"quantile99"`
+	// The 99.9th Percentile Of The Query Latency.
+	Quantile999 float64 `pulumi:"quantile999"`
+	// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+	SchemaName string `pulumi:"schemaName"`
+	// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+	SumCreatedTempDiskTables float64 `pulumi:"sumCreatedTempDiskTables"`
+	// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+	SumCreatedTempTables float64 `pulumi:"sumCreatedTempTables"`
+	// The Total Number Of Errors That Have Been Encountered Executing The Query.
+	SumErrors float64 `pulumi:"sumErrors"`
+	// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+	SumLockTime float64 `pulumi:"sumLockTime"`
+	// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+	SumNoGoodIndexUsed float64 `pulumi:"sumNoGoodIndexUsed"`
+	// The Total Number Of Times No Index Was Used To Execute The Query.
+	SumNoIndexUsed float64 `pulumi:"sumNoIndexUsed"`
+	// The Total Number Of Rows That Have Been Modified By The Query.
+	SumRowsAffected float64 `pulumi:"sumRowsAffected"`
+	// The Total Number Of Rows That Have Been Examined By The Query.
+	SumRowsExamined float64 `pulumi:"sumRowsExamined"`
+	// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+	SumRowsSent float64 `pulumi:"sumRowsSent"`
+	// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+	SumSelectFullJoin float64 `pulumi:"sumSelectFullJoin"`
+	// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+	SumSelectFullRangeJoin float64 `pulumi:"sumSelectFullRangeJoin"`
+	// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+	SumSelectRange float64 `pulumi:"sumSelectRange"`
+	// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+	SumSelectRangeCheck float64 `pulumi:"sumSelectRangeCheck"`
+	// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+	SumSelectScan float64 `pulumi:"sumSelectScan"`
+	// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+	SumSortMergePasses float64 `pulumi:"sumSortMergePasses"`
+	// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+	SumSortRange float64 `pulumi:"sumSortRange"`
+	// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+	SumSortRows float64 `pulumi:"sumSortRows"`
+	// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+	SumSortScan float64 `pulumi:"sumSortScan"`
+	// The Total Amount Of Time That Has Been Spent Executing The Query.
+	SumTimerWait float64 `pulumi:"sumTimerWait"`
+	// The Total Number Of Warnings That Have Been Encountered Executing The Query.
+	SumWarnings float64 `pulumi:"sumWarnings"`
+}
+
+// GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemInput is an input type that accepts GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs and GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemInput` via:
+//
+//	GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs{...}
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutputWithContext(context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs struct {
+	// The Average Execution Time.
+	AvgTimerWait pulumi.Float64Input `pulumi:"avgTimerWait"`
+	// The Number Of Times The Query Has Been Executed.
+	CountStar pulumi.Float64Input `pulumi:"countStar"`
+	// The Digest Of The Normalized Query.
+	Digest pulumi.StringInput `pulumi:"digest"`
+	// The Normalized Query.
+	DigestText pulumi.StringInput `pulumi:"digestText"`
+	// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+	FirstSeen pulumi.StringInput `pulumi:"firstSeen"`
+	// When The Query Was Seen The Last Time.
+	LastSeen pulumi.StringInput `pulumi:"lastSeen"`
+	// The Slowest The Query Has Been Executed.
+	MaxTimerWait pulumi.Float64Input `pulumi:"maxTimerWait"`
+	// The Fastest The Query Has Been Executed.
+	MinTimerWait pulumi.Float64Input `pulumi:"minTimerWait"`
+	// The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
+	Quantile95 pulumi.Float64Input `pulumi:"quantile95"`
+	// The 99th Percentile Of The Query Latency.
+	Quantile99 pulumi.Float64Input `pulumi:"quantile99"`
+	// The 99.9th Percentile Of The Query Latency.
+	Quantile999 pulumi.Float64Input `pulumi:"quantile999"`
+	// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+	SumCreatedTempDiskTables pulumi.Float64Input `pulumi:"sumCreatedTempDiskTables"`
+	// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+	SumCreatedTempTables pulumi.Float64Input `pulumi:"sumCreatedTempTables"`
+	// The Total Number Of Errors That Have Been Encountered Executing The Query.
+	SumErrors pulumi.Float64Input `pulumi:"sumErrors"`
+	// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+	SumLockTime pulumi.Float64Input `pulumi:"sumLockTime"`
+	// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+	SumNoGoodIndexUsed pulumi.Float64Input `pulumi:"sumNoGoodIndexUsed"`
+	// The Total Number Of Times No Index Was Used To Execute The Query.
+	SumNoIndexUsed pulumi.Float64Input `pulumi:"sumNoIndexUsed"`
+	// The Total Number Of Rows That Have Been Modified By The Query.
+	SumRowsAffected pulumi.Float64Input `pulumi:"sumRowsAffected"`
+	// The Total Number Of Rows That Have Been Examined By The Query.
+	SumRowsExamined pulumi.Float64Input `pulumi:"sumRowsExamined"`
+	// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+	SumRowsSent pulumi.Float64Input `pulumi:"sumRowsSent"`
+	// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+	SumSelectFullJoin pulumi.Float64Input `pulumi:"sumSelectFullJoin"`
+	// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+	SumSelectFullRangeJoin pulumi.Float64Input `pulumi:"sumSelectFullRangeJoin"`
+	// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+	SumSelectRange pulumi.Float64Input `pulumi:"sumSelectRange"`
+	// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+	SumSelectRangeCheck pulumi.Float64Input `pulumi:"sumSelectRangeCheck"`
+	// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+	SumSelectScan pulumi.Float64Input `pulumi:"sumSelectScan"`
+	// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+	SumSortMergePasses pulumi.Float64Input `pulumi:"sumSortMergePasses"`
+	// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+	SumSortRange pulumi.Float64Input `pulumi:"sumSortRange"`
+	// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+	SumSortRows pulumi.Float64Input `pulumi:"sumSortRows"`
+	// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+	SumSortScan pulumi.Float64Input `pulumi:"sumSortScan"`
+	// The Total Amount Of Time That Has Been Spent Executing The Query.
+	SumTimerWait pulumi.Float64Input `pulumi:"sumTimerWait"`
+	// The Total Number Of Warnings That Have Been Encountered Executing The Query.
+	SumWarnings pulumi.Float64Input `pulumi:"sumWarnings"`
+}
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput {
+	return i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput)
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem] {
+	return pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem]{
+		OutputState: i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayInput is an input type that accepts GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray and GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayInput` via:
+//
+//	GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray{ GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs{...} }
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput
+	ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutputWithContext(context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray []GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemInput
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput {
+	return i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput)
+}
+
+func (i GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem]{
+		OutputState: i.ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem] {
+	return pulumix.Output[GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The Average Execution Time.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) AvgTimerWait() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.AvgTimerWait }).(pulumi.Float64Output)
+}
+
+// The Number Of Times The Query Has Been Executed.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) CountStar() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.CountStar }).(pulumi.Float64Output)
+}
+
+// The Digest Of The Normalized Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Digest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.Digest }).(pulumi.StringOutput)
+}
+
+// The Normalized Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) DigestText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.DigestText }).(pulumi.StringOutput)
+}
+
+// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) FirstSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.FirstSeen }).(pulumi.StringOutput)
+}
+
+// When The Query Was Seen The Last Time.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) LastSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.LastSeen }).(pulumi.StringOutput)
+}
+
+// The Slowest The Query Has Been Executed.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) MaxTimerWait() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.MaxTimerWait }).(pulumi.Float64Output)
+}
+
+// The Fastest The Query Has Been Executed.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) MinTimerWait() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.MinTimerWait }).(pulumi.Float64Output)
+}
+
+// The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Quantile95() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.Quantile95 }).(pulumi.Float64Output)
+}
+
+// The 99th Percentile Of The Query Latency.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Quantile99() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.Quantile99 }).(pulumi.Float64Output)
+}
+
+// The 99.9th Percentile Of The Query Latency.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Quantile999() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.Quantile999 }).(pulumi.Float64Output)
+}
+
+// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
+}
+
+// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumCreatedTempDiskTables() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 {
+		return v.SumCreatedTempDiskTables
+	}).(pulumi.Float64Output)
+}
+
+// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumCreatedTempTables() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumCreatedTempTables }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Errors That Have Been Encountered Executing The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumErrors() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumErrors }).(pulumi.Float64Output)
+}
+
+// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumLockTime() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumLockTime }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumNoGoodIndexUsed() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumNoGoodIndexUsed }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Times No Index Was Used To Execute The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumNoIndexUsed() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumNoIndexUsed }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Rows That Have Been Modified By The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumRowsAffected() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumRowsAffected }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Rows That Have Been Examined By The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumRowsExamined() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumRowsExamined }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumRowsSent() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumRowsSent }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectFullJoin() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectFullJoin }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectFullRangeJoin() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectFullRangeJoin }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectRange() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectRange }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectRangeCheck() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectRangeCheck }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectScan() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectScan }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortMergePasses() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortMergePasses }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortRange() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortRange }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortRows() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortRows }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortScan() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortScan }).(pulumi.Float64Output)
+}
+
+// The Total Amount Of Time That Has Been Spent Executing The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumTimerWait() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumTimerWait }).(pulumi.Float64Output)
+}
+
+// The Total Number Of Warnings That Have Been Encountered Executing The Query.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumWarnings() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumWarnings }).(pulumi.Float64Output)
+}
+
+type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput) ToGetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem] {
+	return pulumix.Output[[]GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
+		return vs[0].([]GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem)[vs[1].(int)]
+	}).(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput)
+}
+
+type GetManagedMySqlDatabasesFilter struct {
+	// The name of the Managed MySQL Database.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedMySqlDatabasesFilterInput is an input type that accepts GetManagedMySqlDatabasesFilterArgs and GetManagedMySqlDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesFilterInput` via:
+//
+//	GetManagedMySqlDatabasesFilterArgs{...}
+type GetManagedMySqlDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesFilterOutput() GetManagedMySqlDatabasesFilterOutput
+	ToGetManagedMySqlDatabasesFilterOutputWithContext(context.Context) GetManagedMySqlDatabasesFilterOutput
+}
+
+type GetManagedMySqlDatabasesFilterArgs struct {
+	// The name of the Managed MySQL Database.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedMySqlDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesFilterArgs) ToGetManagedMySqlDatabasesFilterOutput() GetManagedMySqlDatabasesFilterOutput {
+	return i.ToGetManagedMySqlDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesFilterArgs) ToGetManagedMySqlDatabasesFilterOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesFilterOutput)
+}
+
+func (i GetManagedMySqlDatabasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabasesFilter] {
+	return pulumix.Output[GetManagedMySqlDatabasesFilter]{
+		OutputState: i.ToGetManagedMySqlDatabasesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabasesFilterArrayInput is an input type that accepts GetManagedMySqlDatabasesFilterArray and GetManagedMySqlDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesFilterArrayInput` via:
+//
+//	GetManagedMySqlDatabasesFilterArray{ GetManagedMySqlDatabasesFilterArgs{...} }
+type GetManagedMySqlDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesFilterArrayOutput() GetManagedMySqlDatabasesFilterArrayOutput
+	ToGetManagedMySqlDatabasesFilterArrayOutputWithContext(context.Context) GetManagedMySqlDatabasesFilterArrayOutput
+}
+
+type GetManagedMySqlDatabasesFilterArray []GetManagedMySqlDatabasesFilterInput
+
+func (GetManagedMySqlDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesFilterArray) ToGetManagedMySqlDatabasesFilterArrayOutput() GetManagedMySqlDatabasesFilterArrayOutput {
+	return i.ToGetManagedMySqlDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesFilterArray) ToGetManagedMySqlDatabasesFilterArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesFilterArrayOutput)
+}
+
+func (i GetManagedMySqlDatabasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabasesFilter] {
+	return pulumix.Output[[]GetManagedMySqlDatabasesFilter]{
+		OutputState: i.ToGetManagedMySqlDatabasesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesFilterOutput) ToGetManagedMySqlDatabasesFilterOutput() GetManagedMySqlDatabasesFilterOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesFilterOutput) ToGetManagedMySqlDatabasesFilterOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesFilterOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabasesFilter] {
+	return pulumix.Output[GetManagedMySqlDatabasesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The name of the Managed MySQL Database.
+func (o GetManagedMySqlDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedMySqlDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedMySqlDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedMySqlDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesFilterArrayOutput) ToGetManagedMySqlDatabasesFilterArrayOutput() GetManagedMySqlDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesFilterArrayOutput) ToGetManagedMySqlDatabasesFilterArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabasesFilter] {
+	return pulumix.Output[[]GetManagedMySqlDatabasesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabasesFilter {
+		return vs[0].([]GetManagedMySqlDatabasesFilter)[vs[1].(int)]
+	}).(GetManagedMySqlDatabasesFilterOutput)
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollection struct {
+	Items []GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem `pulumi:"items"`
+}
+
+// GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionInput is an input type that accepts GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs and GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionInput` via:
+//
+//	GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs{...}
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutputWithContext(context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs struct {
+	Items GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollection)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput {
+	return i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput)
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollection] {
+	return pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollection]{
+		OutputState: i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayInput is an input type that accepts GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray and GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayInput` via:
+//
+//	GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray{ GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs{...} }
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutputWithContext(context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray []GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionInput
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollection)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput {
+	return i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput)
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollection] {
+	return pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollection]{
+		OutputState: i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollection)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollection] {
+	return pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput) Items() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollection) []GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
+		return v.Items
+	}).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput)
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollection)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollection] {
+	return pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabasesManagedMySqlDatabaseCollection {
+		return vs[0].([]GetManagedMySqlDatabasesManagedMySqlDatabaseCollection)[vs[1].(int)]
+	}).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput)
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// MySQL Database Name
+	DbName string `pulumi:"dbName"`
+	// MySQL Database Version
+	DbVersion string `pulumi:"dbVersion"`
+	// The OCID of the Managed MySql Database.
+	Id string `pulumi:"id"`
+	// The name of the Managed MySQL Database.
+	Name string `pulumi:"name"`
+	// The date and time the Managed Database was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput is an input type that accepts GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs and GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput` via:
+//
+//	GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs{...}
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutputWithContext(context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// MySQL Database Name
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// MySQL Database Version
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// The OCID of the Managed MySql Database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The name of the Managed MySQL Database.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The date and time the Managed Database was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput {
+	return i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput)
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem] {
+	return pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem]{
+		OutputState: i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayInput is an input type that accepts GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray and GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayInput` via:
+//
+//	GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray{ GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs{...} }
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutputWithContext(context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray []GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput {
+	return i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput)
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem] {
+	return pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem]{
+		OutputState: i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem] {
+	return pulumix.Output[GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// MySQL Database Name
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// MySQL Database Version
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The OCID of the Managed MySql Database.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The name of the Managed MySQL Database.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The date and time the Managed Database was created.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem] {
+	return pulumix.Output[[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
+		return vs[0].([]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem)[vs[1].(int)]
+	}).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalAsmServicedDatabaseInput)(nil)).Elem(), ExternalAsmServicedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalAsmServicedDatabaseArrayInput)(nil)).Elem(), ExternalAsmServicedDatabaseArray{})
@@ -56811,6 +58440,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArrayInput)(nil)).Elem(), GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemInput)(nil)).Elem(), GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataFilterInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataFilterArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataFilterInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataFilterArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollectionInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesFilterInput)(nil)).Elem(), GetManagedMySqlDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesFilterArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray{})
 	pulumi.RegisterOutputType(ExternalAsmServicedDatabaseOutput{})
 	pulumi.RegisterOutputType(ExternalAsmServicedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(ExternalClusterNetworkConfigurationOutput{})
@@ -57489,4 +59136,22 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput{})
 }

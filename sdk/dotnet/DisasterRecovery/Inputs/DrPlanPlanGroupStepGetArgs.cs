@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrPlanPlanGroupStepGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+        /// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -25,13 +25,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? ErrorMode { get; set; }
 
         /// <summary>
-        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+        /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         /// </summary>
         [Input("memberId")]
         public Input<string>? MemberId { get; set; }
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// The type of DR Plan to be created. 
+        /// The type of DR plan to be created. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<Inputs.DrPlanPlanGroupStepUserDefinedStepGetArgs>? _userDefinedSteps;
 
         /// <summary>
-        /// The details for a user-defined step in a DR Plan.
+        /// The details for a user-defined step in a DR plan.
         /// </summary>
         public InputList<Inputs.DrPlanPlanGroupStepUserDefinedStepGetArgs> UserDefinedSteps
         {

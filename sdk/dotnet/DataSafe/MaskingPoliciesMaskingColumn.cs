@@ -125,7 +125,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> DataType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+        /// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
         /// </summary>
         [Output("isMaskingEnabled")]
         public Output<bool> IsMaskingEnabled { get; private set; } = null!;
@@ -259,7 +259,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string> ColumnName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+        /// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
         /// </summary>
         [Input("isMaskingEnabled")]
         public Input<bool>? IsMaskingEnabled { get; set; }
@@ -349,7 +349,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? DataType { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+        /// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
         /// </summary>
         [Input("isMaskingEnabled")]
         public Input<bool>? IsMaskingEnabled { get; set; }

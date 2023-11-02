@@ -13,22 +13,22 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution {
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     private String displayName;
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     private Integer executionDurationInSec;
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     private String groupId;
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     private List<GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation> logLocations;
@@ -38,55 +38,55 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
      */
     private String status;
     /**
-     * @return Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     private String statusDetails;
     /**
-     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
      * 
      */
     private String stepId;
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeEnded;
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     private String timeStarted;
     /**
-     * @return The plan group type.
+     * @return The group type.  Example: `BUILT_IN`
      * 
      */
     private String type;
 
     private GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution() {}
     /**
-     * @return A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+     * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The total duration in seconds taken to complete step execution.  Example: `35`
+     * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
     public Integer executionDurationInSec() {
         return this.executionDurationInSec;
     }
     /**
-     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
     public String groupId() {
         return this.groupId;
     }
     /**
-     * @return Information about an Object Storage log location for a DR Protection Group.
+     * @return The details of an object storage log location for a DR protection group.
      * 
      */
     public List<GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation> logLocations() {
@@ -100,35 +100,35 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
         return this.status;
     }
     /**
-     * @return Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+     * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
     public String statusDetails() {
         return this.statusDetails;
     }
     /**
-     * @return The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&amp;lt;unique_id&amp;gt;`
+     * @return The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
      * 
      */
     public String stepId() {
         return this.stepId;
     }
     /**
-     * @return The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeEnded() {
         return this.timeEnded;
     }
     /**
-     * @return The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+     * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     public String timeStarted() {
         return this.timeStarted;
     }
     /**
-     * @return The plan group type.
+     * @return The group type.  Example: `BUILT_IN`
      * 
      */
     public String type() {

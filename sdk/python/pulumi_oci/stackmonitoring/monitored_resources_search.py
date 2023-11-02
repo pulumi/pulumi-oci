@@ -22,6 +22,7 @@ class MonitoredResourcesSearchArgs:
                  fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  host_name_contains: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
@@ -41,6 +42,7 @@ class MonitoredResourcesSearchArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
+        :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
@@ -76,6 +78,8 @@ class MonitoredResourcesSearchArgs:
             pulumi.set(__self__, "host_name", host_name)
         if host_name_contains is not None:
             pulumi.set(__self__, "host_name_contains", host_name_contains)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
@@ -170,6 +174,18 @@ class MonitoredResourcesSearchArgs:
     @host_name_contains.setter
     def host_name_contains(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "host_name_contains", value)
+
+    @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        License edition of the monitored resource.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
 
     @property
     @pulumi.getter(name="managementAgentId")
@@ -326,6 +342,7 @@ class _MonitoredResourcesSearchState:
                  host_name: Optional[pulumi.Input[str]] = None,
                  host_name_contains: Optional[pulumi.Input[str]] = None,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
@@ -346,6 +363,7 @@ class _MonitoredResourcesSearchState:
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]] items: List of monitored resources.
+        :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
@@ -384,6 +402,8 @@ class _MonitoredResourcesSearchState:
             pulumi.set(__self__, "host_name_contains", host_name_contains)
         if items is not None:
             pulumi.set(__self__, "items", items)
+        if license is not None:
+            pulumi.set(__self__, "license", license)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
@@ -490,6 +510,18 @@ class _MonitoredResourcesSearchState:
     @items.setter
     def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]]):
         pulumi.set(self, "items", value)
+
+    @property
+    @pulumi.getter
+    def license(self) -> Optional[pulumi.Input[str]]:
+        """
+        License edition of the monitored resource.
+        """
+        return pulumi.get(self, "license")
+
+    @license.setter
+    def license(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license", value)
 
     @property
     @pulumi.getter(name="managementAgentId")
@@ -647,6 +679,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  host_name_contains: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
@@ -677,6 +710,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             fields=var["monitored_resources_search_fields"],
             host_name=var["monitored_resources_search_host_name"],
             host_name_contains=var["monitored_resources_search_host_name_contains"],
+            license=var["monitored_resources_search_license"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             name_contains=var["monitored_resources_search_name_contains"],
             property_equals=var["monitored_resources_search_property_equals"],
@@ -705,6 +739,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
+        :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
@@ -753,6 +788,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             fields=var["monitored_resources_search_fields"],
             host_name=var["monitored_resources_search_host_name"],
             host_name_contains=var["monitored_resources_search_host_name_contains"],
+            license=var["monitored_resources_search_license"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             name_contains=var["monitored_resources_search_name_contains"],
             property_equals=var["monitored_resources_search_property_equals"],
@@ -794,6 +830,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  host_name_contains: Optional[pulumi.Input[str]] = None,
+                 license: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
@@ -822,6 +859,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             __props__.__dict__["fields"] = fields
             __props__.__dict__["host_name"] = host_name
             __props__.__dict__["host_name_contains"] = host_name_contains
+            __props__.__dict__["license"] = license
             __props__.__dict__["management_agent_id"] = management_agent_id
             __props__.__dict__["name"] = name
             __props__.__dict__["name_contains"] = name_contains
@@ -851,6 +889,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             host_name: Optional[pulumi.Input[str]] = None,
             host_name_contains: Optional[pulumi.Input[str]] = None,
             items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchItemArgs']]]]] = None,
+            license: Optional[pulumi.Input[str]] = None,
             management_agent_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             name_contains: Optional[pulumi.Input[str]] = None,
@@ -876,6 +915,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchItemArgs']]]] items: List of monitored resources.
+        :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
@@ -911,6 +951,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         __props__.__dict__["host_name"] = host_name
         __props__.__dict__["host_name_contains"] = host_name_contains
         __props__.__dict__["items"] = items
+        __props__.__dict__["license"] = license
         __props__.__dict__["management_agent_id"] = management_agent_id
         __props__.__dict__["name"] = name
         __props__.__dict__["name_contains"] = name_contains
@@ -979,6 +1020,14 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         List of monitored resources.
         """
         return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter
+    def license(self) -> pulumi.Output[str]:
+        """
+        License edition of the monitored resource.
+        """
+        return pulumi.get(self, "license")
 
     @property
     @pulumi.getter(name="managementAgentId")

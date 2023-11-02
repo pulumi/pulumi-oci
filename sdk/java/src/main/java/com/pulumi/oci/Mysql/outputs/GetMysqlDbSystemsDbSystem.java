@@ -66,6 +66,11 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     private Integer dataStorageSizeInGb;
     /**
+     * @return Filter DB Systems by their Database Management configuration.
+     * 
+     */
+    private String databaseManagement;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -254,6 +259,13 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     public Integer dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * @return Filter DB Systems by their Database Management configuration.
+     * 
+     */
+    public String databaseManagement() {
+        return this.databaseManagement;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -453,6 +465,7 @@ public final class GetMysqlDbSystemsDbSystem {
         private String crashRecovery;
         private List<GetMysqlDbSystemsDbSystemCurrentPlacement> currentPlacements;
         private Integer dataStorageSizeInGb;
+        private String databaseManagement;
         private Map<String,Object> definedTags;
         private List<GetMysqlDbSystemsDbSystemDeletionPolicy> deletionPolicies;
         private String description;
@@ -492,6 +505,7 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.currentPlacements = defaults.currentPlacements;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
+    	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
     	      this.description = defaults.description;
@@ -577,6 +591,11 @@ public final class GetMysqlDbSystemsDbSystem {
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseManagement(String databaseManagement) {
+            this.databaseManagement = Objects.requireNonNull(databaseManagement);
             return this;
         }
         @CustomType.Setter
@@ -739,6 +758,7 @@ public final class GetMysqlDbSystemsDbSystem {
             o.crashRecovery = crashRecovery;
             o.currentPlacements = currentPlacements;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.databaseManagement = databaseManagement;
             o.definedTags = definedTags;
             o.deletionPolicies = deletionPolicies;
             o.description = description;

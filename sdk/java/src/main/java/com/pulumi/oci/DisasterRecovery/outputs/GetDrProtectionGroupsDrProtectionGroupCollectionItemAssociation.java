@@ -10,38 +10,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation {
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     private String peerId;
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     private String peerRegion;
     /**
-     * @return The DR Protection Group Role.
+     * @return The DR protection group Role.
      * 
      */
     private String role;
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation() {}
     /**
-     * @return The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+     * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     public String peerId() {
         return this.peerId;
     }
     /**
-     * @return The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+     * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     public String peerRegion() {
         return this.peerRegion;
     }
     /**
-     * @return The DR Protection Group Role.
+     * @return The DR protection group Role.
      * 
      */
     public String role() {

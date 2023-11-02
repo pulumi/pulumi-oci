@@ -164,7 +164,7 @@ export interface GetUserAssessmentUsersArgs {
 export interface GetUserAssessmentUsersResult {
     readonly accessLevel?: string;
     /**
-     * The user account status.
+     * The status of the user account.
      */
     readonly accountStatus?: string;
     /**

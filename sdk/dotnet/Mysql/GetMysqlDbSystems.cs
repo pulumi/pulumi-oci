@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Mysql
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         DatabaseManagements = @var.Mysql_db_system_database_management,
         ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
         ///         DisplayName = @var.Mysql_db_system_display_name,
         ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
@@ -72,6 +73,7 @@ namespace Pulumi.Oci.Mysql
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         DatabaseManagements = @var.Mysql_db_system_database_management,
         ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
         ///         DisplayName = @var.Mysql_db_system_display_name,
         ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
@@ -102,6 +104,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("configurationId")]
         public string? ConfigurationId { get; set; }
+
+        [Input("databaseManagements")]
+        private List<string>? _databaseManagements;
+
+        /// <summary>
+        /// Filter DB Systems by their Database Management configuration.
+        /// </summary>
+        public List<string> DatabaseManagements
+        {
+            get => _databaseManagements ?? (_databaseManagements = new List<string>());
+            set => _databaseManagements = value;
+        }
 
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -161,6 +175,18 @@ namespace Pulumi.Oci.Mysql
         [Input("configurationId")]
         public Input<string>? ConfigurationId { get; set; }
 
+        [Input("databaseManagements")]
+        private InputList<string>? _databaseManagements;
+
+        /// <summary>
+        /// Filter DB Systems by their Database Management configuration.
+        /// </summary>
+        public InputList<string> DatabaseManagements
+        {
+            get => _databaseManagements ?? (_databaseManagements = new InputList<string>());
+            set => _databaseManagements = value;
+        }
+
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -218,6 +244,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string? ConfigurationId;
         /// <summary>
+        /// Whether to enable monitoring via the Database Management service.
+        /// </summary>
+        public readonly ImmutableArray<string> DatabaseManagements;
+        /// <summary>
         /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
         public readonly string? DbSystemId;
@@ -250,6 +280,8 @@ namespace Pulumi.Oci.Mysql
 
             string? configurationId,
 
+            ImmutableArray<string> databaseManagements,
+
             string? dbSystemId,
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemResult> dbSystems,
@@ -268,6 +300,7 @@ namespace Pulumi.Oci.Mysql
         {
             CompartmentId = compartmentId;
             ConfigurationId = configurationId;
+            DatabaseManagements = databaseManagements;
             DbSystemId = dbSystemId;
             DbSystems = dbSystems;
             DisplayName = displayName;

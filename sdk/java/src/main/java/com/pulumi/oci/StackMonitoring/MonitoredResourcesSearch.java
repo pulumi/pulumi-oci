@@ -52,6 +52,7 @@ import javax.annotation.Nullable;
  *             .fields(var_.monitored_resources_search_fields())
  *             .hostName(var_.monitored_resources_search_host_name())
  *             .hostNameContains(var_.monitored_resources_search_host_name_contains())
+ *             .license(var_.monitored_resources_search_license())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
  *             .nameContains(var_.monitored_resources_search_name_contains())
  *             .propertyEquals(var_.monitored_resources_search_property_equals())
@@ -176,6 +177,20 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      */
     public Output<List<MonitoredResourcesSearchItem>> items() {
         return this.items;
+    }
+    /**
+     * License edition of the monitored resource.
+     * 
+     */
+    @Export(name="license", refs={String.class}, tree="[0]")
+    private Output<String> license;
+
+    /**
+     * @return License edition of the monitored resource.
+     * 
+     */
+    public Output<String> license() {
+        return this.license;
     }
     /**
      * A filter to return resources with matching management agent id.

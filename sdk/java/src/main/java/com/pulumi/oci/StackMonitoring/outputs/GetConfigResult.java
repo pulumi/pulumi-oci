@@ -44,10 +44,15 @@ public final class GetConfigResult {
      */
     private String id;
     /**
-     * @return True if automatic promotion is enabled, false if it is not enabled.
+     * @return True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     private Boolean isEnabled;
+    /**
+     * @return License edition.
+     * 
+     */
+    private String license;
     /**
      * @return The type of resource to configure for automatic promotion.
      * 
@@ -121,11 +126,18 @@ public final class GetConfigResult {
         return this.id;
     }
     /**
-     * @return True if automatic promotion is enabled, false if it is not enabled.
+     * @return True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
+    }
+    /**
+     * @return License edition.
+     * 
+     */
+    public String license() {
+        return this.license;
     }
     /**
      * @return The type of resource to configure for automatic promotion.
@@ -180,6 +192,7 @@ public final class GetConfigResult {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isEnabled;
+        private String license;
         private String resourceType;
         private String state;
         private Map<String,Object> systemTags;
@@ -196,6 +209,7 @@ public final class GetConfigResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
+    	      this.license = defaults.license;
     	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -244,6 +258,11 @@ public final class GetConfigResult {
             return this;
         }
         @CustomType.Setter
+        public Builder license(String license) {
+            this.license = Objects.requireNonNull(license);
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
@@ -278,6 +297,7 @@ public final class GetConfigResult {
             o.freeformTags = freeformTags;
             o.id = id;
             o.isEnabled = isEnabled;
+            o.license = license;
             o.resourceType = resourceType;
             o.state = state;
             o.systemTags = systemTags;

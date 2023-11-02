@@ -214,23 +214,23 @@ func (o DrPlanExecutionExecutionOptionsPtrOutput) PlanExecutionType() pulumi.Str
 }
 
 type DrPlanExecutionGroupExecution struct {
-	// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId *string `pulumi:"groupId"`
 	// The status of the step execution.
 	Status *string `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails *string `pulumi:"statusDetails"`
-	// A list of details of each step executed in this group.
+	// A list of step executions in the group.
 	StepExecutions []DrPlanExecutionGroupExecutionStepExecution `pulumi:"stepExecutions"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded *string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted *string `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type *string `pulumi:"type"`
 }
 
@@ -246,23 +246,23 @@ type DrPlanExecutionGroupExecutionInput interface {
 }
 
 type DrPlanExecutionGroupExecutionArgs struct {
-	// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	// The status of the step execution.
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
-	// A list of details of each step executed in this group.
+	// A list of step executions in the group.
 	StepExecutions DrPlanExecutionGroupExecutionStepExecutionArrayInput `pulumi:"stepExecutions"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -335,17 +335,17 @@ func (o DrPlanExecutionGroupExecutionOutput) ToOutput(ctx context.Context) pulum
 	}
 }
 
-// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
 func (o DrPlanExecutionGroupExecutionOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o DrPlanExecutionGroupExecutionOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *int { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o DrPlanExecutionGroupExecutionOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
@@ -355,29 +355,29 @@ func (o DrPlanExecutionGroupExecutionOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 func (o DrPlanExecutionGroupExecutionOutput) StatusDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
-// A list of details of each step executed in this group.
+// A list of step executions in the group.
 func (o DrPlanExecutionGroupExecutionOutput) StepExecutions() DrPlanExecutionGroupExecutionStepExecutionArrayOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) []DrPlanExecutionGroupExecutionStepExecution {
 		return v.StepExecutions
 	}).(DrPlanExecutionGroupExecutionStepExecutionArrayOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrPlanExecutionGroupExecutionOutput) TimeEnded() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrPlanExecutionGroupExecutionOutput) TimeStarted() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
-// The plan group type.
+// The group type.  Example: `BUILT_IN`
 func (o DrPlanExecutionGroupExecutionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecution) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -409,25 +409,25 @@ func (o DrPlanExecutionGroupExecutionArrayOutput) Index(i pulumi.IntInput) DrPla
 }
 
 type DrPlanExecutionGroupExecutionStepExecution struct {
-	// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec *int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId *string `pulumi:"groupId"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations []DrPlanExecutionGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
 	// The status of the step execution.
 	Status *string `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails *string `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 	StepId *string `pulumi:"stepId"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded *string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted *string `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type *string `pulumi:"type"`
 }
 
@@ -443,25 +443,25 @@ type DrPlanExecutionGroupExecutionStepExecutionInput interface {
 }
 
 type DrPlanExecutionGroupExecutionStepExecutionArgs struct {
-	// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntPtrInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
 	// The status of the step execution.
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 	StepId pulumi.StringPtrInput `pulumi:"stepId"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -534,22 +534,22 @@ func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ToOutput(ctx context.C
 	}
 }
 
-// (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
+// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *int { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
-// Information about an Object Storage log location for a DR Protection Group.
+// The details of an object storage log location for a DR protection group.
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) LogLocations() DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) []DrPlanExecutionGroupExecutionStepExecutionLogLocation {
 		return v.LogLocations
@@ -561,27 +561,27 @@ func (o DrPlanExecutionGroupExecutionStepExecutionOutput) Status() pulumi.String
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) StatusDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) StepId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.StepId }).(pulumi.StringPtrOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) TimeEnded() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) TimeStarted() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
-// The plan group type.
+// The group type.  Example: `BUILT_IN`
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecution) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -613,11 +613,11 @@ func (o DrPlanExecutionGroupExecutionStepExecutionArrayOutput) Index(i pulumi.In
 }
 
 type DrPlanExecutionGroupExecutionStepExecutionLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket *string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace *string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object *string `pulumi:"object"`
 }
 
@@ -633,11 +633,11 @@ type DrPlanExecutionGroupExecutionStepExecutionLogLocationInput interface {
 }
 
 type DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -710,17 +710,17 @@ func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToOutput(ct
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecutionLogLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecutionLogLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionGroupExecutionStepExecutionLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -752,11 +752,11 @@ func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) Index(
 }
 
 type DrPlanExecutionLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket *string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace *string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object *string `pulumi:"object"`
 }
 
@@ -772,11 +772,11 @@ type DrPlanExecutionLogLocationInput interface {
 }
 
 type DrPlanExecutionLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -849,17 +849,17 @@ func (o DrPlanExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o DrPlanExecutionLogLocationOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionLogLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o DrPlanExecutionLogLocationOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionLogLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o DrPlanExecutionLogLocationOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanExecutionLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -891,13 +891,13 @@ func (o DrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) DrPlanEx
 }
 
 type DrPlanPlanGroup struct {
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id *string `pulumi:"id"`
-	// The list of steps in this plan group.
+	// The list of steps in the group.
 	Steps []DrPlanPlanGroupStep `pulumi:"steps"`
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -916,13 +916,13 @@ type DrPlanPlanGroupInput interface {
 }
 
 type DrPlanPlanGroupArgs struct {
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The list of steps in this plan group.
+	// The list of steps in the group.
 	Steps DrPlanPlanGroupStepArrayInput `pulumi:"steps"`
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -998,22 +998,22 @@ func (o DrPlanPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[DrPl
 	}
 }
 
-// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 func (o DrPlanPlanGroupOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o DrPlanPlanGroupOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// The list of steps in this plan group.
+// The list of steps in the group.
 func (o DrPlanPlanGroupOutput) Steps() DrPlanPlanGroupStepArrayOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) []DrPlanPlanGroupStep { return v.Steps }).(DrPlanPlanGroupStepArrayOutput)
 }
 
-// The type of DR Plan to be created.
+// The type of DR plan to be created.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1048,26 +1048,26 @@ func (o DrPlanPlanGroupArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupOutp
 }
 
 type DrPlanPlanGroupStep struct {
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode *string `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId *string `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id *string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId *string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout *int `pulumi:"timeout"`
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
-	// The details for a user-defined step in a DR Plan.
+	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []DrPlanPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
 
@@ -1083,26 +1083,26 @@ type DrPlanPlanGroupStepInput interface {
 }
 
 type DrPlanPlanGroupStepArgs struct {
-	// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode pulumi.StringPtrInput `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId pulumi.StringPtrInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
-	// The type of DR Plan to be created.
+	// The type of DR plan to be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// The details for a user-defined step in a DR Plan.
+	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps DrPlanPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
 
@@ -1175,7 +1175,7 @@ func (o DrPlanPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Output[
 	}
 }
 
-// (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
+// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 func (o DrPlanPlanGroupStepOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1185,12 +1185,12 @@ func (o DrPlanPlanGroupStepOutput) ErrorMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.ErrorMode }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o DrPlanPlanGroupStepOutput) GroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.GroupId }).(pulumi.StringPtrOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o DrPlanPlanGroupStepOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -1200,7 +1200,7 @@ func (o DrPlanPlanGroupStepOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 func (o DrPlanPlanGroupStepOutput) MemberId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.MemberId }).(pulumi.StringPtrOutput)
 }
@@ -1210,7 +1210,7 @@ func (o DrPlanPlanGroupStepOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *int { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
-// The type of DR Plan to be created.
+// The type of DR plan to be created.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1218,7 +1218,7 @@ func (o DrPlanPlanGroupStepOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// The details for a user-defined step in a DR Plan.
+// The details for a user-defined step in a DR plan.
 func (o DrPlanPlanGroupStepOutput) UserDefinedSteps() DrPlanPlanGroupStepUserDefinedStepArrayOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) []DrPlanPlanGroupStepUserDefinedStep { return v.UserDefinedSteps }).(DrPlanPlanGroupStepUserDefinedStepArrayOutput)
 }
@@ -1250,23 +1250,23 @@ func (o DrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroup
 }
 
 type DrPlanPlanGroupStepUserDefinedStep struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 	FunctionId *string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion *string `pulumi:"functionRegion"`
-	// Information about an Object Storage script location for a user-defined step in a DR Plan.
+	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations []DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody *string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser *string `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId *string `pulumi:"runOnInstanceId"`
-	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion *string `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
 	ScriptCommand *string `pulumi:"scriptCommand"`
-	// The type of the step.
+	// The type of the user-defined step.
 	StepType *string `pulumi:"stepType"`
 }
 
@@ -1282,23 +1282,23 @@ type DrPlanPlanGroupStepUserDefinedStepInput interface {
 }
 
 type DrPlanPlanGroupStepUserDefinedStepArgs struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion pulumi.StringPtrInput `pulumi:"functionRegion"`
-	// Information about an Object Storage script location for a user-defined step in a DR Plan.
+	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringPtrInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser pulumi.StringPtrInput `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringPtrInput `pulumi:"runOnInstanceId"`
-	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringPtrInput `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
 	ScriptCommand pulumi.StringPtrInput `pulumi:"scriptCommand"`
-	// The type of the step.
+	// The type of the user-defined step.
 	StepType pulumi.StringPtrInput `pulumi:"stepType"`
 }
 
@@ -1371,7 +1371,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Context) 
 	}
 }
 
-// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
@@ -1381,7 +1381,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) FunctionRegion() pulumi.String
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.FunctionRegion }).(pulumi.StringPtrOutput)
 }
 
-// Information about an Object Storage script location for a user-defined step in a DR Plan.
+// The details of an object storage script location for a user-defined step in a DR plan.
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) ObjectStorageScriptLocations() DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) []DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation {
 		return v.ObjectStorageScriptLocations
@@ -1398,12 +1398,12 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringPtrOu
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunAsUser }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the instance on which this script or command should be executed.
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceId }).(pulumi.StringPtrOutput)
 }
 
-// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceRegion }).(pulumi.StringPtrOutput)
 }
@@ -1413,7 +1413,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringP
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.ScriptCommand }).(pulumi.StringPtrOutput)
 }
 
-// The type of the step.
+// The type of the user-defined step.
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) StepType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.StepType }).(pulumi.StringPtrOutput)
 }
@@ -1445,11 +1445,11 @@ func (o DrPlanPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 	Bucket *string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace *string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 	Object *string `pulumi:"object"`
 }
 
@@ -1465,11 +1465,11 @@ type DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationInput interfac
 }
 
 type DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -1542,17 +1542,17 @@ func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToO
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -1584,11 +1584,11 @@ func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput
 }
 
 type DrProtectionGroupAssociation struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId *string `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
-	// The role of this DR Protection Group.
+	// The role of the DR protection group.  Example: `STANDBY`
 	Role string `pulumi:"role"`
 }
 
@@ -1604,11 +1604,11 @@ type DrProtectionGroupAssociationInput interface {
 }
 
 type DrProtectionGroupAssociationArgs struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId pulumi.StringPtrInput `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput `pulumi:"peerRegion"`
-	// The role of this DR Protection Group.
+	// The role of the DR protection group.  Example: `STANDBY`
 	Role pulumi.StringInput `pulumi:"role"`
 }
 
@@ -1707,17 +1707,17 @@ func (o DrProtectionGroupAssociationOutput) ToOutput(ctx context.Context) pulumi
 	}
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o DrProtectionGroupAssociationOutput) PeerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupAssociation) *string { return v.PeerId }).(pulumi.StringPtrOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group.  Example: `us-ashburn-1`
 func (o DrProtectionGroupAssociationOutput) PeerRegion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupAssociation) *string { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
-// The role of this DR Protection Group.
+// The role of the DR protection group.  Example: `STANDBY`
 func (o DrProtectionGroupAssociationOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupAssociation) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -1752,7 +1752,7 @@ func (o DrProtectionGroupAssociationPtrOutput) Elem() DrProtectionGroupAssociati
 	}).(DrProtectionGroupAssociationOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o DrProtectionGroupAssociationPtrOutput) PeerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupAssociation) *string {
 		if v == nil {
@@ -1762,7 +1762,7 @@ func (o DrProtectionGroupAssociationPtrOutput) PeerId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group.  Example: `us-ashburn-1`
 func (o DrProtectionGroupAssociationPtrOutput) PeerRegion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupAssociation) *string {
 		if v == nil {
@@ -1772,7 +1772,7 @@ func (o DrProtectionGroupAssociationPtrOutput) PeerRegion() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// The role of this DR Protection Group.
+// The role of the DR protection group.  Example: `STANDBY`
 func (o DrProtectionGroupAssociationPtrOutput) Role() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupAssociation) *string {
 		if v == nil {
@@ -1783,11 +1783,11 @@ func (o DrProtectionGroupAssociationPtrOutput) Role() pulumi.StringPtrOutput {
 }
 
 type DrProtectionGroupLogLocation struct {
-	// (Updatable) The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object *string `pulumi:"object"`
 }
 
@@ -1803,11 +1803,11 @@ type DrProtectionGroupLogLocationInput interface {
 }
 
 type DrProtectionGroupLogLocationArgs struct {
-	// (Updatable) The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -1906,17 +1906,17 @@ func (o DrProtectionGroupLogLocationOutput) ToOutput(ctx context.Context) pulumi
 	}
 }
 
-// (Updatable) The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o DrProtectionGroupLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o DrProtectionGroupLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o DrProtectionGroupLogLocationOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupLogLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -1951,7 +1951,7 @@ func (o DrProtectionGroupLogLocationPtrOutput) Elem() DrProtectionGroupLogLocati
 	}).(DrProtectionGroupLogLocationOutput)
 }
 
-// (Updatable) The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o DrProtectionGroupLogLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupLogLocation) *string {
 		if v == nil {
@@ -1961,7 +1961,7 @@ func (o DrProtectionGroupLogLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o DrProtectionGroupLogLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupLogLocation) *string {
 		if v == nil {
@@ -1971,7 +1971,7 @@ func (o DrProtectionGroupLogLocationPtrOutput) Namespace() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o DrProtectionGroupLogLocationPtrOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupLogLocation) *string {
 		if v == nil {
@@ -1982,25 +1982,41 @@ func (o DrProtectionGroupLogLocationPtrOutput) Object() pulumi.StringPtrOutput {
 }
 
 type DrProtectionGroupMember struct {
-	// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+	BackendSetMappings []DrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
+	// (Updatable) A list of operations performed on block volumes used by the compute instance.
+	BlockVolumeOperations []DrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
+	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+	DestinationAvailabilityDomain *string `pulumi:"destinationAvailabilityDomain"`
+	// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId *string `pulumi:"destinationCapacityReservationId"`
-	// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId *string `pulumi:"destinationCompartmentId"`
-	// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
+	// (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId *string `pulumi:"destinationDedicatedVmHostId"`
-	// (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+	// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId *string `pulumi:"destinationLoadBalancerId"`
+	// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId *string `pulumi:"destinationNetworkLoadBalancerId"`
+	// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+	ExportMappings []DrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
+	// (Updatable) A list of operations performed on file systems used by the compute instance.
+	FileSystemOperations []DrProtectionGroupMemberFileSystemOperation `pulumi:"fileSystemOperations"`
+	// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable *bool `pulumi:"isMovable"`
-	// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 	IsRetainFaultDomain *bool `pulumi:"isRetainFaultDomain"`
-	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+	IsStartStopEnabled *bool `pulumi:"isStartStopEnabled"`
+	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
-	// (Updatable) A list of Compute Instance VNIC mappings.
+	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMapping []DrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
-	// (Updatable) A list of Compute Instance VNIC mappings.
+	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMappings []DrProtectionGroupMemberVnicMapping `pulumi:"vnicMappings"`
 }
 
@@ -2016,25 +2032,41 @@ type DrProtectionGroupMemberInput interface {
 }
 
 type DrProtectionGroupMemberArgs struct {
-	// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+	BackendSetMappings DrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
+	// (Updatable) A list of operations performed on block volumes used by the compute instance.
+	BlockVolumeOperations DrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
+	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+	DestinationAvailabilityDomain pulumi.StringPtrInput `pulumi:"destinationAvailabilityDomain"`
+	// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId pulumi.StringPtrInput `pulumi:"destinationCapacityReservationId"`
-	// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId pulumi.StringPtrInput `pulumi:"destinationCompartmentId"`
-	// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
+	// (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringPtrInput `pulumi:"destinationDedicatedVmHostId"`
-	// (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+	// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationLoadBalancerId"`
+	// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+	ExportMappings DrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
+	// (Updatable) A list of operations performed on file systems used by the compute instance.
+	FileSystemOperations DrProtectionGroupMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
+	// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolPtrInput `pulumi:"isMovable"`
-	// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 	IsRetainFaultDomain pulumi.BoolPtrInput `pulumi:"isRetainFaultDomain"`
-	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+	IsStartStopEnabled pulumi.BoolPtrInput `pulumi:"isStartStopEnabled"`
+	// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// (Updatable) The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+	// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
-	// (Updatable) A list of Compute Instance VNIC mappings.
+	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMapping DrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
-	// (Updatable) A list of Compute Instance VNIC mappings.
+	// (Updatable) A list of compute instance VNIC mappings.
 	VnicMappings DrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMappings"`
 }
 
@@ -2107,32 +2139,78 @@ func (o DrProtectionGroupMemberOutput) ToOutput(ctx context.Context) pulumix.Out
 	}
 }
 
-// (Updatable) The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+// (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
+func (o DrProtectionGroupMemberOutput) BackendSetMappings() DrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberBackendSetMapping {
+		return v.BackendSetMappings
+	}).(DrProtectionGroupMemberBackendSetMappingArrayOutput)
+}
+
+// (Updatable) A list of operations performed on block volumes used by the compute instance.
+func (o DrProtectionGroupMemberOutput) BlockVolumeOperations() DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberBlockVolumeOperation {
+		return v.BlockVolumeOperations
+	}).(DrProtectionGroupMemberBlockVolumeOperationArrayOutput)
+}
+
+// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
+func (o DrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationAvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) DestinationCapacityReservationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationCapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// (Updatable) The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) DestinationCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationCompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the dedicated VM Host in the destination region where this compute instance should be launched  Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
+// (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationDedicatedVmHostId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+// (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o DrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationLoadBalancerId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o DrProtectionGroupMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationNetworkLoadBalancerId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
+func (o DrProtectionGroupMemberOutput) ExportMappings() DrProtectionGroupMemberExportMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberExportMapping { return v.ExportMappings }).(DrProtectionGroupMemberExportMappingArrayOutput)
+}
+
+// (Updatable) A list of operations performed on file systems used by the compute instance.
+func (o DrProtectionGroupMemberOutput) FileSystemOperations() DrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberFileSystemOperation {
+		return v.FileSystemOperations
+	}).(DrProtectionGroupMemberFileSystemOperationArrayOutput)
+}
+
+// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 func (o DrProtectionGroupMemberOutput) IsMovable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *bool { return v.IsMovable }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 func (o DrProtectionGroupMemberOutput) IsRetainFaultDomain() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *bool { return v.IsRetainFaultDomain }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+// (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
+func (o DrProtectionGroupMemberOutput) IsStartStopEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *bool { return v.IsStartStopEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -2142,17 +2220,17 @@ func (o DrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+// (Updatable) The OCID of the vault secret where the database SYSDBA password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PasswordVaultSecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A list of Compute Instance VNIC mappings.
+// (Updatable) A list of compute instance VNIC mappings.
 func (o DrProtectionGroupMemberOutput) VnicMapping() DrProtectionGroupMemberVnicMappingArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberVnicMapping { return v.VnicMapping }).(DrProtectionGroupMemberVnicMappingArrayOutput)
 }
 
-// (Updatable) A list of Compute Instance VNIC mappings.
+// (Updatable) A list of compute instance VNIC mappings.
 func (o DrProtectionGroupMemberOutput) VnicMappings() DrProtectionGroupMemberVnicMappingArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberVnicMapping { return v.VnicMappings }).(DrProtectionGroupMemberVnicMappingArrayOutput)
 }
@@ -2183,16 +2261,1235 @@ func (o DrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) DrProtectio
 	}).(DrProtectionGroupMemberOutput)
 }
 
+type DrProtectionGroupMemberBackendSetMapping struct {
+	// (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+	DestinationBackendSetName *string `pulumi:"destinationBackendSetName"`
+	// (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+	IsBackendSetForNonMovable *bool `pulumi:"isBackendSetForNonMovable"`
+	// (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+	SourceBackendSetName *string `pulumi:"sourceBackendSetName"`
+}
+
+// DrProtectionGroupMemberBackendSetMappingInput is an input type that accepts DrProtectionGroupMemberBackendSetMappingArgs and DrProtectionGroupMemberBackendSetMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBackendSetMappingInput` via:
+//
+//	DrProtectionGroupMemberBackendSetMappingArgs{...}
+type DrProtectionGroupMemberBackendSetMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBackendSetMappingOutput() DrProtectionGroupMemberBackendSetMappingOutput
+	ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(context.Context) DrProtectionGroupMemberBackendSetMappingOutput
+}
+
+type DrProtectionGroupMemberBackendSetMappingArgs struct {
+	// (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+	DestinationBackendSetName pulumi.StringPtrInput `pulumi:"destinationBackendSetName"`
+	// (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+	IsBackendSetForNonMovable pulumi.BoolPtrInput `pulumi:"isBackendSetForNonMovable"`
+	// (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+	SourceBackendSetName pulumi.StringPtrInput `pulumi:"sourceBackendSetName"`
+}
+
+func (DrProtectionGroupMemberBackendSetMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBackendSetMappingArgs) ToDrProtectionGroupMemberBackendSetMappingOutput() DrProtectionGroupMemberBackendSetMappingOutput {
+	return i.ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBackendSetMappingArgs) ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackendSetMappingOutput)
+}
+
+func (i DrProtectionGroupMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[DrProtectionGroupMemberBackendSetMapping]{
+		OutputState: i.ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
+// DrProtectionGroupMemberBackendSetMappingArrayInput is an input type that accepts DrProtectionGroupMemberBackendSetMappingArray and DrProtectionGroupMemberBackendSetMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBackendSetMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberBackendSetMappingArray{ DrProtectionGroupMemberBackendSetMappingArgs{...} }
+type DrProtectionGroupMemberBackendSetMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBackendSetMappingArrayOutput() DrProtectionGroupMemberBackendSetMappingArrayOutput
+	ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberBackendSetMappingArrayOutput
+}
+
+type DrProtectionGroupMemberBackendSetMappingArray []DrProtectionGroupMemberBackendSetMappingInput
+
+func (DrProtectionGroupMemberBackendSetMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBackendSetMappingArray) ToDrProtectionGroupMemberBackendSetMappingArrayOutput() DrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBackendSetMappingArray) ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackendSetMappingArrayOutput)
+}
+
+func (i DrProtectionGroupMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping]{
+		OutputState: i.ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBackendSetMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBackendSetMappingOutput) ToDrProtectionGroupMemberBackendSetMappingOutput() DrProtectionGroupMemberBackendSetMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackendSetMappingOutput) ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[DrProtectionGroupMemberBackendSetMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
+func (o DrProtectionGroupMemberBackendSetMappingOutput) DestinationBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackendSetMapping) *string { return v.DestinationBackendSetName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+func (o DrProtectionGroupMemberBackendSetMappingOutput) IsBackendSetForNonMovable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackendSetMapping) *bool { return v.IsBackendSetForNonMovable }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
+func (o DrProtectionGroupMemberBackendSetMappingOutput) SourceBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackendSetMapping) *string { return v.SourceBackendSetName }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBackendSetMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBackendSetMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToDrProtectionGroupMemberBackendSetMappingArrayOutput() DrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBackendSetMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberBackendSetMapping {
+		return vs[0].([]DrProtectionGroupMemberBackendSetMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberBackendSetMappingOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeOperation struct {
+	// (Updatable) The details for creating a block volume attachment.
+	AttachmentDetails *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails `pulumi:"attachmentDetails"`
+	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId *string `pulumi:"blockVolumeId"`
+	// (Updatable) The details for creating a file system mount.
+	MountDetails *DrProtectionGroupMemberBlockVolumeOperationMountDetails `pulumi:"mountDetails"`
+}
+
+// DrProtectionGroupMemberBlockVolumeOperationInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationArgs and DrProtectionGroupMemberBlockVolumeOperationOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeOperationArgs{...}
+type DrProtectionGroupMemberBlockVolumeOperationInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeOperationOutput() DrProtectionGroupMemberBlockVolumeOperationOutput
+	ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeOperationOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationArgs struct {
+	// (Updatable) The details for creating a block volume attachment.
+	AttachmentDetails DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput `pulumi:"attachmentDetails"`
+	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId pulumi.StringPtrInput `pulumi:"blockVolumeId"`
+	// (Updatable) The details for creating a file system mount.
+	MountDetails DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput `pulumi:"mountDetails"`
+}
+
+func (DrProtectionGroupMemberBlockVolumeOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationArgs) ToDrProtectionGroupMemberBlockVolumeOperationOutput() DrProtectionGroupMemberBlockVolumeOperationOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationArgs) ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationOutput)
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// DrProtectionGroupMemberBlockVolumeOperationArrayInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationArray and DrProtectionGroupMemberBlockVolumeOperationArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationArrayInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeOperationArray{ DrProtectionGroupMemberBlockVolumeOperationArgs{...} }
+type DrProtectionGroupMemberBlockVolumeOperationArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeOperationArrayOutput() DrProtectionGroupMemberBlockVolumeOperationArrayOutput
+	ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeOperationArrayOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationArray []DrProtectionGroupMemberBlockVolumeOperationInput
+
+func (DrProtectionGroupMemberBlockVolumeOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationArray) ToDrProtectionGroupMemberBlockVolumeOperationArrayOutput() DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationArray) ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationArrayOutput)
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToDrProtectionGroupMemberBlockVolumeOperationOutput() DrProtectionGroupMemberBlockVolumeOperationOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The details for creating a block volume attachment.
+func (o DrProtectionGroupMemberBlockVolumeOperationOutput) AttachmentDetails() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperation) *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails {
+		return v.AttachmentDetails
+	}).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
+}
+
+// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o DrProtectionGroupMemberBlockVolumeOperationOutput) BlockVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperation) *string { return v.BlockVolumeId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The details for creating a file system mount.
+func (o DrProtectionGroupMemberBlockVolumeOperationOutput) MountDetails() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperation) *DrProtectionGroupMemberBlockVolumeOperationMountDetails {
+		return v.MountDetails
+	}).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToDrProtectionGroupMemberBlockVolumeOperationArrayOutput() DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBlockVolumeOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberBlockVolumeOperation {
+		return vs[0].([]DrProtectionGroupMemberBlockVolumeOperation)[vs[1].(int)]
+	}).(DrProtectionGroupMemberBlockVolumeOperationOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails struct {
+	// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId *string `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+// DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs and DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{...}
+type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput
+	ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs struct {
+	// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId pulumi.StringPtrInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+func (DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput)
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
+	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
+		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput).ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs, DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtr and DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput` via:
+//
+//	        DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput
+	ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput
+}
+
+type drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs
+
+func DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtr(v *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput {
+	return (*drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType)(v)
+}
+
+func (*drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
+}
+
+func (i *drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
+		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return o.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails {
+		return &v
+	}).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
+	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) *string {
+		return v.VolumeAttachmentReferenceInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) Elem() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails
+		return ret
+	}).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput)
+}
+
+// (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VolumeAttachmentReferenceInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationMountDetails struct {
+	// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint *string `pulumi:"mountPoint"`
+}
+
+// DrProtectionGroupMemberBlockVolumeOperationMountDetailsInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs and DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationMountDetailsInput` via:
+//
+//	DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{...}
+type DrProtectionGroupMemberBlockVolumeOperationMountDetailsInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput
+	ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs struct {
+	// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
+}
+
+func (DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationMountDetails)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput)
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
+	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
+		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput).ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs, DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtr and DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput` via:
+//
+//	        DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput
+	ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput
+}
+
+type drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs
+
+func DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtr(v *DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput {
+	return (*drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType)(v)
+}
+
+func (*drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBlockVolumeOperationMountDetails)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
+}
+
+func (i *drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
+		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationMountDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return o.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberBlockVolumeOperationMountDetails) *DrProtectionGroupMemberBlockVolumeOperationMountDetails {
+		return &v
+	}).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
+	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationMountDetails) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberBlockVolumeOperationMountDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) Elem() DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeOperationMountDetails) DrProtectionGroupMemberBlockVolumeOperationMountDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberBlockVolumeOperationMountDetails
+		return ret
+	}).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput)
+}
+
+// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeOperationMountDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MountPoint
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberExportMapping struct {
+	// (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	DestinationMountTargetId *string `pulumi:"destinationMountTargetId"`
+	// (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+	ExportId *string `pulumi:"exportId"`
+}
+
+// DrProtectionGroupMemberExportMappingInput is an input type that accepts DrProtectionGroupMemberExportMappingArgs and DrProtectionGroupMemberExportMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberExportMappingInput` via:
+//
+//	DrProtectionGroupMemberExportMappingArgs{...}
+type DrProtectionGroupMemberExportMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberExportMappingOutput() DrProtectionGroupMemberExportMappingOutput
+	ToDrProtectionGroupMemberExportMappingOutputWithContext(context.Context) DrProtectionGroupMemberExportMappingOutput
+}
+
+type DrProtectionGroupMemberExportMappingArgs struct {
+	// (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	DestinationMountTargetId pulumi.StringPtrInput `pulumi:"destinationMountTargetId"`
+	// (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+	ExportId pulumi.StringPtrInput `pulumi:"exportId"`
+}
+
+func (DrProtectionGroupMemberExportMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberExportMappingArgs) ToDrProtectionGroupMemberExportMappingOutput() DrProtectionGroupMemberExportMappingOutput {
+	return i.ToDrProtectionGroupMemberExportMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberExportMappingArgs) ToDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberExportMappingOutput)
+}
+
+func (i DrProtectionGroupMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[DrProtectionGroupMemberExportMapping]{
+		OutputState: i.ToDrProtectionGroupMemberExportMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
+// DrProtectionGroupMemberExportMappingArrayInput is an input type that accepts DrProtectionGroupMemberExportMappingArray and DrProtectionGroupMemberExportMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberExportMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberExportMappingArray{ DrProtectionGroupMemberExportMappingArgs{...} }
+type DrProtectionGroupMemberExportMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberExportMappingArrayOutput() DrProtectionGroupMemberExportMappingArrayOutput
+	ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberExportMappingArrayOutput
+}
+
+type DrProtectionGroupMemberExportMappingArray []DrProtectionGroupMemberExportMappingInput
+
+func (DrProtectionGroupMemberExportMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberExportMappingArray) ToDrProtectionGroupMemberExportMappingArrayOutput() DrProtectionGroupMemberExportMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberExportMappingArray) ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberExportMappingArrayOutput)
+}
+
+func (i DrProtectionGroupMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[[]DrProtectionGroupMemberExportMapping]{
+		OutputState: i.ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberExportMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberExportMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberExportMappingOutput) ToDrProtectionGroupMemberExportMappingOutput() DrProtectionGroupMemberExportMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberExportMappingOutput) ToDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[DrProtectionGroupMemberExportMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o DrProtectionGroupMemberExportMappingOutput) DestinationMountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberExportMapping) *string { return v.DestinationMountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
+func (o DrProtectionGroupMemberExportMappingOutput) ExportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberExportMapping) *string { return v.ExportId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberExportMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberExportMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberExportMappingArrayOutput) ToDrProtectionGroupMemberExportMappingArrayOutput() DrProtectionGroupMemberExportMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberExportMappingArrayOutput) ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[[]DrProtectionGroupMemberExportMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberExportMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberExportMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberExportMapping {
+		return vs[0].([]DrProtectionGroupMemberExportMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberExportMappingOutput)
+}
+
+type DrProtectionGroupMemberFileSystemOperation struct {
+	// (Updatable) The export path of the file system.  Example: `/fs-export-path`
+	ExportPath *string `pulumi:"exportPath"`
+	// (Updatable) The details for creating a file system mount.
+	MountDetails *DrProtectionGroupMemberFileSystemOperationMountDetails `pulumi:"mountDetails"`
+	// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint *string `pulumi:"mountPoint"`
+	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId *string `pulumi:"mountTargetId"`
+	// (Updatable) The details for creating a file system unmount.
+	UnmountDetails *DrProtectionGroupMemberFileSystemOperationUnmountDetails `pulumi:"unmountDetails"`
+}
+
+// DrProtectionGroupMemberFileSystemOperationInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationArgs and DrProtectionGroupMemberFileSystemOperationOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationInput` via:
+//
+//	DrProtectionGroupMemberFileSystemOperationArgs{...}
+type DrProtectionGroupMemberFileSystemOperationInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberFileSystemOperationOutput() DrProtectionGroupMemberFileSystemOperationOutput
+	ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(context.Context) DrProtectionGroupMemberFileSystemOperationOutput
+}
+
+type DrProtectionGroupMemberFileSystemOperationArgs struct {
+	// (Updatable) The export path of the file system.  Example: `/fs-export-path`
+	ExportPath pulumi.StringPtrInput `pulumi:"exportPath"`
+	// (Updatable) The details for creating a file system mount.
+	MountDetails DrProtectionGroupMemberFileSystemOperationMountDetailsPtrInput `pulumi:"mountDetails"`
+	// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
+	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+	// (Updatable) The details for creating a file system unmount.
+	UnmountDetails DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrInput `pulumi:"unmountDetails"`
+}
+
+func (DrProtectionGroupMemberFileSystemOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationArgs) ToDrProtectionGroupMemberFileSystemOperationOutput() DrProtectionGroupMemberFileSystemOperationOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationArgs) ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationOutput)
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[DrProtectionGroupMemberFileSystemOperation]{
+		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// DrProtectionGroupMemberFileSystemOperationArrayInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationArray and DrProtectionGroupMemberFileSystemOperationArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationArrayInput` via:
+//
+//	DrProtectionGroupMemberFileSystemOperationArray{ DrProtectionGroupMemberFileSystemOperationArgs{...} }
+type DrProtectionGroupMemberFileSystemOperationArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberFileSystemOperationArrayOutput() DrProtectionGroupMemberFileSystemOperationArrayOutput
+	ToDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(context.Context) DrProtectionGroupMemberFileSystemOperationArrayOutput
+}
+
+type DrProtectionGroupMemberFileSystemOperationArray []DrProtectionGroupMemberFileSystemOperationInput
+
+func (DrProtectionGroupMemberFileSystemOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationArray) ToDrProtectionGroupMemberFileSystemOperationArrayOutput() DrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationArray) ToDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationArrayOutput)
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation]{
+		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberFileSystemOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationOutput) ToDrProtectionGroupMemberFileSystemOperationOutput() DrProtectionGroupMemberFileSystemOperationOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationOutput) ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[DrProtectionGroupMemberFileSystemOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The export path of the file system.  Example: `/fs-export-path`
+func (o DrProtectionGroupMemberFileSystemOperationOutput) ExportPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperation) *string { return v.ExportPath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The details for creating a file system mount.
+func (o DrProtectionGroupMemberFileSystemOperationOutput) MountDetails() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperation) *DrProtectionGroupMemberFileSystemOperationMountDetails {
+		return v.MountDetails
+	}).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
+}
+
+// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o DrProtectionGroupMemberFileSystemOperationOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperation) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o DrProtectionGroupMemberFileSystemOperationOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperation) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The details for creating a file system unmount.
+func (o DrProtectionGroupMemberFileSystemOperationOutput) UnmountDetails() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperation) *DrProtectionGroupMemberFileSystemOperationUnmountDetails {
+		return v.UnmountDetails
+	}).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput)
+}
+
+type DrProtectionGroupMemberFileSystemOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberFileSystemOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) ToDrProtectionGroupMemberFileSystemOperationArrayOutput() DrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) ToDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberFileSystemOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberFileSystemOperation {
+		return vs[0].([]DrProtectionGroupMemberFileSystemOperation)[vs[1].(int)]
+	}).(DrProtectionGroupMemberFileSystemOperationOutput)
+}
+
+type DrProtectionGroupMemberFileSystemOperationMountDetails struct {
+	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId *string `pulumi:"mountTargetId"`
+}
+
+// DrProtectionGroupMemberFileSystemOperationMountDetailsInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationMountDetailsArgs and DrProtectionGroupMemberFileSystemOperationMountDetailsOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationMountDetailsInput` via:
+//
+//	DrProtectionGroupMemberFileSystemOperationMountDetailsArgs{...}
+type DrProtectionGroupMemberFileSystemOperationMountDetailsInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsOutput
+	ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsOutput
+}
+
+type DrProtectionGroupMemberFileSystemOperationMountDetailsArgs struct {
+	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+}
+
+func (DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationMountDetails)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationMountDetailsOutput)
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails] {
+	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails]{
+		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationMountDetailsOutput).ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberFileSystemOperationMountDetailsPtrInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationMountDetailsArgs, DrProtectionGroupMemberFileSystemOperationMountDetailsPtr and DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationMountDetailsPtrInput` via:
+//
+//	        DrProtectionGroupMemberFileSystemOperationMountDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberFileSystemOperationMountDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput
+	ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput
+}
+
+type drProtectionGroupMemberFileSystemOperationMountDetailsPtrType DrProtectionGroupMemberFileSystemOperationMountDetailsArgs
+
+func DrProtectionGroupMemberFileSystemOperationMountDetailsPtr(v *DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrInput {
+	return (*drProtectionGroupMemberFileSystemOperationMountDetailsPtrType)(v)
+}
+
+func (*drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberFileSystemOperationMountDetails)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
+}
+
+func (i *drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails]{
+		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberFileSystemOperationMountDetailsOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationMountDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return o.ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberFileSystemOperationMountDetails) *DrProtectionGroupMemberFileSystemOperationMountDetails {
+		return &v
+	}).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails] {
+	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperationMountDetails) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberFileSystemOperationMountDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) Elem() DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberFileSystemOperationMountDetails) DrProtectionGroupMemberFileSystemOperationMountDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberFileSystemOperationMountDetails
+		return ret
+	}).(DrProtectionGroupMemberFileSystemOperationMountDetailsOutput)
+}
+
+// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberFileSystemOperationMountDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MountTargetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberFileSystemOperationUnmountDetails struct {
+	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId *string `pulumi:"mountTargetId"`
+}
+
+// DrProtectionGroupMemberFileSystemOperationUnmountDetailsInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs and DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationUnmountDetailsInput` via:
+//
+//	DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs{...}
+type DrProtectionGroupMemberFileSystemOperationUnmountDetailsInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput
+	ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutputWithContext(context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput
+}
+
+type DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs struct {
+	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
+}
+
+func (DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationUnmountDetails)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput)
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
+	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
+		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput).ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs, DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtr and DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrInput` via:
+//
+//	        DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput
+	ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput
+}
+
+type drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs
+
+func DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtr(v *DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrInput {
+	return (*drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType)(v)
+}
+
+func (*drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberFileSystemOperationUnmountDetails)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput)
+}
+
+func (i *drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
+		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationUnmountDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return o.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberFileSystemOperationUnmountDetails) *DrProtectionGroupMemberFileSystemOperationUnmountDetails {
+		return &v
+	}).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput)
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
+	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperationUnmountDetails) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberFileSystemOperationUnmountDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
+	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) Elem() DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberFileSystemOperationUnmountDetails) DrProtectionGroupMemberFileSystemOperationUnmountDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberFileSystemOperationUnmountDetails
+		return ret
+	}).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput)
+}
+
+// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberFileSystemOperationUnmountDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MountTargetId
+	}).(pulumi.StringPtrOutput)
+}
+
 type DrProtectionGroupMemberVnicMapping struct {
-	// (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+	// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	// (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress *string `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel *string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
-	// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId *string `pulumi:"destinationSubnetId"`
-	// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 	SourceVnicId *string `pulumi:"sourceVnicId"`
 }
 
@@ -2208,15 +3505,15 @@ type DrProtectionGroupMemberVnicMappingInput interface {
 }
 
 type DrProtectionGroupMemberVnicMappingArgs struct {
-	// (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+	// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	// (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
-	// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId pulumi.StringPtrInput `pulumi:"destinationSubnetId"`
-	// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+	// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 	SourceVnicId pulumi.StringPtrInput `pulumi:"sourceVnicId"`
 }
 
@@ -2289,27 +3586,27 @@ func (o DrProtectionGroupMemberVnicMappingOutput) ToOutput(ctx context.Context) 
 	}
 }
 
-// (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+// (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpHostnameLabel }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationSubnetId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 func (o DrProtectionGroupMemberVnicMappingOutput) SourceVnicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.SourceVnicId }).(pulumi.StringPtrOutput)
 }
@@ -2341,11 +3638,11 @@ func (o DrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDrPlanExecutionExecutionOption struct {
-	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
 	ArePrechecksEnabled bool `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored bool `pulumi:"areWarningsIgnored"`
-	// The type of the DR Plan executed.
+	// The type of the DR plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
 }
 
@@ -2361,11 +3658,11 @@ type GetDrPlanExecutionExecutionOptionInput interface {
 }
 
 type GetDrPlanExecutionExecutionOptionArgs struct {
-	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
 	ArePrechecksEnabled pulumi.BoolInput `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored pulumi.BoolInput `pulumi:"areWarningsIgnored"`
-	// The type of the DR Plan executed.
+	// The type of the DR plan executed.
 	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
 }
 
@@ -2438,7 +3735,7 @@ func (o GetDrPlanExecutionExecutionOptionOutput) ToOutput(ctx context.Context) p
 	}
 }
 
-// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
 func (o GetDrPlanExecutionExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) bool { return v.ArePrechecksEnabled }).(pulumi.BoolOutput)
 }
@@ -2448,7 +3745,7 @@ func (o GetDrPlanExecutionExecutionOptionOutput) AreWarningsIgnored() pulumi.Boo
 	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) bool { return v.AreWarningsIgnored }).(pulumi.BoolOutput)
 }
 
-// The type of the DR Plan executed.
+// The type of the DR plan executed.
 func (o GetDrPlanExecutionExecutionOptionOutput) PlanExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionExecutionOption) string { return v.PlanExecutionType }).(pulumi.StringOutput)
 }
@@ -2480,23 +3777,23 @@ func (o GetDrPlanExecutionExecutionOptionArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetDrPlanExecutionGroupExecution struct {
-	// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 	DisplayName string `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId string `pulumi:"groupId"`
 	// The status of the step execution.
 	Status string `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails string `pulumi:"statusDetails"`
-	// A list of details of each step executed in this group.
+	// A list of step executions in the group.
 	StepExecutions []GetDrPlanExecutionGroupExecutionStepExecution `pulumi:"stepExecutions"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted string `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type string `pulumi:"type"`
 }
 
@@ -2512,23 +3809,23 @@ type GetDrPlanExecutionGroupExecutionInput interface {
 }
 
 type GetDrPlanExecutionGroupExecutionArgs struct {
-	// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
 	// The status of the step execution.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
-	// A list of details of each step executed in this group.
+	// A list of step executions in the group.
 	StepExecutions GetDrPlanExecutionGroupExecutionStepExecutionArrayInput `pulumi:"stepExecutions"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2601,17 +3898,17 @@ func (o GetDrPlanExecutionGroupExecutionOutput) ToOutput(ctx context.Context) pu
 	}
 }
 
-// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlanExecutionGroupExecutionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o GetDrPlanExecutionGroupExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o GetDrPlanExecutionGroupExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -2621,29 +3918,29 @@ func (o GetDrPlanExecutionGroupExecutionOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 func (o GetDrPlanExecutionGroupExecutionOutput) StatusDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.StatusDetails }).(pulumi.StringOutput)
 }
 
-// A list of details of each step executed in this group.
+// A list of step executions in the group.
 func (o GetDrPlanExecutionGroupExecutionOutput) StepExecutions() GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) []GetDrPlanExecutionGroupExecutionStepExecution {
 		return v.StepExecutions
 	}).(GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionGroupExecutionOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionGroupExecutionOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
 
-// The plan group type.
+// The group type.  Example: `BUILT_IN`
 func (o GetDrPlanExecutionGroupExecutionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecution) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2675,25 +3972,25 @@ func (o GetDrPlanExecutionGroupExecutionArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetDrPlanExecutionGroupExecutionStepExecution struct {
-	// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 	DisplayName string `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId string `pulumi:"groupId"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrPlanExecutionGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
 	// The status of the step execution.
 	Status string `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails string `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 	StepId string `pulumi:"stepId"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted string `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type string `pulumi:"type"`
 }
 
@@ -2709,25 +4006,25 @@ type GetDrPlanExecutionGroupExecutionStepExecutionInput interface {
 }
 
 type GetDrPlanExecutionGroupExecutionStepExecutionArgs struct {
-	// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
 	// The status of the step execution.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 	StepId pulumi.StringInput `pulumi:"stepId"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2800,22 +4097,22 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ToOutput(ctx contex
 	}
 }
 
-// The display name of the step.  Example: `DATABASE_SWITCHOVER`
+// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// Information about an Object Storage log location for a DR Protection Group.
+// The details of an object storage log location for a DR protection group.
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) LogLocations() GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) []GetDrPlanExecutionGroupExecutionStepExecutionLogLocation {
 		return v.LogLocations
@@ -2827,27 +4124,27 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) Status() pulumi.Str
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StatusDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.StatusDetails }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) StepId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.StepId }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
 
-// The plan group type.
+// The group type.  Example: `BUILT_IN`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecution) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2879,11 +4176,11 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) Index(i pulumi
 }
 
 type GetDrPlanExecutionGroupExecutionStepExecutionLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
 }
 
@@ -2899,11 +4196,11 @@ type GetDrPlanExecutionGroupExecutionStepExecutionLogLocationInput interface {
 }
 
 type GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -2976,17 +4273,17 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToOutput
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionGroupExecutionStepExecutionLogLocation) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -3018,11 +4315,11 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) Ind
 }
 
 type GetDrPlanExecutionLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
 }
 
@@ -3038,11 +4335,11 @@ type GetDrPlanExecutionLogLocationInput interface {
 }
 
 type GetDrPlanExecutionLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -3115,17 +4412,17 @@ func (o GetDrPlanExecutionLogLocationOutput) ToOutput(ctx context.Context) pulum
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrPlanExecutionLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrPlanExecutionLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o GetDrPlanExecutionLogLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionLogLocation) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -3277,47 +4574,47 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
 	// The options for a plan execution.
 	ExecutionOptions []GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption `pulumi:"executionOptions"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A list of groups executed in this DR Plan Execution.
+	// A list of groups executed in this DR plan execution.
 	GroupExecutions []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution `pulumi:"groupExecutions"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	Id string `pulumi:"id"`
-	// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The type of the DR Plan executed.
+	// The type of the DR plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	PlanId string `pulumi:"planId"`
-	// A filter to return only DR Plan Executions that match the given lifecycleState.
+	// A filter to return only DR plan executions that match the given lifecycle state.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted string `pulumi:"timeStarted"`
-	// The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -3333,47 +4630,47 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemInput interface {
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
-	// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput `pulumi:"drProtectionGroupId"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
 	// The options for a plan execution.
 	ExecutionOptions GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayInput `pulumi:"executionOptions"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// A list of groups executed in this DR Plan Execution.
+	// A list of groups executed in this DR plan execution.
 	GroupExecutions GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput `pulumi:"groupExecutions"`
-	// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
-	// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayInput `pulumi:"logLocations"`
-	// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId pulumi.StringInput `pulumi:"peerDrProtectionGroupId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
-	// The type of the DR Plan executed.
+	// The type of the DR plan executed.
 	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
-	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	PlanId pulumi.StringInput `pulumi:"planId"`
-	// A filter to return only DR Plan Executions that match the given lifecycleState.
+	// A filter to return only DR plan executions that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
-	// The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -3446,27 +4743,27 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToOutput(ctx con
 	}
 }
 
-// The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ExecutionDurationInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) int { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
 }
@@ -3478,81 +4775,81 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ExecutionOptions
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A list of groups executed in this DR Plan Execution.
+// A list of groups executed in this DR plan execution.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) GroupExecutions() GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution {
 		return v.GroupExecutions
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput)
 }
 
-// The OCID of the DR Plan Execution.  Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the DR Plan Execution's current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+// A message describing the DR plan execution's current state in more detail.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// Information about an Object Storage log location for a DR Protection Group.
+// The details of an object storage log location for a DR protection group.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) LogLocations() GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) []GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation {
 		return v.LogLocations
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput)
 }
 
-// The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The type of the DR Plan executed.
+// The type of the DR plan executed.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PlanExecutionType }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.PlanId }).(pulumi.StringOutput)
 }
 
-// A filter to return only DR Plan Executions that match the given lifecycleState.
+// A filter to return only DR plan executions that match the given lifecycle state.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
 
-// The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -3584,11 +4881,11 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) Index(i pul
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption struct {
-	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
 	ArePrechecksEnabled bool `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored bool `pulumi:"areWarningsIgnored"`
-	// The type of the DR Plan executed.
+	// The type of the DR plan executed.
 	PlanExecutionType string `pulumi:"planExecutionType"`
 }
 
@@ -3604,11 +4901,11 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionInput interf
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs struct {
-	// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+	// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
 	ArePrechecksEnabled pulumi.BoolInput `pulumi:"arePrechecksEnabled"`
 	// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
 	AreWarningsIgnored pulumi.BoolInput `pulumi:"areWarningsIgnored"`
-	// The type of the DR Plan executed.
+	// The type of the DR plan executed.
 	PlanExecutionType pulumi.StringInput `pulumi:"planExecutionType"`
 }
 
@@ -3681,7 +4978,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) T
 	}
 }
 
-// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ArePrechecksEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) bool {
 		return v.ArePrechecksEnabled
@@ -3695,7 +4992,7 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) A
 	}).(pulumi.BoolOutput)
 }
 
-// The type of the DR Plan executed.
+// The type of the DR plan executed.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) PlanExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption) string {
 		return v.PlanExecutionType
@@ -3729,23 +5026,23 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutp
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId string `pulumi:"groupId"`
 	// The status of the step execution.
 	Status string `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails string `pulumi:"statusDetails"`
-	// A list of details of each step executed in this group.
+	// A list of step executions in the group.
 	StepExecutions []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution `pulumi:"stepExecutions"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted string `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type string `pulumi:"type"`
 }
 
@@ -3761,23 +5058,23 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionInput interfa
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
 	// The status of the step execution.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
-	// A list of details of each step executed in this group.
+	// A list of step executions in the group.
 	StepExecutions GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayInput `pulumi:"stepExecutions"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -3850,19 +5147,19 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) To
 	}
 }
 
-// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) int {
 		return v.ExecutionDurationInSec
 	}).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -3872,29 +5169,29 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) St
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) StatusDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.StatusDetails }).(pulumi.StringOutput)
 }
 
-// A list of details of each step executed in this group.
+// A list of step executions in the group.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) StepExecutions() GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution {
 		return v.StepExecutions
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.TimeEnded }).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.TimeStarted }).(pulumi.StringOutput)
 }
 
-// The plan group type.
+// The group type.  Example: `BUILT_IN`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -3926,25 +5223,25 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutpu
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec int `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId string `pulumi:"groupId"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation `pulumi:"logLocations"`
 	// The status of the step execution.
 	Status string `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails string `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 	StepId string `pulumi:"stepId"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded string `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted string `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type string `pulumi:"type"`
 }
 
@@ -3960,25 +5257,25 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The total duration in seconds taken to complete step execution.  Example: `35`
+	// The total duration in seconds taken to complete the step execution.  Example: `35`
 	ExecutionDurationInSec pulumi.IntInput `pulumi:"executionDurationInSec"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayInput `pulumi:"logLocations"`
 	// The status of the step execution.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+	// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
-	// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 	StepId pulumi.StringInput `pulumi:"stepId"`
-	// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
-	// The plan group type.
+	// The group type.  Example: `BUILT_IN`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -4051,28 +5348,28 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	}
 }
 
-// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.DisplayName
 	}).(pulumi.StringOutput)
 }
 
-// The total duration in seconds taken to complete step execution.  Example: `35`
+// The total duration in seconds taken to complete the step execution.  Example: `35`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) int {
 		return v.ExecutionDurationInSec
 	}).(pulumi.IntOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.GroupId
 	}).(pulumi.StringOutput)
 }
 
-// Information about an Object Storage log location for a DR Protection Group.
+// The details of an object storage log location for a DR protection group.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) LogLocations() GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation {
 		return v.LogLocations
@@ -4086,35 +5383,35 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	}).(pulumi.StringOutput)
 }
 
-// Additional details about the step execution status.  Example: `This step failed to complete due to a timeout`
+// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) StatusDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.StatusDetails
 	}).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) StepId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.StepId
 	}).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) TimeEnded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.TimeEnded
 	}).(pulumi.StringOutput)
 }
 
-// The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) TimeStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.TimeStarted
 	}).(pulumi.StringOutput)
 }
 
-// The plan group type.
+// The group type.  Example: `BUILT_IN`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution) string {
 		return v.Type
@@ -4148,11 +5445,11 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
 }
 
@@ -4168,11 +5465,11 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -4245,21 +5542,21 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) string {
 		return v.Bucket
 	}).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) string {
 		return v.Namespace
 	}).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation) string {
 		return v.Object
@@ -4293,11 +5590,11 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
 }
 
@@ -4313,11 +5610,11 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationInput interface 
 }
 
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -4390,17 +5687,17 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ToOut
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -4562,13 +5859,13 @@ func (o GetDrPlanExecutionsFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlan
 }
 
 type GetDrPlanPlanGroup struct {
-	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName string `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
-	// The list of steps in this plan group.
+	// The list of steps in the group.
 	Steps []GetDrPlanPlanGroupStep `pulumi:"steps"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type string `pulumi:"type"`
 }
 
@@ -4584,13 +5881,13 @@ type GetDrPlanPlanGroupInput interface {
 }
 
 type GetDrPlanPlanGroupArgs struct {
-	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
-	// The list of steps in this plan group.
+	// The list of steps in the group.
 	Steps GetDrPlanPlanGroupStepArrayInput `pulumi:"steps"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -4663,22 +5960,22 @@ func (o GetDrPlanPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[G
 	}
 }
 
-// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlanPlanGroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlanPlanGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of steps in this plan group.
+// The list of steps in the group.
 func (o GetDrPlanPlanGroupOutput) Steps() GetDrPlanPlanGroupStepArrayOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) []GetDrPlanPlanGroupStep { return v.Steps }).(GetDrPlanPlanGroupStepArrayOutput)
 }
 
-// The type of this DR Plan.
+// The type of the DR plan.
 func (o GetDrPlanPlanGroupOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -4710,23 +6007,23 @@ func (o GetDrPlanPlanGroupArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGro
 }
 
 type GetDrPlanPlanGroupStep struct {
-	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName string `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode string `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId string `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout int `pulumi:"timeout"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type string `pulumi:"type"`
-	// The details for a user-defined step in a DR Plan.
+	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []GetDrPlanPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
 
@@ -4742,23 +6039,23 @@ type GetDrPlanPlanGroupStepInput interface {
 }
 
 type GetDrPlanPlanGroupStepArgs struct {
-	// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode pulumi.StringInput `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntInput `pulumi:"timeout"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type pulumi.StringInput `pulumi:"type"`
-	// The details for a user-defined step in a DR Plan.
+	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps GetDrPlanPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
 
@@ -4831,7 +6128,7 @@ func (o GetDrPlanPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Outp
 	}
 }
 
-// The display name of this DR Plan Group.  Example: `DATABASE_SWITCHOVER`
+// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlanPlanGroupStepOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -4841,12 +6138,12 @@ func (o GetDrPlanPlanGroupStepOutput) ErrorMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.ErrorMode }).(pulumi.StringOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o GetDrPlanPlanGroupStepOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlanPlanGroupStepOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -4856,7 +6153,7 @@ func (o GetDrPlanPlanGroupStepOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 func (o GetDrPlanPlanGroupStepOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -4866,12 +6163,12 @@ func (o GetDrPlanPlanGroupStepOutput) Timeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) int { return v.Timeout }).(pulumi.IntOutput)
 }
 
-// The type of this DR Plan.
+// The type of the DR plan.
 func (o GetDrPlanPlanGroupStepOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// The details for a user-defined step in a DR Plan.
+// The details for a user-defined step in a DR plan.
 func (o GetDrPlanPlanGroupStepOutput) UserDefinedSteps() GetDrPlanPlanGroupStepUserDefinedStepArrayOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStep) []GetDrPlanPlanGroupStepUserDefinedStep { return v.UserDefinedSteps }).(GetDrPlanPlanGroupStepUserDefinedStepArrayOutput)
 }
@@ -4903,23 +6200,23 @@ func (o GetDrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanPla
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStep struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 	FunctionId string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion string `pulumi:"functionRegion"`
-	// Information about an Object Storage script location for a user-defined step in a DR Plan.
+	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations []GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
-	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
 	ScriptCommand string `pulumi:"scriptCommand"`
-	// The type of the step.
+	// The type of the user-defined step.
 	StepType string `pulumi:"stepType"`
 }
 
@@ -4935,23 +6232,23 @@ type GetDrPlanPlanGroupStepUserDefinedStepInput interface {
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStepArgs struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion pulumi.StringInput `pulumi:"functionRegion"`
-	// Information about an Object Storage script location for a user-defined step in a DR Plan.
+	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
-	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
 	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
-	// The type of the step.
+	// The type of the user-defined step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
 }
 
@@ -5024,7 +6321,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Contex
 	}
 }
 
-// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.FunctionId }).(pulumi.StringOutput)
 }
@@ -5034,7 +6331,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) FunctionRegion() pulumi.Str
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.FunctionRegion }).(pulumi.StringOutput)
 }
 
-// Information about an Object Storage script location for a user-defined step in a DR Plan.
+// The details of an object storage script location for a user-defined step in a DR plan.
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ObjectStorageScriptLocations() GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) []GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation {
 		return v.ObjectStorageScriptLocations
@@ -5051,12 +6348,12 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOu
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
 
-// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the instance on which this script or command should be executed.
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceId }).(pulumi.StringOutput)
 }
 
-// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceRegion }).(pulumi.StringOutput)
 }
@@ -5066,7 +6363,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.Stri
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
 }
 
-// The type of the step.
+// The type of the user-defined step.
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) StepType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.StepType }).(pulumi.StringOutput)
 }
@@ -5098,11 +6395,11 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 	Object string `pulumi:"object"`
 }
 
@@ -5118,11 +6415,11 @@ type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationInput inter
 }
 
 type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -5195,17 +6492,17 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) 
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -5355,35 +6652,35 @@ func (o GetDrPlansDrPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetDrPla
 }
 
 type GetDrPlansDrPlanCollectionItem struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
-	// A message describing the DR Plan's current state in more detail.
+	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
-	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The list of groups in this DR Plan.
+	// The list of groups in this DR plan.
 	PlanGroups []GetDrPlansDrPlanCollectionItemPlanGroup `pulumi:"planGroups"`
-	// A filter to return only DR Plans that match the given lifecycleState.
+	// A filter to return only DR plans that match the given lifecycle state.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type string `pulumi:"type"`
 }
 
@@ -5399,35 +6696,35 @@ type GetDrPlansDrPlanCollectionItemInput interface {
 }
 
 type GetDrPlansDrPlanCollectionItemArgs struct {
-	// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput `pulumi:"drProtectionGroupId"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
-	// A message describing the DR Plan's current state in more detail.
+	// A message describing the DR plan's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
-	// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerDrProtectionGroupId pulumi.StringInput `pulumi:"peerDrProtectionGroupId"`
-	// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
-	// The list of groups in this DR Plan.
+	// The list of groups in this DR plan.
 	PlanGroups GetDrPlansDrPlanCollectionItemPlanGroupArrayInput `pulumi:"planGroups"`
-	// A filter to return only DR Plans that match the given lifecycleState.
+	// A filter to return only DR plans that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -5500,77 +6797,77 @@ func (o GetDrPlansDrPlanCollectionItemOutput) ToOutput(ctx context.Context) pulu
 	}
 }
 
-// The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 func (o GetDrPlansDrPlanCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 func (o GetDrPlansDrPlanCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The OCID of the DR Protection Group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemOutput) DrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 func (o GetDrPlansDrPlanCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the DR Plan's current state in more detail.
+// A message describing the DR plan's current state in more detail.
 func (o GetDrPlansDrPlanCollectionItemOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `us-phoenix-1`
+// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 func (o GetDrPlansDrPlanCollectionItemOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The list of groups in this DR Plan.
+// The list of groups in this DR plan.
 func (o GetDrPlansDrPlanCollectionItemOutput) PlanGroups() GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) []GetDrPlansDrPlanCollectionItemPlanGroup { return v.PlanGroups }).(GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput)
 }
 
-// A filter to return only DR Plans that match the given lifecycleState.
+// A filter to return only DR plans that match the given lifecycle state.
 func (o GetDrPlansDrPlanCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetDrPlansDrPlanCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlansDrPlanCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrPlansDrPlanCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The type of this DR Plan.
+// The type of the DR plan.
 func (o GetDrPlansDrPlanCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -5602,13 +6899,13 @@ func (o GetDrPlansDrPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetD
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroup struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
-	// The list of steps in this plan group.
+	// The list of steps in the group.
 	Steps []GetDrPlansDrPlanCollectionItemPlanGroupStep `pulumi:"steps"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type string `pulumi:"type"`
 }
 
@@ -5624,13 +6921,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupInput interface {
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
-	// The list of steps in this plan group.
+	// The list of steps in the group.
 	Steps GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput `pulumi:"steps"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -5703,24 +7000,24 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) ToOutput(ctx context.Cont
 	}
 }
 
-// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of steps in this plan group.
+// The list of steps in the group.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Steps() GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) []GetDrPlansDrPlanCollectionItemPlanGroupStep {
 		return v.Steps
 	}).(GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput)
 }
 
-// The type of this DR Plan.
+// The type of the DR plan.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -5752,23 +7049,23 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStep struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode string `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId string `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout int `pulumi:"timeout"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type string `pulumi:"type"`
-	// The details for a user-defined step in a DR Plan.
+	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
 }
 
@@ -5784,23 +7081,23 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepInput interface {
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepArgs struct {
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The error mode for this step.
 	ErrorMode pulumi.StringInput `pulumi:"errorMode"`
-	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+	// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether this step should be enabled for execution.  Example: `true`
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntInput `pulumi:"timeout"`
-	// The type of this DR Plan.
+	// The type of the DR plan.
 	Type pulumi.StringInput `pulumi:"type"`
-	// The details for a user-defined step in a DR Plan.
+	// The details for a user-defined step in a DR plan.
 	UserDefinedSteps GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
 }
 
@@ -5873,7 +7170,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ToOutput(ctx context.
 	}
 }
 
-// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -5883,12 +7180,12 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ErrorMode() pulumi.St
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.ErrorMode }).(pulumi.StringOutput)
 }
 
-// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..&lt;unique_id&gt;`
+// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..&lt;unique_id&gt;`
+// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -5898,7 +7195,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) IsEnabled() pulumi.Bo
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -5908,12 +7205,12 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Timeout() pulumi.IntO
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) int { return v.Timeout }).(pulumi.IntOutput)
 }
 
-// The type of this DR Plan.
+// The type of the DR plan.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// The details for a user-defined step in a DR Plan.
+// The details for a user-defined step in a DR plan.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) UserDefinedSteps() GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStep) []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
 		return v.UserDefinedSteps
@@ -5947,23 +7244,23 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) Index(i pulumi.I
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 	FunctionId string `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion string `pulumi:"functionRegion"`
-	// Information about an Object Storage script location for a user-defined step in a DR Plan.
+	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody string `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
-	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
 	ScriptCommand string `pulumi:"scriptCommand"`
-	// The type of the step.
+	// The type of the user-defined step.
 	StepType string `pulumi:"stepType"`
 }
 
@@ -5979,23 +7276,23 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepInput interface {
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs struct {
-	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
 	// The region in which the function is deployed.  Example: `us-ashburn-1`
 	FunctionRegion pulumi.StringInput `pulumi:"functionRegion"`
-	// Information about an Object Storage script location for a user-defined step in a DR Plan.
+	// The details of an object storage script location for a user-defined step in a DR plan.
 	ObjectStorageScriptLocations GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
 	// The userid on the instance to be used for executing the script or command.  Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
-	// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
-	// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
 	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
 	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
-	// The type of the step.
+	// The type of the user-defined step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
 }
 
@@ -6068,7 +7365,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ToOutp
 	}
 }
 
-// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.FunctionId }).(pulumi.StringOutput)
 }
@@ -6078,7 +7375,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) Functi
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.FunctionRegion }).(pulumi.StringOutput)
 }
 
-// Information about an Object Storage script location for a user-defined step in a DR Plan.
+// The details of an object storage script location for a user-defined step in a DR plan.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ObjectStorageScriptLocations() GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation {
 		return v.ObjectStorageScriptLocations
@@ -6095,12 +7392,12 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunAsU
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
 
-// The OCID of the instance where this script or command should be executed.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the instance on which this script or command should be executed.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceId }).(pulumi.StringOutput)
 }
 
-// The region of the instance where this script or command should be executed.  Example: `us-phoenix-1`
+// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string {
 		return v.RunOnInstanceRegion
@@ -6112,7 +7409,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) Script
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
 }
 
-// The type of the step.
+// The type of the user-defined step.
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) StepType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.StepType }).(pulumi.StringOutput)
 }
@@ -6144,11 +7441,11 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) I
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 	Object string `pulumi:"object"`
 }
 
@@ -6164,11 +7461,11 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScri
 }
 
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+	// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+	// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -6241,21 +7538,21 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `customDrScripts`
+// The bucket name inside the object storage namespace.  Example: `customDrScripts`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string {
 		return v.Bucket
 	}).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string {
 		return v.Namespace
 	}).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation) string {
 		return v.Object
@@ -6419,11 +7716,11 @@ func (o GetDrPlansFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlansFilterOu
 }
 
 type GetDrProtectionGroupAssociation struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId string `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The role of the DR Protection Group.
+	// The role of the DR protection group.
 	Role string `pulumi:"role"`
 }
 
@@ -6439,11 +7736,11 @@ type GetDrProtectionGroupAssociationInput interface {
 }
 
 type GetDrProtectionGroupAssociationArgs struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId pulumi.StringInput `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
-	// The role of the DR Protection Group.
+	// The role of the DR protection group.
 	Role pulumi.StringInput `pulumi:"role"`
 }
 
@@ -6516,17 +7813,17 @@ func (o GetDrProtectionGroupAssociationOutput) ToOutput(ctx context.Context) pul
 	}
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrProtectionGroupAssociationOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupAssociation) string { return v.PeerId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group.  Example: `us-ashburn-1`
 func (o GetDrProtectionGroupAssociationOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupAssociation) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The role of the DR Protection Group.
+// The role of the DR protection group.
 func (o GetDrProtectionGroupAssociationOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupAssociation) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -6558,11 +7855,11 @@ func (o GetDrProtectionGroupAssociationArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDrProtectionGroupLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
 }
 
@@ -6578,11 +7875,11 @@ type GetDrProtectionGroupLogLocationInput interface {
 }
 
 type GetDrProtectionGroupLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -6655,17 +7952,17 @@ func (o GetDrProtectionGroupLogLocationOutput) ToOutput(ctx context.Context) pul
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrProtectionGroupLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrProtectionGroupLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o GetDrProtectionGroupLogLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -6697,21 +7994,37 @@ func (o GetDrProtectionGroupLogLocationArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDrProtectionGroupMember struct {
-	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	// A list of backend set mappings that are used to transfer or update backends during DR.
+	BackendSetMappings []GetDrProtectionGroupMemberBackendSetMapping `pulumi:"backendSetMappings"`
+	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	BlockVolumeOperations []GetDrProtectionGroupMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
+	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
+	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
+	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
-	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	// A list of mappings between the primary region file system export and destination region mount target.
+	ExportMappings []GetDrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
+	// Operations performed on a list of file systems used on the non-movable compute instance.
+	FileSystemOperations []GetDrProtectionGroupMemberFileSystemOperation `pulumi:"fileSystemOperations"`
+	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable bool `pulumi:"isMovable"`
-	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+	IsStartStopEnabled bool `pulumi:"isStartStopEnabled"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupMemberVnicMapping `pulumi:"vnicMapping"`
@@ -6731,21 +8044,37 @@ type GetDrProtectionGroupMemberInput interface {
 }
 
 type GetDrProtectionGroupMemberArgs struct {
-	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	// A list of backend set mappings that are used to transfer or update backends during DR.
+	BackendSetMappings GetDrProtectionGroupMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
+	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	BlockVolumeOperations GetDrProtectionGroupMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
+	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
+	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
+	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
-	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// A list of mappings between the primary region file system export and destination region mount target.
+	ExportMappings GetDrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
+	// Operations performed on a list of file systems used on the non-movable compute instance.
+	FileSystemOperations GetDrProtectionGroupMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
+	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
-	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+	IsStartStopEnabled pulumi.BoolInput `pulumi:"isStartStopEnabled"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
@@ -6822,32 +8151,78 @@ func (o GetDrProtectionGroupMemberOutput) ToOutput(ctx context.Context) pulumix.
 	}
 }
 
-// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+// A list of backend set mappings that are used to transfer or update backends during DR.
+func (o GetDrProtectionGroupMemberOutput) BackendSetMappings() GetDrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBackendSetMapping {
+		return v.BackendSetMappings
+	}).(GetDrProtectionGroupMemberBackendSetMappingArrayOutput)
+}
+
+// Operations performed on a list of block volumes used on the non-movable compute instance.
+func (o GetDrProtectionGroupMemberOutput) BlockVolumeOperations() GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberBlockVolumeOperation {
+		return v.BlockVolumeOperations
+	}).(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput)
+}
+
+// The availability domain of the destination mount target. Example: `BBTh:region-AD`
+func (o GetDrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationAvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) DestinationCapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationCapacityReservationId }).(pulumi.StringOutput)
 }
 
-// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) DestinationCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationCompartmentId }).(pulumi.StringOutput)
 }
 
-// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
+// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) DestinationDedicatedVmHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationDedicatedVmHostId }).(pulumi.StringOutput)
 }
 
-// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationLoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationNetworkLoadBalancerId }).(pulumi.StringOutput)
+}
+
+// A list of mappings between the primary region file system export and destination region mount target.
+func (o GetDrProtectionGroupMemberOutput) ExportMappings() GetDrProtectionGroupMemberExportMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberExportMapping { return v.ExportMappings }).(GetDrProtectionGroupMemberExportMappingArrayOutput)
+}
+
+// Operations performed on a list of file systems used on the non-movable compute instance.
+func (o GetDrProtectionGroupMemberOutput) FileSystemOperations() GetDrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberFileSystemOperation {
+		return v.FileSystemOperations
+	}).(GetDrProtectionGroupMemberFileSystemOperationArrayOutput)
+}
+
+// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 func (o GetDrProtectionGroupMemberOutput) IsMovable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsMovable }).(pulumi.BoolOutput)
 }
 
-// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 func (o GetDrProtectionGroupMemberOutput) IsRetainFaultDomain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsRetainFaultDomain }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+func (o GetDrProtectionGroupMemberOutput) IsStartStopEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsStartStopEnabled }).(pulumi.BoolOutput)
+}
+
+// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -6857,7 +8232,7 @@ func (o GetDrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PasswordVaultSecretId }).(pulumi.StringOutput)
 }
@@ -6898,16 +8273,1075 @@ func (o GetDrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) GetDrPro
 	}).(GetDrProtectionGroupMemberOutput)
 }
 
+type GetDrProtectionGroupMemberBackendSetMapping struct {
+	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
+	DestinationBackendSetName string `pulumi:"destinationBackendSetName"`
+	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+	IsBackendSetForNonMovable bool `pulumi:"isBackendSetForNonMovable"`
+	// The name of the source backend set.  Example: `My_Source_Backend_Set`
+	SourceBackendSetName string `pulumi:"sourceBackendSetName"`
+}
+
+// GetDrProtectionGroupMemberBackendSetMappingInput is an input type that accepts GetDrProtectionGroupMemberBackendSetMappingArgs and GetDrProtectionGroupMemberBackendSetMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBackendSetMappingInput` via:
+//
+//	GetDrProtectionGroupMemberBackendSetMappingArgs{...}
+type GetDrProtectionGroupMemberBackendSetMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBackendSetMappingOutput() GetDrProtectionGroupMemberBackendSetMappingOutput
+	ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberBackendSetMappingOutput
+}
+
+type GetDrProtectionGroupMemberBackendSetMappingArgs struct {
+	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
+	DestinationBackendSetName pulumi.StringInput `pulumi:"destinationBackendSetName"`
+	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+	IsBackendSetForNonMovable pulumi.BoolInput `pulumi:"isBackendSetForNonMovable"`
+	// The name of the source backend set.  Example: `My_Source_Backend_Set`
+	SourceBackendSetName pulumi.StringInput `pulumi:"sourceBackendSetName"`
+}
+
+func (GetDrProtectionGroupMemberBackendSetMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToGetDrProtectionGroupMemberBackendSetMappingOutput() GetDrProtectionGroupMemberBackendSetMappingOutput {
+	return i.ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackendSetMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackendSetMappingOutput)
+}
+
+func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping]{
+		OutputState: i.ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberBackendSetMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberBackendSetMappingArray and GetDrProtectionGroupMemberBackendSetMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBackendSetMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBackendSetMappingArray{ GetDrProtectionGroupMemberBackendSetMappingArgs{...} }
+type GetDrProtectionGroupMemberBackendSetMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBackendSetMappingArrayOutput() GetDrProtectionGroupMemberBackendSetMappingArrayOutput
+	ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBackendSetMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberBackendSetMappingArray []GetDrProtectionGroupMemberBackendSetMappingInput
+
+func (GetDrProtectionGroupMemberBackendSetMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBackendSetMappingArray) ToGetDrProtectionGroupMemberBackendSetMappingArrayOutput() GetDrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBackendSetMappingArray) ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackendSetMappingArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping]{
+		OutputState: i.ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBackendSetMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToGetDrProtectionGroupMemberBackendSetMappingOutput() GetDrProtectionGroupMemberBackendSetMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackendSetMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) DestinationBackendSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) string { return v.DestinationBackendSetName }).(pulumi.StringOutput)
+}
+
+// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) IsBackendSetForNonMovable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) bool { return v.IsBackendSetForNonMovable }).(pulumi.BoolOutput)
+}
+
+// The name of the source backend set.  Example: `My_Source_Backend_Set`
+func (o GetDrProtectionGroupMemberBackendSetMappingOutput) SourceBackendSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackendSetMapping) string { return v.SourceBackendSetName }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberBackendSetMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToGetDrProtectionGroupMemberBackendSetMappingArrayOutput() GetDrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackendSetMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBackendSetMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBackendSetMapping {
+		return vs[0].([]GetDrProtectionGroupMemberBackendSetMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBackendSetMappingOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperation struct {
+	// The details for attaching or detaching a block volume.
+	AttachmentDetails []GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail `pulumi:"attachmentDetails"`
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId string `pulumi:"blockVolumeId"`
+	// Mount details of a file system.
+	MountDetails []GetDrProtectionGroupMemberBlockVolumeOperationMountDetail `pulumi:"mountDetails"`
+}
+
+// GetDrProtectionGroupMemberBlockVolumeOperationInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationArgs and GetDrProtectionGroupMemberBlockVolumeOperationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeOperationArgs{...}
+type GetDrProtectionGroupMemberBlockVolumeOperationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeOperationOutput() GetDrProtectionGroupMemberBlockVolumeOperationOutput
+	ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeOperationOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationArgs struct {
+	// The details for attaching or detaching a block volume.
+	AttachmentDetails GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput `pulumi:"attachmentDetails"`
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	// Mount details of a file system.
+	MountDetails GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput `pulumi:"mountDetails"`
+}
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationOutput() GetDrProtectionGroupMemberBlockVolumeOperationOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationOutput)
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberBlockVolumeOperationArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationArray and GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeOperationArray{ GetDrProtectionGroupMemberBlockVolumeOperationArgs{...} }
+type GetDrProtectionGroupMemberBlockVolumeOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput
+	ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationArray []GetDrProtectionGroupMemberBlockVolumeOperationInput
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationArray) ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationArray) ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationOutput() GetDrProtectionGroupMemberBlockVolumeOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The details for attaching or detaching a block volume.
+func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) AttachmentDetails() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperation) []GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail {
+		return v.AttachmentDetails
+	}).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput)
+}
+
+// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) BlockVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperation) string { return v.BlockVolumeId }).(pulumi.StringOutput)
+}
+
+// Mount details of a file system.
+func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) MountDetails() GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperation) []GetDrProtectionGroupMemberBlockVolumeOperationMountDetail {
+		return v.MountDetails
+	}).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeOperation {
+		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeOperation)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBlockVolumeOperationOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail struct {
+	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+// GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs and GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs{...}
+type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput
+	ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs struct {
+	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput)
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray and GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray{ GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs{...} }
+type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput
+	ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray []GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail) string {
+		return v.VolumeAttachmentReferenceInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail {
+		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationMountDetail struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs and GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs{...}
+type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput() GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput
+	ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput() GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput)
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray and GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput` via:
+//
+//	GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray{ GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs{...} }
+type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput
+	ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray []GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput {
+	return i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput() GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBlockVolumeOperationMountDetail) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput() GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberBlockVolumeOperationMountDetail {
+		return vs[0].([]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput)
+}
+
+type GetDrProtectionGroupMemberExportMapping struct {
+	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	DestinationMountTargetId string `pulumi:"destinationMountTargetId"`
+	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
+	ExportId string `pulumi:"exportId"`
+}
+
+// GetDrProtectionGroupMemberExportMappingInput is an input type that accepts GetDrProtectionGroupMemberExportMappingArgs and GetDrProtectionGroupMemberExportMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberExportMappingInput` via:
+//
+//	GetDrProtectionGroupMemberExportMappingArgs{...}
+type GetDrProtectionGroupMemberExportMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberExportMappingOutput() GetDrProtectionGroupMemberExportMappingOutput
+	ToGetDrProtectionGroupMemberExportMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberExportMappingOutput
+}
+
+type GetDrProtectionGroupMemberExportMappingArgs struct {
+	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	DestinationMountTargetId pulumi.StringInput `pulumi:"destinationMountTargetId"`
+	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+}
+
+func (GetDrProtectionGroupMemberExportMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberExportMappingArgs) ToGetDrProtectionGroupMemberExportMappingOutput() GetDrProtectionGroupMemberExportMappingOutput {
+	return i.ToGetDrProtectionGroupMemberExportMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberExportMappingArgs) ToGetDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberExportMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberExportMappingOutput)
+}
+
+func (i GetDrProtectionGroupMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[GetDrProtectionGroupMemberExportMapping]{
+		OutputState: i.ToGetDrProtectionGroupMemberExportMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberExportMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberExportMappingArray and GetDrProtectionGroupMemberExportMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberExportMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberExportMappingArray{ GetDrProtectionGroupMemberExportMappingArgs{...} }
+type GetDrProtectionGroupMemberExportMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberExportMappingArrayOutput() GetDrProtectionGroupMemberExportMappingArrayOutput
+	ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberExportMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberExportMappingArray []GetDrProtectionGroupMemberExportMappingInput
+
+func (GetDrProtectionGroupMemberExportMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberExportMappingArray) ToGetDrProtectionGroupMemberExportMappingArrayOutput() GetDrProtectionGroupMemberExportMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberExportMappingArray) ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberExportMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberExportMappingArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberExportMapping]{
+		OutputState: i.ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberExportMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberExportMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberExportMappingOutput) ToGetDrProtectionGroupMemberExportMappingOutput() GetDrProtectionGroupMemberExportMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberExportMappingOutput) ToGetDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberExportMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[GetDrProtectionGroupMemberExportMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberExportMappingOutput) DestinationMountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberExportMapping) string { return v.DestinationMountTargetId }).(pulumi.StringOutput)
+}
+
+// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberExportMappingOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberExportMapping) string { return v.ExportId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberExportMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberExportMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberExportMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToGetDrProtectionGroupMemberExportMappingArrayOutput() GetDrProtectionGroupMemberExportMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberExportMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberExportMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberExportMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberExportMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberExportMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberExportMapping {
+		return vs[0].([]GetDrProtectionGroupMemberExportMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberExportMappingOutput)
+}
+
+type GetDrProtectionGroupMemberFileSystemOperation struct {
+	// The export path of the file system.  Example: `/fs-export-path`
+	ExportPath string `pulumi:"exportPath"`
+	// Mount details of a file system.
+	MountDetails []GetDrProtectionGroupMemberFileSystemOperationMountDetail `pulumi:"mountDetails"`
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint string `pulumi:"mountPoint"`
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId string `pulumi:"mountTargetId"`
+	// Unmount details for a file system.
+	UnmountDetails []GetDrProtectionGroupMemberFileSystemOperationUnmountDetail `pulumi:"unmountDetails"`
+}
+
+// GetDrProtectionGroupMemberFileSystemOperationInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationArgs and GetDrProtectionGroupMemberFileSystemOperationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationInput` via:
+//
+//	GetDrProtectionGroupMemberFileSystemOperationArgs{...}
+type GetDrProtectionGroupMemberFileSystemOperationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberFileSystemOperationOutput() GetDrProtectionGroupMemberFileSystemOperationOutput
+	ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(context.Context) GetDrProtectionGroupMemberFileSystemOperationOutput
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationArgs struct {
+	// The export path of the file system.  Example: `/fs-export-path`
+	ExportPath pulumi.StringInput `pulumi:"exportPath"`
+	// Mount details of a file system.
+	MountDetails GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput `pulumi:"mountDetails"`
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// Unmount details for a file system.
+	UnmountDetails GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput `pulumi:"unmountDetails"`
+}
+
+func (GetDrProtectionGroupMemberFileSystemOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToGetDrProtectionGroupMemberFileSystemOperationOutput() GetDrProtectionGroupMemberFileSystemOperationOutput {
+	return i.ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationOutput)
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation]{
+		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberFileSystemOperationArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationArray and GetDrProtectionGroupMemberFileSystemOperationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationArrayInput` via:
+//
+//	GetDrProtectionGroupMemberFileSystemOperationArray{ GetDrProtectionGroupMemberFileSystemOperationArgs{...} }
+type GetDrProtectionGroupMemberFileSystemOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberFileSystemOperationArrayOutput() GetDrProtectionGroupMemberFileSystemOperationArrayOutput
+	ToGetDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberFileSystemOperationArrayOutput
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationArray []GetDrProtectionGroupMemberFileSystemOperationInput
+
+func (GetDrProtectionGroupMemberFileSystemOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationArray) ToGetDrProtectionGroupMemberFileSystemOperationArrayOutput() GetDrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return i.ToGetDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationArray) ToGetDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation]{
+		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberFileSystemOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToGetDrProtectionGroupMemberFileSystemOperationOutput() GetDrProtectionGroupMemberFileSystemOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The export path of the file system.  Example: `/fs-export-path`
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ExportPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) string { return v.ExportPath }).(pulumi.StringOutput)
+}
+
+// Mount details of a file system.
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountDetails() GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) []GetDrProtectionGroupMemberFileSystemOperationMountDetail {
+		return v.MountDetails
+	}).(GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput)
+}
+
+// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+// Unmount details for a file system.
+func (o GetDrProtectionGroupMemberFileSystemOperationOutput) UnmountDetails() GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperation) []GetDrProtectionGroupMemberFileSystemOperationUnmountDetail {
+		return v.UnmountDetails
+	}).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput)
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationArrayOutput() GetDrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberFileSystemOperation {
+		return vs[0].([]GetDrProtectionGroupMemberFileSystemOperation)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberFileSystemOperationOutput)
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationMountDetail struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId string `pulumi:"mountTargetId"`
+}
+
+// GetDrProtectionGroupMemberFileSystemOperationMountDetailInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs and GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationMountDetailInput` via:
+//
+//	GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs{...}
+type GetDrProtectionGroupMemberFileSystemOperationMountDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutput() GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput
+	ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+}
+
+func (GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutput() GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
+	return i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput)
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationMountDetailArray and GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput` via:
+//
+//	GetDrProtectionGroupMemberFileSystemOperationMountDetailArray{ GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs{...} }
+type GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput() GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput
+	ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationMountDetailArray []GetDrProtectionGroupMemberFileSystemOperationMountDetailInput
+
+func (GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput() GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput {
+	return i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutput() GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperationMountDetail) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput() GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberFileSystemOperationMountDetail {
+		return vs[0].([]GetDrProtectionGroupMemberFileSystemOperationMountDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput)
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationUnmountDetail struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId string `pulumi:"mountTargetId"`
+}
+
+// GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs and GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput` via:
+//
+//	GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs{...}
+type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput() GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput
+	ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+}
+
+func (GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput() GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
+	return i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput)
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray and GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput` via:
+//
+//	GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray{ GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs{...} }
+type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput() GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput
+	ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray []GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput
+
+func (GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput() GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput {
+	return i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
+		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput() GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberFileSystemOperationUnmountDetail) string { return v.MountTargetId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput() GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberFileSystemOperationUnmountDetail {
+		return vs[0].([]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput)
+}
+
 type GetDrProtectionGroupMemberVnicMapping struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId string `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 	SourceVnicId string `pulumi:"sourceVnicId"`
 }
 
@@ -6923,15 +9357,15 @@ type GetDrProtectionGroupMemberVnicMappingInput interface {
 }
 
 type GetDrProtectionGroupMemberVnicMappingArgs struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
 }
 
@@ -7004,29 +9438,29 @@ func (o GetDrProtectionGroupMemberVnicMappingOutput) ToOutput(ctx context.Contex
 	}
 }
 
-// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringOutput)
 }
 
-// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationSubnetId }).(pulumi.StringOutput)
 }
 
-// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.SourceVnicId }).(pulumi.StringOutput)
 }
@@ -7179,36 +9613,38 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) Index(i pul
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItem struct {
 	Associations []GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation `pulumi:"associations"`
-	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags         map[string]interface{} `pulumi:"definedTags"`
 	DisassociateTrigger int                    `pulumi:"disassociateTrigger"`
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	Id string `pulumi:"id"`
-	// A message describing the DR Protection Group's current state in more detail.
+	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// A filter to return only DR protection groups that match the given lifecycle sub-state.
+	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// The details of an object storage log location for a DR protection group.
 	LogLocations []GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation `pulumi:"logLocations"`
-	// A list of DR Protection Group members.
+	// A list of DR protection group members.
 	Members []GetDrProtectionGroupsDrProtectionGroupCollectionItemMember `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId string `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The DR Protection Group Role.
+	// The DR protection group Role.
 	Role string `pulumi:"role"`
-	// A filter to return only DR Protection Groups that match the given lifecycleState.
+	// A filter to return only DR protection groups that match the given lifecycle state.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -7225,36 +9661,38 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemInput interface {
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs struct {
 	Associations GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayInput `pulumi:"associations"`
-	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags         pulumi.MapInput `pulumi:"definedTags"`
 	DisassociateTrigger pulumi.IntInput `pulumi:"disassociateTrigger"`
-	// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
-	// A message describing the DR Protection Group's current state in more detail.
+	// A message describing the DR protection group's current state in more detail.
 	LifeCycleDetails pulumi.StringInput `pulumi:"lifeCycleDetails"`
-	// Information about an Object Storage log location for a DR Protection Group.
+	// A filter to return only DR protection groups that match the given lifecycle sub-state.
+	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	// The details of an object storage log location for a DR protection group.
 	LogLocations GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayInput `pulumi:"logLocations"`
-	// A list of DR Protection Group members.
+	// A list of DR protection group members.
 	Members GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput `pulumi:"members"`
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId pulumi.StringInput `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
-	// The DR Protection Group Role.
+	// The DR protection group Role.
 	Role pulumi.StringInput `pulumi:"role"`
-	// A filter to return only DR Protection Groups that match the given lifecycleState.
+	// A filter to return only DR protection groups that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -7333,12 +9771,12 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Associations
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput)
 }
 
-// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..exampleocid1`
+// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]interface{} {
 		return v.DefinedTags
@@ -7349,75 +9787,80 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Disassociate
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) int { return v.DisassociateTrigger }).(pulumi.IntOutput)
 }
 
-// A filter to return only resources that match the entire display name given.  Example: `MY UNIQUE DISPLAY NAME`
+// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]interface{} {
 		return v.FreeformTags
 	}).(pulumi.MapOutput)
 }
 
-// The OCID of the DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the DR Protection Group's current state in more detail.
+// A message describing the DR protection group's current state in more detail.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) LifeCycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
 }
 
-// Information about an Object Storage log location for a DR Protection Group.
+// A filter to return only DR protection groups that match the given lifecycle sub-state.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) LifecycleSubState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
+// The details of an object storage log location for a DR protection group.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) LogLocations() GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) []GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation {
 		return v.LogLocations
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput)
 }
 
-// A list of DR Protection Group members.
+// A list of DR protection group members.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Members() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
 		return v.Members
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput)
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.PeerId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group.  Example: `us-ashburn-1`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The DR Protection Group Role.
+// The DR protection group Role.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.Role }).(pulumi.StringOutput)
 }
 
-// A filter to return only DR Protection Groups that match the given lifecycleState.
+// A filter to return only DR protection groups that match the given lifecycle state.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]interface{} {
 		return v.SystemTags
 	}).(pulumi.MapOutput)
 }
 
-// The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
+// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -7449,11 +9892,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) Index(i
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId string `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion string `pulumi:"peerRegion"`
-	// The DR Protection Group Role.
+	// The DR protection group Role.
 	Role string `pulumi:"role"`
 }
 
@@ -7469,11 +9912,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationInput interf
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs struct {
-	// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+	// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	PeerId pulumi.StringInput `pulumi:"peerId"`
-	// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringInput `pulumi:"peerRegion"`
-	// The DR Protection Group Role.
+	// The DR protection group Role.
 	Role pulumi.StringInput `pulumi:"role"`
 }
 
@@ -7546,17 +9989,17 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) T
 	}
 }
 
-// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) PeerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.PeerId }).(pulumi.StringOutput)
 }
 
-// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+// The region of the peer DR protection group.  Example: `us-ashburn-1`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The DR Protection Group Role.
+// The DR protection group Role.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -7588,11 +10031,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
 }
 
@@ -7608,11 +10051,11 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationInput interf
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs struct {
-	// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -7685,17 +10128,17 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) T
 	}
 }
 
-// The bucket name inside the Object Storage namespace.  Example: `operationLogs`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The object name inside the Object Storage bucket.  Example: `switchoverPlanExecutions`
+// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -7727,21 +10170,37 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
-	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	// A list of backend set mappings that are used to transfer or update backends during DR.
+	BackendSetMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping `pulumi:"backendSetMappings"`
+	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	BlockVolumeOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
+	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
+	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId string `pulumi:"destinationCapacityReservationId"`
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId string `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
+	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId string `pulumi:"destinationDedicatedVmHostId"`
-	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId string `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
+	// A list of mappings between the primary region file system export and destination region mount target.
+	ExportMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping `pulumi:"exportMappings"`
+	// Operations performed on a list of file systems used on the non-movable compute instance.
+	FileSystemOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation `pulumi:"fileSystemOperations"`
+	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable bool `pulumi:"isMovable"`
-	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 	IsRetainFaultDomain bool `pulumi:"isRetainFaultDomain"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+	IsStartStopEnabled bool `pulumi:"isStartStopEnabled"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping `pulumi:"vnicMapping"`
@@ -7761,21 +10220,37 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberInput interface {
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
-	// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+	// A list of backend set mappings that are used to transfer or update backends during DR.
+	BackendSetMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput `pulumi:"backendSetMappings"`
+	// Operations performed on a list of block volumes used on the non-movable compute instance.
+	BlockVolumeOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
+	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
+	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
+	// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 	DestinationCapacityReservationId pulumi.StringInput `pulumi:"destinationCapacityReservationId"`
-	// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+	// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 	DestinationCompartmentId pulumi.StringInput `pulumi:"destinationCompartmentId"`
-	// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
+	// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 	DestinationDedicatedVmHostId pulumi.StringInput `pulumi:"destinationDedicatedVmHostId"`
-	// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+	// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+	DestinationLoadBalancerId pulumi.StringInput `pulumi:"destinationLoadBalancerId"`
+	// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
+	// A list of mappings between the primary region file system export and destination region mount target.
+	ExportMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput `pulumi:"exportMappings"`
+	// Operations performed on a list of file systems used on the non-movable compute instance.
+	FileSystemOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
+	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
-	// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 	IsRetainFaultDomain pulumi.BoolInput `pulumi:"isRetainFaultDomain"`
-	// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+	// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+	IsStartStopEnabled pulumi.BoolInput `pulumi:"isStartStopEnabled"`
+	// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// A list of compute instance VNIC mappings.
 	VnicMapping GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput `pulumi:"vnicMapping"`
@@ -7852,38 +10327,92 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToOutp
 	}
 }
 
-// The OCID of the capacity reservation in the destination region using which this compute instance should be launched.  Example: `ocid1.capacityreservation.oc1..&lt;unique_id&gt;`
+// A list of backend set mappings that are used to transfer or update backends during DR.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BackendSetMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping {
+		return v.BackendSetMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput)
+}
+
+// Operations performed on a list of block volumes used on the non-movable compute instance.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockVolumeOperations() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
+		return v.BlockVolumeOperations
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput)
+}
+
+// The availability domain of the destination mount target. Example: `BBTh:region-AD`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationAvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.DestinationAvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationCapacityReservationId
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the compartment for this compute instance in the destination region.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationCompartmentId
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the dedicated VM Host for this compute instance in the destination region.  Example: `ocid1.dedicatedvmhost.oc1..&lt;unique_id&gt;`
+// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationDedicatedVmHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.DestinationDedicatedVmHostId
 	}).(pulumi.StringOutput)
 }
 
-// A flag indicating if this compute instance should be moved during DR operations.  Example: `false`
+// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.DestinationLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DestinationNetworkLoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
+		return v.DestinationNetworkLoadBalancerId
+	}).(pulumi.StringOutput)
+}
+
+// A list of mappings between the primary region file system export and destination region mount target.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ExportMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping {
+		return v.ExportMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput)
+}
+
+// Operations performed on a list of file systems used on the non-movable compute instance.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) FileSystemOperations() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation {
+		return v.FileSystemOperations
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput)
+}
+
+// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsMovable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsMovable }).(pulumi.BoolOutput)
 }
 
-// A flag indicating if this compute instance should be moved to the same fault domain.  Compute instance launch will fail if this flag is set to true and capacity is not available in that specific fault domain in the destination region.  Example: `false`
+// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsRetainFaultDomain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsRetainFaultDomain }).(pulumi.BoolOutput)
 }
 
-// The OCID of the member.  Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsStartStopEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsStartStopEnabled }).(pulumi.BoolOutput)
+}
+
+// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) MemberId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberId }).(pulumi.StringOutput)
 }
@@ -7893,7 +10422,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Member
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The ID of the vault secret where the database password is stored.  Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PasswordVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.PasswordVaultSecretId
@@ -7940,16 +10469,1099 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) I
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput)
 }
 
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping struct {
+	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
+	DestinationBackendSetName string `pulumi:"destinationBackendSetName"`
+	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+	IsBackendSetForNonMovable bool `pulumi:"isBackendSetForNonMovable"`
+	// The name of the source backend set.  Example: `My_Source_Backend_Set`
+	SourceBackendSetName string `pulumi:"sourceBackendSetName"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs struct {
+	// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
+	DestinationBackendSetName pulumi.StringInput `pulumi:"destinationBackendSetName"`
+	// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+	IsBackendSetForNonMovable pulumi.BoolInput `pulumi:"isBackendSetForNonMovable"`
+	// The name of the source backend set.  Example: `My_Source_Backend_Set`
+	SourceBackendSetName pulumi.StringInput `pulumi:"sourceBackendSetName"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The name of the destination backend set.  Example: `My_Destination_Backend_Set`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) DestinationBackendSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) string {
+		return v.DestinationBackendSetName
+	}).(pulumi.StringOutput)
+}
+
+// This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the destination region network load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) IsBackendSetForNonMovable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) bool {
+		return v.IsBackendSetForNonMovable
+	}).(pulumi.BoolOutput)
+}
+
+// The name of the source backend set.  Example: `My_Source_Backend_Set`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) SourceBackendSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping) string {
+		return v.SourceBackendSetName
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation struct {
+	// The details for attaching or detaching a block volume.
+	AttachmentDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail `pulumi:"attachmentDetails"`
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId string `pulumi:"blockVolumeId"`
+	// Mount details of a file system.
+	MountDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail `pulumi:"mountDetails"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs struct {
+	// The details for attaching or detaching a block volume.
+	AttachmentDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput `pulumi:"attachmentDetails"`
+	// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+	BlockVolumeId pulumi.StringInput `pulumi:"blockVolumeId"`
+	// Mount details of a file system.
+	MountDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput `pulumi:"mountDetails"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The details for attaching or detaching a block volume.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) AttachmentDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail {
+		return v.AttachmentDetails
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput)
+}
+
+// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) BlockVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation) string {
+		return v.BlockVolumeId
+	}).(pulumi.StringOutput)
+}
+
+// Mount details of a file system.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) MountDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail {
+		return v.MountDetails
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail struct {
+	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId string `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs struct {
+	// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+	VolumeAttachmentReferenceInstanceId pulumi.StringInput `pulumi:"volumeAttachmentReferenceInstanceId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail) string {
+		return v.VolumeAttachmentReferenceInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs struct {
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail) string {
+		return v.MountPoint
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping struct {
+	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	DestinationMountTargetId string `pulumi:"destinationMountTargetId"`
+	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
+	ExportId string `pulumi:"exportId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs struct {
+	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	DestinationMountTargetId pulumi.StringInput `pulumi:"destinationMountTargetId"`
+	// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
+	ExportId pulumi.StringInput `pulumi:"exportId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) DestinationMountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping) string {
+		return v.DestinationMountTargetId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ExportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping) string {
+		return v.ExportId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation struct {
+	// The export path of the file system.  Example: `/fs-export-path`
+	ExportPath string `pulumi:"exportPath"`
+	// Mount details of a file system.
+	MountDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail `pulumi:"mountDetails"`
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint string `pulumi:"mountPoint"`
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId string `pulumi:"mountTargetId"`
+	// Unmount details for a file system.
+	UnmountDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail `pulumi:"unmountDetails"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs struct {
+	// The export path of the file system.  Example: `/fs-export-path`
+	ExportPath pulumi.StringInput `pulumi:"exportPath"`
+	// Mount details of a file system.
+	MountDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput `pulumi:"mountDetails"`
+	// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+	// Unmount details for a file system.
+	UnmountDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput `pulumi:"unmountDetails"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The export path of the file system.  Example: `/fs-export-path`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ExportPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) string {
+		return v.ExportPath
+	}).(pulumi.StringOutput)
+}
+
+// Mount details of a file system.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) MountDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail {
+		return v.MountDetails
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput)
+}
+
+// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) string {
+		return v.MountPoint
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) string {
+		return v.MountTargetId
+	}).(pulumi.StringOutput)
+}
+
+// Unmount details for a file system.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) UnmountDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail {
+		return v.UnmountDetails
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId string `pulumi:"mountTargetId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail) string {
+		return v.MountTargetId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId string `pulumi:"mountTargetId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs struct {
+	// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	MountTargetId pulumi.StringInput `pulumi:"mountTargetId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput)
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
+		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) MountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail) string {
+		return v.MountTargetId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
+	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput)
+}
+
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId string `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 	SourceVnicId string `pulumi:"sourceVnicId"`
 }
 
@@ -7965,15 +11577,15 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingInput 
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs struct {
-	// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
-	// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
-	// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
 }
 
@@ -8046,35 +11658,35 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOut
 	}
 }
 
-// A list of destination region's network security group (NSG) OCIDs which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1..&lt;unique_id&gt; ]`
+// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) []string {
 		return v.DestinationNsgIdLists
 	}).(pulumi.StringArrayOutput)
 }
 
-// The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpAddress
 	}).(pulumi.StringOutput)
 }
 
-// The hostname to assign for this primary private IP. The value is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
+// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.DestinationSubnetId
 	}).(pulumi.StringOutput)
 }
 
-// The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
+// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.SourceVnicId
@@ -8262,6 +11874,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupLogLocationPtrInput)(nil)).Elem(), DrProtectionGroupLogLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberInput)(nil)).Elem(), DrProtectionGroupMemberArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberArrayInput)(nil)).Elem(), DrProtectionGroupMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackendSetMappingInput)(nil)).Elem(), DrProtectionGroupMemberBackendSetMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBackendSetMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberBackendSetMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationArrayInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationMountDetailsInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberExportMappingInput)(nil)).Elem(), DrProtectionGroupMemberExportMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberExportMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberExportMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationArrayInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationMountDetailsInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationMountDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationMountDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationMountDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationUnmountDetailsInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVnicMappingInput)(nil)).Elem(), DrProtectionGroupMemberVnicMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberVnicMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionExecutionOptionInput)(nil)).Elem(), GetDrPlanExecutionExecutionOptionArgs{})
@@ -8318,6 +11946,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupLogLocationArrayInput)(nil)).Elem(), GetDrProtectionGroupLogLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberInput)(nil)).Elem(), GetDrProtectionGroupMemberArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackendSetMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberBackendSetMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBackendSetMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBackendSetMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationMountDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberExportMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberExportMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberExportMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationMountDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationMountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationUnmountDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVnicMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberVnicMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberVnicMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionArgs{})
@@ -8330,6 +11974,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsFilterInput)(nil)).Elem(), GetDrProtectionGroupsFilterArgs{})
@@ -8358,6 +12018,22 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupLogLocationPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBackendSetMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBackendSetMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberExportMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberExportMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationMountDetailsOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVnicMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionExecutionOptionOutput{})
@@ -8414,6 +12090,22 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupLogLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackendSetMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBackendSetMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberExportMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberExportMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVnicMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionOutput{})
@@ -8426,6 +12118,22 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsFilterOutput{})

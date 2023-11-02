@@ -36,6 +36,7 @@ namespace Pulumi.Oci.StackMonitoring
     ///         ConfigType = @var.Config_config_type,
     ///         IsEnabled = @var.Config_is_enabled,
     ///         ResourceType = @var.Config_resource_type,
+    ///         License = @var.Config_license,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -92,13 +93,19 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+        /// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        /// (Updatable) License edition.
+        /// </summary>
+        [Output("license")]
+        public Output<string> License { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of resource to configure for automatic promotion.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -220,20 +227,26 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+        /// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         /// </summary>
-        [Input("isEnabled", required: true)]
-        public Input<bool> IsEnabled { get; set; } = null!;
+        [Input("isEnabled")]
+        public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        /// (Updatable) License edition.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
+
+        /// <summary>
+        /// The type of resource to configure for automatic promotion.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("resourceType", required: true)]
-        public Input<string> ResourceType { get; set; } = null!;
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
 
         public ConfigArgs()
         {
@@ -286,13 +299,19 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// (Updatable) True if automatic promotion is enabled, false if it is not enabled.
+        /// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// The type of resource to configure for automatic promotion. The only valid value is `"HOST"`.
+        /// (Updatable) License edition.
+        /// </summary>
+        [Input("license")]
+        public Input<string>? License { get; set; }
+
+        /// <summary>
+        /// The type of resource to configure for automatic promotion.
         /// 
         /// 
         /// ** IMPORTANT **

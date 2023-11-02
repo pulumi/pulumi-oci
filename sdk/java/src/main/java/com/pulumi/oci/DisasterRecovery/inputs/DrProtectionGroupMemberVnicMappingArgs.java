@@ -17,14 +17,14 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     public static final DrProtectionGroupMemberVnicMappingArgs Empty = new DrProtectionGroupMemberVnicMappingArgs();
 
     /**
-     * (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+     * (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
      * 
      */
     @Import(name="destinationNsgIdLists")
     private @Nullable Output<List<String>> destinationNsgIdLists;
 
     /**
-     * @return (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+     * @return (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
      * 
      */
     public Optional<Output<List<String>>> destinationNsgIdLists() {
@@ -32,14 +32,14 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+     * (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
      * 
      */
     @Import(name="destinationPrimaryPrivateIpAddress")
     private @Nullable Output<String> destinationPrimaryPrivateIpAddress;
 
     /**
-     * @return (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+     * @return (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
      * 
      */
     public Optional<Output<String>> destinationPrimaryPrivateIpAddress() {
@@ -47,14 +47,14 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+     * (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     @Import(name="destinationPrimaryPrivateIpHostnameLabel")
     private @Nullable Output<String> destinationPrimaryPrivateIpHostnameLabel;
 
     /**
-     * @return (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+     * @return (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     public Optional<Output<String>> destinationPrimaryPrivateIpHostnameLabel() {
@@ -62,14 +62,14 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
     @Import(name="destinationSubnetId")
     private @Nullable Output<String> destinationSubnetId;
 
     /**
-     * @return (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> destinationSubnetId() {
@@ -77,14 +77,14 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
+     * (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
      * 
      */
     @Import(name="sourceVnicId")
     private @Nullable Output<String> sourceVnicId;
 
     /**
-     * @return (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
+     * @return (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> sourceVnicId() {
@@ -120,7 +120,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationNsgIdLists (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+         * @param destinationNsgIdLists (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationNsgIdLists (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+         * @param destinationNsgIdLists (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationNsgIdLists (Updatable) A list of network security group (NSG) IDs in the destination region which this VNIC should use.  Example: `[ ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt;, ocid1.networksecuritygroup.oc1..&amp;lt;unique_id&amp;gt; ]`
+         * @param destinationNsgIdLists (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpAddress (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+         * @param destinationPrimaryPrivateIpAddress (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpAddress (Updatable) The primary private IP address to assign. This address must belong to the destination subnet.  Example: `10.0.3.3`
+         * @param destinationPrimaryPrivateIpAddress (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) The hostname to assign for this primary private IP. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).  Example: `bminstance1`
+         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationSubnetId (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param destinationSubnetId (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationSubnetId (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param destinationSubnetId (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param sourceVnicId (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param sourceVnicId (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param sourceVnicId (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&amp;lt;unique_id&amp;gt;`
+         * @param sourceVnicId (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
          * 
          * @return builder
          * 

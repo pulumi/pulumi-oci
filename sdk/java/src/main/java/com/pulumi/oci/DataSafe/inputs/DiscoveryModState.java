@@ -110,14 +110,14 @@ public final class DiscoveryModState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
     @Import(name="isIncludeAllSchemas")
     private @Nullable Output<Boolean> isIncludeAllSchemas;
 
     /**
-     * @return Indicates if all the schemas should be scanned by the discovery job. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+     * @return Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
     public Optional<Output<Boolean>> isIncludeAllSchemas() {
@@ -543,7 +543,7 @@ public final class DiscoveryModState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIncludeAllSchemas Indicates if all the schemas should be scanned by the discovery job. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+         * @param isIncludeAllSchemas Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
          * 
          * @return builder
          * 
@@ -554,7 +554,7 @@ public final class DiscoveryModState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIncludeAllSchemas Indicates if all the schemas should be scanned by the discovery job. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
+         * @param isIncludeAllSchemas Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
          * 
          * @return builder
          * 

@@ -113,6 +113,10 @@ from .get_managed_databases_user_proxy_user import *
 from .get_managed_databases_user_proxy_users import *
 from .get_managed_databases_user_system_privilege import *
 from .get_managed_databases_user_system_privileges import *
+from .get_managed_my_sql_database import *
+from .get_managed_my_sql_database_configuration_data import *
+from .get_managed_my_sql_database_sql_data import *
+from .get_managed_my_sql_databases import *
 from .managed_database_group import *
 from .managed_databases_change_database_parameter import *
 from .managed_databases_reset_database_parameter import *

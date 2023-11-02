@@ -13,19 +13,19 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupAssociationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
+        /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Input("peerId")]
         public Input<string>? PeerId { get; set; }
 
         /// <summary>
-        /// The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
+        /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Input("peerRegion")]
         public Input<string>? PeerRegion { get; set; }
 
         /// <summary>
-        /// The role of this DR Protection Group.
+        /// The role of the DR protection group.  Example: `STANDBY`
         /// </summary>
         [Input("role", required: true)]
         public Input<string> Role { get; set; } = null!;

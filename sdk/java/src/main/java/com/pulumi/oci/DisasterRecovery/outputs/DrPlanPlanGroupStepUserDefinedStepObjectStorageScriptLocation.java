@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation {
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
      * 
      */
     private @Nullable String bucket;
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     private @Nullable String namespace;
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+     * @return The object name inside the object storage bucket.  Example: `validate_app_start.sh`
      * 
      */
     private @Nullable String object;
 
     private DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation() {}
     /**
-     * @return The bucket name inside the Object Storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
      * 
      */
     public Optional<String> bucket() {
         return Optional.ofNullable(this.bucket);
     }
     /**
-     * @return The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
      * 
      */
     public Optional<String> namespace() {
         return Optional.ofNullable(this.namespace);
     }
     /**
-     * @return The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
+     * @return The object name inside the object storage bucket.  Example: `validate_app_start.sh`
      * 
      */
     public Optional<String> object() {

@@ -25,3 +25,6 @@ runner:
   publish: pulumi-ubuntu-8core
   buildSdk: pulumi-ubuntu-8core
 javaGenVersion: "v0.9.7"
+license:
+  ignore:
+    - github.com/oracle/terraform-provider-oci/shim
